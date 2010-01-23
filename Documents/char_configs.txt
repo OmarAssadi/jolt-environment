@@ -1,0 +1,72 @@
+Some Configs.
+
+Code:
+Mouse Settings:-
+	[170] 1	- 1 Mouse button
+	[170] 0	- 2 Mouse buttons
+
+Male/Female:-
+	[1159] 10312139	- Woman
+	[1158] 19305486 - Woman
+	[1262] 8		- Woman
+	[1159] 592392	- Man
+	[1158] 15541890 - Man
+	[1262] 1		- Man
+	
+Head:-
+	[1158]:-
+		( Beard	 + 	Hair )
+		3577856 -> 3577856
+		3577888 -> 3577903
+		3577920 -> 3577935
+		3577952 -> 3577967
+		3577984 -> 3577999
+		3578016 -> 3578031
+		3578048 -> 3578063
+		3578080 -> 3578095
+		3578112 -> 3578127
+		3578144 -> 3578159
+		3578176 -> 3578191
+		3578208 -> 3578223
+		3578240 -> 3578255
+		3578272 -> 3578287
+		3578304 -> 3578319
+	[1159]:-
+		68	- Burgundy
+		67	- Red
+		58	- Vermillon
+		66	- Pink
+		52	- Orange
+		53	- Yellow
+		63	- Peach
+		55	- Brown
+		48	- Dark Brown
+		54	- Light Brown
+		69	- Mint Green
+		57	- Green
+		70	- Dark Green
+		65	- Dark Blue
+		56	- Terquise
+		64	- Cyan
+		59	- Purple
+		72	- Violet
+		71	- Indigo
+		51	- Dark Gray
+		50	- Military Gray
+		49	- White
+		62	- Light Gray
+		61	- Tawpe
+		60	- Black
+			1853281	- Very Pale
+			18273	- Pale
+			280417	- Fair
+			542561	- Tanned
+			804705	- Native
+			1066849	- Light Brown
+			1032993	- Brown
+			1591137	- Dark Brown
+	[1260] 0 - Don't Ask me this again (Randomize)(Off)
+	[1260] 1 - Don't Ask me this again (Randomize)(On)
+	
+Body:- 
+NEED TO DO.

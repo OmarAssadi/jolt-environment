@@ -1,0 +1,150 @@
+I would be using these to make the character design menu work but, I cant' figure out how the hell I change the colors of the characters.
+
+First of just so you know, the Character Design Menu Interface ID is 771.
+
+and heres the list of button ID's I recorded.
+
+Code:
+Buttons:
+next - 46
+back - 56
+male - 49
+female - 52
+next - 58
+back - 171
+hair +1 - 93
+hair -1 - 92
+facial hair +1 - 98
+facial hair -1 - 97
+randomise - 169
+select, hair - 62
+select, skin - 61
+
+	hair colors:
+	burgundy - 100
+	red - 101
+	vermillion - 102
+	pink - 103
+	orange - 104
+	yellow - 105
+	peach - 106
+	brown - 107
+	dark brown - 108
+	light brown - 109
+	mint green - 110
+	green - 111
+	dark green - 112
+	dark blue - 113
+	turquoise - 114
+	cyan - 115
+	purple - 116
+	violet - 117
+	indigo - 118
+	dark grey - 119
+	military grey - 120
+	white - 121
+	light grey - 122
+	tawpe - 123
+	black - 124
+
+	skin colors:
+	very pale - 158
+	pale - 151
+	fair - 152
+	tanned - 153
+	olive - 154
+	light brown - 155
+	brown - 156
+	dark brown - 157
+
+next - 167
+back - 323
+torso +1 - 342
+torso -1 - 341
+arms +1 - 346
+arms -1 - 345
+wrists +1 - 350
+wrists -1 - 349
+legs +1 - 354
+legs -1 - 353
+feet +1 - 358
+feet -1 - 357
+randomize - 321
+
+	Torso colour:
+	burgundy - 189
+	red - 190
+	dark red - 191
+	pink - 192
+	dark pink- 193
+	orange - 194
+	burnt orange - 195
+	peach - 196
+	light khaki - 197
+	khaki - 198
+	gold - 199
+	moss green - 200
+	mint green - 201
+	sea green - 202
+	forest green - 203
+	dark green - 204
+	royal blue - 205
+	dark blue - 206
+	light blue - 207
+	pale blue - 208
+	mauve - 209
+	violet - 210
+	indigo - 211
+	navy blue - 212
+	beige - 213
+	light grey - 214
+	taupe - 215
+	dark grey - 216
+	black - 217
+
+	legs colour:
+	burgundy - 249
+	red - 250
+	dark red - 251
+	pink - 252
+	dark pink- 253
+	orange - 254
+	burnt orange - 255
+	peach - 256
+	light khaki - 257
+	khaki - 258
+	gold - 259
+	moss green - 260
+	mint green - 261
+	sea green - 262
+	forest green - 263
+	dark green - 248
+	royal blue - 264
+	dark blue - 265
+	light blue - 266
+	pale blue - 267
+	mauve - 268
+	violet - 269
+	indigo - 270
+	navy blue - 271
+	beige - 272
+	light grey - 273
+	taupe - 274
+	dark grey - 275
+	black - 276
+
+	feet colour:
+	brown - 307
+	dark green - 308
+	pale grey - 309
+	black - 310
+	light brown - 311
+	grey - 312
+
+confirm - 319
+back - 323
+yes - 362
+no - 360
+the next, back, and randomise ect. buttons you will notice have different ID's as you go down the list, thats because they are in order from the beginning to end of the Character Design Menu Interface.
+
+if you know how to get the character color thing working for pali's 508 then tell me I'd be so happy 

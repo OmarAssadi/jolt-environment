@@ -1,0 +1,11 @@
+/Build
+Source/*.suo
+Source/JoltEnvironment/obj
+Source/RuneScape/*.aps
+Source/RuneScape/*.eto
+Source/RuneScape/*.user
+Source/RuneScape/[Bb]in
+Source/RuneScape/[Dd]ebug
+Source/RuneScape/[Rr]elease
+Source/RuneScape/obj
+WebSource/jweb/nbproject/private

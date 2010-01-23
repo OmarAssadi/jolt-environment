@@ -1,0 +1,224 @@
+NOTICE: THIS IS MISSING THE CLOTHING PART, IT'S ONLY FOR THE HAIR AND SKIN COLOR.
+(This works with 508 loading 525 also.)
+
+Purpose: Adding character designing to your 508/508 loading 525 server.
+Difficulty: 1/10
+Knowledge: C & P
+Classes Modified: Frames.java(Pali), actionSender.java(Espeon), ActionButtons.java, Commands.java.
+
+Step 1:
+First off, you will have to add the setPlayerHead void in frames.java (for Pali) /actionSender.java (for Espeon):
+Code:
+public void setPlayerHead(Player p, int interfaceId, int childId) {
+		if(p == null || p.stream == null || p.disconnected[0]) {
+			return;
+		}
+        p.stream.createFrame(101);
+        p.stream.writeWord(interfaceId);
+        p.stream.writeWord(childId);
+        }
+(Thanks to Hackur for this.)
+
+Step 2:
+In ActionButtons.java, add this case:
+Code:
+case 771:
+if (buttonId == 49) {
+p.look[0] = 3;
+p.look[1] = 10;
+p.look[2] = 18;
+p.look[3] = 26;
+p.look[4] = 33;
+p.look[5] = 36;
+p.look[6] = 42;
+p.gender = 0;
+}
+if (buttonId == 52) {
+p.look[0] = 48; // Hair
+p.look[1] = 1000; // Beard
+p.look[2] = 57; // Torso
+p.look[3] = 64; // Arms
+p.look[4] = 68; // Bracelets
+p.look[5] = 77; // Legs
+p.look[6] = 80; // Shoes
+p.gender = 1;
+}
+if (buttonId == 92 && p.gender < 1) {
+p.look[0] = p.look[0] - 1;
+if (p.look[0] < 0)
+p.look[0] = 260;
+if (p.look[0] > 8 && p.look[0] < 91)
+p.look[0] = 8;
+if (p.look[0] > 97 && p.look[0] < 246)
+p.look[0] = 97;
+if (p.look[0] > 260 && p.look[0] < 1000)
+p.look[0] = 260;
+}
+if (buttonId == 92 && p.gender > 0) {
+p.look[0] = p.look[0] - 1;
+if (p.look[0] < 45)
+p.look[0] = 280;
+if (p.look[0] > 55 && p.look[0] < 135)
+p.look[0] = 55;
+if (p.look[0] > 144 && p.look[0] < 269)
+p.look[0] = 144;
+if (p.look[0] > 280 && p.look[0] < 1000)
+p.look[0] = 45;
+}
+if (buttonId == 93 && p.gender < 1) {
+p.look[0] = p.look[0] + 1;
+if (p.look[0] > 8 && p.look[0] < 91)
+p.look[0] = 91;
+if (p.look[0] > 97 && p.look[0] < 246)
+p.look[0] = 246;
+if (p.look[0] > 260 && p.look[0] < 1000)
+p.look[0] = 0;
+}
+if (buttonId == 93 && p.gender > 0) {
+p.look[0] = p.look[0] + 1;
+if (p.look[0] > 55 && p.look[0] < 135)
+p.look[0] = 135;
+if (p.look[0] > 144 && p.look[0] < 269)
+p.look[0] = 269;
+if (p.look[0] > 280 && p.look[0] < 1000)
+p.look[0] = 45;
+}
+if (buttonId == 97) {
+p.look[1] = p.look[1] - 1;
+if (p.look[1] < 10)
+p.look[1] = 17;
+}
+if (buttonId == 98) {
+p.look[1] = p.look[1] + 1;
+if (p.look[1] > 17)
+p.look[1] = 10;
+
+}
+if (buttonId == 100) {
+p.color[0] = 20;
+}
+if (buttonId == 101) {
+p.color[0] = 19;
+}
+if (buttonId == 102) {
+p.color[0] = 10;
+}
+if (buttonId == 103) {
+p.color[0] = 18;
+}
+if (buttonId == 104) {
+p.color[0] = 4;
+}
+if (buttonId == 105) {
+p.color[0] = 5;
+}
+if (buttonId == 106) {
+p.color[0] = 15;
+}
+if (buttonId == 107) {
+p.color[0] = 7;
+}
+if (buttonId == 108) {
+p.color[0] = 26;
+}
+if (buttonId == 109) {
+p.color[0] = 6;
+}
+if (buttonId == 110) {
+p.color[0] = 21;
+}
+if (buttonId == 111) {
+p.color[0] = 9;
+}
+if (buttonId == 112) {
+p.color[0] = 22;
+}
+if (buttonId == 113) {
+p.color[0] = 17;
+}
+if (buttonId == 114) {
+p.color[0] = 8;
+}
+if (buttonId == 115) {
+p.color[0] = 16;
+}
+if (buttonId == 116) {
+p.color[0] = 11;
+}
+if (buttonId == 117) {
+p.color[0] = 24;
+}
+if (buttonId == 118) {
+p.color[0] = 23;
+}
+if (buttonId == 119) {
+p.color[0] = 3;
+}
+if (buttonId == 120) {
+p.color[0] = 2;
+}
+if (buttonId == 121) {
+p.color[0] = 1;
+}
+if (buttonId == 122) {
+p.color[0] = 14;
+}
+if (buttonId == 123) {
+p.color[0] = 13;
+}
+if (buttonId == 124) {
+p.color[0] = 12;
+}
+if (buttonId == 158) {
+p.color[4] = 7;
+}
+if (buttonId == 151) {
+p.color[4] = 8;
+}
+if (buttonId == 152) {
+p.color[4] = 1;
+}
+if (buttonId == 153) {
+p.color[4] = 2;
+}
+if (buttonId == 154) {
+p.color[4] = 3;
+}
+if (buttonId == 155) {
+p.color[4] = 4;
+}
+if (buttonId == 156) {
+p.color[4] = 5;
+}
+if (buttonId == 157) {
+p.color[4] = 6;
+}
+if (buttonId == 362) {
+p.getActionSender().removeShownInterface(p);
+}
+
+p.appearanceUpdateReq = true;
+p.updateReq = true;
+break;
+Step 3:
+Finally, add the ::char command or what ever you wanna call it in Commands.java.
+For Espeon, use this code:
+Code:
+ 
+if (cmd[0].equals("char")) {
+             p.getActionSender().showInterface(p, 771);
+             p.getActionSender().animateInterfaceId(p, 9835, 771, 79);
+             p.getActionSender().setPlayerHead(p, 771, 79);
+}
+For Pali, use this:
+Code:
+if (cmd[0].equals("char")) {
+             p.frames.showInterface(p, 771);
+             p.frames.animateInterfaceId(p, 9835, 771, 79);
+             p.frames.setPlayerHead(p, 771, 79);
+}
+The final product: http://www.youtube.com/watch?v=o2gFk1M-eBo
+
+That's it! Enjoy.
+
+If you use this, remember to post.

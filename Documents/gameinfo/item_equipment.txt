@@ -1,0 +1,4243 @@
+Id: 33, Name: Lit candle, EquipId: 0
+Id: 35, Name: Excalibur, EquipId: 0
+Id: 48, Name: Longbow (u), EquipId: 1
+Id: 49, Name: Longbow (u), EquipId: 2
+Id: 50, Name: Shortbow (u), EquipId: 2
+Id: 51, Name: Shortbow (u), EquipId: 1
+Id: 53, Name: Headless arrow, EquipId: 3
+Id: 54, Name: Oak shortbow (u), EquipId: 3
+Id: 56, Name: Oak longbow (u), EquipId: 4
+Id: 57, Name: Oak longbow (u), EquipId: 5
+Id: 58, Name: Willow longbow (u), EquipId: 5
+Id: 59, Name: Willow longbow (u), EquipId: 4
+Id: 60, Name: Willow shortbow (u), EquipId: 6
+Id: 61, Name: Willow shortbow (u), EquipId: 7
+Id: 62, Name: Maple longbow (u), EquipId: 7
+Id: 63, Name: Maple longbow (u), EquipId: 6
+Id: 64, Name: Maple shortbow (u), EquipId: 8
+Id: 66, Name: Yew longbow (u), EquipId: 9
+Id: 68, Name: Yew shortbow (u), EquipId: 10
+Id: 70, Name: Magic longbow (u), EquipId: 11
+Id: 72, Name: Magic shortbow (u), EquipId: 12
+Id: 74, Name: Khazard helmet, EquipId: 13
+Id: 75, Name: Khazard armour, EquipId: 14
+Id: 76, Name: Khazard cell keys, EquipId: 12
+Id: 78, Name: Ice arrows, EquipId: 13
+Id: 86, Name: Pendant of lucien, EquipId: 15
+Id: 87, Name: Armadyl pendant, EquipId: 16
+Id: 88, Name: Boots of lightness, EquipId: 17
+Id: 89, Name: Boots of lightness, EquipId: 18
+Id: 94, Name: Unfinished potion, EquipId: 16
+Id: 95, Name: Unfinished potion, EquipId: 15
+Id: 229, Name: Vial, EquipId: 19
+Id: 230, Name: Vial, EquipId: 19
+Id: 262, Name: Avantoe, EquipId: 20
+Id: 264, Name: Kwuarm, EquipId: 21
+Id: 272, Name: Fish food, EquipId: 20
+Id: 278, Name: Cattleprod, EquipId: 21
+Id: 284, Name: Plague jacket, EquipId: 22
+Id: 285, Name: Plague trousers, EquipId: 23
+Id: 289, Name: Goblin mail, EquipId: 25
+Id: 291, Name: Notes, EquipId: 26
+Id: 293, Name: A key, EquipId: 27
+Id: 295, Name: Glarial's amulet, EquipId: 24
+Id: 297, Name: Glarial's urn, EquipId: 29
+Id: 299, Name: Mithril seeds, EquipId: 30
+Id: 301, Name: Lobster pot, EquipId: 25
+Id: 302, Name: Lobster pot, EquipId: 31
+Id: 303, Name: Small fishing net, EquipId: 26
+Id: 304, Name: Small fishing net, EquipId: 23
+Id: 305, Name: Big fishing net, EquipId: 27
+Id: 307, Name: Fishing rod, EquipId: 28
+Id: 309, Name: Fly fishing rod, EquipId: 29
+Id: 311, Name: Harpoon, EquipId: 30
+Id: 314, Name: Feather, EquipId: 31
+Id: 388, Name: Burnt shark, EquipId: 32
+Id: 411, Name: Oyster pearl, EquipId: 32
+Id: 413, Name: Oyster pearls, EquipId: 33
+Id: 421, Name: Lathas' amulet, EquipId: 34
+Id: 425, Name: Pigeon cage, EquipId: 36
+Id: 426, Name: Priest gown, EquipId: 35
+Id: 427, Name: Priest gown, EquipId: 37
+Id: 428, Name: Priest gown, EquipId: 36
+Id: 430, Name: Doctors' gown, EquipId: 37
+Id: 433, Name: Pirate message, EquipId: 34
+Id: 438, Name: Tin ore, EquipId: 35
+Id: 441, Name: Iron ore, EquipId: 33
+Id: 449, Name: Adamantite ore, EquipId: 42
+Id: 451, Name: Runite ore, EquipId: 41
+Id: 453, Name: Coal, EquipId: 40
+Id: 455, Name: Barcrawl card, EquipId: 39
+Id: 457, Name: Scorpion cage, EquipId: 38
+Id: 466, Name: Pickaxe handle, EquipId: 38
+Id: 468, Name: Broken pickaxe, EquipId: 39
+Id: 470, Name: Broken pickaxe, EquipId: 40
+Id: 472, Name: Broken pickaxe, EquipId: 41
+Id: 474, Name: Broken pickaxe, EquipId: 42
+Id: 476, Name: Broken pickaxe, EquipId: 43
+Id: 478, Name: Broken pickaxe, EquipId: 44
+Id: 481, Name: Bronze pick head, EquipId: 51
+Id: 483, Name: Iron pick head, EquipId: 52
+Id: 485, Name: Steel pick head, EquipId: 49
+Id: 487, Name: Mithril pick head, EquipId: 50
+Id: 489, Name: Adamant pick head, EquipId: 47
+Id: 491, Name: Rune pick head, EquipId: 48
+Id: 492, Name: Axe handle, EquipId: 45
+Id: 493, Name: Axe handle, EquipId: 45
+Id: 494, Name: Broken axe, EquipId: 46
+Id: 495, Name: Broken axe, EquipId: 46
+Id: 496, Name: Broken axe, EquipId: 47
+Id: 498, Name: Broken axe, EquipId: 48
+Id: 500, Name: Broken axe, EquipId: 49
+Id: 502, Name: Broken axe, EquipId: 50
+Id: 504, Name: Broken axe, EquipId: 51
+Id: 506, Name: Broken axe, EquipId: 52
+Id: 508, Name: Bronze axe head, EquipId: 43
+Id: 510, Name: Iron axe head, EquipId: 44
+Id: 512, Name: Steel axe head, EquipId: 56
+Id: 514, Name: Black axe head, EquipId: 57
+Id: 516, Name: Mithril axe head, EquipId: 54
+Id: 518, Name: Adamant axe head, EquipId: 55
+Id: 520, Name: Rune axe head, EquipId: 59
+Id: 524, Name: Enchanted bear, EquipId: 58
+Id: 538, Name: Druid's robe, EquipId: 53
+Id: 540, Name: Druid's robe, EquipId: 54
+Id: 542, Name: Monk's bottoms, EquipId: 55
+Id: 544, Name: Monk's robetop, EquipId: 56
+Id: 546, Name: Shade robe, EquipId: 57
+Id: 548, Name: Shade robe, EquipId: 58
+Id: 552, Name: Ghostspeak amulet, EquipId: 59
+Id: 569, Name: Fire orb, EquipId: 53
+Id: 577, Name: Wizard robetop, EquipId: 60
+Id: 579, Name: Wizard hat, EquipId: 61
+Id: 581, Name: Black robetop, EquipId: 62
+Id: 583, Name: Bailing bucket, EquipId: 63
+Id: 585, Name: Bailing bucket, EquipId: 64
+Id: 588, Name: Orbs of protection, EquipId: 67
+Id: 589, Name: Gnome amulet, EquipId: 65
+Id: 590, Name: Tinderbox, EquipId: 66
+Id: 599, Name: Double helix, EquipId: 68
+Id: 601, Name: Keep key, EquipId: 69
+Id: 603, Name: Lens, EquipId: 70
+Id: 605, Name: Bone key, EquipId: 71
+Id: 607, Name: Tattered scroll, EquipId: 72
+Id: 613, Name: Locating crystal, EquipId: 61
+Id: 615, Name: Locating crystal, EquipId: 60
+Id: 616, Name: Beads of the dead, EquipId: 67
+Id: 617, Name: Coins, EquipId: 63
+Id: 619, Name: Paramaya ticket, EquipId: 62
+Id: 623, Name: Sword pommel, EquipId: 64
+Id: 625, Name: Wampum belt, EquipId: 66
+Id: 626, Name: Boots, EquipId: 68
+Id: 628, Name: Boots, EquipId: 69
+Id: 630, Name: Boots, EquipId: 70
+Id: 632, Name: Boots, EquipId: 71
+Id: 634, Name: Boots, EquipId: 72
+Id: 636, Name: Robe top, EquipId: 73
+Id: 638, Name: Robe top, EquipId: 74
+Id: 640, Name: Robe top, EquipId: 75
+Id: 642, Name: Robe top, EquipId: 76
+Id: 644, Name: Robe top, EquipId: 77
+Id: 646, Name: Robe bottoms, EquipId: 78
+Id: 648, Name: Robe bottoms, EquipId: 79
+Id: 650, Name: Robe bottoms, EquipId: 80
+Id: 652, Name: Robe bottoms, EquipId: 81
+Id: 654, Name: Robe bottoms, EquipId: 82
+Id: 656, Name: Hat, EquipId: 83
+Id: 658, Name: Hat, EquipId: 84
+Id: 660, Name: Hat, EquipId: 85
+Id: 662, Name: Hat, EquipId: 86
+Id: 664, Name: Hat, EquipId: 87
+Id: 667, Name: Blurite sword, EquipId: 88
+Id: 673, Name: Rock sample 3, EquipId: 80
+Id: 675, Name: Rock pick, EquipId: 89
+Id: 677, Name: Panning tray, EquipId: 90
+Id: 679, Name: Panning tray, EquipId: 77
+Id: 681, Name: Zaros talisman, EquipId: 76
+Id: 683, Name: Stamped letter, EquipId: 75
+Id: 685, Name: Old boot, EquipId: 74
+Id: 687, Name: Broken arrow, EquipId: 73
+Id: 689, Name: Broken staff, EquipId: 88
+Id: 690, Name: Broken glass, EquipId: 87
+Id: 692, Name: Level 2 certificate, EquipId: 86
+Id: 694, Name: Ceramic remains, EquipId: 85
+Id: 696, Name: Invitation letter, EquipId: 84
+Id: 698, Name: Broken armour, EquipId: 83
+Id: 700, Name: Chemical powder, EquipId: 82
+Id: 702, Name: Unidentified liquid, EquipId: 81
+Id: 705, Name: Mixed chemicals, EquipId: 98
+Id: 710, Name: Vase, EquipId: 100
+Id: 711, Name: Book on chemicals, EquipId: 99
+Id: 713, Name: Enjifern, EquipId: 97
+Id: 717, Name: Scrawled note, EquipId: 91
+Id: 718, Name: A scribbled note, EquipId: 92
+Id: 719, Name: Scrumpled note, EquipId: 93
+Id: 727, Name: Hollow reed, EquipId: 94
+Id: 728, Name: Hollow reed, EquipId: 95
+Id: 731, Name: Enchanted vial, EquipId: 96
+Id: 732, Name: Holy water, EquipId: 97
+Id: 740, Name: Blue hat, EquipId: 98
+Id: 746, Name: Dark dagger, EquipId: 99
+Id: 747, Name: Glowing dagger, EquipId: 100
+Id: 751, Name: Gnomeball, EquipId: 101
+Id: 753, Name: Cadava berries, EquipId: 94
+Id: 757, Name: Book, EquipId: 96
+Id: 758, Name: Key, EquipId: 95
+Id: 760, Name: Key, EquipId: 92
+Id: 761, Name: Scroll, EquipId: 93
+Id: 763, Name: Broken shield, EquipId: 91
+Id: 767, Name: Phoenix crossbow, EquipId: 102
+Id: 768, Name: Phoenix crossbow, EquipId: 129
+Id: 769, Name: Certificate, EquipId: 130
+Id: 770, Name: Certificate, EquipId: 127
+Id: 771, Name: Dramen branch, EquipId: 128
+Id: 772, Name: Dramen staff, EquipId: 103
+Id: 773, Name: 'perfect' ring, EquipId: 126
+Id: 774, Name: 'perfect' necklace, EquipId: 104
+Id: 775, Name: Cooking gauntlets, EquipId: 105
+Id: 776, Name: Goldsmith gauntlet, EquipId: 106
+Id: 777, Name: Chaos gauntlets, EquipId: 107
+Id: 778, Name: Steel gauntlets, EquipId: 108
+Id: 784, Name: Translation book, EquipId: 115
+Id: 785, Name: Glough's journal, EquipId: 114
+Id: 786, Name: Hazelmere's scroll, EquipId: 113
+Id: 787, Name: Lumber order, EquipId: 112
+Id: 789, Name: Twigs, EquipId: 111
+Id: 790, Name: Twigs, EquipId: 110
+Id: 791, Name: Twigs, EquipId: 109
+Id: 792, Name: Twigs, EquipId: 122
+Id: 793, Name: Daconia rock, EquipId: 121
+Id: 794, Name: Invasion plans, EquipId: 120
+Id: 795, Name: War ship, EquipId: 119
+Id: 796, Name: Exploding vial, EquipId: 109
+Id: 797, Name: Herb bowl, EquipId: 110
+Id: 798, Name: Grinder, EquipId: 111
+Id: 800, Name: Bronze thrownaxe, EquipId: 112
+Id: 801, Name: Iron thrownaxe, EquipId: 113
+Id: 802, Name: Steel thrownaxe, EquipId: 114
+Id: 803, Name: Mithril thrownaxe, EquipId: 115
+Id: 804, Name: Adamnt thrownaxe, EquipId: 116
+Id: 805, Name: Rune thrownaxe, EquipId: 117
+Id: 806, Name: Bronze dart, EquipId: 118
+Id: 807, Name: Iron dart, EquipId: 119
+Id: 808, Name: Steel dart, EquipId: 120
+Id: 809, Name: Mithril dart, EquipId: 121
+Id: 810, Name: Adamant dart, EquipId: 122
+Id: 811, Name: Rune dart, EquipId: 123
+Id: 812, Name: Bronze dart(p), EquipId: 124
+Id: 813, Name: Iron dart(p), EquipId: 125
+Id: 814, Name: Steel dart(p), EquipId: 126
+Id: 815, Name: Mithril dart(p), EquipId: 127
+Id: 816, Name: Adamant dart(p), EquipId: 128
+Id: 817, Name: Rune dart(p), EquipId: 129
+Id: 818, Name: Poisoned dart(p), EquipId: 130
+Id: 822, Name: Mithril dart tip, EquipId: 102
+Id: 824, Name: Rune dart tip, EquipId: 107
+Id: 825, Name: Bronze javelin, EquipId: 131
+Id: 826, Name: Iron javelin, EquipId: 132
+Id: 827, Name: Steel javelin, EquipId: 133
+Id: 828, Name: Mithril javelin, EquipId: 134
+Id: 829, Name: Adamant javelin, EquipId: 135
+Id: 830, Name: Rune javelin, EquipId: 136
+Id: 831, Name: Bronze javelin(p), EquipId: 137
+Id: 832, Name: Iron javelin(p), EquipId: 138
+Id: 833, Name: Steel javelin(p), EquipId: 139
+Id: 834, Name: Mithril javelin(p), EquipId: 140
+Id: 835, Name: Adamant javelin(p), EquipId: 141
+Id: 836, Name: Rune javelin(p), EquipId: 142
+Id: 837, Name: Crossbow, EquipId: 143
+Id: 839, Name: Longbow, EquipId: 144
+Id: 841, Name: Shortbow, EquipId: 145
+Id: 843, Name: Oak shortbow, EquipId: 146
+Id: 845, Name: Oak longbow, EquipId: 147
+Id: 847, Name: Willow longbow, EquipId: 148
+Id: 849, Name: Willow shortbow, EquipId: 149
+Id: 851, Name: Maple longbow, EquipId: 150
+Id: 852, Name: Maple longbow, EquipId: 157
+Id: 853, Name: Maple shortbow, EquipId: 151
+Id: 855, Name: Yew longbow, EquipId: 152
+Id: 856, Name: Yew longbow, EquipId: 161
+Id: 857, Name: Yew shortbow, EquipId: 153
+Id: 858, Name: Yew shortbow, EquipId: 159
+Id: 859, Name: Magic longbow, EquipId: 154
+Id: 860, Name: Magic longbow, EquipId: 165
+Id: 861, Name: Magic shortbow, EquipId: 155
+Id: 862, Name: Magic shortbow, EquipId: 163
+Id: 863, Name: Iron knife, EquipId: 156
+Id: 864, Name: Bronze knife, EquipId: 157
+Id: 865, Name: Steel knife, EquipId: 158
+Id: 866, Name: Mithril knife, EquipId: 159
+Id: 867, Name: Adamant knife, EquipId: 160
+Id: 868, Name: Rune knife, EquipId: 161
+Id: 869, Name: Black knife, EquipId: 162
+Id: 870, Name: Bronze knife(p), EquipId: 163
+Id: 871, Name: Iron knife(p), EquipId: 164
+Id: 872, Name: Steel knife(p), EquipId: 165
+Id: 873, Name: Mithril knife(p), EquipId: 166
+Id: 874, Name: Black knife(p), EquipId: 167
+Id: 875, Name: Adamant knife(p), EquipId: 168
+Id: 876, Name: Rune knife(p), EquipId: 169
+Id: 878, Name: Bolts(p), EquipId: 152
+Id: 880, Name: Pearl bolts, EquipId: 134
+Id: 881, Name: Barbed bolts, EquipId: 133
+Id: 882, Name: Bronze arrow, EquipId: 136
+Id: 883, Name: Bronze arrow(p), EquipId: 135
+Id: 884, Name: Iron arrow, EquipId: 138
+Id: 885, Name: Iron arrow(p), EquipId: 137
+Id: 886, Name: Steel arrow, EquipId: 140
+Id: 887, Name: Steel arrow(p), EquipId: 139
+Id: 888, Name: Mithril arrow, EquipId: 142
+Id: 889, Name: Mithril arrow(p), EquipId: 141
+Id: 891, Name: Adamant arrow(p), EquipId: 143
+Id: 893, Name: Rune arrow(p), EquipId: 144
+Id: 945, Name: Throwing rope, EquipId: 170
+Id: 946, Name: Knife, EquipId: 171
+Id: 952, Name: Spade, EquipId: 172
+Id: 954, Name: Rope, EquipId: 173
+Id: 962, Name: Christmas cracker, EquipId: 173
+Id: 970, Name: Papyrus, EquipId: 174
+Id: 971, Name: Papyrus, EquipId: 170
+Id: 972, Name: Papyrus, EquipId: 175
+Id: 973, Name: Charcoal, EquipId: 176
+Id: 975, Name: Machete, EquipId: 177
+Id: 1005, Name: White apron, EquipId: 178
+Id: 1007, Name: Cape, EquipId: 179
+Id: 1009, Name: Brass necklace, EquipId: 180
+Id: 1011, Name: Blue skirt, EquipId: 181
+Id: 1013, Name: Pink skirt, EquipId: 182
+Id: 1015, Name: Black skirt, EquipId: 183
+Id: 1017, Name: Wizard hat, EquipId: 184
+Id: 1019, Name: Cape, EquipId: 185
+Id: 1021, Name: Cape, EquipId: 186
+Id: 1023, Name: Cape, EquipId: 187
+Id: 1024, Name: Cape, EquipId: 192
+Id: 1025, Name: Eye patch, EquipId: 188
+Id: 1026, Name: Eye patch, EquipId: 193
+Id: 1027, Name: Cape, EquipId: 189
+Id: 1028, Name: Cape, EquipId: 194
+Id: 1029, Name: Cape, EquipId: 190
+Id: 1031, Name: Cape, EquipId: 191
+Id: 1032, Name: Cape, EquipId: 188
+Id: 1033, Name: Zamorak robe, EquipId: 192
+Id: 1034, Name: Zamorak robe, EquipId: 189
+Id: 1035, Name: Zamorak robe, EquipId: 193
+Id: 1036, Name: Zamorak robe, EquipId: 190
+Id: 1037, Name: Bunny ears, EquipId: 194
+Id: 1038, Name: Red partyhat, EquipId: 195
+Id: 1040, Name: Yellow partyhat, EquipId: 196
+Id: 1042, Name: Blue partyhat, EquipId: 197
+Id: 1044, Name: Green partyhat, EquipId: 198
+Id: 1045, Name: Green partyhat, EquipId: 203
+Id: 1046, Name: Purple partyhat, EquipId: 199
+Id: 1047, Name: Purple partyhat, EquipId: 204
+Id: 1048, Name: White partyhat, EquipId: 200
+Id: 1050, Name: Santa hat, EquipId: 201
+Id: 1052, Name: Cape of legends, EquipId: 202
+Id: 1053, Name: Green h'ween mask, EquipId: 203
+Id: 1054, Name: Green h'ween mask, EquipId: 200
+Id: 1055, Name: Blue h'ween mask, EquipId: 204
+Id: 1056, Name: Blue h'ween mask, EquipId: 210
+Id: 1057, Name: Red h'ween mask, EquipId: 205
+Id: 1058, Name: Red h'ween mask, EquipId: 209
+Id: 1059, Name: Leather gloves, EquipId: 206
+Id: 1060, Name: Leather gloves, EquipId: 212
+Id: 1061, Name: Leather boots, EquipId: 207
+Id: 1062, Name: Leather boots, EquipId: 211
+Id: 1063, Name: Leather vambraces, EquipId: 208
+Id: 1064, Name: Leather vambraces, EquipId: 206
+Id: 1065, Name: Green d'hide vamb, EquipId: 209
+Id: 1066, Name: Green d'hide vamb, EquipId: 205
+Id: 1067, Name: Iron platelegs, EquipId: 210
+Id: 1068, Name: Iron platelegs, EquipId: 208
+Id: 1069, Name: Steel platelegs, EquipId: 211
+Id: 1070, Name: Steel platelegs, EquipId: 207
+Id: 1071, Name: Mithril platelegs, EquipId: 212
+Id: 1073, Name: Adamant platelegs, EquipId: 213
+Id: 1075, Name: Bronze platelegs, EquipId: 214
+Id: 1077, Name: Black platelegs, EquipId: 215
+Id: 1079, Name: Rune platelegs, EquipId: 216
+Id: 1081, Name: Iron plateskirt, EquipId: 217
+Id: 1083, Name: Steel plateskirt, EquipId: 218
+Id: 1085, Name: Mithril plateskirt, EquipId: 219
+Id: 1087, Name: Bronze plateskirt, EquipId: 220
+Id: 1088, Name: Bronze plateskirt, EquipId: 176
+Id: 1089, Name: Black plateskirt, EquipId: 221
+Id: 1090, Name: Black plateskirt, EquipId: 177
+Id: 1091, Name: Adamant plateskirt, EquipId: 222
+Id: 1093, Name: Rune plateskirt, EquipId: 223
+Id: 1095, Name: Leather chaps, EquipId: 224
+Id: 1097, Name: Studded chaps, EquipId: 225
+Id: 1099, Name: Green d'hide chaps, EquipId: 226
+Id: 1101, Name: Iron chainbody, EquipId: 227
+Id: 1103, Name: Bronze chainbody, EquipId: 228
+Id: 1105, Name: Steel chainbody, EquipId: 229
+Id: 1107, Name: Black chainbody, EquipId: 230
+Id: 1109, Name: Mithril chainbody, EquipId: 231
+Id: 1111, Name: Adamant chainbody, EquipId: 232
+Id: 1113, Name: Rune chainbody, EquipId: 233
+Id: 1115, Name: Iron platebody, EquipId: 234
+Id: 1117, Name: Bronze platebody, EquipId: 235
+Id: 1119, Name: Steel platebody, EquipId: 236
+Id: 1120, Name: Steel platebody, EquipId: 179
+Id: 1121, Name: Mithril platebody, EquipId: 237
+Id: 1122, Name: Mithril platebody, EquipId: 178
+Id: 1123, Name: Adamant platebody, EquipId: 238
+Id: 1125, Name: Black platebody, EquipId: 239
+Id: 1127, Name: Rune platebody, EquipId: 240
+Id: 1129, Name: Leather body, EquipId: 241
+Id: 1131, Name: Hardleather body, EquipId: 242
+Id: 1133, Name: Studded body, EquipId: 243
+Id: 1135, Name: Green d'hide body, EquipId: 244
+Id: 1137, Name: Iron med helm, EquipId: 245
+Id: 1139, Name: Bronze med helm, EquipId: 246
+Id: 1141, Name: Steel med helm, EquipId: 247
+Id: 1143, Name: Mithril med helm, EquipId: 248
+Id: 1145, Name: Adamant med helm, EquipId: 249
+Id: 1147, Name: Rune med helm, EquipId: 250
+Id: 1149, Name: Dragon med helm, EquipId: 251
+Id: 1151, Name: Black med helm, EquipId: 252
+Id: 1153, Name: Iron full helm, EquipId: 253
+Id: 1155, Name: Bronze full helm, EquipId: 254
+Id: 1157, Name: Steel full helm, EquipId: 255
+Id: 1159, Name: Mithril full helm, EquipId: 256
+Id: 1161, Name: Adamant full helm, EquipId: 257
+Id: 1163, Name: Rune full helm, EquipId: 258
+Id: 1165, Name: Black full helm, EquipId: 259
+Id: 1167, Name: Leather cowl, EquipId: 260
+Id: 1168, Name: Leather cowl, EquipId: 261
+Id: 1169, Name: Coif, EquipId: 261
+Id: 1170, Name: Coif, EquipId: 262
+Id: 1171, Name: Wooden shield, EquipId: 262
+Id: 1172, Name: Wooden shield, EquipId: 263
+Id: 1173, Name: Bronze sq shield, EquipId: 263
+Id: 1174, Name: Bronze sq shield, EquipId: 264
+Id: 1175, Name: Iron sq shield, EquipId: 264
+Id: 1176, Name: Iron sq shield, EquipId: 265
+Id: 1177, Name: Steel sq shield, EquipId: 265
+Id: 1178, Name: Steel sq shield, EquipId: 266
+Id: 1179, Name: Black sq shield, EquipId: 266
+Id: 1180, Name: Black sq shield, EquipId: 267
+Id: 1181, Name: Mithril sq shield, EquipId: 267
+Id: 1182, Name: Mithril sq shield, EquipId: 268
+Id: 1183, Name: Adamant sq shield, EquipId: 268
+Id: 1185, Name: Rune sq shield, EquipId: 269
+Id: 1187, Name: Dragon sq shield, EquipId: 270
+Id: 1189, Name: Bronze kiteshield, EquipId: 271
+Id: 1191, Name: Iron kiteshield, EquipId: 272
+Id: 1193, Name: Steel kiteshield, EquipId: 273
+Id: 1195, Name: Black kiteshield, EquipId: 274
+Id: 1197, Name: Mithril kiteshield, EquipId: 275
+Id: 1199, Name: Adamant kiteshield, EquipId: 276
+Id: 1200, Name: Adamant kiteshield, EquipId: 278
+Id: 1201, Name: Rune kiteshield, EquipId: 277
+Id: 1202, Name: Rune kiteshield, EquipId: 277
+Id: 1203, Name: Iron dagger, EquipId: 278
+Id: 1204, Name: Iron dagger, EquipId: 280
+Id: 1205, Name: Bronze dagger, EquipId: 279
+Id: 1206, Name: Bronze dagger, EquipId: 279
+Id: 1207, Name: Steel dagger, EquipId: 280
+Id: 1208, Name: Steel dagger, EquipId: 282
+Id: 1209, Name: Mithril dagger, EquipId: 281
+Id: 1210, Name: Mithril dagger, EquipId: 281
+Id: 1211, Name: Adamant dagger, EquipId: 282
+Id: 1212, Name: Adamant dagger, EquipId: 284
+Id: 1213, Name: Rune dagger, EquipId: 283
+Id: 1214, Name: Rune dagger, EquipId: 283
+Id: 1215, Name: Dragon dagger, EquipId: 284
+Id: 1217, Name: Black dagger, EquipId: 285
+Id: 1219, Name: Iron dagger(p), EquipId: 286
+Id: 1221, Name: Bronze dagger(p), EquipId: 287
+Id: 1223, Name: Steel dagger(p), EquipId: 288
+Id: 1225, Name: Mithril dagger(p), EquipId: 289
+Id: 1227, Name: Adamant dagger(p), EquipId: 290
+Id: 1229, Name: Rune dagger(p), EquipId: 291
+Id: 1231, Name: Dragon dagger(p), EquipId: 292
+Id: 1232, Name: Dragon dagger(p), EquipId: 231
+Id: 1233, Name: Black dagger(p), EquipId: 293
+Id: 1234, Name: Black dagger(p), EquipId: 232
+Id: 1235, Name: Poisoned dagger(p), EquipId: 294
+Id: 1236, Name: Poisoned dagger(p), EquipId: 229
+Id: 1237, Name: Bronze spear, EquipId: 295
+Id: 1238, Name: Bronze spear, EquipId: 230
+Id: 1239, Name: Iron spear, EquipId: 296
+Id: 1240, Name: Iron spear, EquipId: 235
+Id: 1241, Name: Steel spear, EquipId: 297
+Id: 1242, Name: Steel spear, EquipId: 236
+Id: 1243, Name: Mithril spear, EquipId: 298
+Id: 1244, Name: Mithril spear, EquipId: 233
+Id: 1245, Name: Adamant spear, EquipId: 299
+Id: 1246, Name: Adamant spear, EquipId: 234
+Id: 1247, Name: Rune spear, EquipId: 300
+Id: 1249, Name: Dragon spear, EquipId: 301
+Id: 1251, Name: Bronze spear(p), EquipId: 302
+Id: 1253, Name: Iron spear(p), EquipId: 303
+Id: 1255, Name: Steel spear(p), EquipId: 304
+Id: 1257, Name: Mithril spear(p), EquipId: 305
+Id: 1259, Name: Adamant spear(p), EquipId: 306
+Id: 1261, Name: Rune spear(p), EquipId: 307
+Id: 1263, Name: Dragon spear(p), EquipId: 308
+Id: 1264, Name: Dragon spear(p), EquipId: 248
+Id: 1265, Name: Bronze pickaxe, EquipId: 309
+Id: 1266, Name: Bronze pickaxe, EquipId: 247
+Id: 1267, Name: Iron pickaxe, EquipId: 310
+Id: 1268, Name: Iron pickaxe, EquipId: 246
+Id: 1269, Name: Steel pickaxe, EquipId: 311
+Id: 1270, Name: Steel pickaxe, EquipId: 245
+Id: 1271, Name: Adamant pickaxe, EquipId: 312
+Id: 1272, Name: Adamant pickaxe, EquipId: 252
+Id: 1273, Name: Mithril pickaxe, EquipId: 313
+Id: 1274, Name: Mithril pickaxe, EquipId: 251
+Id: 1275, Name: Rune pickaxe, EquipId: 314
+Id: 1276, Name: Rune pickaxe, EquipId: 250
+Id: 1277, Name: Bronze sword, EquipId: 315
+Id: 1278, Name: Bronze sword, EquipId: 249
+Id: 1279, Name: Iron sword, EquipId: 316
+Id: 1280, Name: Iron sword, EquipId: 330
+Id: 1281, Name: Steel sword, EquipId: 317
+Id: 1282, Name: Steel sword, EquipId: 329
+Id: 1283, Name: Black sword, EquipId: 318
+Id: 1284, Name: Black sword, EquipId: 332
+Id: 1285, Name: Mithril sword, EquipId: 319
+Id: 1286, Name: Mithril sword, EquipId: 331
+Id: 1287, Name: Adamant sword, EquipId: 320
+Id: 1288, Name: Adamant sword, EquipId: 326
+Id: 1289, Name: Rune sword, EquipId: 321
+Id: 1290, Name: Rune sword, EquipId: 325
+Id: 1291, Name: Bronze longsword, EquipId: 322
+Id: 1292, Name: Bronze longsword, EquipId: 328
+Id: 1293, Name: Iron longsword, EquipId: 323
+Id: 1294, Name: Iron longsword, EquipId: 327
+Id: 1295, Name: Steel longsword, EquipId: 324
+Id: 1297, Name: Black longsword, EquipId: 325
+Id: 1299, Name: Mithril longsword, EquipId: 326
+Id: 1301, Name: Adamant longsword, EquipId: 327
+Id: 1303, Name: Rune longsword, EquipId: 328
+Id: 1305, Name: Dragon longsword, EquipId: 329
+Id: 1307, Name: Bronze 2h sword, EquipId: 330
+Id: 1309, Name: Iron 2h sword, EquipId: 331
+Id: 1311, Name: Steel 2h sword, EquipId: 332
+Id: 1312, Name: Steel 2h sword, EquipId: 345
+Id: 1313, Name: Black 2h sword, EquipId: 333
+Id: 1314, Name: Black 2h sword, EquipId: 346
+Id: 1315, Name: Mithril 2h sword, EquipId: 334
+Id: 1316, Name: Mithril 2h sword, EquipId: 347
+Id: 1317, Name: Adamant 2h sword, EquipId: 335
+Id: 1318, Name: Adamant 2h sword, EquipId: 348
+Id: 1319, Name: Rune 2h sword, EquipId: 336
+Id: 1320, Name: Rune 2h sword, EquipId: 341
+Id: 1321, Name: Bronze scimitar, EquipId: 337
+Id: 1322, Name: Bronze scimitar, EquipId: 342
+Id: 1323, Name: Iron scimitar, EquipId: 338
+Id: 1324, Name: Iron scimitar, EquipId: 343
+Id: 1325, Name: Steel scimitar, EquipId: 339
+Id: 1326, Name: Steel scimitar, EquipId: 344
+Id: 1327, Name: Black scimitar, EquipId: 340
+Id: 1329, Name: Mithril scimitar, EquipId: 341
+Id: 1331, Name: Adamant scimitar, EquipId: 342
+Id: 1333, Name: Rune scimitar, EquipId: 343
+Id: 1335, Name: Iron warhammer, EquipId: 344
+Id: 1337, Name: Bronze warhammer, EquipId: 345
+Id: 1339, Name: Steel warhammer, EquipId: 346
+Id: 1341, Name: Black warhammer, EquipId: 347
+Id: 1343, Name: Mithril warhammer, EquipId: 348
+Id: 1344, Name: Mithril warhammer, EquipId: 300
+Id: 1345, Name: Addy warhammer, EquipId: 349
+Id: 1346, Name: Addy warhammer, EquipId: 299
+Id: 1347, Name: Rune warhammer, EquipId: 350
+Id: 1348, Name: Rune warhammer, EquipId: 298
+Id: 1349, Name: Iron axe, EquipId: 351
+Id: 1350, Name: Iron axe, EquipId: 297
+Id: 1351, Name: Bronze axe, EquipId: 352
+Id: 1352, Name: Bronze axe, EquipId: 296
+Id: 1353, Name: Steel axe, EquipId: 353
+Id: 1354, Name: Steel axe, EquipId: 295
+Id: 1355, Name: Mithril axe, EquipId: 354
+Id: 1356, Name: Mithril axe, EquipId: 294
+Id: 1357, Name: Adamant axe, EquipId: 355
+Id: 1358, Name: Adamant axe, EquipId: 293
+Id: 1359, Name: Rune axe, EquipId: 356
+Id: 1361, Name: Black axe, EquipId: 357
+Id: 1363, Name: Iron battleaxe, EquipId: 358
+Id: 1365, Name: Steel battleaxe, EquipId: 359
+Id: 1367, Name: Black battleaxe, EquipId: 360
+Id: 1369, Name: Mithril battleaxe, EquipId: 361
+Id: 1371, Name: Adamant battleaxe, EquipId: 362
+Id: 1373, Name: Rune battleaxe, EquipId: 363
+Id: 1375, Name: Bronze battleaxe, EquipId: 364
+Id: 1376, Name: Bronze battleaxe, EquipId: 315
+Id: 1377, Name: Dragon battleaxe, EquipId: 365
+Id: 1378, Name: Dragon battleaxe, EquipId: 316
+Id: 1379, Name: Staff, EquipId: 366
+Id: 1380, Name: Staff, EquipId: 313
+Id: 1381, Name: Staff of air, EquipId: 367
+Id: 1382, Name: Staff of air, EquipId: 314
+Id: 1383, Name: Staff of water, EquipId: 368
+Id: 1384, Name: Staff of water, EquipId: 311
+Id: 1385, Name: Staff of earth, EquipId: 369
+Id: 1386, Name: Staff of earth, EquipId: 312
+Id: 1387, Name: Staff of fire, EquipId: 370
+Id: 1388, Name: Staff of fire, EquipId: 309
+Id: 1389, Name: Magic staff, EquipId: 371
+Id: 1390, Name: Magic staff, EquipId: 310
+Id: 1391, Name: Battlestaff, EquipId: 372
+Id: 1393, Name: Fire battlestaff, EquipId: 373
+Id: 1395, Name: Water battlestaff, EquipId: 374
+Id: 1397, Name: Air battlestaff, EquipId: 375
+Id: 1399, Name: Earth battlestaff, EquipId: 376
+Id: 1401, Name: Mystic fire staff, EquipId: 377
+Id: 1403, Name: Mystic water staff, EquipId: 378
+Id: 1405, Name: Mystic air staff, EquipId: 379
+Id: 1407, Name: Mystic earth staff, EquipId: 380
+Id: 1408, Name: Mystic earth staff, EquipId: 387
+Id: 1409, Name: Iban's staff, EquipId: 381
+Id: 1410, Name: Iban's staff, EquipId: 386
+Id: 1412, Name: Farmer's fork, EquipId: 389
+Id: 1414, Name: Halberd, EquipId: 388
+Id: 1418, Name: Javelin, EquipId: 390
+Id: 1419, Name: Scythe, EquipId: 382
+Id: 1420, Name: Iron mace, EquipId: 383
+Id: 1422, Name: Bronze mace, EquipId: 384
+Id: 1424, Name: Steel mace, EquipId: 385
+Id: 1426, Name: Black mace, EquipId: 386
+Id: 1428, Name: Mithril mace, EquipId: 387
+Id: 1430, Name: Adamant mace, EquipId: 388
+Id: 1432, Name: Rune mace, EquipId: 389
+Id: 1433, Name: Rune mace, EquipId: 383
+Id: 1434, Name: Dragon mace, EquipId: 390
+Id: 1437, Name: Rune essence, EquipId: 385
+Id: 1439, Name: Air talisman, EquipId: 384
+Id: 1473, Name: Yellow bead, EquipId: 360
+Id: 1475, Name: Black bead, EquipId: 359
+Id: 1477, Name: White bead, EquipId: 358
+Id: 1478, Name: Amulet of accuracy, EquipId: 391
+Id: 1479, Name: Amulet of accuracy, EquipId: 357
+Id: 1481, Name: Orb of light, EquipId: 364
+Id: 1483, Name: Orb of light, EquipId: 363
+Id: 1485, Name: Damp cloth, EquipId: 362
+Id: 1487, Name: Unicorn horn, EquipId: 361
+Id: 1488, Name: Paladin's badge, EquipId: 352
+Id: 1490, Name: Paladin's badge, EquipId: 351
+Id: 1492, Name: Doll of iban, EquipId: 350
+Id: 1494, Name: History of iban, EquipId: 349
+Id: 1495, Name: Klank's gauntlets, EquipId: 392
+Id: 1496, Name: Iban's dove, EquipId: 356
+Id: 1498, Name: Amulet of doomion, EquipId: 355
+Id: 1500, Name: Iban's shadow, EquipId: 354
+Id: 1502, Name: Iban's ashes, EquipId: 353
+Id: 1505, Name: A magic scroll, EquipId: 375
+Id: 1506, Name: Gas mask, EquipId: 393
+Id: 1507, Name: A small key, EquipId: 376
+Id: 1509, Name: Book, EquipId: 373
+Id: 1511, Name: Logs, EquipId: 394
+Id: 1513, Name: Magic logs, EquipId: 395
+Id: 1515, Name: Yew logs, EquipId: 380
+Id: 1517, Name: Maple logs, EquipId: 377
+Id: 1519, Name: Willow logs, EquipId: 378
+Id: 1520, Name: Willow logs, EquipId: 367
+Id: 1522, Name: Oak logs, EquipId: 368
+Id: 1524, Name: Lockpick, EquipId: 365
+Id: 1526, Name: Snake weed, EquipId: 366
+Id: 1528, Name: Ardrigal, EquipId: 371
+Id: 1530, Name: Sito foil, EquipId: 372
+Id: 1532, Name: Volencia moss, EquipId: 369
+Id: 1534, Name: Rogue's purse, EquipId: 370
+Id: 1536, Name: Map part, EquipId: 399
+Id: 1540, Name: Anti-dragon shield, EquipId: 396
+Id: 1547, Name: Key, EquipId: 398
+Id: 1554, Name: Fluffs' kitten, EquipId: 397
+Id: 1575, Name: Cat training medal, EquipId: 398
+Id: 1578, Name: Pete's candlestick, EquipId: 396
+Id: 1580, Name: Ice gloves, EquipId: 399
+Id: 1597, Name: Necklace mould, EquipId: 397
+Id: 1601, Name: Diamond, EquipId: 400
+Id: 1603, Name: Ruby, EquipId: 401
+Id: 1605, Name: Emerald, EquipId: 402
+Id: 1607, Name: Sapphire, EquipId: 403
+Id: 1609, Name: Opal, EquipId: 404
+Id: 1610, Name: Opal, EquipId: 393
+Id: 1611, Name: Jade, EquipId: 405
+Id: 1613, Name: Red topaz, EquipId: 406
+Id: 1615, Name: Dragonstone, EquipId: 407
+Id: 1644, Name: Diamond ring, EquipId: 391
+Id: 1654, Name: Gold necklace, EquipId: 408
+Id: 1656, Name: Sapphire necklace, EquipId: 409
+Id: 1658, Name: Emerald necklace, EquipId: 410
+Id: 1660, Name: Ruby necklace, EquipId: 411
+Id: 1662, Name: Diamond necklace, EquipId: 412
+Id: 1664, Name: Dragon necklace, EquipId: 413
+Id: 1665, Name: Dragon necklace, EquipId: 418
+Id: 1667, Name: Whoopsie, EquipId: 419
+Id: 1669, Name: Emerald necklace, EquipId: 416
+Id: 1671, Name: Diamond necklace, EquipId: 417
+Id: 1672, Name: Dragon necklace, EquipId: 422
+Id: 1674, Name: Gold amulet, EquipId: 423
+Id: 1676, Name: Sapphire amulet, EquipId: 420
+Id: 1678, Name: Emerald amulet, EquipId: 421
+Id: 1682, Name: Diamond amulet, EquipId: 425
+Id: 1686, Name: Whoopsie, EquipId: 424
+Id: 1688, Name: Emerald amulet, EquipId: 427
+Id: 1690, Name: Diamond amulet, EquipId: 428
+Id: 1691, Name: Dragonstone ammy, EquipId: 429
+Id: 1692, Name: Gold amulet, EquipId: 414
+Id: 1694, Name: Sapphire amulet, EquipId: 415
+Id: 1696, Name: Emerald amulet, EquipId: 416
+Id: 1698, Name: Ruby amulet, EquipId: 417
+Id: 1700, Name: Diamond amulet, EquipId: 418
+Id: 1702, Name: Dragonstone ammy, EquipId: 419
+Id: 1703, Name: Dragonstone ammy, EquipId: 413
+Id: 1704, Name: Amulet of glory, EquipId: 420
+Id: 1706, Name: Amulet of glory(1), EquipId: 421
+Id: 1708, Name: Amulet of glory(2), EquipId: 422
+Id: 1710, Name: Amulet of glory(3), EquipId: 423
+Id: 1712, Name: Amulet of glory(4), EquipId: 424
+Id: 1716, Name: Unblessed symbol, EquipId: 425
+Id: 1718, Name: Holy symbol, EquipId: 426
+Id: 1720, Name: Unstrung emblem, EquipId: 415
+Id: 1722, Name: Unpowered symbol, EquipId: 427
+Id: 1724, Name: Unholy symbol, EquipId: 428
+Id: 1725, Name: Amulet of strength, EquipId: 429
+Id: 1727, Name: Amulet of magic, EquipId: 430
+Id: 1729, Name: Amulet of defence, EquipId: 431
+Id: 1731, Name: Amulet of power, EquipId: 432
+Id: 1733, Name: Needle, EquipId: 433
+Id: 1735, Name: Shears, EquipId: 434
+Id: 1741, Name: Leather, EquipId: 435
+Id: 1750, Name: Red dragonhide, EquipId: 408
+Id: 1752, Name: Blue dragonhide, EquipId: 409
+Id: 1754, Name: Green dragonhide, EquipId: 410
+Id: 1756, Name: Chisel, EquipId: 411
+Id: 1757, Name: Brown apron, EquipId: 436
+Id: 1758, Name: Brown apron, EquipId: 412
+Id: 1760, Name: Ball of wool, EquipId: 401
+Id: 1762, Name: Soft clay, EquipId: 400
+Id: 1764, Name: Red dye, EquipId: 403
+Id: 1766, Name: Yellow dye, EquipId: 402
+Id: 1768, Name: Blue dye, EquipId: 405
+Id: 1770, Name: Orange dye, EquipId: 404
+Id: 1772, Name: Green dye, EquipId: 407
+Id: 1774, Name: Purple dye, EquipId: 406
+Id: 1785, Name: Glassblowing pipe, EquipId: 437
+Id: 1796, Name: Silver necklace, EquipId: 438
+Id: 1797, Name: Silver necklace, EquipId: 439
+Id: 1798, Name: Silver cup, EquipId: 445
+Id: 1800, Name: Silver bottle, EquipId: 443
+Id: 1801, Name: Silver bottle, EquipId: 444
+Id: 1808, Name: Criminal's thread, EquipId: 442
+Id: 1810, Name: Criminal's thread, EquipId: 441
+Id: 1812, Name: Pungent pot, EquipId: 440
+Id: 1833, Name: Desert shirt, EquipId: 440
+Id: 1835, Name: Desert robe, EquipId: 441
+Id: 1837, Name: Desert boots, EquipId: 442
+Id: 1844, Name: Slave shirt, EquipId: 443
+Id: 1845, Name: Slave robe, EquipId: 444
+Id: 1846, Name: Slave boots, EquipId: 445
+Id: 1850, Name: Technical plans, EquipId: 439
+Id: 1851, Name: Tenti pineapple, EquipId: 438
+Id: 1857, Name: Totem, EquipId: 437
+Id: 1895, Name: Slice of cake, EquipId: 436
+Id: 1904, Name: Burnt cake, EquipId: 434
+Id: 1910, Name: Greenman's ale, EquipId: 435
+Id: 1912, Name: Dragon bitter, EquipId: 430
+Id: 1914, Name: Dwarven stout, EquipId: 431
+Id: 1916, Name: Grog, EquipId: 432
+Id: 1917, Name: Beer, EquipId: 446
+Id: 1918, Name: Beer, EquipId: 433
+Id: 1919, Name: Beer glass, EquipId: 447
+Id: 1920, Name: Beer glass, EquipId: 452
+Id: 1925, Name: Bucket, EquipId: 448
+Id: 1931, Name: Pot, EquipId: 449
+Id: 1947, Name: Grain, EquipId: 451
+Id: 1949, Name: Chef's hat, EquipId: 450
+Id: 1962, Name: Easter egg, EquipId: 450
+Id: 1963, Name: Banana, EquipId: 451
+Id: 1971, Name: Kebab, EquipId: 448
+Id: 1973, Name: Chocolate bar, EquipId: 452
+Id: 1977, Name: Chocolatey milk, EquipId: 449
+Id: 1996, Name: Unfermented wine, EquipId: 446
+Id: 2341, Name: Wrapped oomlie, EquipId: 454
+Id: 2347, Name: Hammer, EquipId: 453
+Id: 2348, Name: Hammer, EquipId: 455
+Id: 2351, Name: Iron bar, EquipId: 456
+Id: 2353, Name: Steel bar, EquipId: 457
+Id: 2358, Name: Gold bar, EquipId: 459
+Id: 2359, Name: Mithril bar, EquipId: 458
+Id: 2360, Name: Mithril bar, EquipId: 461
+Id: 2361, Name: Adamantite bar, EquipId: 460
+Id: 2362, Name: Adamantite bar, EquipId: 463
+Id: 2363, Name: Runite bar, EquipId: 462
+Id: 2374, Name: Relic part 2, EquipId: 464
+Id: 2395, Name: Magic ogre potion, EquipId: 454
+Id: 2402, Name: Silverlight, EquipId: 455
+Id: 2405, Name: Carnillean armour, EquipId: 456
+Id: 2406, Name: Hazeel's mark, EquipId: 457
+Id: 2408, Name: Diary, EquipId: 468
+Id: 2410, Name: Magnet, EquipId: 469
+Id: 2412, Name: Saradomin cape, EquipId: 458
+Id: 2413, Name: Guthix cape, EquipId: 459
+Id: 2414, Name: Zamorak cape, EquipId: 460
+Id: 2415, Name: Saradomin staff, EquipId: 461
+Id: 2416, Name: Guthix staff, EquipId: 462
+Id: 2417, Name: Zamorak staff, EquipId: 463
+Id: 2419, Name: Wig, EquipId: 473
+Id: 2421, Name: Wig, EquipId: 470
+Id: 2422, Name: Blue partyhat, EquipId: 464
+Id: 2423, Name: Key print, EquipId: 471
+Id: 2460, Name: Flowers, EquipId: 465
+Id: 2462, Name: Flowers, EquipId: 466
+Id: 2464, Name: Flowers, EquipId: 467
+Id: 2466, Name: Flowers, EquipId: 468
+Id: 2468, Name: Flowers, EquipId: 469
+Id: 2470, Name: Flowers, EquipId: 470
+Id: 2472, Name: Flowers, EquipId: 471
+Id: 2474, Name: Flowers, EquipId: 472
+Id: 2476, Name: Flowers, EquipId: 473
+Id: 2487, Name: Blue d'hide vamb, EquipId: 474
+Id: 2489, Name: Red d'hide vamb, EquipId: 475
+Id: 2491, Name: Black d'hide vamb, EquipId: 476
+Id: 2493, Name: Blue d'hide chaps, EquipId: 477
+Id: 2495, Name: Red d'hide chaps, EquipId: 478
+Id: 2497, Name: Black d'hide chaps, EquipId: 479
+Id: 2499, Name: Blue d'hide body, EquipId: 480
+Id: 2501, Name: Red d'hide body, EquipId: 481
+Id: 2503, Name: Black d'hide body, EquipId: 482
+Id: 2520, Name: Toy horsey, EquipId: 483
+Id: 2522, Name: Toy horsey, EquipId: 484
+Id: 2524, Name: Toy horsey, EquipId: 485
+Id: 2526, Name: Toy horsey, EquipId: 486
+Id: 2530, Name: Bones, EquipId: 453
+Id: 2561, Name: Ring of dueling(4), EquipId: 532
+Id: 2563, Name: Ring of dueling(3), EquipId: 533
+Id: 2565, Name: Ring of dueling(2), EquipId: 530
+Id: 2567, Name: Ring of dueling(1), EquipId: 531
+Id: 2569, Name: Ring of forging, EquipId: 536
+Id: 2573, Name: Ring of wealth, EquipId: 534
+Id: 2575, Name: Watch, EquipId: 535
+Id: 2576, Name: Chart, EquipId: 524
+Id: 2577, Name: Ranger boots, EquipId: 487
+Id: 2578, Name: Ranger boots, EquipId: 525
+Id: 2579, Name: Wizard boots, EquipId: 488
+Id: 2580, Name: Wizard boots, EquipId: 522
+Id: 2581, Name: Robin hood hat, EquipId: 489
+Id: 2582, Name: Robin hood hat, EquipId: 523
+Id: 2583, Name: Black platebody (t), EquipId: 490
+Id: 2584, Name: Black platebody (t), EquipId: 528
+Id: 2585, Name: Black platelegs (t), EquipId: 491
+Id: 2586, Name: Black platelegs (t), EquipId: 529
+Id: 2587, Name: Black full helm (t), EquipId: 492
+Id: 2588, Name: Black full helm (t), EquipId: 526
+Id: 2589, Name: Black kiteshield (t), EquipId: 493
+Id: 2590, Name: Black kiteshield (t), EquipId: 527
+Id: 2591, Name: Black platebody (g), EquipId: 494
+Id: 2593, Name: Black platelegs (g), EquipId: 495
+Id: 2595, Name: Black full helm (g), EquipId: 496
+Id: 2597, Name: Black kiteshield (g), EquipId: 497
+Id: 2599, Name: Adam platebody (t), EquipId: 498
+Id: 2601, Name: Adam platelegs (t), EquipId: 499
+Id: 2603, Name: Adam kiteshield (t), EquipId: 500
+Id: 2605, Name: Adam full helm (t), EquipId: 501
+Id: 2607, Name: Adam platebody (g), EquipId: 502
+Id: 2608, Name: Adam platebody (g), EquipId: 509
+Id: 2609, Name: Adam platelegs (g), EquipId: 503
+Id: 2610, Name: Adam platelegs (g), EquipId: 508
+Id: 2611, Name: Adam kiteshield (g), EquipId: 504
+Id: 2612, Name: Adam kiteshield (g), EquipId: 507
+Id: 2613, Name: Adam full helm (g), EquipId: 505
+Id: 2614, Name: Adam full helm (g), EquipId: 506
+Id: 2615, Name: Rune platebody (g), EquipId: 506
+Id: 2616, Name: Rune platebody (g), EquipId: 513
+Id: 2617, Name: Rune platelegs (g), EquipId: 507
+Id: 2618, Name: Rune platelegs (g), EquipId: 512
+Id: 2619, Name: Rune full helm (g), EquipId: 508
+Id: 2620, Name: Rune full helm (g), EquipId: 511
+Id: 2621, Name: Rune kiteshield (g), EquipId: 509
+Id: 2622, Name: Rune kiteshield (g), EquipId: 510
+Id: 2623, Name: Rune platebody (t), EquipId: 510
+Id: 2625, Name: Rune platelegs (t), EquipId: 511
+Id: 2627, Name: Rune full helm (t), EquipId: 512
+Id: 2629, Name: Rune kiteshield (t), EquipId: 513
+Id: 2631, Name: Highwayman mask, EquipId: 514
+Id: 2633, Name: Blue beret, EquipId: 515
+Id: 2635, Name: Black beret, EquipId: 516
+Id: 2637, Name: White beret, EquipId: 517
+Id: 2639, Name: Tan cavalier, EquipId: 518
+Id: 2641, Name: Dark cavalier, EquipId: 519
+Id: 2643, Name: Black cavalier, EquipId: 520
+Id: 2645, Name: Red headband, EquipId: 521
+Id: 2647, Name: Black headband, EquipId: 522
+Id: 2649, Name: Brown headband, EquipId: 523
+Id: 2651, Name: Pirate's hat, EquipId: 524
+Id: 2653, Name: Zamorak platebody, EquipId: 525
+Id: 2655, Name: Zamorak platelegs, EquipId: 526
+Id: 2657, Name: Zamorak full helm, EquipId: 527
+Id: 2659, Name: Zamorak kiteshield, EquipId: 528
+Id: 2661, Name: Saradomin platebody, EquipId: 529
+Id: 2663, Name: Saradomin platelegs, EquipId: 530
+Id: 2665, Name: Saradomin full helm, EquipId: 531
+Id: 2667, Name: Saradomin kiteshield, EquipId: 532
+Id: 2669, Name: Guthix platebody, EquipId: 533
+Id: 2671, Name: Guthix platelegs, EquipId: 534
+Id: 2673, Name: Guthix full helm, EquipId: 535
+Id: 2675, Name: Guthix kiteshield, EquipId: 536
+Id: 2708, Name: Clue scroll, EquipId: 486
+Id: 2712, Name: Clue scroll, EquipId: 484
+Id: 2714, Name: Casket, EquipId: 485
+Id: 2718, Name: Casket, EquipId: 483
+Id: 2734, Name: Casket, EquipId: 482
+Id: 2737, Name: Clue scroll, EquipId: 481
+Id: 2739, Name: Clue scroll, EquipId: 480
+Id: 2741, Name: Clue scroll, EquipId: 479
+Id: 2743, Name: Clue scroll, EquipId: 478
+Id: 2745, Name: Clue scroll, EquipId: 477
+Id: 2747, Name: Clue scroll, EquipId: 476
+Id: 2749, Name: Sliding piece, EquipId: 475
+Id: 2751, Name: Sliding piece, EquipId: 474
+Id: 2752, Name: Sliding piece, EquipId: 502
+Id: 2754, Name: Sliding piece, EquipId: 503
+Id: 2756, Name: Sliding piece, EquipId: 504
+Id: 2758, Name: Sliding piece, EquipId: 505
+Id: 2760, Name: Sliding piece, EquipId: 498
+Id: 2762, Name: Sliding piece, EquipId: 499
+Id: 2764, Name: Sliding piece, EquipId: 500
+Id: 2766, Name: Sliding piece, EquipId: 501
+Id: 2769, Name: Sliding piece, EquipId: 494
+Id: 2771, Name: Sliding piece, EquipId: 495
+Id: 2773, Name: Clue scroll, EquipId: 496
+Id: 2775, Name: Casket, EquipId: 497
+Id: 2777, Name: Casket, EquipId: 490
+Id: 2779, Name: Casket, EquipId: 491
+Id: 2781, Name: Casket, EquipId: 492
+Id: 2783, Name: Clue scroll, EquipId: 493
+Id: 2784, Name: Casket, EquipId: 487
+Id: 2788, Name: Clue scroll, EquipId: 489
+Id: 2790, Name: Clue scroll, EquipId: 488
+Id: 2817, Name: Clue scroll, EquipId: 544
+Id: 2819, Name: Clue scroll, EquipId: 543
+Id: 2821, Name: Clue scroll, EquipId: 542
+Id: 2823, Name: Clue scroll, EquipId: 541
+Id: 2825, Name: Clue scroll, EquipId: 548
+Id: 2827, Name: Clue scroll, EquipId: 547
+Id: 2829, Name: Clue scroll, EquipId: 546
+Id: 2831, Name: Clue scroll, EquipId: 545
+Id: 2832, Name: Key, EquipId: 552
+Id: 2834, Name: Key, EquipId: 551
+Id: 2836, Name: Key, EquipId: 550
+Id: 2838, Name: Key, EquipId: 549
+Id: 2840, Name: Key, EquipId: 556
+Id: 2842, Name: Challenge scroll, EquipId: 555
+Id: 2844, Name: Challenge scroll, EquipId: 554
+Id: 2846, Name: Challenge scroll, EquipId: 553
+Id: 2864, Name: Ogre arrow shaft, EquipId: 537
+Id: 2872, Name: Ogre bellows (3), EquipId: 540
+Id: 2873, Name: Ogre bellows (2), EquipId: 539
+Id: 2878, Name: Cooked chompy, EquipId: 538
+Id: 2883, Name: Ogre bow, EquipId: 537
+Id: 2885, Name: Whoopsie, EquipId: 570
+Id: 2886, Name: Battered book, EquipId: 569
+Id: 2888, Name: A stone bowl, EquipId: 538
+Id: 2889, Name: A stone bowl, EquipId: 539
+Id: 2890, Name: Elemental shield, EquipId: 540
+Id: 2894, Name: Boots, EquipId: 541
+Id: 2895, Name: Boots, EquipId: 572
+Id: 2896, Name: Robe top, EquipId: 542
+Id: 2898, Name: Robe bottoms, EquipId: 543
+Id: 2900, Name: Hat, EquipId: 544
+Id: 2901, Name: Hat, EquipId: 573
+Id: 2902, Name: Gloves, EquipId: 545
+Id: 2904, Name: Boots, EquipId: 546
+Id: 2905, Name: Boots, EquipId: 577
+Id: 2906, Name: Robe top, EquipId: 547
+Id: 2907, Name: Robe top, EquipId: 575
+Id: 2908, Name: Robe bottoms, EquipId: 548
+Id: 2909, Name: Robe bottoms, EquipId: 581
+Id: 2910, Name: Hat, EquipId: 549
+Id: 2911, Name: Hat, EquipId: 579
+Id: 2912, Name: Gloves, EquipId: 550
+Id: 2913, Name: Gloves, EquipId: 557
+Id: 2914, Name: Boots, EquipId: 551
+Id: 2915, Name: Boots, EquipId: 558
+Id: 2916, Name: Robe top, EquipId: 552
+Id: 2917, Name: Robe top, EquipId: 559
+Id: 2918, Name: Robe bottoms, EquipId: 553
+Id: 2919, Name: Robe bottoms, EquipId: 560
+Id: 2920, Name: Hat, EquipId: 554
+Id: 2921, Name: Hat, EquipId: 561
+Id: 2922, Name: Gloves, EquipId: 555
+Id: 2923, Name: Gloves, EquipId: 562
+Id: 2924, Name: Boots, EquipId: 556
+Id: 2925, Name: Boots, EquipId: 563
+Id: 2926, Name: Robe top, EquipId: 557
+Id: 2927, Name: Robe top, EquipId: 564
+Id: 2928, Name: Robe bottoms, EquipId: 558
+Id: 2930, Name: Hat, EquipId: 559
+Id: 2932, Name: Gloves, EquipId: 560
+Id: 2934, Name: Boots, EquipId: 561
+Id: 2936, Name: Robe top, EquipId: 562
+Id: 2937, Name: Robe top, EquipId: 567
+Id: 2938, Name: Robe bottoms, EquipId: 563
+Id: 2940, Name: Hat, EquipId: 564
+Id: 2942, Name: Gloves, EquipId: 565
+Id: 2946, Name: Golden tinderbox, EquipId: 566
+Id: 2949, Name: Golden hammer, EquipId: 567
+Id: 2952, Name: Wolfbane, EquipId: 568
+Id: 2961, Name: Silver sickle, EquipId: 569
+Id: 2963, Name: Silver sickle(b), EquipId: 570
+Id: 2968, Name: Druidic spell, EquipId: 571
+Id: 2969, Name: A used spell, EquipId: 572
+Id: 2978, Name: Chompy bird hat, EquipId: 573
+Id: 2979, Name: Chompy bird hat, EquipId: 574
+Id: 2980, Name: Chompy bird hat, EquipId: 575
+Id: 2981, Name: Chompy bird hat, EquipId: 576
+Id: 2982, Name: Chompy bird hat, EquipId: 577
+Id: 2983, Name: Chompy bird hat, EquipId: 578
+Id: 2984, Name: Chompy bird hat, EquipId: 579
+Id: 2985, Name: Chompy bird hat, EquipId: 580
+Id: 2986, Name: Chompy bird hat, EquipId: 581
+Id: 2987, Name: Chompy bird hat, EquipId: 582
+Id: 2988, Name: Chompy bird hat, EquipId: 583
+Id: 2989, Name: Chompy bird hat, EquipId: 584
+Id: 2990, Name: Chompy bird hat, EquipId: 585
+Id: 2991, Name: Chompy bird hat, EquipId: 586
+Id: 2992, Name: Chompy bird hat, EquipId: 587
+Id: 2993, Name: Chompy bird hat, EquipId: 588
+Id: 2994, Name: Chompy bird hat, EquipId: 589
+Id: 2995, Name: Chompy bird hat, EquipId: 590
+Id: 2997, Name: Pirate's hook, EquipId: 591
+Id: 3053, Name: Lava battlestaff, EquipId: 592
+Id: 3054, Name: Mystic lava staff, EquipId: 593
+Id: 3057, Name: Mime mask, EquipId: 594
+Id: 3058, Name: Mime top, EquipId: 595
+Id: 3059, Name: Mime legs, EquipId: 596
+Id: 3060, Name: Mime gloves, EquipId: 597
+Id: 3061, Name: Mime boots, EquipId: 598
+Id: 3093, Name: Black dart, EquipId: 599
+Id: 3094, Name: Black dart(p), EquipId: 600
+Id: 3095, Name: Bronze claws, EquipId: 601
+Id: 3096, Name: Iron claws, EquipId: 602
+Id: 3097, Name: Steel claws, EquipId: 603
+Id: 3098, Name: Black claws, EquipId: 604
+Id: 3099, Name: Mithril claws, EquipId: 605
+Id: 3100, Name: Adamant claws, EquipId: 606
+Id: 3101, Name: Rune claws, EquipId: 607
+Id: 3104, Name: Secret way map, EquipId: 620
+Id: 3105, Name: Climbing boots, EquipId: 608
+Id: 3106, Name: Climbing boots, EquipId: 618
+Id: 3107, Name: Spiked boots, EquipId: 609
+Id: 3110, Name: Stone ball, EquipId: 622
+Id: 3116, Name: Iron claws, EquipId: 616
+Id: 3117, Name: Steel claws, EquipId: 617
+Id: 3119, Name: Mithril claws, EquipId: 615
+Id: 3121, Name: Rune claws, EquipId: 613
+Id: 3122, Name: Granite shield, EquipId: 610
+Id: 3123, Name: Shaikahan bones, EquipId: 612
+Id: 3124, Name: Shaikahan bones, EquipId: 614
+Id: 3138, Name: Potato cactus, EquipId: 599
+Id: 3139, Name: Potato cactus, EquipId: 600
+Id: 3140, Name: Dragon chainbody, EquipId: 611
+Id: 3157, Name: Karambwan vessel, EquipId: 612
+Id: 3159, Name: Karambwan vessel, EquipId: 613
+Id: 3164, Name: Karamjan rum, EquipId: 614
+Id: 3170, Name: Bronze spear(kp), EquipId: 615
+Id: 3171, Name: Iron spear(kp), EquipId: 616
+Id: 3172, Name: Steel spear(kp), EquipId: 617
+Id: 3173, Name: Mithril spear(kp), EquipId: 618
+Id: 3174, Name: Adamant spear(kp), EquipId: 619
+Id: 3175, Name: Rune spear(kp), EquipId: 620
+Id: 3176, Name: Dragon spear(kp), EquipId: 621
+Id: 3177, Name: Banana left, EquipId: 622
+Id: 3187, Name: Bones, EquipId: 609
+Id: 3189, Name: Cleaning cloth, EquipId: 608
+Id: 3190, Name: Bronze halberd, EquipId: 623
+Id: 3192, Name: Iron halberd, EquipId: 624
+Id: 3193, Name: Iron halberd, EquipId: 607
+Id: 3194, Name: Steel halberd, EquipId: 625
+Id: 3195, Name: Steel halberd, EquipId: 605
+Id: 3196, Name: Black halberd, EquipId: 626
+Id: 3197, Name: Black halberd, EquipId: 603
+Id: 3198, Name: Mithril halberd, EquipId: 627
+Id: 3199, Name: Mithril halberd, EquipId: 601
+Id: 3200, Name: Adamant halberd, EquipId: 628
+Id: 3202, Name: Rune halberd, EquipId: 629
+Id: 3204, Name: Dragon halberd, EquipId: 630
+Id: 3208, Name: Crystal pendant, EquipId: 631
+Id: 3236, Name: Symbol3, EquipId: 593
+Id: 3237, Name: Symbol4, EquipId: 592
+Id: 3240, Name: Bark, EquipId: 595
+Id: 3241, Name: Man, EquipId: 594
+Id: 3245, Name: Warrior woman, EquipId: 598
+Id: 3246, Name: Whoopsie, EquipId: 597
+Id: 3247, Name: Rogue, EquipId: 596
+Id: 3264, Name: Ground thistle, EquipId: 587
+Id: 3265, Name: Troll potion, EquipId: 586
+Id: 3266, Name: Drunk parrot, EquipId: 589
+Id: 3267, Name: Dirty robe, EquipId: 588
+Id: 3268, Name: Fake man, EquipId: 584
+Id: 3269, Name: Storeroom key, EquipId: 583
+Id: 3270, Name: Alco-chunks, EquipId: 585
+Id: 3272, Name: Whoopsie, EquipId: 590
+Id: 3327, Name: Myre snelm, EquipId: 632
+Id: 3329, Name: Blood'n'tar snelm, EquipId: 633
+Id: 3331, Name: Ochre snelm, EquipId: 634
+Id: 3332, Name: Ochre snelm, EquipId: 642
+Id: 3333, Name: Bruise blue snelm, EquipId: 635
+Id: 3334, Name: Bruise blue snelm, EquipId: 641
+Id: 3335, Name: Broken bark snelm, EquipId: 636
+Id: 3337, Name: Myre snelm, EquipId: 637
+Id: 3339, Name: Blood'n'tar snelm, EquipId: 638
+Id: 3341, Name: Ochre snelm, EquipId: 639
+Id: 3343, Name: Bruise blue snelm, EquipId: 640
+Id: 3353, Name: Blamish bark shell, EquipId: 644
+Id: 3355, Name: Blamish myre shell, EquipId: 643
+Id: 3359, Name: Blamish ochre shell, EquipId: 645
+Id: 3385, Name: Splitbark helm, EquipId: 641
+Id: 3387, Name: Splitbark body, EquipId: 642
+Id: 3389, Name: Splitbark legs, EquipId: 643
+Id: 3391, Name: Splitbark gauntlets, EquipId: 644
+Id: 3393, Name: Splitbark greaves, EquipId: 645
+Id: 3409, Name: Serum 207 (4), EquipId: 638
+Id: 3411, Name: Serum 207 (3), EquipId: 637
+Id: 3413, Name: Serum 207 (2), EquipId: 636
+Id: 3415, Name: Serum 207 (1), EquipId: 635
+Id: 3417, Name: Serum 207(p) (3), EquipId: 634
+Id: 3419, Name: Serum 207(p) (1), EquipId: 633
+Id: 3421, Name: Limestone brick, EquipId: 632
+Id: 3436, Name: Sacred oil(1), EquipId: 639
+Id: 3438, Name: Pyre logs, EquipId: 640
+Id: 3472, Name: Black plateskirt (t), EquipId: 646
+Id: 3473, Name: Black plateskirt (g), EquipId: 647
+Id: 3474, Name: Adam plateskirt (t), EquipId: 648
+Id: 3475, Name: Adam plateskirt (g), EquipId: 649
+Id: 3476, Name: Rune plateskirt (g), EquipId: 650
+Id: 3477, Name: Rune plateskirt (t), EquipId: 651
+Id: 3478, Name: Zamorak plateskirt, EquipId: 652
+Id: 3479, Name: Saradomin plateskirt, EquipId: 653
+Id: 3480, Name: Guthix plateskirt, EquipId: 654
+Id: 3481, Name: Gilded platebody, EquipId: 655
+Id: 3483, Name: Gilded platelegs, EquipId: 656
+Id: 3485, Name: Gilded plateskirt, EquipId: 657
+Id: 3486, Name: Gilded full helm, EquipId: 658
+Id: 3488, Name: Gilded kiteshield, EquipId: 659
+Id: 3528, Name: Clue scroll, EquipId: 626
+Id: 3530, Name: Clue scroll, EquipId: 625
+Id: 3532, Name: Clue scroll, EquipId: 624
+Id: 3534, Name: Clue scroll, EquipId: 623
+Id: 3537, Name: Casket, EquipId: 630
+Id: 3539, Name: Casket, EquipId: 629
+Id: 3541, Name: Casket, EquipId: 628
+Id: 3543, Name: Casket, EquipId: 627
+Id: 3549, Name: Casket, EquipId: 631
+Id: 3688, Name: Unstrung lyre, EquipId: 660
+Id: 3689, Name: Lyre, EquipId: 661
+Id: 3690, Name: Enchanted lyre, EquipId: 662
+Id: 3691, Name: Enchanted lyre(1), EquipId: 663
+Id: 3695, Name: Pet rock, EquipId: 664
+Id: 3711, Name: Keg of beer, EquipId: 665
+Id: 3748, Name: Fremennik helm, EquipId: 666
+Id: 3749, Name: Archer helm, EquipId: 667
+Id: 3751, Name: Berserker helm, EquipId: 668
+Id: 3753, Name: Warrior helm, EquipId: 669
+Id: 3755, Name: Farseer helm, EquipId: 670
+Id: 3757, Name: Fremennik blade, EquipId: 671
+Id: 3758, Name: Fremennik shield, EquipId: 672
+Id: 3759, Name: Fremennik cloak, EquipId: 673
+Id: 3761, Name: Fremennik cloak, EquipId: 674
+Id: 3762, Name: Fremennik cloak, EquipId: 657
+Id: 3763, Name: Fremennik cloak, EquipId: 675
+Id: 3764, Name: Fremennik cloak, EquipId: 656
+Id: 3765, Name: Fremennik cloak, EquipId: 676
+Id: 3766, Name: Fremennik cloak, EquipId: 655
+Id: 3767, Name: Fremennik shirt, EquipId: 677
+Id: 3769, Name: Fremennik shirt, EquipId: 678
+Id: 3771, Name: Fremennik shirt, EquipId: 679
+Id: 3773, Name: Fremennik shirt, EquipId: 680
+Id: 3775, Name: Fremennik shirt, EquipId: 681
+Id: 3777, Name: Fremennik cloak, EquipId: 682
+Id: 3779, Name: Fremennik cloak, EquipId: 683
+Id: 3781, Name: Fremennik cloak, EquipId: 684
+Id: 3782, Name: Fremennik cloak, EquipId: 646
+Id: 3783, Name: Fremennik cloak, EquipId: 685
+Id: 3784, Name: Fremennik cloak, EquipId: 648
+Id: 3785, Name: Fremennik cloak, EquipId: 686
+Id: 3786, Name: Fremennik cloak, EquipId: 650
+Id: 3787, Name: Fremennik cloak, EquipId: 687
+Id: 3788, Name: Fremennik cloak, EquipId: 652
+Id: 3789, Name: Fremennik cloak, EquipId: 688
+Id: 3790, Name: Fremennik cloak, EquipId: 654
+Id: 3791, Name: Fremennik boots, EquipId: 689
+Id: 3793, Name: Fremennik robe, EquipId: 690
+Id: 3795, Name: Fremennik skirt, EquipId: 691
+Id: 3797, Name: Fremennik hat, EquipId: 692
+Id: 3799, Name: Gloves, EquipId: 693
+Id: 3801, Name: Keg of beer, EquipId: 694
+Id: 3803, Name: Beer, EquipId: 695
+Id: 3839, Name: Damaged book, EquipId: 696
+Id: 3840, Name: Holy book, EquipId: 697
+Id: 3841, Name: Damaged book, EquipId: 698
+Id: 3842, Name: Unholy book, EquipId: 699
+Id: 3843, Name: Damaged book, EquipId: 700
+Id: 3844, Name: Book of balance, EquipId: 701
+Id: 3853, Name: Games necklace(8), EquipId: 703
+Id: 3855, Name: Games necklace(7), EquipId: 704
+Id: 3857, Name: Games necklace(6), EquipId: 705
+Id: 3859, Name: Games necklace(5), EquipId: 706
+Id: 3861, Name: Games necklace(4), EquipId: 707
+Id: 3863, Name: Games necklace(3), EquipId: 708
+Id: 3865, Name: Games necklace(2), EquipId: 709
+Id: 3867, Name: Games necklace(1), EquipId: 710
+Id: 3871, Name: Board game piece, EquipId: 712
+Id: 3873, Name: Board game piece, EquipId: 709
+Id: 3875, Name: Board game piece, EquipId: 710
+Id: 3877, Name: Board game piece, EquipId: 707
+Id: 3879, Name: Board game piece, EquipId: 708
+Id: 3881, Name: Board game piece, EquipId: 705
+Id: 3883, Name: Board game piece, EquipId: 706
+Id: 3885, Name: Board game piece, EquipId: 703
+Id: 3887, Name: Board game piece, EquipId: 704
+Id: 3893, Name: Stool, EquipId: 711
+Id: 3899, Name: Iron sickle, EquipId: 712
+Id: 3923, Name: Whoopsie, EquipId: 701
+Id: 3925, Name: Whoopsie, EquipId: 702
+Id: 3928, Name: Sliding button, EquipId: 696
+Id: 3932, Name: Sliding button, EquipId: 700
+Id: 3933, Name: Whoopsie, EquipId: 699
+Id: 3934, Name: Sliding button, EquipId: 698
+Id: 3935, Name: Whoopsie, EquipId: 697
+Id: 3937, Name: Whoopsie, EquipId: 692
+Id: 3939, Name: Whoopsie, EquipId: 693
+Id: 3941, Name: Whoopsie, EquipId: 694
+Id: 3943, Name: Whoopsie, EquipId: 695
+Id: 3945, Name: Whoopsie, EquipId: 688
+Id: 3947, Name: Whoopsie, EquipId: 689
+Id: 3949, Name: Whoopsie, EquipId: 690
+Id: 3951, Name: Whoopsie, EquipId: 691
+Id: 3968, Name: Sliding button, EquipId: 675
+Id: 3970, Name: Sliding button, EquipId: 674
+Id: 3972, Name: Sliding button, EquipId: 673
+Id: 3973, Name: Whoopsie, EquipId: 672
+Id: 3974, Name: Sliding button, EquipId: 671
+Id: 3976, Name: Sliding button, EquipId: 679
+Id: 3978, Name: Sliding button, EquipId: 678
+Id: 3980, Name: Sliding button, EquipId: 677
+Id: 3982, Name: Sliding button, EquipId: 676
+Id: 3985, Name: Whoopsie, EquipId: 683
+Id: 3987, Name: Whoopsie, EquipId: 682
+Id: 3989, Name: Whoopsie, EquipId: 681
+Id: 3991, Name: Whoopsie, EquipId: 680
+Id: 3993, Name: Whoopsie, EquipId: 687
+Id: 3995, Name: Whoopsie, EquipId: 686
+Id: 3997, Name: Whoopsie, EquipId: 685
+Id: 3999, Name: Whoopsie, EquipId: 684
+Id: 4021, Name: M'speak amulet, EquipId: 713
+Id: 4025, Name: Monkey greegree, EquipId: 669
+Id: 4027, Name: Monkey greegree, EquipId: 670
+Id: 4028, Name: Monkey greegree, EquipId: 666
+Id: 4029, Name: Monkey greegree, EquipId: 667
+Id: 4031, Name: Monkey greegree, EquipId: 668
+Id: 4035, Name: 10th squad sigil, EquipId: 714
+Id: 4037, Name: Saradomin banner, EquipId: 715
+Id: 4039, Name: Zamorak banner, EquipId: 716
+Id: 4040, Name: Zamorak banner, EquipId: 665
+Id: 4041, Name: Hooded cloak, EquipId: 717
+Id: 4042, Name: Hooded cloak, EquipId: 718
+Id: 4068, Name: Decorative sword, EquipId: 719
+Id: 4069, Name: Decorative armour, EquipId: 720
+Id: 4070, Name: Decorative armour, EquipId: 721
+Id: 4071, Name: Decorative helm, EquipId: 722
+Id: 4072, Name: Decorative shield, EquipId: 723
+Id: 4073, Name: Damp tinderbox, EquipId: 724
+Id: 4081, Name: Salve amulet, EquipId: 726
+Id: 4083, Name: Sled, EquipId: 727
+Id: 4084, Name: Sled, EquipId: 728
+Id: 4085, Name: Wax, EquipId: 729
+Id: 4086, Name: Trollweiss, EquipId: 730
+Id: 4087, Name: Dragon platelegs, EquipId: 731
+Id: 4089, Name: Mystic hat, EquipId: 732
+Id: 4091, Name: Mystic robe top, EquipId: 733
+Id: 4093, Name: Mystic robe bottom, EquipId: 734
+Id: 4095, Name: Mystic gloves, EquipId: 735
+Id: 4097, Name: Mystic boots, EquipId: 736
+Id: 4099, Name: Mystic hat, EquipId: 737
+Id: 4101, Name: Mystic robe top, EquipId: 738
+Id: 4103, Name: Mystic robe bottom, EquipId: 739
+Id: 4105, Name: Mystic gloves, EquipId: 740
+Id: 4107, Name: Mystic boots, EquipId: 741
+Id: 4109, Name: Mystic hat, EquipId: 742
+Id: 4111, Name: Mystic robe top, EquipId: 743
+Id: 4113, Name: Mystic robe bottom, EquipId: 744
+Id: 4114, Name: Mystic robe bottom, EquipId: 768
+Id: 4115, Name: Mystic gloves, EquipId: 745
+Id: 4116, Name: Mystic gloves, EquipId: 769
+Id: 4117, Name: Mystic boots, EquipId: 746
+Id: 4118, Name: Mystic boots, EquipId: 771
+Id: 4119, Name: Bronze boots, EquipId: 747
+Id: 4120, Name: Bronze boots, EquipId: 773
+Id: 4121, Name: Iron boots, EquipId: 748
+Id: 4122, Name: Iron boots, EquipId: 775
+Id: 4123, Name: Steel boots, EquipId: 749
+Id: 4124, Name: Steel boots, EquipId: 777
+Id: 4125, Name: Black boots, EquipId: 750
+Id: 4126, Name: Black boots, EquipId: 779
+Id: 4127, Name: Mithril boots, EquipId: 751
+Id: 4129, Name: Adamant boots, EquipId: 752
+Id: 4131, Name: Rune boots, EquipId: 753
+Id: 4133, Name: Crawling hand, EquipId: 764
+Id: 4135, Name: Banshee, EquipId: 763
+Id: 4139, Name: Basilisk, EquipId: 765
+Id: 4145, Name: Dust devil, EquipId: 766
+Id: 4151, Name: Abyssal whip, EquipId: 754
+Id: 4153, Name: Granite maul, EquipId: 755
+Id: 4155, Name: Enchanted gem, EquipId: 756
+Id: 4156, Name: Mirror shield, EquipId: 757
+Id: 4157, Name: Mirror shield, EquipId: 767
+Id: 4158, Name: Leaf-bladed spear, EquipId: 758
+Id: 4159, Name: Leaf-bladed spear, EquipId: 759
+Id: 4161, Name: Bag of salt, EquipId: 760
+Id: 4162, Name: Rock hammer, EquipId: 761
+Id: 4164, Name: Facemask, EquipId: 762
+Id: 4166, Name: Earmuffs, EquipId: 763
+Id: 4168, Name: Nose peg, EquipId: 764
+Id: 4170, Name: Slayer's staff, EquipId: 765
+Id: 4181, Name: Mouth grip, EquipId: 766
+Id: 4192, Name: Extended brush, EquipId: 788
+Id: 4193, Name: Extended brush, EquipId: 767
+Id: 4194, Name: Torso, EquipId: 786
+Id: 4195, Name: Arms, EquipId: 785
+Id: 4196, Name: Legs, EquipId: 784
+Id: 4197, Name: Decapitated head, EquipId: 783
+Id: 4198, Name: Decapitated head, EquipId: 782
+Id: 4199, Name: Pickled brain, EquipId: 781
+Id: 4205, Name: Consecration seed, EquipId: 790
+Id: 4207, Name: Crystal seed, EquipId: 789
+Id: 4212, Name: New crystal bow, EquipId: 768
+Id: 4214, Name: Crystal bow full, EquipId: 769
+Id: 4215, Name: Crystal bow 9/10, EquipId: 770
+Id: 4216, Name: Crystal bow 8/10, EquipId: 771
+Id: 4217, Name: Crystal bow 7/10, EquipId: 772
+Id: 4218, Name: Crystal bow 6/10, EquipId: 773
+Id: 4219, Name: Crystal bow 5/10, EquipId: 774
+Id: 4220, Name: Crystal bow 4/10, EquipId: 775
+Id: 4221, Name: Crystal bow 3/10, EquipId: 776
+Id: 4222, Name: Crystal bow 2/10, EquipId: 777
+Id: 4223, Name: Crystal bow 1/10, EquipId: 778
+Id: 4224, Name: New crystal shield, EquipId: 779
+Id: 4225, Name: Crystal shield full, EquipId: 780
+Id: 4226, Name: Crystal shield 9/10, EquipId: 781
+Id: 4227, Name: Crystal shield 8/10, EquipId: 782
+Id: 4228, Name: Crystal shield 7/10, EquipId: 783
+Id: 4229, Name: Crystal shield 6/10, EquipId: 784
+Id: 4230, Name: Crystal shield 5/10, EquipId: 785
+Id: 4231, Name: Crystal shield 4/10, EquipId: 786
+Id: 4232, Name: Crystal shield 3/10, EquipId: 787
+Id: 4233, Name: Crystal shield 2/10, EquipId: 788
+Id: 4234, Name: Crystal shield 1/10, EquipId: 789
+Id: 4236, Name: Oak longbow, EquipId: 790
+Id: 4238, Name: Puddle of slime, EquipId: 805
+Id: 4241, Name: Nettles, EquipId: 814
+Id: 4243, Name: Cup of tea, EquipId: 815
+Id: 4245, Name: Cup of tea, EquipId: 816
+Id: 4247, Name: Mystical robes, EquipId: 817
+Id: 4249, Name: Translation manual, EquipId: 810
+Id: 4250, Name: Ghostspeak amulet, EquipId: 791
+Id: 4251, Name: Ectophial, EquipId: 792
+Id: 4253, Name: Model ship, EquipId: 812
+Id: 4255, Name: Bonemeal, EquipId: 813
+Id: 4257, Name: Bonemeal, EquipId: 794
+Id: 4259, Name: Bonemeal, EquipId: 793
+Id: 4261, Name: Bonemeal, EquipId: 796
+Id: 4263, Name: Bonemeal, EquipId: 795
+Id: 4272, Name: Bone key, EquipId: 800
+Id: 4277, Name: Treasure map, EquipId: 801
+Id: 4282, Name: Whoopsie, EquipId: 797
+Id: 4285, Name: Bedsheet, EquipId: 799
+Id: 4287, Name: Raw beef, EquipId: 798
+Id: 4288, Name: Raw beef, EquipId: 840
+Id: 4290, Name: Raw chicken, EquipId: 841
+Id: 4292, Name: Cooked chicken, EquipId: 838
+Id: 4294, Name: Cooked meat, EquipId: 839
+Id: 4296, Name: Whoopsie, EquipId: 836
+Id: 4298, Name: Ham shirt, EquipId: 793
+Id: 4300, Name: Ham robe, EquipId: 794
+Id: 4302, Name: Ham hood, EquipId: 795
+Id: 4304, Name: Ham cloak, EquipId: 796
+Id: 4305, Name: Ham cloak, EquipId: 848
+Id: 4306, Name: H.a.m logo, EquipId: 797
+Id: 4307, Name: H.a.m logo, EquipId: 849
+Id: 4308, Name: Gloves, EquipId: 798
+Id: 4309, Name: Gloves, EquipId: 846
+Id: 4310, Name: Boots, EquipId: 799
+Id: 4311, Name: Boots, EquipId: 847
+Id: 4313, Name: Crystal of seren, EquipId: 844
+Id: 4315, Name: Team-1 cape, EquipId: 800
+Id: 4317, Name: Team-2 cape, EquipId: 801
+Id: 4319, Name: Team-3 cape, EquipId: 802
+Id: 4320, Name: Team-3 cape, EquipId: 825
+Id: 4321, Name: Team-4 cape, EquipId: 803
+Id: 4322, Name: Team-4 cape, EquipId: 824
+Id: 4323, Name: Team-5 cape, EquipId: 804
+Id: 4324, Name: Team-5 cape, EquipId: 823
+Id: 4325, Name: Team-6 cape, EquipId: 805
+Id: 4326, Name: Team-6 cape, EquipId: 822
+Id: 4327, Name: Team-7 cape, EquipId: 806
+Id: 4328, Name: Team-7 cape, EquipId: 821
+Id: 4329, Name: Team-8 cape, EquipId: 807
+Id: 4330, Name: Team-8 cape, EquipId: 820
+Id: 4331, Name: Team-9 cape, EquipId: 808
+Id: 4332, Name: Team-9 cape, EquipId: 819
+Id: 4333, Name: Team-10 cape, EquipId: 809
+Id: 4334, Name: Team-10 cape, EquipId: 818
+Id: 4335, Name: Team-11 cape, EquipId: 810
+Id: 4337, Name: Team-12 cape, EquipId: 811
+Id: 4339, Name: Team-13 cape, EquipId: 812
+Id: 4341, Name: Team-14 cape, EquipId: 813
+Id: 4343, Name: Team-15 cape, EquipId: 814
+Id: 4345, Name: Team-16 cape, EquipId: 815
+Id: 4347, Name: Team-17 cape, EquipId: 816
+Id: 4349, Name: Team-18 cape, EquipId: 817
+Id: 4351, Name: Team-19 cape, EquipId: 818
+Id: 4353, Name: Team-20 cape, EquipId: 819
+Id: 4355, Name: Team-21 cape, EquipId: 820
+Id: 4357, Name: Team-22 cape, EquipId: 821
+Id: 4359, Name: Team-23 cape, EquipId: 822
+Id: 4361, Name: Team-24 cape, EquipId: 823
+Id: 4363, Name: Team-25 cape, EquipId: 824
+Id: 4365, Name: Team-26 cape, EquipId: 825
+Id: 4367, Name: Team-27 cape, EquipId: 826
+Id: 4369, Name: Team-28 cape, EquipId: 827
+Id: 4371, Name: Team-29 cape, EquipId: 828
+Id: 4373, Name: Team-30 cape, EquipId: 829
+Id: 4375, Name: Team-31 cape, EquipId: 830
+Id: 4377, Name: Team-32 cape, EquipId: 831
+Id: 4379, Name: Team-33 cape, EquipId: 832
+Id: 4381, Name: Team-34 cape, EquipId: 833
+Id: 4383, Name: Team-35 cape, EquipId: 834
+Id: 4385, Name: Team-36 cape, EquipId: 835
+Id: 4387, Name: Team-37 cape, EquipId: 836
+Id: 4389, Name: Team-38 cape, EquipId: 837
+Id: 4391, Name: Team-39 cape, EquipId: 838
+Id: 4393, Name: Team-40 cape, EquipId: 839
+Id: 4395, Name: Team-41 cape, EquipId: 840
+Id: 4397, Name: Team-42 cape, EquipId: 841
+Id: 4399, Name: Team-43 cape, EquipId: 842
+Id: 4401, Name: Team-44 cape, EquipId: 843
+Id: 4403, Name: Team-45 cape, EquipId: 844
+Id: 4405, Name: Team-46 cape, EquipId: 845
+Id: 4407, Name: Team-47 cape, EquipId: 846
+Id: 4409, Name: Team-48 cape, EquipId: 847
+Id: 4411, Name: Team-49 cape, EquipId: 848
+Id: 4413, Name: Team-50 cape, EquipId: 849
+Id: 4425, Name: Stodgy mattress, EquipId: 715
+Id: 4427, Name: Iron oxide, EquipId: 714
+Id: 4435, Name: Weather report, EquipId: 850
+Id: 4440, Name: Pot lid, EquipId: 713
+Id: 4480, Name: Herb tea mix, EquipId: 736
+Id: 4482, Name: Herb tea mix, EquipId: 735
+Id: 4484, Name: Safety guarantee, EquipId: 738
+Id: 4486, Name: White pearl seed, EquipId: 737
+Id: 4488, Name: Corpse of woman, EquipId: 732
+Id: 4490, Name: Mud, EquipId: 731
+Id: 4492, Name: Rock, EquipId: 734
+Id: 4494, Name: Pole, EquipId: 733
+Id: 4497, Name: Broken pole, EquipId: 726
+Id: 4498, Name: Rope, EquipId: 851
+Id: 4500, Name: Pole, EquipId: 852
+Id: 4501, Name: Pole, EquipId: 853
+Id: 4502, Name: Bearhead, EquipId: 854
+Id: 4503, Name: Decorative sword, EquipId: 855
+Id: 4504, Name: Decorative armour, EquipId: 856
+Id: 4505, Name: Decorative armour, EquipId: 857
+Id: 4506, Name: Decorative helm, EquipId: 858
+Id: 4507, Name: Decorative shield, EquipId: 859
+Id: 4508, Name: Decorative sword, EquipId: 860
+Id: 4509, Name: Decorative armour, EquipId: 861
+Id: 4510, Name: Decorative armour, EquipId: 862
+Id: 4511, Name: Decorative helm, EquipId: 863
+Id: 4512, Name: Decorative shield, EquipId: 864
+Id: 4513, Name: Castlewars hood, EquipId: 865
+Id: 4514, Name: Castlewars cloak, EquipId: 866
+Id: 4515, Name: Castlewars hood, EquipId: 867
+Id: 4516, Name: Castlewars cloak, EquipId: 868
+Id: 4517, Name: Giant frog legs, EquipId: 719
+Id: 4518, Name: Giant frog legs, EquipId: 720
+Id: 4519, Name: Swamp wallbeast, EquipId: 721
+Id: 4537, Name: Oil lantern, EquipId: 716
+Id: 4538, Name: Oil lantern, EquipId: 718
+Id: 4539, Name: Oil lantern, EquipId: 717
+Id: 4545, Name: Bullseye lantern, EquipId: 760
+Id: 4546, Name: Bullseye lantern, EquipId: 758
+Id: 4547, Name: Bullseye lantern, EquipId: 759
+Id: 4548, Name: Bullseye lantern, EquipId: 757
+Id: 4551, Name: Spiny helmet, EquipId: 869
+Id: 4552, Name: Spiny helmet, EquipId: 755
+Id: 4558, Name: Blue sweets, EquipId: 754
+Id: 4565, Name: Basket of eggs, EquipId: 870
+Id: 4566, Name: Rubber chicken, EquipId: 871
+Id: 4567, Name: Gold helmet, EquipId: 872
+Id: 4576, Name: Schematics, EquipId: 753
+Id: 4580, Name: Black spear, EquipId: 873
+Id: 4582, Name: Black spear(p), EquipId: 874
+Id: 4584, Name: Black spear(kp), EquipId: 875
+Id: 4585, Name: Dragon plateskirt, EquipId: 876
+Id: 4586, Name: Dragon plateskirt, EquipId: 750
+Id: 4587, Name: Dragon scimitar, EquipId: 877
+Id: 4588, Name: Dragon scimitar, EquipId: 747
+Id: 4590, Name: Jewels, EquipId: 748
+Id: 4593, Name: Fake beard, EquipId: 745
+Id: 4595, Name: Karidian disguise, EquipId: 746
+Id: 4597, Name: Note, EquipId: 743
+Id: 4599, Name: Oak-blackjack, EquipId: 878
+Id: 4600, Name: Willow-blackjack, EquipId: 879
+Id: 4601, Name: Ugthanki dung, EquipId: 741
+Id: 4603, Name: Receipt, EquipId: 742
+Id: 4605, Name: Snake charm, EquipId: 880
+Id: 4607, Name: Snake basket full, EquipId: 740
+Id: 4611, Name: Desert disguise, EquipId: 881
+Id: 4613, Name: Spinning plate, EquipId: 882
+Id: 4614, Name: Broken plate, EquipId: 883
+Id: 4659, Name: Blessed pot, EquipId: 885
+Id: 4661, Name: Blessed pot, EquipId: 884
+Id: 4675, Name: Ancient staff, EquipId: 884
+Id: 4677, Name: Catspeak amulet, EquipId: 885
+Id: 4688, Name: Bucket of sap, EquipId: 887
+Id: 4689, Name: Pile of salt, EquipId: 888
+Id: 4692, Name: Gold leaf, EquipId: 886
+Id: 4694, Name: Steam rune, EquipId: 890
+Id: 4696, Name: Dust rune, EquipId: 891
+Id: 4698, Name: Mud rune, EquipId: 892
+Id: 4700, Name: Sapphire lantern, EquipId: 893
+Id: 4702, Name: Sapphire lantern, EquipId: 894
+Id: 4704, Name: Stone bowl, EquipId: 887
+Id: 4707, Name: Crumbling tome, EquipId: 895
+Id: 4708, Name: Ahrims hood, EquipId: 889
+Id: 4710, Name: Ahrims staff, EquipId: 890
+Id: 4712, Name: Ahrims robetop, EquipId: 891
+Id: 4714, Name: Ahrims robeskirt, EquipId: 892
+Id: 4716, Name: Dharoks helm, EquipId: 893
+Id: 4718, Name: Dharoks greataxe, EquipId: 894
+Id: 4720, Name: Dharoks platebody, EquipId: 895
+Id: 4721, Name: Dharoks platebody, EquipId: 904
+Id: 4722, Name: Dharoks platelegs, EquipId: 896
+Id: 4723, Name: Dharoks platelegs, EquipId: 903
+Id: 4724, Name: Guthans helm, EquipId: 897
+Id: 4726, Name: Guthans warspear, EquipId: 898
+Id: 4728, Name: Guthans platebody, EquipId: 899
+Id: 4730, Name: Guthans chainskirt, EquipId: 900
+Id: 4732, Name: Karils coif, EquipId: 901
+Id: 4734, Name: Karils crossbow, EquipId: 902
+Id: 4736, Name: Karils leathertop, EquipId: 903
+Id: 4738, Name: Karils leatherskirt, EquipId: 904
+Id: 4745, Name: Torags helm, EquipId: 905
+Id: 4747, Name: Torags hammers, EquipId: 906
+Id: 4748, Name: Torags hammers, EquipId: 908
+Id: 4749, Name: Torags platebody, EquipId: 907
+Id: 4750, Name: Torags platebody, EquipId: 909
+Id: 4751, Name: Torags platelegs, EquipId: 908
+Id: 4753, Name: Veracs helm, EquipId: 909
+Id: 4755, Name: Veracs flail, EquipId: 910
+Id: 4757, Name: Veracs brassard, EquipId: 911
+Id: 4759, Name: Veracs plateskirt, EquipId: 912
+Id: 4809, Name: Torn page, EquipId: 913
+Id: 4814, Name: Sithik portrait, EquipId: 914
+Id: 4815, Name: Sithik portrait, EquipId: 915
+Id: 4816, Name: Signed portrait, EquipId: 916
+Id: 4817, Name: Book of portraiture, EquipId: 917
+Id: 4827, Name: Comp ogre bow, EquipId: 918
+Id: 4829, Name: Book of 'h.a.m', EquipId: 919
+Id: 4833, Name: Raurg bones, EquipId: 914
+Id: 4836, Name: Strange potion, EquipId: 917
+Id: 4837, Name: Necromancy book, EquipId: 920
+Id: 4838, Name: Cup of tea, EquipId: 915
+Id: 4839, Name: Ogre gate key, EquipId: 916
+Id: 4844, Name: Relicym's balm(3), EquipId: 913
+Id: 4849, Name: Relicym's balm(1), EquipId: 919
+Id: 4851, Name: Ogre coffin key, EquipId: 918
+Id: 4856, Name: Ahrims hood 100, EquipId: 921
+Id: 4857, Name: Ahrims hood 75, EquipId: 922
+Id: 4858, Name: Ahrims hood 50, EquipId: 923
+Id: 4859, Name: Ahrims hood 25, EquipId: 924
+Id: 4860, Name: Ahrims hood 0, EquipId: 925
+Id: 4862, Name: Ahrims staff 100, EquipId: 926
+Id: 4863, Name: Ahrims staff 75, EquipId: 927
+Id: 4864, Name: Ahrims staff 50, EquipId: 928
+Id: 4865, Name: Ahrims staff 25, EquipId: 929
+Id: 4866, Name: Ahrims staff 0, EquipId: 930
+Id: 4867, Name: Ahrims staff 0, EquipId: 850
+Id: 4868, Name: Ahrims top 100, EquipId: 931
+Id: 4869, Name: Ahrims top 75, EquipId: 932
+Id: 4870, Name: Ahrims top 50, EquipId: 933
+Id: 4871, Name: Ahrims top 25, EquipId: 934
+Id: 4872, Name: Ahrims top 0, EquipId: 935
+Id: 4874, Name: Ahrims skirt 100, EquipId: 936
+Id: 4875, Name: Ahrims skirt 75, EquipId: 937
+Id: 4876, Name: Ahrims skirt 50, EquipId: 938
+Id: 4877, Name: Ahrims skirt 25, EquipId: 939
+Id: 4878, Name: Ahrims skirt 0, EquipId: 940
+Id: 4880, Name: Dharoks helm 100, EquipId: 941
+Id: 4881, Name: Dharoks helm 75, EquipId: 942
+Id: 4882, Name: Dharoks helm 50, EquipId: 943
+Id: 4883, Name: Dharoks helm 25, EquipId: 944
+Id: 4884, Name: Dharoks helm 0, EquipId: 945
+Id: 4886, Name: Dharoks axe 100, EquipId: 946
+Id: 4887, Name: Dharoks axe 75, EquipId: 947
+Id: 4888, Name: Dharoks axe 50, EquipId: 948
+Id: 4889, Name: Dharoks axe 25, EquipId: 949
+Id: 4890, Name: Dharoks axe 0, EquipId: 950
+Id: 4892, Name: Dharoks body 100, EquipId: 951
+Id: 4893, Name: Dharoks body 75, EquipId: 952
+Id: 4894, Name: Dharoks body 50, EquipId: 953
+Id: 4895, Name: Dharoks body 25, EquipId: 954
+Id: 4896, Name: Dharoks body 0, EquipId: 955
+Id: 4898, Name: Dharoks legs 100, EquipId: 956
+Id: 4899, Name: Dharoks legs 75, EquipId: 957
+Id: 4900, Name: Dharoks legs 50, EquipId: 958
+Id: 4901, Name: Dharoks legs 25, EquipId: 959
+Id: 4902, Name: Dharoks legs 0, EquipId: 960
+Id: 4904, Name: Guthans helm 100, EquipId: 961
+Id: 4905, Name: Guthans helm 75, EquipId: 962
+Id: 4906, Name: Guthans helm 50, EquipId: 963
+Id: 4907, Name: Guthans helm 25, EquipId: 964
+Id: 4908, Name: Guthans helm 0, EquipId: 965
+Id: 4910, Name: Guthans spear 100, EquipId: 966
+Id: 4911, Name: Guthans spear 75, EquipId: 967
+Id: 4912, Name: Guthans spear 50, EquipId: 968
+Id: 4913, Name: Guthans spear 25, EquipId: 969
+Id: 4914, Name: Guthans spear 0, EquipId: 970
+Id: 4916, Name: Guthans body 100, EquipId: 971
+Id: 4917, Name: Guthans body 75, EquipId: 972
+Id: 4918, Name: Guthans body 50, EquipId: 973
+Id: 4919, Name: Guthans body 25, EquipId: 974
+Id: 4920, Name: Guthans body 0, EquipId: 975
+Id: 4922, Name: Guthans skirt 100, EquipId: 976
+Id: 4923, Name: Guthans skirt 75, EquipId: 977
+Id: 4924, Name: Guthans skirt 50, EquipId: 978
+Id: 4925, Name: Guthans skirt 25, EquipId: 979
+Id: 4926, Name: Guthans skirt 0, EquipId: 980
+Id: 4928, Name: Karils coif 100, EquipId: 981
+Id: 4929, Name: Karils coif 75, EquipId: 982
+Id: 4930, Name: Karils coif 50, EquipId: 983
+Id: 4931, Name: Karils coif 25, EquipId: 984
+Id: 4932, Name: Karils coif 0, EquipId: 985
+Id: 4933, Name: Karils coif 0, EquipId: 853
+Id: 4934, Name: Karils x-bow 100, EquipId: 986
+Id: 4935, Name: Karils x-bow 75, EquipId: 987
+Id: 4936, Name: Karils x-bow 50, EquipId: 988
+Id: 4937, Name: Karils x-bow 25, EquipId: 989
+Id: 4938, Name: Karils x-bow 0, EquipId: 990
+Id: 4939, Name: Karils x-bow 0, EquipId: 855
+Id: 4940, Name: Karils top 100, EquipId: 991
+Id: 4941, Name: Karils top 75, EquipId: 992
+Id: 4942, Name: Karils top 50, EquipId: 993
+Id: 4943, Name: Karils top 25, EquipId: 994
+Id: 4944, Name: Karils top 0, EquipId: 995
+Id: 4946, Name: Karils skirt 100, EquipId: 996
+Id: 4947, Name: Karils skirt 75, EquipId: 997
+Id: 4948, Name: Karils skirt 50, EquipId: 998
+Id: 4949, Name: Karils skirt 25, EquipId: 999
+Id: 4950, Name: Karils skirt 0, EquipId: 1000
+Id: 4952, Name: Torags helm 100, EquipId: 1001
+Id: 4953, Name: Torags helm 75, EquipId: 1002
+Id: 4954, Name: Torags helm 50, EquipId: 1003
+Id: 4955, Name: Torags helm 25, EquipId: 1004
+Id: 4956, Name: Torags helm 0, EquipId: 1005
+Id: 4958, Name: Torags hammer 100, EquipId: 1006
+Id: 4959, Name: Torags hammer 75, EquipId: 1007
+Id: 4960, Name: Torags hammer 50, EquipId: 1008
+Id: 4961, Name: Torags hammer 25, EquipId: 1009
+Id: 4962, Name: Torags hammer 0, EquipId: 1010
+Id: 4964, Name: Torags body 100, EquipId: 1011
+Id: 4965, Name: Torags body 75, EquipId: 1012
+Id: 4966, Name: Torags body 50, EquipId: 1013
+Id: 4967, Name: Torags body 25, EquipId: 1014
+Id: 4968, Name: Torags body 0, EquipId: 1015
+Id: 4970, Name: Torags legs 100, EquipId: 1016
+Id: 4971, Name: Torags legs 75, EquipId: 1017
+Id: 4972, Name: Torags legs 50, EquipId: 1018
+Id: 4973, Name: Torags legs 25, EquipId: 1019
+Id: 4974, Name: Torags legs 0, EquipId: 1020
+Id: 4976, Name: Veracs helm 100, EquipId: 1021
+Id: 4977, Name: Veracs helm 75, EquipId: 1022
+Id: 4978, Name: Veracs helm 50, EquipId: 1023
+Id: 4979, Name: Veracs helm 25, EquipId: 1024
+Id: 4980, Name: Veracs helm 0, EquipId: 1025
+Id: 4981, Name: Veracs helm 0, EquipId: 868
+Id: 4982, Name: Veracs flail 100, EquipId: 1026
+Id: 4983, Name: Veracs flail 75, EquipId: 1027
+Id: 4984, Name: Veracs flail 50, EquipId: 1028
+Id: 4985, Name: Veracs flail 25, EquipId: 1029
+Id: 4986, Name: Veracs flail 0, EquipId: 1030
+Id: 4988, Name: Veracs top 100, EquipId: 1031
+Id: 4989, Name: Veracs top 75, EquipId: 1032
+Id: 4990, Name: Veracs top 50, EquipId: 1033
+Id: 4991, Name: Veracs top 25, EquipId: 1034
+Id: 4992, Name: Veracs top 0, EquipId: 1035
+Id: 4994, Name: Veracs skirt 100, EquipId: 1036
+Id: 4995, Name: Veracs skirt 75, EquipId: 1037
+Id: 4996, Name: Veracs skirt 50, EquipId: 1038
+Id: 4997, Name: Veracs skirt 25, EquipId: 1039
+Id: 4998, Name: Veracs skirt 0, EquipId: 1040
+Id: 4999, Name: Veracs skirt 0, EquipId: 872
+Id: 5001, Name: Raw cave eel, EquipId: 870
+Id: 5013, Name: Mining helmet, EquipId: 1041
+Id: 5014, Name: Mining helmet, EquipId: 1042
+Id: 5015, Name: Mining helmet, EquipId: 869
+Id: 5016, Name: Bone spear, EquipId: 1043
+Id: 5018, Name: Bone club, EquipId: 1044
+Id: 5024, Name: Woven top, EquipId: 1045
+Id: 5026, Name: Woven top, EquipId: 1046
+Id: 5027, Name: Woven top, EquipId: 880
+Id: 5028, Name: Woven top, EquipId: 1047
+Id: 5029, Name: Woven top, EquipId: 878
+Id: 5030, Name: Shirt, EquipId: 1048
+Id: 5032, Name: Shirt, EquipId: 1049
+Id: 5034, Name: Shirt, EquipId: 1050
+Id: 5036, Name: Trousers, EquipId: 1051
+Id: 5038, Name: Trousers, EquipId: 1052
+Id: 5040, Name: Trousers, EquipId: 1053
+Id: 5042, Name: Shorts, EquipId: 1054
+Id: 5044, Name: Shorts, EquipId: 1055
+Id: 5045, Name: Shorts, EquipId: 874
+Id: 5046, Name: Shorts, EquipId: 1056
+Id: 5047, Name: Shorts, EquipId: 875
+Id: 5048, Name: Skirt, EquipId: 1057
+Id: 5050, Name: Skirt, EquipId: 1058
+Id: 5051, Name: Skirt, EquipId: 873
+Id: 5052, Name: Skirt, EquipId: 1059
+Id: 5060, Name: Dwarven battleaxe, EquipId: 1060
+Id: 5061, Name: Dwarven battleaxe, EquipId: 1061
+Id: 5072, Name: Bird nest, EquipId: 882
+Id: 5074, Name: Bird nest, EquipId: 881
+Id: 5078, Name: Bird's egg, EquipId: 883
+Id: 5325, Name: Gardening trowel, EquipId: 1062
+Id: 5329, Name: Secateurs, EquipId: 1063
+Id: 5331, Name: Watering can, EquipId: 1064
+Id: 5333, Name: Watering can(1), EquipId: 1065
+Id: 5334, Name: Watering can(2), EquipId: 1066
+Id: 5335, Name: Watering can(3), EquipId: 1067
+Id: 5336, Name: Watering can(4), EquipId: 1068
+Id: 5337, Name: Watering can(5), EquipId: 1069
+Id: 5338, Name: Watering can(6), EquipId: 1070
+Id: 5339, Name: Watering can(7), EquipId: 1071
+Id: 5340, Name: Watering can(8), EquipId: 1072
+Id: 5341, Name: Rake, EquipId: 1073
+Id: 5343, Name: Seed dibber, EquipId: 1074
+Id: 5345, Name: Gardening boots, EquipId: 1075
+Id: 5350, Name: Plant pot, EquipId: 1076
+Id: 5376, Name: Basket, EquipId: 1006
+Id: 5378, Name: Apples(1), EquipId: 1005
+Id: 5379, Name: Apples(1), EquipId: 1004
+Id: 5380, Name: Apples(2), EquipId: 1010
+Id: 5381, Name: Apples(2), EquipId: 1009
+Id: 5382, Name: Apples(3), EquipId: 1008
+Id: 5383, Name: Apples(3), EquipId: 1007
+Id: 5384, Name: Apples(4), EquipId: 1000
+Id: 5385, Name: Apples(4), EquipId: 999
+Id: 5386, Name: Apples(5), EquipId: 998
+Id: 5387, Name: Apples(5), EquipId: 997
+Id: 5388, Name: Oranges(1), EquipId: 1003
+Id: 5389, Name: Oranges(1), EquipId: 1002
+Id: 5390, Name: Oranges(2), EquipId: 1001
+Id: 5392, Name: Oranges(3), EquipId: 992
+Id: 5393, Name: Oranges(3), EquipId: 993
+Id: 5395, Name: Oranges(4), EquipId: 991
+Id: 5397, Name: Oranges(5), EquipId: 996
+Id: 5398, Name: Strawberries(1), EquipId: 994
+Id: 5399, Name: Strawberries(1), EquipId: 995
+Id: 5401, Name: Strawberries(2), EquipId: 986
+Id: 5402, Name: Strawberries(3), EquipId: 984
+Id: 5403, Name: Strawberries(3), EquipId: 985
+Id: 5404, Name: Strawberries(4), EquipId: 989
+Id: 5405, Name: Strawberries(4), EquipId: 990
+Id: 5406, Name: Strawberries(5), EquipId: 987
+Id: 5407, Name: Strawberries(5), EquipId: 988
+Id: 5408, Name: Bananas(1), EquipId: 978
+Id: 5409, Name: Bananas(1), EquipId: 977
+Id: 5410, Name: Bananas(2), EquipId: 980
+Id: 5411, Name: Bananas(2), EquipId: 979
+Id: 5412, Name: Bananas(3), EquipId: 981
+Id: 5414, Name: Bananas(4), EquipId: 983
+Id: 5415, Name: Bananas(4), EquipId: 982
+Id: 5416, Name: Bananas(5), EquipId: 971
+Id: 5418, Name: Empty sack, EquipId: 973
+Id: 5419, Name: Empty sack, EquipId: 972
+Id: 5420, Name: Potatoes(1), EquipId: 975
+Id: 5421, Name: Potatoes(1), EquipId: 974
+Id: 5422, Name: Potatoes(2), EquipId: 976
+Id: 5424, Name: Potatoes(3), EquipId: 964
+Id: 5425, Name: Potatoes(3), EquipId: 965
+Id: 5427, Name: Potatoes(4), EquipId: 966
+Id: 5428, Name: Potatoes(5), EquipId: 967
+Id: 5429, Name: Potatoes(5), EquipId: 968
+Id: 5430, Name: Potatoes(6), EquipId: 969
+Id: 5431, Name: Potatoes(6), EquipId: 970
+Id: 5432, Name: Potatoes(7), EquipId: 957
+Id: 5433, Name: Potatoes(7), EquipId: 958
+Id: 5434, Name: Potatoes(8), EquipId: 959
+Id: 5435, Name: Potatoes(8), EquipId: 960
+Id: 5437, Name: Potatoes(9), EquipId: 961
+Id: 5438, Name: Potatoes(10), EquipId: 962
+Id: 5439, Name: Potatoes(10), EquipId: 963
+Id: 5440, Name: Onions(1), EquipId: 956
+Id: 5442, Name: Onions(2), EquipId: 955
+Id: 5443, Name: Onions(2), EquipId: 954
+Id: 5444, Name: Onions(3), EquipId: 953
+Id: 5445, Name: Onions(3), EquipId: 952
+Id: 5446, Name: Onions(4), EquipId: 951
+Id: 5448, Name: Onions(5), EquipId: 950
+Id: 5449, Name: Onions(5), EquipId: 949
+Id: 5450, Name: Onions(6), EquipId: 948
+Id: 5451, Name: Onions(6), EquipId: 947
+Id: 5452, Name: Onions(7), EquipId: 946
+Id: 5454, Name: Onions(8), EquipId: 945
+Id: 5455, Name: Onions(8), EquipId: 944
+Id: 5456, Name: Onions(9), EquipId: 942
+Id: 5457, Name: Onions(9), EquipId: 943
+Id: 5459, Name: Onions(10), EquipId: 941
+Id: 5460, Name: Cabbages(1), EquipId: 939
+Id: 5461, Name: Cabbages(1), EquipId: 940
+Id: 5462, Name: Cabbages(2), EquipId: 937
+Id: 5463, Name: Cabbages(2), EquipId: 938
+Id: 5465, Name: Cabbages(3), EquipId: 936
+Id: 5466, Name: Cabbages(4), EquipId: 934
+Id: 5467, Name: Cabbages(4), EquipId: 935
+Id: 5468, Name: Cabbages(5), EquipId: 932
+Id: 5469, Name: Cabbages(5), EquipId: 933
+Id: 5471, Name: Cabbages(6), EquipId: 931
+Id: 5472, Name: Cabbages(7), EquipId: 928
+Id: 5473, Name: Cabbages(7), EquipId: 927
+Id: 5474, Name: Cabbages(8), EquipId: 930
+Id: 5475, Name: Cabbages(8), EquipId: 929
+Id: 5476, Name: Cabbages(9), EquipId: 925
+Id: 5477, Name: Cabbages(9), EquipId: 924
+Id: 5478, Name: Cabbages(10), EquipId: 926
+Id: 5480, Name: Apple seedling, EquipId: 921
+Id: 5482, Name: Orange seedling, EquipId: 923
+Id: 5483, Name: Curry seedling, EquipId: 922
+Id: 5502, Name: Palm sapling, EquipId: 920
+Id: 5521, Name: Binding necklace, EquipId: 1077
+Id: 5522, Name: Binding necklace, EquipId: 1060
+Id: 5525, Name: Tiara, EquipId: 1078
+Id: 5527, Name: Air tiara, EquipId: 1079
+Id: 5529, Name: Mind tiara, EquipId: 1080
+Id: 5531, Name: Water tiara, EquipId: 1081
+Id: 5533, Name: Body tiara, EquipId: 1082
+Id: 5535, Name: Earth tiara, EquipId: 1083
+Id: 5537, Name: Fire tiara, EquipId: 1084
+Id: 5539, Name: Cosmic tiara, EquipId: 1085
+Id: 5541, Name: Nature tiara, EquipId: 1086
+Id: 5543, Name: Chaos tiara, EquipId: 1087
+Id: 5545, Name: Law tiara, EquipId: 1088
+Id: 5547, Name: Death tiara, EquipId: 1089
+Id: 5549, Name: Blood tiara, EquipId: 1090
+Id: 5551, Name: Soul tiara, EquipId: 1091
+Id: 5552, Name: Soul tiara, EquipId: 1047
+Id: 5553, Name: Rogue top, EquipId: 1092
+Id: 5554, Name: Rogue mask, EquipId: 1093
+Id: 5555, Name: Rogue trousers, EquipId: 1094
+Id: 5556, Name: Rogue gloves, EquipId: 1095
+Id: 5557, Name: Rogue boots, EquipId: 1096
+Id: 5558, Name: Rogue kit, EquipId: 1050
+Id: 5560, Name: Stethoscope, EquipId: 1097
+Id: 5561, Name: Mystic jewel, EquipId: 1098
+Id: 5562, Name: Gear, EquipId: 1052
+Id: 5564, Name: Gear, EquipId: 1053
+Id: 5566, Name: Gear, EquipId: 1054
+Id: 5569, Name: Tiles, EquipId: 1044
+Id: 5571, Name: Tiles, EquipId: 1043
+Id: 5572, Name: Dial, EquipId: 1041
+Id: 5573, Name: Whoopsie, EquipId: 1042
+Id: 5574, Name: Initiate helm, EquipId: 1099
+Id: 5575, Name: Initiate platemail, EquipId: 1100
+Id: 5576, Name: Initiate platelegs, EquipId: 1101
+Id: 5577, Name: Cupric sulfate, EquipId: 1046
+Id: 5579, Name: Gypsum, EquipId: 1045
+Id: 5588, Name: Alchemical notes, EquipId: 1040
+Id: 5589, Name: ??? mixture, EquipId: 1039
+Id: 5590, Name: ??? mixture, EquipId: 1038
+Id: 5591, Name: ??? mixture, EquipId: 1037
+Id: 5600, Name: Tin, EquipId: 1027
+Id: 5601, Name: Chisel, EquipId: 1028
+Id: 5602, Name: Bronze wire, EquipId: 1029
+Id: 5603, Name: Shears, EquipId: 1102
+Id: 5604, Name: Magnet, EquipId: 1024
+Id: 5605, Name: Knife, EquipId: 1025
+Id: 5607, Name: Grain, EquipId: 1103
+Id: 5608, Name: Fox, EquipId: 1104
+Id: 5609, Name: Chicken, EquipId: 1105
+Id: 5611, Name: Initiate helm, EquipId: 1036
+Id: 5613, Name: Initiate platelegs, EquipId: 1031
+Id: 5614, Name: Magic carpet, EquipId: 1106
+Id: 5615, Name: Bonemeal, EquipId: 1033
+Id: 5616, Name: Bronze arrow(+), EquipId: 1015
+Id: 5617, Name: Iron arrow(+), EquipId: 1014
+Id: 5618, Name: Steel arrow(+), EquipId: 1016
+Id: 5620, Name: Adamant arrow(+), EquipId: 1011
+Id: 5622, Name: Bronze arrow(s), EquipId: 1013
+Id: 5623, Name: Iron arrow(s), EquipId: 1012
+Id: 5624, Name: Steel arrow(s), EquipId: 1021
+Id: 5626, Name: Adamant arrow(s), EquipId: 1023
+Id: 5627, Name: Rune arrow(s), EquipId: 1022
+Id: 5628, Name: Bronze dart(+), EquipId: 1107
+Id: 5629, Name: Iron dart(+), EquipId: 1108
+Id: 5630, Name: Steel dart(+), EquipId: 1109
+Id: 5631, Name: Black dart(+), EquipId: 1110
+Id: 5632, Name: Mithril dart(+), EquipId: 1111
+Id: 5633, Name: Adamant dart(+), EquipId: 1112
+Id: 5634, Name: Rune dart(+), EquipId: 1113
+Id: 5635, Name: Bronze dart(s), EquipId: 1114
+Id: 5636, Name: Iron dart(s), EquipId: 1115
+Id: 5637, Name: Steel dart(s), EquipId: 1116
+Id: 5638, Name: Black dart(s), EquipId: 1117
+Id: 5639, Name: Mithril dart(s), EquipId: 1118
+Id: 5640, Name: Adamant dart(s), EquipId: 1119
+Id: 5641, Name: Rune dart(s), EquipId: 1120
+Id: 5642, Name: Bronze javelin(+), EquipId: 1121
+Id: 5643, Name: Iron javelin(+), EquipId: 1122
+Id: 5644, Name: Steel javelin(+), EquipId: 1123
+Id: 5645, Name: Mithril javelin(+), EquipId: 1124
+Id: 5646, Name: Adamant javelin(+), EquipId: 1125
+Id: 5647, Name: Rune javelin(+), EquipId: 1126
+Id: 5648, Name: Bronze javelin(s), EquipId: 1127
+Id: 5649, Name: Iron javelin(s), EquipId: 1128
+Id: 5650, Name: Steel javelin(s), EquipId: 1129
+Id: 5651, Name: Mithril javelin(s), EquipId: 1130
+Id: 5652, Name: Adamant javelin(s), EquipId: 1131
+Id: 5653, Name: Rune javelin(s), EquipId: 1132
+Id: 5654, Name: Bronze knife(+), EquipId: 1133
+Id: 5655, Name: Iron knife(+), EquipId: 1134
+Id: 5656, Name: Steel knife(+), EquipId: 1135
+Id: 5657, Name: Mithril knife(+), EquipId: 1136
+Id: 5658, Name: Black knife(+), EquipId: 1137
+Id: 5659, Name: Adamant knife(+), EquipId: 1138
+Id: 5660, Name: Rune knife(+), EquipId: 1139
+Id: 5661, Name: Bronze knife(s), EquipId: 1140
+Id: 5662, Name: Iron knife(s), EquipId: 1141
+Id: 5663, Name: Steel knife(s), EquipId: 1142
+Id: 5664, Name: Mithril knife(s), EquipId: 1143
+Id: 5665, Name: Black knife(s), EquipId: 1144
+Id: 5666, Name: Adamant knife(s), EquipId: 1145
+Id: 5667, Name: Rune knife(s), EquipId: 1146
+Id: 5668, Name: Iron dagger(+), EquipId: 1147
+Id: 5670, Name: Bronze dagger(+), EquipId: 1148
+Id: 5672, Name: Steel dagger(+), EquipId: 1149
+Id: 5674, Name: Mithril dagger(+), EquipId: 1150
+Id: 5676, Name: Adamant dagger(+), EquipId: 1151
+Id: 5678, Name: Rune dagger(+), EquipId: 1152
+Id: 5680, Name: Dragon dagger(+), EquipId: 1153
+Id: 5682, Name: Black dagger(+), EquipId: 1154
+Id: 5684, Name: Poisoned dagger(+), EquipId: 1155
+Id: 5686, Name: Iron dagger(s), EquipId: 1156
+Id: 5687, Name: Iron dagger(s), EquipId: 1098
+Id: 5688, Name: Bronze dagger(s), EquipId: 1157
+Id: 5690, Name: Steel dagger(s), EquipId: 1158
+Id: 5691, Name: Steel dagger(s), EquipId: 1096
+Id: 5692, Name: Mithril dagger(s), EquipId: 1159
+Id: 5693, Name: Mithril dagger(s), EquipId: 1094
+Id: 5694, Name: Adamant dagger(s), EquipId: 1160
+Id: 5695, Name: Adamant dagger(s), EquipId: 1092
+Id: 5696, Name: Rune dagger(s), EquipId: 1161
+Id: 5698, Name: Dragon dagger(s), EquipId: 1162
+Id: 5700, Name: Black dagger(s), EquipId: 1163
+Id: 5702, Name: Poisoned dagger(s), EquipId: 1164
+Id: 5704, Name: Bronze spear(+), EquipId: 1165
+Id: 5706, Name: Iron spear(+), EquipId: 1166
+Id: 5708, Name: Steel spear(+), EquipId: 1167
+Id: 5710, Name: Mithril spear(+), EquipId: 1168
+Id: 5712, Name: Adamant spear(+), EquipId: 1169
+Id: 5714, Name: Rune spear(+), EquipId: 1170
+Id: 5716, Name: Dragon spear(+), EquipId: 1171
+Id: 5718, Name: Bronze spear(s), EquipId: 1172
+Id: 5720, Name: Iron spear(s), EquipId: 1173
+Id: 5722, Name: Steel spear(s), EquipId: 1174
+Id: 5724, Name: Mithril spear(s), EquipId: 1175
+Id: 5726, Name: Adamant spear(s), EquipId: 1176
+Id: 5728, Name: Rune spear(s), EquipId: 1177
+Id: 5730, Name: Dragon spear(s), EquipId: 1178
+Id: 5732, Name: Stool, EquipId: 1179
+Id: 5734, Name: Black spear(+), EquipId: 1180
+Id: 5736, Name: Black spear(s), EquipId: 1181
+Id: 5760, Name: Slayer's respite, EquipId: 1115
+Id: 5761, Name: Slayer's respite(m), EquipId: 1116
+Id: 5762, Name: Slayer's respite(m), EquipId: 1117
+Id: 5763, Name: Cider, EquipId: 1118
+Id: 5764, Name: Cider, EquipId: 1111
+Id: 5765, Name: Mature cider, EquipId: 1112
+Id: 5766, Name: Mature cider, EquipId: 1113
+Id: 5767, Name: Ale yeast, EquipId: 1114
+Id: 5768, Name: Ale yeast, EquipId: 1123
+Id: 5769, Name: Calquat keg, EquipId: 1182
+Id: 5770, Name: Calquat keg, EquipId: 1125
+Id: 5771, Name: Dwarven stout(1), EquipId: 1183
+Id: 5772, Name: Dwarven stout(1), EquipId: 1119
+Id: 5773, Name: Dwarven stout(2), EquipId: 1120
+Id: 5774, Name: Dwarven stout(2), EquipId: 1121
+Id: 5775, Name: Dwarven stout(3), EquipId: 1122
+Id: 5776, Name: Dwarven stout(3), EquipId: 1132
+Id: 5777, Name: Dwarven stout(4), EquipId: 1131
+Id: 5778, Name: Dwarven stout(4), EquipId: 1134
+Id: 5779, Name: Asgarnian ale(1), EquipId: 1133
+Id: 5780, Name: Asgarnian ale(1), EquipId: 1128
+Id: 5781, Name: Asgarnian ale(2), EquipId: 1127
+Id: 5782, Name: Asgarnian ale(2), EquipId: 1130
+Id: 5783, Name: Asgarnian ale(3), EquipId: 1129
+Id: 5784, Name: Asgarnian ale(3), EquipId: 1140
+Id: 5785, Name: Asgarnian ale(4), EquipId: 1139
+Id: 5786, Name: Asgarnian ale(4), EquipId: 1142
+Id: 5787, Name: Greenmans ale(1), EquipId: 1141
+Id: 5788, Name: Greenmans ale(1), EquipId: 1136
+Id: 5789, Name: Greenmans ale(2), EquipId: 1135
+Id: 5790, Name: Greenmans ale(2), EquipId: 1138
+Id: 5791, Name: Greenmans ale(3), EquipId: 1137
+Id: 5792, Name: Greenmans ale(3), EquipId: 1148
+Id: 5794, Name: Greenmans ale(4), EquipId: 1147
+Id: 5796, Name: Mind bomb(1), EquipId: 1145
+Id: 5797, Name: Mind bomb(2), EquipId: 1146
+Id: 5798, Name: Mind bomb(2), EquipId: 1143
+Id: 5799, Name: Mind bomb(3), EquipId: 1144
+Id: 5800, Name: Mind bomb(3), EquipId: 1152
+Id: 5802, Name: Mind bomb(4), EquipId: 1151
+Id: 5804, Name: Dragon bitter(1), EquipId: 1150
+Id: 5806, Name: Dragon bitter(2), EquipId: 1149
+Id: 5809, Name: Dragon bitter(4), EquipId: 1156
+Id: 5811, Name: Moonlight mead(1), EquipId: 1155
+Id: 5813, Name: Moonlight mead(2), EquipId: 1154
+Id: 5815, Name: Moonlight mead(3), EquipId: 1153
+Id: 5817, Name: Moonlight mead(4), EquipId: 1160
+Id: 5819, Name: Axeman's folly(1), EquipId: 1159
+Id: 5821, Name: Axeman's folly(2), EquipId: 1158
+Id: 5823, Name: Axeman's folly(3), EquipId: 1157
+Id: 5830, Name: Chef's delight(2), EquipId: 1099
+Id: 5831, Name: Chef's delight(3), EquipId: 1100
+Id: 5832, Name: Chef's delight(3), EquipId: 1101
+Id: 5857, Name: Dwarven stout(m4), EquipId: 1102
+Id: 5861, Name: Asgarnian ale(m2), EquipId: 1103
+Id: 5866, Name: Asgarnian ale(m4), EquipId: 1104
+Id: 5867, Name: Greenmans ale(m1), EquipId: 1105
+Id: 5868, Name: Greenmans ale(m1), EquipId: 1106
+Id: 5884, Name: Dragon bitter(m1), EquipId: 1110
+Id: 5885, Name: Dragon bitter(m2), EquipId: 1109
+Id: 5886, Name: Dragon bitter(m2), EquipId: 1108
+Id: 5887, Name: Dragon bitter(m3), EquipId: 1107
+Id: 5982, Name: Watermelon, EquipId: 1184
+Id: 6036, Name: Plant cure, EquipId: 1185
+Id: 6040, Name: Amulet of nature, EquipId: 1186
+Id: 6041, Name: Emerald amulet, EquipId: 1187
+Id: 6065, Name: Mourner top, EquipId: 1188
+Id: 6067, Name: Mourner trousers, EquipId: 1189
+Id: 6068, Name: Mourner gloves, EquipId: 1190
+Id: 6069, Name: Mourner boots, EquipId: 1191
+Id: 6070, Name: Mourner cloak, EquipId: 1192
+Id: 6080, Name: The great divide, EquipId: 1066
+Id: 6081, Name: Broken device, EquipId: 1067
+Id: 6082, Name: Fixed device, EquipId: 1193
+Id: 6083, Name: Tarnished key, EquipId: 1065
+Id: 6084, Name: Worn key, EquipId: 1070
+Id: 6085, Name: Red dye bellows, EquipId: 1071
+Id: 6086, Name: Blue dye bellows, EquipId: 1068
+Id: 6087, Name: Yellow dye bellows, EquipId: 1069
+Id: 6089, Name: Blue toad, EquipId: 1074
+Id: 6090, Name: Red toad, EquipId: 1072
+Id: 6091, Name: Yellow toad, EquipId: 1073
+Id: 6095, Name: Naphtha apple mix, EquipId: 1075
+Id: 6106, Name: Ghostly boots, EquipId: 1194
+Id: 6107, Name: Ghostly robetop, EquipId: 1195
+Id: 6108, Name: Ghostly bottoms, EquipId: 1196
+Id: 6109, Name: Ghostly hood, EquipId: 1197
+Id: 6110, Name: Ghostly gloves, EquipId: 1198
+Id: 6111, Name: Ghostly cloak, EquipId: 1199
+Id: 6122, Name: A chair, EquipId: 1200
+Id: 6123, Name: Beer glass, EquipId: 1201
+Id: 6125, Name: Enchanted lyre(2), EquipId: 1202
+Id: 6126, Name: Enchanted lyre(3), EquipId: 1203
+Id: 6127, Name: Enchanted lyre(4), EquipId: 1204
+Id: 6128, Name: Rock-shell helm, EquipId: 1205
+Id: 6129, Name: Rock-shell plate, EquipId: 1206
+Id: 6130, Name: Rock-shell legs, EquipId: 1207
+Id: 6131, Name: Spined helm, EquipId: 1208
+Id: 6133, Name: Spined body, EquipId: 1209
+Id: 6135, Name: Spined chaps, EquipId: 1210
+Id: 6137, Name: Skeletal helm, EquipId: 1211
+Id: 6139, Name: Skeletal top, EquipId: 1212
+Id: 6141, Name: Skeletal bottoms, EquipId: 1213
+Id: 6143, Name: Spined boots, EquipId: 1214
+Id: 6145, Name: Rock-shell boots, EquipId: 1215
+Id: 6146, Name: Rock-shell boots, EquipId: 1188
+Id: 6147, Name: Skeletal boots, EquipId: 1216
+Id: 6148, Name: Skeletal boots, EquipId: 1189
+Id: 6149, Name: Spined gloves, EquipId: 1217
+Id: 6150, Name: Spined gloves, EquipId: 1191
+Id: 6151, Name: Rock-shell gloves, EquipId: 1218
+Id: 6153, Name: Skeletal gloves, EquipId: 1219
+Id: 6176, Name: Rock-shell plate, EquipId: 1185
+Id: 6180, Name: Lederhosen top, EquipId: 1220
+Id: 6181, Name: Lederhosen shorts, EquipId: 1221
+Id: 6182, Name: Lederhosen hat, EquipId: 1222
+Id: 6184, Name: Prince tunic, EquipId: 1223
+Id: 6185, Name: Prince leggings, EquipId: 1224
+Id: 6186, Name: Princess blouse, EquipId: 1225
+Id: 6187, Name: Princess skirt, EquipId: 1226
+Id: 6188, Name: Frog mask, EquipId: 1227
+Id: 6208, Name: Man speak amulet, EquipId: 1228
+Id: 6209, Name: Small fishing net, EquipId: 1229
+Id: 6210, Name: Sphinx baby, EquipId: 1209
+Id: 6212, Name: Teak pyre logs, EquipId: 1204
+Id: 6213, Name: Mahogany pyre log, EquipId: 1203
+Id: 6214, Name: Mahogany pyre log, EquipId: 1206
+Id: 6215, Name: Broodoo shield (10), EquipId: 1230
+Id: 6216, Name: Broodoo shield (10), EquipId: 1212
+Id: 6217, Name: Broodoo shield (9), EquipId: 1231
+Id: 6218, Name: Broodoo shield (9), EquipId: 1213
+Id: 6219, Name: Broodoo shield (8), EquipId: 1232
+Id: 6220, Name: Broodoo shield (8), EquipId: 1210
+Id: 6221, Name: Broodoo shield (7), EquipId: 1233
+Id: 6222, Name: Broodoo shield (7), EquipId: 1211
+Id: 6223, Name: Broodoo shield (6), EquipId: 1234
+Id: 6225, Name: Broodoo shield (5), EquipId: 1235
+Id: 6227, Name: Broodoo shield (4), EquipId: 1236
+Id: 6228, Name: Broodoo shield (4), EquipId: 1198
+Id: 6229, Name: Broodoo shield (3), EquipId: 1237
+Id: 6231, Name: Broodoo shield (2), EquipId: 1238
+Id: 6232, Name: Broodoo shield (2), EquipId: 1200
+Id: 6233, Name: Broodoo shield (1), EquipId: 1239
+Id: 6235, Name: Broodoo shield, EquipId: 1240
+Id: 6237, Name: Broodoo shield (10), EquipId: 1241
+Id: 6239, Name: Broodoo shield (9), EquipId: 1242
+Id: 6241, Name: Broodoo shield (8), EquipId: 1243
+Id: 6243, Name: Broodoo shield (7), EquipId: 1244
+Id: 6245, Name: Broodoo shield (6), EquipId: 1245
+Id: 6247, Name: Broodoo shield (5), EquipId: 1246
+Id: 6248, Name: Broodoo shield (5), EquipId: 1197
+Id: 6249, Name: Broodoo shield (4), EquipId: 1247
+Id: 6250, Name: Broodoo shield (4), EquipId: 1195
+Id: 6251, Name: Broodoo shield (3), EquipId: 1248
+Id: 6253, Name: Broodoo shield (2), EquipId: 1249
+Id: 6255, Name: Broodoo shield (1), EquipId: 1250
+Id: 6257, Name: Broodoo shield, EquipId: 1251
+Id: 6258, Name: Broodoo shield, EquipId: 1193
+Id: 6259, Name: Broodoo shield (10), EquipId: 1252
+Id: 6261, Name: Broodoo shield (9), EquipId: 1253
+Id: 6263, Name: Broodoo shield (8), EquipId: 1254
+Id: 6265, Name: Broodoo shield (7), EquipId: 1255
+Id: 6267, Name: Broodoo shield (6), EquipId: 1256
+Id: 6269, Name: Broodoo shield (5), EquipId: 1257
+Id: 6271, Name: Broodoo shield (4), EquipId: 1258
+Id: 6273, Name: Broodoo shield (3), EquipId: 1259
+Id: 6275, Name: Broodoo shield (2), EquipId: 1260
+Id: 6277, Name: Broodoo shield (1), EquipId: 1261
+Id: 6279, Name: Broodoo shield, EquipId: 1262
+Id: 6281, Name: Thatch spar light, EquipId: 1263
+Id: 6283, Name: Thatch spar med, EquipId: 1264
+Id: 6285, Name: Thatch spar dense, EquipId: 1265
+Id: 6313, Name: Opal machete, EquipId: 1266
+Id: 6315, Name: Jade machete, EquipId: 1267
+Id: 6317, Name: Red topaz machete, EquipId: 1268
+Id: 6322, Name: Snakeskin body, EquipId: 1269
+Id: 6324, Name: Snakeskin chaps, EquipId: 1270
+Id: 6326, Name: Snakeskin bandana, EquipId: 1271
+Id: 6328, Name: Snakeskin boots, EquipId: 1272
+Id: 6330, Name: Snakeskin v'brace, EquipId: 1273
+Id: 6335, Name: Tribal mask, EquipId: 1274
+Id: 6337, Name: Tribal mask, EquipId: 1275
+Id: 6339, Name: Tribal mask, EquipId: 1276
+Id: 6341, Name: Tribal top, EquipId: 1277
+Id: 6343, Name: Villager robe, EquipId: 1278
+Id: 6345, Name: Villager hat, EquipId: 1279
+Id: 6347, Name: Villager armband, EquipId: 1280
+Id: 6349, Name: Villager sandals, EquipId: 1281
+Id: 6351, Name: Tribal top, EquipId: 1282
+Id: 6353, Name: Villager robe, EquipId: 1283
+Id: 6355, Name: Villager hat, EquipId: 1284
+Id: 6357, Name: Villager sandals, EquipId: 1285
+Id: 6359, Name: Villager armband, EquipId: 1286
+Id: 6361, Name: Tribal top, EquipId: 1287
+Id: 6363, Name: Villager robe, EquipId: 1288
+Id: 6365, Name: Villager hat, EquipId: 1289
+Id: 6367, Name: Villager sandals, EquipId: 1290
+Id: 6369, Name: Villager armband, EquipId: 1291
+Id: 6371, Name: Tribal top, EquipId: 1292
+Id: 6373, Name: Villager robe, EquipId: 1293
+Id: 6375, Name: Villager hat, EquipId: 1294
+Id: 6376, Name: Villager hat, EquipId: 1184
+Id: 6377, Name: Villager sandals, EquipId: 1295
+Id: 6379, Name: Villager armband, EquipId: 1296
+Id: 6382, Name: Fez, EquipId: 1297
+Id: 6384, Name: Desert top, EquipId: 1298
+Id: 6386, Name: Desert robes, EquipId: 1299
+Id: 6388, Name: Desert top, EquipId: 1300
+Id: 6390, Name: Desert legs, EquipId: 1301
+Id: 6392, Name: Menap headgear, EquipId: 1302
+Id: 6394, Name: Menaphite top, EquipId: 1303
+Id: 6396, Name: Menaphite robe, EquipId: 1304
+Id: 6398, Name: Menap action kilt, EquipId: 1305
+Id: 6400, Name: Menap headgear, EquipId: 1306
+Id: 6402, Name: Menaphite top, EquipId: 1307
+Id: 6404, Name: Menaphite robe, EquipId: 1308
+Id: 6406, Name: Menap action kilt, EquipId: 1309
+Id: 6408, Name: Oak blackjack(a), EquipId: 1310
+Id: 6410, Name: Oak blackjack(d), EquipId: 1311
+Id: 6412, Name: Willow blackjack(a), EquipId: 1312
+Id: 6414, Name: Willow blackjack(d), EquipId: 1313
+Id: 6416, Name: Maple blackjack, EquipId: 1314
+Id: 6418, Name: Maple blackjack(a), EquipId: 1315
+Id: 6420, Name: Maple blackjack(d), EquipId: 1316
+Id: 6448, Name: Spadeful of coke, EquipId: 1317
+Id: 6468, Name: Plant cure, EquipId: 1320
+Id: 6470, Name: Compost potion(4), EquipId: 1321
+Id: 6472, Name: Compost potion(3), EquipId: 1322
+Id: 6474, Name: Compost potion(2), EquipId: 1323
+Id: 6476, Name: Compost potion(1), EquipId: 1324
+Id: 6522, Name: Toktz-xil-ul, EquipId: 1325
+Id: 6523, Name: Toktz-xil-ak, EquipId: 1326
+Id: 6524, Name: Toktz-ket-xil, EquipId: 1327
+Id: 6525, Name: Toktz-xil-ek, EquipId: 1328
+Id: 6526, Name: Toktz-mej-tal, EquipId: 1329
+Id: 6527, Name: Tzhaar-ket-em, EquipId: 1330
+Id: 6528, Name: Tzhaar-ket-om, EquipId: 1331
+Id: 6529, Name: Tokkul, EquipId: 1181
+Id: 6537, Name: Toktz-xil-ek, EquipId: 1178
+Id: 6539, Name: Tzhaar-ket-em, EquipId: 1177
+Id: 6541, Name: Mouse toy, EquipId: 1332
+Id: 6543, Name: Antique lamp, EquipId: 1179
+Id: 6544, Name: Catspeak amulet(e), EquipId: 1333
+Id: 6547, Name: Doctors hat, EquipId: 1334
+Id: 6548, Name: Nurse hat, EquipId: 1335
+Id: 6560, Name: Wily cat, EquipId: 1165
+Id: 6562, Name: Mud battlestaff, EquipId: 1336
+Id: 6563, Name: Mystic mud staff, EquipId: 1337
+Id: 6564, Name: Onyx ring, EquipId: 1167
+Id: 6566, Name: Onyx amulet, EquipId: 1168
+Id: 6568, Name: Obsidian cape, EquipId: 1338
+Id: 6570, Name: Fire cape, EquipId: 1339
+Id: 6572, Name: Uncut onyx, EquipId: 1163
+Id: 6573, Name: Onyx, EquipId: 1340
+Id: 6574, Name: Onyx, EquipId: 1164
+Id: 6576, Name: Onyx ring, EquipId: 1173
+Id: 6577, Name: Onyx necklace, EquipId: 1341
+Id: 6578, Name: Onyx necklace, EquipId: 1174
+Id: 6580, Name: Onyx amulet, EquipId: 1175
+Id: 6581, Name: Onyx amulet, EquipId: 1342
+Id: 6582, Name: Onyx amulet, EquipId: 1176
+Id: 6584, Name: Ring of stone, EquipId: 1169
+Id: 6585, Name: Amulet of fury, EquipId: 1343
+Id: 6586, Name: Amulet of fury, EquipId: 1170
+Id: 6587, Name: White claws, EquipId: 1344
+Id: 6588, Name: White claws, EquipId: 1171
+Id: 6589, Name: White battleaxe, EquipId: 1345
+Id: 6590, Name: White battleaxe, EquipId: 1172
+Id: 6591, Name: White dagger, EquipId: 1346
+Id: 6593, Name: White dagger(p), EquipId: 1347
+Id: 6595, Name: White dagger(+), EquipId: 1348
+Id: 6597, Name: White dagger(s), EquipId: 1349
+Id: 6599, Name: White halberd, EquipId: 1350
+Id: 6601, Name: White mace, EquipId: 1351
+Id: 6603, Name: Magic staff, EquipId: 1352
+Id: 6605, Name: White sword, EquipId: 1353
+Id: 6607, Name: White longsword, EquipId: 1354
+Id: 6609, Name: White 2h sword, EquipId: 1355
+Id: 6611, Name: White scimitar, EquipId: 1356
+Id: 6613, Name: White warhammer, EquipId: 1357
+Id: 6615, Name: White chainbody, EquipId: 1358
+Id: 6617, Name: White platebody, EquipId: 1359
+Id: 6619, Name: White boots, EquipId: 1360
+Id: 6621, Name: White med helm, EquipId: 1361
+Id: 6623, Name: White full helm, EquipId: 1362
+Id: 6625, Name: White platelegs, EquipId: 1363
+Id: 6627, Name: White plateskirt, EquipId: 1364
+Id: 6629, Name: White gloves, EquipId: 1365
+Id: 6631, Name: White sq shield, EquipId: 1366
+Id: 6633, Name: White kiteshield, EquipId: 1367
+Id: 6635, Name: Commorb, EquipId: 1368
+Id: 6652, Name: Newly made crystal, EquipId: 1183
+Id: 6654, Name: Camo top, EquipId: 1369
+Id: 6655, Name: Camo bottoms, EquipId: 1370
+Id: 6656, Name: Camo helmet, EquipId: 1371
+Id: 6657, Name: Camo top, EquipId: 1372
+Id: 6658, Name: Camo bottoms, EquipId: 1373
+Id: 6659, Name: Camo helmet, EquipId: 1374
+Id: 6661, Name: Mogre, EquipId: 1323
+Id: 6663, Name: Forlorn boot, EquipId: 1324
+Id: 6664, Name: Fishing explosive, EquipId: 1375
+Id: 6665, Name: Mudskipper hat, EquipId: 1376
+Id: 6666, Name: Flippers, EquipId: 1377
+Id: 6670, Name: Fishbowl, EquipId: 1378
+Id: 6671, Name: Fishbowl, EquipId: 1379
+Id: 6672, Name: Fishbowl, EquipId: 1380
+Id: 6673, Name: Fishbowl and net, EquipId: 1381
+Id: 6680, Name: Seaweed in a box?, EquipId: 1321
+Id: 6682, Name: Ground guam, EquipId: 1322
+Id: 6686, Name: Saradomin brew(4), EquipId: 1320
+Id: 6707, Name: Camulet, EquipId: 1382
+Id: 6713, Name: Wrench, EquipId: 1383
+Id: 6714, Name: Holy wrench, EquipId: 1384
+Id: 6720, Name: Slayer gloves, EquipId: 1385
+Id: 6721, Name: Rusty scimitar, EquipId: 1386
+Id: 6722, Name: Zombie head, EquipId: 1387
+Id: 6724, Name: Seercull, EquipId: 1388
+Id: 6727, Name: Mystic mud staff, EquipId: 1333
+Id: 6728, Name: Bonemeal, EquipId: 1334
+Id: 6731, Name: Seers ring, EquipId: 1335
+Id: 6736, Name: Warrior ring, EquipId: 1325
+Id: 6737, Name: Berserker ring, EquipId: 1326
+Id: 6738, Name: Berserker ring, EquipId: 1327
+Id: 6739, Name: Dragon axe, EquipId: 1389
+Id: 6740, Name: Dragon axe, EquipId: 1329
+Id: 6741, Name: Broken axe, EquipId: 1390
+Id: 6742, Name: Broken axe, EquipId: 1331
+Id: 6745, Name: Silverlight, EquipId: 1391
+Id: 6746, Name: Darklight, EquipId: 1392
+Id: 6748, Name: Demonic sigil, EquipId: 1393
+Id: 6750, Name: Black desert shirt, EquipId: 1394
+Id: 6752, Name: Black desert robe, EquipId: 1395
+Id: 6754, Name: Enchanted key, EquipId: 1396
+Id: 6759, Name: Chest, EquipId: 1340
+Id: 6760, Name: Guthix mjolnir, EquipId: 1397
+Id: 6762, Name: Saradomin mjolnir, EquipId: 1398
+Id: 6763, Name: Saradomin mjolnir, EquipId: 1341
+Id: 6764, Name: Zamorak mjolnir, EquipId: 1399
+Id: 6767, Name: Book, EquipId: 1342
+Id: 6772, Name: Smouldering pot, EquipId: 1400
+Id: 6773, Name: Rat pole, EquipId: 1401
+Id: 6774, Name: Rat pole, EquipId: 1402
+Id: 6775, Name: Rat pole, EquipId: 1403
+Id: 6776, Name: Rat pole, EquipId: 1404
+Id: 6777, Name: Rat pole, EquipId: 1405
+Id: 6778, Name: Rat pole, EquipId: 1406
+Id: 6779, Name: Rat pole, EquipId: 1407
+Id: 6781, Name: Bandit, EquipId: 1338
+Id: 6784, Name: Whoopsie, EquipId: 1286
+Id: 6786, Name: Robe of elidinis, EquipId: 1408
+Id: 6787, Name: Robe of elidinis, EquipId: 1409
+Id: 6788, Name: Torn robe, EquipId: 1410
+Id: 6789, Name: Torn robe, EquipId: 1411
+Id: 6790, Name: Shoes, EquipId: 1412
+Id: 6792, Name: Ancestral key, EquipId: 1282
+Id: 6794, Name: Choc-ice, EquipId: 1283
+Id: 6796, Name: Lamp, EquipId: 1280
+Id: 6798, Name: Champion scroll, EquipId: 1281
+Id: 6801, Name: Champion scroll, EquipId: 1278
+Id: 6803, Name: Champion scroll, EquipId: 1279
+Id: 6805, Name: Champion scroll, EquipId: 1276
+Id: 6807, Name: Champion scroll, EquipId: 1277
+Id: 6809, Name: Granite legs, EquipId: 1413
+Id: 6811, Name: Skeletal wyvern, EquipId: 1275
+Id: 6817, Name: Slender blade, EquipId: 1414
+Id: 6818, Name: Bow-sword, EquipId: 1415
+Id: 6819, Name: Large pouch, EquipId: 1302
+Id: 6821, Name: Orb, EquipId: 1301
+Id: 6823, Name: Star bauble, EquipId: 1300
+Id: 6825, Name: Star bauble, EquipId: 1299
+Id: 6827, Name: Star bauble, EquipId: 1298
+Id: 6829, Name: Box bauble, EquipId: 1297
+Id: 6830, Name: Box bauble, EquipId: 1296
+Id: 6833, Name: Box bauble, EquipId: 1295
+Id: 6835, Name: Diamond bauble, EquipId: 1294
+Id: 6837, Name: Diamond bauble, EquipId: 1293
+Id: 6839, Name: Diamond bauble, EquipId: 1292
+Id: 6841, Name: Tree bauble, EquipId: 1291
+Id: 6843, Name: Tree bauble, EquipId: 1290
+Id: 6845, Name: Tree bauble, EquipId: 1289
+Id: 6847, Name: Bell bauble, EquipId: 1288
+Id: 6849, Name: Bell bauble, EquipId: 1316
+Id: 6856, Name: Bobble hat, EquipId: 1416
+Id: 6857, Name: Bobble scarf, EquipId: 1417
+Id: 6858, Name: Jester hat, EquipId: 1418
+Id: 6859, Name: Jester scarf, EquipId: 1419
+Id: 6860, Name: Tri-jester hat, EquipId: 1420
+Id: 6861, Name: Tri-jester scarf, EquipId: 1421
+Id: 6862, Name: Woolly hat, EquipId: 1422
+Id: 6863, Name: Woolly scarf, EquipId: 1423
+Id: 6864, Name: Marionette handle, EquipId: 1424
+Id: 6866, Name: Green marionette, EquipId: 1309
+Id: 6868, Name: Blue marionette, EquipId: 1310
+Id: 6870, Name: Red marionette, EquipId: 1311
+Id: 6872, Name: Red marionette, EquipId: 1304
+Id: 6874, Name: Red marionette, EquipId: 1305
+Id: 6876, Name: Blue marionette, EquipId: 1306
+Id: 6878, Name: Blue marionette, EquipId: 1307
+Id: 6882, Name: Green marionette, EquipId: 1319
+Id: 6885, Name: Progress hat, EquipId: 1425
+Id: 6886, Name: Progress hat, EquipId: 1426
+Id: 6887, Name: Progress hat, EquipId: 1427
+Id: 6889, Name: Mage's book, EquipId: 1428
+Id: 6892, Name: Arena book, EquipId: 1318
+Id: 6895, Name: Adamant med helm, EquipId: 1317
+Id: 6908, Name: Beginner wand, EquipId: 1429
+Id: 6910, Name: Apprentice wand, EquipId: 1430
+Id: 6912, Name: Teacher wand, EquipId: 1431
+Id: 6914, Name: Master wand, EquipId: 1432
+Id: 6916, Name: Infinity top, EquipId: 1433
+Id: 6918, Name: Infinity hat, EquipId: 1434
+Id: 6920, Name: Infinity boots, EquipId: 1435
+Id: 6921, Name: Infinity boots, EquipId: 1257
+Id: 6922, Name: Infinity gloves, EquipId: 1436
+Id: 6923, Name: Infinity gloves, EquipId: 1256
+Id: 6924, Name: Infinity bottoms, EquipId: 1437
+Id: 6925, Name: Infinity bottoms, EquipId: 1255
+Id: 6945, Name: Sandy hand, EquipId: 1260
+Id: 6946, Name: Beer soaked hand, EquipId: 1261
+Id: 6949, Name: A magic scroll, EquipId: 1258
+Id: 6951, Name: Magical orb (a), EquipId: 1259
+Id: 6952, Name: Truth serum, EquipId: 1264
+Id: 6954, Name: Redberry juice, EquipId: 1265
+Id: 6956, Name: Rose tinted lens, EquipId: 1262
+Id: 6958, Name: Sand, EquipId: 1263
+Id: 6959, Name: Cape, EquipId: 1438
+Id: 6984, Name: Granite (5kg), EquipId: 1266
+Id: 6988, Name: Sandstone base, EquipId: 1268
+Id: 6990, Name: Stone head, EquipId: 1267
+Id: 6996, Name: K sigil, EquipId: 1270
+Id: 6998, Name: Stone right arm, EquipId: 1269
+Id: 7000, Name: Stone right leg, EquipId: 1272
+Id: 7002, Name: Stone head, EquipId: 1271
+Id: 7003, Name: Camel mask, EquipId: 1439
+Id: 7004, Name: Chisel, EquipId: 1440
+Id: 7051, Name: Unlit bug lantern, EquipId: 1441
+Id: 7053, Name: Lit bug lantern, EquipId: 1442
+Id: 7055, Name: Chilli potato, EquipId: 1214
+Id: 7066, Name: Mushroom and onion, EquipId: 1219
+Id: 7068, Name: Tuna and corn, EquipId: 1218
+Id: 7070, Name: Minced meat, EquipId: 1217
+Id: 7093, Name: Burnt onion, EquipId: 1227
+Id: 7096, Name: Board game piece, EquipId: 1224
+Id: 7097, Name: Board game piece, EquipId: 1223
+Id: 7098, Name: Board game piece, EquipId: 1226
+Id: 7099, Name: Board game piece, EquipId: 1225
+Id: 7100, Name: Board game piece, EquipId: 1221
+Id: 7101, Name: Board game piece, EquipId: 1220
+Id: 7103, Name: Board game piece, EquipId: 1222
+Id: 7110, Name: Stripy pirate shirt, EquipId: 1443
+Id: 7111, Name: Stripy pirate shirt, EquipId: 1229
+Id: 7112, Name: Pirate bandanna, EquipId: 1444
+Id: 7114, Name: Pirate boots, EquipId: 1445
+Id: 7116, Name: Pirate leggings, EquipId: 1446
+Id: 7118, Name: Cannister, EquipId: 1447
+Id: 7119, Name: Cannon ball, EquipId: 1448
+Id: 7120, Name: Ramrod, EquipId: 1449
+Id: 7121, Name: Repair plank, EquipId: 1450
+Id: 7122, Name: Stripy pirate shirt, EquipId: 1451
+Id: 7124, Name: Pirate bandanna, EquipId: 1452
+Id: 7126, Name: Pirate leggings, EquipId: 1453
+Id: 7128, Name: Stripy pirate shirt, EquipId: 1454
+Id: 7130, Name: Pirate bandanna, EquipId: 1455
+Id: 7132, Name: Pirate leggings, EquipId: 1456
+Id: 7134, Name: Stripy pirate shirt, EquipId: 1457
+Id: 7136, Name: Pirate bandanna, EquipId: 1458
+Id: 7138, Name: Pirate leggings, EquipId: 1459
+Id: 7140, Name: Lucky cutlass, EquipId: 1460
+Id: 7141, Name: Harry's cutlass, EquipId: 1461
+Id: 7142, Name: Rapier, EquipId: 1462
+Id: 7145, Name: Cannon barrel, EquipId: 1237
+Id: 7147, Name: Cannon balls, EquipId: 1238
+Id: 7149, Name: Cannister, EquipId: 1239
+Id: 7155, Name: Rope, EquipId: 1248
+Id: 7156, Name: Tinderbox, EquipId: 1249
+Id: 7158, Name: Dragon 2h sword, EquipId: 1463
+Id: 7159, Name: Slayer boots, EquipId: 1464
+Id: 7161, Name: Slayer boots, EquipId: 1244
+Id: 7163, Name: Pie recipe book, EquipId: 1245
+Id: 7165, Name: Part mud pie, EquipId: 1246
+Id: 7167, Name: Part mud pie, EquipId: 1247
+Id: 7170, Name: Mud pie, EquipId: 1465
+Id: 7203, Name: Part wild pie, EquipId: 1442
+Id: 7213, Name: Part summer pie, EquipId: 1441
+Id: 7258, Name: Clue scroll, EquipId: 1439
+Id: 7259, Name: Casket, EquipId: 1440
+Id: 7306, Name: Casket, EquipId: 1438
+Id: 7319, Name: Red boater, EquipId: 1466
+Id: 7321, Name: Orange boater, EquipId: 1467
+Id: 7323, Name: Green boater, EquipId: 1468
+Id: 7325, Name: Blue boater, EquipId: 1469
+Id: 7327, Name: Black boater, EquipId: 1470
+Id: 7329, Name: Red firelighter, EquipId: 1435
+Id: 7331, Name: Blue firelighter, EquipId: 1434
+Id: 7332, Name: Black kiteshield(h), EquipId: 1471
+Id: 7333, Name: Black kiteshield(h), EquipId: 1437
+Id: 7334, Name: Adam kiteshield(h), EquipId: 1472
+Id: 7335, Name: Adam kiteshield(h), EquipId: 1436
+Id: 7336, Name: Rune kiteshield(h), EquipId: 1473
+Id: 7338, Name: Black kiteshield(h), EquipId: 1474
+Id: 7340, Name: Adam kiteshield(h), EquipId: 1475
+Id: 7342, Name: Rune kiteshield(h), EquipId: 1476
+Id: 7344, Name: Black kiteshield(h), EquipId: 1477
+Id: 7346, Name: Adam kiteshield(h), EquipId: 1478
+Id: 7348, Name: Rune kiteshield(h), EquipId: 1479
+Id: 7350, Name: Black kiteshield(h), EquipId: 1480
+Id: 7352, Name: Adam kiteshield(h), EquipId: 1481
+Id: 7354, Name: Rune kiteshield(h), EquipId: 1482
+Id: 7356, Name: Black kiteshield(h), EquipId: 1483
+Id: 7358, Name: Adam kiteshield(h), EquipId: 1484
+Id: 7360, Name: Rune kiteshield(h), EquipId: 1485
+Id: 7362, Name: Studded body (g), EquipId: 1486
+Id: 7364, Name: Studded body (t), EquipId: 1487
+Id: 7365, Name: Studded body (t), EquipId: 1426
+Id: 7366, Name: Studded chaps (g), EquipId: 1488
+Id: 7368, Name: Studded chaps (t), EquipId: 1489
+Id: 7370, Name: D-hide body(g), EquipId: 1490
+Id: 7372, Name: D-hide body (t), EquipId: 1491
+Id: 7374, Name: D-hide body (g), EquipId: 1492
+Id: 7376, Name: D-hide body (t), EquipId: 1493
+Id: 7378, Name: D-hide chaps (g), EquipId: 1494
+Id: 7380, Name: D-hide chaps (t), EquipId: 1495
+Id: 7382, Name: D-hide chaps (g), EquipId: 1496
+Id: 7384, Name: D-hide chaps (t), EquipId: 1497
+Id: 7386, Name: Blue skirt (g), EquipId: 1498
+Id: 7388, Name: Blue skirt (t), EquipId: 1499
+Id: 7390, Name: Wizard robe (g), EquipId: 1500
+Id: 7392, Name: Wizard robe (t), EquipId: 1501
+Id: 7393, Name: Wizard robe (t), EquipId: 1420
+Id: 7394, Name: Wizard hat (g), EquipId: 1502
+Id: 7395, Name: Wizard hat (g), EquipId: 1418
+Id: 7396, Name: Wizard hat (t), EquipId: 1503
+Id: 7397, Name: Wizard hat (t), EquipId: 1416
+Id: 7398, Name: Enchanted bottoms, EquipId: 1504
+Id: 7399, Name: Enchanted top, EquipId: 1505
+Id: 7400, Name: Enchanted hat, EquipId: 1506
+Id: 7404, Name: Red logs, EquipId: 1507
+Id: 7405, Name: Green logs, EquipId: 1508
+Id: 7406, Name: Blue logs, EquipId: 1509
+Id: 7407, Name: Dragon 2h sword, EquipId: 1422
+Id: 7409, Name: Magic secateurs, EquipId: 1510
+Id: 7410, Name: Queen's secateurs, EquipId: 1511
+Id: 7414, Name: Paddle, EquipId: 1513
+Id: 7421, Name: Fungicide spray 10, EquipId: 1514
+Id: 7422, Name: Fungicide spray 9, EquipId: 1515
+Id: 7423, Name: Fungicide spray 8, EquipId: 1516
+Id: 7424, Name: Fungicide spray 7, EquipId: 1517
+Id: 7425, Name: Fungicide spray 6, EquipId: 1518
+Id: 7426, Name: Fungicide spray 5, EquipId: 1519
+Id: 7427, Name: Fungicide spray 4, EquipId: 1520
+Id: 7428, Name: Fungicide spray 3, EquipId: 1521
+Id: 7429, Name: Fungicide spray 2, EquipId: 1522
+Id: 7430, Name: Fungicide spray 1, EquipId: 1523
+Id: 7431, Name: Fungicide spray 0, EquipId: 1524
+Id: 7432, Name: Fungicide, EquipId: 1413
+Id: 7433, Name: Wooden spoon, EquipId: 1525
+Id: 7435, Name: Egg whisk, EquipId: 1526
+Id: 7437, Name: Spork, EquipId: 1527
+Id: 7439, Name: Spatula, EquipId: 1528
+Id: 7441, Name: Frying pan, EquipId: 1529
+Id: 7443, Name: Skewer, EquipId: 1530
+Id: 7445, Name: Rolling pin, EquipId: 1531
+Id: 7447, Name: Kitchen knife, EquipId: 1532
+Id: 7449, Name: Meat tenderiser, EquipId: 1533
+Id: 7451, Name: Cleaver, EquipId: 1534
+Id: 7453, Name: Gloves, EquipId: 1535
+Id: 7454, Name: Gloves, EquipId: 1536
+Id: 7455, Name: Gloves, EquipId: 1537
+Id: 7456, Name: Gloves, EquipId: 1538
+Id: 7457, Name: Gloves, EquipId: 1539
+Id: 7458, Name: Gloves, EquipId: 1540
+Id: 7459, Name: Gloves, EquipId: 1541
+Id: 7460, Name: Gloves, EquipId: 1542
+Id: 7461, Name: Gloves, EquipId: 1543
+Id: 7462, Name: Gloves, EquipId: 1544
+Id: 7463, Name: Cornflour, EquipId: 1410
+Id: 7464, Name: Book on chickens, EquipId: 1403
+Id: 7465, Name: Vanilla pod, EquipId: 1402
+Id: 7466, Name: Cornflour, EquipId: 1405
+Id: 7467, Name: Cornflour, EquipId: 1404
+Id: 7468, Name: Pot of cornflour, EquipId: 1407
+Id: 7469, Name: Pot of cornflour, EquipId: 1406
+Id: 7475, Name: Brulee, EquipId: 1545
+Id: 7480, Name: Red spice (4), EquipId: 1412
+Id: 7491, Name: Brown spice (1), EquipId: 1396
+Id: 7493, Name: Yellow spice (3), EquipId: 1395
+Id: 7495, Name: Yellow spice (1), EquipId: 1394
+Id: 7497, Name: Dirty blast, EquipId: 1393
+Id: 7499, Name: Evil dave, EquipId: 1392
+Id: 7500, Name: Dwarf, EquipId: 1391
+Id: 7504, Name: Osman, EquipId: 1400
+Id: 7505, Name: Pirate pete, EquipId: 1401
+Id: 7509, Name: Dwarven rock cake, EquipId: 1546
+Id: 7512, Name: Soggy bread, EquipId: 1399
+Id: 7514, Name: Dyed orange, EquipId: 1398
+Id: 7516, Name: Kelp, EquipId: 1397
+Id: 7521, Name: Cooked crab meat, EquipId: 1387
+Id: 7523, Name: Cooked crab meat, EquipId: 1388
+Id: 7526, Name: Cooked crab meat, EquipId: 1386
+Id: 7527, Name: Ground crab meat, EquipId: 1385
+Id: 7529, Name: Raw fishcake, EquipId: 1384
+Id: 7534, Name: Fishbowl helmet, EquipId: 1547
+Id: 7535, Name: Diving apparatus, EquipId: 1548
+Id: 7537, Name: Crab claw, EquipId: 1549
+Id: 7539, Name: Crab helmet, EquipId: 1550
+Id: 7572, Name: Red banana, EquipId: 1551
+Id: 7582, Name: Hell cat, EquipId: 1382
+Id: 7592, Name: Zombie shirt, EquipId: 1552
+Id: 7593, Name: Zombie trousers, EquipId: 1553
+Id: 7594, Name: Zombie mask, EquipId: 1554
+Id: 7595, Name: Zombie gloves, EquipId: 1555
+Id: 7596, Name: Zombie boots, EquipId: 1556
+Id: 7597, Name: Item, EquipId: 1374
+Id: 7602, Name: Item, EquipId: 1376
+Id: 7603, Name: Item, EquipId: 1375
+Id: 7605, Name: Item, EquipId: 1377
+Id: 7608, Name: Item, EquipId: 1379
+Id: 7609, Name: Item, EquipId: 1378
+Id: 7610, Name: Item, EquipId: 1381
+Id: 7611, Name: Item, EquipId: 1380
+Id: 7617, Name: Item, EquipId: 1361
+Id: 7618, Name: Item, EquipId: 1360
+Id: 7623, Name: Bucket of rubble, EquipId: 1359
+Id: 7625, Name: Bucket of rubble, EquipId: 1365
+Id: 7627, Name: Bucket of rubble, EquipId: 1364
+Id: 7629, Name: Dusty scroll, EquipId: 1363
+Id: 7631, Name: Crate, EquipId: 1362
+Id: 7634, Name: Battered tome, EquipId: 1368
+Id: 7636, Name: Rod dust, EquipId: 1367
+Id: 7637, Name: Silvthrill rod, EquipId: 1557
+Id: 7638, Name: Silvthrill rod, EquipId: 1366
+Id: 7639, Name: Rod of ivandis(10), EquipId: 1558
+Id: 7640, Name: Rod of ivandis(9), EquipId: 1559
+Id: 7641, Name: Rod of ivandis(8), EquipId: 1560
+Id: 7642, Name: Rod of ivandis(7), EquipId: 1561
+Id: 7643, Name: Rod of ivandis(6), EquipId: 1562
+Id: 7644, Name: Rod of ivandis(5), EquipId: 1563
+Id: 7645, Name: Rod of ivandis(4), EquipId: 1564
+Id: 7646, Name: Rod of ivandis(3), EquipId: 1565
+Id: 7647, Name: Rod of ivandis(2), EquipId: 1566
+Id: 7648, Name: Rod of ivandis(1), EquipId: 1567
+Id: 7650, Name: Silver dust, EquipId: 1346
+Id: 7652, Name: Unfinished potion., EquipId: 1343
+Id: 7654, Name: Unfinished potion., EquipId: 1344
+Id: 7656, Name: Unfinished potion., EquipId: 1349
+Id: 7658, Name: Unfinished potion., EquipId: 1350
+Id: 7660, Name: Guthix balance(4), EquipId: 1347
+Id: 7662, Name: Guthix balance(3), EquipId: 1348
+Id: 7664, Name: Guthix balance(2), EquipId: 1353
+Id: 7666, Name: Guthix balance(1), EquipId: 1354
+Id: 7668, Name: Gadderhammer, EquipId: 1568
+Id: 7669, Name: Gadderhammer, EquipId: 1351
+Id: 7671, Name: Boxing gloves, EquipId: 1569
+Id: 7672, Name: Boxing gloves, EquipId: 1357
+Id: 7673, Name: Boxing gloves, EquipId: 1570
+Id: 7674, Name: Boxing gloves, EquipId: 1358
+Id: 7675, Name: Wooden sword, EquipId: 1571
+Id: 7676, Name: Wooden shield., EquipId: 1572
+Id: 7678, Name: Prize key, EquipId: 1356
+Id: 7679, Name: Pugel, EquipId: 1573
+Id: 7682, Name: Hoop, EquipId: 1574
+Id: 7684, Name: Dart, EquipId: 1575
+Id: 7686, Name: Bow and arrow, EquipId: 1576
+Id: 7688, Name: Kettle, EquipId: 1577
+Id: 7690, Name: Full kettle, EquipId: 1578
+Id: 7691, Name: Hot kettle, EquipId: 1579
+Id: 7708, Name: Pot of tea, EquipId: 1549
+Id: 7710, Name: Pot of tea, EquipId: 1550
+Id: 7716, Name: Pot of tea, EquipId: 1556
+Id: 7717, Name: Pot of tea, EquipId: 1555
+Id: 7718, Name: Pot of tea, EquipId: 1554
+Id: 7719, Name: Pot of tea, EquipId: 1553
+Id: 7720, Name: Pot of tea, EquipId: 1552
+Id: 7728, Name: Empty cup, EquipId: 1580
+Id: 7730, Name: Cup of tea, EquipId: 1581
+Id: 7731, Name: Cup of tea, EquipId: 1582
+Id: 7732, Name: Porcelain cup, EquipId: 1583
+Id: 7733, Name: Cup of tea, EquipId: 1584
+Id: 7734, Name: Cup of tea, EquipId: 1585
+Id: 7735, Name: Porcelain cup, EquipId: 1586
+Id: 7736, Name: Cup of tea, EquipId: 1587
+Id: 7737, Name: Cup of tea, EquipId: 1588
+Id: 7740, Name: Beer, EquipId: 1589
+Id: 7741, Name: Beer, EquipId: 1551
+Id: 7742, Name: Beer glass, EquipId: 1590
+Id: 7744, Name: Asgarnian ale, EquipId: 1591
+Id: 7746, Name: Greenman's ale, EquipId: 1592
+Id: 7748, Name: Dragon bitter, EquipId: 1593
+Id: 7750, Name: Moonlight mead, EquipId: 1594
+Id: 7752, Name: Cider, EquipId: 1595
+Id: 7754, Name: Chef's delight, EquipId: 1596
+Id: 7756, Name: Paintbrush, EquipId: 1597
+Id: 7758, Name: Rusty sword, EquipId: 1598
+Id: 7770, Name: Toy mouse (wound), EquipId: 1545
+Id: 7773, Name: Branch, EquipId: 1599
+Id: 7777, Name: Long vine, EquipId: 1600
+Id: 7778, Name: Short vine, EquipId: 1601
+Id: 7781, Name: Fishing tome, EquipId: 1548
+Id: 7782, Name: Agility tome, EquipId: 1547
+Id: 7803, Name: Yin yang amulet, EquipId: 1602
+Id: 7804, Name: Zaros mjolnir, EquipId: 1603
+Id: 7806, Name: Anger sword, EquipId: 1604
+Id: 7807, Name: Anger battleaxe, EquipId: 1605
+Id: 7808, Name: Anger mace, EquipId: 1606
+Id: 7809, Name: Anger spear, EquipId: 1607
+Id: 7810, Name: Jug of vinegar, EquipId: 1524
+Id: 7812, Name: Goblin skull, EquipId: 1518
+Id: 7813, Name: Bone in vinegar, EquipId: 1519
+Id: 7814, Name: Goblin skull, EquipId: 1520
+Id: 7815, Name: Bear ribs, EquipId: 1521
+Id: 7816, Name: Bone in vinegar, EquipId: 1527
+Id: 7818, Name: Ram skull, EquipId: 1528
+Id: 7820, Name: Ram skull, EquipId: 1525
+Id: 7822, Name: Bone in vinegar, EquipId: 1526
+Id: 7824, Name: Giant rat bone, EquipId: 1513
+Id: 7828, Name: Bone in vinegar, EquipId: 1511
+Id: 7829, Name: Giant bat wing, EquipId: 1510
+Id: 7830, Name: Wolf bone, EquipId: 1512
+Id: 7832, Name: Wolf bone, EquipId: 1515
+Id: 7833, Name: Bat wing, EquipId: 1514
+Id: 7834, Name: Bone in vinegar, EquipId: 1517
+Id: 7835, Name: Bat wing, EquipId: 1516
+Id: 7842, Name: Ogre ribs, EquipId: 1543
+Id: 7843, Name: Bone in vinegar, EquipId: 1544
+Id: 7844, Name: Ogre ribs, EquipId: 1541
+Id: 7845, Name: Jogre bone, EquipId: 1542
+Id: 7846, Name: Bone in vinegar, EquipId: 1539
+Id: 7847, Name: Jogre bone, EquipId: 1540
+Id: 7857, Name: Dagannoth ribs, EquipId: 1532
+Id: 7859, Name: Dagannoth ribs, EquipId: 1531
+Id: 7861, Name: Bone in vinegar, EquipId: 1530
+Id: 7863, Name: Zombie bone, EquipId: 1529
+Id: 7864, Name: Bone in vinegar, EquipId: 1538
+Id: 7865, Name: Zombie bone, EquipId: 1537
+Id: 7866, Name: Werewolf bone, EquipId: 1536
+Id: 7867, Name: Bone in vinegar, EquipId: 1535
+Id: 7869, Name: Moss giant bone, EquipId: 1534
+Id: 7871, Name: Moss giant bone, EquipId: 1533
+Id: 7873, Name: Bone in vinegar, EquipId: 1488
+Id: 7875, Name: Ice giant ribs, EquipId: 1489
+Id: 7877, Name: Ice giant ribs, EquipId: 1490
+Id: 7879, Name: Bone in vinegar, EquipId: 1491
+Id: 7881, Name: Ghoul bone, EquipId: 1492
+Id: 7883, Name: Ghoul bone, EquipId: 1493
+Id: 7885, Name: Bone in vinegar, EquipId: 1494
+Id: 7887, Name: Seagull wing, EquipId: 1495
+Id: 7888, Name: Bone in vinegar, EquipId: 1480
+Id: 7890, Name: Undead cow ribs, EquipId: 1481
+Id: 7892, Name: Undead cow ribs, EquipId: 1482
+Id: 7894, Name: Bone in vinegar, EquipId: 1483
+Id: 7896, Name: Rabbit bone, EquipId: 1484
+Id: 7898, Name: Rabbit bone, EquipId: 1485
+Id: 7900, Name: Bone in vinegar, EquipId: 1486
+Id: 7902, Name: Desert lizard bone, EquipId: 1487
+Id: 7905, Name: Cave goblin skull, EquipId: 1503
+Id: 7907, Name: Cave goblin skull, EquipId: 1502
+Id: 7908, Name: Big frog leg, EquipId: 1505
+Id: 7909, Name: Bone in vinegar, EquipId: 1506
+Id: 7911, Name: Vulture wing, EquipId: 1504
+Id: 7913, Name: Vulture wing, EquipId: 1507
+Id: 7917, Name: Ram skull helm, EquipId: 1608
+Id: 7918, Name: Bonesack, EquipId: 1609
+Id: 7919, Name: Bottle of wine, EquipId: 1509
+Id: 7921, Name: Empty wine bottle, EquipId: 1496
+Id: 7927, Name: Easter ring, EquipId: 1497
+Id: 7928, Name: Easter egg, EquipId: 1499
+Id: 7930, Name: Easter egg, EquipId: 1498
+Id: 7932, Name: Easter egg, EquipId: 1501
+Id: 7934, Name: Field ration, EquipId: 1500
+Id: 7952, Name: Axe handle, EquipId: 1610
+Id: 7970, Name: Long pulley beam, EquipId: 1471
+Id: 7973, Name: Beam, EquipId: 1469
+Id: 7975, Name: Crawling hand, EquipId: 1470
+Id: 7977, Name: Basilisk head, EquipId: 1467
+Id: 7979, Name: Abyssal head, EquipId: 1468
+Id: 7983, Name: Cockatrice head, EquipId: 1466
+Id: 7985, Name: Kurask head, EquipId: 1478
+Id: 7987, Name: Kbd heads, EquipId: 1479
+Id: 7989, Name: Big bass, EquipId: 1476
+Id: 7991, Name: Big swordfish, EquipId: 1477
+Id: 7993, Name: Big shark, EquipId: 1474
+Id: 7995, Name: Arthur portrait, EquipId: 1475
+Id: 7997, Name: Keldagrim portrait, EquipId: 1472
+Id: 7999, Name: Desert painting, EquipId: 1473
+Id: 8068, Name: Gilded altar, EquipId: 1464
+Id: 8071, Name: Steel candlesticks, EquipId: 1463
+Id: 8075, Name: Marble burners, EquipId: 1465
+Id: 8144, Name: Man trap, EquipId: 1444
+Id: 8146, Name: Marble trap, EquipId: 1443
+Id: 8148, Name: Wooden crate, EquipId: 1446
+Id: 8150, Name: Teak chest, EquipId: 1445
+Id: 8152, Name: Magic chest, EquipId: 1449
+Id: 8153, Name: Clay attack stone, EquipId: 1448
+Id: 8154, Name: Attack stone, EquipId: 1447
+Id: 8156, Name: Magical balance 1, EquipId: 1452
+Id: 8158, Name: Magical balance 3, EquipId: 1451
+Id: 8159, Name: Jester, EquipId: 1450
+Id: 8161, Name: Hangman game, EquipId: 1453
+Id: 8163, Name: Dartboard, EquipId: 1454
+Id: 8165, Name: Oak prize chest, EquipId: 1455
+Id: 8167, Name: Mahogany chest, EquipId: 1456
+Id: 8169, Name: Decorative rock, EquipId: 1457
+Id: 8171, Name: Imp statue, EquipId: 1458
+Id: 8173, Name: Tree, EquipId: 1459
+Id: 8175, Name: Oak tree, EquipId: 1460
+Id: 8176, Name: Willow tree, EquipId: 1462
+Id: 8177, Name: Maple tree, EquipId: 1461
+Id: 8463, Name: Construction guide, EquipId: 1611
+Id: 8464, Name: Rune heraldic helm, EquipId: 1611
+Id: 8466, Name: Rune heraldic helm, EquipId: 1612
+Id: 8468, Name: Rune heraldic helm, EquipId: 1613
+Id: 8470, Name: Rune heraldic helm, EquipId: 1614
+Id: 8472, Name: Rune heraldic helm, EquipId: 1615
+Id: 8474, Name: Rune heraldic helm, EquipId: 1616
+Id: 8476, Name: Rune heraldic helm, EquipId: 1617
+Id: 8478, Name: Rune heraldic helm, EquipId: 1618
+Id: 8480, Name: Rune heraldic helm, EquipId: 1619
+Id: 8481, Name: null, EquipId: 1621
+Id: 8482, Name: Rune heraldic helm, EquipId: 1620
+Id: 8483, Name: null, EquipId: 1620
+Id: 8484, Name: Rune heraldic helm, EquipId: 1621
+Id: 8485, Name: null, EquipId: 1623
+Id: 8486, Name: Rune heraldic helm, EquipId: 1622
+Id: 8487, Name: null, EquipId: 1622
+Id: 8488, Name: Rune heraldic helm, EquipId: 1623
+Id: 8489, Name: null, EquipId: 1625
+Id: 8490, Name: Rune heraldic helm, EquipId: 1624
+Id: 8491, Name: null, EquipId: 1624
+Id: 8492, Name: Rune heraldic helm, EquipId: 1625
+Id: 8494, Name: Rune heraldic helm, EquipId: 1626
+Id: 8495, Name: null, EquipId: 1626
+Id: 8496, Name: Crude wooden chair, EquipId: 1613
+Id: 8498, Name: Wooden chair, EquipId: 1612
+Id: 8500, Name: Rocking chair, EquipId: 1615
+Id: 8502, Name: Oak chair, EquipId: 1614
+Id: 8504, Name: Oak armchair, EquipId: 1617
+Id: 8506, Name: Teak armchair, EquipId: 1616
+Id: 8508, Name: Mahogany armchair, EquipId: 1619
+Id: 8510, Name: Wooden bookcase, EquipId: 1618
+Id: 8650, Name: Banner, EquipId: 1627
+Id: 8652, Name: Banner, EquipId: 1628
+Id: 8654, Name: Banner, EquipId: 1629
+Id: 8656, Name: Banner, EquipId: 1630
+Id: 8658, Name: Banner, EquipId: 1631
+Id: 8660, Name: Banner, EquipId: 1632
+Id: 8662, Name: Banner, EquipId: 1633
+Id: 8664, Name: Banner, EquipId: 1634
+Id: 8666, Name: Banner, EquipId: 1635
+Id: 8668, Name: Banner, EquipId: 1636
+Id: 8670, Name: Banner, EquipId: 1637
+Id: 8672, Name: Banner, EquipId: 1638
+Id: 8674, Name: Banner, EquipId: 1639
+Id: 8676, Name: Banner, EquipId: 1640
+Id: 8678, Name: Banner, EquipId: 1641
+Id: 8680, Name: Banner, EquipId: 1642
+Id: 8682, Name: Steel heraldic helm, EquipId: 1643
+Id: 8684, Name: Steel heraldic helm, EquipId: 1644
+Id: 8686, Name: Steel heraldic helm, EquipId: 1645
+Id: 8688, Name: Steel heraldic helm, EquipId: 1646
+Id: 8690, Name: Steel heraldic helm, EquipId: 1647
+Id: 8692, Name: Steel heraldic helm, EquipId: 1648
+Id: 8694, Name: Steel heraldic helm, EquipId: 1649
+Id: 8696, Name: Steel heraldic helm, EquipId: 1650
+Id: 8698, Name: Steel heraldic helm, EquipId: 1651
+Id: 8700, Name: Steel heraldic helm, EquipId: 1652
+Id: 8702, Name: Steel heraldic helm, EquipId: 1653
+Id: 8704, Name: Steel heraldic helm, EquipId: 1654
+Id: 8706, Name: Steel heraldic helm, EquipId: 1655
+Id: 8708, Name: Steel heraldic helm, EquipId: 1656
+Id: 8710, Name: Steel heraldic helm, EquipId: 1657
+Id: 8712, Name: Steel heraldic helm, EquipId: 1658
+Id: 8714, Name: Rune kiteshield, EquipId: 1659
+Id: 8716, Name: Rune kiteshield, EquipId: 1660
+Id: 8718, Name: Rune kiteshield, EquipId: 1661
+Id: 8720, Name: Rune kiteshield, EquipId: 1662
+Id: 8722, Name: Rune kiteshield, EquipId: 1663
+Id: 8724, Name: Rune kiteshield, EquipId: 1664
+Id: 8726, Name: Rune kiteshield, EquipId: 1665
+Id: 8728, Name: Rune kiteshield, EquipId: 1666
+Id: 8730, Name: Rune kiteshield, EquipId: 1667
+Id: 8732, Name: Rune kiteshield, EquipId: 1668
+Id: 8734, Name: Rune kiteshield, EquipId: 1669
+Id: 8736, Name: Rune kiteshield, EquipId: 1670
+Id: 8738, Name: Rune kiteshield, EquipId: 1671
+Id: 8740, Name: Rune kiteshield, EquipId: 1672
+Id: 8742, Name: Rune kiteshield, EquipId: 1673
+Id: 8743, Name: null, EquipId: 1568
+Id: 8744, Name: Rune kiteshield, EquipId: 1674
+Id: 8746, Name: Steel kiteshield, EquipId: 1675
+Id: 8748, Name: Steel kiteshield, EquipId: 1676
+Id: 8750, Name: Steel kiteshield, EquipId: 1677
+Id: 8751, Name: null, EquipId: 1572
+Id: 8752, Name: Steel kiteshield, EquipId: 1678
+Id: 8754, Name: Steel kiteshield, EquipId: 1679
+Id: 8756, Name: Steel kiteshield, EquipId: 1680
+Id: 8758, Name: Steel kiteshield, EquipId: 1681
+Id: 8760, Name: Steel kiteshield, EquipId: 1682
+Id: 8762, Name: Steel kiteshield, EquipId: 1683
+Id: 8764, Name: Steel kiteshield, EquipId: 1684
+Id: 8766, Name: Steel kiteshield, EquipId: 1685
+Id: 8767, Name: null, EquipId: 1579
+Id: 8768, Name: Steel kiteshield, EquipId: 1686
+Id: 8770, Name: Steel kiteshield, EquipId: 1687
+Id: 8772, Name: Steel kiteshield, EquipId: 1688
+Id: 8773, Name: null, EquipId: 1559
+Id: 8774, Name: Steel kiteshield, EquipId: 1689
+Id: 8776, Name: Steel kiteshield, EquipId: 1690
+Id: 8777, Name: null, EquipId: 1563
+Id: 8778, Name: Oak plank, EquipId: 1560
+Id: 8779, Name: Oak plank, EquipId: 1561
+Id: 8780, Name: Teak plank, EquipId: 1566
+Id: 8781, Name: Teak plank, EquipId: 1567
+Id: 8782, Name: Mahogany plank, EquipId: 1564
+Id: 8783, Name: Mahogany plank, EquipId: 1565
+Id: 8794, Name: Saw, EquipId: 1691
+Id: 8798, Name: null, EquipId: 1692
+Id: 8799, Name: null, EquipId: 1693
+Id: 8800, Name: null, EquipId: 1694
+Id: 8801, Name: null, EquipId: 1695
+Id: 8802, Name: null, EquipId: 1696
+Id: 8803, Name: null, EquipId: 1697
+Id: 8804, Name: null, EquipId: 1698
+Id: 8805, Name: null, EquipId: 1699
+Id: 8806, Name: null, EquipId: 1700
+Id: 8807, Name: null, EquipId: 1701
+Id: 8808, Name: null, EquipId: 1702
+Id: 8809, Name: null, EquipId: 1703
+Id: 8810, Name: null, EquipId: 1704
+Id: 8811, Name: null, EquipId: 1705
+Id: 8812, Name: null, EquipId: 1706
+Id: 8813, Name: null, EquipId: 1707
+Id: 8814, Name: null, EquipId: 1708
+Id: 8815, Name: null, EquipId: 1709
+Id: 8816, Name: null, EquipId: 1710
+Id: 8817, Name: null, EquipId: 1711
+Id: 8818, Name: null, EquipId: 1712
+Id: 8819, Name: null, EquipId: 1713
+Id: 8820, Name: null, EquipId: 1714
+Id: 8821, Name: null, EquipId: 1715
+Id: 8822, Name: null, EquipId: 1716
+Id: 8823, Name: null, EquipId: 1717
+Id: 8824, Name: null, EquipId: 1718
+Id: 8825, Name: null, EquipId: 1719
+Id: 8826, Name: null, EquipId: 1720
+Id: 8827, Name: null, EquipId: 1721
+Id: 8829, Name: null, EquipId: 1722
+Id: 8830, Name: null, EquipId: 1723
+Id: 8831, Name: null, EquipId: 1724
+Id: 8832, Name: null, EquipId: 1725
+Id: 8833, Name: null, EquipId: 1726
+Id: 8834, Name: null, EquipId: 1727
+Id: 8835, Name: null, EquipId: 1728
+Id: 8839, Name: Void knight top, EquipId: 1729
+Id: 8840, Name: Void knight robe bottoms, EquipId: 1730
+Id: 8841, Name: Void knight mace, EquipId: 1731
+Id: 8842, Name: Void knight gloves, EquipId: 1732
+Id: 8844, Name: Bronze defender, EquipId: 1733
+Id: 8845, Name: Iron defender, EquipId: 1734
+Id: 8846, Name: Steel defender, EquipId: 1735
+Id: 8847, Name: Black defender, EquipId: 1736
+Id: 8848, Name: Mithril defender, EquipId: 1737
+Id: 8849, Name: Adamant defender, EquipId: 1738
+Id: 8850, Name: Rune defender, EquipId: 1739
+Id: 8856, Name: Defensive shield, EquipId: 1740
+Id: 8857, Name: Shot, EquipId: 1741
+Id: 8858, Name: 18lb shot, EquipId: 1742
+Id: 8859, Name: 22lb shot, EquipId: 1743
+Id: 8860, Name: One barrel, EquipId: 1744
+Id: 8861, Name: Two barrels, EquipId: 1745
+Id: 8862, Name: Three barrels, EquipId: 1746
+Id: 8863, Name: Four barrels, EquipId: 1747
+Id: 8864, Name: Five barrels, EquipId: 1748
+Id: 8866, Name: Steel key, EquipId: 1606
+Id: 8867, Name: Bronze key, EquipId: 1605
+Id: 8870, Name: Zanik, EquipId: 1603
+Id: 8871, Name: Crate with zanik, EquipId: 1749
+Id: 8872, Name: Bone dagger, EquipId: 1750
+Id: 8874, Name: Bone dagger (p), EquipId: 1751
+Id: 8876, Name: Bone dagger (p+), EquipId: 1752
+Id: 8878, Name: Bone dagger (p++), EquipId: 1753
+Id: 8880, Name: Dorgeshuun c'bow, EquipId: 1754
+Id: 8892, Name: null, EquipId: 1607
+Id: 8901, Name: Black mask (10), EquipId: 1755
+Id: 8903, Name: Black mask (9), EquipId: 1756
+Id: 8905, Name: Black mask (8), EquipId: 1757
+Id: 8907, Name: Black mask (7), EquipId: 1758
+Id: 8909, Name: Black mask (6), EquipId: 1759
+Id: 8911, Name: Black mask (5), EquipId: 1760
+Id: 8913, Name: Black mask (4), EquipId: 1761
+Id: 8915, Name: Black mask (3), EquipId: 1762
+Id: 8917, Name: Black mask (2), EquipId: 1763
+Id: 8919, Name: Black mask (1), EquipId: 1764
+Id: 8921, Name: Black mask, EquipId: 1765
+Id: 8922, Name: Black mask, EquipId: 1600
+Id: 8923, Name: Witchwood icon, EquipId: 1766
+Id: 8924, Name: Bandana and eyepatch, EquipId: 1767
+Id: 8925, Name: Bandana and eyepatch, EquipId: 1768
+Id: 8926, Name: Bandana and eyepatch, EquipId: 1769
+Id: 8927, Name: Bandana and eyepatch, EquipId: 1770
+Id: 8928, Name: Hat and eyepatch, EquipId: 1771
+Id: 8929, Name: Crabclaw and hook, EquipId: 1772
+Id: 8930, Name: Pipe section, EquipId: 1589
+Id: 8932, Name: Lumber patch, EquipId: 1590
+Id: 8934, Name: Scrapey tree logs, EquipId: 1591
+Id: 8936, Name: Blue flowers, EquipId: 1581
+Id: 8938, Name: Red flowers, EquipId: 1583
+Id: 8939, Name: Red flowers, EquipId: 1582
+Id: 8940, Name: Rum, EquipId: 1773
+Id: 8941, Name: Rum, EquipId: 1774
+Id: 8942, Name: Monkey, EquipId: 1587
+Id: 8943, Name: Blue monkey, EquipId: 1586
+Id: 8945, Name: Blue monkey, EquipId: 1596
+Id: 8947, Name: Red monkey, EquipId: 1597
+Id: 8949, Name: Pirate bandana, EquipId: 1775
+Id: 8950, Name: Pirate hat, EquipId: 1776
+Id: 8952, Name: Blue naval shirt, EquipId: 1777
+Id: 8953, Name: Green naval shirt, EquipId: 1778
+Id: 8954, Name: Red naval shirt, EquipId: 1779
+Id: 8955, Name: Brown naval shirt, EquipId: 1780
+Id: 8956, Name: Black naval shirt, EquipId: 1781
+Id: 8957, Name: Purple naval shirt, EquipId: 1782
+Id: 8958, Name: Grey naval shirt, EquipId: 1783
+Id: 8959, Name: Blue tricorn hat, EquipId: 1784
+Id: 8960, Name: Green tricorn hat, EquipId: 1785
+Id: 8961, Name: Red tricorn hat, EquipId: 1786
+Id: 8962, Name: Brown tricorn hat, EquipId: 1787
+Id: 8963, Name: Black tricorn hat, EquipId: 1788
+Id: 8964, Name: Purple tricorn hat, EquipId: 1789
+Id: 8965, Name: Grey tricorn hat, EquipId: 1790
+Id: 8966, Name: Cutthroat flag, EquipId: 1791
+Id: 8967, Name: Guilded smile flag, EquipId: 1792
+Id: 8968, Name: Bronze fist flag, EquipId: 1793
+Id: 8969, Name: Lucky shot flag, EquipId: 1794
+Id: 8970, Name: Treasure flag, EquipId: 1795
+Id: 8971, Name: Phasmatys flag, EquipId: 1796
+Id: 8986, Name: Bucket, EquipId: 1797
+Id: 8987, Name: Torch, EquipId: 1798
+Id: 8991, Name: Blue navy slacks, EquipId: 1799
+Id: 8992, Name: Green navy slacks, EquipId: 1800
+Id: 8993, Name: Red navy slacks, EquipId: 1801
+Id: 8994, Name: Brown navy slacks, EquipId: 1802
+Id: 8995, Name: Black navy slacks, EquipId: 1803
+Id: 8996, Name: Purple navy slacks, EquipId: 1804
+Id: 8997, Name: Grey navy slacks, EquipId: 1805
+Id: 9001, Name: Bandana and eyepatch, EquipId: 1610
+Id: 9005, Name: Fancy boots, EquipId: 1806
+Id: 9006, Name: Fighting boots, EquipId: 1807
+Id: 9013, Name: Skull sceptre, EquipId: 1808
+Id: 9020, Name: Queen's secateurs, EquipId: 1809
+Id: 9036, Name: Pottery statuette, EquipId: 1608
+Id: 9037, Name: Pottery statuette, EquipId: 1609
+Id: 9044, Name: Pharaoh's sceptre, EquipId: 1810
+Id: 9046, Name: Pharaoh's sceptre, EquipId: 1811
+Id: 9048, Name: Pharaoh's sceptre, EquipId: 1812
+Id: 9050, Name: Pharaoh's sceptre, EquipId: 1813
+Id: 9060, Name: null, EquipId: 1814
+Id: 9061, Name: null, EquipId: 1815
+Id: 9062, Name: null, EquipId: 1816
+Id: 9063, Name: null, EquipId: 1817
+Id: 9065, Name: Emerald lantern, EquipId: 1818
+Id: 9068, Name: Moonclan helm, EquipId: 1819
+Id: 9069, Name: Moonclan hat, EquipId: 1820
+Id: 9070, Name: Moonclan armour, EquipId: 1821
+Id: 9071, Name: Moonclan skirt, EquipId: 1822
+Id: 9072, Name: Moonclan gloves, EquipId: 1823
+Id: 9073, Name: Moonclan boots, EquipId: 1824
+Id: 9074, Name: Moonclan cape, EquipId: 1825
+Id: 9083, Name: Seal of passage, EquipId: 1826
+Id: 9084, Name: Lunar staff, EquipId: 1827
+Id: 9085, Name: Empty vial, EquipId: 1828
+Id: 9086, Name: Vial of water, EquipId: 1829
+Id: 9087, Name: Waking sleep vial, EquipId: 1830
+Id: 9088, Name: Guam vial, EquipId: 1831
+Id: 9089, Name: Marr vial, EquipId: 1832
+Id: 9090, Name: Guam-marr vial, EquipId: 1833
+Id: 9091, Name: Lunar staff - pt1, EquipId: 1834
+Id: 9092, Name: Lunar staff - pt2, EquipId: 1835
+Id: 9093, Name: Lunar staff - pt3, EquipId: 1836
+Id: 9096, Name: Lunar helm, EquipId: 1837
+Id: 9097, Name: Lunar torso, EquipId: 1838
+Id: 9098, Name: Lunar legs, EquipId: 1839
+Id: 9099, Name: Lunar gloves, EquipId: 1840
+Id: 9100, Name: Lunar boots, EquipId: 1841
+Id: 9101, Name: Lunar cape, EquipId: 1842
+Id: 9102, Name: Lunar amulet, EquipId: 1843
+Id: 9103, Name: A special tiara, EquipId: 1844
+Id: 9106, Name: Astral tiara, EquipId: 1845
+Id: 9138, Name: null, EquipId: 1846
+Id: 9174, Name: Bronze c'bow, EquipId: 1847
+Id: 9176, Name: Blurite c'bow, EquipId: 1848
+Id: 9177, Name: Iron c'bow, EquipId: 1849
+Id: 9179, Name: Steel c'bow, EquipId: 1850
+Id: 9181, Name: Mith c'bow, EquipId: 1851
+Id: 9183, Name: Adamant c'bow, EquipId: 1852
+Id: 9185, Name: Rune c'bow, EquipId: 1853
+Id: 9227, Name: null, EquipId: 1846
+Id: 9248, Name: null, EquipId: 1849
+Id: 9250, Name: null, EquipId: 1850
+Id: 9252, Name: null, EquipId: 1851
+Id: 9254, Name: null, EquipId: 1852
+Id: 9261, Name: null, EquipId: 1847
+Id: 9263, Name: null, EquipId: 1848
+Id: 9273, Name: null, EquipId: 1853
+Id: 9420, Name: Bronze limbs, EquipId: 1854
+Id: 9422, Name: Blurite limbs, EquipId: 1855
+Id: 9423, Name: Iron limbs, EquipId: 1856
+Id: 9425, Name: Steel limbs, EquipId: 1857
+Id: 9427, Name: Mithril limbs, EquipId: 1858
+Id: 9429, Name: Adamantite limbs, EquipId: 1859
+Id: 9431, Name: Runite limbs, EquipId: 1860
+Id: 9440, Name: Wooden stock, EquipId: 1861
+Id: 9442, Name: Oak stock, EquipId: 1862
+Id: 9444, Name: Willow stock, EquipId: 1863
+Id: 9446, Name: Teak stock, EquipId: 1864
+Id: 9448, Name: Maple stock, EquipId: 1865
+Id: 9450, Name: Mahogany stock, EquipId: 1866
+Id: 9452, Name: Yew stock, EquipId: 1867
+Id: 9454, Name: Bronze c'bow (u), EquipId: 1868
+Id: 9456, Name: Blurite c'bow (u), EquipId: 1869
+Id: 9457, Name: Iron c'bow (u), EquipId: 1870
+Id: 9459, Name: Steel c'bow (u), EquipId: 1871
+Id: 9461, Name: Mithril c'bow (u), EquipId: 1872
+Id: 9463, Name: Adamant c'bow (u), EquipId: 1873
+Id: 9465, Name: Runite c'bow (u), EquipId: 1874
+Id: 9470, Name: Gnome scarf, EquipId: 1875
+Id: 9472, Name: Gnome goggles, EquipId: 1876
+Id: 9475, Name: Mint cake, EquipId: 1854
+Id: 9477, Name: Aluft aloft box, EquipId: 1855
+Id: 9478, Name: Half made batta, EquipId: 1856
+Id: 9505, Name: null, EquipId: 1867
+Id: 9507, Name: null, EquipId: 1866
+Id: 9509, Name: Wizard blizzard, EquipId: 1869
+Id: 9511, Name: Short green guy, EquipId: 1868
+Id: 9513, Name: Pineapple punch, EquipId: 1863
+Id: 9515, Name: Fruit blast, EquipId: 1862
+Id: 9517, Name: Drunk dragon, EquipId: 1865
+Id: 9519, Name: Choc saturday, EquipId: 1864
+Id: 9524, Name: Batta tin, EquipId: 1861
+Id: 9529, Name: Toad batta, EquipId: 1858
+Id: 9531, Name: Worm batta, EquipId: 1857
+Id: 9533, Name: Vegetable batta, EquipId: 1860
+Id: 9535, Name: Cheese+tom batta, EquipId: 1859
+Id: 9552, Name: Tangled toads' legs, EquipId: 1875
+Id: 9554, Name: Chocolate bomb, EquipId: 1876
+Id: 9557, Name: null, EquipId: 1874
+Id: 9561, Name: Half made bowl, EquipId: 1872
+Id: 9563, Name: Half made bowl, EquipId: 1873
+Id: 9565, Name: Cocktail shaker, EquipId: 1870
+Id: 9567, Name: Mixed sgg, EquipId: 1871
+Id: 9590, Name: Dossier, EquipId: 1877
+Id: 9629, Name: Tyras helm, EquipId: 1878
+Id: 9631, Name: null, EquipId: 1879
+Id: 9634, Name: Vyrewatch top, EquipId: 1880
+Id: 9636, Name: Vyrewatch legs, EquipId: 1881
+Id: 9638, Name: Vyrewatch shoes, EquipId: 1882
+Id: 9640, Name: Citizen top, EquipId: 1883
+Id: 9642, Name: Citizen trousers, EquipId: 1884
+Id: 9644, Name: Citizen shoes, EquipId: 1885
+Id: 9646, Name: Castle sketch 1, EquipId: 1886
+Id: 9647, Name: Castle sketch 2, EquipId: 1887
+Id: 9648, Name: Castle sketch 3, EquipId: 1888
+Id: 9660, Name: Bucket, EquipId: 1889
+Id: 9665, Name: Torch, EquipId: 1890
+Id: 9672, Name: Proselyte sallet, EquipId: 1891
+Id: 9674, Name: Proselyte hauberk, EquipId: 1892
+Id: 9676, Name: Proselyte cuisse, EquipId: 1893
+Id: 9678, Name: Proselyte tasset, EquipId: 1894
+Id: 9681, Name: Commorb v2, EquipId: 1895
+Id: 9696, Name: Blank mind rune, EquipId: 1883
+Id: 9698, Name: Blank fire rune, EquipId: 1882
+Id: 9700, Name: Picture, EquipId: 1881
+Id: 9702, Name: Stick, EquipId: 1896
+Id: 9703, Name: Training sword, EquipId: 1897
+Id: 9704, Name: Training shield, EquipId: 1898
+Id: 9705, Name: Training bow, EquipId: 1899
+Id: 9706, Name: Training arrows, EquipId: 1886
+Id: 9708, Name: null, EquipId: 1885
+Id: 9710, Name: null, EquipId: 1884
+Id: 9720, Name: Crane claw, EquipId: 1879
+Id: 9722, Name: Key, EquipId: 1878
+Id: 9729, Name: Elemental helmet, EquipId: 1900
+Id: 9731, Name: Mind shield, EquipId: 1901
+Id: 9733, Name: Mind helmet, EquipId: 1902
+Id: 9735, Name: Desert goat horn, EquipId: 1635
+Id: 9737, Name: Goat horn dust, EquipId: 1634
+Id: 9739, Name: Combat potion(4), EquipId: 1633
+Id: 9741, Name: Combat potion(3), EquipId: 1632
+Id: 9743, Name: Combat potion(2), EquipId: 1631
+Id: 9744, Name: Combat potion(2), EquipId: 1646
+Id: 9746, Name: Combat potion(1), EquipId: 1645
+Id: 9747, Name: Attack cape, EquipId: 1903
+Id: 9748, Name: Attack cape(t), EquipId: 1904
+Id: 9749, Name: Attack hood, EquipId: 1905
+Id: 9750, Name: Strength cape, EquipId: 1906
+Id: 9751, Name: Strength cape(t), EquipId: 1907
+Id: 9752, Name: Strength hood, EquipId: 1908
+Id: 9753, Name: Defence cape, EquipId: 1909
+Id: 9754, Name: Defence cape(t), EquipId: 1910
+Id: 9755, Name: Defence hood, EquipId: 1911
+Id: 9756, Name: Ranging cape, EquipId: 1912
+Id: 9757, Name: Ranging cape(t), EquipId: 1913
+Id: 9758, Name: Ranging hood, EquipId: 1914
+Id: 9759, Name: Prayer cape, EquipId: 1915
+Id: 9760, Name: Prayer cape(t), EquipId: 1916
+Id: 9761, Name: Prayer hood, EquipId: 1917
+Id: 9762, Name: Magic cape, EquipId: 1918
+Id: 9763, Name: Magic cape(t), EquipId: 1919
+Id: 9764, Name: Magic hood, EquipId: 1920
+Id: 9765, Name: Runecraft cape, EquipId: 1921
+Id: 9766, Name: Runecraft cape(t), EquipId: 1922
+Id: 9767, Name: Runecrafting hood, EquipId: 1923
+Id: 9768, Name: Hitpoints cape, EquipId: 1924
+Id: 9769, Name: Hitpoints cape(t), EquipId: 1925
+Id: 9770, Name: Hitpoints hood, EquipId: 1926
+Id: 9771, Name: Agility cape, EquipId: 1927
+Id: 9772, Name: Agility cape(t), EquipId: 1928
+Id: 9773, Name: Agility hood, EquipId: 1929
+Id: 9774, Name: Herblore cape, EquipId: 1930
+Id: 9775, Name: Herblore cape(t), EquipId: 1931
+Id: 9776, Name: Herblore hood, EquipId: 1932
+Id: 9777, Name: Thieving cape, EquipId: 1933
+Id: 9778, Name: Thieving cape(t), EquipId: 1934
+Id: 9779, Name: Thieving hood, EquipId: 1935
+Id: 9780, Name: Crafting cape, EquipId: 1936
+Id: 9781, Name: Crafting cape(t), EquipId: 1937
+Id: 9782, Name: Crafting hood, EquipId: 1938
+Id: 9783, Name: Fletching cape, EquipId: 1939
+Id: 9784, Name: Fletching cape(t), EquipId: 1940
+Id: 9785, Name: Fletching hood, EquipId: 1941
+Id: 9786, Name: Slayer cape, EquipId: 1942
+Id: 9787, Name: Slayer cape(t), EquipId: 1943
+Id: 9788, Name: Slayer hood, EquipId: 1944
+Id: 9789, Name: Construct. cape, EquipId: 1945
+Id: 9790, Name: Construct. cape(t), EquipId: 1946
+Id: 9791, Name: Construct. hood, EquipId: 1947
+Id: 9792, Name: Mining cape, EquipId: 1948
+Id: 9793, Name: Mining cape(t), EquipId: 1949
+Id: 9794, Name: Mining hood, EquipId: 1950
+Id: 9795, Name: Smithing cape, EquipId: 1951
+Id: 9796, Name: Smithing cape(t), EquipId: 1952
+Id: 9797, Name: Smithing hood, EquipId: 1953
+Id: 9798, Name: Fishing cape, EquipId: 1954
+Id: 9799, Name: Fishing cape(t), EquipId: 1955
+Id: 9800, Name: Fishing hood, EquipId: 1956
+Id: 9801, Name: Cooking cape, EquipId: 1957
+Id: 9802, Name: Cooking cape(t), EquipId: 1958
+Id: 9803, Name: Cooking hood, EquipId: 1959
+Id: 9804, Name: Firemaking cape, EquipId: 1960
+Id: 9805, Name: Firemaking cape(t), EquipId: 1961
+Id: 9806, Name: Firemaking hood, EquipId: 1962
+Id: 9807, Name: Woodcutting cape, EquipId: 1963
+Id: 9808, Name: Woodcut. cape(t), EquipId: 1964
+Id: 9809, Name: Woodcutting hood, EquipId: 1965
+Id: 9810, Name: Farming cape, EquipId: 1966
+Id: 9811, Name: Farming cape(t), EquipId: 1967
+Id: 9812, Name: Farming hood, EquipId: 1968
+Id: 9813, Name: Quest point cape, EquipId: 1969
+Id: 9814, Name: Quest point hood, EquipId: 1970
+Id: 9815, Name: Bobble hat, EquipId: 1971
+Id: 9816, Name: Bobble scarf, EquipId: 1972
+Id: 9818, Name: Teak cape rack, EquipId: 1671
+Id: 9820, Name: Gilded cape rack, EquipId: 1674
+Id: 9822, Name: Magical cape rack, EquipId: 1673
+Id: 9825, Name: Mahogany cos box, EquipId: 1651
+Id: 9827, Name: Teak armour case, EquipId: 1652
+Id: 9829, Name: Oak magic wardrobe, EquipId: 1653
+Id: 9831, Name: Teak magic wardrobe, EquipId: 1654
+Id: 9833, Name: Mahogany magic wardrobe, EquipId: 1647
+Id: 9835, Name: Marble magic wardrobe, EquipId: 1648
+Id: 9837, Name: Teak toy box, EquipId: 1649
+Id: 9839, Name: Oak treasure chest, EquipId: 1650
+Id: 9840, Name: Teak treas' chest, EquipId: 1659
+Id: 9842, Name: Costume room, EquipId: 1660
+Id: 9844, Name: Teak cape rack, EquipId: 1661
+Id: 9846, Name: Gilded cape rack, EquipId: 1662
+Id: 9848, Name: Magical cape rack, EquipId: 1655
+Id: 9850, Name: Teak toy box, EquipId: 1656
+Id: 9852, Name: Oak magic wardrobe, EquipId: 1657
+Id: 9854, Name: Teak magic wardrobe, EquipId: 1658
+Id: 9864, Name: M'gany treas' chest, EquipId: 1694
+Id: 9865, Name: Oak costume box, EquipId: 1693
+Id: 9866, Name: Teak costume box, EquipId: 1692
+Id: 9870, Name: M'gany cape rack, EquipId: 1691
+Id: 9872, Name: Marble cape rack, EquipId: 1701
+Id: 9873, Name: Magical cape rack, EquipId: 1702
+Id: 9874, Name: Oak toy box, EquipId: 1699
+Id: 9875, Name: Teak toy box, EquipId: 1700
+Id: 9876, Name: Mahogany toy box, EquipId: 1697
+Id: 9877, Name: Oak magic wardrobe, EquipId: 1698
+Id: 9878, Name: Carved oak magic wardrobe, EquipId: 1695
+Id: 9879, Name: Teak magic wardrobe, EquipId: 1696
+Id: 9880, Name: Carved teak magic wardrobe, EquipId: 1709
+Id: 9881, Name: Mahogany magic wardrobe, EquipId: 1710
+Id: 9882, Name: Gilded magic wardrobe, EquipId: 1707
+Id: 9883, Name: Marble magic wardrobe, EquipId: 1708
+Id: 9884, Name: Oak armour case, EquipId: 1705
+Id: 9885, Name: Teak armour case, EquipId: 1706
+Id: 9886, Name: M'gany arm'r case, EquipId: 1703
+Id: 9887, Name: Oak treasure chest, EquipId: 1704
+Id: 9888, Name: Teak treas' chest, EquipId: 1681
+Id: 9890, Name: Oak costume box, EquipId: 1682
+Id: 9892, Name: Mahogany cos box, EquipId: 1679
+Id: 9893, Name: null, EquipId: 1973
+Id: 9894, Name: null, EquipId: 1974
+Id: 9895, Name: null, EquipId: 1975
+Id: 9896, Name: null, EquipId: 1976
+Id: 9897, Name: null, EquipId: 1977
+Id: 9898, Name: null, EquipId: 1978
+Id: 9899, Name: null, EquipId: 1979
+Id: 9900, Name: null, EquipId: 1683
+Id: 9902, Name: Hardy gout tubers, EquipId: 1684
+Id: 9905, Name: null, EquipId: 1980
+Id: 9906, Name: Ghost buster 500, EquipId: 1981
+Id: 9907, Name: Ghost buster 500, EquipId: 1982
+Id: 9908, Name: Ghost buster 500, EquipId: 1983
+Id: 9909, Name: Ghost buster 500, EquipId: 1984
+Id: 9910, Name: Ghost buster 500, EquipId: 1985
+Id: 9911, Name: Ghost buster 500, EquipId: 1986
+Id: 9912, Name: Ghost buster 500, EquipId: 1987
+Id: 9913, Name: White destabiliser, EquipId: 1988
+Id: 9914, Name: Red destabiliser, EquipId: 1989
+Id: 9915, Name: Blue destabiliser, EquipId: 1990
+Id: 9916, Name: Green destabiliser, EquipId: 1991
+Id: 9917, Name: Yellow destabiliser, EquipId: 1992
+Id: 9918, Name: Black destabiliser, EquipId: 1993
+Id: 9920, Name: Jack lantern mask, EquipId: 1994
+Id: 9921, Name: Skeleton boots, EquipId: 1995
+Id: 9922, Name: Skeleton gloves, EquipId: 1996
+Id: 9923, Name: Skeleton leggings, EquipId: 1997
+Id: 9924, Name: Skeleton shirt, EquipId: 1998
+Id: 9925, Name: Skeleton mask, EquipId: 1999
+Id: 9926, Name: null, EquipId: 2000
+Id: 9927, Name: null, EquipId: 2001
+Id: 9928, Name: null, EquipId: 2002
+Id: 9929, Name: null, EquipId: 2003
+Id: 9930, Name: null, EquipId: 2004
+Id: 9931, Name: null, EquipId: 2005
+Id: 9932, Name: Auguste's sapling, EquipId: 1748
+Id: 9933, Name: Balloon structure, EquipId: 1747
+Id: 9934, Name: Origami balloon, EquipId: 1746
+Id: 9935, Name: Yellow balloon, EquipId: 1745
+Id: 9940, Name: Purple balloon, EquipId: 1749
+Id: 9941, Name: Pink balloon, EquipId: 1750
+Id: 9943, Name: Sandbag, EquipId: 2006
+Id: 9944, Name: Bomber jacket, EquipId: 2007
+Id: 9945, Name: Bomber cap, EquipId: 2008
+Id: 9946, Name: Cap and goggles, EquipId: 2009
+Id: 9947, Name: Old red disk, EquipId: 1751
+Id: 9948, Name: Hunter cape, EquipId: 2010
+Id: 9949, Name: Hunter cape(t), EquipId: 2011
+Id: 9950, Name: Hunter hood, EquipId: 2012
+Id: 9951, Name: Footprint, EquipId: 1753
+Id: 9952, Name: Imp, EquipId: 1712
+Id: 9953, Name: Kebbit, EquipId: 1711
+Id: 9954, Name: Kebbit, EquipId: 1714
+Id: 9955, Name: Kebbit, EquipId: 1713
+Id: 9956, Name: Kebbit, EquipId: 1716
+Id: 9957, Name: Kebbit, EquipId: 1715
+Id: 9958, Name: Kebbit, EquipId: 1718
+Id: 9959, Name: Kebbit, EquipId: 1717
+Id: 9960, Name: Kebbit, EquipId: 1720
+Id: 9961, Name: Kebbit, EquipId: 1719
+Id: 9963, Name: Kebbit, EquipId: 1721
+Id: 9964, Name: Kebbit, EquipId: 1723
+Id: 9965, Name: Crimson swift, EquipId: 1722
+Id: 9966, Name: Copper longtail, EquipId: 1725
+Id: 9967, Name: Cerulean twitch, EquipId: 1724
+Id: 9968, Name: Golden warbler, EquipId: 1726
+Id: 9969, Name: Tropical wagtail, EquipId: 1727
+Id: 9970, Name: Butterfly, EquipId: 1728
+Id: 9974, Name: Giant eagle, EquipId: 1729
+Id: 9975, Name: Rabbit, EquipId: 1730
+Id: 9976, Name: Chinchompa, EquipId: 1731
+Id: 9977, Name: Red chinchompa, EquipId: 1732
+Id: 9979, Name: Raw bird meat, EquipId: 1733
+Id: 9980, Name: Roast bird meat, EquipId: 1734
+Id: 9981, Name: Roast bird meat, EquipId: 1735
+Id: 9982, Name: Burnt bird meat, EquipId: 1736
+Id: 9983, Name: Burnt bird meat, EquipId: 1737
+Id: 9984, Name: Skewered bird meat, EquipId: 1774
+Id: 9991, Name: Burnt beast meat, EquipId: 1773
+Id: 9996, Name: Spicy minced meat, EquipId: 1772
+Id: 10000, Name: Hunter potion(3), EquipId: 1769
+Id: 10001, Name: Hunter potion(3), EquipId: 1768
+Id: 10002, Name: Hunter potion(2), EquipId: 1771
+Id: 10003, Name: Hunter potion(2), EquipId: 1770
+Id: 10005, Name: Hunter potion(1), EquipId: 1765
+Id: 10006, Name: Bird snare, EquipId: 1767
+Id: 10007, Name: Bird snare, EquipId: 1766
+Id: 10009, Name: Box trap, EquipId: 1763
+Id: 10010, Name: Butterfly net, EquipId: 2013
+Id: 10011, Name: Butterfly net, EquipId: 1764
+Id: 10013, Name: Butterfly jar, EquipId: 1761
+Id: 10015, Name: Black warlock, EquipId: 1762
+Id: 10016, Name: Snowy knight, EquipId: 1760
+Id: 10018, Name: Sapphire glacialis, EquipId: 1759
+Id: 10020, Name: Ruby harvest, EquipId: 1758
+Id: 10022, Name: null, EquipId: 2014
+Id: 10023, Name: Falconer's glove, EquipId: 2015
+Id: 10024, Name: Falconer's glove, EquipId: 2016
+Id: 10026, Name: Magic box, EquipId: 1755
+Id: 10029, Name: Teasing stick, EquipId: 2017
+Id: 10033, Name: Chinchompa, EquipId: 2018
+Id: 10034, Name: Red chinchompa, EquipId: 2019
+Id: 10035, Name: Kyatt legs, EquipId: 2020
+Id: 10037, Name: Kyatt top, EquipId: 2021
+Id: 10039, Name: Kyatt hat, EquipId: 2022
+Id: 10041, Name: Larupia legs, EquipId: 2023
+Id: 10043, Name: Larupia top, EquipId: 2024
+Id: 10045, Name: Larupia hat, EquipId: 2025
+Id: 10047, Name: Graahk legs, EquipId: 2026
+Id: 10049, Name: Graahk top, EquipId: 2027
+Id: 10051, Name: Graahk headdress, EquipId: 2028
+Id: 10052, Name: Graahk headdress, EquipId: 1806
+Id: 10053, Name: Wood camo top, EquipId: 2029
+Id: 10055, Name: Wood camo legs, EquipId: 2030
+Id: 10056, Name: Wood camo legs, EquipId: 1801
+Id: 10057, Name: Jungle camo top, EquipId: 2031
+Id: 10058, Name: Jungle camo top, EquipId: 1803
+Id: 10059, Name: Jungle camo legs, EquipId: 2032
+Id: 10060, Name: Jungle camo legs, EquipId: 1805
+Id: 10061, Name: Desert camo top, EquipId: 2033
+Id: 10063, Name: Desert camo legs, EquipId: 2034
+Id: 10064, Name: Desert camo legs, EquipId: 1797
+Id: 10065, Name: Polar camo top, EquipId: 2035
+Id: 10067, Name: Polar camo legs, EquipId: 2036
+Id: 10069, Name: Spotted cape, EquipId: 2037
+Id: 10070, Name: Spotted cape, EquipId: 1800
+Id: 10071, Name: Spottier cape, EquipId: 2038
+Id: 10073, Name: Spotted cape, EquipId: 2039
+Id: 10074, Name: Spottier cape, EquipId: 2040
+Id: 10075, Name: Gloves of silence, EquipId: 2041
+Id: 10077, Name: Spiky vambraces, EquipId: 2042
+Id: 10079, Name: Green spiky vambs, EquipId: 2043
+Id: 10080, Name: Green spiky vambs, EquipId: 1796
+Id: 10081, Name: Blue spiky vambs, EquipId: 2044
+Id: 10082, Name: Blue spiky vambs, EquipId: 1794
+Id: 10083, Name: Red spiky vambs, EquipId: 2045
+Id: 10085, Name: Black spiky vambs, EquipId: 2046
+Id: 10088, Name: Red feather, EquipId: 1788
+Id: 10089, Name: Blue feather, EquipId: 1789
+Id: 10090, Name: Yellow feather, EquipId: 1786
+Id: 10091, Name: Orange feather, EquipId: 1787
+Id: 10092, Name: Ferret, EquipId: 1792
+Id: 10093, Name: Tatty larupia fur, EquipId: 1793
+Id: 10094, Name: Tatty larupia fur, EquipId: 1790
+Id: 10095, Name: Larupia fur, EquipId: 1791
+Id: 10096, Name: Larupia fur, EquipId: 1781
+Id: 10097, Name: Tatty graahk fur, EquipId: 1780
+Id: 10098, Name: Tatty graahk fur, EquipId: 1779
+Id: 10099, Name: Graahk fur, EquipId: 1778
+Id: 10100, Name: Graahk fur, EquipId: 1785
+Id: 10101, Name: Tatty kyatt fur, EquipId: 1784
+Id: 10102, Name: Tatty kyatt fur, EquipId: 1783
+Id: 10103, Name: Kyatt fur, EquipId: 1782
+Id: 10108, Name: Long kebbit spike, EquipId: 1777
+Id: 10110, Name: Kebbit teeth, EquipId: 1776
+Id: 10111, Name: Kebbit teeth dust, EquipId: 1775
+Id: 10112, Name: Kebbit teeth dust, EquipId: 1816
+Id: 10113, Name: Kebbit claws, EquipId: 1815
+Id: 10115, Name: Dark kebbit fur, EquipId: 1817
+Id: 10118, Name: Polar kebbit fur, EquipId: 1814
+Id: 10120, Name: Feldip weasel fur, EquipId: 1821
+Id: 10121, Name: Common kebbit fur, EquipId: 1820
+Id: 10122, Name: Common kebbit fur, EquipId: 1823
+Id: 10123, Name: Desert devil fur, EquipId: 1822
+Id: 10125, Name: Spotted kebbit fur, EquipId: 1818
+Id: 10126, Name: Spotted kebbit fur, EquipId: 1819
+Id: 10129, Name: Barb-tail harpoon, EquipId: 2047
+Id: 10131, Name: null, EquipId: 2048
+Id: 10132, Name: Strung rabbit foot, EquipId: 2049
+Id: 10135, Name: Rabbit foot, EquipId: 1810
+Id: 10141, Name: Burnt rainbow fish, EquipId: 1813
+Id: 10146, Name: Orange salamander, EquipId: 2050
+Id: 10147, Name: Red salamander, EquipId: 2051
+Id: 10148, Name: Black salamander, EquipId: 2052
+Id: 10149, Name: Swamp lizard, EquipId: 2053
+Id: 10150, Name: Noose wand, EquipId: 2054
+Id: 10152, Name: null, EquipId: 2055
+Id: 10153, Name: null, EquipId: 2056
+Id: 10154, Name: null, EquipId: 2057
+Id: 10155, Name: null, EquipId: 2058
+Id: 10156, Name: Hunters' crossbow, EquipId: 2059
+Id: 10162, Name: Black salamander, EquipId: 1808
+Id: 10164, Name: null, EquipId: 2060
+Id: 10171, Name: Eagle cape, EquipId: 2061
+Id: 10172, Name: Fake beak, EquipId: 2062
+Id: 10173, Name: Bird book, EquipId: 1809
+Id: 10193, Name: Casket, EquipId: 1845
+Id: 10208, Name: Clue scroll, EquipId: 1835
+Id: 10209, Name: Casket, EquipId: 1834
+Id: 10210, Name: Clue scroll, EquipId: 1833
+Id: 10211, Name: Casket, EquipId: 1832
+Id: 10212, Name: Clue scroll, EquipId: 1837
+Id: 10215, Name: Casket, EquipId: 1836
+Id: 10216, Name: Clue scroll, EquipId: 1841
+Id: 10217, Name: Casket, EquipId: 1840
+Id: 10218, Name: Clue scroll, EquipId: 1839
+Id: 10219, Name: Casket, EquipId: 1838
+Id: 10221, Name: Casket, EquipId: 1844
+Id: 10222, Name: Clue scroll, EquipId: 1843
+Id: 10223, Name: Casket, EquipId: 1842
+Id: 10226, Name: Clue scroll, EquipId: 1824
+Id: 10227, Name: Casket, EquipId: 1825
+Id: 10232, Name: Clue scroll, EquipId: 1826
+Id: 10233, Name: Casket, EquipId: 1827
+Id: 10236, Name: Clue scroll, EquipId: 1830
+Id: 10237, Name: Casket, EquipId: 1831
+Id: 10238, Name: Clue scroll, EquipId: 1828
+Id: 10239, Name: Casket, EquipId: 1829
+Id: 10241, Name: Casket, EquipId: 2107
+Id: 10243, Name: Casket, EquipId: 2106
+Id: 10245, Name: Casket, EquipId: 2109
+Id: 10247, Name: Casket, EquipId: 2108
+Id: 10249, Name: Casket, EquipId: 2111
+Id: 10251, Name: Casket, EquipId: 2110
+Id: 10253, Name: Casket, EquipId: 2113
+Id: 10255, Name: Casket, EquipId: 2112
+Id: 10256, Name: Clue scroll, EquipId: 2099
+Id: 10258, Name: Clue scroll, EquipId: 2098
+Id: 10260, Name: Clue scroll, EquipId: 2101
+Id: 10262, Name: Clue scroll, EquipId: 2100
+Id: 10264, Name: Clue scroll, EquipId: 2103
+Id: 10266, Name: Clue scroll, EquipId: 2102
+Id: 10268, Name: Clue scroll, EquipId: 2105
+Id: 10270, Name: Clue scroll, EquipId: 2104
+Id: 10273, Name: Casket, EquipId: 2122
+Id: 10275, Name: Casket, EquipId: 2123
+Id: 10277, Name: Casket, EquipId: 2124
+Id: 10279, Name: Casket, EquipId: 2125
+Id: 10280, Name: Willow comp bow, EquipId: 2063
+Id: 10281, Name: Willow comp bow, EquipId: 2126
+Id: 10282, Name: Yew comp bow, EquipId: 2064
+Id: 10283, Name: Yew comp bow, EquipId: 2127
+Id: 10284, Name: Magic comp bow, EquipId: 2065
+Id: 10285, Name: Magic comp bow, EquipId: 2128
+Id: 10286, Name: Rune helm (h1), EquipId: 2066
+Id: 10287, Name: Rune helm (h1), EquipId: 2129
+Id: 10288, Name: Rune helm (h2), EquipId: 2067
+Id: 10290, Name: Rune helm (h3), EquipId: 2068
+Id: 10292, Name: Rune helm (h4), EquipId: 2069
+Id: 10294, Name: Rune helm (h5), EquipId: 2070
+Id: 10296, Name: Adamant helm (h1), EquipId: 2071
+Id: 10298, Name: Adamant helm (h2), EquipId: 2072
+Id: 10300, Name: Adamant helm (h3), EquipId: 2073
+Id: 10302, Name: Adamant helm (h4), EquipId: 2074
+Id: 10304, Name: Adamant helm (h5), EquipId: 2075
+Id: 10305, Name: Adamant helm (h5), EquipId: 2079
+Id: 10306, Name: Black helm (h1), EquipId: 2076
+Id: 10307, Name: Black helm (h1), EquipId: 2078
+Id: 10308, Name: Black helm (h2), EquipId: 2077
+Id: 10309, Name: Black helm (h2), EquipId: 2077
+Id: 10310, Name: Black helm (h3), EquipId: 2078
+Id: 10311, Name: Black helm (h3), EquipId: 2076
+Id: 10312, Name: Black helm (h4), EquipId: 2079
+Id: 10313, Name: Black helm (h4), EquipId: 2083
+Id: 10314, Name: Black helm (h5), EquipId: 2080
+Id: 10315, Name: Black helm (h5), EquipId: 2082
+Id: 10316, Name: Bob shirt, EquipId: 2081
+Id: 10317, Name: Bob shirt, EquipId: 2081
+Id: 10318, Name: Bob shirt, EquipId: 2082
+Id: 10319, Name: Bob shirt, EquipId: 2080
+Id: 10320, Name: Bob shirt, EquipId: 2083
+Id: 10322, Name: Bob shirt, EquipId: 2084
+Id: 10324, Name: Bob shirt, EquipId: 2085
+Id: 10326, Name: Purple firelighter, EquipId: 2068
+Id: 10328, Name: White logs, EquipId: 2075
+Id: 10330, Name: 3rd age range top, EquipId: 2086
+Id: 10332, Name: 3rd age range legs, EquipId: 2087
+Id: 10334, Name: 3rd age range coif, EquipId: 2088
+Id: 10336, Name: 3rd age vambraces, EquipId: 2089
+Id: 10337, Name: 3rd age vambraces, EquipId: 2092
+Id: 10338, Name: 3rd age robe top, EquipId: 2090
+Id: 10339, Name: 3rd age robe top, EquipId: 2093
+Id: 10340, Name: 3rd age robe bottoms, EquipId: 2091
+Id: 10341, Name: 3rd age robe bottoms, EquipId: 2090
+Id: 10342, Name: 3rd age mage hat, EquipId: 2092
+Id: 10343, Name: 3rd age mage hat, EquipId: 2091
+Id: 10344, Name: 3rd age amulet, EquipId: 2093
+Id: 10345, Name: 3rd age amulet, EquipId: 2096
+Id: 10346, Name: 3rd age platelegs, EquipId: 2094
+Id: 10347, Name: 3rd age platelegs, EquipId: 2097
+Id: 10348, Name: 3rd age platebody, EquipId: 2095
+Id: 10349, Name: 3rd age platebody, EquipId: 2094
+Id: 10350, Name: 3rd age full helmet, EquipId: 2096
+Id: 10351, Name: 3rd age full helmet, EquipId: 2095
+Id: 10352, Name: 3rd age kiteshield, EquipId: 2097
+Id: 10354, Name: Amulet of glory(t4), EquipId: 2098
+Id: 10356, Name: Amulet of glory(t3), EquipId: 2099
+Id: 10358, Name: Amulet of glory(t2), EquipId: 2100
+Id: 10360, Name: Amulet of glory(t1), EquipId: 2101
+Id: 10362, Name: Amulet of glory(t), EquipId: 2102
+Id: 10364, Name: Strength amulet(t), EquipId: 2103
+Id: 10366, Name: Amulet of magic(t), EquipId: 2104
+Id: 10368, Name: Zamorak bracers, EquipId: 2105
+Id: 10370, Name: Zamorak d'hide, EquipId: 2106
+Id: 10372, Name: Zamorak chaps, EquipId: 2107
+Id: 10374, Name: Zamorak coif, EquipId: 2108
+Id: 10376, Name: Guthix bracers, EquipId: 2109
+Id: 10378, Name: Guthix dragonhide, EquipId: 2110
+Id: 10380, Name: Guthix chaps, EquipId: 2111
+Id: 10382, Name: Guthix coif, EquipId: 2112
+Id: 10384, Name: Saradomin bracers, EquipId: 2113
+Id: 10386, Name: Saradomin d'hide, EquipId: 2114
+Id: 10388, Name: Saradomin chaps, EquipId: 2115
+Id: 10390, Name: Saradomin coif, EquipId: 2116
+Id: 10392, Name: A powdered wig, EquipId: 2117
+Id: 10394, Name: Flared trousers, EquipId: 2118
+Id: 10396, Name: Pantaloons, EquipId: 2119
+Id: 10398, Name: Sleeping cap, EquipId: 2120
+Id: 10400, Name: Black ele' shirt, EquipId: 2121
+Id: 10402, Name: Black ele' legs, EquipId: 2122
+Id: 10404, Name: Red ele' shirt, EquipId: 2123
+Id: 10406, Name: Red ele' legs, EquipId: 2124
+Id: 10408, Name: Blue ele' shirt, EquipId: 2125
+Id: 10410, Name: Blue ele' legs, EquipId: 2126
+Id: 10412, Name: Green ele' shirt, EquipId: 2127
+Id: 10414, Name: Green ele' legs, EquipId: 2128
+Id: 10416, Name: Purple ele' shirt, EquipId: 2129
+Id: 10418, Name: Purple ele' legs, EquipId: 2130
+Id: 10420, Name: White ele' blouse, EquipId: 2131
+Id: 10422, Name: White ele' skirt, EquipId: 2132
+Id: 10424, Name: Red ele' blouse, EquipId: 2133
+Id: 10426, Name: Red ele' skirt, EquipId: 2134
+Id: 10428, Name: Blue ele' blouse, EquipId: 2135
+Id: 10430, Name: Blue ele' skirt, EquipId: 2136
+Id: 10432, Name: Green ele' blouse, EquipId: 2137
+Id: 10434, Name: Green ele' skirt, EquipId: 2138
+Id: 10436, Name: Purple ele' blouse, EquipId: 2139
+Id: 10438, Name: Purple ele' skirt, EquipId: 2140
+Id: 10440, Name: Saradomin crozier, EquipId: 2141
+Id: 10442, Name: Guthix crozier, EquipId: 2142
+Id: 10444, Name: Zamorak crozier, EquipId: 2143
+Id: 10446, Name: Saradomin cloak, EquipId: 2144
+Id: 10448, Name: Guthix cloak, EquipId: 2145
+Id: 10450, Name: Zamorak cloak, EquipId: 2146
+Id: 10452, Name: Saradomin mitre, EquipId: 2147
+Id: 10453, Name: Saradomin mitre, EquipId: 2062
+Id: 10454, Name: Guthix mitre, EquipId: 2148
+Id: 10456, Name: Zamorak mitre, EquipId: 2149
+Id: 10458, Name: Saradomin robe top, EquipId: 2150
+Id: 10460, Name: Zamorak robe top, EquipId: 2151
+Id: 10461, Name: Zamorak robe top, EquipId: 2060
+Id: 10462, Name: Guthix robe top, EquipId: 2152
+Id: 10464, Name: Saradomin robe legs, EquipId: 2153
+Id: 10466, Name: Guthix robe legs, EquipId: 2154
+Id: 10468, Name: Zamorak robe legs, EquipId: 2155
+Id: 10470, Name: Saradomin stole, EquipId: 2156
+Id: 10472, Name: Guthix stole, EquipId: 2157
+Id: 10474, Name: Zamorak stole, EquipId: 2158
+Id: 10484, Name: null, EquipId: 2159
+Id: 10485, Name: Scroll, EquipId: 2160
+Id: 10487, Name: Undead chicken, EquipId: 2161
+Id: 10488, Name: Selected iron, EquipId: 2162
+Id: 10491, Name: Blessed axe, EquipId: 2163
+Id: 10496, Name: Polished buttons, EquipId: 2206
+Id: 10497, Name: Tinderbox, EquipId: 2207
+Id: 10498, Name: Ava's attractor, EquipId: 2164
+Id: 10499, Name: Ava's accumulator, EquipId: 2165
+Id: 10500, Name: Crone-made amulet, EquipId: 2166
+Id: 10501, Name: Snowball, EquipId: 2167
+Id: 10502, Name: null, EquipId: 2212
+Id: 10503, Name: null, EquipId: 2213
+Id: 10504, Name: null, EquipId: 2214
+Id: 10505, Name: null, EquipId: 2215
+Id: 10506, Name: Gublinch shards, EquipId: 2216
+Id: 10507, Name: Reindeer hat, EquipId: 2168
+Id: 10508, Name: Wintumber tree, EquipId: 2218
+Id: 10509, Name: Snowball, EquipId: 2219
+Id: 10510, Name: Snowball, EquipId: 2220
+Id: 10511, Name: Zanaris choir, EquipId: 2221
+Id: 10512, Name: Scroll, EquipId: 2223
+Id: 10513, Name: Crackers, EquipId: 2222
+Id: 10514, Name: Tofu, EquipId: 2225
+Id: 10515, Name: Worms, EquipId: 2224
+Id: 10516, Name: Attacker horn, EquipId: 2227
+Id: 10517, Name: Attacker horn, EquipId: 2226
+Id: 10518, Name: Attacker horn, EquipId: 2229
+Id: 10519, Name: Attacker horn, EquipId: 2228
+Id: 10520, Name: Attacker horn, EquipId: 2231
+Id: 10521, Name: Collection bag, EquipId: 2230
+Id: 10522, Name: Collection bag, EquipId: 2233
+Id: 10523, Name: Collection bag, EquipId: 2232
+Id: 10524, Name: Collection bag, EquipId: 2235
+Id: 10525, Name: Collection bag, EquipId: 2234
+Id: 10526, Name: Healer horn, EquipId: 2237
+Id: 10527, Name: Healer horn, EquipId: 2236
+Id: 10528, Name: Healer horn, EquipId: 2240
+Id: 10529, Name: Healer horn, EquipId: 2241
+Id: 10530, Name: Healer horn, EquipId: 2238
+Id: 10531, Name: Green egg, EquipId: 2239
+Id: 10532, Name: Red egg, EquipId: 2244
+Id: 10533, Name: Blue egg, EquipId: 2245
+Id: 10534, Name: Yellow egg, EquipId: 2242
+Id: 10535, Name: Poisoned egg, EquipId: 2243
+Id: 10536, Name: Spiked/pois. egg, EquipId: 2248
+Id: 10537, Name: Omega egg, EquipId: 2249
+Id: 10538, Name: Defender horn, EquipId: 2246
+Id: 10539, Name: Poisoned tofu, EquipId: 2247
+Id: 10540, Name: Poisoned worms, EquipId: 2252
+Id: 10541, Name: Poisoned meat, EquipId: 2253
+Id: 10542, Name: Healing vial(4), EquipId: 2250
+Id: 10543, Name: Healing vial(3), EquipId: 2251
+Id: 10544, Name: Healing vial(2), EquipId: 2169
+Id: 10545, Name: Healing vial(1), EquipId: 2256
+Id: 10546, Name: Healing vial, EquipId: 2255
+Id: 10547, Name: Healer hat, EquipId: 2170
+Id: 10548, Name: Fighter hat, EquipId: 2171
+Id: 10549, Name: Runner hat, EquipId: 2172
+Id: 10550, Name: Ranger hat, EquipId: 2173
+Id: 10551, Name: Fighter torso, EquipId: 2174
+Id: 10552, Name: Runner boots, EquipId: 2175
+Id: 10553, Name: Penance gloves, EquipId: 2176
+Id: 10554, Name: Penance gloves, EquipId: 2177
+Id: 10555, Name: Penance skirt, EquipId: 2178
+Id: 10556, Name: Picture, EquipId: 2179
+Id: 10557, Name: Picture, EquipId: 2180
+Id: 10558, Name: Picture, EquipId: 2181
+Id: 10559, Name: Picture, EquipId: 2182
+Id: 10560, Name: Collector horn, EquipId: 2172
+Id: 10561, Name: Spikes, EquipId: 2173
+Id: 10562, Name: Queen help book, EquipId: 2174
+Id: 10563, Name: No eggs, EquipId: 2175
+Id: 10564, Name: Granite body, EquipId: 2183
+Id: 10566, Name: Fire cape, EquipId: 2184
+Id: 10567, Name: Picture, EquipId: 2185
+Id: 10568, Name: Picture, EquipId: 2180
+Id: 10569, Name: Picture, EquipId: 2186
+Id: 10570, Name: Picture, EquipId: 2182
+Id: 10571, Name: Picture, EquipId: 2187
+Id: 10572, Name: Picture, EquipId: 2176
+Id: 10573, Name: Picture, EquipId: 2188
+Id: 10574, Name: Picture, EquipId: 2178
+Id: 10575, Name: Picture, EquipId: 2189
+Id: 10576, Name: Picture, EquipId: 2184
+Id: 10577, Name: Picture, EquipId: 2190
+Id: 10579, Name: Picture, EquipId: 2191
+Id: 10581, Name: Keris, EquipId: 2192
+Id: 10582, Name: Keris(p), EquipId: 2193
+Id: 10583, Name: Keris(p+), EquipId: 2194
+Id: 10584, Name: Keris(p++), EquipId: 2195
+Id: 10585, Name: Parchment, EquipId: 2188
+Id: 10587, Name: Tarn's diary, EquipId: 2189
+Id: 10588, Name: Salve amulet(e), EquipId: 2196
+Id: 10589, Name: Granite helm, EquipId: 2197
+Id: 10591, Name: Terror dog, EquipId: 2187
+Id: 10592, Name: Penguin bongos, EquipId: 2194
+Id: 10593, Name: Cowbells, EquipId: 2195
+Id: 10594, Name: Clockwork book, EquipId: 2192
+Id: 10595, Name: Clockwork suit, EquipId: 2193
+Id: 10596, Name: Clockwork suit, EquipId: 2191
+Id: 10598, Name: Mission report, EquipId: 2190
+Id: 10601, Name: Mystic hat, EquipId: 2198
+Id: 10602, Name: Mystic hat, EquipId: 2199
+Id: 10603, Name: Mystic hat, EquipId: 2200
+Id: 10604, Name: Skeletal helm, EquipId: 2201
+Id: 10605, Name: Infinity top, EquipId: 2202
+Id: 10606, Name: Splitbark helm, EquipId: 2203
+Id: 10607, Name: Ghostly boots, EquipId: 2204
+Id: 10608, Name: Moonclan hat, EquipId: 2205
+Id: 10609, Name: Lunar helm, EquipId: 2206
+Id: 10610, Name: Decorative armour, EquipId: 2207
+Id: 10611, Name: Void knight top, EquipId: 2208
+Id: 10612, Name: Rogue mask, EquipId: 2209
+Id: 10613, Name: Rock-shell helm, EquipId: 2210
+Id: 10614, Name: Spined helm, EquipId: 2211
+Id: 10615, Name: Tribal mask, EquipId: 2212
+Id: 10616, Name: Tribal mask, EquipId: 2213
+Id: 10617, Name: Tribal mask, EquipId: 2214
+Id: 10618, Name: White platebody, EquipId: 2215
+Id: 10619, Name: Initiate hauberk, EquipId: 2216
+Id: 10620, Name: Proselyte hauberk, EquipId: 2217
+Id: 10621, Name: Mourner top, EquipId: 2218
+Id: 10622, Name: Kyatt top, EquipId: 2219
+Id: 10623, Name: Larupia top, EquipId: 2220
+Id: 10624, Name: Graahk top, EquipId: 2221
+Id: 10625, Name: Wood camo top, EquipId: 2222
+Id: 10626, Name: Jungle camo top, EquipId: 2223
+Id: 10627, Name: Desert camo top, EquipId: 2224
+Id: 10628, Name: Polar camo top, EquipId: 2225
+Id: 10629, Name: Mime mask, EquipId: 2226
+Id: 10630, Name: Princess blouse, EquipId: 2227
+Id: 10631, Name: Zombie shirt, EquipId: 2228
+Id: 10632, Name: Camo top, EquipId: 2229
+Id: 10633, Name: Lederhosen top, EquipId: 2230
+Id: 10634, Name: Shade robe, EquipId: 2231
+Id: 10635, Name: Cape of legends, EquipId: 2232
+Id: 10636, Name: Obsidian cape, EquipId: 2233
+Id: 10637, Name: Fire cape, EquipId: 2234
+Id: 10638, Name: Team-1 cape, EquipId: 2235
+Id: 10639, Name: Attack cape, EquipId: 2236
+Id: 10640, Name: Strength cape, EquipId: 2237
+Id: 10641, Name: Defence cape, EquipId: 2238
+Id: 10642, Name: Ranging cape, EquipId: 2239
+Id: 10643, Name: Prayer cape, EquipId: 2240
+Id: 10644, Name: Magic cape, EquipId: 2241
+Id: 10645, Name: Runecraft cape, EquipId: 2242
+Id: 10646, Name: Hunter cape, EquipId: 2243
+Id: 10647, Name: Hitpoints cape, EquipId: 2244
+Id: 10648, Name: Agility cape, EquipId: 2245
+Id: 10649, Name: Herblore cape, EquipId: 2246
+Id: 10650, Name: Thieving cape, EquipId: 2247
+Id: 10651, Name: Crafting cape, EquipId: 2248
+Id: 10652, Name: Fletching cape, EquipId: 2249
+Id: 10653, Name: Slayer cape, EquipId: 2250
+Id: 10654, Name: Construct. cape, EquipId: 2251
+Id: 10655, Name: Mining cape, EquipId: 2252
+Id: 10656, Name: Smithing cape, EquipId: 2253
+Id: 10657, Name: Fishing cape, EquipId: 2254
+Id: 10658, Name: Cooking cape, EquipId: 2255
+Id: 10659, Name: Firemaking cape, EquipId: 2256
+Id: 10660, Name: Woodcutting cape, EquipId: 2257
+Id: 10661, Name: Farming cape, EquipId: 2258
+Id: 10662, Name: Quest point cape, EquipId: 2259
+Id: 10663, Name: Spotted cape, EquipId: 2260
+Id: 10664, Name: Spottier cape, EquipId: 2261
+Id: 10665, Name: Black shield(h1), EquipId: 2262
+Id: 10666, Name: Adamant shield(h1), EquipId: 2263
+Id: 10667, Name: Rune shield(h1), EquipId: 2264
+Id: 10668, Name: Black shield(h2), EquipId: 2265
+Id: 10669, Name: Adamant shield(h2), EquipId: 2266
+Id: 10670, Name: Rune shield(h2), EquipId: 2267
+Id: 10671, Name: Black shield(h3), EquipId: 2268
+Id: 10672, Name: Adamant shield(h3), EquipId: 2269
+Id: 10673, Name: Rune shield(h3), EquipId: 2270
+Id: 10674, Name: Black shield(h4), EquipId: 2271
+Id: 10675, Name: Adamant shield(h4), EquipId: 2272
+Id: 10676, Name: Rune shield(h4), EquipId: 2273
+Id: 10677, Name: Black shield(h5), EquipId: 2274
+Id: 10678, Name: Adamant shield(h5), EquipId: 2275
+Id: 10679, Name: Rune shield(h5), EquipId: 2276
+Id: 10680, Name: Studded body (g), EquipId: 2277
+Id: 10681, Name: Studded body (t), EquipId: 2278
+Id: 10682, Name: D'hide body(g), EquipId: 2279
+Id: 10683, Name: D'hide body (t), EquipId: 2280
+Id: 10684, Name: D'hide body (g), EquipId: 2281
+Id: 10685, Name: D'hide body (t), EquipId: 2282
+Id: 10686, Name: Wizard robe (g), EquipId: 2283
+Id: 10687, Name: Wizard robe (t), EquipId: 2284
+Id: 10688, Name: Enchanted top, EquipId: 2285
+Id: 10689, Name: Wizard boots, EquipId: 2286
+Id: 10690, Name: Black platebody (t), EquipId: 2287
+Id: 10691, Name: Black platebody (g), EquipId: 2288
+Id: 10692, Name: Highwayman mask, EquipId: 2289
+Id: 10693, Name: Blue beret, EquipId: 2290
+Id: 10694, Name: Black beret, EquipId: 2291
+Id: 10695, Name: White beret, EquipId: 2292
+Id: 10696, Name: Ranger boots, EquipId: 2293
+Id: 10697, Name: Adam platebody (t), EquipId: 2294
+Id: 10698, Name: Adam platebody (g), EquipId: 2295
+Id: 10699, Name: Black helm (h1), EquipId: 2296
+Id: 10700, Name: Black helm (h2), EquipId: 2297
+Id: 10701, Name: Black helm (h3), EquipId: 2298
+Id: 10702, Name: Black helm (h4), EquipId: 2299
+Id: 10703, Name: Black helm (h5), EquipId: 2300
+Id: 10704, Name: Rune helm (h1), EquipId: 2301
+Id: 10705, Name: Rune helm (h2), EquipId: 2302
+Id: 10706, Name: Rune helm (h3), EquipId: 2303
+Id: 10707, Name: Rune helm (h4), EquipId: 2304
+Id: 10708, Name: Rune helm (h5), EquipId: 2305
+Id: 10709, Name: Adamant helm (h1), EquipId: 2306
+Id: 10710, Name: Adamant helm (h2), EquipId: 2307
+Id: 10711, Name: Adamant helm (h3), EquipId: 2308
+Id: 10712, Name: Adamant helm (h4), EquipId: 2309
+Id: 10713, Name: Adamant helm (h5), EquipId: 2310
+Id: 10714, Name: Bob shirt, EquipId: 2311
+Id: 10715, Name: Bob shirt, EquipId: 2312
+Id: 10716, Name: Bob shirt, EquipId: 2313
+Id: 10717, Name: Bob shirt, EquipId: 2314
+Id: 10718, Name: Bob shirt, EquipId: 2315
+Id: 10719, Name: Amulet of glory(t), EquipId: 2316
+Id: 10720, Name: Guthix cape, EquipId: 2317
+Id: 10721, Name: Frog mask, EquipId: 2318
+Id: 10722, Name: Reindeer hat, EquipId: 2319
+Id: 10723, Name: Jack lantern mask, EquipId: 2320
+Id: 10724, Name: Skeleton boots, EquipId: 2321
+Id: 10725, Name: Skeleton gloves, EquipId: 2322
+Id: 10726, Name: Skeleton leggings, EquipId: 2323
+Id: 10727, Name: Skeleton shirt, EquipId: 2324
+Id: 10728, Name: Skeleton mask, EquipId: 2325
+Id: 10730, Name: Blue marionette, EquipId: 2148
+Id: 10731, Name: Zombie head, EquipId: 2326
+Id: 10732, Name: Rubber chicken, EquipId: 2327
+Id: 10734, Name: Bunny ears, EquipId: 2328
+Id: 10735, Name: Scythe, EquipId: 2329
+Id: 10736, Name: Strength amulet(t), EquipId: 2330
+Id: 10738, Name: Amulet of magic(t), EquipId: 2331
+Id: 10740, Name: A powdered wig, EquipId: 2332
+Id: 10742, Name: Flared trousers, EquipId: 2333
+Id: 10743, Name: Picture, EquipId: 2158
+Id: 10744, Name: Pantaloons, EquipId: 2334
+Id: 10745, Name: Picture, EquipId: 2157
+Id: 10746, Name: Sleeping cap, EquipId: 2335
+Id: 10747, Name: Picture, EquipId: 2156
+Id: 10748, Name: Elegant shirt, EquipId: 2336
+Id: 10749, Name: Picture, EquipId: 2155
+Id: 10750, Name: Elegant shirt, EquipId: 2337
+Id: 10751, Name: Picture, EquipId: 2154
+Id: 10752, Name: Elegant shirt, EquipId: 2338
+Id: 10753, Name: Picture, EquipId: 1976
+Id: 10754, Name: Elegant shirt, EquipId: 2339
+Id: 10755, Name: Picture, EquipId: 1974
+Id: 10756, Name: Elegant shirt, EquipId: 2340
+Id: 10758, Name: Red boater, EquipId: 2341
+Id: 10760, Name: Orange boater, EquipId: 2342
+Id: 10762, Name: Green boater, EquipId: 2343
+Id: 10764, Name: Blue boater, EquipId: 2344
+Id: 10766, Name: Black boater, EquipId: 2345
+Id: 10767, Name: Picture, EquipId: 1978
+Id: 10768, Name: Red headband, EquipId: 2346
+Id: 10770, Name: Black headband, EquipId: 2347
+Id: 10772, Name: Brown headband, EquipId: 2348
+Id: 10774, Name: Pirate's hat, EquipId: 2349
+Id: 10776, Name: Zamorak platebody, EquipId: 2350
+Id: 10778, Name: Saradomin plate, EquipId: 2351
+Id: 10780, Name: Guthix platebody, EquipId: 2352
+Id: 10782, Name: Gilded platebody, EquipId: 2353
+Id: 10784, Name: Saradomin robe top, EquipId: 2354
+Id: 10786, Name: Zamorak robe top, EquipId: 2355
+Id: 10788, Name: Guthix robe top, EquipId: 2356
+Id: 10790, Name: Zamorak d'hide, EquipId: 2357
+Id: 10792, Name: Saradomin d'hide, EquipId: 2358
+Id: 10794, Name: Guthix dragonhide, EquipId: 2359
+Id: 10796, Name: Robin hood hat, EquipId: 2360
+Id: 10798, Name: Rune platebody (g), EquipId: 2361
+Id: 10800, Name: Rune platebody (t), EquipId: 2362
+Id: 10802, Name: Tan cavalier, EquipId: 2363
+Id: 10804, Name: Dark cavalier, EquipId: 2364
+Id: 10806, Name: Black cavalier, EquipId: 2365
+Id: 10810, Name: Arctic pine logs, EquipId: 2366
+Id: 10822, Name: Yak-hide armour, EquipId: 2367
+Id: 10824, Name: Yak-hide armour, EquipId: 2368
+Id: 10826, Name: Fremennik round shield, EquipId: 2369
+Id: 10828, Name: Helm of neitiznot, EquipId: 2370
+Id: 10832, Name: Light tax bag, EquipId: 1968
+Id: 10833, Name: Normal tax bag, EquipId: 1967
+Id: 10834, Name: Hefty tax bag, EquipId: 1966
+Id: 10835, Name: Bulging taxbag, EquipId: 1965
+Id: 10836, Name: Silly jester hat, EquipId: 2371
+Id: 10837, Name: Silly jester top, EquipId: 2372
+Id: 10838, Name: Silly jester tights, EquipId: 2373
+Id: 10839, Name: Silly jester boots, EquipId: 2374
+Id: 10840, Name: A jester stick, EquipId: 2375
+Id: 10841, Name: Apricot cream pie, EquipId: 2376
+Id: 10842, Name: Decapitated head, EquipId: 2377
+Id: 10848, Name: Spring sq'irkjuice, EquipId: 1949
+Id: 10849, Name: Summer sq'irkjuice, EquipId: 1950
+Id: 10850, Name: Autumn sq'irkjuice, EquipId: 1951
+Id: 10851, Name: Winter sq'irkjuice, EquipId: 1952
+Id: 10852, Name: Summer garden, EquipId: 1953
+Id: 10853, Name: Spring garden, EquipId: 1954
+Id: 10854, Name: Autumn garden, EquipId: 1955
+Id: 10855, Name: Winter garden, EquipId: 1956
+Id: 10856, Name: Sin seer's note, EquipId: 1957
+Id: 10857, Name: Severed leg, EquipId: 2378
+Id: 10858, Name: Shadow sword, EquipId: 2379
+Id: 10859, Name: Tea flask, EquipId: 1960
+Id: 10860, Name: Tea flask, EquipId: 2380
+Id: 10861, Name: Tea flask, EquipId: 2381
+Id: 10862, Name: Hard hat, EquipId: 2382
+Id: 10863, Name: Builder's shirt, EquipId: 2383
+Id: 10864, Name: Builder's trousers, EquipId: 2384
+Id: 10865, Name: Builder's boots, EquipId: 2385
+Id: 10866, Name: Rivets, EquipId: 1936
+Id: 10867, Name: null, EquipId: 1935
+Id: 10868, Name: null, EquipId: 1938
+Id: 10869, Name: null, EquipId: 1937
+Id: 10870, Name: Binding fluid, EquipId: 1940
+Id: 10871, Name: Pipe, EquipId: 1939
+Id: 10872, Name: Pipe ring, EquipId: 1942
+Id: 10873, Name: Metal sheet, EquipId: 1941
+Id: 10874, Name: Coloured ball, EquipId: 1944
+Id: 10875, Name: Valve wheel, EquipId: 1943
+Id: 10876, Name: Metal bar, EquipId: 1946
+Id: 10877, Name: Plain satchel, EquipId: 2386
+Id: 10878, Name: Green satchel, EquipId: 2387
+Id: 10879, Name: Red satchel, EquipId: 2388
+Id: 10880, Name: Black satchel, EquipId: 2389
+Id: 10881, Name: Gold satchel, EquipId: 2390
+Id: 10882, Name: Rune satchel, EquipId: 2391
+Id: 10883, Name: Hard hat, EquipId: 2392
+Id: 10884, Name: Fuse, EquipId: 1928
+Id: 10885, Name: Keg, EquipId: 1927
+Id: 10886, Name: Prayer book, EquipId: 2393
+Id: 10887, Name: Barrelchest anchor, EquipId: 2394
+Id: 10888, Name: Barrelchest anchor, EquipId: 1924
+Id: 10889, Name: Blessed lamp, EquipId: 1923
+Id: 10890, Name: Prayer book, EquipId: 1922
+Id: 10891, Name: Wooden cat, EquipId: 1921
+Id: 10892, Name: Wooden cat, EquipId: 1920
+Id: 10893, Name: Cranial clamp, EquipId: 1919
+Id: 10894, Name: Brain tongs, EquipId: 1918
+Id: 10895, Name: Bell jar, EquipId: 1917
+Id: 10896, Name: Wolf whistle, EquipId: 1915
+Id: 10897, Name: Shipping order, EquipId: 1916
+Id: 10898, Name: Keg, EquipId: 1913
+Id: 10899, Name: Crate part, EquipId: 1914
+Id: 10900, Name: null, EquipId: 1911
+Id: 10901, Name: null, EquipId: 1912
+Id: 10902, Name: null, EquipId: 1909
+Id: 10903, Name: null, EquipId: 1910
+Id: 10904, Name: Skull staple, EquipId: 1907
+Id: 10905, Name: null, EquipId: 1908
+Id: 10906, Name: null, EquipId: 1905
+Id: 10907, Name: null, EquipId: 1906
+Id: 10908, Name: null, EquipId: 1903
+Id: 10909, Name: Mixture - step 1(4), EquipId: 1904
+Id: 10921, Name: Mixture - step 2(2), EquipId: 1902
+Id: 10925, Name: Sanfew serum(4), EquipId: 1900
+Id: 10927, Name: Sanfew serum(3), EquipId: 1901
+Id: 10933, Name: Lumberjack boots, EquipId: 2395
+Id: 10939, Name: Lumberjack top, EquipId: 2396
+Id: 10940, Name: Lumberjack legs, EquipId: 2397
+Id: 10941, Name: Lumberjack hat, EquipId: 2398
+Id: 10945, Name: Lumberjack top, EquipId: 2399
+Id: 10947, Name: Run, EquipId: 1899
+Id: 10952, Name: Slayer bell, EquipId: 2400
+Id: 10954, Name: Frog-leather body, EquipId: 2401
+Id: 10956, Name: Frog-leather chaps, EquipId: 2402
+Id: 10957, Name: Frog-leather chaps, EquipId: 1897
+Id: 10958, Name: Frog-leather boots, EquipId: 2403
+Id: 10970, Name: Loach, EquipId: 1895
+Id: 10976, Name: Long bone, EquipId: 1892
+Id: 10978, Name: Swamp weed, EquipId: 1893
+Id: 10980, Name: Empty light orb, EquipId: 1894
+Id: 10985, Name: Fuse, EquipId: 1890
+Id: 10990, Name: Capacitor, EquipId: 1891
+Id: 10995, Name: Perfect shell, EquipId: 1889
+Id: 11012, Name: Wand, EquipId: 2404
+Id: 11013, Name: Infused wand, EquipId: 2405
+Id: 11014, Name: Beacon ring, EquipId: 2048
+Id: 11015, Name: Chicken head, EquipId: 2049
+Id: 11016, Name: Chicken feet, EquipId: 2406
+Id: 11017, Name: Chicken wings, EquipId: 2407
+Id: 11018, Name: Chicken legs, EquipId: 2408
+Id: 11019, Name: Chicken feet, EquipId: 2409
+Id: 11020, Name: Chicken wings, EquipId: 2410
+Id: 11021, Name: Chicken head, EquipId: 2411
+Id: 11022, Name: Chicken legs, EquipId: 2412
+Id: 11024, Name: Rabbit mould, EquipId: 2054
+Id: 11025, Name: Chocolate chunks, EquipId: 2053
+Id: 11026, Name: Chocolate kebbit, EquipId: 2055
+Id: 11027, Name: Easter egg, EquipId: 2413
+Id: 11028, Name: Easter egg, EquipId: 2414
+Id: 11029, Name: Easter egg, EquipId: 2415
+Id: 11030, Name: Easter egg, EquipId: 2416
+Id: 11031, Name: Damp planks, EquipId: 2051
+Id: 11036, Name: Parchment, EquipId: 2057
+Id: 11037, Name: Brine sabre, EquipId: 2417
+Id: 11038, Name: Brine sabre, EquipId: 2059
+Id: 11039, Name: Key, EquipId: 2058
+Id: 11046, Name: Rope, EquipId: 2418
+Id: 11061, Name: Ancient mace, EquipId: 2419
+Id: 11063, Name: null, EquipId: 2420
+Id: 11068, Name: null, EquipId: 2421
+Id: 11069, Name: Gold bracelet, EquipId: 2422
+Id: 11071, Name: null, EquipId: 2423
+Id: 11072, Name: Sapphire bracelet, EquipId: 2424
+Id: 11074, Name: Bracelet of clay, EquipId: 2425
+Id: 11076, Name: Emerald bracelet, EquipId: 2426
+Id: 11078, Name: null, EquipId: 2427
+Id: 11079, Name: Castlewar brace(3), EquipId: 2428
+Id: 11080, Name: Castlewar brace(3), EquipId: 2039
+Id: 11081, Name: Castlewar brace(2), EquipId: 2429
+Id: 11082, Name: Castlewar brace(2), EquipId: 2041
+Id: 11083, Name: Castlewar brace(1), EquipId: 2430
+Id: 11084, Name: Castlewar brace(1), EquipId: 2042
+Id: 11085, Name: Ruby bracelet, EquipId: 2431
+Id: 11086, Name: Ruby bracelet, EquipId: 2043
+Id: 11087, Name: null, EquipId: 2432
+Id: 11088, Name: Inoculation brace, EquipId: 2433
+Id: 11089, Name: Inoculation brace, EquipId: 2044
+Id: 11090, Name: Phoenix necklace, EquipId: 2434
+Id: 11091, Name: Phoenix necklace, EquipId: 2045
+Id: 11092, Name: Diamond bracelet, EquipId: 2435
+Id: 11093, Name: Diamond bracelet, EquipId: 2046
+Id: 11094, Name: null, EquipId: 2436
+Id: 11095, Name: Forinthry brace(5), EquipId: 2437
+Id: 11097, Name: Forinthry brace(4), EquipId: 2438
+Id: 11099, Name: Forinthry brace(3), EquipId: 2439
+Id: 11101, Name: Forinthry brace(2), EquipId: 2440
+Id: 11103, Name: Forinthry brace(1), EquipId: 2441
+Id: 11104, Name: Forinthry brace(1), EquipId: 2020
+Id: 11105, Name: Skills necklace(4), EquipId: 2442
+Id: 11106, Name: Skills necklace(4), EquipId: 2018
+Id: 11107, Name: Skills necklace(3), EquipId: 2443
+Id: 11108, Name: Skills necklace(3), EquipId: 2022
+Id: 11109, Name: Skills necklace(2), EquipId: 2444
+Id: 11110, Name: Skills necklace(2), EquipId: 2021
+Id: 11111, Name: Skills necklace(1), EquipId: 2445
+Id: 11112, Name: Skills necklace(1), EquipId: 2024
+Id: 11113, Name: Skills necklace, EquipId: 2446
+Id: 11114, Name: Skills necklace, EquipId: 2023
+Id: 11115, Name: Dragon bracelet, EquipId: 2447
+Id: 11116, Name: Dragon bracelet, EquipId: 2026
+Id: 11117, Name: null, EquipId: 2448
+Id: 11118, Name: Combat bracelet(4), EquipId: 2449
+Id: 11120, Name: Combat bracelet(3), EquipId: 2450
+Id: 11121, Name: Combat bracelet(3), EquipId: 2028
+Id: 11122, Name: Combat bracelet(2), EquipId: 2451
+Id: 11123, Name: Combat bracelet(2), EquipId: 2027
+Id: 11124, Name: Combat bracelet(1), EquipId: 2452
+Id: 11125, Name: Combat bracelet(1), EquipId: 2030
+Id: 11126, Name: Combat bracelet, EquipId: 2453
+Id: 11127, Name: Combat bracelet, EquipId: 2029
+Id: 11128, Name: Berserker necklace, EquipId: 2454
+Id: 11129, Name: Berserker necklace, EquipId: 2032
+Id: 11130, Name: Onyx bracelet, EquipId: 2455
+Id: 11131, Name: Onyx bracelet, EquipId: 2031
+Id: 11132, Name: null, EquipId: 2456
+Id: 11133, Name: Regen bracelet, EquipId: 2457
+Id: 11135, Name: Bomber jacket, EquipId: 2458
+Id: 11136, Name: Karamja gloves 1, EquipId: 2459
+Id: 11138, Name: Karamja gloves 2, EquipId: 2460
+Id: 11140, Name: Karamja gloves 3, EquipId: 2461
+Id: 11151, Name: Dream vial (empty), EquipId: 2462
+Id: 11152, Name: Dream vial (water), EquipId: 2463
+Id: 11153, Name: Dream vial (herb), EquipId: 2464
+Id: 11154, Name: Dream potion, EquipId: 2465
+Id: 11161, Name: null, EquipId: 2014
+Id: 11162, Name: null, EquipId: 2015
+Id: 11163, Name: null, EquipId: 2016
+Id: 11165, Name: Phoenix crossbow, EquipId: 2466
+Id: 11167, Name: Phoenix crossbow, EquipId: 2467
+Id: 11190, Name: Digsite pendant (1), EquipId: 2468
+Id: 11191, Name: Digsite pendant (2), EquipId: 2469
+Id: 11192, Name: Digsite pendant (3), EquipId: 2470
+Id: 11193, Name: Digsite pendant (4), EquipId: 2471
+Id: 11194, Name: Digsite pendant (5), EquipId: 2472
+Id: 11195, Name: Clean necklace, EquipId: 2473
+Id: 11200, Name: Dwarven helmet, EquipId: 2474
+Id: 11201, Name: Dwarven helmet, EquipId: 2008
+Id: 11202, Name: Shrinking recipe, EquipId: 2010
+Id: 11204, Name: Shrink-me-quick, EquipId: 2475
+Id: 11205, Name: Shrunk ogleroot, EquipId: 2011
+Id: 11214, Name: null, EquipId: 2007
+Id: 11215, Name: null, EquipId: 2006
+Id: 11230, Name: Dragon dart, EquipId: 2476
+Id: 11231, Name: Dragon dart(p), EquipId: 2477
+Id: 11232, Name: Dragon dart tip, EquipId: 1991
+Id: 11233, Name: Dragon dart(p+), EquipId: 2478
+Id: 11234, Name: Dragon dart(p++), EquipId: 2479
+Id: 11235, Name: Dark bow, EquipId: 2480
+Id: 11236, Name: Dark bow, EquipId: 1994
+Id: 11238, Name: Baby impling jar, EquipId: 1993
+Id: 11239, Name: Baby impling jar, EquipId: 1992
+Id: 11240, Name: Young impling jar, EquipId: 1983
+Id: 11241, Name: Young impling jar, EquipId: 1982
+Id: 11242, Name: Gourm' impling jar, EquipId: 1981
+Id: 11243, Name: Gourm' impling jar, EquipId: 1980
+Id: 11244, Name: Earth impling jar, EquipId: 1987
+Id: 11245, Name: Earth impling jar, EquipId: 1986
+Id: 11246, Name: Ess' impling jar, EquipId: 1985
+Id: 11247, Name: Ess' impling jar, EquipId: 1984
+Id: 11248, Name: Eclectic impling jar, EquipId: 2005
+Id: 11250, Name: Nature impling jar, EquipId: 2003
+Id: 11251, Name: Nature impling jar, EquipId: 2004
+Id: 11256, Name: Dragon impling jar, EquipId: 1997
+Id: 11257, Name: Dragon impling jar, EquipId: 1998
+Id: 11258, Name: Jar generator, EquipId: 1995
+Id: 11259, Name: Magic butterfly net, EquipId: 2481
+Id: 11260, Name: Impling jar, EquipId: 2001
+Id: 11261, Name: Impling jar, EquipId: 2002
+Id: 11262, Name: Imp repellent, EquipId: 1999
+Id: 11263, Name: Imp repellent, EquipId: 2000
+Id: 11264, Name: Anchovy oil, EquipId: 2482
+Id: 11268, Name: Picture, EquipId: 2484
+Id: 11269, Name: Picture, EquipId: 2485
+Id: 11271, Name: Picture, EquipId: 2483
+Id: 11274, Name: Ham shirt, EquipId: 2482
+Id: 11277, Name: Cavalier mask, EquipId: 2483
+Id: 11278, Name: Beret mask, EquipId: 2484
+Id: 11279, Name: Elvarg's head, EquipId: 2485
+Id: 11280, Name: Cavalier and mask, EquipId: 2486
+Id: 11282, Name: Beret and mask, EquipId: 2487
+Id: 11283, Name: Dragonfire shield, EquipId: 2488
+Id: 11284, Name: Dragonfire shield, EquipId: 2489
+Id: 11288, Name: null, EquipId: 2490
+Id: 11289, Name: null, EquipId: 2491
+Id: 11290, Name: null, EquipId: 2492
+Id: 11291, Name: null, EquipId: 2493
+Id: 11292, Name: null, EquipId: 2494
+Id: 11293, Name: null, EquipId: 2495
+Id: 11294, Name: null, EquipId: 2496
+Id: 11295, Name: null, EquipId: 2497
+Id: 11296, Name: null, EquipId: 2498
+Id: 11297, Name: null, EquipId: 2499
+Id: 11298, Name: null, EquipId: 2500
+Id: 11299, Name: null, EquipId: 2501
+Id: 11300, Name: null, EquipId: 2502
+Id: 11301, Name: null, EquipId: 2503
+Id: 11302, Name: null, EquipId: 2504
+Id: 11303, Name: null, EquipId: 2505
+Id: 11304, Name: null, EquipId: 2506
+Id: 11305, Name: null, EquipId: 2507
+Id: 11306, Name: null, EquipId: 2508
+Id: 11307, Name: null, EquipId: 2509
+Id: 11308, Name: null, EquipId: 2510
+Id: 11309, Name: null, EquipId: 2511
+Id: 11310, Name: null, EquipId: 2512
+Id: 11311, Name: null, EquipId: 2513
+Id: 11312, Name: null, EquipId: 2514
+Id: 11313, Name: null, EquipId: 2515
+Id: 11314, Name: null, EquipId: 2516
+Id: 11315, Name: null, EquipId: 2517
+Id: 11316, Name: null, EquipId: 2518
+Id: 11317, Name: null, EquipId: 2519
+Id: 11318, Name: null, EquipId: 2520
+Id: 11319, Name: null, EquipId: 2521
+Id: 11320, Name: null, EquipId: 2522
+Id: 11321, Name: null, EquipId: 2523
+Id: 11322, Name: null, EquipId: 2524
+Id: 11323, Name: Barbarian rod, EquipId: 2525
+Id: 11325, Name: Roe, EquipId: 2489
+Id: 11335, Name: Dragon full helm, EquipId: 2526
+Id: 11337, Name: Mangled bones, EquipId: 2526
+Id: 11348, Name: Ancient page, EquipId: 2525
+Id: 11349, Name: Ancient page, EquipId: 2524
+Id: 11350, Name: Ancient page, EquipId: 2523
+Id: 11351, Name: Ancient page, EquipId: 2522
+Id: 11352, Name: Ancient page, EquipId: 2521
+Id: 11353, Name: Ancient page, EquipId: 2520
+Id: 11354, Name: Ancient page, EquipId: 2519
+Id: 11355, Name: Ancient page, EquipId: 2518
+Id: 11356, Name: Ancient page, EquipId: 2517
+Id: 11357, Name: Ancient page, EquipId: 2516
+Id: 11358, Name: Ancient page, EquipId: 2515
+Id: 11359, Name: Ancient page, EquipId: 2514
+Id: 11361, Name: Ancient page, EquipId: 2530
+Id: 11363, Name: Ancient page, EquipId: 2531
+Id: 11365, Name: Ancient page, EquipId: 2528
+Id: 11367, Name: Bronze hasta, EquipId: 2527
+Id: 11369, Name: Iron hasta, EquipId: 2528
+Id: 11371, Name: Steel hasta, EquipId: 2529
+Id: 11373, Name: Mithril hasta, EquipId: 2530
+Id: 11375, Name: Adamant hasta, EquipId: 2531
+Id: 11377, Name: Rune hasta, EquipId: 2532
+Id: 11379, Name: Bronze hasta(p), EquipId: 2533
+Id: 11381, Name: Bronze hasta(kp), EquipId: 2534
+Id: 11382, Name: Bronze hasta(p+), EquipId: 2535
+Id: 11384, Name: Bronze hasta(p++), EquipId: 2536
+Id: 11386, Name: Iron hasta(p), EquipId: 2537
+Id: 11388, Name: Iron hasta(kp), EquipId: 2538
+Id: 11389, Name: Iron hasta(p+), EquipId: 2539
+Id: 11391, Name: Iron hasta(p++), EquipId: 2540
+Id: 11393, Name: Steel hasta(p), EquipId: 2541
+Id: 11395, Name: Steel hasta(kp), EquipId: 2542
+Id: 11396, Name: Steel hasta(p+), EquipId: 2543
+Id: 11398, Name: Steel hasta(p++), EquipId: 2544
+Id: 11399, Name: Steel hasta(p++), EquipId: 2461
+Id: 11400, Name: Mithril hasta(p), EquipId: 2545
+Id: 11402, Name: Mithril hasta(kp), EquipId: 2546
+Id: 11403, Name: Mithril hasta(p+), EquipId: 2547
+Id: 11404, Name: Mithril hasta(p+), EquipId: 2462
+Id: 11405, Name: Mithril hasta(p++), EquipId: 2548
+Id: 11407, Name: Adamant hasta(p), EquipId: 2549
+Id: 11408, Name: Adamant hasta(p), EquipId: 2451
+Id: 11409, Name: Adamant hasta(kp), EquipId: 2550
+Id: 11410, Name: Adamant hasta(p+), EquipId: 2551
+Id: 11412, Name: Addy hasta(p++), EquipId: 2552
+Id: 11414, Name: Rune hasta(p), EquipId: 2553
+Id: 11416, Name: Rune hasta(kp), EquipId: 2554
+Id: 11417, Name: Rune hasta(p+), EquipId: 2555
+Id: 11418, Name: Rune hasta(p+), EquipId: 2454
+Id: 11419, Name: Rune hasta(p++), EquipId: 2556
+Id: 11421, Name: null, EquipId: 2458
+Id: 11422, Name: null, EquipId: 2456
+Id: 11423, Name: null, EquipId: 2457
+Id: 11440, Name: Relicym's mix(1), EquipId: 2463
+Id: 11441, Name: Strength mix(1), EquipId: 2464
+Id: 11442, Name: Strength mix(1), EquipId: 2465
+Id: 11453, Name: Energy mix(2), EquipId: 2466
+Id: 11455, Name: Energy mix(1), EquipId: 2467
+Id: 11459, Name: Defence mix(1), EquipId: 2475
+Id: 11463, Name: Agility mix(1), EquipId: 2474
+Id: 11472, Name: Superattack mix(1), EquipId: 2468
+Id: 11473, Name: Anti-p supermix(2), EquipId: 2469
+Id: 11484, Name: Sup. energy mix(1), EquipId: 2472
+Id: 11485, Name: Sup. str. mix(2), EquipId: 2473
+Id: 11486, Name: Sup. str. mix(2), EquipId: 2470
+Id: 11487, Name: Sup. str. mix(1), EquipId: 2471
+Id: 11492, Name: Magic ess. mix(1), EquipId: 2478
+Id: 11494, Name: Sup. restore mix(2), EquipId: 2480
+Id: 11495, Name: Sup. restore mix(1), EquipId: 2479
+Id: 11514, Name: Magic mix(2), EquipId: 2476
+Id: 11515, Name: Magic mix(1), EquipId: 2477
+Id: 11551, Name: null, EquipId: 2557
+Id: 11556, Name: null, EquipId: 2557

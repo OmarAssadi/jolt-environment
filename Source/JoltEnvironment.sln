@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoltEnvironment", "JoltEnvironment\JoltEnvironment.csproj", "{ABE59924-70AE-4C35-8180-7D6D65523EBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuneScape", "RuneScape\RuneScape.csproj", "{50079C0B-2A7A-4243-BDE8-3F3234E417CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABE59924-70AE-4C35-8180-7D6D65523EBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE59924-70AE-4C35-8180-7D6D65523EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE59924-70AE-4C35-8180-7D6D65523EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE59924-70AE-4C35-8180-7D6D65523EBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50079C0B-2A7A-4243-BDE8-3F3234E417CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50079C0B-2A7A-4243-BDE8-3F3234E417CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50079C0B-2A7A-4243-BDE8-3F3234E417CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50079C0B-2A7A-4243-BDE8-3F3234E417CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

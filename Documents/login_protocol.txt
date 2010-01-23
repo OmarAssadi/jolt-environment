@@ -1,0 +1,108 @@
+Well, i have found most of the 508 account creation protocol, And i am sharing.
+I only ask, is that if you can find protocol 48's streams, you post them here. - finished documenting ;D
+
+90% creds to Me
+5% to Andrew(Codeusa) for some Streams.
+5% to super_ for some stream values
+
+508 account creation protocol:
+
+Protocol ID 85 (First screen accept)
+Code:
+int day = in.get() & 0xff;
+int month = in.get() & 0xff;
+int year = ((in.get() & 0xff) << 8) + (in.get() & 0xff);
+int country = ((in.get() & 0xff) << 8) + (in.get() & 0xff);
+Month is month+1, 
+Then, send byte 2 if everything is fine
+
+Protocol id 118 (Username)
+
+Long recieved for username, in.getLong()
+Convert to string for user.
+Send:
+# 2 = Username is able to create, client displays a green mark.
+# 7 = Displays the following: The server is currently very busy. Please try again later.
+# 9 = Displays the following: You cannot create an account at this time. Please try again later.
+# 20 = Username is already taken.
+# 22 = Displays the following: Please supply a valid username.
+(Credits to maxi for these)
+
+30 = invalid lenth
+34 = too similar to username.
+
+Protocol 48 (Password/Confirm password)
+Code:
+int byte4 = in.get() & 0xff; //Length of data (after preparing packet)
+int byte5 = in.get() & 0xff; //RSA enc block size (Creds to super_)
+int byte1 = in.get(); //RSA Block magic # (super_)
+int word1 = AccountCreation.readWord(in); //Padding? (super_)
+int revision = AccountCreation.readWord(in);
+long username = AccountCreation.readQWord(in);
+int dword1 = AccountCreation.readDWord(in); //Padding? (super_)
+String password = AccountCreation.readString(in);
+int dword2 = AccountCreation.readDWord(in); //Padding? (super_)
+int word3 = AccountCreation.readWord(in); // Unknown...
+int birth_day = in.get();
+int birth_month = in.get();
+int dword3 = AccountCreation.readDWord(in); //Padding? (super_)
+int birth_year = AccountCreation.readWord(in);
+int location = AccountCreation.readWord(in);
+int dword4 = AccountCreation.readDWord(in); //Unknown..
+Quote:
+Originally Posted by super_  
+old... but alright.
+a tip: the 'length - 2' byte is the rsa enc block size, and the 10 byte is the rsa block magic #. rsa block size is the entire length of the packet minus the 1 byte for packet size and 1 byte for rsa block magic #. the unknown/random integers are used for random padding to prevent eavesdroppers from intercepting and cracking the data.
+
+Note: I do not know the responses. 
+2 = default(good login) works.
+
+Note2: Client checks password matching already, short password is not checked, so if anyone has return code for that post ;D
+
+Spoiler for ID 48 source: 
+
+
+Oh also, for the last one i made a class (temporarily) to read it, this can be used for other parts if you use this.
+
+Code:
+package com.runemina.rs.world;
+
+/*
+ * @author Nicole/Nikki
+ * Account creation data, contains stream reading/other.
+ */
+
+import org.apache.mina.core.buffer.IoBuffer;
+
+public class AccountCreation {
+    public static int readDWord(IoBuffer in) {
+        return ((in.get() & 0xff) << 24)
+                + ((in.get() & 0xff) << 16)
+                + ((in.get() & 0xff) << 8)
+                + (in.get() & 0xff);
+    }
+    public static int readWord(IoBuffer in) {
+    	return ((in.get() & 0xff) << 8) + (in.get() & 0xff);
+    }
+    public static long readQWord(IoBuffer in) {
+        long l = (long) readDWord(in) & 0xffffffffL;
+        long l1 = (long) readDWord(in) & 0xffffffffL;
+
+        return (l << 32) + l1;
+    }
+    public static String readString(IoBuffer in) {
+        StringBuffer sb = new StringBuffer();
+        byte b;
+
+        while ((b = in.get()) != 0) {
+            sb.append((char) b);
+        }
+        return sb.toString();
+    }
+}
+change package as you want
+
+
+Have fun ;D
+
+Edit: Page 2 for more explaination from super_ ;D

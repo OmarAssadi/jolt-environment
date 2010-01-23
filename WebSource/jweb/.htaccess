@@ -1,0 +1,7 @@
+RewriteEngine on
+
+RewriteRule (.*)\.html $1.php
+RewriteRule (.*)\.htm $1.php
+RewriteRule (.*)\.ws $1.php
+
+RewriteRule ^home(|/)$ home.php

@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50079C0B-2A7A-4243-BDE8-3F3234E417CA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RuneScape</RootNamespace>
+    <AssemblyName>runescape</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <StartupObject>RuneScape.Program</StartupObject>
+    <ApplicationIcon>Resources\app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\..\Build\Debug\bin\</OutputPath>
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\..\Build\Release\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonLibrary">
+      <HintPath>..\..\Resources\libs\external\CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerCollections">
+      <HintPath>..\..\Resources\libs\external\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Communication\Login\AccountCreationReturnCode.cs" />
+    <Compile Include="Communication\Login\Handlers\AccountInfoProtocolHandler.cs" />
+    <Compile Include="Communication\Login\Handlers\AccountNameProtocolHandler.cs" />
+    <Compile Include="Communication\Login\Handlers\AccountPasswordProtocolHandler.cs" />
+    <Compile Include="Communication\Login\Handlers\ClientUpdateProtocolHandler.cs" />
+    <Compile Include="Communication\Login\Handlers\ClientVerificationProtocolHandler.cs" />
+    <Compile Include="Communication\Login\Handlers\IProtocolHandler.cs" />
+    <Compile Include="Communication\Login\Handlers\LoginVerificationProtocolHandler.cs" />
+    <Compile Include="Communication\Login\Handlers\ReconnectionProtocolHandler.cs" />
+    <Compile Include="Communication\Login\Handlers\SessionRequestProtocolHandler.cs" />
+    <Compile Include="Communication\Login\LoginVerification.cs" />
+    <Compile Include="Communication\Login\ProtocolManager.cs" />
+    <Compile Include="Communication\Messages\Outgoing\AnimateInterfacePacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\HeadOnInterfacePacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\InterfaceItemsPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\MapViewType.cs" />
+    <Compile Include="Communication\Messages\Outgoing\MinimapViewPacketComposer.cs" />
+    <Compile Include="Content\Interfaces\CharacterSetup.cs" />
+    <Compile Include="Content\Interfaces\EmoteTab.cs" />
+    <Compile Include="Content\Interfaces\OptionsTab.cs" />
+    <Compile Include="Database\Account\IAccountSaver.cs" />
+    <Compile Include="Database\Account\MySqlAccountSaver.cs" />
+    <Compile Include="Model\Characters\Preferences.cs" />
+    <Compile Include="Model\Creature.cs" />
+    <Compile Include="Model\Items\Containers\BankContainer.cs" />
+    <Compile Include="Model\Items\Containers\Container.cs" />
+    <Compile Include="Model\Items\Containers\ContainerType.cs" />
+    <Compile Include="Model\Items\Containers\EquipmentContainer.cs" />
+    <Compile Include="Model\Items\Containers\InventoryContainer.cs" />
+    <Compile Include="Model\Items\Item.cs" />
+    <Compile Include="Model\Items\ItemDefinition.cs" />
+    <Compile Include="Model\Items\ItemDefinitionBonuses.cs" />
+    <Compile Include="Model\Items\ItemDefinitionLoader.cs" />
+    <Compile Include="Model\Items\ItemDefinitionPrices.cs" />
+    <Compile Include="Model\Items\ItemManager.cs" />
+    <Compile Include="Model\RuneObject.cs" />
+    <Compile Include="Services\LoginService.cs" />
+    <Compile Include="Services\MajorUpdatesService.cs" />
+    <Compile Include="CommandLine.cs" />
+    <Compile Include="Communication\Login\LoginConnectionType.cs" />
+    <Compile Include="Communication\Login\LoginRequest.cs" />
+    <Compile Include="Communication\Login\LoginReturnCode.cs" />
+    <Compile Include="Communication\Messages\Incoming\ButtonPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\ChatPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\CommandPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\IPacketHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Communication\Messages\Incoming\NewMapRegionPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\NullPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\PingPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\QuietPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\RemoveInterfacePacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\WalkingPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Outgoing\CloseInterfacePacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\GenericPacketComposer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Communication\Messages\Outgoing\InterfaceConfigPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\InterfacePacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\LogoutPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\MessagePacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\NewMapRegionPacketComposer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Communication\Messages\Outgoing\PacketComposer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Communication\Messages\Outgoing\ConfigPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\RunEnergyPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\StatsPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\StringPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\WindowPanePacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\WriteStreams.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Communication\Messages\Packet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Communication\Messages\Frames.cs" />
+    <Compile Include="Communication\Messages\PacketManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Communication\Messages\PacketType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Communication\Messages\ReadStreams.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Content\GameCommands.cs" />
+    <Compile Include="Content\GameContent.cs" />
+    <Compile Include="Content\Interfaces\ChatOptionsBar.cs" />
+    <Compile Include="Content\Interfaces\IInterfaceHandler.cs" />
+    <Compile Include="Content\Interfaces\InterfaceManager.cs" />
+    <Compile Include="Content\Interfaces\LogoutTab.cs" />
+    <Compile Include="Content\Interfaces\RuneOrbs.cs" />
+    <Compile Include="Content\Interfaces\SideBar.cs" />
+    <Compile Include="Content\Interfaces\Tab.cs" />
+    <Compile Include="Content\Interfaces\WelcomeScreen.cs" />
+    <Compile Include="Content\Interfaces\WorldMap.cs" />
+    <Compile Include="Database\Account\AccountLoadResult.cs" />
+    <Compile Include="Database\Account\IAccountLoader.cs" />
+    <Compile Include="Database\Account\MySqlAccountLoader.cs" />
+    <Compile Include="Database\Config\Configuration.cs" />
+    <Compile Include="Database\Config\IConfigLoader.cs" />
+    <Compile Include="Database\Config\IniConfigLoader.cs" />
+    <Compile Include="Database\Config\MySqlConfigLoader.cs" />
+    <Compile Include="Database\Offence\OffenceManager.cs" />
+    <Compile Include="Database\Offence\OffenceType.cs" />
+    <Compile Include="GameEngine.cs" />
+    <Compile Include="Model\Animation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Characters\Appearance.cs" />
+    <Compile Include="Model\Characters\Skills.cs" />
+    <Compile Include="Model\Characters\Slots\ClientSlot.cs" />
+    <Compile Include="Model\Characters\DeathIcons.cs" />
+    <Compile Include="Model\Characters\Details.cs" />
+    <Compile Include="Model\Characters\Character.cs" />
+    <Compile Include="Model\Characters\ClientRights.cs" />
+    <Compile Include="Model\Characters\Gender.cs" />
+    <Compile Include="Model\Characters\HeadIcon.cs" />
+    <Compile Include="Model\Characters\CharacterManager.cs" />
+    <Compile Include="Model\Characters\MovementPoint.cs" />
+    <Compile Include="Model\Characters\PrayerIcons.cs" />
+    <Compile Include="Model\Characters\RenderMasks.cs" />
+    <Compile Include="Model\Characters\RenderUpdating.cs" />
+    <Compile Include="Model\Characters\ServerRights.cs" />
+    <Compile Include="Model\Characters\Slots\SlotManager.cs" />
+    <Compile Include="Model\Characters\Sprites.cs" />
+    <Compile Include="Model\Characters\UpdateFlags.cs" />
+    <Compile Include="Model\Characters\WalkingQueue.cs" />
+    <Compile Include="Model\ChatMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\EntityManipulation.cs" />
+    <Compile Include="Model\GameWorld.cs" />
+    <Compile Include="Model\Graphic.cs" />
+    <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\Maps\MapDataLoader.cs" />
+    <Compile Include="Model\Maps\MapManager.cs" />
+    <Compile Include="Network\ConnectionFactory.cs" />
+    <Compile Include="Network\ConnectionListener.cs" />
+    <Compile Include="Network\ConnectionManager.cs" />
+    <Compile Include="Communication\GameSession.cs" />
+    <Compile Include="Network\Node.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GameServer.cs" />
+    <Compile Include="Utilities\ChatUtilities.cs" />
+    <Compile Include="Utilities\DatabaseVersionCheck.cs" />
+    <Compile Include="Utilities\DirectionUtilities.cs" />
+    <Compile Include="Utilities\Filtering\BadWords.cs" />
+    <Compile Include="Workers\AccountWorker.cs" />
+    <Compile Include="Workers\AutoSaveWorker.cs" />
+    <Compile Include="Workers\MajorWorker.cs" />
+    <Compile Include="Workers\Worker.cs" />
+    <Compile Include="Workers\LoginWorker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JoltEnvironment\JoltEnvironment.csproj">
+      <Project>{ABE59924-70AE-4C35-8180-7D6D65523EBC}</Project>
+      <Name>JoltEnvironment</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Combat\" />
+    <Folder Include="Content\Minigames\" />
+    <Folder Include="Content\Skills\" />
+    <Folder Include="Model\Objects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\app.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
