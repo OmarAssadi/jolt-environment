@@ -838,6 +838,8 @@ Source/RuneScape/Communication/Messages/Incoming/NullPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/PingPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/QuietPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/RemoveInterfacePacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/SwapInterfaceItemPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/SwapItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/WalkingPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/AnimateInterfacePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CloseInterfacePacketComposer.cs -text

@@ -162,11 +162,13 @@ namespace RuneScape.Content
 
                             if (byte.TryParse(arguments[1], out energy))
                             {
+                                character.WalkingQueue.RunEnergy = energy;
                                 character.Session.SendData(new RunEnergyPacketComposer(energy).Serialize());
                             }
                         }
                         else
                         {
+                            character.WalkingQueue.RunEnergy = 100;
                             character.Session.SendData(new RunEnergyPacketComposer(100).Serialize());
                         }
                     }

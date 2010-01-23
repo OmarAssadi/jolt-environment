@@ -66,6 +66,8 @@
     <Compile Include="Communication\Login\Handlers\SessionRequestProtocolHandler.cs" />
     <Compile Include="Communication\Login\LoginVerification.cs" />
     <Compile Include="Communication\Login\ProtocolManager.cs" />
+    <Compile Include="Communication\Messages\Incoming\SwapItemPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\SwapInterfaceItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Outgoing\AnimateInterfacePacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\HeadOnInterfacePacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\InterfaceItemsPacketComposer.cs" />

@@ -66,20 +66,26 @@ namespace RuneScape.Database.Account
                     client.AddParameter("run_energy", character.WalkingQueue.RunEnergy);
 
                     InventoryContainer invContainer = character.Inventory;
-                    string invQuery = string.Empty;
-                    for (int i = 0; i < invContainer.Capacity; i++)
+                    if (invContainer.TakenSlots > 0)
                     {
-                        if (invContainer[i] != null && invContainer[i].Count > 0)
+                        string invQuery = string.Empty;
+                        for (int i = 0; i < invContainer.Capacity; i++)
                         {
-                            if (invQuery != string.Empty)
+                            if (invContainer[i] != null && invContainer[i].Count > 0)
                             {
-                                invQuery += ",";
+                                if (invQuery != string.Empty)
+                                {
+                                    invQuery += ",";
+                                }
+                                invQuery += (i + "=" + invContainer[i].Id + ":" + invContainer[i].Count);
                             }
-                            invQuery += (i + "=" + invContainer[i].Id + ":" + invContainer[i].Count);
                         }
+                        client.AddParameter("inv", invQuery);
                     }
-
-                    client.AddParameter("inv", invQuery);
+                    else
+                    {
+                        client.AddParameter("inv", null);
+                    }
 
                     string query = "UPDATE characters SET gender=@gender,head=@head,chest=@chest,arms=@arms,hands=@hands,legs=@legs,feet=@feet,beard=@beard,hair_color=@hair_color,torso_color=@torso_color,leg_color=@leg_color,feet_color=@feet_color,skin_color=@skin_color, coord_x=@coord_x,coord_y=@coord_y,coord_z=@coord_z,run_energy=@run_energy,inventory_items=@inv WHERE id=@id;";
                     client.ExecuteUpdate(query);
