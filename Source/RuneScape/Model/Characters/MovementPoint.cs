@@ -33,15 +33,15 @@ namespace RuneScape.Model.Characters
         /// <summary>
         /// The point's current x coordinate.
         /// </summary>
-        public int X { get; set; }
+        public short X { get; set; }
         /// <summary>
         /// The point's current y coordinate.
         /// </summary>
-        public int Y { get; set; }
+        public short Y { get; set; }
         /// <summary>
         /// The point's current direction.
         /// </summary>
-        public int Direction { get; set; }
+        public sbyte Direction { get; set; }
         #endregion Properties
 
         #region Constructor
@@ -51,7 +51,7 @@ namespace RuneScape.Model.Characters
         /// <param name="x">The point's X coordinate.</param>
         /// <param name="y">The point's Y coordinate.</param>
         /// <param name="direction">The point's direction.</param>
-        public MovementPoint(int x, int y, int direction)
+        public MovementPoint(short x, short y, sbyte direction)
         {
             this.X = x;
             this.Y = y;

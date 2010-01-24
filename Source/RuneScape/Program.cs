@@ -139,10 +139,12 @@ namespace RuneScape
             Console.WriteLine();
             Console.WriteLine();
 
-            //System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
-            //watch.Start();
-            //watch.Stop();
-            //Console.WriteLine(watch.Elapsed.TotalMilliseconds);
+
+            /*System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
+            watch.Start();
+            int i2 = i;
+            watch.Stop();
+            Console.WriteLine(watch.Elapsed.TotalMilliseconds);*/
 
             /*
              * Start a new thread that will update every second 

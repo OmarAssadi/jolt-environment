@@ -122,6 +122,12 @@ namespace RuneScape.Communication.Login.Handlers
                         client.AddParameter("country", country);
                         client.AddParameter("ip", request.Connection.IPAddress);
                         client.ExecuteUpdate("INSERT INTO characters (username,password,dob,country,register_ip,register_date) VALUES (@username, @password, @dob, @country, @ip, NOW());");
+
+                        uint id = (uint)client.ExecuteQuery("SELECT id FROM characters WHERE username = @username AND password = @password;");
+                        client.AddParameter("id", id);
+
+                        client.ExecuteUpdate("INSERT INTO character_preferences (master_id) VALUES (@id);");
+
                         
                         // Now that the character is now registered to the core table, we can now grab the auto incremented id.
                         //dbClient.AddParamWithValue("id", dbClient.ReadUInt32("SELECT id FROM characters WHERE username = @username"));

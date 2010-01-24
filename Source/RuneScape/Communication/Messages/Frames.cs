@@ -101,6 +101,47 @@ namespace RuneScape.Communication.Messages
         }
 
         /// <summary>
+        /// Sends the required hd interfaces.
+        /// </summary>
+        /// <param name="character">The character to produce frame for.</param>
+        public static void SendHdInterface(Character character)
+        {
+            character.Session.SendData(new InterfacePacketComposer(1, 549, 0, 746).Serialize());
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 13, 748).Serialize()); //energy orb
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 14, 749).Serialize()); //energy orb
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 15, 750).Serialize()); //energy orb
+            //character.Session.SendData(new InterfacePacketComposer(1, 746, 16, 747); //summing orb
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 18, 751).Serialize()); //things below chatbox 
+            character.Session.SendData(new InterfacePacketComposer(1, 752, 8, 137).Serialize()); //chatbox
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 65, 752).Serialize()); //chatbox 752
+            character.Session.SendData(new InterfacePacketComposer(1, 549, 0, 746).Serialize()); // Main interface
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 87, 92).Serialize()); // Attack tab
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 88, 320).Serialize()); // Skill tab
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 89, 274).Serialize()); // Quest tab
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 90, 149).Serialize()); // Inventory tab
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 91, 387).Serialize()); // Equipment tab
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 92, 271).Serialize()); // Prayer tab
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 93, 193).Serialize()); // Magic tab
+            //character.Session.SendData(new InterfacePacketComposer(1, 746, 94, 662).Serialize()); // Summoning tab
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 95, 550).Serialize()); // Friend tab
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 96, 551).Serialize()); // Ignore tab
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 97, 589).Serialize()); // Clan tab
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 98, 261).Serialize()); // Setting tab
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 99, 464).Serialize()); // Emote tab
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 100, 187).Serialize()); // Music tab
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 101, 182).Serialize()); // Logout tab
+            character.Session.SendData(new InterfacePacketComposer(1, 752, 8, 137).Serialize()); // Chatbox 
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 65, 752).Serialize()); // Chatbox 752
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 18, 751).Serialize()); // Settings below chatbox
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 13, 748).Serialize()); // HP orb
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 14, 749).Serialize()); // Prayer orb
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 15, 750).Serialize()); // Energy orb
+            character.Session.SendData(new InterfacePacketComposer(1, 746, 12, 747).Serialize()); // Summoning orb
+            //player.getEquipment().refresh();
+            SendLoginWelcome(character);
+        }
+
+        /// <summary>
         /// Sends a set of setting configs.
         /// </summary>
         /// <param name="character"></param>
@@ -133,7 +174,7 @@ namespace RuneScape.Communication.Messages
         public static void SendCloseInventoryInterface(Character character)
         {
             character.Preferences.Remove("interface");
-            character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Hd ? 746 : 548), 71, true).Serialize());
+            character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Hd ? 746 : 548), 71, true).Serialize());
         }
 
         /// <summary>
@@ -144,7 +185,7 @@ namespace RuneScape.Communication.Messages
         /// <param name="childId">The child if of the tab.</param>
         public static void SendTab(Character character, short tabId, short childId)
         {
-            character.Session.SendData(new InterfacePacketComposer(1, (short)(childId == 137 ? 752 : (character.Hd ? 746 : 548)), 
+            character.Session.SendData(new InterfacePacketComposer(1, (short)(childId == 137 ? 752 : (character.Preferences.Hd ? 746 : 548)), 
                 tabId, childId).Serialize());
         }
 
@@ -158,7 +199,7 @@ namespace RuneScape.Communication.Messages
         {
             SendCloseInterface(character);
             character.Preferences.Add("interface", id);
-            if (character.Hd)
+            if (character.Preferences.Hd)
             {
                 character.Session.SendData(new InterfacePacketComposer(0, 746, (short)(inventoryInterface ? 4 : 6), id).Serialize());
                 character.Session.SendData(new InterfacePacketComposer(0, 746, 8, id).Serialize());
@@ -176,7 +217,7 @@ namespace RuneScape.Communication.Messages
         public static void SendCloseInterface(Character character)
         {
             character.Preferences.Remove("interface");
-            if (character.Hd)
+            if (character.Preferences.Hd)
             {
                 character.Session.SendData(new CloseInterfacePacketComposer(746, 3).Serialize());
                 character.Session.SendData(new CloseInterfacePacketComposer(746, 4).Serialize());

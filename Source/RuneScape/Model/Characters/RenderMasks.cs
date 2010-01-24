@@ -25,6 +25,8 @@ using System.Text;
 using JoltEnvironment.Utilities;
 using RuneScape.Communication.Messages;
 using RuneScape.Communication.Messages.Outgoing;
+using RuneScape.Model.Items;
+using RuneScape.Model.Items.Containers;
 using RuneScape.Utilities;
 
 namespace RuneScape.Model.Characters
@@ -185,18 +187,104 @@ namespace RuneScape.Model.Characters
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    properties.AppendByte((byte)0);//I'll check this out later
+                    if (character.Equipment[i] != null)
+                    {
+                        properties.AppendShort((short)(32768 + character.Equipment[i].Definition.EquipId));
+                    }
+                    else
+                    {
+                        properties.AppendByte((byte)0);//I'll check this out later
+                    }
                 }
-                
+
                 // Physical appearance.
-                properties.AppendShort((short)(0x100 + character.Appearance.Torso));//CHEST.
-                properties.AppendByte((byte)0); //Shield
-                properties.AppendShort((short)(0x100 + character.Appearance.Arms));//Chest.
-                properties.AppendShort((short)(0x100 + character.Appearance.Legs)); //Legs.
-                properties.AppendShort((short)(0x100 + character.Appearance.Head)); //Hat
-                properties.AppendShort((short)(0x100 + character.Appearance.Wrist)); //Hands
-                properties.AppendShort((short)(0x100 + character.Appearance.Feet)); //Feet
-                properties.AppendShort((short)(0x100 + character.Appearance.Beard)); //beard
+                if (character.Equipment[EquipmentContainer.Slot_Chest] != null)
+                {
+                    properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Chest].Definition.EquipId));
+                }
+                else
+                {
+                    properties.AppendShort((short)(0x100 + character.Appearance.Torso));//CHEST.
+                }
+                if (character.Equipment[EquipmentContainer.Slot_Shield] != null)
+                {
+                    properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Shield].Definition.EquipId));
+                }
+                else
+                {
+                    properties.AppendByte((byte)0); //Shield
+                }
+                Item chest = character.Equipment[EquipmentContainer.Slot_Chest];
+                if (chest != null)
+                {
+                    if (!EquipmentContainer.FullBody(chest.Definition))
+                    {
+                        properties.AppendShort((short)(0x100 + character.Appearance.Arms));
+                    }
+                    else
+                    {
+                        properties.AppendByte((byte)0);//CHEST.
+                    }
+                }
+                else
+                {
+                    properties.AppendShort((short)(0x100 + character.Appearance.Arms));//CHEST.
+                }
+                if (character.Equipment[EquipmentContainer.Slot_Legs] != null)
+                {
+                    properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Legs].Definition.EquipId));
+                }
+                else
+                {
+                    properties.AppendShort((short)(0x100 + character.Appearance.Legs)); //Legs.
+                }
+                Item hat = character.Equipment[EquipmentContainer.Slot_Hat];
+                if (hat != null)
+                {
+                    if (!EquipmentContainer.FullHat(hat.Definition) && !EquipmentContainer.FullMask(hat.Definition))
+                    {
+                        properties.AppendShort((short)(0x100 + character.Appearance.Head));
+                    }
+                    else
+                    {
+                        properties.AppendByte((byte)0);
+                    }
+                }
+                else
+                {
+                    properties.AppendShort((short)(0x100 + character.Appearance.Head));
+                }
+                if (character.Equipment[EquipmentContainer.Slot_Hands] != null)
+                {
+                    properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Hands].Definition.EquipId));
+                }
+                else
+                {
+                    properties.AppendShort((short)(0x100 + character.Appearance.Wrist)); //Legs.
+                }
+                if (character.Equipment[EquipmentContainer.Slot_Feet] != null)
+                {
+                    properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Feet].Definition.EquipId));
+                }
+                else
+                {
+                    properties.AppendShort((short)(0x100 + character.Appearance.Feet)); //Legs.
+                }
+                if (hat != null)
+                {
+                    if (!EquipmentContainer.FullMask(hat.Definition))
+                    {
+                        properties.AppendShort((short)(0x100 + character.Appearance.Beard)); //beard
+                    }
+                    else
+                    {
+                        properties.AppendByte((byte)0);
+                    }
+                }
+                else
+                {
+                    properties.AppendShort((short)(0x100 + character.Appearance.Beard)); //beard
+                }
             }
             else
             {
@@ -212,16 +300,16 @@ namespace RuneScape.Model.Characters
             properties.AppendByte(character.Appearance.SkinColor); //Skin color
 
             // Emotions.
-            properties.AppendShort(0x328); // stand
+            properties.AppendShort(character.Equipment.StandAnimation); // stand
             properties.AppendShort(0x337); // stand turn
-            properties.AppendShort(0x333); // walk
+            properties.AppendShort(character.Equipment.WalkAnimation); // walk
             properties.AppendShort(0x334); // turn 180
             properties.AppendShort(0x335); // turn 90 cw
             properties.AppendShort(0x336); // turn 90 ccw
-            properties.AppendShort(0x338); // run
+            properties.AppendShort(character.Equipment.RunAnimation); // run
 
             properties.AppendLong(character.LongName); // character's name
-            properties.AppendByte(3); // combat level
+            properties.AppendByte((byte)character.Skills.CombatLevel); // combat level
             properties.AppendShort(0);
             updateBlock.AppendByte((byte)(properties.Position & 0xFF));
             updateBlock.AppendBytes(properties.SerializeBuffer());

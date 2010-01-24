@@ -144,9 +144,9 @@ namespace RuneScape.Model
             this.WelcomeMessage = (string)vars["welcome_message"];
             string[] coords = vars["spawn_point"].ToString().Split(',');
             this.SpawnPoint = Location.Create(
-                int.Parse(coords[0]),
-                int.Parse(coords[1]),
-                int.Parse(coords[2]));
+                short.Parse(coords[0]),
+                short.Parse(coords[1]),
+                byte.Parse(coords[2]));
             this.Motw = (string)vars["motw"];
             this.ExperienceRate = (int)vars["exp_rate"];
             this.AccountCreationEnabled = true;

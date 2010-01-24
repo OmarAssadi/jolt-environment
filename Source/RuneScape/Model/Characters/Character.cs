@@ -63,11 +63,6 @@ namespace RuneScape.Model.Characters
         public long LongName { get; private set; }
 
         /// <summary>
-        /// Gets whether the character is currently using a HD client.
-        /// </summary>
-        public bool Hd { get; private set; }
-
-        /// <summary>
         /// The character's client-side rights to the server.
         /// </summary>
         public ClientRights ClientRights { get; set; }
@@ -118,6 +113,10 @@ namespace RuneScape.Model.Characters
         /// Gets the character's inventory.
         /// </summary>
         public InventoryContainer Inventory { get; private set; }
+        /// <summary>
+        /// Gets the character's equipment.
+        /// </summary>
+        public EquipmentContainer Equipment { get; private set; }
         #endregion Properties
 
         #region Constructors
@@ -134,7 +133,6 @@ namespace RuneScape.Model.Characters
             this.Password = details.Password;
             this.Session = details.Session;
             this.Session.Character = this;
-            this.Hd = details.Hd;
             this.LongName = StringUtilities.StringToLong(details.Username);
 
             // Entity bases.
@@ -142,6 +140,7 @@ namespace RuneScape.Model.Characters
 
             // Character sub-components.
             this.Preferences = new Preferences();
+            this.Preferences.Hd = details.Hd;
             this.UpdateFlags = new UpdateFlags();
             this.UpdateFlags.LastRegion = this.Location;
             this.Sprites = new Sprites();
@@ -150,6 +149,7 @@ namespace RuneScape.Model.Characters
             this.WalkingQueue = new WalkingQueue(this);
             this.Skills = new Skills(this);
             this.Inventory = new InventoryContainer(this);
+            this.Equipment = new EquipmentContainer(this);
         }
         #endregion Constructors
 

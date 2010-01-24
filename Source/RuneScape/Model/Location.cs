@@ -33,33 +33,33 @@ namespace RuneScape.Model
         /// <summary>
         /// Gets or sets the model's X coordinate.
         /// </summary>
-        public int X { get; set; }
+        public short X { get; set; }
         /// <summary>
         /// Gets or sets the model's Y coordinate.
         /// </summary>
-        public int Y { get; set; }
+        public short Y { get; set; }
         /// <summary>
         /// Gets or sets the model's Z coordinate.
         /// </summary>
-        public int Z { get; set; }
+        public byte Z { get; set; }
 
         /// <summary>
         /// Gets the model's regional X coordinate.
         /// </summary>
-        public int RegionX { get { return (this.X >> 3); } }
+        public short RegionX { get { return (short)(this.X >> 3); } }
         /// <summary>
         /// Gets the model's regional Y coordinate.
         /// </summary>
-        public int RegionY { get { return (this.Y >> 3); } }
+        public short RegionY { get { return (short)(this.Y >> 3); } }
 
         /// <summary>
         /// Gets the model's local X coordinate.
         /// </summary>
-        public int LocalX { get { return this.X - 8 * (this.RegionX - 6); } }
+        public short LocalX { get { return (short)(this.X - 8 * (this.RegionX - 6)); } }
         /// <summary>
         /// Gets the model's local Y coordinate.
         /// </summary>
-        public int LocalY { get { return this.Y - 8 * (this.RegionY - 6); } }
+        public short LocalY { get { return (short)(this.Y - 8 * (this.RegionY - 6)); } }
         #endregion Properties
 
         #region Constructors
@@ -69,7 +69,7 @@ namespace RuneScape.Model
         /// <param name="x">The instance's X coordinate.</param>
         /// <param name="y">The instance's Y coordinate.</param>
         /// <param name="z">The instance's Z coordinate.</param>
-        private Location(int x, int y, int z)
+        private Location(short x, short y, byte z)
         {
             this.X = x;
             this.Y = y;
@@ -85,7 +85,7 @@ namespace RuneScape.Model
         /// <param name="y">The instance's Y coordinate.</param>
         /// <param name="z">The instance's Z coordinate.</param>
         /// <returns>Returns a RuneScape.Model.Location object.</returns>
-        public static Location Create(int x, int y, int z)
+        public static Location Create(short x, short y, byte z)
         {
             return new Location(x, y, z);
         }
@@ -95,9 +95,9 @@ namespace RuneScape.Model
         /// </summary>
         /// <param name="location">The location used to find range.</param>
         /// <returns>Returns an int.</returns>
-        public int GetLocalX(Location location)
+        public short GetLocalX(Location location)
         {
-            return this.X - 8 * (location.RegionX - 6);
+            return (short)(this.X - 8 * (location.RegionX - 6));
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace RuneScape.Model
         /// <returns>Returns an int.</returns>
         public int GetLocalY(Location location)
         {
-            return this.Y - 8 * (location.RegionY - 6);
+            return (short)(this.Y - 8 * (location.RegionY - 6));
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace RuneScape.Model
         /// <returns>Returns an integer.</returns>
         public override int GetHashCode()
         {
-            return this.Z << 30 | this.X << 15 | this.Y;
+            return (this.Z << 30) | (ushort)(this.X << 15) | (ushort)(this.Y);
         }
 
         /// <summary>

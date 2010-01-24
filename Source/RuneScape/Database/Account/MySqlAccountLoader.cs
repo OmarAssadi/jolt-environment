@@ -113,7 +113,7 @@ namespace RuneScape.Database.Account
                         result.Character.Appearance.SkinColor = (byte)data[25];
                         
                         // Location.
-                        result.Character.Location = Location.Create((int)data[26], (int)data[27], (int)data[28]);
+                        result.Character.Location = Location.Create((short)data[26], (short)data[27], (byte)data[28]);
 
                         // Energy.
                         result.Character.WalkingQueue.RunEnergy = (byte)data[29];

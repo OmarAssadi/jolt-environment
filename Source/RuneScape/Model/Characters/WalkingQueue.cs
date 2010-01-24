@@ -135,7 +135,7 @@ namespace RuneScape.Model.Characters
                     diffY--;
 
                 // Add the step to the (internal) queue.
-                AddStepInternal(x - diffX, y - diffY);
+                AddStepInternal((short)(x - diffX), (short)(y - diffY));
             }
         }
 
@@ -144,7 +144,7 @@ namespace RuneScape.Model.Characters
         /// </summary>
         /// <param name="x">X coordinate of step.</param>
         /// <param name="y">Y coordinate of step.</param>
-        private void AddStepInternal(int x, int y)
+        private void AddStepInternal(short x, short y)
         {
             // Check to see if the current count of queues overflows the capacity limit.
             if (this.writePosition >= WalkingQueue.QueueCapacity)
@@ -157,11 +157,11 @@ namespace RuneScape.Model.Characters
             }
 
             // Get differences.
-            int diffX = x - this.points[this.writePosition -1].X;
-            int diffY = y - this.points[this.writePosition - 1].Y;
+            short diffX = (short)(x - this.points[this.writePosition -1].X);
+            short diffY = (short)(y - this.points[this.writePosition - 1].Y);
 
             // Caclulate direction from differences.
-            int direction = DirectionUtilities.CalculateDirection(diffX, diffY);
+            sbyte direction = DirectionUtilities.CalculateDirection(diffX, diffY);
 
             // We only need to enqueue the point if the direction is valid.
             if (direction > -1)
@@ -315,7 +315,7 @@ namespace RuneScape.Model.Characters
                 return -1;
             }
 
-            int dir = points[this.readPosition++].Direction;
+            sbyte dir = points[this.readPosition++].Direction;
 
             /*
              * You cannot search though an array with a negative number, 
@@ -323,12 +323,12 @@ namespace RuneScape.Model.Characters
              */ 
             if (dir > -1)
             {
-                int xdiff = DirectionUtilities.DeltaX[dir];
-                int ydiff = DirectionUtilities.DeltaY[dir];
+                sbyte xdiff = DirectionUtilities.DeltaX[dir];
+                sbyte ydiff = DirectionUtilities.DeltaY[dir];
 
                 this.character.Location = Location.Create(
-                    character.Location.X + xdiff,
-                    character.Location.Y + ydiff,
+                    (short)(character.Location.X + xdiff),
+                    (short)(character.Location.Y + ydiff),
                     character.Location.Z);
             }
             return dir;

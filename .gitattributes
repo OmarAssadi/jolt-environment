@@ -3,6 +3,7 @@
 Documents/char_configs.txt -text
 Documents/char_design.txt -text
 Documents/char_design_colors.txt -text
+Documents/equips.xlsx -text
 Documents/gameinfo/coordinates.txt -text
 Documents/gameinfo/interfaces.txt -text
 Documents/gameinfo/interfaces/0.txt -text
@@ -832,6 +833,8 @@ Source/RuneScape/Communication/Messages/Frames.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ButtonPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ChatPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/CommandPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/EquipItemPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/HdNotificationPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/IPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NewMapRegionPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NullPacketHandler.cs -text
@@ -923,6 +926,8 @@ Source/RuneScape/Model/Items/Containers/Container.cs -text
 Source/RuneScape/Model/Items/Containers/ContainerType.cs -text
 Source/RuneScape/Model/Items/Containers/EquipmentContainer.cs -text
 Source/RuneScape/Model/Items/Containers/InventoryContainer.cs -text
+Source/RuneScape/Model/Items/EquipmentItems.cs -text
+Source/RuneScape/Model/Items/EquipmentSlot.cs -text
 Source/RuneScape/Model/Items/Item.cs -text
 Source/RuneScape/Model/Items/ItemDefinition.cs -text
 Source/RuneScape/Model/Items/ItemDefinitionBonuses.cs -text

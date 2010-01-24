@@ -53,9 +53,9 @@ namespace RuneScape.Communication.Messages.Outgoing
                 forceSend = false;
             if (((character.Location.RegionX / 8) == 48) && ((character.Location.RegionY / 8) == 148))
                 forceSend = false;
-            AppendShortA((short)character.Location.RegionX);
-            AppendLEShortA((short)character.Location.LocalY);
-            AppendShortA((short)character.Location.LocalX);
+            AppendShortA(character.Location.RegionX);
+            AppendLEShortA(character.Location.LocalY);
+            AppendShortA(character.Location.LocalX);
 
             for (int xCalc = (character.Location.RegionX - 6) / 8; xCalc <= ((character.Location.RegionX + 6) / 8); xCalc++)
             {
@@ -78,8 +78,8 @@ namespace RuneScape.Communication.Messages.Outgoing
                     }
                 }
             }
-            AppendByteC((byte)character.Location.Z);
-            AppendShort((short)character.Location.RegionY);
+            AppendByteC(character.Location.Z);
+            AppendShort(character.Location.RegionY);
         }
         #endregion Constructors
 

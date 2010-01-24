@@ -43,6 +43,16 @@ namespace RuneScape.Content
                         CharacterSetup.Show(character);
                     }
                     #endregion Setup
+
+                    #region Clear Inventory
+                    /*
+                     * Clears the character's inventory.
+                     */
+                    else if (command.Equals("clearinv"))
+                    {
+                        character.Inventory.Reset();
+                    }
+                    #endregion Clear Inventory
                 }
 
                 /*
@@ -70,18 +80,17 @@ namespace RuneScape.Content
                      */ 
                     if (command.Equals("teleport"))
                     {
-                        if (arguments.Length == 2 || arguments.Length == 3)
+                        if (arguments.Length == 3 || arguments.Length == 4)
                         {
-                            int x = int.Parse(arguments[1]);
-                            int y = int.Parse(arguments[2]);
-                            int z = 0;
+                            short x = short.Parse(arguments[1]);
+                            short y = short.Parse(arguments[2]);
+                            byte z = 0;
 
                             // The character specified a height.
                             if (arguments.Length == 4)
                             {
-                                z = int.Parse(arguments[3]);
+                                z = byte.Parse(arguments[3]);
                             }
-
                             character.UpdateFlags.TeleportLocation = Location.Create(x, y, z);
                             character.UpdateFlags.Teleporting = true;
                         }

@@ -33,11 +33,11 @@ namespace RuneScape.Utilities
         /// <summary>
         /// Delta X direction.
         /// </summary>
-        public static readonly int[] DeltaX = { -1, 0, 1, -1, 1, -1, 0, 1 };
+        public static readonly sbyte[] DeltaX = { -1, 0, 1, -1, 1, -1, 0, 1 };
         /// <summary>
         /// Delta Y direction.
         /// </summary>
-        public static readonly int[] DeltaY = { 1, 1, 1, 0, 0, -1, -1, -1 };
+        public static readonly sbyte[] DeltaY = { 1, 1, 1, 0, 0, -1, -1, -1 };
         #endregion Fields
 
         #region Methods
@@ -47,7 +47,7 @@ namespace RuneScape.Utilities
         /// <param name="dx">X difference.</param>
         /// <param name="dy">Y difference.</param>
         /// <returns>Returns the direction.</returns>
-        public static int CalculateDirection(int dx, int dy)
+        public static sbyte CalculateDirection(short dx, short dy)
         {
             if (dx < 0)
             {

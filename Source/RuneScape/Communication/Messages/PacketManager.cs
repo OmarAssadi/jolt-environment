@@ -110,6 +110,7 @@ namespace RuneScape.Communication.Messages
         private void LoadHandlers()
         {
             AddHandler(0, new NullPacketHandler()); // Handles the null packets (usually sent at login).
+            AddHandler(3, new EquipItemPacketHandler()); // Handles item equiping.
             AddHandler(21, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(22, new QuietPacketHandler()); // Recieved when update is required.
             AddHandler(49, new WalkingPacketHandler()); // Handles walking.
@@ -123,6 +124,7 @@ namespace RuneScape.Communication.Messages
             AddHandler(115, new PingPacketHandler()); // Sent every second.
             AddHandler(117, new QuietPacketHandler()); // Unkwown.
             AddHandler(119, new WalkingPacketHandler()); // Handles walking.
+            AddHandler(129, new HdNotificationPacketHandler()); // Handles hd clients.
             AddHandler(133, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(138, new WalkingPacketHandler()); // Handles walking.
             AddHandler(167, new SwapItemPacketHandler()); // Handles item movements.
