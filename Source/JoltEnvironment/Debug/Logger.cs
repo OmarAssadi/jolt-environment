@@ -30,6 +30,13 @@ namespace JoltEnvironment.Debug
     /// </summary>
     public class Logger
     {
+        #region Fields
+        /// <summary>
+        /// Gets the asynchronous log worker.
+        /// </summary>
+        private AsyncLogWorker worker = new AsyncLogWorker();
+        #endregion Fields
+
         #region Properties
         /// <summary>
         /// Gets or sets the priority of the printed log. 
@@ -65,21 +72,6 @@ namespace JoltEnvironment.Debug
         ///     that you enable this to get a full read of any exceptions or errors.</para>
         /// </summary>
         public bool TraceMode { get; set; }
-        /// <summary>
-        /// Gets or sets whether the log should be printed with the full name to 
-        /// the class.
-        /// 
-        ///     <para>If enabled, class will show up with full names, rather than just the
-        ///     class name. eg. 'JoltEnvironment.Debug.Logger' instead of 'Logger'.</para>
-        /// </summary>
-        public bool FullName { get; set; }
-        /// <summary>
-        /// Gets or sets whether the log should be printed with the method name.
-        /// 
-        ///     <para>If enabled, methods will show up with every log. eg:
-        ///     'JoltEnvironment.Debug.Logger WriteInfo'</para>
-        /// </summary>
-        public bool ShowMethod { get; set; }
         #endregion Properites
 
         #region Constructors
@@ -91,14 +83,11 @@ namespace JoltEnvironment.Debug
         /// <param name="traceMode">Whether traces will be logged.</param>
         /// <param name="fullName">Whether the logs will show full names.</param>
         /// <param name="showMethod">Whether the logs will show method names.</param>
-        public Logger(LogPriority logPriority, bool colored, bool logEvent, bool traceMode, bool fullName, bool showMethod)
+        public Logger(LogPriority logPriority, bool colored, bool logEvent)
         {
             this.LogPriority = logPriority;
             this.Colored = colored;
             this.LogEvent = logEvent;
-            this.TraceMode = traceMode;
-            this.FullName = fullName;
-            this.ShowMethod = showMethod;
         }
         #endregion Constructors
 
@@ -109,53 +98,23 @@ namespace JoltEnvironment.Debug
         /// <param name="frame">Frame from the stactrace.</param>
         /// <param name="priority">Priority level of this log.</param>
         /// <param name="message">Message to be outputted.</param>
-        private void WriteLog(StackFrame frame, LogPriority priority, ConsoleColor color, object message)
+        private void WriteLog(StackFrame frame, ConsoleColor color, object message)
         {
             // Lock this method so that logs don't scramble when printed on the console.
-            lock (this)
+            if (this.Colored)
             {
-                if (this.Colored)
-                {
-                    Console.Write("[" + DateTime.Now + "] :: ");
-                    Console.ForegroundColor = color;
-
-                    if (this.FullName)
-                        if (this.ShowMethod)
-                            Console.Write(frame.GetMethod().ReflectedType + " " + frame.GetMethod().Name);
-                        else
-                            Console.Write(frame.GetMethod().ReflectedType);
-                    else
-                        if (this.ShowMethod)
-                            Console.Write(frame.GetMethod().ReflectedType.Name + " " + frame.GetMethod().Name);
-                        else
-                            Console.Write(frame.GetMethod().ReflectedType.Name);
-
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.WriteLine(Environment.NewLine + message);
-                }
-                else
-                {
-                    if (this.FullName)
-                        if (this.ShowMethod)
-                            Console.WriteLine("[" + DateTime.Now + "] :: " 
-                                + frame.GetMethod().ReflectedType + " " 
-                                + frame.GetMethod().Name 
-                                + Environment.NewLine + message);
-                        else
-                            Console.WriteLine("[" + DateTime.Now + "] :: " 
-                                + frame.GetMethod().ReflectedType + " " 
-                                + Environment.NewLine + message);
-                    else
-                        if (this.ShowMethod)
-                            Console.WriteLine("[" + DateTime.Now + "] :: "
-                                + frame.GetMethod().ReflectedType.Name + " "
-                                + frame.GetMethod().Name
-                                + Environment.NewLine + message);
-                        else
-                            Console.WriteLine("[" + DateTime.Now + "] :: "
-                                + frame.GetMethod().ReflectedType.Name + " "
-                                + Environment.NewLine + message);
-                }
+                Console.Write("[" + DateTime.Now + "] :: ");
+                Console.ForegroundColor = color;
+                Console.WriteLine(frame.GetMethod().ReflectedType + " " + frame.GetMethod().Name);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine(message);
+            }
+            else
+            {
+                Console.WriteLine("[" + DateTime.Now + "] :: "
+                    + frame.GetMethod().ReflectedType + " "
+                    + frame.GetMethod().Name
+                    + Environment.NewLine + message);
             }
         }
 
@@ -166,7 +125,10 @@ namespace JoltEnvironment.Debug
         public void WriteDebug(object message)
         {
             if (this.LogPriority <= LogPriority.Debug)
-                WriteLog(new StackTrace().GetFrame(1), LogPriority.Debug, ConsoleColor.DarkGray, message);
+            {
+                StackFrame frame = new StackTrace().GetFrame(1);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, ConsoleColor.DarkGray, message)));
+            }
         }
 
         /// <summary>
@@ -177,9 +139,15 @@ namespace JoltEnvironment.Debug
         public void WriteDebug(object message, bool logEvent)
         {
             if (this.LogPriority <= LogPriority.Debug)
-                WriteLog(new StackTrace().GetFrame(1), LogPriority.Debug, ConsoleColor.DarkGray, message);
-            if (logEvent)
-                WriteFile(new StackTrace().GetFrame(1), LogPriority.Debug, message);
+            {
+                StackFrame frame = new StackTrace().GetFrame(1);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, ConsoleColor.DarkGray, message)));
+
+                if (logEvent)
+                {
+                    this.worker.QueueLog(new Action(() => WriteFile(frame, LogPriority.Debug, message)));
+                }
+            }
         }
 
         /// <summary>
@@ -189,7 +157,10 @@ namespace JoltEnvironment.Debug
         public void WriteInfo(object message)
         {
             if (this.LogPriority <= LogPriority.Info)
-                WriteLog(new StackTrace().GetFrame(1), LogPriority.Info, ConsoleColor.DarkCyan, message);
+            {
+                StackFrame frame = new StackTrace().GetFrame(1);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, ConsoleColor.DarkCyan, message)));
+            }
         }
 
         /// <summary>
@@ -200,9 +171,15 @@ namespace JoltEnvironment.Debug
         public void WriteInfo(object message, bool logEvent)
         {
             if (this.LogPriority <= LogPriority.Info)
-                WriteLog(new StackTrace().GetFrame(1), LogPriority.Info, ConsoleColor.DarkCyan, message);
-            if (logEvent)
-                WriteFile(new StackTrace().GetFrame(1), LogPriority.Info, message);
+            {
+                StackFrame frame = new StackTrace().GetFrame(1);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, ConsoleColor.DarkCyan, message)));
+
+                if (logEvent)
+                {
+                    this.worker.QueueLog(new Action(() => WriteFile(frame, LogPriority.Info, message)));
+                }
+            }
         }
 
         /// <summary>
@@ -213,7 +190,10 @@ namespace JoltEnvironment.Debug
         public void WriteWarn(object message)
         {
             if (this.LogPriority <= LogPriority.Warn)
-                WriteLog(new StackTrace().GetFrame(1), LogPriority.Warn, ConsoleColor.Yellow, message);
+            {
+                StackFrame frame = new StackTrace().GetFrame(1);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, ConsoleColor.Yellow, message)));
+            }
         }
 
         /// <summary>
@@ -224,9 +204,15 @@ namespace JoltEnvironment.Debug
         public void WriteWarn(object message, bool logEvent)
         {
             if (this.LogPriority <= LogPriority.Warn)
-                WriteLog(new StackTrace().GetFrame(1), LogPriority.Warn, ConsoleColor.Yellow, message);
-            if (logEvent)
-                WriteFile(new StackTrace().GetFrame(1), LogPriority.Warn, message);
+            {
+                StackFrame frame = new StackTrace().GetFrame(1);
+                WriteLog(frame, ConsoleColor.Yellow, message);
+
+                if (logEvent)
+                {
+                    WriteFile(frame, LogPriority.Warn, message);
+                }
+            }
         }
 
         /// <summary>
@@ -237,7 +223,10 @@ namespace JoltEnvironment.Debug
         public void WriteError(object message)
         {
             if (this.LogPriority <= LogPriority.Error)
-                WriteLog(new StackTrace().GetFrame(1), LogPriority.Error, ConsoleColor.Red, message);
+            {
+                StackFrame frame = new StackTrace().GetFrame(1);
+                WriteLog(frame, ConsoleColor.Red, message);
+            }
         }
 
         /// <summary>
@@ -248,9 +237,15 @@ namespace JoltEnvironment.Debug
         public void WriteError(object message, bool logEvent)
         {
             if (this.LogPriority <= LogPriority.Error)
-                WriteLog(new StackTrace().GetFrame(1), LogPriority.Error, ConsoleColor.Red, message);
-            if (logEvent)
-                WriteFile(new StackTrace().GetFrame(1), LogPriority.Error, message);
+            {
+                StackFrame frame = new StackTrace().GetFrame(1);
+                WriteLog(frame, ConsoleColor.Red, message);
+
+                if (logEvent)
+                {
+                    WriteFile(frame, LogPriority.Error, message);
+                }
+            }
         }
 
         /// <summary>
@@ -262,16 +257,8 @@ namespace JoltEnvironment.Debug
             if (this.LogPriority <= LogPriority.Error)
             {
                 StackFrame frame = new StackTrace().GetFrame(1);
-                if (this.TraceMode)
-                {
-                    WriteLog(frame, LogPriority.Error, ConsoleColor.Red, ex);
-                    WriteFile(frame, LogPriority.Error, ex);
-                }
-                else
-                {
-                    WriteLog(frame, LogPriority.Error, ConsoleColor.Red, ex.Message);
-                    WriteFile(frame, LogPriority.Error, ex.Message);
-                }
+                WriteLog(frame, ConsoleColor.Red, ex);
+                WriteFile(frame, LogPriority.Error, ex);
             }
         }
 
@@ -282,28 +269,14 @@ namespace JoltEnvironment.Debug
         /// <param name="logEvent">Whether this log should be saved.</param>
         public void WriteException(Exception ex, bool logEvent)
         {
-            StackFrame frame = new StackTrace().GetFrame(1);
             if (this.LogPriority <= LogPriority.Error)
             {
-                if (this.TraceMode)
-                {
-                    WriteLog(frame, LogPriority.Error, ConsoleColor.Red, ex);
-                }
-                else
-                {
-                    WriteLog(frame, LogPriority.Error, ConsoleColor.Red, ex.Message);
-                }
-            }
+                StackFrame frame = new StackTrace().GetFrame(1);
+                WriteLog(frame, ConsoleColor.Red, ex);
 
-            if (logEvent)
-            {
-                if (this.TraceMode)
+                if (logEvent)
                 {
                     WriteFile(frame, LogPriority.Error, ex);
-                }
-                else
-                {
-                    WriteFile(frame, LogPriority.Error, ex.Message);
                 }
             }
         }
@@ -318,16 +291,8 @@ namespace JoltEnvironment.Debug
             if (this.LogPriority <= LogPriority.Error)
             {
                 StackFrame frame = new StackTrace().GetFrame(1);
-                if (this.TraceMode)
-                {
-                    WriteLog(frame, LogPriority.Error, ConsoleColor.Red, message + "\n" + ex.StackTrace);
-                    WriteFile(frame, LogPriority.Error, message + "\n" + ex.StackTrace);
-                }
-                else
-                {
-                    WriteLog(frame, LogPriority.Error, ConsoleColor.Red, message);
-                    WriteFile(frame, LogPriority.Error, message);
-                }
+                WriteLog(frame, ConsoleColor.Red, message + "\n" + ex.StackTrace);
+                WriteFile(frame, LogPriority.Error, message + "\n" + ex.StackTrace);
             }
         }
 
@@ -339,42 +304,36 @@ namespace JoltEnvironment.Debug
         /// <param name="logEvent">Whether the log should be saved.</param>
         public void WriteException(object message, Exception ex, bool logEvent)
         {
-            StackFrame frame = new StackTrace().GetFrame(1);
             if (this.LogPriority <= LogPriority.Error)
             {
-                if (this.TraceMode)
-                {
-                    WriteLog(frame, LogPriority.Error, ConsoleColor.Red, message + "\n" + ex.StackTrace);
-                }
-                else
-                {
-                    WriteLog(frame, LogPriority.Error, ConsoleColor.Red, message);
-                }
-            }
+                StackFrame frame = new StackTrace().GetFrame(1);
+                WriteLog(frame, ConsoleColor.Red, message + "\n" + ex.StackTrace);
 
-            if (logEvent)
-            {
-                if (this.TraceMode)
+                if (logEvent)
                 {
                     WriteFile(frame, LogPriority.Error, ex);
-                }
-                else
-                {
-                    WriteFile(frame, LogPriority.Error, message);
                 }
             }
         }
 
+        /// <summary>
+        /// Writes a custom log.
+        /// </summary>
+        /// <param name="priority">The priority of the log.</param>
+        /// <param name="color">The color of the log.</param>
+        /// <param name="message">The message to display.</param>
+        /// <param name="ignorePriority">Whether to ignore priority rules.</param>
+        /// <param name="logEvent">Whether to log to file.</param>
         public void WriteCustom(LogPriority priority, ConsoleColor color, object message, bool ignorePriority, bool logEvent)
         {
             StackFrame frame = new StackTrace().GetFrame(1);
             if (this.LogPriority <= priority)
             {
-                WriteLog(frame, priority, color, message);
+                WriteLog(frame, color, message);
             }
             else if (ignorePriority)
             {
-                WriteLog(frame, priority, color, message);
+                WriteLog(frame, color, message);
             }
 
             if (logEvent)
@@ -391,12 +350,11 @@ namespace JoltEnvironment.Debug
         /// <param name="writePlain">Whether the file is written in log format or plain.</param>
         public void WriteFile(StackFrame frame, LogPriority priority, object message)
         {
-            lock (this)
-            {
-                    TextWriter writer = new StreamWriter(@"..\data\logs\" + DateTime.Today.ToLongDateString() + ".log", true);
-                    writer.WriteLine("[" + DateTime.Now + "] :: " + frame.GetMethod().ReflectedType.Name + "<"+ priority +"> " + message);
-                    writer.Dispose();
-            }
+            TextWriter writer = new StreamWriter(@"..\data\logs\" + priority.ToString().ToLower() + ".log", true);
+            writer.WriteLine("[" + DateTime.Now + "] :: " + frame.GetMethod().ReflectedType + " " + frame.GetMethod().Name);
+            writer.WriteLine(message);
+            writer.Dispose();
+            writer = null;
         }
 
         /// <summary>
@@ -405,12 +363,10 @@ namespace JoltEnvironment.Debug
         /// <param name="message"></param>
         public void WriteFile(object message)
         {
-            lock (this)
-            {
-                TextWriter writer = new StreamWriter(@"..\data\logs\" + DateTime.Today.ToLongDateString() + ".log", true);
-                writer.WriteLine(message);
-                writer.Dispose();
-            }
+            TextWriter writer = new StreamWriter(@"..\data\logs\extra.log", true);
+            writer.WriteLine(message);
+            writer.Dispose();
+            writer = null;
         }
 
         /// <summary>
@@ -419,12 +375,10 @@ namespace JoltEnvironment.Debug
         /// <param name="message"></param>
         public void WriteFile(object message, string file)
         {
-            lock (this)
-            {
-                TextWriter writer = new StreamWriter(@"..\data\logs\" + file + ".log", true);
-                writer.WriteLine(message);
-                writer.Dispose();
-            }
+            TextWriter writer = new StreamWriter(@"..\data\logs\" + file + ".log", true);
+            writer.WriteLine(message);
+            writer.Dispose();
+            writer = null;
         }
         #endregion Methods
     }

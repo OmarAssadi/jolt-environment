@@ -17,15 +17,15 @@
 
 */
 
-using System;
 using System.Data;
 
 using JoltEnvironment.Storage.Sql;
 using RuneScape.Communication.Messages;
 using RuneScape.Database.Offence;
 using RuneScape.Model.Characters;
-using RuneScape.Model.Maps;
 using RuneScape.Model.Items;
+using RuneScape.Model.Maps;
+using RuneScape.Model.Npcs;
 using RuneScape.Utilities.Filtering;
 
 namespace RuneScape.Model
@@ -53,9 +53,13 @@ namespace RuneScape.Model
         /// </summary>
         private MapManager mapManager = new MapManager();
         /// <summary>
-        /// A maanger for dealing with item related content.
+        /// A manger for dealing with item related content.
         /// </summary>
         private ItemManager itemManager = new ItemManager();
+        /// <summary>
+        /// A manager for dealing with npc related content.
+        /// </summary>
+        private NpcManager npcManager = new NpcManager();
         #endregion Fields
 
         #region Properties
@@ -113,6 +117,10 @@ namespace RuneScape.Model
         /// Gets the item manager.
         /// </summary>
         public ItemManager ItemManager { get { return this.itemManager; } }
+        /// <summary>
+        /// Gets the npc manager.
+        /// </summary>
+        public NpcManager NpcManager { get { return this.npcManager; } }
         #endregion Properties
 
         #region Constructors

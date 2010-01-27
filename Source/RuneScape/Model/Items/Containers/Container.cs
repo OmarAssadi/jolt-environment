@@ -185,6 +185,7 @@ namespace RuneScape.Model.Items.Containers
                             {
                                 return false;
                             }
+                            this[i] = new Item(item.Definition.Id, (int)total);//added dis
                             return true;
                         }
                     }

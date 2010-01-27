@@ -90,8 +90,8 @@ namespace RuneScape.Model.Characters
                 // Try to loading the "Login" configuration section.
                 var loginVars = Configuration.MySql.LoadFromSection("Login");
 
-                this.logAttempts = loginVars["LogAttempts"];
-                this.logSessions = loginVars["LogSessions"];
+                this.logAttempts = (bool)loginVars["LogAttempts"];
+                this.logSessions = (bool)loginVars["LogSessions"];
             }
             catch (Exception ex)
             {

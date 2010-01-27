@@ -75,7 +75,7 @@ namespace RuneScape.Services
                 if ((DateTime.Now - this.runningHealerTime).TotalMilliseconds >= 2000)
                 {
                     this.runningHealerTime = DateTime.Now;
-                    Parallel.ForEach(characters, EntityManipulation.HealRunning);
+                    Parallel.ForEach(characters, EntityManipulation.RestoreRunEnergy);
                     //characters.ForEach(EntityManipulation.HealRunning);
                 }
 

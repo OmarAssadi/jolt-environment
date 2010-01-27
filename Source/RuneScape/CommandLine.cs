@@ -77,7 +77,7 @@ namespace RuneScape
                         Program.Logger.WriteInfo("Successfully brang up downloads page.");
                         break;
                     case "count":
-                        Program.Logger.WriteInfo(GameServer.TcpConnection.CurrentConnections.Count);
+                        Program.Logger.WriteInfo(GameEngine.World.CharacterManager.CharacterCount);
                         break;
                     case "item":
                         Program.Logger.WriteInfo(GameEngine.World.ItemManager.GetDefinition(int.Parse(arguments[0])).ToString());

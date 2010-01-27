@@ -32,9 +32,9 @@ using RuneScape.Utilities;
 namespace RuneScape.Model.Characters
 {
     /// <summary>
-    /// Provides character masks.
+    /// Provides character render masks.
     /// </summary>
-    public partial class RenderUpdating
+    public static class RenderMasks
     {
         #region Methods
         /// <summary>
@@ -43,7 +43,7 @@ namespace RuneScape.Model.Characters
         /// <param name="character">The character to update.</param>
         /// <param name="updateBlock">The update block to add generated data to.</param>
         /// <param name="forceAppearance">Whether to force the appearance update.</param>
-        private static void AppendUpdateMasks(Character character, GenericPacketComposer updateBlock, bool forceAppearance)
+        public static void AppendUpdateMasks(Character character, GenericPacketComposer updateBlock, bool forceAppearance)
         {
             int mask = 0x0;
 

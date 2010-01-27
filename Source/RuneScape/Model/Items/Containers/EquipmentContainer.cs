@@ -63,7 +63,7 @@ namespace RuneScape.Model.Items.Containers
         /// <summary>
         /// A collection of hat names.
         /// </summary>
-        private static readonly string[] HATS = { "helm", "hood", "coif", "Coif", "hat", "partyhat", "Hat", "full helm (t)", "full helm (g)", "hat (t)", "hat (g)", "cav", "boater", "helmet", "mask", "Helm of neitiznot" };
+        private static readonly string[] HATS = { "Bandana and eyepatch", "wig", "helm", "hood", "coif", "Coif", "hat", "partyhat", "Hat", "full helm (t)", "full helm (g)", "hat (t)", "hat (g)", "cav", "boater", "helmet", "mask", "Helm of neitiznot" };
         /// <summary>
         /// A collection of boot names.
         /// </summary>
@@ -71,7 +71,7 @@ namespace RuneScape.Model.Items.Containers
         /// <summary>
         /// A collection of glove names
         /// </summary>
-        private static readonly string[] GLOVES = { "gloves", "gauntlets", "Gloves", "vambraces", "vamb", "bracers" };
+        private static readonly string[] GLOVES = { "Crabclaw and hook", "gloves", "gauntlets", "Gloves", "vambraces", "vamb", "bracers" };
         /// <summary>
         /// A collection of shield names.
         /// </summary>
@@ -95,11 +95,11 @@ namespace RuneScape.Model.Items.Containers
         /// <summary>
         /// A collection of leg armour names.
         /// </summary>
-        private static readonly string[] LEGS = { "platelegs", "plateskirt", "skirt", "bottoms", "chaps", "platelegs (t)", "platelegs (g)", "bottom", "skirt", "skirt (g)", "skirt (t)", "chaps (g)", "chaps (t)", "tassets", "legs" };
+        private static readonly string[] LEGS = { "robe", "platelegs", "plateskirt", "skirt", "bottoms", "chaps", "platelegs (t)", "platelegs (g)", "bottom", "skirt", "skirt (g)", "skirt (t)", "chaps (g)", "chaps (t)", "tassets", "legs" };
         /// <summary>
         /// A collection of weapon names
         /// </summary>
-        private static readonly string[] WEAPONS = {"Excalibur", "scimitar","longsword","sword","longbow","shortbow","dagger","mace","halberd","spear",
+        private static readonly string[] WEAPONS = { "Banner", "Excalibur", "scimitar","longsword","sword","longbow","shortbow","dagger","mace","halberd","spear",
 	    "Abyssal whip","axe","flail","crossbow","Torags hammers","dagger(p)","dagger(+)","dagger(s)","spear(p)","spear(+)",
 	    "spear(s)","spear(kp)","maul","dart","dart(p)","javelin","javelin(p)","knife","knife(p)","Longbow","Shortbow",
 	    "Crossbow","Toktz-xil","Toktz-mej","Tzhaar-ket","staff","Staff","godsword","c'bow","Crystal bow","Dark bow"};
@@ -108,13 +108,13 @@ namespace RuneScape.Model.Items.Containers
         /// </summary>
         private static readonly string[] FULL_BODY = { "top", "shirt", "platebody", "Ahrims robetop", "Karils leathertop", "brassard", "Robe top", "robetop", "platebody (t)", "platebody (g)", "chestplate", "torso" };
         /// <summary>
-        /// Covers your beard
+        /// Covers your head but not beard.
         /// </summary>
-        private static readonly string[] FULL_HAT = { "med helm", "coif", "Dharoks helm", "hood", "Initiate helm", "Coif", "Helm of neitiznot" };
+        private static readonly string[] FULL_HAT = { "Bandana and eyepatch",  "wig", "med helm", "coif", "Dharoks helm", "hood", "Initiate helm", "Coif", "Helm of neitiznot" };
         /// <summary>
         /// Covers your head.
         /// </summary>
-        private static readonly string[] FULL_MASK = { "full helm", "mask", "Veracs helm", "Guthans helm", "Torags helm", "Karils coif", "full helm (t)", "full helm (g)", "mask" };
+        private static readonly string[] FULL_MASK = { "heraldic helm", "full helm", "mask", "Veracs helm", "Guthans helm", "Torags helm", "Karils coif", "full helm (t)", "full helm (g)", "mask" };
         #endregion Fields
 
         #region Constructors

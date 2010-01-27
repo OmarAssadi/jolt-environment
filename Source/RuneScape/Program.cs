@@ -96,10 +96,17 @@ namespace RuneScape
                 Configuration configuration = Configuration.Load(@"..\data\console.ini");
                 if (configuration["Console.Resize"])
                 {
-                    // The console window size.
-                    Console.SetWindowSize(
-                        configuration["Console.Width"],
-                        configuration["Console.Height"]);
+                    int width = configuration["Console.Width"];
+                    int height = configuration["Console.Height"];
+
+                    if (width > 0)
+                    {
+                        Console.WindowWidth = width;
+                    }
+                    if (height > 0)
+                    {
+                        Console.WindowHeight = height;
+                    }
                 }
 
                 showInfo = configuration["Console.ShowInfo"];
@@ -107,10 +114,7 @@ namespace RuneScape
                 JEnvironment.SetupLogger(new Logger(
                     (LogPriority)configuration["Logger.Priority"],
                     configuration["Logger.Colored"],
-                    configuration["Logger.LogEvent"],
-                    configuration["Logger.TraceMode"],
-                    configuration["Logger.FullName"],
-                    configuration["Logger.ShowMethod"]));
+                    configuration["Logger.LogEvent"]));
                 logger = JEnvironment.Logger;
             }
             catch (Exception ex) // Most probably there is a mistake in the configuration file.
@@ -125,20 +129,18 @@ namespace RuneScape
 
             // DO NOT EDIT / REMOVE THIS BANNER.
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(@"      _       _ _     _____            _                                      _   ");
-            Console.WriteLine(@"     | | ___ | | |_  | ____|_ ____   _(_)_ __ ___  _ __  _ __ ___   ___ _ __ | |_ ");
-            Console.WriteLine(@"  _  | |/ _ \| | __| | |__ | '_ \ \ / / | '__/ _ \| '_ \| '_ ` _ \ / _ \ '_ \| __|");
-            Console.WriteLine(@" | |_| | (_) | | |_  | |___| | | \ V /| | | | (_) | | | | | | | | |  __/ | | | |_ ");
-            Console.WriteLine(@"  \___/ \___/|_|\__| |_____|_| |_|\_/ |_|_|  \___/|_| |_|_| |_| |_|\___|_| |_|\__|");
+            Console.WriteLine(@"    _     _ _     ___         _                            _   ");
+            Console.WriteLine(@" _ | |___| | |_  | __|_ ___ _(_)_ _ ___ _ _  _ __  ___ _ _| |_ ");
+            Console.WriteLine(@"| || / _ \ |  _| | _|| ' \ V / | '_/ _ \ ' \| '  \/ -_) ' \  _|");
+            Console.WriteLine(@" \__/\___/_|\__| |___|_||_\_/|_|_| \___/_||_|_|_|_\___|_||_\__|");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine(" Jolt Environment [" + version + " Release-Win32-x86/x64]");
-            Console.WriteLine(" Copyright (C) 2010 Jolt Environment Team <aj@ajravindiran.com>");
+            Console.WriteLine(" Copyright (C) 2010 Jolt Environment Team");
             Console.WriteLine(" Website: http://www.ajravindiran.com/projects/jolt/");
             Console.WriteLine(" Credits: http://www.ajravindiran.com/projects/jolt/credits/");
             Console.WriteLine();
             Console.WriteLine();
-
 
             /*System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
             watch.Start();
@@ -163,6 +165,7 @@ namespace RuneScape
             ListenForCommand();
             GameServer.Terminate(); // The server is not running anymore, shutdown server.
         }
+
 
         /// <summary>
         /// Listens for commands inputted into the console.

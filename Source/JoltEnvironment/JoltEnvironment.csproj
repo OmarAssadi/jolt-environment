@@ -67,9 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration.cs" />
+    <Compile Include="Debug\AsyncLogWorker.cs" />
     <Compile Include="Debug\Logger.cs" />
     <Compile Include="Debug\LogPriority.cs" />
-    <Compile Include="Debug\LogType.cs" />
     <Compile Include="JEnvironment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Hash.cs" />

@@ -791,6 +791,7 @@ Resources/libsrc/PowerCollections.zip -text
 Resources/libsrc/mysql-connector-net-6.2.2-src.zip -text
 Source/JoltEnvironment.sln -text
 Source/JoltEnvironment/Configuration.cs -text
+Source/JoltEnvironment/Debug/AsyncLogWorker.cs -text
 Source/JoltEnvironment/Debug/LogPriority.cs -text
 Source/JoltEnvironment/Debug/LogType.cs -text
 Source/JoltEnvironment/Debug/Logger.cs -text
@@ -845,6 +846,7 @@ Source/RuneScape/Communication/Messages/Incoming/SwapInterfaceItemPacketHandler.
 Source/RuneScape/Communication/Messages/Incoming/SwapItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/WalkingPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/AnimateInterfacePacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/CharacterRenderingPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CloseInterfacePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/ConfigPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/GenericPacketComposer.cs -text
@@ -857,6 +859,7 @@ Source/RuneScape/Communication/Messages/Outgoing/MapViewType.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/MessagePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/MinimapViewPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/NewMapRegionPacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/NpcRenderingPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/PacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/RunEnergyPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/StatsPacketComposer.cs -text
@@ -937,6 +940,13 @@ Source/RuneScape/Model/Items/ItemManager.cs -text
 Source/RuneScape/Model/Location.cs -text
 Source/RuneScape/Model/Maps/MapDataLoader.cs -text
 Source/RuneScape/Model/Maps/MapManager.cs -text
+Source/RuneScape/Model/Npcs/Npc.cs -text
+Source/RuneScape/Model/Npcs/NpcDefinition.cs -text
+Source/RuneScape/Model/Npcs/NpcDefinitionLoader.cs -text
+Source/RuneScape/Model/Npcs/NpcManager.cs -text
+Source/RuneScape/Model/Npcs/RenderMasks.cs -text
+Source/RuneScape/Model/Npcs/UpdateFlags.cs -text
+Source/RuneScape/Model/Npcs/WalkType.cs -text
 Source/RuneScape/Model/RuneObject.cs -text
 Source/RuneScape/Network/ConnectionFactory.cs -text
 Source/RuneScape/Network/ConnectionListener.cs -text

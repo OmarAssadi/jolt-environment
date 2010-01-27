@@ -24,6 +24,7 @@ using System.Text;
 
 using RuneScape.Communication.Messages.Outgoing;
 using RuneScape.Model.Characters;
+using RuneScape.Model.Npcs;
 
 namespace RuneScape.Model
 {
@@ -56,8 +57,8 @@ namespace RuneScape.Model
             }
             else
             {
-                // Render character updates.
-                RenderUpdating.Update(character, allChars);
+                character.Session.SendData(new CharacterRenderingPacketComposer(
+                    character, allChars).Serialize());
             }
         }
 
@@ -67,10 +68,7 @@ namespace RuneScape.Model
         /// <param name="character">The character to reset.</param>
         public static void ResetCharacter(Character character)
         {
-            // Clear all flags.
             character.UpdateFlags.Clear();
-
-            // Clear face to if required.
             if (character.UpdateFlags.ClearFaceTo)
             {
                 character.UpdateFlags.FaceToUpdateRequired = true;
@@ -79,19 +77,41 @@ namespace RuneScape.Model
             }
         }
 
-        public static void HealRunning(Character character)
+        /// <summary>
+        /// The routine tick called to execute any side enquiries.
+        /// </summary>
+        /// <param name="character">The npc to tick.</param>
+        public static void TickNpc(Npc npc)
         {
-            //if ((character.WalkingQueue.RunToggled || character.WalkingQueue.Running) && character.Sprites.SecondarySprite != -1)
-            //{
-            //}
-            //else
-            //{
-                if (character.WalkingQueue.RunEnergy < 100)
-                {
-                    character.Session.SendData(new RunEnergyPacketComposer(
-                        ++character.WalkingQueue.RunEnergy).Serialize());
-                }
-            //}
+            npc.Tick();
+        }
+
+        /// <summary>
+        /// Resets any flagged updates.
+        /// </summary>
+        /// <param name="character">The character to reset.</param>
+        public static void ResetNpc(Npc npc)
+        {
+            npc.UpdateFlags.Clear();
+            if (npc.UpdateFlags.ClearFaceTo)
+            {
+                npc.UpdateFlags.FaceToUpdateRequired = true;
+                npc.UpdateFlags.FaceTo = 0;
+                npc.UpdateFlags.ClearFaceTo = true;
+            }
+        }
+
+        /// <summary>
+        /// Restores the character's running by 1.
+        /// </summary>
+        /// <param name="character"></param>
+        public static void RestoreRunEnergy(Character character)
+        {
+            if (character.WalkingQueue.RunEnergy < 100)
+            {
+                character.Session.SendData(new RunEnergyPacketComposer(
+                    ++character.WalkingQueue.RunEnergy).Serialize());
+            }
         }
 
         #endregion Methods

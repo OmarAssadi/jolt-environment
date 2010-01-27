@@ -37,7 +37,7 @@ namespace RuneScape.Database.Config
         /// <param name="query">The query to execute.</param>
         /// <returns>Returns a System.Collections.Generic.Dictionary object
         /// containing all configurations loadaed from the given location.</returns>
-        public Dictionary<string, dynamic> Load(string query)
+        public Dictionary<string, object> Load(string query)
         {
             DataTable data = null;
             Dictionary<string, dynamic> configs = new Dictionary<string, dynamic>();
@@ -107,7 +107,7 @@ namespace RuneScape.Database.Config
         /// <param name="table">The table to load configurations from.</param>
         /// <returns>Returns a System.Collections.Generic.Dictionary object
         /// containing all configurations loadaed from the given location.</returns>
-        public Dictionary<string, dynamic> LoadFromTable(string table)
+        public Dictionary<string, object> LoadFromTable(string table)
         {
             return Load("SELECT * FROM " + table + "");
         }
@@ -118,7 +118,7 @@ namespace RuneScape.Database.Config
         /// <param name="section">The section to load configurations from.</param>
         /// <returns>Returns a System.Collections.Generic.Dictionary object
         /// containing all configurations loadaed from the given location.</returns>
-        public Dictionary<string, dynamic> LoadFromSection(string section)
+        public Dictionary<string, object> LoadFromSection(string section)
         {
             return Load("SELECT * FROM configurations WHERE section = '" + section + "';");
         }

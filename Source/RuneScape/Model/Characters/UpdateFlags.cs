@@ -110,8 +110,7 @@ namespace RuneScape.Model.Characters
         /// </summary>
         public UpdateFlags()
         {
-            Clear();
-            ClearFaceTo = false;
+            this.FaceTo = -1;
             AppearanceUpdateRequired = true;
         }
         #endregion Constructors

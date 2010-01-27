@@ -22,43 +22,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RuneScape.Model
+namespace RuneScape.Model.Npcs
 {
     /// <summary>
-    /// Represents a signle creature inside the game world.
+    /// Defines management for npcs.
     /// </summary>
-    public abstract class Creature : Entity
+    public class NpcManager
     {
-        #region Properties
+        #region Fields
         /// <summary>
-        /// Gets the current chat message.
+        /// A collection of npc definitions.
         /// </summary>
-        public ChatMessage CurrentChatMessage { get; set; }
+        Dictionary<short, NpcDefinition> definitions;
+        #endregion Fields
+
+        #region Constructors
         /// <summary>
-        /// Gets the current graphic display.
+        /// Constructs the npc manager.
         /// </summary>
-        public Graphic CurrentGraphic { get; protected set; }
-        /// <summary>
-        /// Gets the current animation display.
-        /// </summary>
-        public Animation CurrentAnimation { get; protected set; }
-        #endregion Properties
+        public NpcManager()
+        {
+            // Load definitions.
+            this.definitions = NpcDefinition.Load();
+        }
+        #endregion Cosntructors
 
         #region Methods
         /// <summary>
-        /// Plays a graphical display.
+        /// Gets the definition of the npc by the specified id.
         /// </summary>
-        /// <param name="graphic">The graphic to display.</param>
-        public abstract void PlayGraphics(Graphic graphic);
-        /// <summary>
-        /// Plays a animation display.
-        /// </summary>
-        /// <param name="animation">The animation to display.</param>
-        public abstract void PlayAnimation(Animation animation);
-        /// <summary>
-        /// Executes routine procedures.
-        /// </summary>
-        public abstract void Tick();
+        /// <param name="id">The cache index id of the npc.</param>
+        /// <returns>Returns the npc definition set.</returns>
+        public NpcDefinition GetDefinition(short id)
+        {
+            return definitions[id];
+        }
         #endregion Methods
     }
 }

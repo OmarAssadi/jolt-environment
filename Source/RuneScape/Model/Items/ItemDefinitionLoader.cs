@@ -62,7 +62,7 @@ namespace RuneScape.Model.Items
                  */ 
                 definitions = new ItemDefinition[largestValue + 1];
 
-                // Copy definitions to array.
+                // Parse definitions.
                 foreach (DataRow row in rows)
                 {
                     // General definitions.
@@ -114,7 +114,7 @@ namespace RuneScape.Model.Items
                     }
                 }
 
-                Program.Logger.WriteInfo("Loaded " + definitions.Length + " item definitions.");
+                Program.Logger.WriteInfo("Loaded " + rows.Length + " item definitions.");
             }
             catch (Exception ex)
             {

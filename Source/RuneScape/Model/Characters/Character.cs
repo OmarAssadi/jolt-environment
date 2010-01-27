@@ -29,7 +29,7 @@ using RuneScape.Model.Items.Containers;
 namespace RuneScape.Model.Characters
 {
     /// <summary>
-    /// Represents a signle player in the world.
+    /// Represents a single player in the world.
     /// </summary>
     public class Character : Creature
     {
@@ -175,9 +175,9 @@ namespace RuneScape.Model.Characters
         }
 
         /// <summary>
-        /// Routine executions.
+        /// Executes routine procedures.
         /// </summary>
-        public void Tick()
+        public override void Tick()
         {
         }
         #endregion Methods
