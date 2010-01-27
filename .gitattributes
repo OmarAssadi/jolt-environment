@@ -793,7 +793,6 @@ Source/JoltEnvironment.sln -text
 Source/JoltEnvironment/Configuration.cs -text
 Source/JoltEnvironment/Debug/AsyncLogWorker.cs -text
 Source/JoltEnvironment/Debug/LogPriority.cs -text
-Source/JoltEnvironment/Debug/LogType.cs -text
 Source/JoltEnvironment/Debug/Logger.cs -text
 Source/JoltEnvironment/JEnvironment.cs -text
 Source/JoltEnvironment/JoltEnvironment.csproj -text
