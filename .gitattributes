@@ -909,7 +909,6 @@ Source/RuneScape/Model/Characters/MovementPoint.cs -text
 Source/RuneScape/Model/Characters/PrayerIcons.cs -text
 Source/RuneScape/Model/Characters/Preferences.cs -text
 Source/RuneScape/Model/Characters/RenderMasks.cs -text
-Source/RuneScape/Model/Characters/RenderUpdating.cs -text
 Source/RuneScape/Model/Characters/ServerRights.cs -text
 Source/RuneScape/Model/Characters/Skills.cs -text
 Source/RuneScape/Model/Characters/Slots/ClientSlot.cs -text
