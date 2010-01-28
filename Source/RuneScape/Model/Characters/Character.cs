@@ -25,6 +25,7 @@ using System.Text;
 using JoltEnvironment.Utilities;
 using RuneScape.Communication;
 using RuneScape.Model.Items.Containers;
+using RuneScape.Model.Npcs;
 
 namespace RuneScape.Model.Characters
 {
@@ -44,10 +45,6 @@ namespace RuneScape.Model.Characters
         /// to define the master id for the database.
         /// </summary>
         public uint MasterId { get; private set; }
-        /// <summary>
-        /// Gets the character's name.
-        /// </summary>
-        public override string Name { get; protected set; }
         /// <summary>
         /// Gets the character's password.
         /// </summary>
@@ -80,6 +77,10 @@ namespace RuneScape.Model.Characters
         /// Gets the local characters surrounding this character.
         /// </summary>
         public List<Character> LocalCharacters { get; set; }
+        /// <summary>
+        /// Gets the local npcs surrouding this character.
+        /// </summary>
+        public List<Npc> LocalNpcs { get; set; }
 
         /// <summary>
         /// Gets character preferences.
@@ -137,6 +138,7 @@ namespace RuneScape.Model.Characters
 
             // Entity bases.
             this.LocalCharacters = new List<Character>();
+            this.LocalNpcs = new List<Npc>();
 
             // Character sub-components.
             this.Preferences = new Preferences();
@@ -172,6 +174,16 @@ namespace RuneScape.Model.Characters
         {
             this.CurrentAnimation = animation;
             this.UpdateFlags.AnimationUpdateRequired = true;
+        }
+
+        /// <summary>
+        /// Speaks a message.
+        /// </summary>
+        /// <param name="message">The message to speak.</param>
+        public override void Speak(ChatMessage message)
+        {
+            this.CurrentChatMessage = message;
+            this.UpdateFlags.ChatUpdateRequired = true;
         }
 
         /// <summary>

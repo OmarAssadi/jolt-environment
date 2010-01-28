@@ -61,8 +61,8 @@ namespace RuneScape.Model.Npcs
                     short defenceAmin = (short)row[9];
                     short deathAnim = (short)row[10];
 
-                    NpcDefinition definition = new NpcDefinition(id, name, examine, respawn, combat, maxHit, 
-                        attackSpeed, attackAnim, defenceAmin, deathAnim);
+                    NpcDefinition definition = new NpcDefinition(id, name, examine, respawn, combat, hitpoints, 
+                        maxHit, attackSpeed, attackAnim, defenceAmin, deathAnim);
 
                     definitions.Add(id, definition);
                 }

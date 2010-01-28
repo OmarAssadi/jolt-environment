@@ -39,7 +39,7 @@ namespace RuneScape.Model
         /// <summary>
         /// The name of the object.
         /// </summary>
-        public abstract string Name { get; protected set; }
+        public string Name { get; protected set; }
         #endregion Properties
     }
 }

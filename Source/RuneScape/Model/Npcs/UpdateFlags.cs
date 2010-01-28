@@ -35,6 +35,10 @@ namespace RuneScape.Model.Npcs
         /// </summary>
         public bool AnimationUpdateRequired { get; set; }
         /// <summary>
+        /// Gets or sets whether the npc's chat requried updating.
+        /// </summary>
+        public bool SpeakUpdateRequired { get; set; }
+        /// <summary>
         /// Gets or sets whether the npc's hit update requires updating.
         /// </summary>
         public bool DamageUpdateRequired { get; set; }
@@ -43,9 +47,13 @@ namespace RuneScape.Model.Npcs
         /// </summary>
         public bool Damage2UpdateRequired { get; set; }
         /// <summary>
-        /// Gets or sets whether the character's face to requires updating.
+        /// Gets or sets whether the character's faceto requires updating.
         /// </summary>
         public bool FaceToUpdateRequired { get; set; }
+        /// <summary>
+        /// Gets or sets whether the character's graphics required updating.
+        /// </summary>
+        public bool GraphicsUpdateRequired { get; set; }
 
         /// <summary>
         /// Gets or sets the face to direction.
@@ -55,6 +63,19 @@ namespace RuneScape.Model.Npcs
         /// Gets or sets whether to clear (current) face to direction.
         /// </summary>
         public bool ClearFaceTo { get; set; }
+
+        public bool UpdateRequired
+        {
+            get
+            {
+                return this.AnimationUpdateRequired 
+                    || this.SpeakUpdateRequired 
+                    || this.DamageUpdateRequired 
+                    || this.Damage2UpdateRequired 
+                    || this.FaceToUpdateRequired 
+                    || this.GraphicsUpdateRequired;
+            }
+        }
         #endregion Fields
 
         #region Constructors
@@ -74,9 +95,11 @@ namespace RuneScape.Model.Npcs
         public void Clear()
         {
             this.AnimationUpdateRequired = false;
+            this.SpeakUpdateRequired = false;
             this.DamageUpdateRequired = false;
             this.Damage2UpdateRequired = false;
             this.FaceToUpdateRequired = false;
+            this.GraphicsUpdateRequired = false;
             this.FaceTo = -1;
         }
         #endregion Methods

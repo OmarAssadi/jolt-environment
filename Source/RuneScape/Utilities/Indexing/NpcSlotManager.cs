@@ -21,38 +21,47 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using RuneScape.Model.Npcs;
 
-namespace RuneScape.Model.Characters.Slots
+namespace RuneScape.Utilities.Indexing
 {
     /// <summary>
-    /// Defines management of character client slots.
+    /// Defines a management for npc slots.
     /// </summary>
-    public class SlotManager
+    public class NpcSlotManager
     {
         #region Fields
         /// <summary>
-        /// Represents slots open or taken by characters. This is also the index id used to send to the client.
+        /// Represents slots free or take by npcs.
         /// </summary>
-        ClientSlot[] slots = new ClientSlot[GameServer.TcpConnection.MaxConnections];
+        public bool[] slots = null;
         /// <summary>
         /// Provides reservation of reserving and releasing client slots.
         /// </summary>
         private object lockPad = new object();
+        /// <summary>
+        /// The slot capacity.
+        /// </summary>
+        private int capacity;
         #endregion Fields
 
         #region Constructors
         /// <summary>
         /// Constructws a slot manager.
         /// </summary>
-        public SlotManager()
+        public NpcSlotManager(int capacity)
         {
+            this.capacity = capacity;
+            this.slots = new bool[capacity];
+
             /*
              * Reset all slots.
              */
-            for (int i = 0; i < GameServer.TcpConnection.MaxConnections; i++)
+            for (int i = 0; i < this.slots.Length; i++)
             {
-                this.slots[i].Release();
+                this.slots[i] = false;
             }
+            this.slots[0] = true;
         }
         #endregion Constructors
 
@@ -63,9 +72,9 @@ namespace RuneScape.Model.Characters.Slots
         /// <returns>Returns the id of the free slot.</returns>
         private short GetFreeSlotId()
         {
-            for (short i = 1; i < GameServer.TcpConnection.MaxConnections; i++)
+            for (short i = 1; i < capacity; i++)
             {
-                if (!slots[i].Reserved)
+                if (!slots[i])
                 {
                     return i;
                 }
@@ -83,7 +92,7 @@ namespace RuneScape.Model.Characters.Slots
             {
                 if (slotId > -1)
                 {
-                    this.slots[slotId].Release();
+                    this.slots[slotId] = true;
                 }
             }
         }
@@ -92,9 +101,9 @@ namespace RuneScape.Model.Characters.Slots
         /// Releases the slot in the client's slot array.
         /// </summary>
         /// <param name="character">The character holding the slot.</param>
-        public void ReleaseSlot(Character character)
+        public void ReleaseSlot(Npc npc)
         {
-            ReleaseSlot(character.Index);
+            ReleaseSlot(npc.Index);
         }
 
         /// <summary>
@@ -102,17 +111,17 @@ namespace RuneScape.Model.Characters.Slots
         /// </summary>
         /// <param name="character">The character to reserve slot for.</param>
         /// <returns>Returns true if the reservation was successful; False if not.</returns>
-        public bool ReserveSlot(Character character)
+        public bool ReserveSlot(Npc npc)
         {
-            if (character == null) return false;
+            if (npc == null) return false;
 
             short slotId = -1;
             lock (this.lockPad)
             {
                 if ((slotId = GetFreeSlotId()) != -1)
                 {
-                    this.slots[slotId].Reserve(character.SessionId, character.MasterId);
-                    character.Index = slotId;
+                    this.slots[slotId] = true;
+                    npc.Index = slotId;
                     return true;
                 }
             }

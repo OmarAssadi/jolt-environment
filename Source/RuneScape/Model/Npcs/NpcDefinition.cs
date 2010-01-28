@@ -51,6 +51,10 @@ namespace RuneScape.Model.Npcs
         /// </summary>
         public byte CombatLevel { get; private set; }
         /// <summary>
+        /// Gets the npc definition's max hit points.
+        /// </summary>
+        public byte HitPoints { get; private set; }
+        /// <summary>
         /// Gets the npc definition's max hit.
         /// </summary>
         public byte MaxHit { get; private set; }
@@ -77,15 +81,16 @@ namespace RuneScape.Model.Npcs
         /// Constructs a npc definition.
         /// </summary>
         public NpcDefinition(short id, string name, string examine, 
-            byte respawnRate, byte combatLevel, byte maxHit, 
-            byte attackSpeed, short attackAnimation, short defenceAnimation, 
-            short deathAnimation)
+            byte respawnRate, byte combatLevel, byte hitPoints, 
+            byte maxHit,  byte attackSpeed, short attackAnimation, 
+            short defenceAnimation, short deathAnimation)
         {
             this.Id = id;
             this.Name = name;
             this.Examine = examine;
             this.RespawnRate = respawnRate;
             this.CombatLevel = combatLevel;
+            this.HitPoints = hitPoints;
             this.MaxHit = maxHit;
             this.AttackSpeed = attackSpeed;
             this.AttackAnimation = attackAnimation;

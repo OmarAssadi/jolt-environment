@@ -3,7 +3,7 @@
 Documents/char_configs.txt -text
 Documents/char_design.txt -text
 Documents/char_design_colors.txt -text
-Documents/equips.xlsx -text
+Documents/equips.xls -text
 Documents/gameinfo/coordinates.txt -text
 Documents/gameinfo/interfaces.txt -text
 Documents/gameinfo/interfaces/0.txt -text
@@ -911,8 +911,6 @@ Source/RuneScape/Model/Characters/Preferences.cs -text
 Source/RuneScape/Model/Characters/RenderMasks.cs -text
 Source/RuneScape/Model/Characters/ServerRights.cs -text
 Source/RuneScape/Model/Characters/Skills.cs -text
-Source/RuneScape/Model/Characters/Slots/ClientSlot.cs -text
-Source/RuneScape/Model/Characters/Slots/SlotManager.cs -text
 Source/RuneScape/Model/Characters/Sprites.cs -text
 Source/RuneScape/Model/Characters/UpdateFlags.cs -text
 Source/RuneScape/Model/Characters/WalkingQueue.cs -text
@@ -960,6 +958,9 @@ Source/RuneScape/Utilities/ChatUtilities.cs -text
 Source/RuneScape/Utilities/DatabaseVersionCheck.cs -text
 Source/RuneScape/Utilities/DirectionUtilities.cs -text
 Source/RuneScape/Utilities/Filtering/BadWords.cs -text
+Source/RuneScape/Utilities/Indexing/ClientSlot.cs -text
+Source/RuneScape/Utilities/Indexing/NpcSlotManager.cs -text
+Source/RuneScape/Utilities/Indexing/SlotManager.cs -text
 Source/RuneScape/Workers/AccountWorker.cs -text
 Source/RuneScape/Workers/AutoSaveWorker.cs -text
 Source/RuneScape/Workers/LoginWorker.cs -text

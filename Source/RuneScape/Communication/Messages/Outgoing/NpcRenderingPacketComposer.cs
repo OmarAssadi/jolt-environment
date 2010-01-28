@@ -23,6 +23,7 @@ using System.Linq;
 using System.Text;
 
 using RuneScape.Model.Npcs;
+using RuneScape.Utilities;
 using Character = RuneScape.Model.Characters.Character;
 
 namespace RuneScape.Communication.Messages.Outgoing
@@ -37,12 +38,138 @@ namespace RuneScape.Communication.Messages.Outgoing
         /// Constructs the npc rendering packet.
         /// </summary>
         /// <param name="character"></param>
-        public NpcRenderingPacketComposer(Character character)
+        public NpcRenderingPacketComposer(Character character, List<Npc> allNpcs)
         {
             SetOpcode(222);
             SetType(PacketType.Short);
             InitializeBit();
+
+            // The update block. Any updates that are pending will be added to this block.
+            GenericPacketComposer updateBlock = new GenericPacketComposer();
+
+            AppendBits(8, character.LocalNpcs.Count);
+
+            character.LocalNpcs.ForEach((npc) =>
+            {
+                if (GameEngine.World.NpcManager.Spawns.Contains(npc)
+                    && npc.Location.WithinDistance(character.Location)
+                    && !character.UpdateFlags.Teleporting)
+                {
+                    UpdateMovement(npc, this);
+
+                    // Update the npc is required, since it is conditionally valid.
+                    if (npc.UpdateFlags.UpdateRequired)
+                    {
+                        RenderMasks.AppendMasks(npc, updateBlock);
+                    }
+                }
+                else
+                {
+                    // Remove this npc, as it doesn't meet local standards.
+                    character.LocalNpcs.Remove(npc);
+
+                    // Signify the client that this npc needs to be removed.
+                    AppendBits(1, 1);
+                    AppendBits(2, 3);
+                }
+            });
+
+            foreach (Npc npc in allNpcs)
+            {
+                // We cannot have more than 255 npcs in the client simultaneously.
+                if (character.LocalNpcs.Count >= 255)
+                {
+                    break;
+                }
+
+                if (character.LocalNpcs.Contains(npc) 
+                    || !npc.Location.WithinDistance(character.Location))
+                {
+                    continue;
+                }
+
+                character.LocalNpcs.Add(npc);
+                AddNewNpc(character, npc, this);
+
+                // Update the npc if required.
+                if (npc.UpdateFlags.UpdateRequired)
+                {
+                    RenderMasks.AppendMasks(npc, updateBlock);
+                }
+            }
+
+            // Finalize the composition.
+            if (updateBlock.Position >= 3)
+            {
+                AppendBits(15, 32767);
+            }
+
+            FinishBit();
+
+            if (updateBlock.Position > 0)
+            {
+                AppendBytes(updateBlock.SerializeBuffer());
+            }
         }
         #endregion Constructors
+
+        #region Methods
+        /// <summary>
+        /// Adds a new npc to the character's client.
+        /// </summary>
+        /// <param name="character">The client to add npc for.</param>
+        /// <param name="npc">The npc to add.</param>
+        /// <param name="mainPacket">The packet composer to append bits to.</param>
+        public static void AddNewNpc(Character character, Npc npc, PacketComposer mainPacket)
+        {
+            mainPacket.AppendBits(15, npc.Index);
+            mainPacket.AppendBits(14, npc.CacheIndex);
+            mainPacket.AppendBits(1, npc.UpdateFlags.UpdateRequired ? 1 : 0);
+            int xPos = npc.Location.X - character.Location.X;
+            int yPos = npc.Location.Y - character.Location.Y;
+
+            if (xPos < 0)
+            {
+                xPos += 32;
+            }
+            if (yPos < 0)
+            {
+                yPos += 32;
+            }
+
+            mainPacket.AppendBits(5, yPos);
+            mainPacket.AppendBits(5, xPos);
+            mainPacket.AppendBits(3, 0);
+            mainPacket.AppendBits(1, 1);
+        }
+
+        /// <summary>
+        /// Updates an npc's movement.
+        /// </summary>
+        /// <param name="npc">The npc to update movement for.</param>
+        /// <param name="mainPacket">The packet composer to append bits to.</param>
+        private static void UpdateMovement(Npc npc, PacketComposer mainPacket)
+        {
+            if (npc.Sprite == -1)
+            {
+                if (npc.UpdateFlags.UpdateRequired)
+                {
+                    mainPacket.AppendBits(1, 1);
+                    mainPacket.AppendBits(2, 0);
+                }
+                else
+                {
+                    mainPacket.AppendBits(1, 0);
+                }
+            }
+            else
+            {
+                mainPacket.AppendBits(1, 1);
+                mainPacket.AppendBits(2, 1);
+                mainPacket.AppendBits(3, DirectionUtilities.SCDirectionTranslation[npc.Sprite]);
+                mainPacket.AppendBits(1, npc.UpdateFlags.UpdateRequired ? 1 : 0);
+            }
+        }
+        #endregion Methods
     }
 }

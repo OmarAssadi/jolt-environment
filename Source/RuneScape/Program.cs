@@ -44,7 +44,7 @@ namespace RuneScape
         /// <summary>
         /// Jolt Environment's main version details.
         /// </summary>
-        private static Version version = new Version(1, 0, 3309);
+        private static Version version = new Version(1, 0, 3473);
         /// <summary>
         /// Whether to show memory usage and server uptime.
         /// </summary>

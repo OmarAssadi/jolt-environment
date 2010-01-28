@@ -44,6 +44,15 @@ namespace RuneScape.Model
         {
             this.Location = GameEngine.World.SpawnPoint;
         }
+
+        /// <summary>
+        /// Constructs a new entity with a specified location.
+        /// </summary>
+        /// <param name="location">The location of the entity.</param>
+        public Entity(Location location)
+        {
+            this.Location = location;
+        }
         #endregion Constructors
     }
 }

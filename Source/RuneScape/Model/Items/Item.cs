@@ -35,10 +35,6 @@ namespace RuneScape.Model.Items
         /// </summary>
         public short Id { get; private set; }
         /// <summary>
-        /// Gets the item's name.
-        /// </summary>
-        public override string Name { get; protected set; }
-        /// <summary>
         /// Gets the item's count.
         /// </summary>
         public int Count { get; private set; }

@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RuneScape.Model.Characters.Slots
+namespace RuneScape.Utilities.Indexing
 {
     /// <summary>
     /// Represents a slot in the client/server communication.

@@ -23,6 +23,7 @@ using System.Threading.Tasks;
 
 using RuneScape.Model;
 using RuneScape.Model.Characters;
+using RuneScape.Model.Npcs;
 
 namespace RuneScape.Services
 {
@@ -49,38 +50,40 @@ namespace RuneScape.Services
         /// </summary>
         private DateTime runningHealerTime = DateTime.Now;
         #endregion Fields
+
         #region Methods
         /// <summary>
         /// Processes the major updates.
         /// </summary>
         public void Process()
         {
-            if (GameEngine.World.CharacterManager.Characters.Values.Count > 0)
+            List<Npc> npcs = new List<Npc>(GameEngine.World.NpcManager.Spawns);
+            List<Character> characters = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
+
+            // Main tasks that will process character's route ticks, updates, and (any required) resets.
+            if ((DateTime.Now - this.majorUpdatesTime).TotalMilliseconds >= 600)
             {
-                List<Character> characters = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
+                this.majorUpdatesTime = DateTime.Now;
 
-                // Main tasks that will process character's route ticks, updates, and (any required) resets.
-                if ((DateTime.Now - this.majorUpdatesTime).TotalMilliseconds >= 600)
-                {
-                    this.majorUpdatesTime = DateTime.Now;
-                    Parallel.ForEach(characters, EntityManipulation.TickCharacter);
-                    Parallel.ForEach(characters, (c) => EntityManipulation.UpdateCharacter(c, characters));
-                    Parallel.ForEach(characters, EntityManipulation.ResetCharacter);
-                    //characters.ForEach(EntityManipulation.TickCharacter);
-                    //characters.ForEach((c) => EntityManipulation.UpdateCharacter(c, characters));
-                    //characters.ForEach(EntityManipulation.ResetCharacter);
-                }
+                // Renerate new random values.
+                Npc.RegenerateRandom();
 
-                // Heals character's running energy.
-                if ((DateTime.Now - this.runningHealerTime).TotalMilliseconds >= 2000)
-                {
-                    this.runningHealerTime = DateTime.Now;
-                    Parallel.ForEach(characters, EntityManipulation.RestoreRunEnergy);
-                    //characters.ForEach(EntityManipulation.HealRunning);
-                }
-
-                characters = null;
+                Parallel.ForEach(characters, EntityManipulation.TickCharacter);
+                Parallel.ForEach(npcs, EntityManipulation.TickNpc);
+                Parallel.ForEach(characters, (c) => EntityManipulation.UpdateCharacter(c, characters, npcs));
+                Parallel.ForEach(characters, EntityManipulation.ResetCharacter);
+                Parallel.ForEach(npcs, EntityManipulation.ResetNpc);
             }
+
+            // Heals character's running energy.
+            if ((DateTime.Now - this.runningHealerTime).TotalMilliseconds >= 2000)
+            {
+                this.runningHealerTime = DateTime.Now;
+                Parallel.ForEach(characters, EntityManipulation.RestoreRunEnergy);
+            }
+
+            npcs = null;
+            characters = null;
         }
         #endregion Methods
     }

@@ -43,7 +43,7 @@ namespace RuneScape.Model.Characters
         /// <param name="character">The character to update.</param>
         /// <param name="updateBlock">The update block to add generated data to.</param>
         /// <param name="forceAppearance">Whether to force the appearance update.</param>
-        public static void AppendUpdateMasks(Character character, GenericPacketComposer updateBlock, bool forceAppearance)
+        public static void AppendMasks(Character character, GenericPacketComposer updateBlock, bool forceAppearance)
         {
             int mask = 0x0;
 
@@ -93,19 +93,29 @@ namespace RuneScape.Model.Characters
             }
             if (character.UpdateFlags.FaceToUpdateRequired)
             {
-                AppendFaceToUpdate(character, updateBlock);
+                updateBlock.AppendShort(character.UpdateFlags.FaceTo);
             }
             if (character.UpdateFlags.GraphicsUpdateRequired)
             {
-                AppendGraphicsUpdate(character, updateBlock);
+                updateBlock.AppendShort(character.CurrentGraphic.Id);
+                updateBlock.AppendIntSecondary(character.CurrentGraphic.Delay);
             }
             if (character.UpdateFlags.ChatUpdateRequired)
             {
-                AppendChatUpdate(character, updateBlock);
+                updateBlock.AppendShortA((short)character.CurrentChatMessage.Effects);
+                updateBlock.AppendByteC((byte)character.ClientRights);
+                byte[] chatStr = new byte[256];
+                chatStr[0] = (byte)character.CurrentChatMessage.Text.Length;
+                byte offset = (byte)(1 + ChatUtilities.EncryptChat(chatStr, 0, 1,
+                    character.CurrentChatMessage.Text.Length,
+                    Encoding.ASCII.GetBytes(character.CurrentChatMessage.Text)));
+                updateBlock.AppendByteC(offset);
+                updateBlock.AppendBytes(chatStr, 0, offset);
             }
             if (character.UpdateFlags.AnimationUpdateRequired)
             {
-                AppendAnimationUpdate(character, updateBlock);
+                updateBlock.AppendShort(character.CurrentAnimation.Id);
+                updateBlock.AppendByteS(character.CurrentAnimation.Delay);
             }
             if (character.UpdateFlags.AppearanceUpdateRequired || forceAppearance)
             {
@@ -115,56 +125,6 @@ namespace RuneScape.Model.Characters
             {
                 //AppendDamageUpdate(p, updateBlock);
             }
-        }
-
-        /// <summary>
-        /// Appends the character's current face to value.
-        /// </summary>
-        /// <param name="character">The character to append updates for.</param>
-        /// <param name="updateBlock">The character's update block.</param>
-        private static void AppendFaceToUpdate(Character character, GenericPacketComposer updateBlock)
-        {
-            updateBlock.AppendShort(character.UpdateFlags.FaceTo);
-        }
-
-        /// <summary>
-        /// Appends the character's current graphics.
-        /// </summary>
-        /// <param name="character">The character to append updates for.</param>
-        /// <param name="updateBlock">The character's update block.</param>
-        private static void AppendGraphicsUpdate(Character character, GenericPacketComposer updateBlock)
-        {
-            updateBlock.AppendShort(character.CurrentGraphic.Id);
-            updateBlock.AppendIntSecondary(character.CurrentGraphic.Delay);
-        }
-
-        /// <summary>
-        /// Appends the character's current animation.
-        /// </summary>
-        /// <param name="character">The character to append updates for.</param>
-        /// <param name="updateBlock">The character's update block.</param>
-        private static void AppendAnimationUpdate(Character character, GenericPacketComposer updateBlock)
-        {
-            updateBlock.AppendShort(character.CurrentAnimation.Id);
-            updateBlock.AppendByteS(character.CurrentAnimation.Delay);
-        }
-
-        /// <summary>
-        /// Appends the character's current chat.
-        /// </summary>
-        /// <param name="character">The character to append updates for.</param>
-        /// <param name="updateBlock">The character's update block.</param>
-        private static void AppendChatUpdate(Character character, GenericPacketComposer updateBlock)
-        {
-            updateBlock.AppendShortA((short)character.CurrentChatMessage.Effects);
-            updateBlock.AppendByteC((byte)character.ClientRights);
-            byte[] chatStr = new byte[256];
-            chatStr[0] = (byte)character.CurrentChatMessage.Text.Length;
-            byte offset = (byte)(1 + ChatUtilities.EncryptChat(chatStr, 0, 1,
-                character.CurrentChatMessage.Text.Length,
-                Encoding.ASCII.GetBytes(character.CurrentChatMessage.Text)));
-            updateBlock.AppendByteC(offset);
-            updateBlock.AppendBytes(chatStr, 0, offset);
         }
 
         /// <summary>

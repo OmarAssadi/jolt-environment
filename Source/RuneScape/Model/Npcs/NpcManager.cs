@@ -19,8 +19,12 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
+
+using JoltEnvironment.Storage.Sql;
+using RuneScape.Utilities.Indexing;
 
 namespace RuneScape.Model.Npcs
 {
@@ -33,8 +37,24 @@ namespace RuneScape.Model.Npcs
         /// <summary>
         /// A collection of npc definitions.
         /// </summary>
-        Dictionary<short, NpcDefinition> definitions;
+        private Dictionary<short, NpcDefinition> definitions;
+        /// <summary>
+        /// A collection of spawned npcs.
+        /// </summary>
+        private List<Npc> npcSpawns = new List<Npc>();
+
+        /// <summary>
+        /// A slot manager which manages the npc's client indexing.
+        /// </summary>
+        private NpcSlotManager slotManager = new NpcSlotManager(5000);
         #endregion Fields
+
+        #region Properties
+        /// <summary>
+        /// Gets the spawned npcs.
+        /// </summary>
+        public List<Npc> Spawns { get { return this.npcSpawns; } }
+        #endregion Properties
 
         #region Constructors
         /// <summary>
@@ -44,6 +64,48 @@ namespace RuneScape.Model.Npcs
         {
             // Load definitions.
             this.definitions = NpcDefinition.Load();
+
+            // Load spawns.
+            try
+            {
+                DataRow[] rows = null;
+
+                // Get all spawns.
+                using (SqlDatabaseClient client = GameServer.Database.GetClient())
+                {
+                    DataTable table = client.ReadDataTable("SELECT * FROM npc_spawns;");
+
+                    if (table != null)
+                    {
+                        rows = table.Select();
+                    }
+                }
+
+                // If there is any spawns in the database, spawn them in game.
+                if (rows != null)
+                {
+                    foreach (DataRow row in rows)
+                    {
+                        short id = (short)row[1];
+                        Location originalCoords = Location.Create((short)row[2], (short)row[3], (byte)row[4]);
+                        WalkType walkType = (WalkType)row[5];
+                        Location minRange = Location.Create((short)row[6], (short)row[7], (byte)row[8]);
+                        Location maxRange = Location.Create((short)row[9], (short)row[10], (byte)row[11]);
+
+                        Npc npc = new Npc(id, originalCoords, minRange, maxRange, walkType, definitions[id]);
+                        if (this.slotManager.ReserveSlot(npc))
+                        {
+                            this.npcSpawns.Add(npc);
+                        }
+                    }
+
+                    Program.Logger.WriteInfo("Loaded " + this.npcSpawns.Count + " spawned npcs.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Program.Logger.WriteException(ex);
+            }
         }
         #endregion Cosntructors
 
@@ -56,6 +118,18 @@ namespace RuneScape.Model.Npcs
         public NpcDefinition GetDefinition(short id)
         {
             return definitions[id];
+        }
+
+        public void RemoveNpc(Npc npc)
+        {
+        }
+
+        public void RegisterNpc(Npc npc)
+        {
+            if (this.slotManager.ReserveSlot(npc))
+            {
+                this.npcSpawns.Add(npc);
+            }
         }
         #endregion Methods
     }

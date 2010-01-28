@@ -48,7 +48,7 @@ namespace RuneScape.Model
         /// Updates the entities around the character (including itself).
         /// </summary>
         /// <param name="character">The character to update.</param>
-        public static void UpdateCharacter(Character character, List<Character> allChars)
+        public static void UpdateCharacter(Character character, List<Character> allChars, List<Npc> allNpcs)
         {
             // Make sure there is no nulls.
             if (!character.Session.Connection.Connected)
@@ -59,6 +59,8 @@ namespace RuneScape.Model
             {
                 character.Session.SendData(new CharacterRenderingPacketComposer(
                     character, allChars).Serialize());
+                character.Session.SendData(new NpcRenderingPacketComposer(
+                    character, allNpcs).Serialize());
             }
         }
 

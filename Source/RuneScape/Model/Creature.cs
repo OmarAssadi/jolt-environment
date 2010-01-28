@@ -44,6 +44,19 @@ namespace RuneScape.Model
         public Animation CurrentAnimation { get; protected set; }
         #endregion Properties
 
+        #region Constructors
+        /// <summary>
+        /// Constructs a new creature.
+        /// </summary>
+        public Creature() { }
+
+        /// <summary>
+        /// Constructs a new create with specified location.
+        /// </summary>
+        /// <param name="location"></param>
+        public Creature(Location location) : base(location) { }
+        #endregion Constructors
+
         #region Methods
         /// <summary>
         /// Plays a graphical display.
@@ -55,6 +68,11 @@ namespace RuneScape.Model
         /// </summary>
         /// <param name="animation">The animation to display.</param>
         public abstract void PlayAnimation(Animation animation);
+        /// <summary>
+        /// The creature will speak this message.
+        /// </summary>
+        /// <param name="message"></param>
+        public abstract void Speak(ChatMessage message);
         /// <summary>
         /// Executes routine procedures.
         /// </summary>

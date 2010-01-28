@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using RuneScape.Communication.Messages.Outgoing;
 using RuneScape.Model;
 using RuneScape.Model.Characters;
 using RuneScape.Utilities;
@@ -45,8 +46,15 @@ namespace RuneScape.Communication.Messages.Incoming
             int length = packet.ReadByte();
             string text = ChatUtilities.DecryptChat(packet, length);
 
-            character.CurrentChatMessage = ChatMessage.Create(effects, length, text);
-            character.UpdateFlags.ChatUpdateRequired = true;
+            if (!character.Muted)
+            {
+                character.Speak(ChatMessage.Create(effects, length, text));
+            }
+            else
+            {
+                character.Session.SendData(new MessagePacketComposer(
+                    "You cannot talk, because you are muted.").Serialize());
+            }
         }
         #endregion Methods
     }

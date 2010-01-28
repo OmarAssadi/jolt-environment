@@ -41,8 +41,12 @@ namespace RuneScape
             {
                 switch (command.ToLower())
                 {
-                    case "add":
+                    case "play":
                         {
+                            for (int i = 0; i < GameEngine.World.NpcManager.Spawns.Count; i++)
+                            {
+                                GameEngine.World.NpcManager.Spawns[i].Speak("Hai thair aj!");
+                            }
                             break;
                         }
                     case "about": // Displays information about jolt environment.

@@ -54,34 +54,28 @@ namespace RuneScape.Communication.Messages.Outgoing
             // Update this character's movement.
             UpdateThisMovement(character, this);
 
-            // Update the character's masks if required.
             if (character.UpdateFlags.UpdateRequired)
             {
                 /*
                  * No need to force appeal since appearance hasn't changed 
                  * (unless appearance update is requied in update flags).
                  */
-                RenderMasks.AppendUpdateMasks(character, updateBlock, false);
+                RenderMasks.AppendMasks(character, updateBlock, false);
             }
             AppendBits(8, character.LocalCharacters.Count);
 
-            // Loop though the character's current local characters list.
             character.LocalCharacters.ForEach((otherCharacter) =>
             {
-                // We can only update this character is he meets local standards.
                 if (GameEngine.World.CharacterManager.Contains(otherCharacter)
                     && !otherCharacter.UpdateFlags.Teleporting
                     && otherCharacter.Location.WithinDistance(character.Location)
                     && otherCharacter.Session.Connection.Connected)
                 {
-                    // Update the character's movement so the main character can see the new movement.
                     UpdateMovement(otherCharacter, this);
 
-                    // Update the character's movement so the main character can see the new updates (only if there is any).
                     if (otherCharacter.UpdateFlags.UpdateRequired)
                     {
-                        //Console.WriteLine(character.Username + " Update Required.");
-                        RenderMasks.AppendUpdateMasks(otherCharacter, updateBlock, false);
+                        RenderMasks.AppendMasks(otherCharacter, updateBlock, false);
                     }
                 }
                 else
@@ -100,16 +94,13 @@ namespace RuneScape.Communication.Messages.Outgoing
             {
                 /*
                  * If there is no more space in the local area for the main character to 
-                 * see, then we will not show those other characters untill some leave.
+                 * see, then we will not show those other characters until some leave.
                  */
                 if (character.LocalCharacters.Count > 255)
                 {
                     break;
                 }
 
-                /*
-                 * Character does not meet local standards, cannot be added.
-                 */
                 if (otherCharacter == character
                     || character.LocalCharacters.Contains(otherCharacter)
                     || !otherCharacter.Location.WithinDistance(character.Location))
@@ -117,10 +108,9 @@ namespace RuneScape.Communication.Messages.Outgoing
                     continue;
                 }
 
-                //Console.WriteLine(character.Username + " Added.");
                 character.LocalCharacters.Add(otherCharacter);
                 AddNewCharacter(character, otherCharacter, this);
-                RenderMasks.AppendUpdateMasks(otherCharacter, updateBlock, true);
+                RenderMasks.AppendMasks(otherCharacter, updateBlock, true);
             }
 
             /*

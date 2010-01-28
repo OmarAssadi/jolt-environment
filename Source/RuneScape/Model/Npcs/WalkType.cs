@@ -22,9 +22,9 @@ namespace RuneScape.Model.Npcs
     /// <summary>
     /// Defines the type of walking that a npc can proceed.
     /// </summary>
-    public enum WalkType
+    public enum WalkType : byte
     {
-        Range,
-        Static
+        Static = 0,
+        Range = 1
     }
 }

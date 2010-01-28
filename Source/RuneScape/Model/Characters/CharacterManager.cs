@@ -30,8 +30,8 @@ using RuneScape.Communication.Login;
 using RuneScape.Content.Interfaces;
 using RuneScape.Database.Account;
 using RuneScape.Database.Config;
-using RuneScape.Model.Characters.Slots;
 using RuneScape.Network;
+using RuneScape.Utilities.Indexing;
 
 namespace RuneScape.Model.Characters
 {
@@ -56,7 +56,7 @@ namespace RuneScape.Model.Characters
         /// <summary>
         /// Manages client slots.
         /// </summary>
-        private SlotManager slotManager = new SlotManager();
+        private SlotManager slotManager = new SlotManager(GameServer.TcpConnection.MaxConnections);
 
         /// <summary>
         /// Whether to log login attemps.

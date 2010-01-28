@@ -184,7 +184,7 @@
     </Compile>
     <Compile Include="Model\Characters\Appearance.cs" />
     <Compile Include="Model\Characters\Skills.cs" />
-    <Compile Include="Model\Characters\Slots\ClientSlot.cs" />
+    <Compile Include="Utilities\Indexing\ClientSlot.cs" />
     <Compile Include="Model\Characters\DeathIcons.cs" />
     <Compile Include="Model\Characters\Details.cs" />
     <Compile Include="Model\Characters\Character.cs" />
@@ -196,7 +196,8 @@
     <Compile Include="Model\Characters\PrayerIcons.cs" />
     <Compile Include="Model\Characters\RenderMasks.cs" />
     <Compile Include="Model\Characters\ServerRights.cs" />
-    <Compile Include="Model\Characters\Slots\SlotManager.cs" />
+    <Compile Include="Utilities\Indexing\NpcSlotManager.cs" />
+    <Compile Include="Utilities\Indexing\SlotManager.cs" />
     <Compile Include="Model\Characters\Sprites.cs" />
     <Compile Include="Model\Characters\UpdateFlags.cs" />
     <Compile Include="Model\Characters\WalkingQueue.cs" />
