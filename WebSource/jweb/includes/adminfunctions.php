@@ -15,7 +15,7 @@
  * 
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+*/
 
 /**
  * Sets admincp default vars.
@@ -44,5 +44,54 @@ function check_rights($rights = 1) {
         header("Location: 403.php");
         exit;
     }
+}
+
+/**
+ * Formats a given size.
+ * @param int $data The data to format.
+ * @return string The formatted size.
+ */
+function formatsize($data) {
+    if( $data < 1024 ) {
+        return $data . ' Bytes';
+    } else if( $data < 1024000 ) {
+        return round( ( $data / 1024 ), 2 ) . ' KiB';
+    } else {
+        return round( ( $data / 1024000 ), 2 ) . ' MiB';
+    }
+}
+
+/**
+ * Adds the specified log into the database.
+ * @param int $user The user to log for.
+ * @param string $user_ip The user's ip.
+ * @param string $message The log's message.
+ */
+function add_log($user, $ip, $message) {
+    dbquery("INSERT INTO web_acp_logs (user, user_ip, log_time, log_message) VALUES ('" . $user . "', '" . $ip . "', NOW(), '" . $message . "');");
+}
+
+/**
+ * Prints banner with a success message on top of the page.
+ * @param string $message The message to be shown in the banner.
+ */
+function acp_success($message) {
+    echo("<div class='successbox'>" . $message . "<p></p></div>");
+}
+
+/**
+ * Prints banner with a notice message on top of the page.
+ * @param string $message The message to be shown in the banner.
+ */
+function acp_notice($message) {
+    echo("<div class='successbox notice'>" . $message . "<p></p></div>");
+}
+
+/**
+ * Prints banner with a error message on top of the page.
+ * @param string $message The message to be shown in the banner.
+ */
+function acp_error($message) {
+    echo("<div class='errorbox'>" . $message . "<p></p></div>");
 }
 ?>

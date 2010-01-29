@@ -15,29 +15,22 @@
  * 
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+*/
+define('ACP_TAB', 5);
 
-/**
- * Executes the given query.
- * @global database $database The database giving us connect to the database.
- * @param string $query The query to execute.
- * @return returns false if not executed, resource is value returned.
- */
-function dbquery($query) {
-    global $database;
-    return $database->execute_query($query);
+include_once("adminglobal.php");
+check_rights();
+
+if (isset($_GET['type'])) {
+    $type = $_GET['type'];
+    if ($type == "admin") {
+        define('ACP_TITLE', 'Administration Logs');
+    } else if ($type == "chat") {
+        define('ACP_TITLE', 'Chat Logs');
+    } else if ($type == "ip") {
+        define('ACP_TITLE', 'IP Logs');
+    } else if ($type == "login") {
+        define('ACP_TITLE', 'Login Logs');
+    }
 }
-
-/**
- * Evaluates the given query.
- * @global database $database The database giving us connect to the database.
- * @param string $query The query to execute.
- * @param int $default_value
- * @return returns false if not executed, resource is value returned.
- */
-function dbevaluate($query, $default_value = 0) {
-    global $database;
-    return $database->evaluate_query($query, $default_value);
-}
-
 ?>

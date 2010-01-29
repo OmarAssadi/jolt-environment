@@ -17,27 +17,19 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * Executes the given query.
- * @global database $database The database giving us connect to the database.
- * @param string $query The query to execute.
- * @return returns false if not executed, resource is value returned.
- */
-function dbquery($query) {
-    global $database;
-    return $database->execute_query($query);
-}
+define('ACP_TITLE', 'Moderation');
+define('ACP_TAB', 5);
 
-/**
- * Evaluates the given query.
- * @global database $database The database giving us connect to the database.
- * @param string $query The query to execute.
- * @param int $default_value
- * @return returns false if not executed, resource is value returned.
- */
-function dbevaluate($query, $default_value = 0) {
-    global $database;
-    return $database->evaluate_query($query, $default_value);
-}
+include_once("adminglobal.php");
+check_rights();
 
+include_once("header.php");
 ?>
+
+<h1>Moderation</h1><hr>
+<p>Moderators and Administrators can manage moderation here. They are provided with tools, logs, and information to make the best out of the evidence they have.</p><br />
+
+<h2>Actions requiring moderation</h2>
+<p>A list of actions that are currently under moderation.</p>
+
+<?php include_once("footer.php"); ?>

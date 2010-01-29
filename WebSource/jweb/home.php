@@ -24,7 +24,7 @@ require_once("./global.php");
 require_once("./header.php");
 
 $array = array();
-$array[3] = $database->evaluate_query("SELECT COUNT(*) FROM world;");
+$array[3] = $database->evaluate_query("SELECT COUNT(*) FROM characters;");
 echo mysql_error();
 
 ?>

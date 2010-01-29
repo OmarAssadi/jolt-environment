@@ -25,6 +25,7 @@ require_once(INCLUDES . "adminfunctions.php");
 if (!defined('JWEB')) {
     exit;
 }
+
 /*
  * Attempt to find any registered sessions.
 */

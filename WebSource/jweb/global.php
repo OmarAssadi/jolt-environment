@@ -19,7 +19,7 @@
 
 // System definitions.
 define('JWEB', true);
-define('DEBUG_MODE', true);
+define('DEBUG_MODE', false);
 define('USER_IP', $_SERVER['REMOTE_ADDR']);
 
 // Site configurations.
