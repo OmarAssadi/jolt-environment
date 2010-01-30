@@ -774,6 +774,7 @@ Documents/gameinfo/other-animation.txt -text
 Documents/gameinfo/player-animation.txt -text
 Documents/gameinfo/shop-packets.txt -text
 Documents/login_protocol.txt -text
+Documents/weps.xlsx -text
 /LICENSE.TXT -text
 /RUN_DEBUG.BAT -text
 /RUN_RELEASE.BAT -text
