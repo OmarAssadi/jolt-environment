@@ -144,7 +144,6 @@ namespace RuneScape
 
             /*System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
             watch.Start();
-            int i2 = i;
             watch.Stop();
             Console.WriteLine(watch.Elapsed.TotalMilliseconds);*/
 

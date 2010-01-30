@@ -99,7 +99,7 @@ namespace RuneScape.Model.Items.Containers
         /// <summary>
         /// A collection of weapon names
         /// </summary>
-        private static readonly string[] WEAPONS = { "Banner", "Excalibur", "scimitar","longsword","sword","longbow","shortbow","dagger","mace","halberd","spear",
+        private static readonly string[] WEAPONS = { "Scythe", "Banner", "Excalibur", "scimitar","longsword","sword","longbow","shortbow","dagger","mace","halberd","spear",
 	    "Abyssal whip","axe","flail","crossbow","Torags hammers","dagger(p)","dagger(+)","dagger(s)","spear(p)","spear(+)",
 	    "spear(s)","spear(kp)","maul","dart","dart(p)","javelin","javelin(p)","knife","knife(p)","Longbow","Shortbow",
 	    "Crossbow","Toktz-xil","Toktz-mej","Tzhaar-ket","staff","Staff","godsword","c'bow","Crystal bow","Dark bow"};

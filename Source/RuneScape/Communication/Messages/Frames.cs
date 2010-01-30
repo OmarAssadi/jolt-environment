@@ -175,7 +175,8 @@ namespace RuneScape.Communication.Messages
         public static void SendCloseInventoryInterface(Character character)
         {
             character.Preferences.Remove("interface");
-            character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Hd ? 746 : 548), 71, true).Serialize());
+            character.Session.SendData(new InterfaceConfigPacketComposer(
+                (short)(character.Preferences.Hd ? 746 : 548), 71, true).Serialize());
         }
 
         /// <summary>
@@ -186,8 +187,8 @@ namespace RuneScape.Communication.Messages
         /// <param name="childId">The child if of the tab.</param>
         public static void SendTab(Character character, short tabId, short childId)
         {
-            character.Session.SendData(new InterfacePacketComposer(1, (short)(childId == 137 ? 752 : (character.Preferences.Hd ? 746 : 548)), 
-                tabId, childId).Serialize());
+            character.Session.SendData(new InterfacePacketComposer(1, 
+                (short)(childId == 137 ? 752 : (character.Preferences.Hd ? 746 : 548)), tabId, childId).Serialize());
         }
 
         /// <summary>
@@ -276,23 +277,6 @@ namespace RuneScape.Communication.Messages
 
                 character.Session.SendData(new StatsPacketComposer(i, level, experience).Serialize());
             }
-        }
-
-        /// <summary>
-        /// Creates an objects on theworld.
-        /// </summary>
-        /// <param name="character">The character to show object for.</param>
-        /// <param name="objectId">The object to show.</param>
-        /// <param name="type">The object type.</param>
-        /// <param name="face">The object's facing direction.</param>
-        /// <param name="objectX">The x coordinate of the object location.</param>
-        /// <param name="objectY">The y coordinate of the object location.</param>
-        public static void SendCreateObject(Character character, short objectId, 
-            int type, int face, short objectX, short objectY)
-        {
-            character.Session.SendData(new CoordinatePacketComposer(
-                character, Location.Create(objectX, objectY, character.Location.Z)).Serialize());
-            character.Session.SendData(new SpawnObjectPacketComposer(objectId, type, face).Serialize());
         }
         #endregion Methods
     }

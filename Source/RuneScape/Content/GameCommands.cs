@@ -10,6 +10,7 @@ using RuneScape.Content.Interfaces;
 using RuneScape.Model;
 using RuneScape.Model.Characters;
 using RuneScape.Model.Items;
+using RuneScape.Model.Objects;
 
 namespace RuneScape.Content
 {
@@ -227,8 +228,7 @@ namespace RuneScape.Content
                     else if (command.Equals("object"))
                     {
                         short objId = short.Parse(arguments[1]);
-
-                        Frames.SendCreateObject(character, objId, 10, 0, character.Location.X, character.Location.Y);
+                        new MapObject(objId, 10, 0, character.Location).Spawn(character);
                     }
 
                     else if (command.Equals("report"))

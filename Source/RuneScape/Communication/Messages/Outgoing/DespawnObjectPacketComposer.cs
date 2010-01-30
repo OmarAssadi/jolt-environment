@@ -22,12 +22,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RuneScape.Model.Objects
+namespace RuneScape.Communication.Messages.Outgoing
 {
     /// <summary>
-    /// Represents a single object visible in the game.
+    /// Composes a packet which despawns an object from the map.
     /// </summary>
-    public class GameObject : Entity
+    public class DespawnObjectPacketComposer : PacketComposer
     {
+        #region Constructors
+        /// <summary>
+        /// Constructs a despawn object packet.
+        /// </summary>
+        public DespawnObjectPacketComposer()
+        {
+            SetOpcode(196);
+            AppendByteC(0);
+            AppendByteC(0);
+        }
+        #endregion Constructors
     }
 }
