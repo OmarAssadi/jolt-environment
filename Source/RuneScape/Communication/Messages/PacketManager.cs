@@ -127,6 +127,7 @@ namespace RuneScape.Communication.Messages
             AddHandler(129, new HdNotificationPacketHandler()); // Handles hd clients.
             AddHandler(133, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(138, new WalkingPacketHandler()); // Handles walking.
+            AddHandler(159, new ReportAbusePacketHandler()); // Handles reported abuses.
             AddHandler(167, new SwapItemPacketHandler()); // Handles item movements.
             AddHandler(169, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(173, new ButtonPacketHandler()); // Handles buttons.

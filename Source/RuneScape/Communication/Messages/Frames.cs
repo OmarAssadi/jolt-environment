@@ -24,6 +24,7 @@ using System.Text;
 
 using RuneScape.Communication.Messages.Outgoing;
 using RuneScape.Content.Interfaces;
+using RuneScape.Model;
 using RuneScape.Model.Characters;
 
 namespace RuneScape.Communication.Messages
@@ -275,6 +276,23 @@ namespace RuneScape.Communication.Messages
 
                 character.Session.SendData(new StatsPacketComposer(i, level, experience).Serialize());
             }
+        }
+
+        /// <summary>
+        /// Creates an objects on theworld.
+        /// </summary>
+        /// <param name="character">The character to show object for.</param>
+        /// <param name="objectId">The object to show.</param>
+        /// <param name="type">The object type.</param>
+        /// <param name="face">The object's facing direction.</param>
+        /// <param name="objectX">The x coordinate of the object location.</param>
+        /// <param name="objectY">The y coordinate of the object location.</param>
+        public static void SendCreateObject(Character character, short objectId, 
+            int type, int face, short objectX, short objectY)
+        {
+            character.Session.SendData(new CoordinatePacketComposer(
+                character, Location.Create(objectX, objectY, character.Location.Z)).Serialize());
+            character.Session.SendData(new SpawnObjectPacketComposer(objectId, type, face).Serialize());
         }
         #endregion Methods
     }

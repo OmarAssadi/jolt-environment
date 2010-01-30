@@ -841,6 +841,7 @@ Source/RuneScape/Communication/Messages/Incoming/NullPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/PingPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/QuietPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/RemoveInterfacePacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/ReportAbusePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/SwapInterfaceItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/SwapItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/WalkingPacketHandler.cs -text
@@ -848,6 +849,7 @@ Source/RuneScape/Communication/Messages/Outgoing/AnimateInterfacePacketComposer.
 Source/RuneScape/Communication/Messages/Outgoing/CharacterRenderingPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CloseInterfacePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/ConfigPacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/CoordinatePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/GenericPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/HeadOnInterfacePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/InterfaceConfigPacketComposer.cs -text
@@ -861,6 +863,8 @@ Source/RuneScape/Communication/Messages/Outgoing/NewMapRegionPacketComposer.cs -
 Source/RuneScape/Communication/Messages/Outgoing/NpcRenderingPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/PacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/RunEnergyPacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/RunScriptPacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/SpawnObjectPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/StatsPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/StringPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/WindowPanePacketComposer.cs -text
@@ -943,6 +947,7 @@ Source/RuneScape/Model/Npcs/NpcManager.cs -text
 Source/RuneScape/Model/Npcs/RenderMasks.cs -text
 Source/RuneScape/Model/Npcs/UpdateFlags.cs -text
 Source/RuneScape/Model/Npcs/WalkType.cs -text
+Source/RuneScape/Model/Objects/GameObject.cs -text
 Source/RuneScape/Model/RuneObject.cs -text
 Source/RuneScape/Network/ConnectionFactory.cs -text
 Source/RuneScape/Network/ConnectionListener.cs -text

@@ -222,6 +222,27 @@ namespace RuneScape.Content
                         }
                     }
                     #endregion Delete Item
+
+                    #region Object
+                    else if (command.Equals("object"))
+                    {
+                        short objId = short.Parse(arguments[1]);
+
+                        Frames.SendCreateObject(character, objId, 10, 0, character.Location.X, character.Location.Y);
+                    }
+
+                    else if (command.Equals("report"))
+                    {
+                        Frames.SendInterface(character, 553, false);
+                    }
+
+                    else if (command.Equals("runscript"))
+                    {
+                        int id = int.Parse(arguments[1]);
+                        string argument = arguments[2];
+                        character.Session.SendData(new RunScriptPacketComposer(id, "s", argument).Serialize());
+                    }
+                    #endregion Object
                 }
             }
             catch (Exception ex)
