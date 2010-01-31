@@ -31,17 +31,29 @@ namespace RuneScape.Model.Objects
     /// <summary>
     /// Represents a single object visible in the game.
     /// </summary>
-    public class MapObject : Entity
+    public class MapObject : IEntity
     {
         #region Properties
         /// <summary>
+        /// Gets or sets the object's index id.
+        /// </summary>
+        public int Index { get; set; }
+        /// <summary>
+        /// Gets or sets the name of the map object.
+        /// </summary>
+        public string Name { get; private set; }
+        /// <summary>
         /// Gets the object model type.
         /// </summary>
-        public int Type { get; set; }
+        public int Type { get; private set; }
         /// <summary>
         /// Gets the object face direction.
         /// </summary>
-        public int Face { get; set; }
+        public int Face { get; private set; }
+        /// <summary>
+        /// Gets the object location.
+        /// </summary>
+        public Location Location { get; set; }
         #endregion Properties
 
         #region Constructors
@@ -52,13 +64,13 @@ namespace RuneScape.Model.Objects
         /// <param name="type">The object's model type.</param>
         /// <param name="face">The object's face direction.</param>
         /// <param name="location">The object's coordinates.</param>
-        public MapObject(short objectId, int type, int face, Location location) 
-            : base(location)
+        public MapObject(short objectId, int type, int face, Location location)
         {
             this.Index = objectId;
             this.Name = "object" + objectId;
             this.Type = type;
             this.Face = face;
+            this.Location = location;
         }
         #endregion Constructors
 

@@ -27,7 +27,7 @@ namespace RuneScape.Model.Items
     /// <summary>
     /// Represents a single runescape item.
     /// </summary>
-    public class Item : RuneObject
+    public class Item : IRuneObject
     {
         #region Properties
         /// <summary>
@@ -38,6 +38,15 @@ namespace RuneScape.Model.Items
         /// Gets the item's count.
         /// </summary>
         public int Count { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the item's index.
+        /// </summary>
+        public int Index { get; set; }
+        /// <summary>
+        /// Gets the item's name.
+        /// </summary>
+        public string Name { get; private set; }
 
         /// <summary>
         /// Gets the item's definition.

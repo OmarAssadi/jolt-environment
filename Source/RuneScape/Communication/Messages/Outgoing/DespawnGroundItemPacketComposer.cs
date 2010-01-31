@@ -22,37 +22,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RuneScape.Model
+namespace RuneScape.Communication.Messages.Outgoing
 {
     /// <summary>
-    /// Represents an entity (visible object) in the game world.
+    /// Composes a despawn ground item.
     /// </summary>
-    public abstract class Entity : RuneObject
+    public class DespawnGroundItemPacketComposer : PacketComposer
     {
-        #region Properties
+        #region Constructor
         /// <summary>
-        /// The entity's location in the game world.
+        /// Represents a despawn ground item packet.
         /// </summary>
-        public Location Location { get; set; }
-        #endregion Properties
-
-        #region Constructors
-        /// <summary>
-        /// Constructs a new entity.
-        /// </summary>
-        public Entity()
+        public DespawnGroundItemPacketComposer(short item)
         {
-            this.Location = GameEngine.World.SpawnPoint;
+            SetOpcode(201);
+            AppendByte(0);
+            AppendShort(item);
         }
-
-        /// <summary>
-        /// Constructs a new entity with a specified location.
-        /// </summary>
-        /// <param name="location">The location of the entity.</param>
-        public Entity(Location location)
-        {
-            this.Location = location;
-        }
-        #endregion Constructors
+        #endregion Constructor
     }
 }

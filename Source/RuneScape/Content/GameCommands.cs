@@ -228,7 +228,7 @@ namespace RuneScape.Content
                     else if (command.Equals("object"))
                     {
                         short objId = short.Parse(arguments[1]);
-                        new MapObject(objId, 10, 0, character.Location).Spawn(character);
+                        new GroundItem(character.Location, character, objId, 1).Spawn();
                     }
 
                     else if (command.Equals("report"))

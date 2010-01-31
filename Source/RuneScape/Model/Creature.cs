@@ -27,9 +27,21 @@ namespace RuneScape.Model
     /// <summary>
     /// Represents a signle creature inside the game world.
     /// </summary>
-    public abstract class Creature : Entity
+    public abstract class Creature : IEntity
     {
         #region Properties
+        /// <summary>
+        /// Gets or sets The unique client slot id given at creature entry.
+        /// </summary>
+        public int Index { get; set; }
+        /// <summary>
+        /// Gets the name of the creature.
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
+        /// Gets or sets the location of the character.
+        /// </summary>
+        public Location Location { get; set; }
         /// <summary>
         /// Gets the current chat message.
         /// </summary>
@@ -53,8 +65,11 @@ namespace RuneScape.Model
         /// <summary>
         /// Constructs a new create with specified location.
         /// </summary>
-        /// <param name="location"></param>
-        public Creature(Location location) : base(location) { }
+        /// <param name="location">The location the creature will be placed ingame.</param>
+        public Creature(Location location)
+        {
+            this.Location = location;
+        }
         #endregion Constructors
 
         #region Methods

@@ -851,6 +851,7 @@ Source/RuneScape/Communication/Messages/Outgoing/CharacterRenderingPacketCompose
 Source/RuneScape/Communication/Messages/Outgoing/CloseInterfacePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/ConfigPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CoordinatePacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/DespawnGroundItemPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/DespawnObjectPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/GenericPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/HeadOnInterfacePacketComposer.cs -text
@@ -866,6 +867,7 @@ Source/RuneScape/Communication/Messages/Outgoing/NpcRenderingPacketComposer.cs -
 Source/RuneScape/Communication/Messages/Outgoing/PacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/RunEnergyPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/RunScriptPacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/SpawnGroundItemPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/SpawnObjectPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/StatsPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/StringPacketComposer.cs -text
@@ -922,10 +924,11 @@ Source/RuneScape/Model/Characters/UpdateFlags.cs -text
 Source/RuneScape/Model/Characters/WalkingQueue.cs -text
 Source/RuneScape/Model/ChatMessage.cs -text
 Source/RuneScape/Model/Creature.cs -text
-Source/RuneScape/Model/Entity.cs -text
 Source/RuneScape/Model/EntityManipulation.cs -text
 Source/RuneScape/Model/GameWorld.cs -text
 Source/RuneScape/Model/Graphic.cs -text
+Source/RuneScape/Model/IEntity.cs -text
+Source/RuneScape/Model/IRuneObject.cs -text
 Source/RuneScape/Model/Items/Containers/BankContainer.cs -text
 Source/RuneScape/Model/Items/Containers/Container.cs -text
 Source/RuneScape/Model/Items/Containers/ContainerType.cs -text
@@ -933,6 +936,7 @@ Source/RuneScape/Model/Items/Containers/EquipmentContainer.cs -text
 Source/RuneScape/Model/Items/Containers/InventoryContainer.cs -text
 Source/RuneScape/Model/Items/EquipmentItems.cs -text
 Source/RuneScape/Model/Items/EquipmentSlot.cs -text
+Source/RuneScape/Model/Items/GroundItem.cs -text
 Source/RuneScape/Model/Items/Item.cs -text
 Source/RuneScape/Model/Items/ItemDefinition.cs -text
 Source/RuneScape/Model/Items/ItemDefinitionBonuses.cs -text
@@ -950,7 +954,6 @@ Source/RuneScape/Model/Npcs/RenderMasks.cs -text
 Source/RuneScape/Model/Npcs/UpdateFlags.cs -text
 Source/RuneScape/Model/Npcs/WalkType.cs -text
 Source/RuneScape/Model/Objects/MapObject.cs -text
-Source/RuneScape/Model/RuneObject.cs -text
 Source/RuneScape/Network/ConnectionFactory.cs -text
 Source/RuneScape/Network/ConnectionListener.cs -text
 Source/RuneScape/Network/ConnectionManager.cs -text

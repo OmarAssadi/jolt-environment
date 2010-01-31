@@ -22,24 +22,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RuneScape.Model
+namespace RuneScape.Communication.Messages.Outgoing
 {
     /// <summary>
-    /// Base object for all in-game objects, in which a player can interact with.
+    /// Composes a ground item.
     /// </summary>
-    public abstract class RuneObject
+    public class SpawnGroundItemPacketComposer : PacketComposer
     {
-        #region Properties
+        #region Constructors
         /// <summary>
-        /// Unique id for the object.
-        /// 
-        ///     <remarks>Items, creatures, objects</remarks>
+        /// Constructs a spawn ground item packet.
         /// </summary>
-        public int Index { get; set; }
-        /// <summary>
-        /// The name of the object.
-        /// </summary>
-        public string Name { get; protected set; }
-        #endregion Properties
+        public SpawnGroundItemPacketComposer(short item, int amount)
+        {
+            SetOpcode(25);
+            AppendLEShortA((short)amount);
+            AppendByte(0);
+            AppendLEShortA(item);
+        }
+        #endregion Constructors
     }
 }

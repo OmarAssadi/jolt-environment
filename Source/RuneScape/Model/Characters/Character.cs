@@ -127,6 +127,8 @@ namespace RuneScape.Model.Characters
         /// <param name="details">The details passed on from the account loader.</param>
         public Character(Details details, uint masterId)
         {
+
+
             // Core details of the character.
             this.SessionId = details.Session.Connection.Id;
             this.MasterId = masterId;
@@ -135,6 +137,7 @@ namespace RuneScape.Model.Characters
             this.Session = details.Session;
             this.Session.Character = this;
             this.LongName = StringUtilities.StringToLong(details.Username);
+            this.Location = GameEngine.World.SpawnPoint;
 
             // Entity bases.
             this.LocalCharacters = new List<Character>();
