@@ -158,24 +158,24 @@ namespace RuneScape.Model.Characters
                 }
 
                 // Physical appearance.
-                if (character.Equipment[EquipmentContainer.Slot_Chest] != null)
+                /*if (character.Equipment[EquipmentContainer.Slot_Chest] != null)
                 {
                     properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Chest].Definition.EquipId));
                 }
-                else
+                else*/
                 {
                     properties.AppendShort((short)(0x100 + character.Appearance.Torso));//CHEST.
                 }
-                if (character.Equipment[EquipmentContainer.Slot_Shield] != null)
+                /*if (character.Equipment[EquipmentContainer.Slot_Shield] != null)
                 {
                     properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Shield].Definition.EquipId));
                 }
-                else
+                else*/
                 {
                     properties.AppendByte((byte)0); //Shield
                 }
-                Item chest = character.Equipment[EquipmentContainer.Slot_Chest];
-                if (chest != null)
+                //Item chest = character.Equipment[EquipmentContainer.Slot_Chest];
+                /*if (chest != null)
                 {
                     if (!EquipmentContainer.FullBody(chest.Definition))
                     {
@@ -186,20 +186,20 @@ namespace RuneScape.Model.Characters
                         properties.AppendByte((byte)0);//CHEST.
                     }
                 }
-                else
+                else*/
                 {
                     properties.AppendShort((short)(0x100 + character.Appearance.Arms));//CHEST.
                 }
-                if (character.Equipment[EquipmentContainer.Slot_Legs] != null)
+                /*if (character.Equipment[EquipmentContainer.Slot_Legs] != null)
                 {
                     properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Legs].Definition.EquipId));
                 }
-                else
+                else*/
                 {
                     properties.AppendShort((short)(0x100 + character.Appearance.Legs)); //Legs.
                 }
-                Item hat = character.Equipment[EquipmentContainer.Slot_Hat];
-                if (hat != null)
+                //Item hat = character.Equipment[EquipmentContainer.Slot_Hat];
+                /*if (hat != null)
                 {
                     if (!EquipmentContainer.FullHat(hat.Definition) && !EquipmentContainer.FullMask(hat.Definition))
                     {
@@ -210,27 +210,27 @@ namespace RuneScape.Model.Characters
                         properties.AppendByte((byte)0);
                     }
                 }
-                else
+                else*/
                 {
                     properties.AppendShort((short)(0x100 + character.Appearance.Head));
                 }
-                if (character.Equipment[EquipmentContainer.Slot_Hands] != null)
+                /*if (character.Equipment[EquipmentContainer.Slot_Hands] != null)
                 {
                     properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Hands].Definition.EquipId));
                 }
-                else
+                else*/
                 {
                     properties.AppendShort((short)(0x100 + character.Appearance.Wrist)); //Legs.
                 }
-                if (character.Equipment[EquipmentContainer.Slot_Feet] != null)
+                /*if (character.Equipment[EquipmentContainer.Slot_Feet] != null)
                 {
                     properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Feet].Definition.EquipId));
                 }
-                else
+                else*/
                 {
                     properties.AppendShort((short)(0x100 + character.Appearance.Feet)); //Legs.
                 }
-                if (hat != null)
+                /*if (hat != null)
                 {
                     if (!EquipmentContainer.FullMask(hat.Definition))
                     {
@@ -241,7 +241,7 @@ namespace RuneScape.Model.Characters
                         properties.AppendByte((byte)0);
                     }
                 }
-                else
+                else*/
                 {
                     properties.AppendShort((short)(0x100 + character.Appearance.Beard)); //beard
                 }
@@ -260,13 +260,16 @@ namespace RuneScape.Model.Characters
             properties.AppendByte(character.Appearance.SkinColor); //Skin color
 
             // Emotions.
-            properties.AppendShort(character.Equipment.StandAnimation); // stand
+            //properties.AppendShort(character.Equipment.StandAnimation); // stand
+            properties.AppendShort(0x328); // stand
             properties.AppendShort(0x337); // stand turn
-            properties.AppendShort(character.Equipment.WalkAnimation); // walk
+            //properties.AppendShort(character.Equipment.WalkAnimation); // walk
+            properties.AppendShort(0x333); // walk
             properties.AppendShort(0x334); // turn 180
             properties.AppendShort(0x335); // turn 90 cw
             properties.AppendShort(0x336); // turn 90 ccw
-            properties.AppendShort(character.Equipment.RunAnimation); // run
+            //properties.AppendShort(character.Equipment.RunAnimation); // run
+            properties.AppendShort(0x338); // run
 
             properties.AppendLong(character.LongName); // character's name
             properties.AppendByte((byte)character.Skills.CombatLevel); // combat level

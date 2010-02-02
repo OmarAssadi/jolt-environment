@@ -64,6 +64,8 @@ namespace RuneScape.Communication.Messages.Outgoing
             }
             AppendBits(8, character.LocalCharacters.Count);
 
+            // Characters that have been binned during local characters updating.
+            List<Character> charBin = new List<Character>();
             character.LocalCharacters.ForEach((otherCharacter) =>
             {
                 if (GameEngine.World.CharacterManager.Contains(otherCharacter)
@@ -81,7 +83,7 @@ namespace RuneScape.Communication.Messages.Outgoing
                 else
                 {
                     // Remove this character, as it doesn't meet local standards.
-                    character.LocalCharacters.Remove(otherCharacter);
+                    charBin.Add(otherCharacter);
 
                     // Signify the client that this character needs to be removed.
                     AppendBits(1, 1);
@@ -89,6 +91,9 @@ namespace RuneScape.Communication.Messages.Outgoing
 
                 }
             });
+
+            // Remove binned characters.
+            charBin.ForEach((c) => character.LocalCharacters.Remove(c));
 
             foreach (Character otherCharacter in allChars)
             {

@@ -59,7 +59,7 @@ namespace RuneScape.Communication.Messages.Incoming
 
             if (item.Definition.Id == wearId)
             {
-                sbyte targetSlot = EquipmentContainer.GetItemType(wearId);
+                /*sbyte targetSlot = EquipmentContainer.GetItemType(wearId);
                 if (targetSlot == -1)
                 {
                     return;
@@ -112,7 +112,7 @@ namespace RuneScape.Communication.Messages.Incoming
                 }
                 Item equipment = new Item(wearId, oldAmount + item.Count);
                 character.Equipment[targetSlot] = equipment;
-                character.Equipment.Refresh();
+                character.Equipment.Refresh();*/
             }
         }
         #endregion Methods

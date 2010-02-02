@@ -49,6 +49,8 @@ namespace RuneScape.Communication.Messages.Outgoing
 
             AppendBits(8, character.LocalNpcs.Count);
 
+            // A bin of npcs that have been removed during local npc updating.
+            List<Npc> npcBin = new List<Npc>();
             character.LocalNpcs.ForEach((npc) =>
             {
                 if (GameEngine.World.NpcManager.Spawns.Contains(npc)
@@ -66,7 +68,7 @@ namespace RuneScape.Communication.Messages.Outgoing
                 else
                 {
                     // Remove this npc, as it doesn't meet local standards.
-                    character.LocalNpcs.Remove(npc);
+                    npcBin.Add(npc);
 
                     // Signify the client that this npc needs to be removed.
                     AppendBits(1, 1);
@@ -74,6 +76,10 @@ namespace RuneScape.Communication.Messages.Outgoing
                 }
             });
 
+            // Remove all binned npcs.
+            npcBin.ForEach((npc) => character.LocalNpcs.Remove(npc));
+
+            // Search for npcs that may qualify for locality.
             foreach (Npc npc in allNpcs)
             {
                 // We cannot have more than 255 npcs in the client simultaneously.
@@ -82,8 +88,7 @@ namespace RuneScape.Communication.Messages.Outgoing
                     break;
                 }
 
-                if (character.LocalNpcs.Contains(npc) 
-                    || !npc.Location.WithinDistance(character.Location))
+                if (character.LocalNpcs.Contains(npc)  || !npc.Location.WithinDistance(character.Location))
                 {
                     continue;
                 }
