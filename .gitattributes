@@ -882,6 +882,7 @@ Source/RuneScape/Content/GameContent.cs -text
 Source/RuneScape/Content/Interfaces/CharacterSetup.cs -text
 Source/RuneScape/Content/Interfaces/ChatOptionsBar.cs -text
 Source/RuneScape/Content/Interfaces/EmoteTab.cs -text
+Source/RuneScape/Content/Interfaces/EquipmentTab.cs -text
 Source/RuneScape/Content/Interfaces/IInterfaceHandler.cs -text
 Source/RuneScape/Content/Interfaces/InterfaceManager.cs -text
 Source/RuneScape/Content/Interfaces/LogoutTab.cs -text
@@ -906,6 +907,7 @@ Source/RuneScape/GameEngine.cs -text
 Source/RuneScape/GameServer.cs -text
 Source/RuneScape/Model/Animation.cs -text
 Source/RuneScape/Model/Characters/Appearance.cs -text
+Source/RuneScape/Model/Characters/Bonuses.cs -text
 Source/RuneScape/Model/Characters/Character.cs -text
 Source/RuneScape/Model/Characters/CharacterManager.cs -text
 Source/RuneScape/Model/Characters/ClientRights.cs -text

@@ -157,7 +157,7 @@ namespace RuneScape.Model.Npcs
         /// </summary>
         public override void Tick()
         {
-            /*this.Sprite = -1;
+            this.Sprite = -1;
 
             if (random.NextDouble() > 0.8 && this.WalkType == WalkType.Range)
             {
@@ -177,7 +177,12 @@ namespace RuneScape.Model.Npcs
                     this.Sprite >>= 1;
                     this.Location = Location.Create(tgtX, tgtY, this.Location.Z);
                 }
-            }*/
+            }
+
+            if (random.NextDouble() > 0.95)
+            {
+                Speak("hey");
+            }
         }
         #endregion Methods
     }

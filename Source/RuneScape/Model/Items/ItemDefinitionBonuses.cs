@@ -33,55 +33,55 @@ namespace RuneScape.Model.Items
         /// <summary>
         /// Gets the item's attack-stab bonus.
         /// </summary>
-        public short AttackStabBonus { get; private set; }
+        public short AttackStab { get; private set; }
         /// <summary>
         /// Gets the item's attack-slash bonus.
         /// </summary>
-        public short AttackSlashBonus { get; private set; }
+        public short AttackSlash { get; private set; }
         /// <summary>
         /// Gets the item's attack-crush bonus.
         /// </summary>
-        public short AttackCrushBonus { get; private set; }
+        public short AttackCrush { get; private set; }
         /// <summary>
         /// Gets the item's attack-magic bonus.
         /// </summary>
-        public short AttackMagicBonus { get; private set; }
+        public short AttackMagic { get; private set; }
         /// <summary>
         /// Gets the item's attack ranged-bonus.
         /// </summary>
-        public short AttackRangedBonus { get; private set; }
+        public short AttackRanged { get; private set; }
         /// <summary>
         /// Gets the item's defence-stab bonus.
         /// </summary>
-        public short DefenceStabBonus { get; private set; }
+        public short DefenceStab { get; private set; }
         /// <summary>
         /// Gets the item's defence-slash bonus.
         /// </summary>
-        public short DefenceSlashBonus { get; private set; }
+        public short DefenceSlash { get; private set; }
         /// <summary>
         /// Gets the item's defence-crush bonus.
         /// </summary>
-        public short DefenceCrushBonus { get; private set; }
+        public short DefenceCrush { get; private set; }
         /// <summary>
         /// Gets the item's defence-magic bonus.
         /// </summary>
-        public short DefenceMagicBonus { get; private set; }
+        public short DefenceMagic { get; private set; }
         /// <summary>
         /// Gets the item's defence-ragned bonus.
         /// </summary>
-        public short DefenceRangedBonus { get; private set; }
+        public short DefenceRanged { get; private set; }
         /// <summary>
         /// Gets the item's defence-summoning bonus.
         /// </summary>
-        public short DefenceSummoningBonus { get; private set; }
+        public short DefenceSummoning { get; private set; }
         /// <summary>
         /// Gets the item's stregnth bonus.
         /// </summary>
-        public short StrengthBonus { get; private set; }
+        public short Strength { get; private set; }
         /// <summary>
         /// Gets the item's prayer bonus.
         /// </summary>
-        public short PrayerBonus { get; private set; }
+        public short Prayer { get; private set; }
         #endregion Properties
 
         #region Constructors
@@ -91,19 +91,19 @@ namespace RuneScape.Model.Items
         /// <param name="bonuses">The bonuses.</param>
         public ItemDefinitionBonuses(short[] bonuses)
         {
-            this.AttackStabBonus = bonuses[0];
-            this.AttackSlashBonus = bonuses[1];
-            this.AttackCrushBonus = bonuses[2];
-            this.AttackMagicBonus = bonuses[3];
-            this.AttackRangedBonus = bonuses[4];
-            this.DefenceStabBonus = bonuses[5];
-            this.DefenceSlashBonus = bonuses[6];
-            this.DefenceCrushBonus = bonuses[7];
-            this.DefenceMagicBonus = bonuses[8];
-            this.DefenceRangedBonus = bonuses[9];
-            this.DefenceSummoningBonus = bonuses[10];
-            this.StrengthBonus = bonuses[11];
-            this.PrayerBonus = bonuses[12];
+            this.AttackStab = bonuses[0];
+            this.AttackSlash = bonuses[1];
+            this.AttackCrush = bonuses[2];
+            this.AttackMagic = bonuses[3];
+            this.AttackRanged = bonuses[4];
+            this.DefenceStab = bonuses[5];
+            this.DefenceSlash = bonuses[6];
+            this.DefenceCrush = bonuses[7];
+            this.DefenceMagic = bonuses[8];
+            this.DefenceRanged = bonuses[9];
+            this.DefenceSummoning = bonuses[10];
+            this.Strength = bonuses[11];
+            this.Prayer = bonuses[12];
         }
         #endregion Constructors
     }

@@ -44,6 +44,9 @@ namespace RuneScape.Model.Items
         {
             // Load the definitions.
             this.definitions = ItemDefinition.Load();
+
+            // Fill specific equipment information.
+            EquipmentItems.Fill();
         }
         #endregion Constructors
 

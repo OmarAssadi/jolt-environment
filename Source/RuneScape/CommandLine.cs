@@ -45,7 +45,16 @@ namespace RuneScape
                         {
                             for (int i = 0; i < GameEngine.World.NpcManager.Spawns.Count; i++)
                             {
-                                GameEngine.World.NpcManager.Spawns[i].Speak("Hai thair aj!");
+                                GameEngine.World.NpcManager.Spawns[i].UpdateFlags.FaceTo = short.Parse(arguments[0]);
+                                GameEngine.World.NpcManager.Spawns[i].UpdateFlags.FaceToUpdateRequired = true;
+                            }
+                            break;
+                        }
+                    case "clear":
+                        {
+                            for (int i = 0; i < GameEngine.World.NpcManager.Spawns.Count; i++)
+                            {
+                                GameEngine.World.NpcManager.Spawns[i].UpdateFlags.ClearFaceTo = true;
                             }
                             break;
                         }

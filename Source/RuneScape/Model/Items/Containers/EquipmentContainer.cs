@@ -49,6 +49,19 @@ namespace RuneScape.Model.Items.Containers
         /// Gets or sets whether the currently equipted weapon has a special attack.
         /// </summary>
         public bool SpecialWeapon { get; private set; }
+
+        /// <summary>
+        /// The stand animation according to the equipted weapon.
+        /// </summary>
+        public short StandAnimation { get; private set; }
+        /// <summary>
+        /// The walk animation according to the equipted weapon.
+        /// </summary>
+        public short WalkAnimation { get; private set; }
+        /// <summary>
+        /// The run animation according to the equipted weapon.
+        /// </summary>
+        public short RunAnimation { get; private set; }
         #endregion Properties
 
         #region Constructors
@@ -87,9 +100,18 @@ namespace RuneScape.Model.Items.Containers
             }
 
             short itemId = this[3].Id;
+            string weaponName = this[3].Name;
 
-            switch (itemId)
+            if (EquipmentItems.WeaponInterface.ContainsKey(itemId))
             {
+                short childId = EquipmentItems.WeaponInterface[itemId];
+                Frames.SendTab(character, (short)(character.Preferences.Hd ? 87 : 73), childId);
+                character.Session.SendData(new StringPacketComposer(weaponName, childId, 0).Serialize());
+            }
+            else
+            {
+                Frames.SendTab(character, (short)(character.Preferences.Hd ? 87 : 73), 82);
+                character.Session.SendData(new StringPacketComposer(weaponName, 82, 0).Serialize());
             }
         }
         #endregion Methods

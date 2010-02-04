@@ -169,6 +169,31 @@ namespace RuneScape.Communication.Messages
         }
 
         /// <summary>
+        /// Opens an inventory interface.
+        /// </summary>
+        /// <param name="character">The character to produce frame for.</param>
+        /// <param name="childId">The child id of the interface.</param>
+        public static void SendInventoryInterface(Character character, short childId)
+        {
+            if (character.Preferences.Hd)
+            {
+                character.Session.SendData(new InterfaceConfigPacketComposer(746, 71, false).Serialize());
+            }
+            else
+            {
+                character.Session.SendData(new InterfaceConfigPacketComposer(548, 71, false).Serialize());
+            }
+            if (character.Preferences.Hd)
+            {
+                character.Session.SendData(new InterfacePacketComposer(0, 746, 71, childId).Serialize());
+            }
+            else
+            {
+                character.Session.SendData(new InterfacePacketComposer(0, 548, 71, childId).Serialize());
+            }
+        }
+
+        /// <summary>
         /// Closes the inventory interface.
         /// </summary>
         /// <param name="character">The character to produce frame for.</param>
@@ -277,6 +302,26 @@ namespace RuneScape.Communication.Messages
 
                 character.Session.SendData(new StatsPacketComposer(i, level, experience).Serialize());
             }
+        }
+
+        /// <summary>
+        /// Reconstructs all the tabs on the main interface.
+        /// </summary>
+        /// <param name="character">The character to send the tabs for.</param>
+        public static void SendTabs(Character character)
+        {
+            for (short i = 16; i <= 21; i++)
+            {
+                character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Hd ? 746 : 548), i, false).Serialize());
+            }
+            for (short i = 32; i <= 38; i++)
+            {
+                character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Hd ? 746 : 548), i, false).Serialize());
+            }
+            character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Hd ? 746 : 548), 14, false).Serialize());
+            character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Hd ? 746 : 548), 31, false).Serialize());
+            character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Hd ? 746 : 548), 63, false).Serialize());
+            character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Hd ? 746 : 548), 72, false).Serialize());
         }
         #endregion Methods
     }

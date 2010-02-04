@@ -34,7 +34,7 @@ namespace RuneScape.Communication.Messages
         /// Reads the next byte in the packet without removing it from the payload.
         /// </summary>
         /// <returns>Returns a 8-bit integer.</returns>
-        public byte Peak()
+        public byte Peek()
         {
             return this.Payload[this.Position];
         }
@@ -83,10 +83,13 @@ namespace RuneScape.Communication.Messages
         /// <param name="length">The length to read for.</param>
         public void Read(byte[] array, int offset, int length)
         {
-            for (int i = offset; i < offset + length; i++)
+            /*for (int i = offset; i < offset + length; i++)
             {
                 array[i] = ReadByte();
-            }
+            }*/
+
+            Buffer.BlockCopy(this.Payload, this.Position, array, offset, length);
+            Skip(length);
         }
 
         /// <summary>
@@ -181,15 +184,14 @@ namespace RuneScape.Communication.Messages
         /// <returns>Returns a string.</returns>
         public string ReadString()
         {
-            StringBuilder sb = new StringBuilder();
+            string s = string.Empty;
             byte b;
 
             while ((b = ReadByte()) != 0)
             {
-                sb.Append((char)b);
+                s += (char)b;
             }
-
-            return sb.ToString();
+            return s;
         }
         #endregion Methods
     }

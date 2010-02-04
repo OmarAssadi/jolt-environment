@@ -82,7 +82,7 @@ namespace RuneScape.Services
                     {
                         if (request.Buffer.RemainingAmount >= 1)
                         {
-                            int protocolId = request.Buffer.Peak();
+                            int protocolId = request.Buffer.Peek();
                             this.protocolManager.Handle(protocolId, request);
                         }
                     }

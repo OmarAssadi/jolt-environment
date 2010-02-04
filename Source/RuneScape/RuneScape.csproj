@@ -86,9 +86,11 @@
     <Compile Include="Communication\Messages\Outgoing\SpawnObjectPacketComposer.cs" />
     <Compile Include="Content\Interfaces\CharacterSetup.cs" />
     <Compile Include="Content\Interfaces\EmoteTab.cs" />
+    <Compile Include="Content\Interfaces\EquipmentTab.cs" />
     <Compile Include="Content\Interfaces\OptionsTab.cs" />
     <Compile Include="Database\Account\IAccountSaver.cs" />
     <Compile Include="Database\Account\MySqlAccountSaver.cs" />
+    <Compile Include="Model\Characters\Bonuses.cs" />
     <Compile Include="Model\Characters\Preferences.cs" />
     <Compile Include="Model\Creature.cs" />
     <Compile Include="Model\Items\Containers\BankContainer.cs" />

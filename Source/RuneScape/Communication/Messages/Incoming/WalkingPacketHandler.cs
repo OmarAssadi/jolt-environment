@@ -39,14 +39,31 @@ namespace RuneScape.Communication.Messages.Incoming
         /// <param name="packet">The packet containing handle data.</param>
         public void Handle(Character character, Packet packet)
         {
-            // remove skill menu
-            // remove trade screen
-            Frames.SendCloseInterface(character);
-
             int length = packet.Length;
             if (packet.Opcode == 119)
             {
                 length -= 14;
+
+
+                // This will close the open interface.
+                // TODO: remove skill menu
+                // TODO: remove trade screen
+                if (character.Preferences["interface"] != null)
+                {
+                    short interfaceId = (short)character.Preferences["interface"];
+
+                    // Close interface first.
+                    Frames.SendCloseInterface(character);
+
+                    // Call any extra requirements.
+                    switch (interfaceId)
+                    {
+                        case 762:
+                            Frames.SendTabs(character);
+                            Frames.SendCloseInventoryInterface(character);
+                            break;
+                    }
+                }
             }
 
             /* 

@@ -111,6 +111,10 @@ namespace RuneScape.Model.Characters
         /// </summary>
         public Skills Skills { get; private set; }
         /// <summary>
+        /// Gets the character's bonuses.
+        /// </summary>
+        public Bonuses Bonuses { get; private set; }
+        /// <summary>
         /// Gets the character's inventory.
         /// </summary>
         public InventoryContainer Inventory { get; private set; }
@@ -153,6 +157,7 @@ namespace RuneScape.Model.Characters
             this.HeadIcon = new HeadIcon();
             this.WalkingQueue = new WalkingQueue(this);
             this.Skills = new Skills(this);
+            this.Bonuses = new Bonuses(this);
             this.Inventory = new InventoryContainer(this);
             this.Equipment = new EquipmentContainer(this);
         }
