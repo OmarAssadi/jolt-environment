@@ -450,7 +450,15 @@ namespace RuneScape.Model.Items
         /// <summary>
         /// The interface settings/configs for the specified weapon.
         /// </summary>
-        public static Dictionary<short, short> WeaponInterface { get; private set; }
+        public static Dictionary<short, short> WeaponInterfaces { get; private set; }
+        /// <summary>
+        /// Gets the special weapon's interface config.
+        /// </summary>
+        public static Dictionary<short, byte[]> SpecialWeapons { get; private set; }
+        /// <summary>
+        /// Gets a weapon's stand animation.
+        /// </summary>
+        public static Dictionary<short, short> WeaponStandAnimations { get; private set; }
         #endregion Properties
 
         #region Methods
@@ -459,13 +467,14 @@ namespace RuneScape.Model.Items
         /// </summary>
         public static void Fill()
         {
-            WeaponInterface = GenWeaponInteface();
+            WeaponInterfaces = GenWeaponIntefaces();
+            SpecialWeapons = GenSpecialWeapons();
         }
 
         /// <summary>
         /// Fills the weapon interface container with 
         /// </summary>
-        private static Dictionary<short, short> GenWeaponInteface()
+        private static Dictionary<short, short> GenWeaponIntefaces()
         {
             Dictionary<short, short> dict = new Dictionary<short, short>();
 
@@ -786,6 +795,66 @@ namespace RuneScape.Model.Items
             dict.Add(13081, 79);
             dict.Add(13290, 81);
             #endregion Add to container
+
+            return dict;
+        }
+
+        /// <summary>
+        /// Generates a dictionary that contains all items that have a corresponding 'specials' interface.
+        /// </summary>
+        /// <returns>Returns a Dictionary containing the generated data.</returns>
+        private static Dictionary<short, byte[]> GenSpecialWeapons()
+        {
+            Dictionary<short, byte[]> dict = new Dictionary<short, byte[]>();
+
+            // Add all specified special weapons.
+            #region Add to container
+            dict.Add(35, new byte[2] { 82, 12 });
+            dict.Add(859, new byte[2] { 77, 13 });
+            dict.Add(861, new byte[2] { 77, 13 });
+            dict.Add(1215, new byte[2] { 89, 12 });
+            dict.Add(1231, new byte[2] { 89, 12 });
+            dict.Add(1305, new byte[2] { 82, 12 });
+            dict.Add(1377, new byte[2] { 75, 12 });
+            dict.Add(1434, new byte[2] { 88, 12 });
+            dict.Add(3101, new byte[2] { 78, 12 });
+            dict.Add(3204, new byte[2] { 84, 10 });
+            dict.Add(4151, new byte[2] { 93, 10 });
+            dict.Add(4153, new byte[2] { 76, 10 });
+            dict.Add(4587, new byte[2] { 82, 12 });
+            dict.Add(5680, new byte[2] { 89, 12 });
+            dict.Add(5698, new byte[2] { 89, 12 });
+            dict.Add(6724, new byte[2] { 77, 13 });
+            dict.Add(6739, new byte[2] { 75, 12 });
+            dict.Add(6746, new byte[2] { 82, 12 });
+            dict.Add(7158, new byte[2] { 81, 12 });
+            dict.Add(8872, new byte[2] { 89, 12 });
+            dict.Add(8874, new byte[2] { 89, 12 });
+            dict.Add(8876, new byte[2] { 89, 12 });
+            dict.Add(8878, new byte[2] { 89, 12 });
+            dict.Add(8880, new byte[2] { 79, 10 });
+            dict.Add(10284, new byte[2] { 77, 13 });
+            dict.Add(10887, new byte[2] { 88, 12 });
+            dict.Add(11037, new byte[2] { 82, 12 });
+            dict.Add(11061, new byte[2] { 88, 12 });
+            dict.Add(11235, new byte[2] { 77, 13 });
+            dict.Add(11694, new byte[2] { 81, 12 });
+            dict.Add(11696, new byte[2] { 81, 12 });
+            dict.Add(11698, new byte[2] { 81, 12 });
+            dict.Add(11700, new byte[2] { 81, 12 });
+            dict.Add(11730, new byte[2] { 81, 12 });
+            #endregion Add to cotnainer
+
+            return dict;
+        }
+
+        private static Dictionary<short, short> GenWeaponStandAnimations()
+        {
+            Dictionary<short, short> dict = new Dictionary<short, short>();
+
+            // Add all specified weapons with specific stand animations.
+            #region Add to container
+            #endregion Add to cotnainer
 
             return dict;
         }

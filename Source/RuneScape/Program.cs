@@ -135,17 +135,16 @@ namespace RuneScape
             Console.WriteLine(@" \__/\___/_|\__| |___|_||_\_/|_|_| \___/_||_|_|_|_\___|_||_\__|");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine(" Jolt Environment [" + version + " Release-Win32-x86/x64]");
+            Console.WriteLine(" Jolt Environment [" + version + "] x" + (Environment.Is64BitProcess ? "64" : "32") + "-bit");
             Console.WriteLine(" Copyright (C) 2010 Jolt Environment Team");
-            Console.WriteLine(" Website: http://www.ajravindiran.com/projects/jolt/");
-            Console.WriteLine(" Credits: http://www.ajravindiran.com/projects/jolt/credits/");
+            Console.WriteLine(" http://www.ajravindiran.com/projects/jolt/");
             Console.WriteLine();
             Console.WriteLine();
 
-            /*System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
-            watch.Start();
-            watch.Stop();
-            Console.WriteLine(watch.Elapsed.TotalMilliseconds);*/
+            //System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
+            //watch.Start();
+            //watch.Stop();
+            //Console.WriteLine(watch.Elapsed.TotalMilliseconds);
 
             /*
              * Start a new thread that will update every second 

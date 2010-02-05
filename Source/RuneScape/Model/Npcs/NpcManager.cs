@@ -92,7 +92,13 @@ namespace RuneScape.Model.Npcs
                         Location minRange = Location.Create((short)row[6], (short)row[7], (byte)row[8]);
                         Location maxRange = Location.Create((short)row[9], (short)row[10], (byte)row[11]);
 
-                        Npc npc = new Npc(id, originalCoords, minRange, maxRange, walkType, definitions[id]);
+                        string[] messages = null;
+                        if (row[12] is string)
+                        {
+                            messages = ((string)row[12]).Split(';');
+                        }
+
+                        Npc npc = new Npc(id, originalCoords, minRange, maxRange, walkType, definitions[id], messages);
                         if (this.slotManager.ReserveSlot(npc))
                         {
                             this.npcSpawns.Add(npc);

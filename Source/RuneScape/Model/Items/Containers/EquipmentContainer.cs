@@ -82,7 +82,7 @@ namespace RuneScape.Model.Items.Containers
         {
             this.character.UpdateFlags.AppearanceUpdateRequired = true;
             this.character.Session.SendData(new InterfaceItemsPacketComposer(387, 28, 94, this).Serialize());
-            // TODO: bonuses.
+            this.character.Bonuses.Refresh(false);
         }
 
         /// <summary>
@@ -102,9 +102,10 @@ namespace RuneScape.Model.Items.Containers
             short itemId = this[3].Id;
             string weaponName = this[3].Name;
 
-            if (EquipmentItems.WeaponInterface.ContainsKey(itemId))
+            // Try to update the interface.
+            if (EquipmentItems.WeaponInterfaces.ContainsKey(itemId))
             {
-                short childId = EquipmentItems.WeaponInterface[itemId];
+                short childId = EquipmentItems.WeaponInterfaces[itemId];
                 Frames.SendTab(character, (short)(character.Preferences.Hd ? 87 : 73), childId);
                 character.Session.SendData(new StringPacketComposer(weaponName, childId, 0).Serialize());
             }
@@ -113,6 +114,64 @@ namespace RuneScape.Model.Items.Containers
                 Frames.SendTab(character, (short)(character.Preferences.Hd ? 87 : 73), 82);
                 character.Session.SendData(new StringPacketComposer(weaponName, 82, 0).Serialize());
             }
+
+            // Update specials interface.
+            UpdateSpecials();
+        }
+
+        /// <summary>
+        /// Updates the attack tab to suit any special weapon needs.
+        /// </summary>
+        private void UpdateSpecials()
+        {
+            short itemId = this[3].Id;
+            this.SpecialWeapon = false;
+
+            if (EquipmentItems.SpecialWeapons.ContainsKey(itemId))
+            {
+                byte[] data = EquipmentItems.SpecialWeapons[itemId];
+                character.Session.SendData(new InterfaceConfigPacketComposer(data[0], data[1], false).Serialize());
+                this.SpecialWeapon = true;
+            }
+        }
+
+        /// <summary>
+        /// Updates the stand animation for the character suitable for the equipt weapon.
+        /// </summary>
+        /// <returns>Returns a 16-bit integer containing the updated stand animation value.</returns>
+        private short UpdateStandAnimation()
+        {
+            if (this[3] == null)
+            {
+                return 0x328;
+            }
+            return 0x328;
+        }
+
+        /// <summary>
+        /// Updates the walk animation for the character suitable for the equipt weapon.
+        /// </summary>
+        /// <returns>Returns a 16-bit integer containing the updated walk animation value.</returns>
+        private short UpdateWalkAnimation()
+        {
+            if (this[3] == null)
+            {
+                return 0x333;
+            }
+            return 0x333;
+        }
+
+        /// <summary>
+        /// Updates the run animation for the character suitable for the equipt weapon.
+        /// </summary>
+        /// <returns>Returns a 16-bit integer containing the updated run animation value.</returns>
+        private short UpdateRunAnimation()
+        {
+            if (this[3] == null)
+            {
+                return 0x338;
+            }
+            return 0x338;
         }
         #endregion Methods
     }

@@ -55,6 +55,10 @@ namespace RuneScape.Model.Npcs
         /// The maximum range of walking this npc can go to.
         /// </summary>
         public Location MaximumRange { get; set; }
+        /// <summary>
+        /// Gets the npc's speakable messages.
+        /// </summary>
+        public string[] SpeakMessages { get; private set; }
 
         /// <summary>
         /// Gets the npc's current hitpoints.
@@ -91,7 +95,7 @@ namespace RuneScape.Model.Npcs
         /// <param name="maxRange">The max range at which the npc can walk to.</param>
         /// <param name="type">The type of walking the npc does.</param>
         public Npc(int cacheIndexId, Location originalCoords, Location minRange, 
-            Location maxRange, WalkType type, NpcDefinition definition) : base(originalCoords)
+            Location maxRange, WalkType type, NpcDefinition definition, string[] messages) : base(originalCoords)
         {
             this.Sprite = -1;
             this.CacheIndex = cacheIndexId;
@@ -103,6 +107,7 @@ namespace RuneScape.Model.Npcs
             this.Definition = definition;
             this.Name = this.Definition.Name;
             this.HitPoints = this.Definition.HitPoints;
+            this.SpeakMessages = messages;
 
             this.UpdateFlags = new UpdateFlags();
         }
@@ -159,7 +164,7 @@ namespace RuneScape.Model.Npcs
         {
             this.Sprite = -1;
 
-            if (random.NextDouble() > 0.8 && this.WalkType == WalkType.Range)
+            if (this.WalkType == WalkType.Range && random.NextDouble() > 0.8)
             {
                 int moveX = (int)(Math.Floor((random.NextDouble() * 3)) - 1);
                 int moveY = (int)(Math.Floor((random.NextDouble() * 3)) - 1);
@@ -179,9 +184,10 @@ namespace RuneScape.Model.Npcs
                 }
             }
 
-            if (random.NextDouble() > 0.95)
+            if (this.SpeakMessages != null && random.NextDouble() > 0.95)
             {
-                Speak("hey");
+                int index = random.Next(0, this.SpeakMessages.Length);
+                Speak(this.SpeakMessages[index]);
             }
         }
         #endregion Methods
