@@ -1,5 +1,8 @@
 * text=auto !eol
 /CONTRIBUTERS.TXT -text
+Documents/RunEmote.txt -text
+Documents/StandEmote.txt -text
+Documents/WalkEmote.txt -text
 Documents/char_configs.txt -text
 Documents/char_design.txt -text
 Documents/char_design_colors.txt -text
