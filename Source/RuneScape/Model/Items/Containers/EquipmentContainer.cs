@@ -90,6 +90,11 @@ namespace RuneScape.Model.Items.Containers
         /// </summary>
         public void UpdateAttackStyle()
         {
+            // Update animations according to equipted weapon.
+            this.StandAnimation = UpdateStandAnimation();
+            this.WalkAnimation = UpdateWalkAnimation();
+            this.RunAnimation = UpdateRunAnimation();
+
             // The character is unarmed (no weapons equipted).
             if (this[3] == null)
             {
@@ -99,8 +104,8 @@ namespace RuneScape.Model.Items.Containers
                 return;
             }
 
-            short itemId = this[3].Id;
-            string weaponName = this[3].Name;
+            short itemId = this[EquipmentSlot.Weapon].Id;
+            string weaponName = this[EquipmentSlot.Weapon].Name;
 
             // Try to update the interface.
             if (EquipmentItems.WeaponInterfaces.ContainsKey(itemId))
@@ -124,7 +129,7 @@ namespace RuneScape.Model.Items.Containers
         /// </summary>
         private void UpdateSpecials()
         {
-            short itemId = this[3].Id;
+            short itemId = this[EquipmentSlot.Weapon].Id;
             this.SpecialWeapon = false;
 
             if (EquipmentItems.SpecialWeapons.ContainsKey(itemId))
@@ -141,11 +146,20 @@ namespace RuneScape.Model.Items.Containers
         /// <returns>Returns a 16-bit integer containing the updated stand animation value.</returns>
         private short UpdateStandAnimation()
         {
-            if (this[3] == null)
+            if (this[EquipmentSlot.Weapon] == null)
             {
                 return 0x328;
             }
-            return 0x328;
+
+            short itemId = this[EquipmentSlot.Weapon].Id;
+            if (EquipmentItems.WeaponStandAnimations.ContainsKey(itemId))
+            {
+                return EquipmentItems.WeaponStandAnimations[itemId];
+            }
+            else
+            {
+                return 0x328;
+            }
         }
 
         /// <summary>
@@ -154,11 +168,20 @@ namespace RuneScape.Model.Items.Containers
         /// <returns>Returns a 16-bit integer containing the updated walk animation value.</returns>
         private short UpdateWalkAnimation()
         {
-            if (this[3] == null)
+            if (this[EquipmentSlot.Weapon] == null)
             {
                 return 0x333;
             }
-            return 0x333;
+
+            short itemId = this[EquipmentSlot.Weapon].Id;
+            if (EquipmentItems.WeaponWalkAnimations.ContainsKey(itemId))
+            {
+                return EquipmentItems.WeaponWalkAnimations[itemId];
+            }
+            else
+            {
+                return 0x333;
+            }
         }
 
         /// <summary>
@@ -171,7 +194,16 @@ namespace RuneScape.Model.Items.Containers
             {
                 return 0x338;
             }
-            return 0x338;
+
+            short itemId = this[EquipmentSlot.Weapon].Id;
+            if (EquipmentItems.WeaponRunAnimations.ContainsKey(itemId))
+            {
+                return EquipmentItems.WeaponRunAnimations[itemId];
+            }
+            else
+            {
+                return 0x338;
+            }
         }
         #endregion Methods
     }

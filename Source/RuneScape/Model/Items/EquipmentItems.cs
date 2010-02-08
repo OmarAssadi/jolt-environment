@@ -456,9 +456,22 @@ namespace RuneScape.Model.Items
         /// </summary>
         public static Dictionary<short, byte[]> SpecialWeapons { get; private set; }
         /// <summary>
-        /// Gets a weapon's stand animation.
+        /// Gets a collection of weapon stand animations.
         /// </summary>
         public static Dictionary<short, short> WeaponStandAnimations { get; private set; }
+        /// <summary>
+        /// Gets a collection of weapon walk animations.
+        /// </summary>
+        public static Dictionary<short, short> WeaponWalkAnimations { get; private set; }
+        /// <summary>
+        /// Gets a collection of weapon run animations.
+        /// </summary>
+        public static Dictionary<short, short> WeaponRunAnimations { get; private set; }
+
+        /// <summary>
+        /// Gets a collection of weapons that are two handed.
+        /// </summary>
+        public static List<short> TwoHandedWeapons { get; private set; }
         #endregion Properties
 
         #region Methods
@@ -469,11 +482,15 @@ namespace RuneScape.Model.Items
         {
             WeaponInterfaces = GenWeaponIntefaces();
             SpecialWeapons = GenSpecialWeapons();
+            WeaponStandAnimations = GenWeaponStandAnimations();
+            WeaponWalkAnimations = GenWeaponWalkAnimations();
+            WeaponRunAnimations = GenWeaponRunAnimations();
         }
 
         /// <summary>
         /// Fills the weapon interface container with 
         /// </summary>
+        /// <returns>Returns a Dictionary containing the generated data.</returns>
         private static Dictionary<short, short> GenWeaponIntefaces()
         {
             Dictionary<short, short> dict = new Dictionary<short, short>();
@@ -848,15 +865,580 @@ namespace RuneScape.Model.Items
             return dict;
         }
 
+        /// <summary>
+        /// Generates a dictionary that contains all weapons and it's corresponding stand animation.
+        /// </summary>
+        /// <returns>Returns a Dictionary containing generated data.</returns>
         private static Dictionary<short, short> GenWeaponStandAnimations()
         {
             Dictionary<short, short> dict = new Dictionary<short, short>();
 
             // Add all specified weapons with specific stand animations.
             #region Add to container
+            dict.Add(84, 809);
+            dict.Add(772, 809);
+            dict.Add(1237, 809);
+            dict.Add(1239, 809);
+            dict.Add(1241, 809);
+            dict.Add(1243, 809);
+            dict.Add(1245, 809);
+            dict.Add(1247, 809);
+            dict.Add(1249, 809);
+            dict.Add(1251, 809);
+            dict.Add(1253, 809);
+            dict.Add(1255, 809);
+            dict.Add(1257, 809);
+            dict.Add(1259, 809);
+            dict.Add(1261, 809);
+            dict.Add(1263, 809);
+            dict.Add(1305, 809);
+            dict.Add(1307, 7047);
+            dict.Add(1309, 7047);
+            dict.Add(1311, 7047);
+            dict.Add(1313, 7047);
+            dict.Add(1315, 7047);
+            dict.Add(1317, 7047);
+            dict.Add(1319, 7047);
+            dict.Add(1379, 809);
+            dict.Add(1381, 809);
+            dict.Add(1383, 809);
+            dict.Add(1385, 809);
+            dict.Add(1387, 809);
+            dict.Add(1389, 809);
+            dict.Add(1391, 809);
+            dict.Add(1393, 809);
+            dict.Add(1395, 809);
+            dict.Add(1397, 809);
+            dict.Add(1399, 809);
+            dict.Add(1401, 809);
+            dict.Add(1403, 809);
+            dict.Add(1405, 809);
+            dict.Add(1407, 809);
+            dict.Add(1409, 809);
+            dict.Add(1413, 809);
+            dict.Add(2415, 7047);
+            dict.Add(2416, 7047);
+            dict.Add(2417, 7047);
+            dict.Add(3053, 809);
+            dict.Add(3054, 809);
+            dict.Add(3170, 809);
+            dict.Add(3171, 809);
+            dict.Add(3172, 809);
+            dict.Add(3173, 809);
+            dict.Add(3174, 809);
+            dict.Add(3175, 809);
+            dict.Add(3176, 809);
+            dict.Add(3190, 809);
+            dict.Add(3192, 809);
+            dict.Add(3194, 809);
+            dict.Add(3196, 809);
+            dict.Add(3198, 809);
+            dict.Add(3200, 809);
+            dict.Add(3202, 809);
+            dict.Add(3204, 809);
+            dict.Add(4151, 10080);
+            dict.Add(4153, 1662);
+            dict.Add(4158, 809);
+            dict.Add(4170, 809);
+            dict.Add(4580, 809);
+            dict.Add(4582, 809);
+            dict.Add(4584, 809);
+            dict.Add(4675, 809);
+            dict.Add(4710, 809);
+            dict.Add(4726, 809);
+            dict.Add(4734, 2074);
+            dict.Add(4755, 2061);
+            dict.Add(4862, 809);
+            dict.Add(4863, 809);
+            dict.Add(4864, 809);
+            dict.Add(4865, 809);
+            dict.Add(4910, 809);
+            dict.Add(4911, 809);
+            dict.Add(4912, 809);
+            dict.Add(4913, 809);
+            dict.Add(5016, 809);
+            dict.Add(5704, 809);
+            dict.Add(5706, 809);
+            dict.Add(5708, 809);
+            dict.Add(5710, 809);
+            dict.Add(5712, 809);
+            dict.Add(5714, 809);
+            dict.Add(5716, 809);
+            dict.Add(5718, 809);
+            dict.Add(5720, 809);
+            dict.Add(5722, 809);
+            dict.Add(5724, 809);
+            dict.Add(5726, 809);
+            dict.Add(5728, 809);
+            dict.Add(5730, 809);
+            dict.Add(5734, 809);
+            dict.Add(5736, 809);
+            dict.Add(6562, 809);
+            dict.Add(6563, 809);
+            dict.Add(6599, 809);
+            dict.Add(6603, 809);
+            dict.Add(6609, 7047);
+            dict.Add(6908, 809);
+            dict.Add(6910, 809);
+            dict.Add(6912, 809);
+            dict.Add(6914, 809);
+            dict.Add(7158, 7047);
+            dict.Add(7809, 809);
+            dict.Add(9084, 809);
+            dict.Add(9091, 809);
+            dict.Add(9092, 809);
+            dict.Add(9093, 809);
+            dict.Add(10150, 809);
+            dict.Add(10440, 809);
+            dict.Add(10442, 809);
+            dict.Add(10444, 809);
+            dict.Add(10887, 5869);
+            dict.Add(11694, 7047);
+            dict.Add(11696, 7047);
+            dict.Add(11698, 7047);
+            dict.Add(11700, 7047);
+            dict.Add(11716, 809);
+            dict.Add(11730, 7047);
+            dict.Add(11736, 809);
+            dict.Add(11738, 809);
+            dict.Add(11953, 809);
+            dict.Add(13406, 809);
+            dict.Add(13430, 809);
+            dict.Add(13454, 7047);
+            dict.Add(13629, 809);
+            dict.Add(13630, 809);
+            dict.Add(13631, 809);
+            dict.Add(13632, 809);
+            dict.Add(13633, 809);
+            dict.Add(13634, 809);
+            dict.Add(13635, 809);
+            dict.Add(13636, 809);
+            dict.Add(13637, 809);
+            dict.Add(13638, 809);
+            dict.Add(13639, 809);
+            dict.Add(13640, 809);
+            dict.Add(13641, 809);
+            dict.Add(13642, 809);
             #endregion Add to cotnainer
 
             return dict;
+        }
+
+        /// <summary>
+        /// Generates a dictionary that contains all weapons and it's corresponding walk animation.
+        /// </summary>
+        /// <returns>Returns a Dictionary containing generated data.</returns>
+        private static Dictionary<short, short> GenWeaponWalkAnimations()
+        {
+            Dictionary<short, short> dict = new Dictionary<short, short>();
+
+            // Add all specified weapons with specific walk animations.
+            #region Add to container
+            dict.Add(84, 1146);
+            dict.Add(772, 1146);
+            dict.Add(1237, 1146);
+            dict.Add(1239, 1146);
+            dict.Add(1241, 1146);
+            dict.Add(1243, 1146);
+            dict.Add(1245, 1146);
+            dict.Add(1247, 1146);
+            dict.Add(1249, 1146);
+            dict.Add(1251, 1146);
+            dict.Add(1253, 1146);
+            dict.Add(1255, 1146);
+            dict.Add(1257, 1146);
+            dict.Add(1259, 1146);
+            dict.Add(1261, 1146);
+            dict.Add(1263, 1146);
+            dict.Add(1307, 7046);
+            dict.Add(1309, 7046);
+            dict.Add(1311, 7046);
+            dict.Add(1313, 7046);
+            dict.Add(1315, 7046);
+            dict.Add(1317, 7046);
+            dict.Add(1319, 7046);
+            dict.Add(1379, 1146);
+            dict.Add(1381, 1146);
+            dict.Add(1383, 1146);
+            dict.Add(1385, 1146);
+            dict.Add(1387, 1146);
+            dict.Add(1389, 1146);
+            dict.Add(1391, 1146);
+            dict.Add(1393, 1146);
+            dict.Add(1395, 1146);
+            dict.Add(1397, 1146);
+            dict.Add(1399, 1146);
+            dict.Add(1401, 1146);
+            dict.Add(1403, 1146);
+            dict.Add(1405, 1146);
+            dict.Add(1407, 1146);
+            dict.Add(1409, 1146);
+            dict.Add(1413, 1146);
+            dict.Add(2415, 7046);
+            dict.Add(2416, 7046);
+            dict.Add(2417, 7046);
+            dict.Add(3053, 1146);
+            dict.Add(3054, 1146);
+            dict.Add(3170, 1146);
+            dict.Add(3171, 1146);
+            dict.Add(3172, 1146);
+            dict.Add(3173, 1146);
+            dict.Add(3174, 1146);
+            dict.Add(3175, 1146);
+            dict.Add(3176, 1146);
+            dict.Add(3190, 1146);
+            dict.Add(3192, 1146);
+            dict.Add(3194, 1146);
+            dict.Add(3196, 1146);
+            dict.Add(3198, 1146);
+            dict.Add(3200, 1146);
+            dict.Add(3202, 1146);
+            dict.Add(3204, 1146);
+            dict.Add(4151, 1660);
+            dict.Add(4153, 1663);
+            dict.Add(4158, 1146);
+            dict.Add(4170, 1146);
+            dict.Add(4580, 1146);
+            dict.Add(4582, 1146);
+            dict.Add(4584, 1146);
+            dict.Add(4675, 1146);
+            dict.Add(4710, 1146);
+            dict.Add(4718, 2064);
+            dict.Add(4726, 1146);
+            dict.Add(4734, 2076);
+            dict.Add(4755, 2060);
+            dict.Add(4862, 1146);
+            dict.Add(4863, 1146);
+            dict.Add(4864, 1146);
+            dict.Add(4865, 1146);
+            dict.Add(4910, 1146);
+            dict.Add(4911, 1146);
+            dict.Add(4912, 1146);
+            dict.Add(4913, 1146);
+            dict.Add(5016, 1146);
+            dict.Add(5704, 1146);
+            dict.Add(5706, 1146);
+            dict.Add(5708, 1146);
+            dict.Add(5710, 1146);
+            dict.Add(5712, 1146);
+            dict.Add(5714, 1146);
+            dict.Add(5716, 1146);
+            dict.Add(5718, 1146);
+            dict.Add(5720, 1146);
+            dict.Add(5722, 1146);
+            dict.Add(5724, 1146);
+            dict.Add(5726, 1146);
+            dict.Add(5728, 1146);
+            dict.Add(5730, 1146);
+            dict.Add(5734, 1146);
+            dict.Add(5736, 1146);
+            dict.Add(6528, 2064);
+            dict.Add(6562, 1146);
+            dict.Add(6563, 1146);
+            dict.Add(6599, 1146);
+            dict.Add(6603, 1146);
+            dict.Add(6609, 7046);
+            dict.Add(6908, 1146);
+            dict.Add(6910, 1146);
+            dict.Add(6912, 1146);
+            dict.Add(6914, 1146);
+            dict.Add(7158, 7046);
+            dict.Add(7809, 1146);
+            dict.Add(9084, 1146);
+            dict.Add(9091, 1146);
+            dict.Add(9092, 1146);
+            dict.Add(9093, 1146);
+            dict.Add(10150, 1146);
+            dict.Add(10440, 1146);
+            dict.Add(10442, 1146);
+            dict.Add(10444, 1146);
+            dict.Add(10887, 5867);
+            dict.Add(11694, 7046);
+            dict.Add(11696, 7046);
+            dict.Add(11698, 7046);
+            dict.Add(11700, 7046);
+            dict.Add(11716, 1146);
+            dict.Add(11730, 7046);
+            dict.Add(11736, 1146);
+            dict.Add(11738, 1146);
+            dict.Add(11953, 1146);
+            dict.Add(13454, 7046);
+            dict.Add(13430, 1146);
+            dict.Add(13406, 1146);
+            dict.Add(13629, 1146);
+            dict.Add(13630, 1146);
+            dict.Add(13631, 1146);
+            dict.Add(13632, 1146);
+            dict.Add(13633, 1146);
+            dict.Add(13634, 1146);
+            dict.Add(13635, 1146);
+            dict.Add(13636, 1146);
+            dict.Add(13637, 1146);
+            dict.Add(13638, 1146);
+            dict.Add(13639, 1146);
+            dict.Add(13640, 1146);
+            dict.Add(13641, 1146);
+            dict.Add(13642, 1146);
+            #endregion Add to cotnainer
+
+            return dict;
+        }
+
+        /// <summary>
+        /// Generates a dictionary that contains all weapons and it's corresponding run animation.
+        /// </summary>
+        /// <returns>Returns a Dictionary containing generated data.</returns>
+        private static Dictionary<short, short> GenWeaponRunAnimations()
+        {
+            Dictionary<short, short> dict = new Dictionary<short, short>();
+
+            // Add all specified weapons with specific run animations.
+            #region Add to container
+            dict.Add(84, 1210);
+            dict.Add(772, 1210);
+            dict.Add(1237, 1210);
+            dict.Add(1239, 1210);
+            dict.Add(1241, 1210);
+            dict.Add(1243, 1210);
+            dict.Add(1245, 1210);
+            dict.Add(1247, 1210);
+            dict.Add(1249, 1210);
+            dict.Add(1251, 1210);
+            dict.Add(1253, 1210);
+            dict.Add(1255, 1210);
+            dict.Add(1257, 1210);
+            dict.Add(1259, 1210);
+            dict.Add(1261, 1210);
+            dict.Add(1263, 1210);
+            dict.Add(1307, 7039);
+            dict.Add(1309, 7039);
+            dict.Add(1311, 7039);
+            dict.Add(1313, 7039);
+            dict.Add(1315, 7039);
+            dict.Add(1317, 7039);
+            dict.Add(1319, 7039);
+            dict.Add(1379, 1210);
+            dict.Add(1381, 1210);
+            dict.Add(1383, 1210);
+            dict.Add(1385, 1210);
+            dict.Add(1387, 1210);
+            dict.Add(1389, 1210);
+            dict.Add(1391, 1210);
+            dict.Add(1393, 1210);
+            dict.Add(1395, 1210);
+            dict.Add(1397, 1210);
+            dict.Add(1399, 1210);
+            dict.Add(1401, 1210);
+            dict.Add(1403, 1210);
+            dict.Add(1405, 1210);
+            dict.Add(1407, 1210);
+            dict.Add(1409, 1210);
+            dict.Add(1413, 1210);
+            dict.Add(2415, 7039);
+            dict.Add(2416, 7039);
+            dict.Add(2417, 7039);
+            dict.Add(3053, 1210);
+            dict.Add(3054, 1210);
+            dict.Add(3170, 1210);
+            dict.Add(3171, 1210);
+            dict.Add(3172, 1210);
+            dict.Add(3173, 1210);
+            dict.Add(3174, 1210);
+            dict.Add(3175, 1210);
+            dict.Add(3176, 1210);
+            dict.Add(3190, 1210);
+            dict.Add(3192, 1210);
+            dict.Add(3194, 1210);
+            dict.Add(3196, 1210);
+            dict.Add(3198, 1210);
+            dict.Add(3200, 1210);
+            dict.Add(3202, 1210);
+            dict.Add(3204, 1210);
+            dict.Add(4151, 1661);
+            dict.Add(4153, 1664);
+            dict.Add(4158, 1210);
+            dict.Add(4170, 1210);
+            dict.Add(4580, 1210);
+            dict.Add(4582, 1210);
+            dict.Add(4584, 1210);
+            dict.Add(4675, 1210);
+            dict.Add(4710, 1210);
+            dict.Add(4726, 1210);
+            dict.Add(4734, 2077);
+            dict.Add(4755, 1831);
+            dict.Add(4862, 1210);
+            dict.Add(4863, 1210);
+            dict.Add(4864, 1210);
+            dict.Add(4865, 1210);
+            dict.Add(4910, 1210);
+            dict.Add(4911, 1210);
+            dict.Add(4912, 1210);
+            dict.Add(4913, 1210);
+            dict.Add(5016, 1210);
+            dict.Add(5704, 1210);
+            dict.Add(5706, 1210);
+            dict.Add(5708, 1210);
+            dict.Add(5710, 1210);
+            dict.Add(5712, 1210);
+            dict.Add(5714, 1210);
+            dict.Add(5716, 1210);
+            dict.Add(5718, 1210);
+            dict.Add(5720, 1210);
+            dict.Add(5722, 1210);
+            dict.Add(5724, 1210);
+            dict.Add(5726, 1210);
+            dict.Add(5728, 1210);
+            dict.Add(5730, 1210);
+            dict.Add(5734, 1210);
+            dict.Add(5736, 1210);
+            dict.Add(6562, 1210);
+            dict.Add(6563, 1210);
+            dict.Add(6599, 1210);
+            dict.Add(6603, 1210);
+            dict.Add(6609, 7039);
+            dict.Add(6908, 1210);
+            dict.Add(6910, 1210);
+            dict.Add(6912, 1210);
+            dict.Add(6914, 1210);
+            dict.Add(7158, 7039);
+            dict.Add(7809, 1210);
+            dict.Add(9084, 1210);
+            dict.Add(9091, 1210);
+            dict.Add(9092, 1210);
+            dict.Add(9093, 1210);
+            dict.Add(10150, 1210);
+            dict.Add(10440, 1210);
+            dict.Add(10442, 1210);
+            dict.Add(10444, 1210);
+            dict.Add(10887, 5868);
+            dict.Add(11694, 7039);
+            dict.Add(11696, 7039);
+            dict.Add(11698, 7039);
+            dict.Add(11700, 7039);
+            dict.Add(11716, 1210);
+            dict.Add(11730, 7039);
+            dict.Add(11736, 1210);
+            dict.Add(11738, 1210);
+            dict.Add(11953, 1210);
+            dict.Add(13406, 1210);
+            dict.Add(13430, 1210);
+            dict.Add(13454, 7039);
+            dict.Add(13629, 1210);
+            dict.Add(13630, 1210);
+            dict.Add(13631, 1210);
+            dict.Add(13632, 1210);
+            dict.Add(13633, 1210);
+            dict.Add(13634, 1210);
+            dict.Add(13635, 1210);
+            dict.Add(13636, 1210);
+            dict.Add(13637, 1210);
+            dict.Add(13638, 1210);
+            dict.Add(13639, 1210);
+            dict.Add(13640, 1210);
+            dict.Add(13641, 1210);
+            dict.Add(13642, 1210);
+            #endregion Add to cotnainer
+
+            return dict;
+        }
+
+        /// <summary>
+        /// Generates a list that contains all the two handed weapons.
+        /// </summary>
+        /// <returns>Returns a List containing generated data.</returns>
+        private static List<short> GenTwoHandedWeapons()
+        {
+            List<short> list = new List<short>();
+
+            // Add all two handed weapons.
+            #region Add to container
+            list.Add(839);
+            list.Add(841);
+            list.Add(843);
+            list.Add(845);
+            list.Add(847);
+            list.Add(849);
+            list.Add(851);
+            list.Add(853);
+            list.Add(855);
+            list.Add(857);
+            list.Add(859);
+            list.Add(861);
+            list.Add(1307);
+            list.Add(1309);
+            list.Add(1311);
+            list.Add(1313);
+            list.Add(1315);
+            list.Add(1317);
+            list.Add(1319);
+            list.Add(1413);
+            list.Add(2883);
+            list.Add(3190);
+            list.Add(3192);
+            list.Add(3194);
+            list.Add(3196);
+            list.Add(3198);
+            list.Add(3200);
+            list.Add(3202);
+            list.Add(3204);
+            list.Add(4153);
+            list.Add(4212);
+            list.Add(4214);
+            list.Add(4735);
+            list.Add(4726);
+            list.Add(4747);
+            list.Add(6528);
+            list.Add(6599);
+            list.Add(6609);
+            list.Add(6724);
+            list.Add(7158);
+            list.Add(11694);
+            list.Add(11696);
+            list.Add(11698);
+            list.Add(11700);
+            #endregion Add to container
+
+            return list;
+        }
+
+        /// <summary>
+        /// Whether the specified item is two handed. 
+        /// </summary>
+        /// <param name="id">The id of the item to check for.</param>
+        /// <returns>Returns true if the item is two handed, false if not.</returns>
+        public static bool IsTwoHanded(short id)
+        {
+            return TwoHandedWeapons.Contains(id);
+        }
+
+        /// <summary>
+        /// Whether the specified item is a full body equipment.
+        /// </summary>
+        /// <param name="id">The id of the item to check for.</param>
+        /// <returns>Returns true if the item is full body; false if not.</returns>
+        public static bool IsFullBody(short id)
+        {
+            return FullBody.Contains(id);
+        }
+
+        /// <summary>
+        /// Whether the specified item is a full hat equipment.
+        /// </summary>
+        /// <param name="id">The id of the item to check for.</param>
+        /// <returns>Returns true if the item is full hat; false if not.</returns>
+        public static bool IsFullHat(short id)
+        {
+            return FullHats.Contains(id);
+        }
+
+        /// <summary>
+        /// Whether the specified item is a full mask equipment.
+        /// </summary>
+        /// <param name="id">The id of the item to check for.</param>
+        /// <returns>Returns true if the item is full mask; false if not.</returns>
+        public static bool IsFullMask(short id)
+        {
+            return FullMask.Contains(id);
         }
         #endregion Methods
     }

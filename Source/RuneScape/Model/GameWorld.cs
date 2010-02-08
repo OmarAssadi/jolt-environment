@@ -145,7 +145,8 @@ namespace RuneScape.Model
                 client.AddParameter("id", worldId);
                 vars = client.ReadDataRow(
                     "SELECT * FROM worlds WHERE world_id = @id LIMIT 1;" + 
-                    "UPDATE characters SET online = '0' WHERE online = '1';");
+                    "UPDATE characters SET online = '0' WHERE online = '1';" +
+                    "UPDATE worlds SET startup_time = NOW() WHERE world_id = @id;");
             }
 
             this.Name = (string)vars["world_name"];

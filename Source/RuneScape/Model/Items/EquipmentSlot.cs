@@ -22,18 +22,51 @@ namespace RuneScape.Model.Items
     /// <summary>
     /// Defines the different types of equipment slots.
     /// </summary>
-    public enum EquipmentSlot
+    public class EquipmentSlot
     {
-        Hat = 0,
-        Cape = 1,
-        Amulet = 2,
-        Weapon = 3,
-        Chest = 4,
-        Shield = 5,
-        Legs = 7,
-        Hands = 9,
-        Feet = 10,
-        Ring = 11,
-        Array = 13
+        /// <summary>
+        /// The hat equipment slot id.
+        /// </summary>
+        public const int Hat = 0;
+        /// <summary>
+        /// The cape equipment slot id.
+        /// </summary>
+        public const int Cape = 1;
+        /// <summary>
+        /// The amulet equipment slot id.
+        /// </summary>
+        public const int Amulet = 2;
+        /// <summary>
+        /// The weapon equipment slot id.
+        /// </summary>
+        public const int Weapon = 3;
+        /// <summary>
+        /// The chest equipment slot id.
+        /// </summary>
+        public const int Chest = 4;
+        /// <summary>
+        /// The shield equipment slot id.
+        /// </summary>
+        public const int Shield = 5;
+        /// <summary>
+        /// The legs equipment slot id.
+        /// </summary>
+        public const int Legs = 7;
+        /// <summary>
+        /// The hands equipment slot id.
+        /// </summary>
+        public const int Hands = 9;
+        /// <summary>
+        /// The feet equipment slot id.
+        /// </summary>
+        public const int Feet = 10;
+        /// <summary>
+        /// The ring equipment slot id.
+        /// </summary>
+        public const int Ring = 11;
+        /// <summary>
+        /// The arrow equipment slot id.
+        /// </summary>
+        public const int Arrow = 13;
     }
 }

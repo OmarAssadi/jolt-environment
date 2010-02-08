@@ -141,6 +141,15 @@ namespace RuneScape
             Console.WriteLine();
             Console.WriteLine();
 
+            /*using (System.IO.StreamReader reader = new System.IO.StreamReader("2h.txt"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    Logger.WriteFile("list.Add(" + reader.ReadLine() + ");", "2h");
+                }
+            }
+            Console.WriteLine("done.");*/
+
             //System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
             //watch.Start();
             //watch.Stop();
@@ -160,6 +169,7 @@ namespace RuneScape
             }
 
             GameServer.Initialize(); // Initialize the runescape emulator.
+            //GameServer.IsRunning = true;
             ListenForCommand();
             GameServer.Terminate(); // The server is not running anymore, shutdown server.
         }
