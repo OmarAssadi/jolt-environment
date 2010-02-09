@@ -44,9 +44,9 @@ namespace RuneScape.Model.Characters
         /// <summary>
         /// A RuneScape.Database.Account.IAccountLoader inheritant  that loads accounts from a mysql database.
         /// </summary>
-        private IAccountLoader accountLoader = new MySqlAccountLoader();
+        private IAccountLoader accountLoader = new SqlAccountLoader();
 
-        private IAccountSaver accountSaver = new MySqlAccountSaver();
+        private IAccountSaver accountSaver = new SqlAccountSaver();
 
         /// <summary>
         /// A System.Collections.Generic.Dictionary collection holding all characters currently online.

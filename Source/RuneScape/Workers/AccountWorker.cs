@@ -41,7 +41,7 @@ namespace RuneScape.Workers
         /// <summary>
         /// Provides account saving accessability.
         /// </summary>
-        private IAccountSaver accountSaver = new MySqlAccountSaver();
+        private IAccountSaver accountSaver = new SqlAccountSaver();
 
         /// <summary>
         /// The number of accounts that have failed to be saved.

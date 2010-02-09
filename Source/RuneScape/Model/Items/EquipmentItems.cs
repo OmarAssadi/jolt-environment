@@ -22,6 +22,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using RuneScape.Model.Items.Containers;
+
 namespace RuneScape.Model.Items
 {
     /// <summary>
@@ -467,6 +469,14 @@ namespace RuneScape.Model.Items
         /// Gets a collection of weapon run animations.
         /// </summary>
         public static Dictionary<short, short> WeaponRunAnimations { get; private set; }
+        /// <summary>
+        /// Gets a collection of weapons corresponding attack animation if the attack style is not 2.
+        /// </summary>
+        public static Dictionary<short, short> WeaponAttackAnimation1 { get; private set; }
+        /// <summary>
+        /// Gets a collection of weapons corresponding attack animation if the attack style is 2.
+        /// </summary>
+        public static Dictionary<short, short> WeaponAttackAnimation2 { get; private set; }
 
         /// <summary>
         /// Gets a collection of weapons that are two handed.
@@ -1343,6 +1353,93 @@ namespace RuneScape.Model.Items
         }
 
         /// <summary>
+        /// Generates a dictionary that cotnains all the weapons and it's corresponding attack animation.
+        /// </summary>
+        /// <returns>Returns a Dictionary containing generated data.</returns>
+        private static Dictionary<short, short> GenWeaponAttackAnimations1()
+        {
+            Dictionary<short, short> dict = new Dictionary<short, short>();
+
+            // Add all specified weapons with specific run animations.
+            #region Add to container
+            dict.Add(839, 426);
+            dict.Add(841, 426);
+            dict.Add(843, 426);
+            dict.Add(845, 426);
+            dict.Add(847, 426);
+            dict.Add(849, 426);
+            dict.Add(851, 426);
+            dict.Add(853, 426);
+            dict.Add(855, 426);
+            dict.Add(857, 426);
+            dict.Add(861, 426);
+            dict.Add(1307, 7041);
+            dict.Add(1309, 7041);
+            dict.Add(1311, 7041);
+            dict.Add(1313, 7041);
+            dict.Add(1315, 7041);
+            dict.Add(1317, 7041);
+            dict.Add(1319, 7041);
+            dict.Add(1265, 401);
+            dict.Add(1266, 401);
+            dict.Add(1267, 401);
+            dict.Add(1268, 401);
+            dict.Add(1269, 401);
+            dict.Add(1270, 401);
+            dict.Add(1271, 401);
+            dict.Add(1272, 401);
+            dict.Add(1273, 401);
+            dict.Add(1274, 401);
+            dict.Add(1275, 401);
+            dict.Add(1276, 401);
+            dict.Add(4151, 1658);
+            dict.Add(4212, 426);
+            dict.Add(4214, 426);
+            dict.Add(4718, 2066);
+            dict.Add(4755, 2062);
+            dict.Add(4827, 426);
+            dict.Add(5698, 402);
+            dict.Add(6724, 426);
+            dict.Add(9174, 4230);
+            dict.Add(9175, 4230);
+            dict.Add(9176, 4230);
+            dict.Add(9177, 4230);
+            dict.Add(9178, 4230);
+            dict.Add(9179, 4230);
+            dict.Add(9180, 4230);
+            dict.Add(9181, 4230);
+            dict.Add(9182, 4230);
+            dict.Add(9183, 4230);
+            dict.Add(9184, 4230);
+            dict.Add(9185, 4230);
+            dict.Add(9186, 4230);
+            dict.Add(10887, 5865);
+            dict.Add(11694, 7041);
+            dict.Add(11696, 7041);
+            dict.Add(11698, 7041);
+            dict.Add(11700, 7041);
+            #endregion Add to cotnainer
+
+            return dict;
+        }
+
+        /// <summary>
+        /// Generates a dictionary that cotnains all the weapons and it's corresponding attack animation.
+        /// </summary>
+        /// <returns>Returns a Dictionary containing generated data.</returns>
+        private static Dictionary<short, short> GenWeaponAttackAnimations2()
+        {
+            Dictionary<short, short> dict = new Dictionary<short, short>();
+
+            // Add all specified weapons with specific run animations.
+            #region Add to container
+            dict.Add(4718, 2067);
+            #endregion Add to cotnainer
+
+            return dict;
+        }
+
+        /// <summary>
         /// Generates a list that contains all the two handed weapons.
         /// </summary>
         /// <returns>Returns a List containing generated data.</returns>
@@ -1401,6 +1498,7 @@ namespace RuneScape.Model.Items
             return list;
         }
 
+
         /// <summary>
         /// Whether the specified item is two handed. 
         /// </summary>
@@ -1439,6 +1537,130 @@ namespace RuneScape.Model.Items
         public static bool IsFullMask(short id)
         {
             return FullMask.Contains(id);
+        }
+
+        /// <summary>
+        /// Gets the suitable attack animation for the equipted weapon.
+        /// </summary>
+        /// <param name="equipment">The equipment to generate attack animation for.</param>
+        /// <returns>The animation id of the sutied attack animation.</returns>
+        public static short GetAttackAnimation(this EquipmentContainer equipment)
+        {
+            Item item = equipment[EquipmentSlot.Weapon];
+            short weapon = item != null ? item.Id : (short)-1;
+
+            if (equipment.Character.Preferences.AttackStyle != 2)
+            {
+                if (WeaponAttackAnimation2.ContainsKey(weapon))
+                {
+                    return WeaponAttackAnimation2[weapon];
+                }
+                else if (WeaponAttackAnimation1.ContainsKey(weapon))
+                {
+                    return WeaponAttackAnimation1[weapon];
+                }
+                else
+                {
+                    return 422;
+                }
+            }
+            else
+            {
+                if (WeaponAttackAnimation1.ContainsKey(weapon))
+                {
+                    return WeaponAttackAnimation1[weapon];
+                }
+                else
+                {
+                    return 423;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets the item type.
+        /// </summary>
+        /// <returns>Returns the item type id.</returns>
+        public static sbyte GetItemType(int itemId)
+        {
+            for (int i = 0; i < Hats.Length; i++)
+            {
+                if (itemId == Hats[i])
+                {
+                    return EquipmentSlot.Hat;
+                }
+            }
+            for (int i = 0; i < Capes.Length; i++)
+            {
+                if (itemId == Capes[i])
+                {
+                    return EquipmentSlot.Cape;
+                }
+            }
+            for (int i = 0; i < Boots.Length; i++)
+            {
+                if (itemId == Boots[i])
+                {
+                    return EquipmentSlot.Feet;
+                }
+            }
+            for (int i = 0; i < Gloves.Length; i++)
+            {
+                if (itemId == Gloves[i])
+                {
+                    return EquipmentSlot.Hands;
+                }
+            }
+            for (int i = 0; i < Shields.Length; i++)
+            {
+                if (itemId == Shields[i])
+                {
+                    return EquipmentSlot.Shield;
+                }
+            }
+            for (int i = 0; i < Amulets.Length; i++)
+            {
+                if (itemId == Amulets[i])
+                {
+                    return EquipmentSlot.Amulet;
+                }
+            }
+            for (int i = 0; i < Arrows.Length; i++)
+            {
+                if (itemId == Arrows[i])
+                {
+                    return EquipmentSlot.Arrow;
+                }
+            }
+            for (int i = 0; i < Rings.Length; i++)
+            {
+                if (itemId == Rings[i])
+                {
+                    return EquipmentSlot.Ring;
+                }
+            }
+            for (int i = 0; i < Body.Length; i++)
+            {
+                if (itemId == Body[i])
+                {
+                    return EquipmentSlot.Chest;
+                }
+            }
+            for (int i = 0; i < Legs.Length; i++)
+            {
+                if (itemId == Legs[i])
+                {
+                    return EquipmentSlot.Legs;
+                }
+            }
+            for (int i = 0; i < Weapons.Length; i++)
+            {
+                if (itemId == Weapons[i])
+                {
+                    return EquipmentSlot.Weapon;
+                }
+            }
+            return -1;
         }
         #endregion Methods
     }

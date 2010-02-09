@@ -89,7 +89,7 @@
     <Compile Include="Content\Interfaces\EquipmentTab.cs" />
     <Compile Include="Content\Interfaces\OptionsTab.cs" />
     <Compile Include="Database\Account\IAccountSaver.cs" />
-    <Compile Include="Database\Account\MySqlAccountSaver.cs" />
+    <Compile Include="Database\Account\SqlAccountSaver.cs" />
     <Compile Include="Model\Characters\Bonuses.cs" />
     <Compile Include="Model\Characters\Preferences.cs" />
     <Compile Include="Model\Creature.cs" />
@@ -182,7 +182,7 @@
     <Compile Include="Content\Interfaces\WorldMap.cs" />
     <Compile Include="Database\Account\AccountLoadResult.cs" />
     <Compile Include="Database\Account\IAccountLoader.cs" />
-    <Compile Include="Database\Account\MySqlAccountLoader.cs" />
+    <Compile Include="Database\Account\SqlAccountLoader.cs" />
     <Compile Include="Database\Config\Configuration.cs" />
     <Compile Include="Database\Config\IConfigLoader.cs" />
     <Compile Include="Database\Config\IniConfigLoader.cs" />

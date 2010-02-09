@@ -47,11 +47,6 @@ namespace RuneScape.Model.Items.Containers
         ///     act with a certain condition.</para>
         /// </summary>
         private ContainerType type;
-
-        /// <summary>
-        /// The character that owns this container.
-        /// </summary>
-        protected Character character;
         /// <summary>
         /// Provides a lock.
         /// </summary>
@@ -59,6 +54,11 @@ namespace RuneScape.Model.Items.Containers
         #endregion Fields
 
         #region Properties
+        /// <summary>
+        /// Gets the character that owns this container.
+        /// </summary>
+        public Character Character { get; private set; }
+
         /// <summary>
         /// Gets the item specified by the index.
         /// </summary>
@@ -133,7 +133,7 @@ namespace RuneScape.Model.Items.Containers
         ///     <remarks>This value cannot be changed.</remarks></param>
         protected Container(short capacity, ContainerType type, Character character)
         {
-            this.character = character;
+            this.Character = character;
             this.items = new Item[capacity];
             this.capacity = capacity;
             this.type = type;

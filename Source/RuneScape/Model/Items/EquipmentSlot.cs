@@ -27,46 +27,46 @@ namespace RuneScape.Model.Items
         /// <summary>
         /// The hat equipment slot id.
         /// </summary>
-        public const int Hat = 0;
+        public const sbyte Hat = 0;
         /// <summary>
         /// The cape equipment slot id.
         /// </summary>
-        public const int Cape = 1;
+        public const sbyte Cape = 1;
         /// <summary>
         /// The amulet equipment slot id.
         /// </summary>
-        public const int Amulet = 2;
+        public const sbyte Amulet = 2;
         /// <summary>
         /// The weapon equipment slot id.
         /// </summary>
-        public const int Weapon = 3;
+        public const sbyte Weapon = 3;
         /// <summary>
         /// The chest equipment slot id.
         /// </summary>
-        public const int Chest = 4;
+        public const sbyte Chest = 4;
         /// <summary>
         /// The shield equipment slot id.
         /// </summary>
-        public const int Shield = 5;
+        public const sbyte Shield = 5;
         /// <summary>
         /// The legs equipment slot id.
         /// </summary>
-        public const int Legs = 7;
+        public const sbyte Legs = 7;
         /// <summary>
         /// The hands equipment slot id.
         /// </summary>
-        public const int Hands = 9;
+        public const sbyte Hands = 9;
         /// <summary>
         /// The feet equipment slot id.
         /// </summary>
-        public const int Feet = 10;
+        public const sbyte Feet = 10;
         /// <summary>
         /// The ring equipment slot id.
         /// </summary>
-        public const int Ring = 11;
+        public const sbyte Ring = 11;
         /// <summary>
         /// The arrow equipment slot id.
         /// </summary>
-        public const int Arrow = 13;
+        public const sbyte Arrow = 13;
     }
 }

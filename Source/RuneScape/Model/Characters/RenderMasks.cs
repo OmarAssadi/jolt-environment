@@ -157,51 +157,60 @@ namespace RuneScape.Model.Characters
                     }
                 }
 
+                Item chest = character.Equipment[EquipmentSlot.Chest];
+                Item shield = character.Equipment[EquipmentSlot.Shield];
+                Item legs = character.Equipment[EquipmentSlot.Legs];
+                Item hat = character.Equipment[EquipmentSlot.Hat];
+                Item hands = character.Equipment[EquipmentSlot.Hands];
+                Item feet = character.Equipment[EquipmentSlot.Feet];
+
                 // Physical appearance.
-                /*if (character.Equipment[EquipmentContainer.Slot_Chest] != null)
+                if (chest != null)
                 {
-                    properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Chest].Definition.EquipId));
+                    properties.AppendShort((short)(32768 + chest.Definition.EquipId));
                 }
-                else*/
+                else
                 {
-                    properties.AppendShort((short)(0x100 + character.Appearance.Torso));//CHEST.
+                    properties.AppendShort((short)(0x100 + character.Appearance.Torso));
                 }
-                /*if (character.Equipment[EquipmentContainer.Slot_Shield] != null)
+
+                if (shield != null)
                 {
-                    properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Shield].Definition.EquipId));
+                    properties.AppendShort((short)(32768 + shield.Definition.EquipId));
                 }
-                else*/
+                else
                 {
-                    properties.AppendByte((byte)0); //Shield
+                    properties.AppendByte((byte)0);
                 }
-                //Item chest = character.Equipment[EquipmentContainer.Slot_Chest];
-                /*if (chest != null)
+
+                if (chest != null)
                 {
-                    if (!EquipmentContainer.FullBody(chest.Definition))
+                    if (!EquipmentItems.IsFullBody(chest.Id))
                     {
                         properties.AppendShort((short)(0x100 + character.Appearance.Arms));
                     }
                     else
                     {
-                        properties.AppendByte((byte)0);//CHEST.
+                        properties.AppendByte((byte)0);
                     }
                 }
-                else*/
+                else
                 {
-                    properties.AppendShort((short)(0x100 + character.Appearance.Arms));//CHEST.
+                    properties.AppendShort((short)(0x100 + character.Appearance.Arms));
                 }
-                /*if (character.Equipment[EquipmentContainer.Slot_Legs] != null)
+
+                if (legs != null)
                 {
-                    properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Legs].Definition.EquipId));
+                    properties.AppendShort((short)(32768 + legs.Definition.EquipId));
                 }
-                else*/
+                else
                 {
-                    properties.AppendShort((short)(0x100 + character.Appearance.Legs)); //Legs.
+                    properties.AppendShort((short)(0x100 + character.Appearance.Legs));
                 }
-                //Item hat = character.Equipment[EquipmentContainer.Slot_Hat];
-                /*if (hat != null)
+
+                if (hat != null)
                 {
-                    if (!EquipmentContainer.FullHat(hat.Definition) && !EquipmentContainer.FullMask(hat.Definition))
+                    if (!EquipmentItems.IsFullHat(hat.Id) && !EquipmentItems.IsFullMask(hat.Id))
                     {
                         properties.AppendShort((short)(0x100 + character.Appearance.Head));
                     }
@@ -210,40 +219,43 @@ namespace RuneScape.Model.Characters
                         properties.AppendByte((byte)0);
                     }
                 }
-                else*/
+                else
                 {
                     properties.AppendShort((short)(0x100 + character.Appearance.Head));
                 }
-                /*if (character.Equipment[EquipmentContainer.Slot_Hands] != null)
+
+                if (hands != null)
                 {
-                    properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Hands].Definition.EquipId));
+                    properties.AppendShort((short)(32768 + hands.Definition.EquipId));
                 }
-                else*/
+                else
                 {
-                    properties.AppendShort((short)(0x100 + character.Appearance.Wrist)); //Legs.
+                    properties.AppendShort((short)(0x100 + character.Appearance.Wrist));
                 }
-                /*if (character.Equipment[EquipmentContainer.Slot_Feet] != null)
+
+                if (hands != null)
                 {
-                    properties.AppendShort((short)(32768 + character.Equipment[EquipmentContainer.Slot_Feet].Definition.EquipId));
+                    properties.AppendShort((short)(32768 + hands.Definition.EquipId));
                 }
-                else*/
+                else
                 {
-                    properties.AppendShort((short)(0x100 + character.Appearance.Feet)); //Legs.
+                    properties.AppendShort((short)(0x100 + character.Appearance.Feet));
                 }
-                /*if (hat != null)
+
+                if (hat != null)
                 {
-                    if (!EquipmentContainer.FullMask(hat.Definition))
+                    if (!EquipmentItems.IsFullMask(hat.Id))
                     {
-                        properties.AppendShort((short)(0x100 + character.Appearance.Beard)); //beard
+                        properties.AppendShort((short)(0x100 + character.Appearance.Beard));
                     }
                     else
                     {
                         properties.AppendByte((byte)0);
                     }
                 }
-                else*/
+                else
                 {
-                    properties.AppendShort((short)(0x100 + character.Appearance.Beard)); //beard
+                    properties.AppendShort((short)(0x100 + character.Appearance.Beard));
                 }
             }
             else

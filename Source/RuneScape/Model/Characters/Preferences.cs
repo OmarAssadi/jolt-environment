@@ -99,6 +99,11 @@ namespace RuneScape.Model.Characters
         /// Gets or sets whether the character accepts aid.
         /// </summary>
         public bool AcceptAid { get; set; }
+
+        /// <summary>
+        /// Gets or sets the character's attack style.
+        /// </summary>
+        public byte AttackStyle { get; set; }
         #endregion Properties
 
         #region Constructors

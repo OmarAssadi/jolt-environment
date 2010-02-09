@@ -68,7 +68,8 @@ namespace JoltEnvironment.Debug
                 {
                     queue.Take().Invoke();
 
-                    /* The thread needs to sleep for atleast 1 millisecond, 
+                    /* 
+					 * The thread needs to sleep for atleast 1 millisecond, 
                      * otherwise it could very likely take up alot of cpu 
                      * when there's lots of logs queued.
                      */

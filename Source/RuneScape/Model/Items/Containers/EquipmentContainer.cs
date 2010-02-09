@@ -80,9 +80,9 @@ namespace RuneScape.Model.Items.Containers
         /// </summary>
         public override void Refresh()
         {
-            this.character.UpdateFlags.AppearanceUpdateRequired = true;
-            this.character.Session.SendData(new InterfaceItemsPacketComposer(387, 28, 94, this).Serialize());
-            this.character.Bonuses.Refresh(false);
+            this.Character.UpdateFlags.AppearanceUpdateRequired = true;
+            this.Character.Session.SendData(new InterfaceItemsPacketComposer(387, 28, 94, this).Serialize());
+            this.Character.Bonuses.Refresh(false);
         }
 
         /// <summary>
@@ -98,8 +98,8 @@ namespace RuneScape.Model.Items.Containers
             // The character is unarmed (no weapons equipted).
             if (this[3] == null)
             {
-                Frames.SendTab(this.character, 73, 92);
-                this.character.Session.SendData(new StringPacketComposer("Unarmed", 92, 0).Serialize());
+                Frames.SendTab(this.Character, 73, 92);
+                this.Character.Session.SendData(new StringPacketComposer("Unarmed", 92, 0).Serialize());
                 this.SpecialWeapon = false;
                 return;
             }
@@ -111,13 +111,13 @@ namespace RuneScape.Model.Items.Containers
             if (EquipmentItems.WeaponInterfaces.ContainsKey(itemId))
             {
                 short childId = EquipmentItems.WeaponInterfaces[itemId];
-                Frames.SendTab(character, (short)(character.Preferences.Hd ? 87 : 73), childId);
-                character.Session.SendData(new StringPacketComposer(weaponName, childId, 0).Serialize());
+                Frames.SendTab(this.Character, (short)(this.Character.Preferences.Hd ? 87 : 73), childId);
+                this.Character.Session.SendData(new StringPacketComposer(weaponName, childId, 0).Serialize());
             }
             else
             {
-                Frames.SendTab(character, (short)(character.Preferences.Hd ? 87 : 73), 82);
-                character.Session.SendData(new StringPacketComposer(weaponName, 82, 0).Serialize());
+                Frames.SendTab(this.Character, (short)(this.Character.Preferences.Hd ? 87 : 73), 82);
+                this.Character.Session.SendData(new StringPacketComposer(weaponName, 82, 0).Serialize());
             }
 
             // Update specials interface.
@@ -135,7 +135,7 @@ namespace RuneScape.Model.Items.Containers
             if (EquipmentItems.SpecialWeapons.ContainsKey(itemId))
             {
                 byte[] data = EquipmentItems.SpecialWeapons[itemId];
-                character.Session.SendData(new InterfaceConfigPacketComposer(data[0], data[1], false).Serialize());
+                this.Character.Session.SendData(new InterfaceConfigPacketComposer(data[0], data[1], false).Serialize());
                 this.SpecialWeapon = true;
             }
         }

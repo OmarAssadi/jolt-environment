@@ -31,7 +31,7 @@ namespace RuneScape.Database.Account
     /// <summary>
     /// Represents a saver that loads accounts from a mysql database.
     /// </summary>
-    public class MySqlAccountSaver : IAccountSaver
+    public class SqlAccountSaver : IAccountSaver
     {
         #region Methods
         /// <summary>

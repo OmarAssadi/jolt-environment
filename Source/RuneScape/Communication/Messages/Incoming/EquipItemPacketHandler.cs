@@ -44,22 +44,16 @@ namespace RuneScape.Communication.Messages.Incoming
             packet.Skip(4);
             short wearId = packet.ReadLEShort();
             short index = packet.ReadLEShort();
-
-            if (index < 0 || index >= InventoryContainer.Size)
-            {
-                return;
-            }
-
             Item item = character.Inventory[index];
 
-            if (item == null)
+            if (index < 0 || index >= InventoryContainer.Size || item == null)
             {
                 return;
             }
 
             if (item.Definition.Id == wearId)
             {
-                /*sbyte targetSlot = EquipmentContainer.GetItemType(wearId);
+                sbyte targetSlot = EquipmentItems.GetItemType(wearId);
                 if (targetSlot == -1)
                 {
                     return;
@@ -68,7 +62,7 @@ namespace RuneScape.Communication.Messages.Incoming
                 character.Inventory.Refresh();
                 if (targetSlot == 3)
                 {
-                    if (EquipmentContainer.TwoHanded(item.Definition) &&
+                    if (EquipmentItems.IsTwoHanded(item.Id) &&
                         character.Equipment[5] != null)
                     {
                         if (!character.Inventory.AddItem(new Item(character.Equipment[5].Id,
@@ -83,7 +77,7 @@ namespace RuneScape.Communication.Messages.Incoming
                 }
                 else if (targetSlot == 5)
                 {
-                    if (EquipmentContainer.TwoHanded(item.Definition) &&
+                    if (EquipmentItems.IsTwoHanded(item.Id) &&
                         character.Equipment[3] != null)
                     {
                         if (!character.Inventory.AddItem(new Item(character.Equipment[3].Id,
@@ -112,7 +106,7 @@ namespace RuneScape.Communication.Messages.Incoming
                 }
                 Item equipment = new Item(wearId, oldAmount + item.Count);
                 character.Equipment[targetSlot] = equipment;
-                character.Equipment.Refresh();*/
+                character.Equipment.Refresh();
             }
         }
         #endregion Methods

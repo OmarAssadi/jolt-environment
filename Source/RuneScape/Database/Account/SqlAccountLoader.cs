@@ -32,7 +32,7 @@ namespace RuneScape.Database.Account
     /// <summary>
     /// Represents a loader that loads accounts from a mysql database.
     /// </summary>
-    public class MySqlAccountLoader : IAccountLoader
+    public class SqlAccountLoader : IAccountLoader
     {
         #region Methods
         /// <summary>
@@ -118,6 +118,7 @@ namespace RuneScape.Database.Account
                         // Energy.
                         result.Character.WalkingQueue.RunEnergy = (byte)data[29];
 
+                        // Inventory items.
                         if (data[30] is string)
                         {
                             string[] items = ((string)data[30]).Split(',');
