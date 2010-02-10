@@ -312,7 +312,7 @@ namespace RuneScape.Model.Characters
                 composer.AppendByte((byte)0);
                 composer.AppendByte((byte)1);
                 composer.AppendShort((short)result.Character.Index);
-                composer.AppendByte((byte)0);
+                composer.AppendByte((byte)1);
 
                 if (this.logSessions)
                 {

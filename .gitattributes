@@ -840,6 +840,7 @@ Source/RuneScape/Communication/Messages/Incoming/CommandPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/EquipItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/HdNotificationPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/IPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/ItemOptionsPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NewMapRegionPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NullPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/PingPacketHandler.cs -text

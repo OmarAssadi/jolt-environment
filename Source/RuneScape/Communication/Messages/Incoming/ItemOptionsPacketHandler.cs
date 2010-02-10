@@ -27,9 +27,9 @@ using RuneScape.Model.Characters;
 namespace RuneScape.Communication.Messages.Incoming
 {
     /// <summary>
-    /// Handler for for hd notification packet.
+    /// Handler for the hd notification packet.
     /// </summary>
-    public class HdNotificationPacketHandler : IPacketHandler
+    public class ItemOptionsPacketHandler : IPacketHandler
     {
         #region Methods
         /// <summary>
@@ -39,10 +39,20 @@ namespace RuneScape.Communication.Messages.Incoming
         /// <param name="packet">The packet containing handle data.</param>
         public void Handle(Character character, Packet packet)
         {
-            Program.Logger.WriteDebug("HD notification.");
-            character.Preferences.Hd = true;
-            Frames.SendHdInterface(character);
+            short slot = packet.ReadLEShortA();
+            short interfaceId = packet.ReadShort();
+            packet.Skip(2);
+            short itemId = packet.ReadShort();
+
+            if (slot < 0 || itemId < 0)
+            {
+                return;
+            }
+
+            switch (interfaceId)
+            {
+            }
         }
-        #endregion
+        #endregion Methods
     }
 }

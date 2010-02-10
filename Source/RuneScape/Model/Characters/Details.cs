@@ -54,22 +54,29 @@ namespace RuneScape.Model.Characters
         /// Gets whether the character is using hd or not.
         /// </summary>
         public bool Hd { get; private set; }
+        /// <summary>
+        /// Gets whether the character is using a resized client.
+        /// </summary>
+        public bool Resized { get; private set; }
         #endregion Properties
 
         #region Constructors
         /// <summary>
         /// Constructs a new character details.
         /// </summary>
+        /// <param name="node">The node providing connectivity between server and client.</param>
         /// <param name="username">The character's username.</param>
         /// <param name="password">The character's password.</param>
         /// <param name="hd">Whether the character is using an HD client or not.</param>
+        /// <param name="resized">Whether the character is usinged a resized client.</param>
         /// <param name="clientKey">The character's client session key.</param>
         /// <param name="serverKey">The character's server session key.</param>
-        public Details(Node node, string username, string password, bool hd, long clientKey, long serverKey) : this()
+        public Details(Node node, string username, string password, bool hd, bool resized, long clientKey, long serverKey) : this()
         {
             this.Username = username;
             this.Password = password;
             this.Hd = hd;
+            this.Resized = resized;
             this.Session = new GameSession(node, clientKey, serverKey);
         }
         #endregion Constructors

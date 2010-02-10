@@ -63,7 +63,7 @@ namespace RuneScape.Model.Items
         /// <summary>
         /// The ring equipment slot id.
         /// </summary>
-        public const sbyte Ring = 11;
+        public const sbyte Ring = 12;
         /// <summary>
         /// The arrow equipment slot id.
         /// </summary>

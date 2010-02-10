@@ -60,7 +60,7 @@ namespace RuneScape.Model.Items.Containers
         /// </summary>
         public override void Refresh()
         {
-            this.character.Session.SendData(new InterfaceItemsPacketComposer(149, 0, 93, this).Serialize());
+            this.Character.Session.SendData(new InterfaceItemsPacketComposer(149, 0, 93, this).Serialize());
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace RuneScape.Model.Items.Containers
         {
             if (!AddInternal(item))
             {
-                character.Session.SendData(new MessagePacketComposer("Not enough space in your inventory.").Serialize());
+                this.Character.Session.SendData(new MessagePacketComposer("Not enough space in your inventory.").Serialize());
                 return false;
             }
             Refresh();

@@ -80,6 +80,7 @@ namespace RuneScape.Model.Items.Containers
         /// </summary>
         public override void Refresh()
         {
+            UpdateWeapon();
             this.Character.UpdateFlags.AppearanceUpdateRequired = true;
             this.Character.Session.SendData(new InterfaceItemsPacketComposer(387, 28, 94, this).Serialize());
             this.Character.Bonuses.Refresh(false);
@@ -88,7 +89,7 @@ namespace RuneScape.Model.Items.Containers
         /// <summary>
         /// Updates the attack style tab interface according to the 
         /// </summary>
-        public void UpdateAttackStyle()
+        public void UpdateWeapon()
         {
             // Update animations according to equipted weapon.
             this.StandAnimation = UpdateStandAnimation();
@@ -111,12 +112,12 @@ namespace RuneScape.Model.Items.Containers
             if (EquipmentItems.WeaponInterfaces.ContainsKey(itemId))
             {
                 short childId = EquipmentItems.WeaponInterfaces[itemId];
-                Frames.SendTab(this.Character, (short)(this.Character.Preferences.Hd ? 87 : 73), childId);
+                Frames.SendTab(this.Character, (short)(this.Character.Preferences.Resized ? 87 : 73), childId);
                 this.Character.Session.SendData(new StringPacketComposer(weaponName, childId, 0).Serialize());
             }
             else
             {
-                Frames.SendTab(this.Character, (short)(this.Character.Preferences.Hd ? 87 : 73), 82);
+                Frames.SendTab(this.Character, (short)(this.Character.Preferences.Resized ? 87 : 73), 82);
                 this.Character.Session.SendData(new StringPacketComposer(weaponName, 82, 0).Serialize());
             }
 

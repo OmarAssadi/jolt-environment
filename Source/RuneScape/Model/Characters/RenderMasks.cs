@@ -233,9 +233,9 @@ namespace RuneScape.Model.Characters
                     properties.AppendShort((short)(0x100 + character.Appearance.Wrist));
                 }
 
-                if (hands != null)
+                if (feet != null)
                 {
-                    properties.AppendShort((short)(32768 + hands.Definition.EquipId));
+                    properties.AppendShort((short)(32768 + feet.Definition.EquipId));
                 }
                 else
                 {
@@ -272,16 +272,13 @@ namespace RuneScape.Model.Characters
             properties.AppendByte(character.Appearance.SkinColor); //Skin color
 
             // Emotions.
-            //properties.AppendShort(character.Equipment.StandAnimation); // stand
-            properties.AppendShort(0x328); // stand
+            properties.AppendShort(character.Equipment.StandAnimation); // stand
             properties.AppendShort(0x337); // stand turn
-            //properties.AppendShort(character.Equipment.WalkAnimation); // walk
-            properties.AppendShort(0x333); // walk
+            properties.AppendShort(character.Equipment.WalkAnimation); // walk
             properties.AppendShort(0x334); // turn 180
             properties.AppendShort(0x335); // turn 90 cw
             properties.AppendShort(0x336); // turn 90 ccw
-            //properties.AppendShort(character.Equipment.RunAnimation); // run
-            properties.AppendShort(0x338); // run
+            properties.AppendShort(character.Equipment.RunAnimation); // run
 
             properties.AppendLong(character.LongName); // character's name
             properties.AppendByte((byte)character.Skills.CombatLevel); // combat level

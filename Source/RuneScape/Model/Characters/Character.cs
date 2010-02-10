@@ -150,6 +150,7 @@ namespace RuneScape.Model.Characters
             // Character sub-components.
             this.Preferences = new Preferences();
             this.Preferences.Hd = details.Hd;
+            this.Preferences.Resized = details.Resized;
             this.UpdateFlags = new UpdateFlags();
             this.UpdateFlags.LastRegion = this.Location;
             this.Sprites = new Sprites();

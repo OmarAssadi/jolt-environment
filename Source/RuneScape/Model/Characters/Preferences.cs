@@ -83,6 +83,10 @@ namespace RuneScape.Model.Characters
         /// </summary>
         public bool Hd { get; set; }
         /// <summary>
+        /// Gets or sets whether the character's connected client is resized.
+        /// </summary>
+        public bool Resized { get; set; }
+        /// <summary>
         /// Gets or sets whether the character is using a singe click mouse.
         /// </summary>
         public bool SingleMouse { get; set; }

@@ -356,7 +356,7 @@ namespace RuneScape.Model.Items
         /// </summary>
         public static readonly short[] FullMask =
         {
-            4502, 6623, 7990, 7594, 1153, 1155, 1157,
+            4502, 4551, 6623, 7990, 7594, 1153, 1155, 1157,
 		    1159, 1161, 1163, 1165, 4732, 5554, 4753, 4611, 6188, 3507, 4511,
 		    4056, 4071, 4724, 2665, 1053, 1055, 1057, 8464, 8466, 8468, 8470, 
             8472, 8474, 8476, 8478, 8480, 8482, 8484, 8486, 8488, 8490, 8492,
@@ -495,6 +495,9 @@ namespace RuneScape.Model.Items
             WeaponStandAnimations = GenWeaponStandAnimations();
             WeaponWalkAnimations = GenWeaponWalkAnimations();
             WeaponRunAnimations = GenWeaponRunAnimations();
+            WeaponAttackAnimation1 = GenWeaponAttackAnimations1();
+            WeaponAttackAnimation2 = GenWeaponAttackAnimations2();
+            TwoHandedWeapons = GenTwoHandedWeapons();
         }
 
         /// <summary>

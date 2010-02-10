@@ -63,14 +63,22 @@ namespace RuneScape.Communication.Login
                     return;
                 }
 
-                p.Skip(148);
+                // Client preferences.
+                byte lowMemory = p.ReadByte();
+                bool hd = p.ReadByte() == 1 ? true : false;
+                bool resized = p.ReadByte() == 1 ? true : false;
+                short width = p.ReadShort();
+                short height = p.ReadShort();
 
-                bool hd = true;
+                Console.WriteLine("HD: " + hd);
+                Console.WriteLine("Resized: " + resized);
+
+                p.Skip(141);
+
                 int tmpEncryptPacketSize = p.ReadByte();
                 if (tmpEncryptPacketSize != 10)
                 {
                     int encryptPacketId = p.ReadByte();
-                    hd = false;
                 }
 
                 // Session data.
@@ -91,7 +99,7 @@ namespace RuneScape.Communication.Login
                 string password = Hash.GetHash(username + Hash.GetHash(p.ReadString(), HashType.SHA1), HashType.SHA1);
 
                 // Try to load the account with the given details.
-                Details details = new Details(request.Connection, username, password, hd, clientKey, serverKey);
+                Details details = new Details(request.Connection, username, password, hd, resized, clientKey, serverKey);
                 Program.Logger.WriteDebug("Login request: " + details.ToString());
                 Task.Factory.StartNew(() => GameEngine.World.CharacterManager.LoadAccount(details, type));
                 request.Finished = true;

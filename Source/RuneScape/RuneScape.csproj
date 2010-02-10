@@ -68,6 +68,7 @@
     <Compile Include="Communication\Login\ProtocolManager.cs" />
     <Compile Include="Communication\Messages\Incoming\EquipItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\HdNotificationPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\ItemOptionsPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ReportAbusePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\SwapItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\SwapInterfaceItemPacketHandler.cs" />
