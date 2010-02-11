@@ -64,7 +64,7 @@ namespace RuneScape.Communication.Login
                 }
 
                 // Client preferences.
-                byte lowMemory = p.ReadByte();
+                bool lowMemory = p.ReadByte() == 1 ? true : false;
                 bool hd = p.ReadByte() == 1 ? true : false;
                 bool resized = p.ReadByte() == 1 ? true : false;
                 short width = p.ReadShort();

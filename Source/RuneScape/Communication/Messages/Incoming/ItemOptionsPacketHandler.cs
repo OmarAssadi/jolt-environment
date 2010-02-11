@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using RuneScape.Content.Interfaces;
 using RuneScape.Model.Characters;
 
 namespace RuneScape.Communication.Messages.Incoming
@@ -44,13 +45,27 @@ namespace RuneScape.Communication.Messages.Incoming
             packet.Skip(2);
             short itemId = packet.ReadShort();
 
-            if (slot < 0 || itemId < 0)
-            {
-                return;
-            }
-
             switch (interfaceId)
             {
+                /*
+                 * Unequip item (Equipment tab).
+                 */
+                case EquipmentTab.InterfaceId:
+                    {
+                        if (character.Equipment[slot] != null)
+                        {
+                            if (character.Inventory.AddItem(character.Equipment[slot]))
+                            {
+                                character.Equipment.Set(slot, null);
+                            }
+                        }
+                        break;
+                    }
+                default:
+                    {
+                        Program.Logger.WriteDebug("Unhandled item option: " + interfaceId);
+                        break;
+                    }
             }
         }
         #endregion Methods

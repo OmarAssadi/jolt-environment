@@ -62,6 +62,8 @@ namespace RuneScape.Model.Items.Containers
         /// The run animation according to the equipted weapon.
         /// </summary>
         public short RunAnimation { get; private set; }
+
+        public byte AttackStyle { get; private set; }
         #endregion Properties
 
         #region Constructors
@@ -75,6 +77,32 @@ namespace RuneScape.Model.Items.Containers
         #endregion Constructors
 
         #region Methods
+        /// <summary>
+        /// Sets a certain slot's item.
+        /// </summary>
+        /// <param name="slot">The slot to set.</param>
+        /// <param name="item">The item to set on slot.</param>
+        /// <returns>Returns true if successfully set; false if not.</returns>
+        public bool Set(int slot, Item item)
+        {
+            try
+            {
+                if (slot == 3)
+                {
+                    this.Character.Preferences.AttackStyle = 1;
+                    this.Character.Session.SendData(new ConfigPacketComposer(43, 0).Serialize());
+                }
+                this[slot] = item;
+                Refresh();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Program.Logger.WriteException(ex);
+                return false;
+            }
+        }
+
         /// <summary>
         /// Refreshes the character's equipment appearance.
         /// </summary>
