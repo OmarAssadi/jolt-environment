@@ -121,32 +121,20 @@ namespace RuneScape.Database.Account
                         // Inventory items.
                         if (data[30] is string)
                         {
-                            string[] items = ((string)data[30]).Split(',');
+                            result.Character.Inventory.Deserialize((string)data[30]);
+                        }
 
-                            for (int i = 0; i < items.Length; i++)
-                            {
-                                if (items[i] != string.Empty)
-                                {
-                                    string[] subData = items[i].Split(':');
-                                    string[] subSubData = subData[0].Split('=');
-
-                                    int slot = int.Parse(subSubData[0]);
-                                    short itemId = short.Parse(subSubData[1]);
-                                    int amount = int.Parse(subData[1]);
-
-                                    if (amount > 0)
-                                    {
-                                        result.Character.Inventory[slot] = new Item(itemId, amount);
-                                    }
-                                }
-                            }
+                        // Equipment items.
+                        if (data[31] is string)
+                        {
+                            result.Character.Equipment.Deserialize((string)data[31]);
                         }
 
                         // Preferences.
-                        result.Character.Preferences.SingleMouse = (bool)data[32];
-                        result.Character.Preferences.DisableChatEffects = (bool)data[33];
-                        result.Character.Preferences.SplitChat = (bool)data[34];
-                        result.Character.Preferences.AcceptAid = (bool)data[35];
+                        result.Character.Preferences.SingleMouse = (bool)data[33];
+                        result.Character.Preferences.DisableChatEffects = (bool)data[34];
+                        result.Character.Preferences.SplitChat = (bool)data[35];
+                        result.Character.Preferences.AcceptAid = (bool)data[36];
                     }
                 }
                 else // User doesn't exist or password is wrong.

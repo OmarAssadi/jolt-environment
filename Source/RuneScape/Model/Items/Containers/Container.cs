@@ -578,6 +578,62 @@ namespace RuneScape.Model.Items.Containers
         }
 
         /// <summary>
+        /// Serializes the current container.
+        /// </summary>
+        /// <returns>Returns a string representing the serialized query.</returns>
+        public string Serialize()
+        {
+            if (this.TakenSlots > 0)
+            {
+                string query = string.Empty;
+
+                for (int i = 0; i < this.Capacity; i++)
+                {
+                    if (this[i] != null && this[i].Count > 0)
+                    {
+                        if (query != string.Empty)
+                        {
+                            query += ",";
+                        }
+                        query += (i + "=" + this[i].Id + ":" + this[i].Count);
+                    }
+                }
+                return query;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Deserializes a string of data and generates specified container items.
+        /// </summary>
+        /// <param name="data">The data to parse.</param>
+        public void Deserialize(string data)
+        {
+            string[] items = data.Split(',');
+
+            for (int i = 0; i < items.Length; i++)
+            {
+                if (items[i] != string.Empty)
+                {
+                    string[] subData = items[i].Split(':');
+                    string[] subSubData = subData[0].Split('=');
+
+                    int slot = int.Parse(subSubData[0]);
+                    short itemId = short.Parse(subSubData[1]);
+                    int amount = int.Parse(subData[1]);
+
+                    if (amount > 0)
+                    {
+                        this[slot] = new Item(itemId, amount);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
         /// Produces an array holding items from this container.
         /// </summary>
         /// <param name="sort">Whether to sort the items.</param>

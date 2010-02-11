@@ -46,6 +46,7 @@ namespace RuneScape.Database.Account
                 {
                     client.AddParameter("id", character.MasterId);
 
+                    // Appearance.
                     client.AddParameter("gender", character.Appearance.Gender);
                     client.AddParameter("head", character.Appearance.Head);
                     client.AddParameter("chest", character.Appearance.Torso);
@@ -60,34 +61,17 @@ namespace RuneScape.Database.Account
                     client.AddParameter("feet_color", character.Appearance.FeetColor);
                     client.AddParameter("skin_color", character.Appearance.SkinColor);
 
+                    // Preferences.
                     client.AddParameter("coord_x", character.Location.X);
                     client.AddParameter("coord_y", character.Location.Y);
                     client.AddParameter("coord_z", character.Location.Z);
                     client.AddParameter("run_energy", character.WalkingQueue.RunEnergy);
 
-                    InventoryContainer invContainer = character.Inventory;
-                    if (invContainer.TakenSlots > 0)
-                    {
-                        string invQuery = string.Empty;
-                        for (int i = 0; i < invContainer.Capacity; i++)
-                        {
-                            if (invContainer[i] != null && invContainer[i].Count > 0)
-                            {
-                                if (invQuery != string.Empty)
-                                {
-                                    invQuery += ",";
-                                }
-                                invQuery += (i + "=" + invContainer[i].Id + ":" + invContainer[i].Count);
-                            }
-                        }
-                        client.AddParameter("inv", invQuery);
-                    }
-                    else
-                    {
-                        client.AddParameter("inv", null);
-                    }
+                    // Containers.
+                    client.AddParameter("inv", character.Inventory.Serialize());
+                    client.AddParameter("eqp", character.Equipment.Serialize());
 
-                    string query = "UPDATE characters SET gender=@gender,head=@head,chest=@chest,arms=@arms,hands=@hands,legs=@legs,feet=@feet,beard=@beard,hair_color=@hair_color,torso_color=@torso_color,leg_color=@leg_color,feet_color=@feet_color,skin_color=@skin_color, coord_x=@coord_x,coord_y=@coord_y,coord_z=@coord_z,run_energy=@run_energy,inventory_items=@inv WHERE id=@id;";
+                    string query = "UPDATE characters SET gender=@gender,head=@head,chest=@chest,arms=@arms,hands=@hands,legs=@legs,feet=@feet,beard=@beard,hair_color=@hair_color,torso_color=@torso_color,leg_color=@leg_color,feet_color=@feet_color,skin_color=@skin_color, coord_x=@coord_x,coord_y=@coord_y,coord_z=@coord_z,run_energy=@run_energy,inventory_items=@inv,equipment_items=@eqp WHERE id=@id;";
                     client.ExecuteUpdate(query);
                     return true;
                 }
