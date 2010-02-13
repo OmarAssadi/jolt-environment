@@ -22,54 +22,56 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using RuneScape.Model.Characters;
+
 namespace RuneScape.Model.Items
 {
     /// <summary>
-    /// Defines management for item related content.
+    /// Defines management for ground items.
     /// </summary>
-    public class ItemManager
+    public class GroundItemManager
     {
         #region Fields
         /// <summary>
-        /// Contains all definitions loaded from database.
+        /// A container holding all existing/spawned ground items.
         /// </summary>
-        private ItemDefinition[] definitions;
+        private List<GroundItem> items = new List<GroundItem>();
         #endregion Fields
 
         #region Properties
         /// <summary>
-        /// Gets the ground items manager.
+        /// Gets the ground items.
         /// </summary>
-        public GroundItemManager GroundItems { get; private set; }
+        public List<GroundItem> Items { get { return this.items; } }
         #endregion Properties
-
-        #region Constructors
-        /// <summary>
-        /// Constructs a new item manager.
-        /// </summary>
-        public ItemManager()
-        {
-            // Load the definitions.
-            this.definitions = ItemDefinition.Load();
-
-            // Fill specific equipment information.
-            EquipmentItems.Fill();
-
-            // Construct sub managers.
-            this.GroundItems = new GroundItemManager();
-        }
-        #endregion Constructors
 
         #region Methods
         /// <summary>
-        /// Get an item definition from the array specified by the id.
+        /// Creates a ground item.
         /// </summary>
-        /// <param name="itemId">The item id of the item definitions wanted.</param>
-        /// <returns>Returns a RuneScape.Model.Items.ItemDefinition instance 
-        /// containing specified item definitions.</returns>
-        public ItemDefinition GetDefinition(int itemId)
+        /// <param name="item">The item to create.</param>
+        /// <param name="location">The location of the item.</param>
+        public void Create(Item item, Location location)
         {
-            return this.definitions[itemId];
+            GroundItem gItem = new GroundItem(location, item.Id, item.Count);
+            this.items.Add(gItem);
+            gItem.GlobalSpawn();
+        }
+
+        /// <summary>
+        /// Refreshes all the ground items so it is visible to the character.
+        /// </summary>
+        /// <param name="character">The character to refresh ground items for.</param>
+        public void Refresh(Character character)
+        {
+            this.items.ForEach((g) =>
+            {
+                if (character.Location.WithinDistance(g.Location) && !g.Destroyed 
+                    && (character == g.Character || g.Character == null))
+                {
+                    g.Spawn(character);
+                }
+            });
         }
         #endregion Methods
     }

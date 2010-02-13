@@ -102,18 +102,6 @@ namespace RuneScape
                     throw ex;
                 }
 
-                int maxThreads;
-                int minThreads;
-
-                // Configure the min/max threads availible in the thread pool.
-                // http://msdn.microsoft.com/en-us/library/system.threading.threadpool.aspx
-                if ((minThreads = Configuration["ThreadPool.MinThreads"]) > 0)
-                    ThreadPool.SetMinThreads(minThreads, minThreads);
-                if ((maxThreads = Configuration["ThreadPool.MaxThreads"]) > 0)
-                    ThreadPool.SetMaxThreads(maxThreads, maxThreads);
-
-                Program.Logger.WriteInfo("Thread pool configured (min: " + minThreads + ", max: " + maxThreads + ").");
-
                 // Initialize the database server.
                 SqlDatabaseServer databaseServer = new SqlDatabaseServer(
                     Configuration["Master.Database.Host"],

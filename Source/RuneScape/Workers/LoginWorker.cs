@@ -72,17 +72,17 @@ namespace RuneScape.Workers
                      * Allow some rest before processing again so the remote 
                      * endpoint is able to send the amount of data it needs to.
                      * Process any requests.
-                     */ 
+                     */
                     Thread.Sleep(LoginWorker.Interval);
+
+                    this.service.Process();
                 }
                 catch (Exception ex)
                 {
                     Program.Logger.WriteException(ex);
                 }
-
-                this.service.Process();
             }
-            this.Abort();
+            Abort();
         }
 
         /// <summary>

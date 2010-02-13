@@ -65,6 +65,10 @@ namespace RuneScape
         /// The autosave worker.
         /// </summary>
         private static AutoSaveWorker autosaveWorker = new AutoSaveWorker();
+        /// <summary>
+        /// The items worker.
+        /// </summary>
+        private static ItemsWorker itemsWorker = new ItemsWorker();
         #endregion Fields
 
         #region Properites
@@ -89,6 +93,10 @@ namespace RuneScape
         /// Gets the account worker.
         /// </summary>
         public static AccountWorker AccountWorker { get { return accountWorker; } }
+        /// <summary>
+        /// Gets the items worker.
+        /// </summary>
+        public static ItemsWorker ItemsWorker { get { return itemsWorker; } }
         #endregion Properites
 
         #region Methods
@@ -108,6 +116,7 @@ namespace RuneScape
             majorWorker.Start();
             accountWorker.Start();
             autosaveWorker.Start();
+            itemsWorker.Start();
         }
 
         /// <summary>
@@ -115,7 +124,6 @@ namespace RuneScape
         /// </summary>
         public static void Terminate()
         {
-            autosaveWorker.Abort();
         }
         #endregion Methods
     }

@@ -45,11 +45,11 @@ namespace RuneScape.Model.Items
         /// <summary>
         /// Gets or sets the time at which the item was dropped.
         /// </summary>
-        public DateTime TimeCreated { get; private set; }
+        public DateTime TimeCreated { get; set; }
         /// <summary>
         /// Whether to destroy the item after the self-show timer is done.
         /// </summary>
-        public bool Destroyed { get; private set; }
+        public bool Destroyed { get; set; }
         /// <summary>
         /// Whether the item was spawned.
         /// </summary>
@@ -84,7 +84,7 @@ namespace RuneScape.Model.Items
         {
             this.Location = location;
             this.Character = character;
-            this.Spawned = (this.Character == null) ? true : false;
+            this.TimeCreated = DateTime.Now;
         }
 
         /// <summary>
@@ -93,7 +93,16 @@ namespace RuneScape.Model.Items
         /// <param name="location">The location at which the item will be visible.</param>
         /// <param name="itemId">The id of the item to spawn.</param>
         /// <param name="itemCount">The amount of the item to spawn.</param>
-        public GroundItem(Location location, short itemId, int itemCount) : this(location, null, itemId, itemCount) { }
+        public GroundItem(Location location, short itemId, int itemCount) 
+            : this(location, null, itemId, itemCount) { }
+        /// <summary>
+        /// Constructs a character's dropped item.
+        /// </summary>
+        /// <param name="character">Any character that may own the item.</param>
+        /// <param name="itemId">The id of the item to spawn.</param>
+        /// <param name="itemCount">The amount of the item to spawn.</param>
+        public GroundItem(Character character, short itemId, int itemCount) 
+            : this(character.Location, character, itemId, itemCount) { }
         #endregion Constructors
 
         #region Methods
@@ -107,15 +116,33 @@ namespace RuneScape.Model.Items
                 this.Character.Session.SendData(new CoordinatePacketComposer(this.Character, this.Location).Serialize());
                 this.Character.Session.SendData(new SpawnGroundItemPacketComposer(this.Id, this.Count).Serialize());
             }
-            else
+        }
+
+        /// <summary>
+        /// Spawns a ground item for the specified character.
+        /// </summary>
+        /// <param name="character">The character to spawn item for.</param>
+        public void Spawn(Character character)
+        {
+            character.Session.SendData(new CoordinatePacketComposer(character, this.Location).Serialize());
+            character.Session.SendData(new SpawnGroundItemPacketComposer(this.Id, this.Count).Serialize());
+        }
+
+        /// <summary>
+        /// Spawns the ground item for all characters within distance.
+        /// </summary>
+        public void GlobalSpawn()
+        {
+            List<Character> characters = new List<Character>(
+                GameEngine.World.CharacterManager.Characters.Values);
+
+            characters.ForEach((c) =>
             {
-                List<Character> characters = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
-                characters.ForEach((c) =>
+                if (c.Location.WithinDistance(this.Location))
                 {
-                    c.Session.SendData(new CoordinatePacketComposer(this.Character, this.Location).Serialize());
-                    c.Session.SendData(new SpawnGroundItemPacketComposer(this.Id, this.Count).Serialize());
-                });
-            }
+                    Spawn(c);
+                }
+            });
         }
 
         /// <summary>
@@ -128,15 +155,33 @@ namespace RuneScape.Model.Items
                 this.Character.Session.SendData(new CoordinatePacketComposer(this.Character, this.Location).Serialize());
                 this.Character.Session.SendData(new DespawnGroundItemPacketComposer(this.Id).Serialize());
             }
-            else
+        }
+
+        /// <summary>
+        /// Despawns the item for the specified character.
+        /// </summary>
+        /// <param name="character">The character to despawn item for.</param>
+        public void Despawn(Character character)
+        {
+            character.Session.SendData(new CoordinatePacketComposer(character, this.Location).Serialize());
+            character.Session.SendData(new DespawnGroundItemPacketComposer(this.Id).Serialize());
+        }
+
+        /// <summary>
+        /// Despawns the item for all characters within distance.
+        /// </summary>
+        public void GlobalDespawn()
+        {
+            List<Character> characters = new List<Character>(
+                GameEngine.World.CharacterManager.Characters.Values);
+
+            characters.ForEach((c) =>
             {
-                List<Character> characters = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
-                characters.ForEach((c) =>
+                if (c.Location.WithinDistance(this.Location))
                 {
-                    c.Session.SendData(new CoordinatePacketComposer(this.Character, this.Location).Serialize());
-                    c.Session.SendData(new DespawnGroundItemPacketComposer(this.Id).Serialize());
-                });
-            }
+                    Despawn(c);
+                }
+            });
         }
         #endregion Methods
     }

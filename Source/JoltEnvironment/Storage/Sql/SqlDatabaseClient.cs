@@ -86,8 +86,8 @@ namespace JoltEnvironment.Storage.Sql
         /// <summary>
         /// Constructs a new SqlDatabaseClient with the specified handle id, and manager.
         /// </summary>
-        /// <param name="handle"></param>
-        /// <param name="manager"></param>
+        /// <param name="handle">The client's handle.</param>
+        /// <param name="manager">The manager that supports the client.</param>
         public SqlDatabaseClient(uint handle, SqlDatabaseManager manager)
         {
             if (manager == null)
@@ -100,6 +100,25 @@ namespace JoltEnvironment.Storage.Sql
             this.connection = new MySqlConnection(manager.ConnectionString);
             this.command = connection.CreateCommand();
             this.LastActivity = DateTime.Now;
+        }
+
+        /// <summary>
+        /// Constructs a new SqlDatabaseClient with the specified handle id, and manager.
+        /// </summary>
+        /// <param name="manager">The manager that supports the client.</param>
+        public SqlDatabaseClient(SqlDatabaseManager manager)
+        {
+            if (manager == null)
+            {
+                throw new ArgumentNullException("The specified SqlDatabaseManager object is null.");
+            }
+
+            this.Handle = 0;
+            this.manager = manager;
+            this.connection = new MySqlConnection(manager.ConnectionString);
+            this.command = connection.CreateCommand();
+            this.LastActivity = DateTime.Now;
+            Connect();
         }
         #endregion Constructors
 

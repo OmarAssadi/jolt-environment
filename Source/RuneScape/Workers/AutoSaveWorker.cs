@@ -67,6 +67,10 @@ namespace RuneScape.Workers
             {
                 Program.Logger.WriteException(ex);
             }
+            finally
+            {
+                Abort();
+            }
         }
 
         /// <summary>

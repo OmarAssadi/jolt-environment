@@ -90,7 +90,8 @@ namespace RuneScape.Model.Objects
         /// </summary>
         public void SpawnGlobal()
         {
-            List<Character> characters = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
+            List<Character> characters = new List<Character>(
+                GameEngine.World.CharacterManager.Characters.Values);
             characters.ForEach((c) =>
             {
                 if (c.Location.WithinDistance(this.Location))
@@ -115,7 +116,8 @@ namespace RuneScape.Model.Objects
         /// </summary>
         public void DespawnGlobal()
         {
-            List<Character> characters = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
+            List<Character> characters = new List<Character>(
+                GameEngine.World.CharacterManager.Characters.Values);
             characters.ForEach((c) =>
             {
                 if (c.Location.WithinDistance(this.Location))

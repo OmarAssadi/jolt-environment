@@ -102,6 +102,7 @@
     <Compile Include="Model\Items\EquipmentItems.cs" />
     <Compile Include="Model\Items\EquipmentSlot.cs" />
     <Compile Include="Model\Items\GroundItem.cs" />
+    <Compile Include="Model\Items\GroundItemManager.cs" />
     <Compile Include="Model\Items\Item.cs" />
     <Compile Include="Model\Items\ItemDefinition.cs" />
     <Compile Include="Model\Items\ItemDefinitionBonuses.cs" />
@@ -239,6 +240,7 @@
     <Compile Include="Utilities\Filtering\BadWords.cs" />
     <Compile Include="Workers\AccountWorker.cs" />
     <Compile Include="Workers\AutoSaveWorker.cs" />
+    <Compile Include="Workers\ItemsWorker.cs" />
     <Compile Include="Workers\MajorWorker.cs" />
     <Compile Include="Workers\Worker.cs" />
     <Compile Include="Workers\LoginWorker.cs" />

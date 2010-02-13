@@ -62,13 +62,13 @@ namespace RuneScape.Workers
         /// </summary>
         protected override void Run()
         {
-            try
+            /*
+             * Because the server requires saving at shutdown, we cannot 
+             * end this thread on the condition of GameServer.IsRunning.
+             */
+            while (true)
             {
-                /*
-                 * Because the server requires saving at shutdown, we cannot 
-                 * end this thread on the condition of GameServer.IsRunning.
-                 */
-                while (true)
+                try
                 {
                     /*
                      * We need to sleep the thread for a few milliseconds, 
@@ -87,14 +87,14 @@ namespace RuneScape.Workers
                         Program.Logger.WriteWarn("Could not save " + character.Name + "'s game.");
                     }
                 }
-            }
-            catch (ThreadAbortException)
-            {
-                Thread.ResetAbort();
-            }
-            catch (Exception ex)
-            {
-                Program.Logger.WriteException(ex);
+                catch (ThreadAbortException)
+                {
+                    Thread.ResetAbort();
+                }
+                catch (Exception ex)
+                {
+                    Program.Logger.WriteException(ex);
+                }
             }
         }
 

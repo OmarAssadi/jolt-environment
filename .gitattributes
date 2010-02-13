@@ -943,6 +943,7 @@ Source/RuneScape/Model/Items/Containers/InventoryContainer.cs -text
 Source/RuneScape/Model/Items/EquipmentItems.cs -text
 Source/RuneScape/Model/Items/EquipmentSlot.cs -text
 Source/RuneScape/Model/Items/GroundItem.cs -text
+Source/RuneScape/Model/Items/GroundItemManager.cs -text
 Source/RuneScape/Model/Items/Item.cs -text
 Source/RuneScape/Model/Items/ItemDefinition.cs -text
 Source/RuneScape/Model/Items/ItemDefinitionBonuses.cs -text
@@ -979,6 +980,7 @@ Source/RuneScape/Utilities/Indexing/NpcSlotManager.cs -text
 Source/RuneScape/Utilities/Indexing/SlotManager.cs -text
 Source/RuneScape/Workers/AccountWorker.cs -text
 Source/RuneScape/Workers/AutoSaveWorker.cs -text
+Source/RuneScape/Workers/ItemsWorker.cs -text
 Source/RuneScape/Workers/LoginWorker.cs -text
 Source/RuneScape/Workers/MajorWorker.cs -text
 Source/RuneScape/Workers/Worker.cs -text

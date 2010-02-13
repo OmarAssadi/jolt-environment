@@ -231,16 +231,9 @@ namespace RuneScape.Content
                         new GroundItem(character.Location, character, objId, 1).Spawn();
                     }
 
-                    else if (command.Equals("report"))
+                    else if (command.Equals("drop"))
                     {
-                        Frames.SendInterface(character, 553, false);
-                    }
-
-                    else if (command.Equals("runscript"))
-                    {
-                        int id = int.Parse(arguments[1]);
-                        string argument = arguments[2];
-                        character.Session.SendData(new RunScriptPacketComposer(id, "s", argument).Serialize());
+                        GameEngine.World.ItemManager.GroundItems.Create(new Item(short.Parse(arguments[1])), character.Location);
                     }
                     #endregion Object
                 }
