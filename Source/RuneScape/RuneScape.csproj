@@ -66,12 +66,14 @@
     <Compile Include="Communication\Login\Handlers\SessionRequestProtocolHandler.cs" />
     <Compile Include="Communication\Login\LoginVerification.cs" />
     <Compile Include="Communication\Login\ProtocolManager.cs" />
+    <Compile Include="Communication\Messages\Incoming\DropItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\EquipItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\HdNotificationPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ItemOptionsPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ReportAbusePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\SwapItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\SwapInterfaceItemPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\TakeItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Outgoing\AnimateInterfacePacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\CharacterRenderingPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\CoordinatePacketComposer.cs" />
@@ -197,6 +199,7 @@
     </Compile>
     <Compile Include="Model\Characters\Appearance.cs" />
     <Compile Include="Model\Characters\Skills.cs" />
+    <Compile Include="Utilities\CoordinateEvent.cs" />
     <Compile Include="Utilities\Indexing\ClientSlot.cs" />
     <Compile Include="Model\Characters\DeathIcons.cs" />
     <Compile Include="Model\Characters\Details.cs" />

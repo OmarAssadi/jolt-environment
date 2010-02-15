@@ -40,7 +40,7 @@ namespace RuneScape.Model.Items
         /// <summary>
         /// The character who had dropped the item (if there is no owner, returns null).
         /// </summary>
-        public Character Character { get; private set; }
+        public Character Character { get; set; }
 
         /// <summary>
         /// Gets or sets the time at which the item was dropped.
@@ -53,7 +53,7 @@ namespace RuneScape.Model.Items
         /// <summary>
         /// Whether the item was spawned.
         /// </summary>
-        public bool Spawned { get; private set; }
+        public bool Spawned { get; set; }
 
         /// <summary>
         /// The timespawn between now and the time the item was created.

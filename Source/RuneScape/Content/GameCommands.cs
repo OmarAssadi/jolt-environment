@@ -233,7 +233,7 @@ namespace RuneScape.Content
 
                     else if (command.Equals("drop"))
                     {
-                        GameEngine.World.ItemManager.GroundItems.Create(new Item(short.Parse(arguments[1])), character.Location);
+                        GameEngine.World.ItemManager.GroundItems.Create(new Item(short.Parse(arguments[1])), character.Location, character);
                     }
                     #endregion Object
                 }

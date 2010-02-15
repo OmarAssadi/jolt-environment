@@ -230,12 +230,15 @@ namespace RuneScape.Model.Items.Containers
         /// <param name="container">The container to add.</param>
         protected void AddAllInternal(Container container)
         {
-            for (int i = 0; i < container.capacity; i++)
+            lock (this.obj)
             {
-                Item item = container[i];
-                if (item != null)
+                for (int i = 0; i < container.capacity; i++)
                 {
-                    AddInternal(item);
+                    Item item = container[i];
+                    if (item != null)
+                    {
+                        AddInternal(item);
+                    }
                 }
             }
         }

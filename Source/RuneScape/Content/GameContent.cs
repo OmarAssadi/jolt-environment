@@ -23,6 +23,7 @@ using System.Linq;
 using System.Text;
 
 using RuneScape.Content.Interfaces;
+using RuneScape.Utilities;
 
 namespace RuneScape.Content
 {
@@ -31,12 +32,16 @@ namespace RuneScape.Content
     /// </summary>
     public class GameContent
     {
-        #region Fields
+        #region Properties
         /// <summary>
         /// The interface manager maintaining all interfaces.
         /// </summary>
         public InterfaceManager InterfaceManager { get; set; }
-        #endregion Fields
+        /// <summary>
+        /// Gets the queued coordiante events.
+        /// </summary>
+        public List<CoordinateEvent> CoodinateEvents { get; private set; }
+        #endregion Properties
 
         #region Constructors
         /// <summary>
@@ -44,9 +49,35 @@ namespace RuneScape.Content
         /// </summary>
         public GameContent()
         {
-            // Interface management.
             this.InterfaceManager = new InterfaceManager();
+            this.CoodinateEvents = new List<CoordinateEvent>();
         }
         #endregion Constructors
+
+        #region Methods
+        /// <summary>
+        /// Registers a coordinate event.
+        /// </summary>
+        /// <param name="ce">The coordinate event.</param>
+        public void RegisterCE(CoordinateEvent ce)
+        {
+            lock (this.CoodinateEvents)
+            {
+                this.CoodinateEvents.Add(ce);
+            }
+        }
+
+        /// <summary>
+        /// Unregisters a coordinate event.
+        /// </summary>
+        /// <param name="ce">The coordinate event.</param>
+        public void UnregisterCE(CoordinateEvent ce)
+        {
+            lock (this.CoodinateEvents)
+            {
+                this.CoodinateEvents.Remove(ce);
+            }
+        }
+        #endregion Methods
     }
 }

@@ -837,6 +837,7 @@ Source/RuneScape/Communication/Messages/Frames.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ButtonPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ChatPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/CommandPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/DropItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/EquipItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/HdNotificationPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/IPacketHandler.cs -text
@@ -849,6 +850,7 @@ Source/RuneScape/Communication/Messages/Incoming/RemoveInterfacePacketHandler.cs
 Source/RuneScape/Communication/Messages/Incoming/ReportAbusePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/SwapInterfaceItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/SwapItemPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/TakeItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/WalkingPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/AnimateInterfacePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CharacterRenderingPacketComposer.cs -text
@@ -972,6 +974,7 @@ Source/RuneScape/RuneScape.csproj -text
 Source/RuneScape/Services/LoginService.cs -text
 Source/RuneScape/Services/MajorUpdatesService.cs -text
 Source/RuneScape/Utilities/ChatUtilities.cs -text
+Source/RuneScape/Utilities/CoordinateEvent.cs -text
 Source/RuneScape/Utilities/DatabaseVersionCheck.cs -text
 Source/RuneScape/Utilities/DirectionUtilities.cs -text
 Source/RuneScape/Utilities/Filtering/BadWords.cs -text

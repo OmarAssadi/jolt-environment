@@ -24,6 +24,7 @@ using System.Threading.Tasks;
 using RuneScape.Model;
 using RuneScape.Model.Characters;
 using RuneScape.Model.Npcs;
+using RuneScape.Utilities;
 
 namespace RuneScape.Services
 {
@@ -59,6 +60,12 @@ namespace RuneScape.Services
         {
             List<Npc> npcs = new List<Npc>(GameEngine.World.NpcManager.Spawns);
             List<Character> characters = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
+            List<CoordinateEvent> coordinateEvents;
+
+            lock (GameEngine.Content.CoodinateEvents)
+            {
+                coordinateEvents = new List<CoordinateEvent>(GameEngine.Content.CoodinateEvents);
+            }
 
             // Main tasks that will process character's route ticks, updates, and (any required) resets.
             if ((DateTime.Now - this.majorUpdatesTime).TotalMilliseconds >= 600)
@@ -67,6 +74,10 @@ namespace RuneScape.Services
 
                 // Renerate new random values.
                 Npc.RegenerateRandom();
+
+                coordinateEvents.ForEach((ce) =>
+                {
+                });
 
                 Parallel.ForEach(characters, EntityManipulation.TickCharacter);
                 Parallel.ForEach(npcs, EntityManipulation.TickNpc);

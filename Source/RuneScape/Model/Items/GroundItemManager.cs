@@ -53,9 +53,85 @@ namespace RuneScape.Model.Items
         /// <param name="location">The location of the item.</param>
         public void Create(Item item, Location location)
         {
+            lock (this.Items)
+            {
+                foreach (GroundItem g in this.items)
+                {
+                    if (g.Character == null && !g.Destroyed && !g.Spawned
+                        && g.Location.Equals(location) && g.Id == item.Id
+                        && (g.Definition.Noted || g.Definition.Stackable))
+                    {
+                        g.Count += item.Count;
+                        return;
+                    }
+                };
+            }
+
             GroundItem gItem = new GroundItem(location, item.Id, item.Count);
             this.items.Add(gItem);
             gItem.GlobalSpawn();
+        }
+
+        /// <summary>
+        /// Creates a character's ground item.
+        /// </summary>
+        /// <param name="item">The item to create.</param>
+        /// <param name="location">The location of the item.</param>
+        /// <param name="character">The owner of the item.</param>
+        public void Create(Item item, Location location, Character character)
+        {
+            lock (this.Items)
+            {
+                foreach (GroundItem g in this.items)
+                {
+                    if (g.Character == character && !g.Destroyed && !g.Spawned
+                        && g.Location.Equals(location) && g.Id == item.Id 
+                        && (g.Definition.Noted || g.Definition.Stackable))
+                    {
+                        g.Count += item.Count;
+                        return;
+                    }
+                };
+            }
+
+            GroundItem gItem = new GroundItem(location, character,item.Id, item.Count);
+            this.items.Add(gItem);
+            gItem.Spawn();
+        }
+
+        /// <summary>
+        /// Destroys the specified item at the specified location.
+        /// </summary>
+        /// <param name="location">The location the item is expected to be at.</param>
+        /// <param name="id">The id of the item to destroy.</param>
+        public void Destroy(Location location, int id)
+        {
+            GroundItem binItem = null;
+            lock (this.Items)
+            {
+                foreach (GroundItem g in this.items)
+                {
+                    if (g.Location.Equals(location) && g.Id == id)
+                    {
+                        binItem = g;
+                        g.Destroyed = true;
+
+                        if (g.Character == null)
+                        {
+                            g.GlobalDespawn();
+                        }
+                        else
+                        {
+                            g.Despawn();
+                        }
+                    }
+                }
+
+                if (binItem != null)
+                {
+                    this.items.Remove(binItem);
+                }
+            }
         }
 
         /// <summary>
@@ -64,14 +140,61 @@ namespace RuneScape.Model.Items
         /// <param name="character">The character to refresh ground items for.</param>
         public void Refresh(Character character)
         {
-            this.items.ForEach((g) =>
+            lock (this.Items)
             {
-                if (character.Location.WithinDistance(g.Location) && !g.Destroyed 
-                    && (character == g.Character || g.Character == null))
+                this.items.ForEach((g) =>
                 {
-                    g.Spawn(character);
+                    if (character.Location.WithinDistance(g.Location) && !g.Destroyed
+                        && (character == g.Character || character.LongName == g.Character.LongName
+                        || g.Character == null))
+                    {
+                        g.Spawn(character);
+                    }
+                });
+            }
+        }
+
+        /// <summary>
+        /// Loops through all existing ground items to check if a 
+        /// specified item exists on the specified location.
+        /// </summary>
+        /// <param name="location">The location the item is expected to be at.</param>
+        /// <param name="id">The id of the item to look for.</param>
+        /// <returns>Returns true if located, false if not.</returns>
+        public bool Exists(Location location, int id)
+        {
+            lock (this.Items)
+            {
+                foreach (GroundItem gItem in this.items)
+                {
+                    if (gItem.Location.Equals(location) && gItem.Id == id && !gItem.Destroyed)
+                    {
+                        return true;
+                    }
                 }
-            });
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Loops through all existing ground items to get the amount of items at the specified location.
+        /// </summary>
+        /// <param name="location">The location the item is expected to be at.</param>
+        /// <param name="id">The id of the item to look for.</param>
+        /// <returns>Returns the amount; -1 if not found.</returns>
+        public int GetAmount(Location location, int id)
+        {
+            lock (this.Items)
+            {
+                foreach (GroundItem gItem in this.items)
+                {
+                    if (gItem.Location.Equals(location) && gItem.Id == id && !gItem.Destroyed)
+                    {
+                        return gItem.Count;
+                    }
+                }
+                return -1;
+            }
         }
         #endregion Methods
     }

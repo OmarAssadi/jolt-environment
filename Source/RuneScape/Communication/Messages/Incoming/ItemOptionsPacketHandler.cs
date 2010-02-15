@@ -34,16 +34,38 @@ namespace RuneScape.Communication.Messages.Incoming
     {
         #region Methods
         /// <summary>
-        /// Handles the hd notification (meaning this character is using an hd client).
+        /// Handles the item options.
         /// </summary>
         /// <param name="character">The character to handle packet for.</param>
         /// <param name="packet">The packet containing handle data.</param>
         public void Handle(Character character, Packet packet)
         {
+            switch (packet.Opcode)
+            {
+                case 203:
+                    {
+                        HandleOption1(character, packet);
+                        break;
+                    }
+            }
+        }
+
+        /// <summary>
+        /// Handles the first option.
+        /// </summary>
+        /// <param name="character">The character to handle packet for.</param>
+        /// <param name="packet">The packet containing handle data.</param>
+        private void HandleOption1(Character character, Packet packet)
+        {
             short slot = packet.ReadLEShortA();
             short interfaceId = packet.ReadShort();
             packet.Skip(2);
             short itemId = packet.ReadShort();
+
+            if (slot < 0 || itemId < 0)
+            {
+                return;
+            }
 
             switch (interfaceId)
             {

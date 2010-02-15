@@ -300,6 +300,7 @@ namespace RuneScape.Communication.Messages
         {
             character.Session.SendData(new NewMapRegionPacketComposer(character).Serialize());
             character.UpdateFlags.LastRegion = character.Location;
+            GameEngine.World.ItemManager.GroundItems.Refresh(character);
             // TODO: Item update.
             // TODO: Object update.
         }

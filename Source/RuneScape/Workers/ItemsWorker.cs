@@ -62,9 +62,18 @@ namespace RuneScape.Workers
                 {
                     Thread.Sleep(ItemsWorker.Interval);
 
-                    foreach (GroundItem gItem in GameEngine.World.ItemManager.GroundItems.Items)
+                    // Get the ground items synchronously.
+                    List<GroundItem> groundItems;
+                    lock (GameEngine.World.ItemManager.GroundItems.Items)
                     {
-                        if ((DateTime.Now - gItem.TimeCreated).TotalSeconds >= 10)
+                        groundItems = new List<GroundItem>(
+                            GameEngine.World.ItemManager.GroundItems.Items);
+                    }
+
+                    // Loop though all ground items.
+                    groundItems.ForEach((gItem) =>
+                    {
+                        if ((DateTime.Now - gItem.TimeCreated).TotalSeconds >= 60)
                         {
                             if (gItem.Character == null)
                             {
@@ -75,16 +84,23 @@ namespace RuneScape.Workers
                             }
                             else
                             {
+                                gItem.Despawn();
+                                gItem.Character = null;
                                 gItem.TimeCreated = DateTime.Now;
                                 gItem.GlobalSpawn();
+                                Console.WriteLine("item spawned. " + gItem.Location.ToString());
                             }
                         }
-                    }
+                    });
 
-                    while (this.binnedItems.Count > 0)
+                    // Cleanup all unneeded ground items.
+                    lock (GameEngine.World.ItemManager.GroundItems.Items)
                     {
-                        GameEngine.World.ItemManager.GroundItems.Items.Remove(
-                            this.binnedItems.Dequeue());
+                        while (this.binnedItems.Count > 0)
+                        {
+                            GameEngine.World.ItemManager.GroundItems.Items.Remove(
+                                this.binnedItems.Dequeue());
+                        }
                     }
                 }
                 catch (Exception ex)

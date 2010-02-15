@@ -37,7 +37,7 @@ namespace RuneScape.Model.Items
         /// <summary>
         /// Gets the item's count.
         /// </summary>
-        public int Count { get; private set; }
+        public int Count { get; set; }
 
         /// <summary>
         /// Gets or sets the item's index.
