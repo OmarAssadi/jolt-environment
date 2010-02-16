@@ -132,6 +132,7 @@ namespace RuneScape.Communication.Messages
             AddHandler(169, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(173, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(179, new SwapInterfaceItemPacketHandler()); // Handles item movements between interfaces.
+            AddHandler(201, new TakeItemPacketHandler()); // Handles taking items.
             AddHandler(203, new ItemOptionsPacketHandler()); // Handles item options.
             AddHandler(211, new DropItemPacketHandler()); // Handles dropped items.
             AddHandler(214, new ButtonPacketHandler()); // Handles buttons.

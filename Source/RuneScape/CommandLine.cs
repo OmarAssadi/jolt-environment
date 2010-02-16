@@ -41,13 +41,8 @@ namespace RuneScape
             {
                 switch (command.ToLower())
                 {
-                    case "play":
+                    case "add":
                         {
-                            for (int i = 0; i < GameEngine.World.NpcManager.Spawns.Count; i++)
-                            {
-                                GameEngine.World.NpcManager.Spawns[i].UpdateFlags.FaceTo = short.Parse(arguments[0]);
-                                GameEngine.World.NpcManager.Spawns[i].UpdateFlags.FaceToUpdateRequired = true;
-                            }
                             break;
                         }
                     case "clear":
@@ -59,14 +54,6 @@ namespace RuneScape
                             break;
                         }
                     case "about": // Displays information about jolt environment.
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine(@"     _       _ _     _____            _                                      _   ");
-                        Console.WriteLine(@"    | | ___ | | |_  | ____|_ ____   _(_)_ __ ___  _ __  _ __ ___   ___ _ __ | |_ ");
-                        Console.WriteLine(@" _  | |/ _ \| | __| | |__ | '_ \ \ / / | '__/ _ \| '_ \| '_ ` _ \ / _ \ '_ \| __|");
-                        Console.WriteLine(@"| |_| | (_) | | |_  | |___| | | \ V /| | | | (_) | | | | | | | | |  __/ | | | |_ ");
-                        Console.WriteLine(@" \___/ \___/|_|\__| |_____|_| |_|\_/ |_|_|  \___/|_| |_|_| |_| |_|\___|_| |_|\__|");
-                        Console.WriteLine();
-                        Console.ForegroundColor = ConsoleColor.Gray;
                         Console.WriteLine(" Jolt Environment [" + Program.Version.ToString() + " Release-Win32-x86/x64]");
                         Console.WriteLine(" Copyright (C) 2010 Jolt Environment Team <aj@ajravindiran.com>");
                         Console.WriteLine(" Website: http://www.ajravindiran.com/projects/jolt/");
@@ -88,12 +75,6 @@ namespace RuneScape
                     case "update":
                         System.Diagnostics.Process.Start("http://jolte.codeplex.com/Release/ProjectReleases.aspx");
                         Program.Logger.WriteInfo("Successfully brang up downloads page.");
-                        break;
-                    case "count":
-                        Program.Logger.WriteInfo(GameEngine.World.CharacterManager.CharacterCount);
-                        break;
-                    case "item":
-                        Program.Logger.WriteInfo(GameEngine.World.ItemManager.GetDefinition(int.Parse(arguments[0])).ToString());
                         break;
                     default:
                         Program.Logger.WriteWarn("Unknown command \"" + command + "\".");

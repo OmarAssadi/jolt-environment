@@ -93,6 +93,7 @@
     <Compile Include="Content\Interfaces\OptionsTab.cs" />
     <Compile Include="Database\Account\IAccountSaver.cs" />
     <Compile Include="Database\Account\SqlAccountSaver.cs" />
+    <Compile Include="Events\ProcessCoordinateEvent.cs" />
     <Compile Include="Model\Characters\Bonuses.cs" />
     <Compile Include="Model\Characters\Preferences.cs" />
     <Compile Include="Model\Creature.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Model\Items\ItemDefinitionLoader.cs" />
     <Compile Include="Model\Items\ItemDefinitionPrices.cs" />
     <Compile Include="Model\Items\ItemManager.cs" />
+    <Compile Include="Model\Items\TakeItemEvent.cs" />
     <Compile Include="Model\Npcs\NpcDefinitionLoader.cs" />
     <Compile Include="Model\Npcs\NpcDefinition.cs" />
     <Compile Include="Model\Npcs\Npc.cs" />
@@ -120,6 +122,8 @@
     <Compile Include="Model\Npcs\WalkType.cs" />
     <Compile Include="Model\Objects\MapObject.cs" />
     <Compile Include="Model\IRuneObject.cs" />
+    <Compile Include="Events\Event.cs" />
+    <Compile Include="Services\EventService.cs" />
     <Compile Include="Services\LoginService.cs" />
     <Compile Include="Services\MajorUpdatesService.cs" />
     <Compile Include="CommandLine.cs" />
@@ -199,7 +203,7 @@
     </Compile>
     <Compile Include="Model\Characters\Appearance.cs" />
     <Compile Include="Model\Characters\Skills.cs" />
-    <Compile Include="Utilities\CoordinateEvent.cs" />
+    <Compile Include="Events\CoordinateEvent.cs" />
     <Compile Include="Utilities\Indexing\ClientSlot.cs" />
     <Compile Include="Model\Characters\DeathIcons.cs" />
     <Compile Include="Model\Characters\Details.cs" />

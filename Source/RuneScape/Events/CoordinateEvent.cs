@@ -25,22 +25,14 @@ using System.Text;
 using RuneScape.Model;
 using RuneScape.Model.Characters;
 
-namespace RuneScape.Utilities
+namespace RuneScape.Events
 {
     /// <summary>
     /// Represents an event that is executed one the character has reached to a specified location.
     /// </summary>
-    public class CoordinateEvent
+    public abstract class CoordinateEvent
     {
-        #region Fields
-        /// <summary>
-        /// The action triggered when reached specified location.
-        /// </summary>
-        //private Action action;
-        #endregion Fields
-
         #region Properties
-        public Action Action { get; set; }
         /// <summary>
         /// Gets the character.
         /// </summary>
@@ -65,7 +57,7 @@ namespace RuneScape.Utilities
         /// <summary>
         /// Gets or sets whether the location has been reached.
         /// </summary>
-        public int Reached { get; set; }
+        public bool Reached { get; set; }
         #endregion Properties
 
         #region Constructor
@@ -79,27 +71,15 @@ namespace RuneScape.Utilities
         {
             this.Character = character;
             this.Location = location;
-            //this.action = action;
         }
         #endregion Constructor
 
         #region Methods
         /// <summary>
-        /// Processes a coordinate event.
+        /// Executes an instruction that is expected to 
+        /// happend when the character reaches location.
         /// </summary>
-        public static bool Process(CoordinateEvent ce)
-        {
-            if (ce.Character.UpdateFlags.Teleporting)
-            {
-                return false;
-            }
-            bool isAtTarget = ce.Character.Location.WithinDistance(ce.Location, ce.Distance);
-
-            if (isAtTarget && ce.Character.Location.Equals(ce.Location) || ce.FailedAttempts >= 2)
-            {
-            }
-            return true;
-        }
+        public abstract void Execute();
         #endregion Methods
     }
 }

@@ -58,26 +58,15 @@ namespace RuneScape.Services
         /// </summary>
         public void Process()
         {
-            List<Npc> npcs = new List<Npc>(GameEngine.World.NpcManager.Spawns);
-            List<Character> characters = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
-            List<CoordinateEvent> coordinateEvents;
-
-            lock (GameEngine.Content.CoodinateEvents)
-            {
-                coordinateEvents = new List<CoordinateEvent>(GameEngine.Content.CoodinateEvents);
-            }
-
             // Main tasks that will process character's route ticks, updates, and (any required) resets.
             if ((DateTime.Now - this.majorUpdatesTime).TotalMilliseconds >= 600)
             {
+                List<Npc> npcs = new List<Npc>(GameEngine.World.NpcManager.Spawns);
+                List<Character> characters = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
                 this.majorUpdatesTime = DateTime.Now;
 
                 // Renerate new random values.
                 Npc.RegenerateRandom();
-
-                coordinateEvents.ForEach((ce) =>
-                {
-                });
 
                 Parallel.ForEach(characters, EntityManipulation.TickCharacter);
                 Parallel.ForEach(npcs, EntityManipulation.TickNpc);
@@ -89,12 +78,12 @@ namespace RuneScape.Services
             // Heals character's running energy.
             if ((DateTime.Now - this.runningHealerTime).TotalMilliseconds >= 2000)
             {
+                List<Character> characters = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
                 this.runningHealerTime = DateTime.Now;
                 Parallel.ForEach(characters, EntityManipulation.RestoreRunEnergy);
             }
 
-            npcs = null;
-            characters = null;
+            GameEngine.Events.Process();
         }
         #endregion Methods
     }

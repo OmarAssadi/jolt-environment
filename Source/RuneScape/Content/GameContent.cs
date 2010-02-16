@@ -37,10 +37,6 @@ namespace RuneScape.Content
         /// The interface manager maintaining all interfaces.
         /// </summary>
         public InterfaceManager InterfaceManager { get; set; }
-        /// <summary>
-        /// Gets the queued coordiante events.
-        /// </summary>
-        public List<CoordinateEvent> CoodinateEvents { get; private set; }
         #endregion Properties
 
         #region Constructors
@@ -50,34 +46,10 @@ namespace RuneScape.Content
         public GameContent()
         {
             this.InterfaceManager = new InterfaceManager();
-            this.CoodinateEvents = new List<CoordinateEvent>();
         }
         #endregion Constructors
 
         #region Methods
-        /// <summary>
-        /// Registers a coordinate event.
-        /// </summary>
-        /// <param name="ce">The coordinate event.</param>
-        public void RegisterCE(CoordinateEvent ce)
-        {
-            lock (this.CoodinateEvents)
-            {
-                this.CoodinateEvents.Add(ce);
-            }
-        }
-
-        /// <summary>
-        /// Unregisters a coordinate event.
-        /// </summary>
-        /// <param name="ce">The coordinate event.</param>
-        public void UnregisterCE(CoordinateEvent ce)
-        {
-            lock (this.CoodinateEvents)
-            {
-                this.CoodinateEvents.Remove(ce);
-            }
-        }
         #endregion Methods
     }
 }

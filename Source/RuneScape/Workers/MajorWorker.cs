@@ -33,7 +33,7 @@ namespace RuneScape.Workers
         /// <summary>
         /// The interval between each interation.
         /// </summary>
-        public const int Interval = 100;
+        public const int Interval = 50;
 
         /// <summary>
         /// Services providing processing.
@@ -62,18 +62,16 @@ namespace RuneScape.Workers
                      * Puts the thread to sleep for a few milliseconds.
                      */ 
                     Thread.Sleep(MajorWorker.Interval);
+
+                    /*
+                     * Processes the major (player/npc/world) updates.
+                     */
+                    service.Process();
                 }
                 catch (ArgumentOutOfRangeException)
                 {
                     continue;
                 }
-
-                /*
-                 * Processes the major (player/npc/world) updates. The iteration of the gameplay
-                 * is set at 600 milliseconds (0.6 seconds), so things such as animations, graphics,
-                 * appearance, chat, and other updates could be processed.
-                 */
-                service.Process();
             }
             this.Abort();
         }

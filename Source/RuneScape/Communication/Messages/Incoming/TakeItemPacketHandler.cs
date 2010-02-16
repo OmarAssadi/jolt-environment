@@ -25,7 +25,7 @@ using System.Text;
 using RuneScape.Model;
 using RuneScape.Model.Characters;
 using RuneScape.Model.Items;
-using RuneScape.Utilities;
+using RuneScape.Events;
 
 namespace RuneScape.Communication.Messages.Incoming
 {
@@ -47,25 +47,23 @@ namespace RuneScape.Communication.Messages.Incoming
             short id = packet.ReadLEShortA();
             Location location = Location.Create(x, y, character.Location.Z);
 
-            CoordinateEvent ce = new CoordinateEvent(character, location)
+            if (character.Location.WithinDistance(location, 0))
             {
-                Action = new Action(() =>
+                int amount = GameEngine.World.ItemManager.GroundItems.GetAmount(location, id);
+                if (amount != -1)
                 {
-                    if (character.Location.WithinInteractionDistance(location))
+                    Item item = new Item(id, amount);
+                    if (character.Inventory.HasSpace(item))
                     {
-                        if (GameEngine.World.ItemManager.GroundItems.Exists(location, id))
-                        {
-                            int amount = GameEngine.World.ItemManager.GroundItems.GetAmount(location, id);
-                            if (character.Inventory.HasSpace(new Item(id, amount)))
-                            {
-                                GameEngine.World.ItemManager.GroundItems.Destroy(location, id);
-                                character.Inventory.AddItem(new Item(id, amount));
-                            }
-                        }
+                        GameEngine.World.ItemManager.GroundItems.Destroy(location, id);
+                        character.Inventory.AddItem(item);
                     }
-                })
-            };
-            GameEngine.Content.RegisterCE(ce);
+                }
+            }
+            else
+            {
+                GameEngine.Events.RegisterCoordinateEvent(new TakeItemEvent(character, location, id));
+            }
         }
         #endregion Methods
     }

@@ -17,13 +17,10 @@
 
 */
 
-using System;
-using System.Collections.Generic;
-using System.Threading;
 
-using JoltEnvironment.Service.Events;
 using RuneScape.Content;
 using RuneScape.Model;
+using RuneScape.Services;
 using RuneScape.Workers;
 
 namespace RuneScape
@@ -37,7 +34,7 @@ namespace RuneScape
         /// <summary>
         /// Management for event services.
         /// </summary>
-        private static EventManager events = new EventManager();
+        private static EventService events = new EventService();
         /// <summary>
         /// Defines a single RuneScape world. 
         /// 
@@ -75,7 +72,7 @@ namespace RuneScape
         /// <summary>
         /// Gets the event manager.
         /// </summary>
-        public static EventManager Events { get { return events; } }
+        public static EventService Events { get { return events; } }
         /// <summary>
         /// Gets the game world.
         /// </summary>

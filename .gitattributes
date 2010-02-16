@@ -804,8 +804,6 @@ Source/JoltEnvironment/Properties/AssemblyInfo.cs -text
 Source/JoltEnvironment/Resources/app.ico -text
 Source/JoltEnvironment/Security/Hash.cs -text
 Source/JoltEnvironment/Security/HashType.cs -text
-Source/JoltEnvironment/Service/Events/Event.cs -text
-Source/JoltEnvironment/Service/Events/EventManager.cs -text
 Source/JoltEnvironment/Storage/DatabaseException.cs -text
 Source/JoltEnvironment/Storage/Sql/ISqlDataObject.cs -text
 Source/JoltEnvironment/Storage/Sql/ISqlDataQuery.cs -text
@@ -909,6 +907,9 @@ Source/RuneScape/Database/Config/IniConfigLoader.cs -text
 Source/RuneScape/Database/Config/MySqlConfigLoader.cs -text
 Source/RuneScape/Database/Offence/OffenceManager.cs -text
 Source/RuneScape/Database/Offence/OffenceType.cs -text
+Source/RuneScape/Events/CoordinateEvent.cs -text
+Source/RuneScape/Events/Event.cs -text
+Source/RuneScape/Events/ProcessCoordinateEvent.cs -text
 Source/RuneScape/GameEngine.cs -text
 Source/RuneScape/GameServer.cs -text
 Source/RuneScape/Model/Animation.cs -text
@@ -952,6 +953,7 @@ Source/RuneScape/Model/Items/ItemDefinitionBonuses.cs -text
 Source/RuneScape/Model/Items/ItemDefinitionLoader.cs -text
 Source/RuneScape/Model/Items/ItemDefinitionPrices.cs -text
 Source/RuneScape/Model/Items/ItemManager.cs -text
+Source/RuneScape/Model/Items/TakeItemEvent.cs -text
 Source/RuneScape/Model/Location.cs -text
 Source/RuneScape/Model/Maps/MapDataLoader.cs -text
 Source/RuneScape/Model/Maps/MapManager.cs -text
@@ -971,10 +973,10 @@ Source/RuneScape/Program.cs -text
 Source/RuneScape/Properties/AssemblyInfo.cs -text
 Source/RuneScape/Resources/app.ico -text
 Source/RuneScape/RuneScape.csproj -text
+Source/RuneScape/Services/EventService.cs -text
 Source/RuneScape/Services/LoginService.cs -text
 Source/RuneScape/Services/MajorUpdatesService.cs -text
 Source/RuneScape/Utilities/ChatUtilities.cs -text
-Source/RuneScape/Utilities/CoordinateEvent.cs -text
 Source/RuneScape/Utilities/DatabaseVersionCheck.cs -text
 Source/RuneScape/Utilities/DirectionUtilities.cs -text
 Source/RuneScape/Utilities/Filtering/BadWords.cs -text
