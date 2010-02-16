@@ -60,16 +60,20 @@ namespace RuneScape.Events
             }
 
             bool atTarget = this.ce.Character.Location.WithinDistance(this.ce.Location, this.ce.Distance);
+
+            // Most likely the character had clicked somewhere else.
             if (ce.FailedAttempts >= 2)
             {
                 Stop();
             }
+            // The character is at the required targeted location, execute event.
             else if (atTarget)
             {
                 ce.Reached = true;
                 ce.Execute();
                 Stop();
             }
+            // The character hasn't reached the targeted located yet.
             else
             {
                 if (!ce.Character.Location.Equals(ce.OldLocation))
