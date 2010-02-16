@@ -60,19 +60,15 @@ namespace RuneScape.Events
             }
 
             bool atTarget = this.ce.Character.Location.WithinDistance(this.ce.Location, this.ce.Distance);
-            if (atTarget && ce.Character.Location.Equals(ce.OldLocation) || ce.FailedAttempts >= 2)
+            if (ce.FailedAttempts >= 2)
             {
-                if (this.Delay == 0)
-                {
-                    ce.Execute();
-                    Stop();
-                }
-                else
-                {
-                    ce.Reached = true;
-                    ce.Execute();
-                    Stop();
-                }
+                Stop();
+            }
+            else if (atTarget)
+            {
+                ce.Reached = true;
+                ce.Execute();
+                Stop();
             }
             else
             {

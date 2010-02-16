@@ -47,23 +47,8 @@ namespace RuneScape.Communication.Messages.Incoming
             short id = packet.ReadLEShortA();
             Location location = Location.Create(x, y, character.Location.Z);
 
-            if (character.Location.WithinDistance(location, 0))
-            {
-                int amount = GameEngine.World.ItemManager.GroundItems.GetAmount(location, id);
-                if (amount != -1)
-                {
-                    Item item = new Item(id, amount);
-                    if (character.Inventory.HasSpace(item))
-                    {
-                        GameEngine.World.ItemManager.GroundItems.Destroy(location, id);
-                        character.Inventory.AddItem(item);
-                    }
-                }
-            }
-            else
-            {
-                GameEngine.Events.RegisterCoordinateEvent(new TakeItemEvent(character, location, id));
-            }
+
+            GameEngine.Events.RegisterCoordinateEvent(new TakeItemEvent(character, location, id));
         }
         #endregion Methods
     }
