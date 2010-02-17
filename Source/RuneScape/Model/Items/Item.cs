@@ -51,8 +51,7 @@ namespace RuneScape.Model.Items
         /// <summary>
         /// Gets the item's definition.
         /// </summary>
-        public ItemDefinition Definition { get { 
-            return GameEngine.World.ItemManager.GetDefinition(this.Id); } }
+        public ItemDefinition Definition { get { return ItemDefinition.Get(this.Id); } }
         #endregion Properties
 
         #region Constructors

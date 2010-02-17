@@ -29,13 +29,6 @@ namespace RuneScape.Model.Items
     /// </summary>
     public class ItemManager
     {
-        #region Fields
-        /// <summary>
-        /// Contains all definitions loaded from database.
-        /// </summary>
-        private ItemDefinition[] definitions;
-        #endregion Fields
-
         #region Properties
         /// <summary>
         /// Gets the ground items manager.
@@ -50,7 +43,7 @@ namespace RuneScape.Model.Items
         public ItemManager()
         {
             // Load the definitions.
-            this.definitions = ItemDefinition.Load();
+            ItemDefinition.Load();
 
             // Fill specific equipment information.
             EquipmentItems.Fill();
@@ -59,18 +52,5 @@ namespace RuneScape.Model.Items
             this.GroundItems = new GroundItemManager();
         }
         #endregion Constructors
-
-        #region Methods
-        /// <summary>
-        /// Get an item definition from the array specified by the id.
-        /// </summary>
-        /// <param name="itemId">The item id of the item definitions wanted.</param>
-        /// <returns>Returns a RuneScape.Model.Items.ItemDefinition instance 
-        /// containing specified item definitions.</returns>
-        public ItemDefinition GetDefinition(int itemId)
-        {
-            return this.definitions[itemId];
-        }
-        #endregion Methods
     }
 }

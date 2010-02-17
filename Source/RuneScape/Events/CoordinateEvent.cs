@@ -80,41 +80,6 @@ namespace RuneScape.Events
         /// happend when the character reaches location.
         /// </summary>
         public abstract void Execute();
-
-        /// <summary>
-        /// Processes a coordinate event.
-        /// </summary>
-        public static bool Process(CoordinateEvent ce)
-        {
-            if (ce.Character.UpdateFlags.Teleporting)
-            {
-                return false;
-            }
-            bool isAtTarget = ce.Character.Location.WithinDistance(ce.Location, ce.Distance);
-
-            if (ce.FailedAttempts >= 2)
-            {
-                return false;
-            }
-            else if (isAtTarget && ce.Character.Location.Equals(ce.OldLocation))
-            {
-                ce.Reached = true;
-                ce.Execute();
-                return false;
-            }
-            else
-            {
-                if (!ce.Character.Location.Equals(ce.OldLocation))
-                {
-                    ce.OldLocation = ce.Character.Location;
-                }
-                else
-                {
-                    ce.FailedAttempts++;
-                }
-            }
-            return true;
-        }
         #endregion Methods
     }
 }

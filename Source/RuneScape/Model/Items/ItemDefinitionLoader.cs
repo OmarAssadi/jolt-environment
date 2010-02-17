@@ -32,12 +32,30 @@ namespace RuneScape.Model.Items
     /// </summary>
     public partial class ItemDefinition
     {
+        #region Fields
+        /// <summary>
+        /// Contains all definitions loaded from database.
+        /// </summary>
+        private static ItemDefinition[] definitions;
+        #endregion Fields
+
         #region Methods
+        /// <summary>
+        /// Get an item definition from the array specified by the id.
+        /// </summary>
+        /// <param name="itemId">The item id of the item definitions wanted.</param>
+        /// <returns>Returns a RuneScape.Model.Items.ItemDefinition instance 
+        /// containing specified item definitions.</returns>
+        public static ItemDefinition Get(short itemId)
+        {
+            return definitions[itemId];
+        }
+
         /// <summary>
         /// Loads the item defitions from mysql database and stores in a local array.
         /// </summary>
         /// <param name="destination">The array to store data to.</param>
-        public static ItemDefinition[] Load()
+        public static void Load()
         {
             // The largest item id value in the item_definitions table.
             int largestValue = 0;
@@ -120,7 +138,7 @@ namespace RuneScape.Model.Items
             {
                 Program.Logger.WriteException(ex);
             }
-            return definitions;
+            ItemDefinition.definitions = definitions;
         }
 
         /// <summary>

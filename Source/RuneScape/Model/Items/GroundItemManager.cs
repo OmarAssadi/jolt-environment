@@ -19,9 +19,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
+using JoltEnvironment.Storage.Sql;
 using RuneScape.Model.Characters;
 
 namespace RuneScape.Model.Items
@@ -31,21 +33,60 @@ namespace RuneScape.Model.Items
     /// </summary>
     public class GroundItemManager
     {
-        #region Fields
-        /// <summary>
-        /// A container holding all existing/spawned ground items.
-        /// </summary>
-        private List<GroundItem> items = new List<GroundItem>();
-        #endregion Fields
-
         #region Properties
         /// <summary>
-        /// Gets the ground items.
+        /// Gets a container holding all existing/spawned ground items.
         /// </summary>
-        public List<GroundItem> Items { get { return this.items; } }
+        public List<GroundItem> Items { get; private set; }
+        /// <summary>
+        /// Gets a container holding all spawned ground items waiting to be respawned.
+        /// </summary>
+        public List<GroundItem> WaitList { get; private set; }
         #endregion Properties
 
+        #region Constructors
+        /// <summary>
+        /// Constructs a new ground item manager.
+        /// </summary>
+        public GroundItemManager()
+        {
+            this.Items = new List<GroundItem>();
+            this.WaitList = new List<GroundItem>();
+
+            DataRow[] rows = null;
+            using (SqlDatabaseClient client = GameServer.Database.GetClient())
+            {
+                rows = client.ReadDataTable("SELECT * FROM item_spawns").Select();
+            }
+
+            // Add in all (server-)spawned items.
+            foreach (DataRow row in rows)
+            {
+                short id = (short)row[1];
+                int count = (int)row[2];
+                short x = (short)row[3];
+                short y = (short)row[4];
+
+                GroundItem gItem = new GroundItem(Location.Create(x, y, 0), id, count);
+                gItem.Spawned = true;
+                Add(gItem);
+            }
+        }
+        #endregion Constructors
+
         #region Methods
+        /// <summary>
+        /// Adds a precreated ground item into the container.
+        /// </summary>
+        /// <param name="item"></param>
+        public void Add(GroundItem item)
+        {
+            lock (this.Items)
+            {
+                this.Items.Add(item);
+            }
+        }
+
         /// <summary>
         /// Creates a ground item.
         /// </summary>
@@ -55,7 +96,7 @@ namespace RuneScape.Model.Items
         {
             lock (this.Items)
             {
-                foreach (GroundItem g in this.items)
+                foreach (GroundItem g in this.Items)
                 {
                     if (g.Character == null && !g.Destroyed && !g.Spawned
                         && g.Location.Equals(location) && g.Id == item.Id
@@ -68,7 +109,7 @@ namespace RuneScape.Model.Items
             }
 
             GroundItem gItem = new GroundItem(location, item.Id, item.Count);
-            this.items.Add(gItem);
+            this.Items.Add(gItem);
             gItem.GlobalSpawn();
         }
 
@@ -82,7 +123,7 @@ namespace RuneScape.Model.Items
         {
             lock (this.Items)
             {
-                foreach (GroundItem g in this.items)
+                foreach (GroundItem g in this.Items)
                 {
                     if (g.Character == character && !g.Destroyed && !g.Spawned
                         && g.Location.Equals(location) && g.Id == item.Id 
@@ -95,7 +136,7 @@ namespace RuneScape.Model.Items
             }
 
             GroundItem gItem = new GroundItem(location, character,item.Id, item.Count);
-            this.items.Add(gItem);
+            this.Items.Add(gItem);
             gItem.Spawn();
         }
 
@@ -109,7 +150,7 @@ namespace RuneScape.Model.Items
             GroundItem binItem = null;
             lock (this.Items)
             {
-                foreach (GroundItem g in this.items)
+                foreach (GroundItem g in this.Items)
                 {
                     if (g.Location.Equals(location) && g.Id == id)
                     {
@@ -129,7 +170,15 @@ namespace RuneScape.Model.Items
 
                 if (binItem != null)
                 {
-                    this.items.Remove(binItem);
+                    if (binItem.Spawned)
+                    {
+                        lock (this.WaitList)
+                        {
+                            this.WaitList.Add(binItem);
+                        }
+                        binItem.TimeCreated = DateTime.Now;
+                    }
+                    this.Items.Remove(binItem);
                 }
             }
         }
@@ -142,12 +191,15 @@ namespace RuneScape.Model.Items
         {
             lock (this.Items)
             {
-                this.items.ForEach((g) =>
+                this.Items.ForEach((g) =>
                 {
-                    if (character.Location.WithinDistance(g.Location) && !g.Destroyed
-                        && (character == g.Character || character.LongName == g.Character.LongName
-                        || g.Character == null))
+                    if (character.Location.WithinDistance(g.Location) && !g.Destroyed)
                     {
+                        if (g.Character != null && character != g.Character 
+                            && character.MasterId == g.Character.MasterId)
+                        {
+                            g.Character = character;
+                        }
                         g.Spawn(character);
                     }
                 });
@@ -165,7 +217,7 @@ namespace RuneScape.Model.Items
         {
             lock (this.Items)
             {
-                foreach (GroundItem gItem in this.items)
+                foreach (GroundItem gItem in this.Items)
                 {
                     if (gItem.Location.Equals(location) && gItem.Id == id && !gItem.Destroyed)
                     {
@@ -186,7 +238,7 @@ namespace RuneScape.Model.Items
         {
             lock (this.Items)
             {
-                foreach (GroundItem gItem in this.items)
+                foreach (GroundItem gItem in this.Items)
                 {
                     if (gItem.Location.Equals(location) && gItem.Id == id && !gItem.Destroyed)
                     {
