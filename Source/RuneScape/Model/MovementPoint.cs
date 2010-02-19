@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RuneScape.Model.Characters
+namespace RuneScape.Model
 {
     /// <summary>
     /// Represents a single movement point for queued walking.

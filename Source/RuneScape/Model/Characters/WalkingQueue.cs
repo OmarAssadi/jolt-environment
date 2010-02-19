@@ -36,7 +36,7 @@ namespace RuneScape.Model.Characters
         /// <summary>
         /// The size of the points.
         /// </summary>
-        private const int QueueCapacity = 50;
+        private const int Capacity = 50;
 
         /// <summary>
         /// The entity this queue belongs to.
@@ -46,7 +46,7 @@ namespace RuneScape.Model.Characters
         /// <summary>
         /// The queue of movements.
         /// </summary>
-        private MovementPoint[] points = new MovementPoint[WalkingQueue.QueueCapacity];
+        private MovementPoint[] points = new MovementPoint[WalkingQueue.Capacity];
 
         /// <summary>
         /// The reading position in the points array.
@@ -85,7 +85,7 @@ namespace RuneScape.Model.Characters
             this.Running = false;
             this.RunToggled = false;
 
-            for (int i = 0; i < WalkingQueue.QueueCapacity; i++)
+            for (int i = 0; i < WalkingQueue.Capacity; i++)
             {
                 points[i] = new MovementPoint(0, 0, -1);
             }
@@ -147,10 +147,10 @@ namespace RuneScape.Model.Characters
         private void AddStepInternal(short x, short y)
         {
             // Check to see if the current count of queues overflows the capacity limit.
-            if (this.writePosition >= WalkingQueue.QueueCapacity)
+            if (this.writePosition >= WalkingQueue.Capacity)
             {
                 /*
-                 * The character most like is a bot, cause 
+                 * The character most likely is a bot, cause 
                  * normal characters cannot reach this limit.
                  */ 
                 return;

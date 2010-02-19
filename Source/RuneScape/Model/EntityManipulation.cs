@@ -86,6 +86,7 @@ namespace RuneScape.Model
         public static void TickNpc(Npc npc)
         {
             npc.Tick();
+            npc.WalkingQueue.ProcessNextMovement();
         }
 
         /// <summary>

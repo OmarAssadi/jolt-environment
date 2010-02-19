@@ -37,11 +37,11 @@ namespace RuneScape.Model.Items
         /// <summary>
         /// Gets a container holding all existing/spawned ground items.
         /// </summary>
-        public List<GroundItem> Items { get; private set; }
+        private List<GroundItem> Items { get; set; }
         /// <summary>
         /// Gets a container holding all spawned ground items waiting to be respawned.
         /// </summary>
-        public List<GroundItem> WaitList { get; private set; }
+        private List<GroundItem> WaitList { get; set; }
         #endregion Properties
 
         #region Constructors
@@ -106,11 +106,11 @@ namespace RuneScape.Model.Items
                         return;
                     }
                 };
-            }
 
-            GroundItem gItem = new GroundItem(location, item.Id, item.Count);
-            this.Items.Add(gItem);
-            gItem.GlobalSpawn();
+                GroundItem gItem = new GroundItem(location, item.Id, item.Count);
+                this.Items.Add(gItem);
+                gItem.GlobalSpawn();
+            }
         }
 
         /// <summary>
@@ -133,11 +133,11 @@ namespace RuneScape.Model.Items
                         return;
                     }
                 };
-            }
 
-            GroundItem gItem = new GroundItem(location, character,item.Id, item.Count);
-            this.Items.Add(gItem);
-            gItem.Spawn();
+                GroundItem gItem = new GroundItem(location, character, item.Id, item.Count);
+                this.Items.Add(gItem);
+                gItem.Spawn();
+            }
         }
 
         /// <summary>
@@ -165,6 +165,7 @@ namespace RuneScape.Model.Items
                         {
                             g.Despawn();
                         }
+                        break;
                     }
                 }
 
@@ -180,6 +181,63 @@ namespace RuneScape.Model.Items
                     }
                     this.Items.Remove(binItem);
                 }
+            }
+        }
+
+        /// <summary>
+        /// Processes all the items that have been dropped/spawned.
+        /// </summary>
+        public void Process()
+        {
+            // Loop though all ground items synchronously.
+            lock (this.Items)
+            {
+                var groundItems = new List<GroundItem>(this.Items);
+                groundItems.ForEach((gItem) =>
+                {
+                    if (!gItem.Spawned && (DateTime.Now - gItem.TimeCreated).TotalSeconds >= 60)
+                    {
+                        if (gItem.Character == null)
+                        {
+                            gItem.Destroyed = true;
+                            gItem.GlobalDespawn();
+                            this.Items.Remove(gItem);
+                        }
+                        else
+                        {
+                            if (gItem.Definition.Tradable)
+                            {
+                                gItem.Destroyed = true;
+                                gItem.Despawn();
+                                this.Items.Remove(gItem);
+                            }
+                            else
+                            {
+                                gItem.Despawn();
+                                gItem.Character = null;
+                                gItem.TimeCreated = DateTime.Now;
+                                gItem.GlobalSpawn();
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Loop though all wait list items synchronously.
+            lock (this.WaitList)
+            {
+                var waitList = new List<GroundItem>(this.WaitList);
+                waitList.ForEach((gItem) =>
+                {
+                    if ((DateTime.Now - gItem.TimeCreated).TotalSeconds >= 60)
+                    {
+                        gItem.Destroyed = false;
+                        gItem.GlobalSpawn();
+                        gItem.TimeCreated = DateTime.Now;
+                        Add(gItem);
+                        this.WaitList.Remove(gItem);
+                    }
+                });
             }
         }
 

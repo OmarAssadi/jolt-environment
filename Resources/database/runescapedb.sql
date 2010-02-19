@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50141
 File Encoding         : 65001
 
-Date: 2010-02-16 00:26:21
+Date: 2010-02-18 19:38:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -126,7 +126,7 @@ CREATE TABLE `characters` (
 -- ----------------------------
 -- Records of characters
 -- ----------------------------
-INSERT INTO `characters` VALUES ('1', 'aj', '45ceeb2b9dbbda7ff3ce5b1a31ee82e59c763939', '2', '5', '0', '1', '27-3-1993', '38', '127.0.0.1', '2010-01-11 22:33:57', '99.244.155.103', '2010-02-15 23:42:18', '0', '5', '112', '106', '33', '36', '43', '15', '12', '5', '16', '5', '4', '3223', '3212', '0', '100', null, null);
+INSERT INTO `characters` VALUES ('1', 'aj', '45ceeb2b9dbbda7ff3ce5b1a31ee82e59c763939', '2', '5', '0', '1', '27-3-1993', '38', '127.0.0.1', '2010-01-11 22:33:57', '99.244.155.103', '2010-02-17 22:54:39', '0', '5', '112', '106', '33', '36', '43', '15', '12', '5', '16', '5', '4', '3221', '3217', '0', '100', '0=4151:1,1=4151:1', null);
 INSERT INTO `characters` VALUES ('2', 'hostile', 'ae08d48041beda1366739ec0d73d233258e80b0c', '0', '0', '0', '1', '14-11-1993', '225', '76.17.33.61', '2010-01-12 18:25:21', '99.244.155.103', '2010-01-25 21:38:06', '0', '0', '18', '26', '33', '36', '42', '10', '0', '0', '0', '0', '0', '3222', '3219', '0', '100', null, null);
 INSERT INTO `characters` VALUES ('3', 'aukemon0nl', '0f10f950a999fd4355d5d02862f3542e8a292823', '0', '0', '0', '1', '23-3-1994', '161', '80.100.228.171', '2010-01-12 18:31:16', '80.100.228.171', '2010-01-28 18:52:25', '0', '0', '18', '26', '33', '36', '42', '10', '0', '0', '0', '0', '0', '3222', '3220', '0', '100', null, null);
 INSERT INTO `characters` VALUES ('4', 'metal', '5944b5d6247bcf7ba5be91bbce4a924dc5ac731c', '2', '5', '0', '1', '4-5-1991', '13', '200.85.108.166', '2010-01-13 17:20:31', '200.85.108.166', '2010-01-13 17:31:06', '0', '0', '18', '26', '33', '36', '42', '10', '0', '0', '0', '0', '0', '3222', '3219', '0', '100', null, null);
@@ -166,7 +166,7 @@ CREATE TABLE `connection_logs` (
   `date` datetime NOT NULL,
   `ip` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2089 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2144 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of connection_logs
@@ -2259,6 +2259,61 @@ INSERT INTO `connection_logs` VALUES ('2085', '2010-02-15 23:36:37', '99.244.155
 INSERT INTO `connection_logs` VALUES ('2086', '2010-02-15 23:36:44', '99.244.155.103');
 INSERT INTO `connection_logs` VALUES ('2087', '2010-02-15 23:42:10', '99.244.155.103');
 INSERT INTO `connection_logs` VALUES ('2088', '2010-02-15 23:42:17', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2089', '2010-02-16 20:29:17', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2090', '2010-02-16 20:29:40', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2091', '2010-02-16 20:29:47', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2092', '2010-02-16 20:30:09', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2093', '2010-02-16 21:31:44', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2094', '2010-02-16 21:32:05', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2095', '2010-02-16 21:32:25', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2096', '2010-02-16 21:32:46', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2097', '2010-02-16 21:33:13', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2098', '2010-02-16 21:33:17', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2099', '2010-02-16 21:33:35', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2100', '2010-02-16 21:35:21', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2101', '2010-02-16 21:35:28', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2102', '2010-02-16 21:35:45', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2103', '2010-02-16 21:37:23', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2104', '2010-02-16 21:37:29', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2105', '2010-02-16 21:37:51', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2106', '2010-02-16 21:40:59', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2107', '2010-02-16 22:30:57', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2108', '2010-02-16 22:31:04', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2109', '2010-02-16 22:38:27', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2110', '2010-02-16 22:38:34', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2111', '2010-02-16 22:38:52', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2112', '2010-02-16 22:43:01', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2113', '2010-02-16 22:43:07', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2114', '2010-02-17 18:02:07', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2115', '2010-02-17 18:02:23', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2116', '2010-02-17 18:03:13', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2117', '2010-02-17 18:11:30', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2118', '2010-02-17 18:11:36', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2119', '2010-02-17 18:14:01', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2120', '2010-02-17 18:14:08', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2121', '2010-02-17 18:14:50', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2122', '2010-02-17 18:14:59', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2123', '2010-02-17 18:15:46', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2124', '2010-02-17 18:15:54', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2125', '2010-02-17 22:26:10', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2126', '2010-02-17 22:26:15', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2127', '2010-02-17 22:26:22', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2128', '2010-02-17 22:27:17', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2129', '2010-02-17 22:27:23', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2130', '2010-02-17 22:29:01', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2131', '2010-02-17 22:29:07', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2132', '2010-02-17 22:30:58', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2133', '2010-02-17 22:31:04', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2134', '2010-02-17 22:39:00', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2135', '2010-02-17 22:39:07', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2136', '2010-02-17 22:40:26', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2137', '2010-02-17 22:40:33', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2138', '2010-02-17 22:40:55', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2139', '2010-02-17 22:53:04', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2140', '2010-02-17 22:53:27', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2141', '2010-02-17 22:53:34', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2142', '2010-02-17 22:54:32', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2143', '2010-02-17 22:54:38', '99.244.155.103');
 
 -- ----------------------------
 -- Table structure for `item_animations`
@@ -15598,6 +15653,24 @@ INSERT INTO `item_definitions` VALUES ('13557', 'Wizard boots', 'Slightly magica
 INSERT INTO `item_definitions` VALUES ('13558', 'Robin hood hat', 'Endorsed by Robin Hood.', '3072', 'false', 'true', 'false', '-1', '0', '0', '0', '0', '0', '0', '0', '8', '4', '6', '8', '4', '4', '0', '0', '0');
 
 -- ----------------------------
+-- Table structure for `item_spawns`
+-- ----------------------------
+DROP TABLE IF EXISTS `item_spawns`;
+CREATE TABLE `item_spawns` (
+  `spawn_id` int(11) NOT NULL DEFAULT '0',
+  `item_id` smallint(6) DEFAULT '0',
+  `item_count` int(11) DEFAULT '0',
+  `location_x` smallint(6) DEFAULT NULL,
+  `location_y` smallint(6) DEFAULT NULL,
+  PRIMARY KEY (`spawn_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of item_spawns
+-- ----------------------------
+INSERT INTO `item_spawns` VALUES ('1', '4151', '1', '3222', '3220');
+
+-- ----------------------------
 -- Table structure for `login_attempts`
 -- ----------------------------
 DROP TABLE IF EXISTS `login_attempts`;
@@ -15608,7 +15681,7 @@ CREATE TABLE `login_attempts` (
   `ip` varchar(40) DEFAULT NULL,
   `attempt` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=768 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=800 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of login_attempts
@@ -16380,6 +16453,38 @@ INSERT INTO `login_attempts` VALUES ('764', 'aj', '2010-02-15 23:28:32', '99.244
 INSERT INTO `login_attempts` VALUES ('765', 'aj', '2010-02-15 23:35:24', '99.244.155.103', 'Successful');
 INSERT INTO `login_attempts` VALUES ('766', 'aj', '2010-02-15 23:36:44', '99.244.155.103', 'Successful');
 INSERT INTO `login_attempts` VALUES ('767', 'aj', '2010-02-15 23:42:18', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('768', 'aj', '2010-02-16 20:29:41', '99.244.155.103', 'WrongPassword');
+INSERT INTO `login_attempts` VALUES ('769', 'aj', '2010-02-16 20:29:48', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('770', 'aj', '2010-02-16 20:30:09', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('771', 'aj', '2010-02-16 21:32:06', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('772', 'aj', '2010-02-16 21:32:26', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('773', 'aj', '2010-02-16 21:32:47', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('774', 'aj', '2010-02-16 21:33:14', '99.244.155.103', 'WrongPassword');
+INSERT INTO `login_attempts` VALUES ('775', 'aj', '2010-02-16 21:33:18', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('776', 'aj', '2010-02-16 21:33:36', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('777', 'aj', '2010-02-16 21:35:28', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('778', 'aj', '2010-02-16 21:35:46', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('779', 'aj', '2010-02-16 21:37:30', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('780', 'aj', '2010-02-16 21:37:51', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('781', 'aj', '2010-02-16 22:31:05', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('782', 'aj', '2010-02-16 22:38:35', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('783', 'aj', '2010-02-16 22:38:53', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('784', 'aj', '2010-02-16 22:43:08', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('785', 'aj', '2010-02-17 18:02:24', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('786', 'aj', '2010-02-17 18:03:13', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('787', 'aj', '2010-02-17 18:11:37', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('788', 'aj', '2010-02-17 18:14:08', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('789', 'aj', '2010-02-17 18:15:00', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('790', 'aj', '2010-02-17 18:15:55', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('791', 'aj', '2010-02-17 22:26:23', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('792', 'aj', '2010-02-17 22:27:24', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('793', 'aj', '2010-02-17 22:29:08', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('794', 'aj', '2010-02-17 22:31:05', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('795', 'aj', '2010-02-17 22:39:07', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('796', 'aj', '2010-02-17 22:40:34', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('797', 'aj', '2010-02-17 22:40:56', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('798', 'aj', '2010-02-17 22:53:35', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('799', 'aj', '2010-02-17 22:54:39', '99.244.155.103', 'Successful');
 
 -- ----------------------------
 -- Table structure for `npc_definitions`
@@ -16562,4 +16667,4 @@ CREATE TABLE `worlds` (
 -- ----------------------------
 -- Records of worlds
 -- ----------------------------
-INSERT INTO `worlds` VALUES ('1', 'RageScape', 'Welcome to RageScape.', '3222,3219,0', 'Beware of the pedobear lurking RuneScape!', '10', '2010-02-15 23:42:06', null);
+INSERT INTO `worlds` VALUES ('1', 'RageScape', 'Welcome to RageScape.', '3222,3219,0', 'Beware of the pedobear lurking RuneScape!', '10', '2010-02-17 22:54:28', null);

@@ -78,6 +78,8 @@ namespace RuneScape.Model.Npcs
         /// </summary>
         public UpdateFlags UpdateFlags { get; private set; }
 
+        public WalkingQueue WalkingQueue { get; private set; }
+
         /// <summary>
         /// A random number provider.
         /// </summary>
@@ -110,6 +112,7 @@ namespace RuneScape.Model.Npcs
             this.SpeakMessages = messages;
 
             this.UpdateFlags = new UpdateFlags();
+            this.WalkingQueue = new WalkingQueue(this);
         }
         #endregion Constructors
 
@@ -164,10 +167,12 @@ namespace RuneScape.Model.Npcs
         {
             this.Sprite = -1;
 
-            if (this.WalkType == WalkType.Range && random.NextDouble() > 0.8)
+            /*if (this.WalkType == WalkType.Range && random.NextDouble() > 0.8)
             {
                 int moveX = (int)(Math.Floor((random.NextDouble() * 3)) - 1);
                 int moveY = (int)(Math.Floor((random.NextDouble() * 3)) - 1);
+
+                Console.WriteLine("x={0}, y={1}", moveX, moveY);
                 short tgtX = (short)(this.Location.X + moveX);
                 short tgtY = (short)(this.Location.Y + moveY);
                 this.Sprite = DirectionUtilities.CalculateDirection(this.Location.X, this.Location.Y, tgtX, tgtY);
@@ -182,7 +187,9 @@ namespace RuneScape.Model.Npcs
                     this.Sprite >>= 1;
                     this.Location = Location.Create(tgtX, tgtY, this.Location.Z);
                 }
-            }
+            }*/
+
+            Math.Round(
 
             if (this.SpeakMessages != null && random.NextDouble() > 0.95)
             {

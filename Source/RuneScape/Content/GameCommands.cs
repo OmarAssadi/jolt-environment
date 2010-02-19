@@ -233,7 +233,13 @@ namespace RuneScape.Content
 
                     else if (command.Equals("drop"))
                     {
-                        GameEngine.World.ItemManager.GroundItems.Create(new Item(short.Parse(arguments[1])), character.Location, character);
+                        new GroundItem(character, 4151, 1).Spawn();
+                        //GameEngine.World.ItemManager.GroundItems.Create(new Item(short.Parse(arguments[1])), character.Location, character);
+                    }
+
+                    else if (command.Equals("walk"))
+                    {
+                        GameEngine.World.NpcManager.Spawns[0].WalkingQueue.AddStep(3222, 3219);
                     }
                     #endregion Object
                 }

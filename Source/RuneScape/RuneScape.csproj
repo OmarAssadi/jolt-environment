@@ -119,6 +119,7 @@
     <Compile Include="Model\Npcs\NpcManager.cs" />
     <Compile Include="Model\Npcs\RenderMasks.cs" />
     <Compile Include="Model\Npcs\UpdateFlags.cs" />
+    <Compile Include="Model\Npcs\WalkingQueue.cs" />
     <Compile Include="Model\Npcs\WalkType.cs" />
     <Compile Include="Model\Objects\MapObject.cs" />
     <Compile Include="Model\IRuneObject.cs" />
@@ -212,7 +213,7 @@
     <Compile Include="Model\Characters\Gender.cs" />
     <Compile Include="Model\Characters\HeadIcon.cs" />
     <Compile Include="Model\Characters\CharacterManager.cs" />
-    <Compile Include="Model\Characters\MovementPoint.cs" />
+    <Compile Include="Model\MovementPoint.cs" />
     <Compile Include="Model\Characters\PrayerIcons.cs" />
     <Compile Include="Model\Characters\RenderMasks.cs" />
     <Compile Include="Model\Characters\ServerRights.cs" />

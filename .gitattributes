@@ -922,7 +922,6 @@ Source/RuneScape/Model/Characters/DeathIcons.cs -text
 Source/RuneScape/Model/Characters/Details.cs -text
 Source/RuneScape/Model/Characters/Gender.cs -text
 Source/RuneScape/Model/Characters/HeadIcon.cs -text
-Source/RuneScape/Model/Characters/MovementPoint.cs -text
 Source/RuneScape/Model/Characters/PrayerIcons.cs -text
 Source/RuneScape/Model/Characters/Preferences.cs -text
 Source/RuneScape/Model/Characters/RenderMasks.cs -text
@@ -957,6 +956,7 @@ Source/RuneScape/Model/Items/TakeItemEvent.cs -text
 Source/RuneScape/Model/Location.cs -text
 Source/RuneScape/Model/Maps/MapDataLoader.cs -text
 Source/RuneScape/Model/Maps/MapManager.cs -text
+Source/RuneScape/Model/MovementPoint.cs -text
 Source/RuneScape/Model/Npcs/Npc.cs -text
 Source/RuneScape/Model/Npcs/NpcDefinition.cs -text
 Source/RuneScape/Model/Npcs/NpcDefinitionLoader.cs -text
@@ -964,6 +964,7 @@ Source/RuneScape/Model/Npcs/NpcManager.cs -text
 Source/RuneScape/Model/Npcs/RenderMasks.cs -text
 Source/RuneScape/Model/Npcs/UpdateFlags.cs -text
 Source/RuneScape/Model/Npcs/WalkType.cs -text
+Source/RuneScape/Model/Npcs/WalkingQueue.cs -text
 Source/RuneScape/Model/Objects/MapObject.cs -text
 Source/RuneScape/Network/ConnectionFactory.cs -text
 Source/RuneScape/Network/ConnectionListener.cs -text
