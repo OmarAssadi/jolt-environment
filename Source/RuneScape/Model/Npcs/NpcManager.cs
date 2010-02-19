@@ -84,7 +84,7 @@ namespace RuneScape.Model.Npcs
                 // If there is any spawns in the database, spawn them in game.
                 if (rows != null)
                 {
-                    //for (int i = 0; i < 2; i++)
+                    //foreach (DataRow row in rows)
                     {
                         DataRow row = rows[0];
                         short id = (short)row[1];

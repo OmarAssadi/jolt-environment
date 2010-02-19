@@ -155,6 +155,10 @@ namespace RuneScape.Model.Npcs
             this.UpdateFlags.SpeakUpdateRequired = true;
         }
 
+        /// <summary>
+        /// Speaks a message.
+        /// </summary>
+        /// <param name="message">The message to speak.</param>
         public void Speak(string message)
         {
             Speak(ChatMessage.Create(0, message.Length, message));
@@ -167,6 +171,14 @@ namespace RuneScape.Model.Npcs
         {
             this.Sprite = -1;
 
+            if (this.WalkType == WalkType.Range && random.NextDouble() > 0.9)
+            {
+                this.WalkingQueue.Reset();
+                int moveX = random.Next(this.MinimumRange.X, this.MaximumRange.X);
+                int moveY = random.Next(this.MinimumRange.Y, this.MaximumRange.Y);
+                this.WalkingQueue.AddStep(moveX, moveY);
+            }
+
             /*if (this.WalkType == WalkType.Range && random.NextDouble() > 0.8)
             {
                 int moveX = (int)(Math.Floor((random.NextDouble() * 3)) - 1);
@@ -177,7 +189,7 @@ namespace RuneScape.Model.Npcs
                 short tgtY = (short)(this.Location.Y + moveY);
                 this.Sprite = DirectionUtilities.CalculateDirection(this.Location.X, this.Location.Y, tgtX, tgtY);
 
-                if (tgtX > this.MaximumRange.X || tgtX < this.MinimumRange.X 
+                if (tgtX > this.MaximumRange.X || tgtX < this.MinimumRange.X
                     || tgtY > this.MaximumRange.Y || tgtY < this.MinimumRange.Y)
                 {
                     this.Sprite = -1;
@@ -188,8 +200,6 @@ namespace RuneScape.Model.Npcs
                     this.Location = Location.Create(tgtX, tgtY, this.Location.Z);
                 }
             }*/
-
-            Math.Round(
 
             if (this.SpeakMessages != null && random.NextDouble() > 0.95)
             {

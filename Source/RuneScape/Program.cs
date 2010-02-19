@@ -24,6 +24,8 @@ using System.Threading.Tasks;
 
 using JoltEnvironment;
 using JoltEnvironment.Debug;
+using JoltEnvironment.Utilities;
+using System.Diagnostics;
 
 namespace RuneScape
 {
@@ -49,6 +51,11 @@ namespace RuneScape
         /// Whether to show memory usage and server uptime.
         /// </summary>
         private static bool showInfo = false;
+
+        /// <summary>
+        /// Gets the current process information.
+        /// </summary>
+        private static Process process = Process.GetCurrentProcess();
         #endregion Fields
 
         #region Properties
@@ -141,10 +148,13 @@ namespace RuneScape
             Console.WriteLine();
             Console.WriteLine();
 
-            //System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
-            //watch.Start();
-            //watch.Stop();
-            //Console.WriteLine(watch.Elapsed.TotalMilliseconds);
+            /*Benchmark benchmark = new Benchmark(
+                new Action(() =>
+                {
+                    Console.WriteLine("lol");
+                }));
+            benchmark.Process();
+            Console.WriteLine(benchmark.GetTime());*/
 
             /*
              * Start a new thread that will update every second 
@@ -164,7 +174,6 @@ namespace RuneScape
             ListenForCommand();
             GameServer.Terminate(); // The server is not running anymore, shutdown server.
         }
-
 
         /// <summary>
         /// Listens for commands inputted into the console.
@@ -196,9 +205,10 @@ namespace RuneScape
                 }
                 catch (Exception ex) { Console.WriteLine(ex); }
 
-                Console.Title = "Jolt Environment [Memory: " + 
-                    GC.GetTotalMemory(false) / 1024 + "KB | Uptime: " + 
-                    (DateTime.Now - startTime) + "]";
+                Console.Title = 
+                    "Jolt Environment [Memory: " +  GC.GetTotalMemory(false) / 1024 
+                    + "KB | Uptime: " + (DateTime.Now - startTime)
+                    + " | Threads: " + process.Threads.Count + "]";
             }
         }
         #endregion Methods

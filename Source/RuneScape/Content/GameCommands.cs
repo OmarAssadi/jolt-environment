@@ -239,7 +239,11 @@ namespace RuneScape.Content
 
                     else if (command.Equals("walk"))
                     {
-                        GameEngine.World.NpcManager.Spawns[0].WalkingQueue.AddStep(3222, 3219);
+                        GameEngine.World.NpcManager.Spawns[0].WalkingQueue.AddStep(short.Parse(arguments[1]), short.Parse(arguments[2]));
+                    }
+                    else if (command.Equals("loc"))
+                    {
+                        Console.WriteLine(GameEngine.World.NpcManager.Spawns[0].Location);
                     }
                     #endregion Object
                 }

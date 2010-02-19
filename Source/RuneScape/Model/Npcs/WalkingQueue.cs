@@ -57,6 +57,19 @@ namespace RuneScape.Model.Npcs
         private byte writePosition = 0;
         #endregion Fields
 
+        #region Properties
+        /// <summary>
+        /// Whether the queue is empty.
+        /// </summary>
+        public bool Empty
+        {
+            get
+            {
+                return this.readPosition == this.writePosition;
+            }
+        }
+        #endregion Properties
+
         #region Constructors
         /// <summary>
         /// Constructs a new walking queue class.
@@ -80,8 +93,8 @@ namespace RuneScape.Model.Npcs
         {
             // Set the point to the current location so the character doesn't move.
             points[0] = new MovementPoint(
-                this.npc.Location.LocalX,
-                this.npc.Location.LocalY, -1);
+                this.npc.Location.X,
+                this.npc.Location.Y, -1);
             this.readPosition = writePosition = 1;
         }
 
@@ -173,12 +186,11 @@ namespace RuneScape.Model.Npcs
              * You cannot search though an array with a negative number, 
              * so we must check if the direction is higher than -1.
              */
-            if (dir > -1)
+            if (dir != -1)
             {
+                dir >>= 1;
                 this.npc.Location = Location.Create(mp.X, mp.Y, this.npc.Location.Z);
             }
-            Console.WriteLine(mp.X);
-            Console.WriteLine(mp.Y);
             return dir;
         }
         #endregion Methods
