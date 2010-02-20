@@ -231,19 +231,11 @@ namespace RuneScape.Content
                         new GroundItem(character.Location, character, objId, 1).Spawn();
                     }
 
-                    else if (command.Equals("drop"))
+                    else if (command.Equals("update"))
                     {
-                        new GroundItem(character, 4151, 1).Spawn();
-                        //GameEngine.World.ItemManager.GroundItems.Create(new Item(short.Parse(arguments[1])), character.Location, character);
-                    }
-
-                    else if (command.Equals("walk"))
-                    {
-                        GameEngine.World.NpcManager.Spawns[0].WalkingQueue.AddStep(short.Parse(arguments[1]), short.Parse(arguments[2]));
-                    }
-                    else if (command.Equals("loc"))
-                    {
-                        Console.WriteLine(GameEngine.World.NpcManager.Spawns[0].Location);
+                        short time = short.Parse(arguments[1]);
+                        bool restart = bool.Parse(arguments[2]);
+                        Frames.SendSystemUpdate(time, restart);
                     }
                     #endregion Object
                 }

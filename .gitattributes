@@ -875,6 +875,7 @@ Source/RuneScape/Communication/Messages/Outgoing/SpawnGroundItemPacketComposer.c
 Source/RuneScape/Communication/Messages/Outgoing/SpawnObjectPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/StatsPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/StringPacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/SystemUpdatePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/WindowPanePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/WriteStreams.cs -text
 Source/RuneScape/Communication/Messages/Packet.cs -text

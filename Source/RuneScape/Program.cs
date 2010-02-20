@@ -167,7 +167,7 @@ namespace RuneScape
             GameServer.Initialize(); // Initialize the runescape emulator.
             //GameServer.IsRunning = true;
             ListenForCommand();
-            GameServer.Terminate(true); // The server is not running anymore, shutdown server.
+            GameServer.Terminate(false); // The server is not running anymore, shutdown server.
         }
 
         /// <summary>

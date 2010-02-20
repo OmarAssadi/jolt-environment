@@ -43,6 +43,7 @@ namespace RuneScape
                 {
                     case "add":
                         {
+                            RuneScape.Communication.Messages.Frames.SendSystemUpdate(10, true);
                             break;
                         }
                     case "clear":

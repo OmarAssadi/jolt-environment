@@ -43,6 +43,11 @@ namespace RuneScape.Database.Account
         public AccountLoadResult Load(Details details, LoginConnectionType loginType)
         {
             AccountLoadResult result = new AccountLoadResult();
+            if (GameEngine.World.SystemUpdate)
+            {
+                result.Character = new Character(details, 0);
+                result.ReturnCode = LoginReturnCode.SystemUpdate;
+            }
             try
             {
                 DataRow data = null;
@@ -147,7 +152,7 @@ namespace RuneScape.Database.Account
             {
                 Program.Logger.WriteException(ex);
                 result.Character = new Character(details, 0);
-                result.ReturnCode = LoginReturnCode.BadSession;
+                result.ReturnCode = LoginReturnCode.Rejected;
             }
             return result;
         }

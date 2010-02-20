@@ -62,6 +62,13 @@ namespace RuneScape.Communication.Messages.Incoming
                             Frames.SendTabs(character);
                             Frames.SendCloseInventoryInterface(character);
                             break;
+                        case 667:
+                            Frames.SendTabs(character);
+                            Frames.SendCloseInventoryInterface(character);
+                            break;
+                        default:
+                            Program.Logger.WriteDebug("Unhandled interface closer: " + interfaceId);
+                            break;
                     }
                 }
             }

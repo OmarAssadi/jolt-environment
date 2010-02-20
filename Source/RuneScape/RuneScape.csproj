@@ -87,6 +87,7 @@
     <Compile Include="Communication\Messages\Outgoing\RunScriptPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\SpawnGroundItemPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\SpawnObjectPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\SystemUpdatePacketComposer.cs" />
     <Compile Include="Content\Interfaces\CharacterSetup.cs" />
     <Compile Include="Content\Interfaces\EmoteTab.cs" />
     <Compile Include="Content\Interfaces\EquipmentTab.cs" />

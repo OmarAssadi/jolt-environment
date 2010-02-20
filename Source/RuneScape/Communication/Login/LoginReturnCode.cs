@@ -55,6 +55,10 @@ namespace RuneScape.Communication.Login
         /// <summary>
         /// The session was rejected.
         /// </summary>
-        Rejected = 11
+        Rejected = 11,
+        /// <summary>
+        /// There's a system update.
+        /// </summary>
+        SystemUpdate = 14
     }
 }

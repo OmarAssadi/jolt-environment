@@ -21,11 +21,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 using RuneScape.Communication.Messages.Outgoing;
 using RuneScape.Content.Interfaces;
 using RuneScape.Model;
 using RuneScape.Model.Characters;
+using JoltEnvironment.Utilities;
 
 namespace RuneScape.Communication.Messages
 {
@@ -335,6 +337,28 @@ namespace RuneScape.Communication.Messages
             character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Resized ? 746 : 548), 31, false).Serialize());
             character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Resized ? 746 : 548), 63, false).Serialize());
             character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Resized ? 746 : 548), 72, false).Serialize());
+        }
+
+        /// <summary>
+        /// Sends a system update notification message to all users online, 
+        /// and blocks any other users from coming online untill update is done.
+        /// </summary>
+        /// <param name="time">The time before server updates.</param>
+        /// <param name="restart">Whether to restart server after update.</param>
+        public static void SendSystemUpdate(short time, bool restart)
+        {
+            List<Character> chars = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
+            chars.ForEach((c) =>
+            {
+                c.Session.SendData(new SystemUpdatePacketComposer(time).Serialize());
+            });
+            GameEngine.World.SystemUpdate = true;
+
+            ThreadPool.QueueUserWorkItem(new WaitCallback((obj) =>
+            {
+                Thread.Sleep(time * 600);
+                GameServer.Terminate(restart);
+            }));
         }
         #endregion Methods
     }

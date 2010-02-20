@@ -96,6 +96,10 @@ namespace RuneScape.Model
         /// Gets or sets whether account creation via the client is enabled.
         /// </summary>
         public bool AccountCreationEnabled { get; private set; }
+        /// <summary>
+        /// Gets or sets whether the world has an upcoming system update.
+        /// </summary>
+        public bool SystemUpdate { get; set; }
 
         /// <summary>
         /// Gets the character manager.

@@ -172,12 +172,14 @@ namespace RuneScape
                 TcpConnection.Destroy();
             }
 
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadLine();
             if (restart)
             {
                 Process.Start("runescape.exe");
+                Environment.Exit(0);
+                return;
             }
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             Environment.Exit(0);
         }
         #endregion Methods
