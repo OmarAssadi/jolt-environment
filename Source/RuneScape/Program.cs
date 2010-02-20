@@ -51,11 +51,6 @@ namespace RuneScape
         /// Whether to show memory usage and server uptime.
         /// </summary>
         private static bool showInfo = false;
-
-        /// <summary>
-        /// Gets the current process information.
-        /// </summary>
-        private static Process process = Process.GetCurrentProcess();
         #endregion Fields
 
         #region Properties
@@ -172,7 +167,7 @@ namespace RuneScape
             GameServer.Initialize(); // Initialize the runescape emulator.
             //GameServer.IsRunning = true;
             ListenForCommand();
-            GameServer.Terminate(); // The server is not running anymore, shutdown server.
+            GameServer.Terminate(true); // The server is not running anymore, shutdown server.
         }
 
         /// <summary>
@@ -207,8 +202,7 @@ namespace RuneScape
 
                 Console.Title = 
                     "Jolt Environment [Memory: " +  GC.GetTotalMemory(false) / 1024 
-                    + "KB | Uptime: " + (DateTime.Now - startTime)
-                    + " | Threads: " + process.Threads.Count + "]";
+                    + "KB | Uptime: " + (DateTime.Now - startTime) + "]";
             }
         }
         #endregion Methods

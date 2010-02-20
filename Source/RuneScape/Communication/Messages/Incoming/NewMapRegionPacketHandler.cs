@@ -39,6 +39,7 @@ namespace RuneScape.Communication.Messages.Incoming
         /// <param name="packet">The packet containing handle data.</param>
         public void Handle(Character character, Packet packet)
         {
+            GameEngine.World.ItemManager.GroundItems.Refresh(character);
             // TODO: handle objects.
             // TODO: handle (ground/spawned) items.
         }

@@ -103,7 +103,7 @@ namespace RuneScape.Model.Npcs
         /// </summary>
         /// <param name="x">The local x coordinate to reach.</param>
         /// <param name="y">The local y coordinate to reach.</param>
-        public void AddStep(int x, int y)
+        public void AddStep(short x, short y)
         {
             // Calculate differences.
             int diffX = x - this.points[this.writePosition - 1].X;
@@ -127,35 +127,10 @@ namespace RuneScape.Model.Npcs
                     diffY--;
 
                 // Add the step to the (internal) queue.
-                AddStepInternal((short)(x - diffX), (short)(y - diffY));
-            }
-        }
-
-        /// <summary>
-        /// Adds a step to the queue internally.
-        /// </summary>
-        /// <param name="x">X coordinate of step.</param>
-        /// <param name="y">Y coordinate of step.</param>
-        private void AddStepInternal(short x, short y)
-        {
-            // Check to see if the current count of queues overflows the capacity limit.
-            if (this.writePosition >= WalkingQueue.Capacity)
-            {
-                /*
-                 * The character most likely is a bot, cause 
-                 * normal characters cannot reach this limit.
-                 */
-                return;
-            }
-
-            // Caclulate direction from differences.
-            sbyte direction = DirectionUtilities.CalculateDirection(this.npc.Location.X, this.npc.Location.Y, x, y);
-
-            // We only need to enqueue the point if the direction is valid.
-            if (direction > -1)
-            {
-                // Enqueue the calculated point.
-                this.points[this.writePosition++] = new MovementPoint(x, y, direction);
+                if (this.writePosition < WalkingQueue.Capacity)
+                {
+                    this.points[this.writePosition++] = new MovementPoint((short)(x - diffX), (short)(y - diffY), -1);
+                }
             }
         }
 
@@ -180,7 +155,8 @@ namespace RuneScape.Model.Npcs
             }
 
             MovementPoint mp = points[this.readPosition++];
-            sbyte dir = mp.Direction;
+            sbyte dir = DirectionUtilities.CalculateDirection(this.npc.Location.X, this.npc.Location.Y, mp.X, mp.Y);
+
 
             /*
              * You cannot search though an array with a negative number, 

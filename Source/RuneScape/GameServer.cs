@@ -18,9 +18,9 @@
 */
 
 using System;
-using System.Net;
+using System.Diagnostics;
 using System.IO;
-using System.Threading;
+using System.Net;
 
 using JoltEnvironment;
 using JoltEnvironment.Debug;
@@ -86,9 +86,6 @@ namespace RuneScape
         /// </summary>
         public static void Initialize()
         {
-            // Check for any updates that may have been released.
-            //CheckUpdates();
-
             Program.Logger.WriteInfo("Initializing a new gaming environment...");
             try
             {
@@ -155,14 +152,14 @@ namespace RuneScape
                 Program.Logger.WriteException(ex);
                 Program.Logger.WriteError("Could not set up server correctly."
                     + "\nPlease referr to the error message above. Shutting down...");
-                Terminate();
+                Terminate(false);
             }
         }
 
         /// <summary>
         /// Terminates the environment.
         /// </summary>
-        public static void Terminate()
+        public static void Terminate(bool restart)
         {
             Program.Logger.WriteInfo("Shutting down game server...");
             Program.Logger.LogPriority = LogPriority.Warn;
@@ -177,41 +174,11 @@ namespace RuneScape
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
+            if (restart)
+            {
+                Process.Start("runescape.exe");
+            }
             Environment.Exit(0);
-        }
-
-        /// <summary>
-        /// Checks online to see if this version of jolt environment is updated.
-        /// </summary>
-        private static void CheckUpdates()
-        {
-            try
-            {
-                WebClient webClient = new WebClient();
-                StreamReader reader = new StreamReader(
-                    webClient.OpenRead("http://ajravindiran.com/projects/jolt/version"));
-
-                string[] version = reader.ReadLine().Split('.');
-                Version latestVersion = new Version(
-                    int.Parse(version[0]),
-                    int.Parse(version[1]),
-                    int.Parse(version[2]));
-
-                // If the current version is higher than this server's version.
-                if (latestVersion > Program.Version)
-                {
-                    Program.Logger.WriteWarn("This version of Jolt Environment is outdated (Lastest version: " + latestVersion
-                        + ").\nPlease type \"update\" into the console to get the latest version.");
-                }
-            }
-            catch (WebException)
-            {
-                // The system is most likely not connected to the internet / could not connect to host.
-            }
-            catch (Exception ex)
-            {
-                Program.Logger.WriteException(ex);
-            }
         }
         #endregion Methods
     }

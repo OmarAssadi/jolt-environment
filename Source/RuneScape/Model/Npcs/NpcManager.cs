@@ -84,9 +84,9 @@ namespace RuneScape.Model.Npcs
                 // If there is any spawns in the database, spawn them in game.
                 if (rows != null)
                 {
-                    //foreach (DataRow row in rows)
+                    foreach (DataRow row in rows)
                     {
-                        DataRow row = rows[0];
+                        //DataRow row = rows[0];
                         short id = (short)row[1];
                         Location originalCoords = Location.Create((short)row[2], (short)row[3], (byte)row[4]);
                         WalkType walkType = (WalkType)row[5];

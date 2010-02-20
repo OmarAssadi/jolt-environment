@@ -70,9 +70,6 @@ namespace RuneScape.Communication.Login
                 short width = p.ReadShort();
                 short height = p.ReadShort();
 
-                Console.WriteLine("HD: " + hd);
-                Console.WriteLine("Resized: " + resized);
-
                 p.Skip(141);
 
                 int tmpEncryptPacketSize = p.ReadByte();

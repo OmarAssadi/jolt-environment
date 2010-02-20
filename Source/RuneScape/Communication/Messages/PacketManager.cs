@@ -115,6 +115,7 @@ namespace RuneScape.Communication.Messages
             AddHandler(22, new QuietPacketHandler()); // Recieved when update is required.
             AddHandler(49, new WalkingPacketHandler()); // Handles walking.
             AddHandler(59, new QuietPacketHandler()); // Character's mouse click.
+            AddHandler(60, new NewMapRegionPacketHandler()); // Handles region changing.
             AddHandler(63, new RemoveInterfacePacketHandler()); // Removes a chatbox interface.
             AddHandler(90, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(99, new QuietPacketHandler()); // Unknown.
