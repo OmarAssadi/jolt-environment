@@ -195,7 +195,7 @@ namespace RuneScape.Model.Items
                 var groundItems = new List<GroundItem>(this.Items);
                 groundItems.ForEach((gItem) =>
                 {
-                    if (!gItem.Spawned && (DateTime.Now - gItem.TimeCreated).TotalSeconds >= 60)
+                    if (!gItem.Spawned && (DateTime.Now - gItem.TimeCreated).TotalSeconds >= 90)
                     {
                         if (gItem.Character == null)
                         {
@@ -205,7 +205,7 @@ namespace RuneScape.Model.Items
                         }
                         else
                         {
-                            if (gItem.Definition.Tradable)
+                            if (!gItem.Definition.Tradable)
                             {
                                 gItem.Destroyed = true;
                                 gItem.Despawn();
@@ -253,12 +253,16 @@ namespace RuneScape.Model.Items
                 {
                     if (character.Location.WithinDistance(g.Location) && !g.Destroyed)
                     {
-                        if (g.Character != null && character != g.Character 
+                        if (g.Character != null && character != g.Character
                             && character.MasterId == g.Character.MasterId)
                         {
                             g.Character = character;
+                            g.Spawn();
                         }
-                        g.Spawn(character);
+                        else
+                        {
+                            g.Spawn(character);
+                        }
                     }
                 });
             }

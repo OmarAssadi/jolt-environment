@@ -44,7 +44,7 @@ namespace RuneScape.Utilities
                         "SELECT database_version FROM versioning; "
                         + "UPDATE versioning SET server_version = @sver;");
 
-            Version required = new Version(1, 0, 2200);
+            Version required = new Version(1, 0, 3000);
             Version dbVersion = Version.Parse(dbResult);
             if (dbVersion < required)
             {
@@ -56,7 +56,7 @@ namespace RuneScape.Utilities
         /// <summary>
         /// Stub.
         /// </summary>
-        /// <param name="client"></param>
+        /// <param name="client">The client providing the connection to database.</param>
         public void ExecuteUpdate(SqlDatabaseClient client)
         {
             throw new NotImplementedException();

@@ -789,10 +789,6 @@ Resources/libs/external/CSScriptLibrary.dll -text
 Resources/libs/external/CommonLibrary.dll -text
 Resources/libs/external/MySql.Data.dll -text
 Resources/libs/external/PowerCollections.dll -text
-Resources/libsrc/CSScript.zip -text
-Resources/libsrc/CommonLibrary.zip -text
-Resources/libsrc/PowerCollections.zip -text
-Resources/libsrc/mysql-connector-net-6.2.2-src.zip -text
 Source/JoltEnvironment.sln -text
 Source/JoltEnvironment/Configuration.cs -text
 Source/JoltEnvironment/Debug/AsyncLogWorker.cs -text

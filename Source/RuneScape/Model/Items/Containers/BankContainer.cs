@@ -22,35 +22,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using RuneScape.Model.Characters;
+
 namespace RuneScape.Model.Items.Containers
 {
     /// <summary>
     /// A container for character inventories.
     /// </summary>
-    /*public class BankContainer : Container
+    public class BankContainer : Container
     {
         #region Fields
         /// <summary>
-        /// The size of the inventory container..
+        /// The size of the bank container..
         /// 
         ///     <remarks>This value cannot be changed, because 
         ///     this is the maximum amount required for the 
         ///     runescape client.</remarks>
         /// </summary>
-        public const int Size = 14;
+        public const int Size = 200;
         #endregion Fields
 
         #region Constructors
         /// <summary>
         /// Constructs a new bank container.
         /// </summary>
-        public BankContainer()
-            : base(BankContainer.Size, ContainerType.Standard)
+        public BankContainer(Character character)
+            : base(BankContainer.Size, ContainerType.Standard, character)
         {
         }
         #endregion Constructors
 
         #region Methods
+        /// <summary>
+        /// Refreshes the bank.
+        /// </summary>
+        public override void Refresh()
+        {
+        }
         #endregion Methods
-    }*/
+    }
 }

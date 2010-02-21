@@ -73,7 +73,6 @@ namespace RuneScape.Model.Characters
                     {
                         this.temporaryAttributes[key] = value;
                     }
-
                 }
             }
         }

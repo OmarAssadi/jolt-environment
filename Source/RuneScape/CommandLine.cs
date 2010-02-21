@@ -41,26 +41,13 @@ namespace RuneScape
             {
                 switch (command.ToLower())
                 {
-                    case "add":
-                        {
-                            RuneScape.Communication.Messages.Frames.SendSystemUpdate(10, true);
-                            break;
-                        }
-                    case "clear":
-                        {
-                            for (int i = 0; i < GameEngine.World.NpcManager.Spawns.Count; i++)
-                            {
-                                GameEngine.World.NpcManager.Spawns[i].UpdateFlags.ClearFaceTo = true;
-                            }
-                            break;
-                        }
                     case "about": // Displays information about jolt environment.
                         Console.WriteLine(" Jolt Environment [" + Program.Version.ToString() + " Release-Win32-x86/x64]");
                         Console.WriteLine(" Copyright (C) 2010 Jolt Environment Team <aj@ajravindiran.com>");
                         Console.WriteLine(" Website: http://www.ajravindiran.com/projects/jolt/");
                         Console.WriteLine(" Credits: http://www.ajravindiran.com/projects/jolt/credits/");
                         break;
-                    case "system":
+                    case "system": // Displays information about the system.
                         Console.WriteLine("Operating system: " + Environment.OSVersion);
                         Console.WriteLine("Processors/Cores: " + Environment.ProcessorCount);
                         Console.WriteLine("Logged in username: " + Environment.MachineName);
@@ -68,7 +55,6 @@ namespace RuneScape
                         break;
                     case "gc":
                         GC.Collect();
-                        Program.Logger.WriteInfo("Successfully garbage collected.");
                         break;
                     case "shutdown":
                         GameServer.IsRunning = false;
