@@ -85,6 +85,8 @@ namespace RuneScape.Content.Interfaces
             AddHandler(750, new RuneOrbs()); // The orbs to the right of the mini map.
             AddHandler(751, new ChatOptionsBar()); // The options displayed under the chatbox.
             AddHandler(755, new WorldMap()); // The world map interface.
+            AddHandler(762, new Bank()); // The bank.
+            AddHandler(763, new DepositInterface()); // The deposit interface shown, when the bank is open.
             AddHandler(771, new CharacterSetup()); // The setup interface (the one shown on first login).
         }
 

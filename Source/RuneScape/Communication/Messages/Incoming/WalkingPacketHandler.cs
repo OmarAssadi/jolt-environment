@@ -38,39 +38,36 @@ namespace RuneScape.Communication.Messages.Incoming
         /// <param name="character">The character to handle packet for.</param>
         /// <param name="packet">The packet containing handle data.</param>
         public void Handle(Character character, Packet packet)
-        {
+        {            
+            // This will close the open interface.
+            // TODO: remove skill menu
+            // TODO: remove trade screen
+            if (character.Preferences["interface"] != null)
+            {
+                short interfaceId = (short)character.Preferences["interface"];
+
+                // Close interface first.
+                Frames.SendCloseInterface(character);
+
+                // Call any extra requirements.
+                switch (interfaceId)
+                {
+                    case 762:
+                        Frames.SendTabs(character);
+                        Frames.SendCloseInventoryInterface(character);
+                        break;
+                    case 667:
+                        Frames.SendTabs(character);
+                        Frames.SendCloseInventoryInterface(character);
+                        break;
+                }
+            }
+
+            // Walking via minimap.
             int length = packet.Length;
             if (packet.Opcode == 119)
             {
                 length -= 14;
-
-
-                // This will close the open interface.
-                // TODO: remove skill menu
-                // TODO: remove trade screen
-                if (character.Preferences["interface"] != null)
-                {
-                    short interfaceId = (short)character.Preferences["interface"];
-
-                    // Close interface first.
-                    Frames.SendCloseInterface(character);
-
-                    // Call any extra requirements.
-                    switch (interfaceId)
-                    {
-                        case 762:
-                            Frames.SendTabs(character);
-                            Frames.SendCloseInventoryInterface(character);
-                            break;
-                        case 667:
-                            Frames.SendTabs(character);
-                            Frames.SendCloseInventoryInterface(character);
-                            break;
-                        default:
-                            Program.Logger.WriteDebug("Unhandled interface closer: " + interfaceId);
-                            break;
-                    }
-                }
             }
 
             /* 

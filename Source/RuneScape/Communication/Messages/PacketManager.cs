@@ -113,6 +113,7 @@ namespace RuneScape.Communication.Messages
             AddHandler(3, new EquipItemPacketHandler()); // Handles item equiping.
             AddHandler(21, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(22, new QuietPacketHandler()); // Recieved when update is required.
+            AddHandler(43, new InputPacketHandler()); // Handles input from interfaces.
             AddHandler(49, new WalkingPacketHandler()); // Handles walking.
             AddHandler(59, new QuietPacketHandler()); // Character's mouse click.
             AddHandler(60, new NewMapRegionPacketHandler()); // Handles region changing.

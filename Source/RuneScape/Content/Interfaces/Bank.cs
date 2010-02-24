@@ -50,7 +50,71 @@ namespace RuneScape.Content.Interfaces
         /// <param name="buttonId2">The secondary button to handle.</param>
         public void HandleButton(Model.Characters.Character character, int packetId, int buttonId, int buttonId2)
         {
-            throw new NotImplementedException();
+            switch (buttonId)
+            {
+                case 41:
+                case 39:
+                case 37:
+                case 35:
+                case 33:
+                case 31:
+                case 29:
+                case 27:
+                case 25:
+                    {
+                        if (packetId == 21)
+                        {
+                            character.Bank.CollapseTab(GetTabIndex(buttonId));
+                        }
+                        else if (packetId == 233)
+                        {
+                            character.Bank.CurrentTab = GetTabIndex(buttonId);
+                        }
+                        break;
+                    }
+                case 73:
+                    switch (packetId)
+                    {
+                        case 233:
+                            character.Bank.Withdraw((byte)buttonId2, 1);
+                            break;
+                        case 21:
+                            character.Bank.Withdraw((byte)buttonId2, 5);
+                            break;
+                        case 169:
+                            character.Bank.Withdraw((byte)buttonId2, 10);
+                            break;
+                        case 173:
+                            character.Preferences.Add("withdraw", (byte)buttonId2);
+                            character.Session.SendData(new RunScriptPacketComposer(108, "s", new object[] { "Please enter the amount to withdraw!" }).Serialize());
+                            break;
+                        case 232:
+                            character.Bank.Withdraw((byte)buttonId2,
+                                character.Bank.GetAmount(character.Bank[buttonId2]));
+                            break;
+                        case 133:
+                            int count = character.Bank.GetAmount(character.Bank[buttonId2]);
+                            character.Bank.Withdraw((byte)buttonId2,
+                                count - 1 != 0 ? count - 1 : 1);
+                            break;
+                        case 90:
+                            character.Bank.Examine((byte)buttonId2);
+                            break;
+                    }
+                    break;
+                case 16:
+                    character.Bank.Noting = character.Bank.Noting ? false : true;
+                    character.Session.SendData(new ConfigPacketComposer(115, character.Bank.Noting ? 1 : 0).Serialize());
+                    break;
+                default:
+                    {
+                        if (character.ServerRights >= ServerRights.SystemAdministrator)
+                        {
+                            Program.Logger.WriteDebug("Unhandled banking button: " + buttonId);
+                        }
+                        break;
+                    }
+            }
         }
 
         /// <summary>
@@ -85,6 +149,46 @@ namespace RuneScape.Content.Interfaces
             Frames.SendInterface(character, 762, true);
             Frames.SendInventoryInterface(character, 763);
             character.Bank.CurrentTab = 10;
+        }
+
+        /// <summary>
+        /// Gets the tab id.
+        /// </summary>
+        /// <param name="tabid">The buttonId of the tab.</param>
+        /// <returns>The tab id for the button.</returns>
+        public static sbyte GetTabIndex(int buttonId)
+        {
+            switch (buttonId)
+            {
+                case 39:
+                case 52:
+                    return 2;
+                case 37:
+                case 53:
+                    return 3;
+                case 35:
+                case 54:
+                    return 4;
+                case 33:
+                case 55:
+                    return 5;
+                case 31:
+                case 56:
+                    return 6;
+                case 29:
+                case 57:
+                    return 7;
+                case 27:
+                case 58:
+                    return 8;
+                case 25:
+                case 59:
+                    return 9;
+                case 41:
+                case 51:
+                    return 10;
+            }
+            return -1;
         }
         #endregion Methods
     }

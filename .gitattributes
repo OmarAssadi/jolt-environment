@@ -835,6 +835,7 @@ Source/RuneScape/Communication/Messages/Incoming/DropItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/EquipItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/HdNotificationPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/IPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/InputPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ItemOptionsPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NewMapRegionPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NullPacketHandler.cs -text

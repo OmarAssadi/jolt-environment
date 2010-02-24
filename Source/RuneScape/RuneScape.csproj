@@ -69,6 +69,7 @@
     <Compile Include="Communication\Messages\Incoming\DropItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\EquipItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\HdNotificationPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\InputPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ItemOptionsPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ReportAbusePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\SwapItemPacketHandler.cs" />

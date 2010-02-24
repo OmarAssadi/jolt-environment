@@ -51,7 +51,7 @@ namespace RuneScape.Model.Items.Containers
         /// <summary>
         /// Gets the current tab id.
         /// </summary>
-        public byte CurrentTab { get; set; }
+        public sbyte CurrentTab { get; set; }
         /// <summary>
         /// Gets the tab index (item id value).
         /// </summary>
@@ -113,7 +113,7 @@ namespace RuneScape.Model.Items.Containers
             }
 
             Item item = this.Character.Inventory[slot];
-            if (slot == null)
+            if (item == null)
             {
                 return false;
             }
