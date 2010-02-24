@@ -376,7 +376,7 @@ namespace RuneScape.Model.Items.Containers
         /// </summary>
         /// <param name="item">The item to check for.</param>
         /// <returns>Returns true if contained; false if not.</returns>
-        public bool ConatainsOne(Item item)
+        public bool ContainsOne(Item item)
         {
             lock (this.obj)
             {

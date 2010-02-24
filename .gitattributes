@@ -880,8 +880,10 @@ Source/RuneScape/Communication/Messages/PacketType.cs -text
 Source/RuneScape/Communication/Messages/ReadStreams.cs -text
 Source/RuneScape/Content/GameCommands.cs -text
 Source/RuneScape/Content/GameContent.cs -text
+Source/RuneScape/Content/Interfaces/Bank.cs -text
 Source/RuneScape/Content/Interfaces/CharacterSetup.cs -text
 Source/RuneScape/Content/Interfaces/ChatOptionsBar.cs -text
+Source/RuneScape/Content/Interfaces/DepositInventory.cs -text
 Source/RuneScape/Content/Interfaces/EmoteTab.cs -text
 Source/RuneScape/Content/Interfaces/EquipmentTab.cs -text
 Source/RuneScape/Content/Interfaces/IInterfaceHandler.cs -text

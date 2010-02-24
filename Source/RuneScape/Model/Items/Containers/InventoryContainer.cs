@@ -107,6 +107,19 @@ namespace RuneScape.Model.Items.Containers
             ResetInternal();
             Refresh();
         }
+
+        /// <summary>
+        /// Examines an item within the character's bank.
+        /// </summary>
+        /// <param name="slot">The slot of the bank to examine.</param>
+        public void Examine(byte slot)
+        {
+            if (slot < 0 || slot > InventoryContainer.Size || this[slot] == null)
+            {
+                return;
+            }
+            this.Character.Session.SendData(new MessagePacketComposer(this[slot].Definition.Examine).Serialize());
+        }
         #endregion Methods
     }
 }

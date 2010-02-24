@@ -39,7 +39,7 @@ namespace RuneScape.Communication.Messages.Outgoing
         /// <param name="value">The value of the configuratoin.</param>
         public ConfigPacketComposer(short id, int value)
         {
-            if (value < 128)
+            if (value > -129 && value < 128)
             {
                 SetOpcode(100);
                 AppendShortA(id);

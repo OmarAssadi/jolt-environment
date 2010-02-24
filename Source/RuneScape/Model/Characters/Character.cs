@@ -122,6 +122,10 @@ namespace RuneScape.Model.Characters
         /// Gets the character's equipment.
         /// </summary>
         public EquipmentContainer Equipment { get; private set; }
+        /// <summary>
+        /// Gets the character's bank.
+        /// </summary>
+        public BankContainer Bank { get; private set; }
         #endregion Properties
 
         #region Constructors
@@ -131,8 +135,6 @@ namespace RuneScape.Model.Characters
         /// <param name="details">The details passed on from the account loader.</param>
         public Character(Details details, uint masterId)
         {
-
-
             // Core details of the character.
             this.SessionId = details.Session.Connection.Id;
             this.MasterId = masterId;
@@ -161,6 +163,7 @@ namespace RuneScape.Model.Characters
             this.Bonuses = new Bonuses(this);
             this.Inventory = new InventoryContainer(this);
             this.Equipment = new EquipmentContainer(this);
+            this.Bank = new BankContainer(this);
         }
         #endregion Constructors
 

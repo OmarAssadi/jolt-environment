@@ -184,14 +184,14 @@ namespace RuneScape.Communication.Messages
         /// <returns>Returns a string.</returns>
         public string ReadString()
         {
-            string s = string.Empty;
+            StringBuilder sb = new StringBuilder();
             byte b;
 
             while ((b = ReadByte()) != 0)
             {
-                s += (char)b;
+                sb.Append((char)b);
             }
-            return s;
+            return sb.ToString();
         }
         #endregion Methods
     }

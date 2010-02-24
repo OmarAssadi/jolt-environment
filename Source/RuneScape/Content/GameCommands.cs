@@ -54,6 +54,18 @@ namespace RuneScape.Content
                         character.Inventory.Reset();
                     }
                     #endregion Clear Inventory
+
+                    #region Players
+                    /*
+                     * Notifies the character how many players are current online.
+                     */
+                    else if (command.Equals("players"))
+                    {
+                        int count = GameEngine.World.CharacterManager.CharacterCount;
+                        character.Session.SendData(new MessagePacketComposer(
+                            "There is currently " + count + " player(s) online.").Serialize());
+                    }
+                    #endregion Players
                 }
 
                 /*
@@ -236,6 +248,11 @@ namespace RuneScape.Content
                         short time = short.Parse(arguments[1]);
                         bool restart = bool.Parse(arguments[2]);
                         Frames.SendSystemUpdate(time, restart);
+                    }
+
+                    else if (command.Equals("bank"))
+                    {
+                        Bank.Show(character);
                     }
                     #endregion Object
                 }
