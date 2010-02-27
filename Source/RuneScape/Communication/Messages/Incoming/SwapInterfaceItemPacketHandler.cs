@@ -26,6 +26,8 @@ using RuneScape.Model.Characters;
 using RuneScape.Model.Items;
 using RuneScape.Model.Items.Containers;
 
+using RuneScape.Content.Interfaces;
+
 namespace RuneScape.Communication.Messages.Incoming
 {
     /// <summary>
@@ -33,7 +35,7 @@ namespace RuneScape.Communication.Messages.Incoming
     /// </summary>
     public class SwapInterfaceItemPacketHandler : IPacketHandler
     {
-        #region Methods        
+        #region Methods
         /// <summary>
         /// Handles the items moved on between interfaces.
         /// </summary>
@@ -43,6 +45,7 @@ namespace RuneScape.Communication.Messages.Incoming
         {
             int toInterface = packet.ReadInt();
             int interfaceId = toInterface >> 16;
+            int fromInterface = packet.ReadInt() >> 16;
             int fromSlot = packet.ReadShort() & 0xFFFF;
             int toSlot = packet.ReadLEShort() & 0xFFFF;
 
@@ -53,16 +56,23 @@ namespace RuneScape.Communication.Messages.Incoming
                  */
                 case 763:
                     {
-                        if (fromSlot < 0 || fromSlot >= InventoryContainer.Size 
+                        if (fromSlot < 0 || fromSlot >= InventoryContainer.Size
                             || toSlot < 0 || toSlot >= InventoryContainer.Size)
                         {
                             break;
                         }
-
                         Item tmpItem = character.Inventory[fromSlot];
                         Item tmpItem2 = character.Inventory[toSlot];
                         character.Inventory[fromSlot] = tmpItem2;
                         character.Inventory[toSlot] = tmpItem;
+                        character.Inventory.Refresh();
+                        break;
+                    }
+                /*
+                 * Bank.
+                 */
+                case 762:
+                    {
                         break;
                     }
             }

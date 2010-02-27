@@ -52,26 +52,6 @@ namespace RuneScape.Content.Interfaces
         {
             switch (buttonId)
             {
-                case 41:
-                case 39:
-                case 37:
-                case 35:
-                case 33:
-                case 31:
-                case 29:
-                case 27:
-                case 25:
-                    {
-                        if (packetId == 21)
-                        {
-                            character.Bank.CollapseTab(GetTabIndex(buttonId));
-                        }
-                        else if (packetId == 233)
-                        {
-                            character.Bank.CurrentTab = GetTabIndex(buttonId);
-                        }
-                        break;
-                    }
                 case 73:
                     switch (packetId)
                     {
@@ -106,6 +86,8 @@ namespace RuneScape.Content.Interfaces
                     character.Bank.Noting = character.Bank.Noting ? false : true;
                     character.Session.SendData(new ConfigPacketComposer(115, character.Bank.Noting ? 1 : 0).Serialize());
                     break;
+                case 22:
+                    break;
                 default:
                     {
                         if (character.ServerRights >= ServerRights.SystemAdministrator)
@@ -125,7 +107,7 @@ namespace RuneScape.Content.Interfaces
         {
             character.Session.SendData(new StringPacketComposer("Bank of " + GameEngine.World.Name, 762, 24).Serialize());
             character.Session.SendData(new ConfigPacketComposer(563, 4194304).Serialize());
-            character.Bank.ConfigureTabs();
+            character.Session.SendData(new ConfigPacketComposer(1248, -2013265920).Serialize());
             GenericPacketComposer gpc = new GenericPacketComposer();
             gpc.SetOpcode(223);
             gpc.AppendShort(496);
@@ -144,11 +126,9 @@ namespace RuneScape.Content.Interfaces
             gpc.AppendLEShort(1150);
             gpc.AppendLEShort(18);
             character.Session.SendData(gpc.Serialize());
-            character.Bank.ConfigureTabs();
             character.Bank.Refresh();
             Frames.SendInterface(character, 762, true);
             Frames.SendInventoryInterface(character, 763);
-            character.Bank.CurrentTab = 10;
         }
 
         /// <summary>

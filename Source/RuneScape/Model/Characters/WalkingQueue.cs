@@ -257,6 +257,7 @@ namespace RuneScape.Model.Characters
                 int diffX = this.character.UpdateFlags.LastRegion.RegionX - this.character.Location.RegionX;
                 int diffY = this.character.UpdateFlags.LastRegion.RegionY - this.character.Location.RegionY;
 
+
                 // Wehther the map is changing.
                 bool regionChanging = false;
 

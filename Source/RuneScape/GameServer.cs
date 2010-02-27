@@ -21,6 +21,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Threading;
 
 using JoltEnvironment;
 using JoltEnvironment.Debug;
@@ -172,14 +173,13 @@ namespace RuneScape
                 TcpConnection.Destroy();
             }
 
+            Program.Logger.WriteWarn("The environment is now waiting 10 seconds for\nall networking transactions to be completed.");
+            Thread.Sleep(10000);
+
             if (restart)
             {
                 Process.Start("runescape.exe");
-                Environment.Exit(0);
-                return;
             }
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadLine();
             Environment.Exit(0);
         }
         #endregion Methods
