@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using RuneScape.Communication.Messages.Outgoing;
 using RuneScape.Model.Characters;
 
 namespace RuneScape.Communication.Messages.Incoming
@@ -34,6 +35,8 @@ namespace RuneScape.Communication.Messages.Incoming
                         Program.Logger.WriteDebug("byte deposit:" + (byte)character.Preferences["deposit"]);
                         character.Bank.Deposit((byte)character.Preferences["deposit"], count);
                         character.Preferences.Remove("deposit");
+                        character.Preferences.BankX = count;
+                        character.Session.SendData(new ConfigPacketComposer(1249, count).Serialize());
                     }
                     #endregion Deposit
 
@@ -46,6 +49,8 @@ namespace RuneScape.Communication.Messages.Incoming
                         Program.Logger.WriteDebug("byte withdraw:" + (byte)character.Preferences["withdraw"]);
                         character.Bank.Withdraw((byte)character.Preferences["withdraw"], count);
                         character.Preferences.Remove("withdraw");
+                        character.Preferences.BankX = count;
+                        character.Session.SendData(new ConfigPacketComposer(1249, count).Serialize());
                     }
                     #endregion Deposit
                     break;

@@ -144,6 +144,8 @@ namespace RuneScape.Model.Items.Containers
                 return false;
             }
 
+            item = new Item(item.Id, (count > item.Count ? item.Count : count));
+
             if (this.Contains(item))
             {
                 if (this.Character.Inventory.FreeSlots <= 0)

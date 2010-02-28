@@ -107,6 +107,10 @@ namespace RuneScape.Model.Characters
         /// Gets or sets the character's attack style.
         /// </summary>
         public byte AttackStyle { get; set; }
+        /// <summary>
+        /// Gets or sets the character's custom withdraw/deposit amount.
+        /// </summary>
+        public int BankX { get; set; }
         #endregion Properties
 
         #region Constructors
@@ -115,6 +119,7 @@ namespace RuneScape.Model.Characters
         /// </summary>
         public Preferences()
         {
+            this.BankX = 50;
         }
         #endregion Constructors
 

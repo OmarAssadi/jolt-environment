@@ -183,6 +183,7 @@ namespace RuneScape.Communication.Messages
                 character.Preferences.SplitChat = false;
             }*/
             character.Session.SendData(new ConfigPacketComposer(287, character.Preferences.SplitChat.GetHashCode()).Serialize());
+            character.Session.SendData(new ConfigPacketComposer(1249, character.Preferences.BankX).Serialize());
         }
 
         /// <summary>
