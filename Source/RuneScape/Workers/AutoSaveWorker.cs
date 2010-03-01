@@ -36,7 +36,7 @@ namespace RuneScape.Workers
         /// <summary>
         /// The interval between each iteration.
         /// </summary>
-        public const int Interval = 600000;
+        public const int Interval = 60000;
         #endregion Fields
 
         #region Constructors

@@ -45,6 +45,10 @@ namespace RuneScape.Model.Items.Containers
 
         #region Properties
         /// <summary>
+        /// Gets or sets whether the bank is currently in inserting/swap mode.
+        /// </summary>
+        public bool Inserting { get; set; }
+        /// <summary>
         /// Gets or sets whether the bank is currently in noting mode.
         /// </summary>
         public bool Noting { get; set; }
@@ -88,9 +92,10 @@ namespace RuneScape.Model.Items.Containers
                 return false;
             }
             
-            int amt = this.Character.Inventory.GetAmount(item);
-            item = new Item((item.Definition.Noted ? item.Definition.NoteId : item.Id), 
-                (count > amt ? item.Count : count));
+            if (count < this.Character.Inventory.GetAmount(item))
+            {
+                item = new Item(item.Id, count);
+            }
 
             if (this.Character.Inventory.Contains(item))
             {
@@ -101,7 +106,7 @@ namespace RuneScape.Model.Items.Containers
                         Item bankItem = this[i];
                         if (bankItem != null && bankItem.Id == item.Id)
                         {
-                            this[i] = new Item(item.Id, bankItem.Count + item.Count);
+                            this[i] = new Item(item.Definition.Noted ? item.Definition.NoteId : item.Id, bankItem.Count + item.Count);
                             this.Character.Inventory.DeleteItem(item);
                             break;
                         }
@@ -116,7 +121,7 @@ namespace RuneScape.Model.Items.Containers
                     }
                     else
                     {
-                        this.AddInternal(item);
+                        this.AddInternal(new Item(item.Definition.Noted ? item.Definition.NoteId : item.Id, item.Count));
                         this.Character.Inventory.DeleteItem(item);
                     }
                 }
@@ -144,7 +149,10 @@ namespace RuneScape.Model.Items.Containers
                 return false;
             }
 
-            item = new Item(item.Id, (count > item.Count ? item.Count : count));
+            if (count < item.Count)
+            {
+                item = new Item(item.Id, count);
+            }
 
             if (this.Contains(item))
             {
@@ -170,6 +178,32 @@ namespace RuneScape.Model.Items.Containers
             }
             Refresh();
             return true;
+        }
+
+        /// <summary>
+        /// Inserts an item from one slot to another.
+        /// </summary>
+        /// <param name="fromSlot">The slot to move the item from.</param>
+        /// <param name="toSlot">The slot to move the item to.</param>
+        public void Insert(int fromSlot, int toSlot)
+        {
+            Item tmpItem = this.Character.Bank[fromSlot];
+            if (toSlot > fromSlot)
+            {
+                for (int i = fromSlot; i < toSlot; i++)
+                {
+                    this[i] = this[i + 1];
+                }
+            }
+            else if (fromSlot > toSlot)
+            {
+                for (int i = fromSlot; i > toSlot; i--)
+                {
+                    this[i] = this[i - 1];
+                }
+            }
+            this[toSlot] = tmpItem;
+            Refresh();
         }
 
         /// <summary>

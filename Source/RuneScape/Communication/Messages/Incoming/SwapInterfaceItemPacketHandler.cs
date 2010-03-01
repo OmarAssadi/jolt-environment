@@ -61,6 +61,7 @@ namespace RuneScape.Communication.Messages.Incoming
                         {
                             break;
                         }
+
                         Item tmpItem = character.Inventory[fromSlot];
                         Item tmpItem2 = character.Inventory[toSlot];
                         character.Inventory[fromSlot] = tmpItem2;
@@ -73,6 +74,30 @@ namespace RuneScape.Communication.Messages.Incoming
                  */
                 case 762:
                     {
+                        if (fromSlot < 0 || fromSlot >= BankContainer.Size
+                            || toSlot < 0 || toSlot >= BankContainer.Size)
+                        {
+                            break;
+                        }
+
+                        if (!character.Bank.Inserting)
+                        {
+                            Item temp = character.Bank[fromSlot];
+                            character.Bank[fromSlot] = character.Bank[toSlot];
+                            character.Bank[toSlot] = temp;
+                            character.Bank.Refresh();
+                        }
+                        else
+                        {
+                            if (toSlot > fromSlot)
+                            {
+                                character.Bank.Insert(fromSlot, toSlot - 1);
+                            }
+                            else if (fromSlot > toSlot)
+                            {
+                                character.Bank.Insert(fromSlot, toSlot);
+                            }
+                        }
                         break;
                     }
             }

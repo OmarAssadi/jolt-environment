@@ -44,7 +44,7 @@ namespace RuneScape.Utilities
                         "SELECT database_version FROM versioning; "
                         + "UPDATE versioning SET server_version = @sver;");
 
-            Version required = new Version(1, 0, 3000);
+            Version required = new Version(1, 0, 3100);
             Version dbVersion = Version.Parse(dbResult);
             if (dbVersion < required)
             {

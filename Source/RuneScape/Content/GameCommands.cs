@@ -66,6 +66,16 @@ namespace RuneScape.Content
                             "There is currently " + count + " player(s) online.").Serialize());
                     }
                     #endregion Players
+
+                    #region Bank
+                    /*
+                     * Opens the character's bank.
+                     */
+                    else if (command.Equals("bank"))
+                    {
+                        Bank.Show(character);
+                    }
+                    #endregion Bank
                 }
 
                 /*
@@ -236,25 +246,26 @@ namespace RuneScape.Content
                     }
                     #endregion Delete Item
 
-                    #region Object
-                    else if (command.Equals("object"))
-                    {
-                        short objId = short.Parse(arguments[1]);
-                        new GroundItem(character.Location, character, objId, 1).Spawn();
-                    }
-
+                    #region Update
+                    /*
+                     * Sends a system update to all characters online, 
+                     * and locks out any logins untill server restarts.
+                     */
                     else if (command.Equals("update"))
                     {
-                        short time = short.Parse(arguments[1]);
-                        bool restart = bool.Parse(arguments[2]);
-                        Frames.SendSystemUpdate(time, restart);
-                    }
+                        if (arguments.Length == 2 || arguments.Length == 3)
+                        {
+                            short time = short.Parse(arguments[1]);
+                            bool restart = false;
 
-                    else if (command.Equals("bank"))
-                    {
-                        Bank.Show(character);
+                            if (arguments.Length == 3)
+                            {
+                                restart = bool.Parse(arguments[2]);
+                            }
+                            Frames.SendSystemUpdate(time, restart);
+                        }
                     }
-                    #endregion Object
+                    #endregion Update
                 }
             }
             catch (Exception ex)

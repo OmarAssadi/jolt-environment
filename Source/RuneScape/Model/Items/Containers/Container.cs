@@ -260,7 +260,6 @@ namespace RuneScape.Model.Items.Containers
                     if (this[i] != null && this[i].Id == item.Id)
                     {
                         int count = this[i].Count;
-
                         if (count > toRemove)
                         {
                             removed += toRemove;
@@ -274,7 +273,6 @@ namespace RuneScape.Model.Items.Containers
                             removed += count;
                             toRemove -= count;
                             this[i] = null;
-
                         }
                     }
                 }

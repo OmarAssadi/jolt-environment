@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50141
 File Encoding         : 65001
 
-Date: 2010-02-20 20:50:36
+Date: 2010-02-28 20:06:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -117,14 +117,15 @@ CREATE TABLE `characters` (
   `run_energy` tinyint(3) unsigned DEFAULT '100',
   `inventory_items` varchar(600) DEFAULT NULL,
   `equipment_items` varchar(300) DEFAULT NULL,
+  `bank_items` varchar(5000) DEFAULT NULL,
   PRIMARY KEY (`id`,`username`,`online`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of characters
 -- ----------------------------
-INSERT INTO `characters` VALUES ('1', 'aj', '45ceeb2b9dbbda7ff3ce5b1a31ee82e59c763939', '2', '5', '0', '1', '27-3-1993', '38', '127.0.0.1', '2010-01-11 22:33:57', '99.244.155.103', '2010-02-20 14:27:30', '0', '5', '112', '106', '33', '36', '43', '15', '12', '5', '16', '5', '4', '3236', '3220', '0', '100', '0=4151:1,1=4151:1,2=4151:1', null);
-INSERT INTO `characters` VALUES ('2', 'futwurk', 'c9384426089f49224132ea6567d45a1fdaf0783a', '0', '0', '0', '1', '10-2-1993', '225', '24.136.5.241', '2010-01-13 22:53:18', '24.136.5.241', '2010-01-28 20:14:13', '0', '1', '18', '108', '33', '87', '42', '10', '12', '16', '16', '3', '3', '3221', '3221', '0', '100', null, null);
+INSERT INTO `characters` VALUES ('1', 'aj', '45ceeb2b9dbbda7ff3ce5b1a31ee82e59c763939', '2', '5', '0', '1', '27-3-1993', '38', '127.0.0.1', '2010-01-11 22:33:57', '99.244.155.103', '2010-02-28 19:41:15', '0', '5', '112', '106', '33', '36', '43', '15', '12', '5', '16', '5', '4', '3224', '3216', '0', '100', '0=4151:1', null, '0=882:5');
+INSERT INTO `characters` VALUES ('2', 'futwurk', 'c9384426089f49224132ea6567d45a1fdaf0783a', '0', '0', '0', '1', '10-2-1993', '225', '24.136.5.241', '2010-01-13 22:53:18', '24.136.5.241', '2010-01-28 20:14:13', '0', '1', '18', '108', '33', '87', '42', '10', '12', '16', '16', '3', '3', '3221', '3221', '0', '100', null, null, null);
 
 -- ----------------------------
 -- Table structure for `configurations`
@@ -153,11 +154,180 @@ CREATE TABLE `connection_logs` (
   `date` datetime NOT NULL,
   `ip` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=170 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of connection_logs
 -- ----------------------------
+INSERT INTO `connection_logs` VALUES ('1', '2010-02-20 21:15:46', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('2', '2010-02-20 21:15:53', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('3', '2010-02-20 21:24:01', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('4', '2010-02-20 21:24:07', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('5', '2010-02-20 21:24:30', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('6', '2010-02-20 21:27:12', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('7', '2010-02-20 21:29:29', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('8', '2010-02-20 21:29:36', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('9', '2010-02-20 21:33:29', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('10', '2010-02-20 21:33:46', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('11', '2010-02-20 21:36:22', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('12', '2010-02-20 21:36:29', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('13', '2010-02-20 21:41:27', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('14', '2010-02-20 21:41:36', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('15', '2010-02-20 22:32:27', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('16', '2010-02-20 22:32:39', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('17', '2010-02-20 22:33:08', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('18', '2010-02-23 19:09:00', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('19', '2010-02-23 19:09:07', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('20', '2010-02-23 19:10:28', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('21', '2010-02-23 19:10:35', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('22', '2010-02-23 19:12:24', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('23', '2010-02-23 19:12:31', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('24', '2010-02-23 19:15:26', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('25', '2010-02-23 19:15:33', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('26', '2010-02-23 19:18:33', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('27', '2010-02-23 19:18:40', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('28', '2010-02-23 19:23:09', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('29', '2010-02-23 19:23:15', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('30', '2010-02-23 19:25:08', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('31', '2010-02-23 19:25:15', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('32', '2010-02-23 19:26:30', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('33', '2010-02-23 19:26:37', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('34', '2010-02-23 19:27:01', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('35', '2010-02-23 19:27:08', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('36', '2010-02-23 19:29:23', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('37', '2010-02-23 19:29:30', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('38', '2010-02-23 19:30:19', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('39', '2010-02-23 19:30:26', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('40', '2010-02-23 19:31:30', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('41', '2010-02-23 19:31:37', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('42', '2010-02-23 19:35:06', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('43', '2010-02-23 19:35:12', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('44', '2010-02-23 19:35:54', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('45', '2010-02-23 19:36:01', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('46', '2010-02-23 19:39:40', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('47', '2010-02-23 19:39:46', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('48', '2010-02-23 20:49:09', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('49', '2010-02-23 20:49:17', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('50', '2010-02-24 17:57:10', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('51', '2010-02-24 17:57:19', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('52', '2010-02-24 18:08:31', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('53', '2010-02-24 18:08:39', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('54', '2010-02-24 18:21:21', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('55', '2010-02-24 18:21:31', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('56', '2010-02-24 18:23:57', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('57', '2010-02-24 18:24:05', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('58', '2010-02-24 18:25:11', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('59', '2010-02-24 18:25:20', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('60', '2010-02-24 20:08:02', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('61', '2010-02-24 20:08:31', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('62', '2010-02-25 18:39:32', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('63', '2010-02-25 18:39:40', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('64', '2010-02-25 18:42:31', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('65', '2010-02-25 18:42:38', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('66', '2010-02-25 18:54:22', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('67', '2010-02-25 18:54:29', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('68', '2010-02-25 18:54:35', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('69', '2010-02-25 18:57:47', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('70', '2010-02-25 18:57:54', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('71', '2010-02-25 18:58:48', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('72', '2010-02-25 18:58:55', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('73', '2010-02-25 19:00:26', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('74', '2010-02-25 19:00:33', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('75', '2010-02-25 19:11:23', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('76', '2010-02-25 19:11:29', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('77', '2010-02-25 19:22:55', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('78', '2010-02-25 19:23:02', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('79', '2010-02-25 19:31:12', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('80', '2010-02-25 19:31:28', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('81', '2010-02-25 19:37:23', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('82', '2010-02-25 19:37:33', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('83', '2010-02-25 19:41:11', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('84', '2010-02-25 19:41:17', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('85', '2010-02-25 19:48:32', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('86', '2010-02-25 19:48:39', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('87', '2010-02-25 19:53:15', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('88', '2010-02-25 19:53:22', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('89', '2010-02-25 19:57:28', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('90', '2010-02-25 19:57:34', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('91', '2010-02-25 19:59:29', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('92', '2010-02-25 19:59:37', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('93', '2010-02-25 20:00:36', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('94', '2010-02-25 20:00:43', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('95', '2010-02-25 20:00:47', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('96', '2010-02-25 20:02:39', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('97', '2010-02-25 20:02:46', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('98', '2010-02-25 20:06:47', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('99', '2010-02-25 20:06:54', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('100', '2010-02-25 22:11:48', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('101', '2010-02-25 22:11:58', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('102', '2010-02-25 22:13:10', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('103', '2010-02-25 22:13:16', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('104', '2010-02-25 22:15:18', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('105', '2010-02-25 22:15:25', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('106', '2010-02-27 13:29:43', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('107', '2010-02-27 13:29:55', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('108', '2010-02-27 13:43:34', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('109', '2010-02-27 13:43:46', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('110', '2010-02-27 13:53:22', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('111', '2010-02-27 13:53:28', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('112', '2010-02-27 13:55:07', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('113', '2010-02-27 13:55:13', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('114', '2010-02-27 14:05:23', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('115', '2010-02-27 14:05:29', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('116', '2010-02-27 14:08:11', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('117', '2010-02-27 14:08:19', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('118', '2010-02-27 14:23:03', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('119', '2010-02-27 14:23:10', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('120', '2010-02-27 14:28:38', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('121', '2010-02-27 14:32:57', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('122', '2010-02-27 14:33:40', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('123', '2010-02-27 14:33:46', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('124', '2010-02-27 15:26:25', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('125', '2010-02-27 15:26:32', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('126', '2010-02-27 16:02:08', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('127', '2010-02-27 16:02:15', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('128', '2010-02-27 16:34:45', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('129', '2010-02-27 16:34:51', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('130', '2010-02-27 16:34:55', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('131', '2010-02-27 16:36:47', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('132', '2010-02-27 16:36:53', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('133', '2010-02-27 16:54:52', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('134', '2010-02-27 16:54:58', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('135', '2010-02-27 16:57:20', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('136', '2010-02-27 16:57:35', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('137', '2010-02-27 17:01:13', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('138', '2010-02-27 17:01:19', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('139', '2010-02-27 17:12:27', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('140', '2010-02-27 17:12:34', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('141', '2010-02-27 17:13:03', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('142', '2010-02-27 17:13:09', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('143', '2010-02-27 17:14:49', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('144', '2010-02-27 17:14:58', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('145', '2010-02-28 19:05:51', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('146', '2010-02-28 19:06:02', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('147', '2010-02-28 19:09:43', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('148', '2010-02-28 19:09:50', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('149', '2010-02-28 19:10:33', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('150', '2010-02-28 19:10:38', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('151', '2010-02-28 19:12:12', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('152', '2010-02-28 19:12:18', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('153', '2010-02-28 19:18:46', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('154', '2010-02-28 19:18:53', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('155', '2010-02-28 19:22:14', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('156', '2010-02-28 19:22:21', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('157', '2010-02-28 19:23:23', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('158', '2010-02-28 19:23:29', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('159', '2010-02-28 19:24:47', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('160', '2010-02-28 19:25:06', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('161', '2010-02-28 19:26:00', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('162', '2010-02-28 19:26:07', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('163', '2010-02-28 19:28:52', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('164', '2010-02-28 19:28:59', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('165', '2010-02-28 19:30:44', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('166', '2010-02-28 19:30:51', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('167', '2010-02-28 19:40:52', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('168', '2010-02-28 19:40:58', '99.244.155.103');
+INSERT INTO `connection_logs` VALUES ('169', '2010-02-28 19:41:15', '99.244.155.103');
 
 -- ----------------------------
 -- Table structure for `item_animations`
@@ -13525,11 +13695,100 @@ CREATE TABLE `login_attempts` (
   `ip` varchar(40) DEFAULT NULL,
   `attempt` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of login_attempts
 -- ----------------------------
+INSERT INTO `login_attempts` VALUES ('1', 'aj', '2010-02-20 21:15:54', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('2', 'aj', '2010-02-20 21:24:08', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('3', 'aj', '2010-02-20 21:24:31', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('4', 'aj', '2010-02-20 21:27:12', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('5', 'aj', '2010-02-20 21:29:36', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('6', 'aj', '2010-02-20 21:33:30', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('7', 'aj', '2010-02-20 21:33:47', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('8', 'aj', '2010-02-20 21:36:30', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('9', 'aj', '2010-02-20 21:41:37', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('10', 'aj', '2010-02-20 22:32:40', '127.0.0.1', 'Successful');
+INSERT INTO `login_attempts` VALUES ('11', 'aj', '2010-02-20 22:33:09', '127.0.0.1', 'Successful');
+INSERT INTO `login_attempts` VALUES ('12', 'aj', '2010-02-23 19:09:08', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('13', 'aj', '2010-02-23 19:10:36', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('14', 'aj', '2010-02-23 19:12:32', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('15', 'aj', '2010-02-23 19:15:33', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('16', 'aj', '2010-02-23 19:18:41', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('17', 'aj', '2010-02-23 19:23:16', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('18', 'aj', '2010-02-23 19:25:16', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('19', 'aj', '2010-02-23 19:26:38', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('20', 'aj', '2010-02-23 19:27:09', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('21', 'aj', '2010-02-23 19:29:30', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('22', 'aj', '2010-02-23 19:30:27', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('23', 'aj', '2010-02-23 19:31:38', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('24', 'aj', '2010-02-23 19:35:13', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('25', 'aj', '2010-02-23 19:36:01', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('26', 'aj', '2010-02-23 19:39:47', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('27', 'aj', '2010-02-23 20:49:18', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('28', 'aj', '2010-02-24 17:57:20', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('29', 'aj', '2010-02-24 18:08:40', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('30', 'aj', '2010-02-24 18:21:32', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('31', 'aj', '2010-02-24 18:24:05', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('32', 'aj', '2010-02-24 18:25:21', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('33', 'aj', '2010-02-24 20:08:32', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('34', 'aj', '2010-02-25 18:39:41', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('35', 'aj', '2010-02-25 18:42:39', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('36', 'aj', '2010-02-25 18:54:29', '99.244.155.103', 'WrongPassword');
+INSERT INTO `login_attempts` VALUES ('37', 'aj', '2010-02-25 18:54:35', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('38', 'aj', '2010-02-25 18:57:54', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('39', 'aj', '2010-02-25 18:58:56', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('40', 'aj', '2010-02-25 19:00:34', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('41', 'aj', '2010-02-25 19:11:30', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('42', 'aj', '2010-02-25 19:23:03', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('43', 'aj', '2010-02-25 19:31:29', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('44', 'aj', '2010-02-25 19:37:34', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('45', 'aj', '2010-02-25 19:41:18', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('46', 'aj', '2010-02-25 19:48:40', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('47', 'aj', '2010-02-25 19:53:23', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('48', 'aj', '2010-02-25 19:57:35', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('49', 'aj', '2010-02-25 19:59:38', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('50', 'aj', '2010-02-25 20:00:44', '99.244.155.103', 'WrongPassword');
+INSERT INTO `login_attempts` VALUES ('51', 'aj', '2010-02-25 20:00:47', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('52', 'aj', '2010-02-25 20:02:47', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('53', 'aj', '2010-02-25 20:06:55', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('54', 'aj', '2010-02-25 22:11:58', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('55', 'aj', '2010-02-25 22:13:17', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('56', 'aj', '2010-02-25 22:15:26', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('57', 'aj', '2010-02-27 13:29:56', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('58', 'aj', '2010-02-27 13:43:47', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('59', 'aj', '2010-02-27 13:53:29', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('60', 'aj', '2010-02-27 13:55:14', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('61', 'aj', '2010-02-27 14:05:30', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('62', 'aj', '2010-02-27 14:08:20', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('63', 'aj', '2010-02-27 14:23:11', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('64', 'aj', '2010-02-27 14:32:58', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('65', 'aj', '2010-02-27 14:33:47', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('66', 'aj', '2010-02-27 15:26:32', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('67', 'aj', '2010-02-27 16:02:15', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('68', 'aj', '2010-02-27 16:34:52', '99.244.155.103', 'WrongPassword');
+INSERT INTO `login_attempts` VALUES ('69', 'aj', '2010-02-27 16:34:56', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('70', 'aj', '2010-02-27 16:36:54', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('71', 'aj', '2010-02-27 16:54:59', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('72', 'aj', '2010-02-27 16:57:36', '127.0.0.1', 'Successful');
+INSERT INTO `login_attempts` VALUES ('73', 'aj', '2010-02-27 17:01:20', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('74', 'aj', '2010-02-27 17:12:35', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('75', 'aj', '2010-02-27 17:13:10', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('76', 'aj', '2010-02-27 17:14:59', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('77', 'aj', '2010-02-28 19:06:02', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('78', 'aj', '2010-02-28 19:09:51', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('79', 'aj', '2010-02-28 19:10:39', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('80', 'aj', '2010-02-28 19:12:19', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('81', 'aj', '2010-02-28 19:18:54', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('82', 'aj', '2010-02-28 19:22:22', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('83', 'aj', '2010-02-28 19:23:30', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('84', 'aj', '2010-02-28 19:25:07', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('85', 'aj', '2010-02-28 19:26:08', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('86', 'aj', '2010-02-28 19:29:00', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('87', 'aj', '2010-02-28 19:30:52', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('88', 'aj', '2010-02-28 19:41:00', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('89', 'aj', '2010-02-28 19:41:15', '99.244.155.103', 'Successful');
 
 -- ----------------------------
 -- Table structure for `npc_definitions`
@@ -13617,7 +13876,7 @@ CREATE TABLE `versioning` (
 -- ----------------------------
 -- Records of versioning
 -- ----------------------------
-INSERT INTO `versioning` VALUES ('1.0.5913', '0.1000', '1.0.3000', '508');
+INSERT INTO `versioning` VALUES ('1.0.6000', '0.1000', '1.0.3100', '508');
 
 -- ----------------------------
 -- Table structure for `web_acp_logs`
@@ -13630,7 +13889,7 @@ CREATE TABLE `web_acp_logs` (
   `log_time` datetime DEFAULT NULL,
   `log_message` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of web_acp_logs
@@ -13654,6 +13913,12 @@ INSERT INTO `web_acp_logs` VALUES ('16', 'aj', '::1', '2010-02-02 21:30:44', 'Ad
 INSERT INTO `web_acp_logs` VALUES ('17', 'aj', '::1', '2010-02-02 21:31:28', 'Deleted a note.');
 INSERT INTO `web_acp_logs` VALUES ('18', 'aj', '99.244.155.103', '2010-02-14 14:36:41', 'Sucessfully logged in.');
 INSERT INTO `web_acp_logs` VALUES ('19', 'tyler_ftw', '92.27.12.47', '2010-02-14 14:36:48', 'Sucessfully logged in.');
+INSERT INTO `web_acp_logs` VALUES ('20', 'aj', '99.244.155.103', '2010-02-23 20:36:25', 'Sucessfully logged in.');
+INSERT INTO `web_acp_logs` VALUES ('21', 'aj', '86.81.163.182', '2010-02-23 20:36:47', 'Sucessfully logged in.');
+INSERT INTO `web_acp_logs` VALUES ('22', 'aj', '99.244.155.103', '2010-02-23 20:37:19', 'Added a note.');
+INSERT INTO `web_acp_logs` VALUES ('23', 'aj', '86.81.163.182', '2010-02-23 20:37:31', 'Added a note.');
+INSERT INTO `web_acp_logs` VALUES ('24', 'aj', '96.19.65.101', '2010-02-23 22:24:41', 'Sucessfully logged in.');
+INSERT INTO `web_acp_logs` VALUES ('25', 'aj', '65.13.13.26', '2010-02-23 22:38:21', 'Sucessfully logged in.');
 
 -- ----------------------------
 -- Table structure for `web_acp_notes`
@@ -13665,13 +13930,15 @@ CREATE TABLE `web_acp_notes` (
   `note_date` datetime DEFAULT NULL,
   `note_message` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of web_acp_notes
 -- ----------------------------
 INSERT INTO `web_acp_notes` VALUES ('5', 'aj', '2010-01-28 15:59:18', 'lol');
 INSERT INTO `web_acp_notes` VALUES ('6', 'aj', '2010-01-28 16:16:43', 'lol');
+INSERT INTO `web_acp_notes` VALUES ('8', 'aj', '2010-02-23 20:37:19', 'hey there');
+INSERT INTO `web_acp_notes` VALUES ('9', 'aj', '2010-02-23 20:37:31', 'beer! beer!');
 INSERT INTO `web_acp_notes` VALUES ('4', 'aj', '2010-01-28 15:58:57', 'lol');
 
 -- ----------------------------
@@ -13693,4 +13960,4 @@ CREATE TABLE `worlds` (
 -- ----------------------------
 -- Records of worlds
 -- ----------------------------
-INSERT INTO `worlds` VALUES ('1', 'RageScape', 'Welcome to RageScape.', '3222,3219,0', 'Beware of the pedobear lurking RuneScape!', '10', '2010-02-20 16:32:35', null);
+INSERT INTO `worlds` VALUES ('1', 'RageScape', 'Welcome to RageScape.', '3222,3219,0', 'Beware of the pedobear lurking RuneScape!', '10', '2010-02-28 20:01:59', null);

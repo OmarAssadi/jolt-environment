@@ -82,9 +82,11 @@ namespace RuneScape.Content.Interfaces
                             break;
                     }
                     break;
+                case 14:
+                    character.Bank.Inserting = !character.Bank.Inserting;
+                    break;
                 case 16:
-                    character.Bank.Noting = character.Bank.Noting ? false : true;
-                    character.Session.SendData(new ConfigPacketComposer(115, character.Bank.Noting ? 1 : 0).Serialize());
+                    character.Bank.Noting = !character.Bank.Noting;
                     break;
                 case 22:
                     break;
@@ -108,6 +110,8 @@ namespace RuneScape.Content.Interfaces
             character.Session.SendData(new StringPacketComposer("Bank of " + GameEngine.World.Name, 762, 24).Serialize());
             character.Session.SendData(new ConfigPacketComposer(563, 4194304).Serialize());
             character.Session.SendData(new ConfigPacketComposer(1248, -2013265920).Serialize());
+            character.Session.SendData(new ConfigPacketComposer(115, character.Bank.Noting ? 1 : 0).Serialize());
+            character.Session.SendData(new ConfigPacketComposer(305, character.Bank.Inserting ? 1 : 0).Serialize());
             GenericPacketComposer gpc = new GenericPacketComposer();
             gpc.SetOpcode(223);
             gpc.AppendShort(496);
@@ -129,46 +133,6 @@ namespace RuneScape.Content.Interfaces
             character.Bank.Refresh();
             Frames.SendInterface(character, 762, true);
             Frames.SendInventoryInterface(character, 763);
-        }
-
-        /// <summary>
-        /// Gets the tab id.
-        /// </summary>
-        /// <param name="tabid">The buttonId of the tab.</param>
-        /// <returns>The tab id for the button.</returns>
-        public static sbyte GetTabIndex(int buttonId)
-        {
-            switch (buttonId)
-            {
-                case 39:
-                case 52:
-                    return 2;
-                case 37:
-                case 53:
-                    return 3;
-                case 35:
-                case 54:
-                    return 4;
-                case 33:
-                case 55:
-                    return 5;
-                case 31:
-                case 56:
-                    return 6;
-                case 29:
-                case 57:
-                    return 7;
-                case 27:
-                case 58:
-                    return 8;
-                case 25:
-                case 59:
-                    return 9;
-                case 41:
-                case 51:
-                    return 10;
-            }
-            return -1;
         }
         #endregion Methods
     }

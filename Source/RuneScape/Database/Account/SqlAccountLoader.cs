@@ -123,23 +123,19 @@ namespace RuneScape.Database.Account
                         // Energy.
                         result.Character.WalkingQueue.RunEnergy = (byte)data[29];
 
-                        // Inventory items.
+                        // Containers.
                         if (data[30] is string)
-                        {
                             result.Character.Inventory.Deserialize((string)data[30]);
-                        }
-
-                        // Equipment items.
                         if (data[31] is string)
-                        {
                             result.Character.Equipment.Deserialize((string)data[31]);
-                        }
+                        if (data[32] is string)
+                            result.Character.Bank.Deserialize((string)data[32]);
 
                         // Preferences.
-                        result.Character.Preferences.SingleMouse = (bool)data[33];
-                        result.Character.Preferences.DisableChatEffects = (bool)data[34];
-                        result.Character.Preferences.SplitChat = (bool)data[35];
-                        result.Character.Preferences.AcceptAid = (bool)data[36];
+                        result.Character.Preferences.SingleMouse = (bool)data[34];
+                        result.Character.Preferences.DisableChatEffects = (bool)data[35];
+                        result.Character.Preferences.SplitChat = (bool)data[36];
+                        result.Character.Preferences.AcceptAid = (bool)data[37];
                     }
                 }
                 else // User doesn't exist or password is wrong.
