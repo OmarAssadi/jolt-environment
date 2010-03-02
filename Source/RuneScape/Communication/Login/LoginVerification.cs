@@ -98,7 +98,7 @@ namespace RuneScape.Communication.Login
                 // Try to load the account with the given details.
                 Details details = new Details(request.Connection, username, password, hd, resized, clientKey, serverKey);
                 Program.Logger.WriteDebug("Login request: " + details.ToString());
-                Task.Factory.StartNew(() => GameEngine.World.CharacterManager.LoadAccount(details, type));
+                GameEngine.World.CharacterManager.LoadAccount(details, type);
                 request.Finished = true;
             }
             return;

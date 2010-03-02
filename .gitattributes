@@ -854,6 +854,7 @@ Source/RuneScape/Communication/Messages/Outgoing/ConfigPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CoordinatePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/DespawnGroundItemPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/DespawnObjectPacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/FriendsStatusPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/GenericPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/HeadOnInterfacePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/InterfaceConfigPacketComposer.cs -text
@@ -873,6 +874,8 @@ Source/RuneScape/Communication/Messages/Outgoing/SpawnObjectPacketComposer.cs -t
 Source/RuneScape/Communication/Messages/Outgoing/StatsPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/StringPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/SystemUpdatePacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/UpdateFriendPacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/UpdateIgnorePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/WindowPanePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/WriteStreams.cs -text
 Source/RuneScape/Communication/Messages/Packet.cs -text
@@ -918,6 +921,7 @@ Source/RuneScape/Model/Characters/Bonuses.cs -text
 Source/RuneScape/Model/Characters/Character.cs -text
 Source/RuneScape/Model/Characters/CharacterManager.cs -text
 Source/RuneScape/Model/Characters/ClientRights.cs -text
+Source/RuneScape/Model/Characters/Contacts.cs -text
 Source/RuneScape/Model/Characters/DeathIcons.cs -text
 Source/RuneScape/Model/Characters/Details.cs -text
 Source/RuneScape/Model/Characters/Gender.cs -text

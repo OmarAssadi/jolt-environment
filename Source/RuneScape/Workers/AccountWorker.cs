@@ -22,6 +22,7 @@ using System.Collections.Concurrent;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 using RuneScape.Database.Account;
 using RuneScape.Model.Characters;
@@ -42,11 +43,6 @@ namespace RuneScape.Workers
         /// Provides account saving accessability.
         /// </summary>
         private IAccountSaver accountSaver = new SqlAccountSaver();
-
-        /// <summary>
-        /// The number of accounts that have failed to be saved.
-        /// </summary>
-        private int failCount = 0;
         #endregion Fields
 
         #region Constructors
@@ -83,7 +79,6 @@ namespace RuneScape.Workers
                     }
                     else
                     {
-                        this.failCount++;
                         Program.Logger.WriteWarn("Could not save " + character.Name + "'s game.");
                     }
                 }

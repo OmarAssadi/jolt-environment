@@ -69,12 +69,15 @@ namespace RuneScape.Communication.Messages
             character.Session.SendData(new ConfigPacketComposer(1085, 249852).Serialize());
             character.Session.SendData(new ConfigPacketComposer(1160, -1).Serialize());
 
-            // Send settings.
-            SendSettingsConfig(character);
+            // Connect to chat list server.
+            character.Session.SendData(new FriendsStatusPacketComposer(2).Serialize());
 
             //Refresh objects.
             character.Inventory.Refresh();
             character.Equipment.Refresh();
+
+            // Send settings.
+            SendSettingsConfig(character);
 
             // The character's skill data must be sent.
             SendSkills(character);
@@ -177,10 +180,12 @@ namespace RuneScape.Communication.Messages
                 gpc.AppendInt(83);
                 character.Session.SendData(gpc.Serialize());
                 character.Preferences.SplitChat = true;
+                character.Session.SendData(new ConfigPacketComposer(287, 1).Serialize());
             }
             else
             {
                 character.Preferences.SplitChat = false;
+                character.Session.SendData(new ConfigPacketComposer(287, 2).Serialize());
             }*/
             character.Session.SendData(new ConfigPacketComposer(287, character.Preferences.SplitChat.GetHashCode()).Serialize());
             character.Session.SendData(new ConfigPacketComposer(1249, character.Preferences.BankX).Serialize());

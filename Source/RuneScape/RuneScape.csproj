@@ -80,6 +80,7 @@
     <Compile Include="Communication\Messages\Outgoing\CoordinatePacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\DespawnGroundItemPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\DespawnObjectPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\FriendsStatusPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\HeadOnInterfacePacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\InterfaceItemsPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\MapViewType.cs" />
@@ -89,6 +90,8 @@
     <Compile Include="Communication\Messages\Outgoing\SpawnGroundItemPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\SpawnObjectPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\SystemUpdatePacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\UpdateFriendPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\UpdateIgnorePacketComposer.cs" />
     <Compile Include="Content\Interfaces\Bank.cs" />
     <Compile Include="Content\Interfaces\CharacterSetup.cs" />
     <Compile Include="Content\Interfaces\DepositInventory.cs" />
@@ -99,6 +102,7 @@
     <Compile Include="Database\Account\SqlAccountSaver.cs" />
     <Compile Include="Events\ProcessCoordinateEvent.cs" />
     <Compile Include="Model\Characters\Bonuses.cs" />
+    <Compile Include="Model\Characters\Contacts.cs" />
     <Compile Include="Model\Characters\Preferences.cs" />
     <Compile Include="Model\Creature.cs" />
     <Compile Include="Model\Items\Containers\BankContainer.cs" />
