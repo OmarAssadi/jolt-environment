@@ -39,7 +39,7 @@ namespace RuneScape.Communication.Login.Handlers
         /// <summary>
         /// The protocol id of this handle.
         /// </summary>
-        public const int InterfaceId = 48;
+        public const int ProtocolId = 48;
         #endregion Fields
 
         #region Methods
@@ -59,12 +59,13 @@ namespace RuneScape.Communication.Login.Handlers
             if (request.Buffer.RemainingAmount >= packetSize)
             {
                 Packet p = new Packet(request.Buffer.RemainingData);
-                p.Skip(4); // RSA Encrpytion.
+                p.Skip(packetSize == 45 ? 4 : 3); // RSA Encrpytion.
 
                 // Check if client revision is valid.
                 int clientVersion = p.ReadShort();
                 if (clientVersion != 508)
                 {
+                    Console.WriteLine(clientVersion);
                     request.Remove = true;
                     return;
                 }
