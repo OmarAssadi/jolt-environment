@@ -828,6 +828,8 @@ Source/RuneScape/Communication/Login/LoginReturnCode.cs -text
 Source/RuneScape/Communication/Login/LoginVerification.cs -text
 Source/RuneScape/Communication/Login/ProtocolManager.cs -text
 Source/RuneScape/Communication/Messages/Frames.cs -text
+Source/RuneScape/Communication/Messages/Incoming/AddFriendPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/AddIgnorePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ButtonPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ChatPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/CommandPacketHandler.cs -text
@@ -840,7 +842,10 @@ Source/RuneScape/Communication/Messages/Incoming/ItemOptionsPacketHandler.cs -te
 Source/RuneScape/Communication/Messages/Incoming/NewMapRegionPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NullPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/PingPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/PrivateMessagePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/QuietPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/RemoveFriendPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/RemoveIgnorePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/RemoveInterfacePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ReportAbusePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/SwapInterfaceItemPacketHandler.cs -text
@@ -867,8 +872,10 @@ Source/RuneScape/Communication/Messages/Outgoing/MinimapViewPacketComposer.cs -t
 Source/RuneScape/Communication/Messages/Outgoing/NewMapRegionPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/NpcRenderingPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/PacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/RecievePMPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/RunEnergyPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/RunScriptPacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/SendPMPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/SpawnGroundItemPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/SpawnObjectPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/StatsPacketComposer.cs -text

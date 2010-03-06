@@ -3,3 +3,5 @@ Jolt Environment Contributers List
 
 * AJ Ravindiran <aj@ajravindiran.com> - Creator, Lead Developer
 * Matthew Palmer <futwurk_icon@hotmail.com> - Developer
+
+* Auke De Jong <adj107adj@msn.com> - Helped find item information

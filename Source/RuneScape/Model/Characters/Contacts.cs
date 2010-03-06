@@ -22,6 +22,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using RuneScape.Communication.Messages.Outgoing;
+
 namespace RuneScape.Model.Characters
 {
     /// <summary>
@@ -34,17 +36,36 @@ namespace RuneScape.Model.Characters
         /// The character whom owns the contacts.
         /// </summary>
         private Character character;
+        /// <summary>
+        /// The amount of messages sent since login.
+        /// </summary>
+        private int counter = 0;
+        /// <summary>
+        /// A lock providing access to the contacts (friends/ignored).
+        /// </summary>
+        private object lockObj = new object();
         #endregion Fields
 
         #region Properties
         /// <summary>
-        /// A list of contacts that are considered as friends.
+        /// Gets a list of contacts that are considered as friends.
         /// </summary>
         public List<long> Friends { get; private set; }
         /// <summary>
-        /// A list of contacts that are ignored.
+        /// Gets a list of contacts that are ignored.
         /// </summary>
         public List<long> Ignored { get; private set; }
+
+        /// <summary>
+        /// Gets the next unique counter id.
+        /// </summary>
+        public int NextUniqueId
+        {
+            get
+            {
+                return ++this.counter;
+            }
+        }
         #endregion Properties
 
         #region Constructors
@@ -62,13 +83,255 @@ namespace RuneScape.Model.Characters
 
         #region Methods
         /// <summary>
-        /// Refreshes the 
+        /// Refreshes the character's contact list.
         /// </summary>
         public void Refresh()
         {
-            Friends.ForEach((l) =>
+            lock (this.lockObj)
             {
-            });
+                Friends.ForEach((l) => this.character.Session.SendData(
+                    new UpdateFriendPacketComposer(l, GetWorld(l)).Serialize()));
+                this.character.Session.SendData(
+                    new UpdateIgnorePacketComposer(Ignored.ToArray()).Serialize());
+            }
+        }
+
+        /// <summary>
+        /// Gets the specified name's world id.
+        /// </summary>
+        /// <param name="name">The name of the friend.</param>
+        /// <returns>Returns the world id.</returns>
+        public static short GetWorld(long name)
+        {
+            List<Character> chars = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
+            foreach (Character c in chars)
+            {
+                if (c.LongName == name)
+                {
+                    return (short)GameEngine.World.Id;
+                }
+            }
+            return 0;
+        }
+
+        /// <summary>
+        /// Adds a friend to the contact list.
+        /// </summary>
+        /// <param name="name">The name of the friend.</param>
+        public void AddFriend(long name)
+        {
+            lock (this.lockObj)
+            {
+                if (this.Friends.Count >= 100)
+                {
+                    this.character.Session.SendData(new MessagePacketComposer(
+                        "Your friends list is full.").Serialize());
+                    return;
+                }
+                if (this.Friends.Contains(name))
+                {
+                    this.character.Session.SendData(new MessagePacketComposer(
+                        "This person is already on your friends list.").Serialize());
+                    return;
+                }
+
+                this.Friends.Add(name);
+                this.character.Session.SendData(new UpdateFriendPacketComposer(name, GetWorld(name)).Serialize());
+            }
+        }
+
+        /// <summary>
+        /// Adds a ignored person to the list.
+        /// </summary>
+        /// <param name="name">The name of the ignored.</param>
+        public void AddIgnore(long name)
+        {
+            lock (this.lockObj)
+            {
+                if (this.Ignored.Count >= 100)
+                {
+                    this.character.Session.SendData(new MessagePacketComposer(
+                        "Your ignored list is full.").Serialize());
+                    return;
+                }
+                if (this.Ignored.Contains(name))
+                {
+                    this.character.Session.SendData(new MessagePacketComposer(
+                        "This person is already on your ignored list.").Serialize());
+                    return;
+                }
+                this.Ignored.Add(name);
+            }
+        }
+
+        /// <summary>
+        /// Removes the specified friend from the contact list.
+        /// </summary>
+        /// <param name="name">the name of the friend to remove.</param>
+        public void RemoveFriend(long name)
+        {
+            lock (this.lockObj)
+            {
+                this.Friends.Remove(name);
+            }
+        }
+
+        /// <summary>
+        /// Removes the specified ignore from the contact list.
+        /// </summary>
+        /// <param name="name">the name of the ignore to remove.</param>
+        public void RemoveIgnore(long name)
+        {
+            lock (this.lockObj)
+            {
+                this.Ignored.Remove(name);
+            }
+        }
+
+        /// <summary>
+        /// Submits a login trigger to everyone online.
+        /// </summary>
+        public void OnLogin()
+        {
+            new List<Character>(GameEngine.World.CharacterManager
+                .Characters.Values).ForEach((c) => c.Contacts.OnLogin(this.character));
+        }
+
+        /// <summary>
+        /// Submits a logout trigger to everyone online.
+        /// </summary>
+        public void OnLogout()
+        {
+            new List<Character>(GameEngine.World.CharacterManager
+                .Characters.Values).ForEach((c) => c.Contacts.OnLogout(this.character));
+        }
+
+        /// <summary>
+        /// Triggers a login event for the specified character.
+        /// </summary>
+        /// <param name="c">The character to trigger event for.</param>
+        private void OnLogin(Character c)
+        {
+            if (this.Friends.Contains(c.LongName))
+            {
+                this.character.Session.SendData(new UpdateFriendPacketComposer(
+                    c.LongName, (short)GameEngine.World.Id).Serialize());
+            }
+        }
+
+        /// <summary>
+        /// Triggers a logout event for the specified character.
+        /// </summary>
+        /// <param name="c">The character to trigger event for.</param>
+        private void OnLogout(Character c)
+        {
+            if (this.Friends.Contains(c.LongName))
+            {
+                this.character.Session.SendData(new UpdateFriendPacketComposer(
+                    c.LongName, 0).Serialize());
+            }
+        }
+
+        /// <summary>
+        /// Sends a message to the the specified friend.
+        /// </summary>
+        /// <param name="name">The name of the friend.</param>
+        /// <param name="message">The message to send.</param>
+        public void SendMessage(long name, string message)
+        {
+            List<Character> chars = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
+            foreach (Character c in chars)
+            {
+                if (c.LongName == name)
+                {
+                    c.Session.SendData(new RecievePMPacketComposer(this.character.LongName,
+                        (byte)this.character.ClientRights, message, this.character.Contacts.NextUniqueId).Serialize());
+                    this.character.Session.SendData(new SendPMPacketComposer(name, message).Serialize());
+                    return;
+                }
+            }
+            this.character.Session.SendData(new MessagePacketComposer("Your friend is currently unavailible.").Serialize());
+        }
+
+        /// <summary>
+        /// Serializes the character's friends.
+        /// </summary>
+        /// <returns>Returns a string representing the serialized query.</returns>
+        public string SerializeFriends()
+        {
+            if (this.Friends.Count > 0)
+            {
+                StringBuilder query = new StringBuilder();
+
+                this.Friends.ForEach((l) =>
+                {
+                    if (query.Length > 0)
+                    {
+                        query.Append(",");
+                    }
+                    query.Append(l);
+                });
+
+                return query.ToString();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Serializes the character's ignores.
+        /// </summary>
+        /// <returns>Returns a string representing the serialized query.</returns>
+        public string SerializeIgnores()
+        {
+            if (this.Ignored.Count > 0)
+            {
+                StringBuilder query = new StringBuilder();
+
+                this.Ignored.ForEach((l) =>
+                {
+                    if (query.Length > 0)
+                    {
+                        query.Append(",");
+                    }
+                    query.Append(l);
+                });
+
+                return query.ToString();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Deserializes the given data and parses the friends data from it.
+        /// </summary>
+        /// <param name="data">The data to parse information from.</param>
+        public void DeserializeFriends(string data)
+        {
+            string[] names = data.Split(',');
+            Console.WriteLine(names.Length);
+            foreach (string name in names)
+            {
+                this.Friends.Add(long.Parse(name));
+            }
+        }
+
+        /// <summary>
+        /// Deserializes the given data and parses the ignores data from it.
+        /// </summary>
+        /// <param name="data">The data to parse information from.</param>
+        public void DeserializeIgnores(string data)
+        {
+            string[] names = data.Split(',');
+            foreach (string name in names)
+            {
+                this.Ignored.Add(long.Parse(name));
+            }
         }
         #endregion Methods
     }

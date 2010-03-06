@@ -159,6 +159,7 @@ namespace RuneScape.Model.Characters
                     // TODO: save.
                     GameEngine.AccountWorker.Add(character);
                     this.slotManager.ReleaseSlot(character.Index);
+                    character.Contacts.OnLogout();
                     UpdateOnlineStatus(character.MasterId, false);
                     Program.Logger.WriteInfo("Unregistered character (ID:" + character.SessionId + ").");
                 }
@@ -352,6 +353,7 @@ namespace RuneScape.Model.Characters
                     result.Character.Preferences.Add("just_started", true);
                 }
                 Frames.SendLoginWelcome(result.Character);
+                result.Character.Contacts.OnLogin();
             }
 
             Program.Logger.WriteDebug(result.Character.Name + " returned " + result.ReturnCode + " at login attempt.");

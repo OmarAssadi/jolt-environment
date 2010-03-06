@@ -586,20 +586,20 @@ namespace RuneScape.Model.Items.Containers
         {
             if (this.TakenSlots > 0)
             {
-                string query = string.Empty;
+                StringBuilder query = new StringBuilder();
 
                 for (int i = 0; i < this.Capacity; i++)
                 {
                     if (this[i] != null && this[i].Count > 0)
                     {
-                        if (query != string.Empty)
+                        if (query.Length > 0)
                         {
-                            query += ",";
+                            query.Append(",");
                         }
-                        query += (i + "=" + this[i].Id + ":" + this[i].Count);
+                        query.Append((i + "=" + this[i].Id + ":" + this[i].Count));
                     }
                 }
-                return query;
+                return query.ToString();
             }
             else
             {

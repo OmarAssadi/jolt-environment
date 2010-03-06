@@ -141,7 +141,6 @@ namespace RuneScape
             Console.WriteLine(" Copyright (C) 2010 Jolt Environment Team");
             Console.WriteLine(" http://www.ajravindiran.com/projects/jolt/");
             Console.WriteLine();
-            Console.WriteLine();
 
             /*Benchmark benchmark = new Benchmark(
                 new Action(() =>

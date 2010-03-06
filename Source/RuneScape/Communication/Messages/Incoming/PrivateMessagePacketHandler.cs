@@ -22,31 +22,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using RuneScape.Model;
 using RuneScape.Model.Characters;
-using RuneScape.Model.Items;
-using RuneScape.Events;
+using RuneScape.Utilities;
 
 namespace RuneScape.Communication.Messages.Incoming
 {
     /// <summary>
-    /// Handler for the take item packet.
+    /// Handler for private messages sent between friends.
     /// </summary>
-    public class TakeItemPacketHandler : IPacketHandler
-    {        
+    public class PrivateMessagePacketHandler : IPacketHandler
+    {
         #region Methods
         /// <summary>
-        /// Handles the items dropped by the character.
+        /// Handles private messages by the character.
         /// </summary>
         /// <param name="character">The character to handle packet for.</param>
         /// <param name="packet">The packet containing handle data.</param>
         public void Handle(Character character, Packet packet)
         {
-            short y = packet.ReadShortA();
-            short x = packet.ReadShort();
-            short id = packet.ReadLEShortA();
-            Location location = Location.Create(x, y, character.Location.Z);
-            GameEngine.Events.RegisterCoordinateEvent(new TakeItemEvent(character, location, id));
+            long name = packet.ReadLong();
+            int length = packet.ReadByte() & 0xFF;
+            string message = ChatUtilities.DecryptChat(packet, length);
+            character.Contacts.SendMessage(name, message);
         }
         #endregion Methods
     }

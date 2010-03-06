@@ -131,11 +131,17 @@ namespace RuneScape.Database.Account
                         if (data[32] is string)
                             result.Character.Bank.Deserialize((string)data[32]);
 
+                        // Friends and ignores
+                        if (data[33] is string)
+                            result.Character.Contacts.DeserializeFriends((string)data[33]);
+                        if (data[34] is string)
+                            result.Character.Contacts.DeserializeIgnores((string)data[34]);
+
                         // Preferences.
-                        result.Character.Preferences.SingleMouse = (bool)data[34];
-                        result.Character.Preferences.DisableChatEffects = (bool)data[35];
-                        result.Character.Preferences.SplitChat = (bool)data[36];
-                        result.Character.Preferences.AcceptAid = (bool)data[37];
+                        result.Character.Preferences.SingleMouse = (bool)data[36];
+                        result.Character.Preferences.DisableChatEffects = (bool)data[37];
+                        result.Character.Preferences.SplitChat = (bool)data[38];
+                        result.Character.Preferences.AcceptAid = (bool)data[39];
                     }
                 }
                 else // User doesn't exist or password is wrong.

@@ -66,8 +66,6 @@ namespace RuneScape.Model.Npcs
 
                     definitions.Add(id, definition);
                 }
-
-                Program.Logger.WriteInfo("Loaded " + rows.Length + " npc definitions.");
             }
             catch (Exception ex)
             {

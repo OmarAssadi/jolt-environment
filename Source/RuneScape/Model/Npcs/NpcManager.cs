@@ -106,7 +106,7 @@ namespace RuneScape.Model.Npcs
                         }
                     }
 
-                    Program.Logger.WriteInfo("Loaded " + this.npcSpawns.Count + " spawned npcs.");
+                    Program.Logger.WriteInfo("Loaded " + this.definitions.Count + " npc definitions, and " + this.npcSpawns.Count + " spawn(s).");
                 }
             }
             catch (Exception ex)

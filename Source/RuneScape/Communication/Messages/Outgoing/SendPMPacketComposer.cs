@@ -22,32 +22,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using RuneScape.Model;
-using RuneScape.Model.Characters;
-using RuneScape.Model.Items;
-using RuneScape.Events;
+using RuneScape.Utilities;
 
-namespace RuneScape.Communication.Messages.Incoming
+namespace RuneScape.Communication.Messages.Outgoing
 {
     /// <summary>
-    /// Handler for the take item packet.
+    /// Composes a packet that sends a private message.
+    /// 
+    /// <example>To Johndoe: Hey there!</example>
     /// </summary>
-    public class TakeItemPacketHandler : IPacketHandler
-    {        
-        #region Methods
+    public class SendPMPacketComposer : PacketComposer
+    {
+        #region Constructors
         /// <summary>
-        /// Handles the items dropped by the character.
+        /// Constructs a send private message packet.
         /// </summary>
-        /// <param name="character">The character to handle packet for.</param>
-        /// <param name="packet">The packet containing handle data.</param>
-        public void Handle(Character character, Packet packet)
+        /// <param name="name">The name of the character, the message is being sent to.</param>
+        /// <param name="message">The message being sent.</param>
+        public SendPMPacketComposer(long name, string message)
         {
-            short y = packet.ReadShortA();
-            short x = packet.ReadShort();
-            short id = packet.ReadLEShortA();
-            Location location = Location.Create(x, y, character.Location.Z);
-            GameEngine.Events.RegisterCoordinateEvent(new TakeItemEvent(character, location, id));
+            byte[] bytes = new byte[message.Length];
+            ChatUtilities.EncryptChat(bytes, 0, 0, message.Length, Encoding.ASCII.GetBytes(message));
+
+            SetOpcode(89);
+            SetType(PacketType.Byte);
+            AppendLong(name);
+            AppendByte((byte)message.Length);
+            AppendBytes(bytes);
         }
-        #endregion Methods
+        #endregion Constructors
     }
 }

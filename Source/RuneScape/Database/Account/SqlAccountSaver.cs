@@ -72,7 +72,11 @@ namespace RuneScape.Database.Account
                     client.AddParameter("eqp", character.Equipment.Serialize());
                     client.AddParameter("bank", character.Bank.Serialize());
 
-                    string query = "UPDATE characters SET gender=@gender,head=@head,chest=@chest,arms=@arms,hands=@hands,legs=@legs,feet=@feet,beard=@beard,hair_color=@hair_color,torso_color=@torso_color,leg_color=@leg_color,feet_color=@feet_color,skin_color=@skin_color, coord_x=@coord_x,coord_y=@coord_y,coord_z=@coord_z,run_energy=@run_energy,inventory_items=@inv,equipment_items=@eqp,bank_items=@bank WHERE id=@id;";
+                    // Friends and ignores.
+                    client.AddParameter("friends", character.Contacts.SerializeFriends());
+                    client.AddParameter("ignores", character.Contacts.SerializeIgnores());
+
+                    string query = "UPDATE characters SET gender=@gender,head=@head,chest=@chest,arms=@arms,hands=@hands,legs=@legs,feet=@feet,beard=@beard,hair_color=@hair_color,torso_color=@torso_color,leg_color=@leg_color,feet_color=@feet_color,skin_color=@skin_color, coord_x=@coord_x,coord_y=@coord_y,coord_z=@coord_z,run_energy=@run_energy,inventory_items=@inv,equipment_items=@eqp,bank_items=@bank,friends=@friends,ignores=@ignores WHERE id=@id;";
                     client.ExecuteUpdate(query);
                     return true;
                 }

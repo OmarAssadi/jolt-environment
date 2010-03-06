@@ -126,6 +126,10 @@ namespace RuneScape.Model.Characters
         /// Gets the character's bank.
         /// </summary>
         public BankContainer Bank { get; private set; }
+        /// <summary>
+        /// Gets the character's contacts.
+        /// </summary>
+        public Contacts Contacts { get; private set; }
         #endregion Properties
 
         #region Constructors
@@ -164,6 +168,7 @@ namespace RuneScape.Model.Characters
             this.Inventory = new InventoryContainer(this);
             this.Equipment = new EquipmentContainer(this);
             this.Bank = new BankContainer(this);
+            this.Contacts = new Contacts(this);
         }
         #endregion Constructors
 

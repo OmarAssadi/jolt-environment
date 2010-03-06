@@ -65,7 +65,6 @@ namespace RuneScape.Communication.Login.Handlers
                 int clientVersion = p.ReadShort();
                 if (clientVersion != 508)
                 {
-                    Console.WriteLine(clientVersion);
                     request.Remove = true;
                     return;
                 }

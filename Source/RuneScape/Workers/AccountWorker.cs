@@ -73,13 +73,10 @@ namespace RuneScape.Workers
                     Thread.Sleep(10);
 
                     Character character = this.toSave.Take();
-                    if (this.accountSaver.Save(character))
+
+                    if (!this.accountSaver.Save(character))
                     {
-                        Program.Logger.WriteDebug("Saved " + character.Name + "'s game.");
-                    }
-                    else
-                    {
-                        Program.Logger.WriteWarn("Could not save " + character.Name + "'s game.");
+                        Program.Logger.WriteDebug("Could not save " + character.Name + "'s game.");
                     }
                 }
                 catch (ThreadAbortException)

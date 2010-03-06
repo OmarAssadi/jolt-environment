@@ -73,6 +73,7 @@ namespace RuneScape.Communication.Messages
             character.Session.SendData(new FriendsStatusPacketComposer(2).Serialize());
 
             //Refresh objects.
+            character.Contacts.Refresh();
             character.Inventory.Refresh();
             character.Equipment.Refresh();
 

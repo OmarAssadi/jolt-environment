@@ -110,13 +110,16 @@ namespace RuneScape.Communication.Messages
         private void LoadHandlers()
         {
             AddHandler(0, new NullPacketHandler()); // Handles the null packets (usually sent at login).
+            AddHandler(2, new RemoveIgnorePacketHandler()); // Handles removed ignores.
             AddHandler(3, new EquipItemPacketHandler()); // Handles item equiping.
             AddHandler(21, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(22, new QuietPacketHandler()); // Recieved when update is required.
+            AddHandler(30, new AddFriendPacketHandler()); // Handles added friends.
             AddHandler(43, new InputPacketHandler()); // Handles input from interfaces.
             AddHandler(49, new WalkingPacketHandler()); // Handles walking.
             AddHandler(59, new QuietPacketHandler()); // Character's mouse click.
             AddHandler(60, new NewMapRegionPacketHandler()); // Handles region changing.
+            AddHandler(61, new AddIgnorePacketHandler()); // Handles added ignores.
             AddHandler(63, new RemoveInterfacePacketHandler()); // Removes a chatbox interface.
             AddHandler(90, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(99, new QuietPacketHandler()); // Unknown.
@@ -127,12 +130,14 @@ namespace RuneScape.Communication.Messages
             AddHandler(117, new QuietPacketHandler()); // Unkwown.
             AddHandler(119, new WalkingPacketHandler()); // Handles walking.
             AddHandler(129, new HdNotificationPacketHandler()); // Handles hd clients.
+            AddHandler(132, new RemoveFriendPacketHandler()); // Handles removed friends.
             AddHandler(133, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(138, new WalkingPacketHandler()); // Handles walking.
             AddHandler(159, new ReportAbusePacketHandler()); // Handles reported abuses.
             AddHandler(167, new SwapItemPacketHandler()); // Handles item movements.
             AddHandler(169, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(173, new ButtonPacketHandler()); // Handles buttons.
+            AddHandler(178, new PrivateMessagePacketHandler()); // Handles private messaging.
             AddHandler(179, new SwapInterfaceItemPacketHandler()); // Handles item movements between interfaces.
             AddHandler(201, new TakeItemPacketHandler()); // Handles taking items.
             AddHandler(203, new ItemOptionsPacketHandler()); // Handles item options.

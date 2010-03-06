@@ -66,12 +66,17 @@
     <Compile Include="Communication\Login\Handlers\SessionRequestProtocolHandler.cs" />
     <Compile Include="Communication\Login\LoginVerification.cs" />
     <Compile Include="Communication\Login\ProtocolManager.cs" />
+    <Compile Include="Communication\Messages\Incoming\AddFriendPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\AddIgnorePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\DropItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\EquipItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\HdNotificationPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\InputPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ItemOptionsPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\RemoveFriendPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\RemoveIgnorePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ReportAbusePacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\PrivateMessagePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\SwapItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\SwapInterfaceItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\TakeItemPacketHandler.cs" />
@@ -86,7 +91,9 @@
     <Compile Include="Communication\Messages\Outgoing\MapViewType.cs" />
     <Compile Include="Communication\Messages\Outgoing\MinimapViewPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\NpcRenderingPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\RecievePMPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\RunScriptPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\SendPMPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\SpawnGroundItemPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\SpawnObjectPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\SystemUpdatePacketComposer.cs" />

@@ -102,8 +102,6 @@ namespace RuneScape
         /// </summary>
         public static void Initialize()
         {
-            Program.Logger.WriteInfo("Initializing the game engine and world...");
-
             // Create a new world using the given world id.
             world = new GameWorld(GameServer.Configuration["World.Id"]);
             content = new GameContent();
