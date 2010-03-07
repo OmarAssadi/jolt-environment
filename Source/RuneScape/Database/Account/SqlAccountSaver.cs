@@ -76,7 +76,23 @@ namespace RuneScape.Database.Account
                     client.AddParameter("friends", character.Contacts.SerializeFriends());
                     client.AddParameter("ignores", character.Contacts.SerializeIgnores());
 
-                    string query = "UPDATE characters SET gender=@gender,head=@head,chest=@chest,arms=@arms,hands=@hands,legs=@legs,feet=@feet,beard=@beard,hair_color=@hair_color,torso_color=@torso_color,leg_color=@leg_color,feet_color=@feet_color,skin_color=@skin_color, coord_x=@coord_x,coord_y=@coord_y,coord_z=@coord_z,run_energy=@run_energy,inventory_items=@inv,equipment_items=@eqp,bank_items=@bank,friends=@friends,ignores=@ignores WHERE id=@id;";
+                    // Preferences
+                    client.AddParameter("pref_sm", character.Preferences.SingleMouse);
+                    client.AddParameter("pref_ce", character.Preferences.DisableChatEffects);
+                    client.AddParameter("pref_sc", character.Preferences.SplitChat);
+                    client.AddParameter("pref_aa", character.Preferences.AcceptAid);
+
+                    string query = @"
+                                    UPDATE character_preferences
+                                    SET single_mouse=@pref_sm,chat_effects=@pref_ce,split_chat=@pref_sc,accept_aid=@pref_aa
+                                    WHERE master_id=@id;
+                                    UPDATE characters
+                                    SET gender=@gender,head=@head,chest=@chest,arms=@arms,hands=@hands,legs=@legs,feet=@feet,
+                                        beard=@beard,hair_color=@hair_color,torso_color=@torso_color,leg_color=@leg_color,
+                                        feet_color=@feet_color,skin_color=@skin_color, coord_x=@coord_x,coord_y=@coord_y,
+                                        coord_z=@coord_z,run_energy=@run_energy,inventory_items=@inv,equipment_items=@eqp,
+                                        bank_items=@bank,friends=@friends,ignores=@ignores 
+                                    WHERE id=@id;";
                     client.ExecuteUpdate(query);
                     return true;
                 }

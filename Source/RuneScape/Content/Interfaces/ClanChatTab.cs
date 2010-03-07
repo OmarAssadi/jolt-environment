@@ -23,26 +23,25 @@ using System.Linq;
 using System.Text;
 
 using RuneScape.Communication.Messages;
-using RuneScape.Communication.Messages.Outgoing;
 using RuneScape.Model.Characters;
 
 namespace RuneScape.Content.Interfaces
 {
     /// <summary>
-    /// Represents the equipment tab located on the sidebar.
+    /// Represents the clan chat tab located on the sidebar.
     /// </summary>
-    public class EquipmentTab : IInterfaceHandler
+    public class ClanChatTab : IInterfaceHandler
     {
         #region Fields
         /// <summary>
         /// The id of this interface.
         /// </summary>
-        public const int InterfaceId = 387;
+        public const int InterfaceId = 589;
         #endregion Fields
 
         #region Methods
         /// <summary>
-        /// Handles the equipment tab buttons.
+        /// Handles the clanchat tab buttons.
         /// </summary>
         /// <param name="character">The character to handle for.</param>
         /// <param name="packetId">The packet id of the button.</param>
@@ -52,15 +51,12 @@ namespace RuneScape.Content.Interfaces
         {
             switch (buttonId)
             {
-                case 55:
-                    {
-                        Frames.SendInterface(character, 667, false);
-                        Frames.SendInventoryInterface(character, 670);
-                        character.Session.SendData(new InterfaceItemsPacketComposer(-1, unchecked((short)64209), 93, character.Inventory).Serialize());
-                        character.Session.SendData(new InterfaceItemsPacketComposer(-1, unchecked((short)64208), 94, character.Equipment).Serialize());
-                        character.Bonuses.Refresh(true);
-                        break;
-                    }
+                case 9:
+                    Frames.SendInterface(character, 590, false);
+                    break;
+                default:
+                    Program.Logger.WriteDebug("Unhandled clanchat button: " + buttonId);
+                    break;
             }
         }
         #endregion Methods

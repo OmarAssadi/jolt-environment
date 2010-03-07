@@ -21,6 +21,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 using JoltEnvironment.Storage.Sql;
 using RuneScape.Communication.Login;
@@ -225,7 +226,7 @@ namespace RuneScape.Model.Characters
         {
             foreach (Character c in this.characters.Values)
             {
-                if (c != null && c.Name.Equals(username))
+                if (c.Name.Equals(username))
                 {
                     return true;
                 }

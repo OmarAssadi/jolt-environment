@@ -18,7 +18,8 @@
 */
 
 using System;
-using System.Runtime.InteropServices;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -73,11 +74,7 @@ namespace RuneScape
         /// <summary>
         /// The amount of bytes send and recieved.
         /// </summary>
-        public static int NetworkUsage
-        {
-            get;
-            set;
-        }
+        public static int NetworkUsage { get; set; }
         #endregion Properties
 
         #region Methods
@@ -145,7 +142,6 @@ namespace RuneScape
             /*Benchmark benchmark = new Benchmark(
                 new Action(() =>
                 {
-                    Console.WriteLine("lol");
                 }));
             benchmark.Process();
             Console.WriteLine(benchmark.GetTime());*/

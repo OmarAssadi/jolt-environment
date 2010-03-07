@@ -76,12 +76,13 @@ namespace RuneScape.Content.Interfaces
         /// </summary>
         public void LoadHandlers()
         {
-            AddHandler(182, new LogoutTab()); // The logout tab located on the side bar.
-            AddHandler(261, new OptionsTab()); // The options tab located on the side bar.
+            AddHandler(182, new LogoutTab()); // The logout tab located on the sidebar.
+            AddHandler(261, new OptionsTab()); // The options tab located on the sidebar.
             AddHandler(378, new WelcomeScreen()); // The welcome screen displayed on login.
-            AddHandler(387, new EquipmentTab()); // The equipment tab lcoated on the side bar.
-            AddHandler(464, new EmoteTab()); // The emotes tab located on the side bar.
-            AddHandler(548, new SideBar()); // The side bar.
+            AddHandler(387, new EquipmentTab()); // The equipment tab lcoated on the sidebar.
+            AddHandler(464, new EmoteTab()); // The emotes tab located on the sidebar.
+            AddHandler(548, new SideBar()); // The sidebar.
+            AddHandler(589, new ClanChatTab()); // The clanchat tab on the sidebar.
             AddHandler(750, new RuneOrbs()); // The orbs to the right of the mini map.
             AddHandler(751, new ChatOptionsBar()); // The options displayed under the chatbox.
             AddHandler(755, new WorldMap()); // The world map interface.

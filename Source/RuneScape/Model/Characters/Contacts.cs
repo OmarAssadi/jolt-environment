@@ -259,24 +259,25 @@ namespace RuneScape.Model.Characters
         /// <returns>Returns a string representing the serialized query.</returns>
         public string SerializeFriends()
         {
-            if (this.Friends.Count > 0)
+            lock (this.lockObj)
             {
-                StringBuilder query = new StringBuilder();
-
-                this.Friends.ForEach((l) =>
+                if (this.Friends.Count > 0)
                 {
-                    if (query.Length > 0)
+                    StringBuilder query = new StringBuilder();
+                    this.Friends.ForEach((l) =>
                     {
-                        query.Append(",");
-                    }
-                    query.Append(l);
-                });
-
-                return query.ToString();
-            }
-            else
-            {
-                return null;
+                        if (query.Length > 0)
+                        {
+                            query.Append(",");
+                        }
+                        query.Append(l);
+                    });
+                    return query.ToString();
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 
@@ -286,24 +287,25 @@ namespace RuneScape.Model.Characters
         /// <returns>Returns a string representing the serialized query.</returns>
         public string SerializeIgnores()
         {
-            if (this.Ignored.Count > 0)
+            lock (this.lockObj)
             {
-                StringBuilder query = new StringBuilder();
-
-                this.Ignored.ForEach((l) =>
+                if (this.Ignored.Count > 0)
                 {
-                    if (query.Length > 0)
+                    StringBuilder query = new StringBuilder();
+                    this.Ignored.ForEach((l) =>
                     {
-                        query.Append(",");
-                    }
-                    query.Append(l);
-                });
-
-                return query.ToString();
-            }
-            else
-            {
-                return null;
+                        if (query.Length > 0)
+                        {
+                            query.Append(",");
+                        }
+                        query.Append(l);
+                    });
+                    return query.ToString();
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 
@@ -313,11 +315,13 @@ namespace RuneScape.Model.Characters
         /// <param name="data">The data to parse information from.</param>
         public void DeserializeFriends(string data)
         {
-            string[] names = data.Split(',');
-            Console.WriteLine(names.Length);
-            foreach (string name in names)
+            lock (this.lockObj)
             {
-                this.Friends.Add(long.Parse(name));
+                string[] names = data.Split(',');
+                foreach (string name in names)
+                {
+                    this.Friends.Add(long.Parse(name));
+                }
             }
         }
 
@@ -327,10 +331,13 @@ namespace RuneScape.Model.Characters
         /// <param name="data">The data to parse information from.</param>
         public void DeserializeIgnores(string data)
         {
-            string[] names = data.Split(',');
-            foreach (string name in names)
+            lock (this.lockObj)
             {
-                this.Ignored.Add(long.Parse(name));
+                string[] names = data.Split(',');
+                foreach (string name in names)
+                {
+                    this.Ignored.Add(long.Parse(name));
+                }
             }
         }
         #endregion Methods

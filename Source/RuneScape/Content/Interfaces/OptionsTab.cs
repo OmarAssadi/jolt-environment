@@ -84,11 +84,6 @@ namespace RuneScape.Content.Interfaces
                     {
                         if (!character.Preferences.SplitChat)
                         {
-                            GenericPacketComposer gpc = new GenericPacketComposer(152);
-                            gpc.SetType(PacketType.Short);
-                            gpc.AppendByte(115);
-                            gpc.AppendInt(83);
-                            character.Session.SendData(gpc.Serialize());
                             character.Preferences.SplitChat = true;
                             character.Session.SendData(new ConfigPacketComposer(287, 1).Serialize());
                         }

@@ -17,6 +17,7 @@
 
 */
 
+using System;
 using System.Data;
 
 using JoltEnvironment.Storage.Sql;
@@ -153,16 +154,23 @@ namespace RuneScape.Model
                     "UPDATE worlds SET startup_time = NOW() WHERE world_id = @id;");
             }
 
-            this.Name = (string)vars["world_name"];
-            this.WelcomeMessage = (string)vars["welcome_message"];
-            string[] coords = vars["spawn_point"].ToString().Split(',');
-            this.SpawnPoint = Location.Create(
-                short.Parse(coords[0]),
-                short.Parse(coords[1]),
-                byte.Parse(coords[2]));
-            this.Motw = (string)vars["motw"];
-            this.ExperienceRate = (int)vars["exp_rate"];
-            this.AccountCreationEnabled = true;
+            if (vars != null)
+            {
+                this.Name = (string)vars["world_name"];
+                this.WelcomeMessage = (string)vars["welcome_message"];
+                string[] coords = vars["spawn_point"].ToString().Split(',');
+                this.SpawnPoint = Location.Create(
+                    short.Parse(coords[0]),
+                    short.Parse(coords[1]),
+                    byte.Parse(coords[2]));
+                this.Motw = (string)vars["motw"];
+                this.ExperienceRate = (int)vars["exp_rate"];
+                this.AccountCreationEnabled = true;
+            }
+            else
+            {
+                throw new ArgumentException("No existing world with id '" + worldId + "'.");
+            }
 
             // Load bad words.
             BadWords.Load();

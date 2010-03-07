@@ -173,22 +173,7 @@ namespace RuneScape.Communication.Messages
             character.Session.SendData(new ConfigPacketComposer(171, character.Preferences.DisableChatEffects.GetHashCode()).Serialize());
             // TODO: send auto retaliate.
             character.Session.SendData(new ConfigPacketComposer(427, character.Preferences.AcceptAid.GetHashCode()).Serialize());
-            /*if (!character.Preferences.SplitChat)
-            {
-                GenericPacketComposer gpc = new GenericPacketComposer(152);
-                gpc.SetType(PacketType.Short);
-                gpc.AppendString("s");
-                gpc.AppendInt(83);
-                character.Session.SendData(gpc.Serialize());
-                character.Preferences.SplitChat = true;
-                character.Session.SendData(new ConfigPacketComposer(287, 1).Serialize());
-            }
-            else
-            {
-                character.Preferences.SplitChat = false;
-                character.Session.SendData(new ConfigPacketComposer(287, 2).Serialize());
-            }*/
-            character.Session.SendData(new ConfigPacketComposer(287, character.Preferences.SplitChat.GetHashCode()).Serialize());
+            character.Session.SendData(new ConfigPacketComposer(287, character.Preferences.SplitChat ? 1 : 0).Serialize());
             character.Session.SendData(new ConfigPacketComposer(1249, character.Preferences.BankX).Serialize());
         }
 

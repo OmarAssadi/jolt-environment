@@ -83,12 +83,9 @@ namespace RuneScape.Database.Account
                      * connnecting to the server before the older session is removed,
                      * so we must ignore whether or not the character is online.
                      */
-                    if (loginType != LoginConnectionType.Reconnection)
+                    if (loginType != LoginConnectionType.Reconnection && (bool)data[5])
                     {
-                        if ((bool)data[5]) // If the character is already online, flag this request.
-                        {
-                            result.ReturnCode = LoginReturnCode.AlreadyOnline;
-                        }
+                        result.ReturnCode = LoginReturnCode.AlreadyOnline;
                     }
 
                     /*
@@ -154,7 +151,7 @@ namespace RuneScape.Database.Account
             {
                 Program.Logger.WriteException(ex);
                 result.Character = new Character(details, 0);
-                result.ReturnCode = LoginReturnCode.Rejected;
+                result.ReturnCode = LoginReturnCode.BadSession;
             }
             return result;
         }
