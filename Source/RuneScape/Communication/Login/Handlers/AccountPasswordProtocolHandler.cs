@@ -59,7 +59,16 @@ namespace RuneScape.Communication.Login.Handlers
             if (request.Buffer.RemainingAmount >= packetSize)
             {
                 Packet p = new Packet(request.Buffer.RemainingData);
-                p.Skip(packetSize == 45 ? 4 : 3); // RSA Encrpytion.
+
+                /* 
+                 * I don't know why, but the packet structure changes 
+                 * varying on the password, and client type, so we
+                 * will just have to loop untill we reach 1.
+                 */
+                while (p.Peek() != 1)
+                {
+                    p.Skip(1);
+                }
 
                 // Check if client revision is valid.
                 int clientVersion = p.ReadShort();
@@ -73,6 +82,7 @@ namespace RuneScape.Communication.Login.Handlers
                 string username = StringUtilities.LongToString(longUser);
                 p.Skip(4); // PADDING
                 string password = p.ReadString();
+                Console.WriteLine(password);
                 if (password.Contains(username))
                 {
                     request.Connection.SendData((byte)AccountCreationReturnCode.TooSimilar);
