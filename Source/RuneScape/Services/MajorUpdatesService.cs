@@ -61,7 +61,7 @@ namespace RuneScape.Services
             // Main tasks that will process character's route ticks, updates, and (any required) resets.
             if ((DateTime.Now - this.majorUpdatesTime).TotalMilliseconds >= 600)
             {
-                List<Npc> npcs = new List<Npc>(GameEngine.World.NpcManager.Spawns);
+                List<Npc> npcs = new List<Npc>(GameEngine.World.NpcManager.Spawns.Values);
                 List<Character> characters = new List<Character>(GameEngine.World.CharacterManager.Characters.Values);
                 this.majorUpdatesTime = DateTime.Now;
 

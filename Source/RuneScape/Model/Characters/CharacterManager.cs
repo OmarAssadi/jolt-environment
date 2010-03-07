@@ -42,16 +42,18 @@ namespace RuneScape.Model.Characters
     {
         #region Fields
         /// <summary>
-        /// A RuneScape.Database.Account.IAccountLoader inheritant  that loads accounts from a mysql database.
+        /// A RuneScape.Database.Account.IAccountLoader interface that loads accounts from a mysql database.
         /// </summary>
         private IAccountLoader accountLoader = new SqlAccountLoader();
-
+        /// <summary>
+        /// A RuneScape.Database.Account.IAccountSaver interface that saves accounts to a mysql database.
+        /// </summary>
         private IAccountSaver accountSaver = new SqlAccountSaver();
 
         /// <summary>
         /// A System.Collections.Generic.Dictionary collection holding all characters currently online.
         /// </summary>
-        private ConcurrentDictionary<Node, Character> characters = new ConcurrentDictionary<Node, Character>();
+        private ConcurrentDictionary<short, Character> characters = new ConcurrentDictionary<short, Character>();
 
         /// <summary>
         /// Manages client slots.
@@ -76,7 +78,7 @@ namespace RuneScape.Model.Characters
         /// <summary>
         /// Gets the current characters online.
         /// </summary>
-        public ConcurrentDictionary<Node, Character> Characters { get { return this.characters; } }
+        public ConcurrentDictionary<short, Character> Characters { get { return this.characters; } }
         #endregion Properties
 
         #region Constructors
@@ -111,23 +113,23 @@ namespace RuneScape.Model.Characters
         {
             try
             {
-                if (this.slotManager.ReserveSlot(character))
-                {
-                    if (this.characters.Count <= GameServer.TcpConnection.MaxConnections)
+                    if (this.characters.Count < GameServer.TcpConnection.MaxConnections)
                     {
-                        if (this.characters.TryAdd(character.Session.Connection, character))
+                        if (this.slotManager.ReserveSlot(character))
                         {
-                            UpdateOnlineStatus(character.MasterId, true);
-                            Program.Logger.WriteInfo("Registered character (ID:" + character.SessionId + ").");
-                            return true;
+                            if (this.characters.TryAdd((short)character.Index, character))
+                            {
+                                UpdateOnlineStatus(character.MasterId, true);
+                                Program.Logger.WriteInfo("Registered character (ID:" + character.SessionId + ").");
+                                return true;
+                            }
+                        }
+                        else
+                        {
+                            return false;
                         }
                     }
                     return false;
-                }
-                else
-                {
-                    return false;
-                }
             }
             catch (Exception ex)
             {
@@ -143,26 +145,27 @@ namespace RuneScape.Model.Characters
         /// <param name="character">The character to remove.</param>
         public void Unregister(Character character)
         {
-            Unregister(character.Session.Connection);
+            Unregister((short)character.Index);
         }
 
         /// <summary>
         /// Unregisters a character specified by it's node connection.
         /// </summary>
-        /// <param name="node">The connection node associated with the character.</param>
-        public void Unregister(Node node)
+        /// <param name="indexId">The character's assigned index id.</param>
+        public void Unregister(short indexId)
         {
             try
             {
                 Character character = null;
-                if (this.characters.TryRemove(node, out character))
+                if (this.characters.TryRemove(indexId, out character))
                 {
                     // TODO: save.
                     GameEngine.AccountWorker.Add(character);
                     this.slotManager.ReleaseSlot(character.Index);
                     character.Contacts.OnLogout();
                     UpdateOnlineStatus(character.MasterId, false);
-                    Program.Logger.WriteInfo("Unregistered character (ID:" + character.SessionId + ").");
+                    Program.Logger.WriteInfo("Unregistered character (SID:" 
+                        + character.SessionId + ", CID: " + character.Index + ").");
                 }
             }
             catch (Exception ex)
@@ -174,15 +177,11 @@ namespace RuneScape.Model.Characters
         /// <summary>
         /// Gets whether the collection contains the given node connection.
         /// </summary>
-        /// <param name="node">The node connection to look for.</param>
+        /// <param name="indexId">The index of the character to look for.</param>
         /// <returns>Returns true if contained; false if not.</returns>
-        public bool Contains(Node node)
+        public bool Contains(short indexId)
         {
-            if (node != null)
-            {
-                return this.characters.ContainsKey(node);
-            }
-            return false;
+            return this.characters.ContainsKey(indexId);
         }
 
         /// <summary>
@@ -202,17 +201,14 @@ namespace RuneScape.Model.Characters
         /// <summary>
         /// Gets a character instance by it's master id.
         /// </summary>
-        /// <param name="id">The master id of the character.</param>
+        /// <param name="id">The index id of the character.</param>
         /// <returns>Returns a RuneScape.Model.Characters.Character object if the character exists; null otherwise.</returns>
-        public Character Get(Node node)
+        public Character Get(short indexId)
         {
-            if (node != null)
+            Character character = null;
+            if (this.characters.TryGetValue(indexId, out character))
             {
-                Character character = null;
-                if (this.characters.TryGetValue(node, out character))
-                {
-                    return character;
-                }
+                return character;
             }
             return null;
         }
@@ -224,7 +220,8 @@ namespace RuneScape.Model.Characters
         /// <returns>Returns true if the character is online; false if offline.</returns>
         public bool OnlineByServer(string username)
         {
-            foreach (Character c in this.characters.Values)
+            List<Character> chars = new List<Character>(this.characters.Values);
+            foreach (Character c in chars)
             {
                 if (c.Name.Equals(username))
                 {

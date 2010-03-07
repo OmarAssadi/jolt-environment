@@ -98,10 +98,7 @@ namespace RuneScape.Communication
         {
             if (this.Connection != null)
             {
-                if (GameEngine.World.CharacterManager.Contains(this.Connection))
-                {
-                    GameEngine.World.CharacterManager.Unregister(this.Connection);
-                }
+                GameEngine.World.CharacterManager.Unregister((short)this.Character.Index);
                 GameServer.TcpConnection.DropConnection(this.Connection);
             }
         }

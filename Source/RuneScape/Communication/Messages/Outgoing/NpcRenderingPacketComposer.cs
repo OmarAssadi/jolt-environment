@@ -53,7 +53,7 @@ namespace RuneScape.Communication.Messages.Outgoing
             List<Npc> npcBin = new List<Npc>();
             character.LocalNpcs.ForEach((npc) =>
             {
-                if (GameEngine.World.NpcManager.Spawns.Contains(npc)
+                if (GameEngine.World.NpcManager.Spawns.Values.Contains(npc)
                     && npc.Location.WithinDistance(character.Location)
                     && !character.UpdateFlags.Teleporting)
                 {

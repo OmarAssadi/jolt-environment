@@ -41,7 +41,7 @@ namespace RuneScape.Model.Npcs
         /// <summary>
         /// A collection of spawned npcs.
         /// </summary>
-        private List<Npc> npcSpawns = new List<Npc>();
+        private Dictionary<short, Npc> npcSpawns = new Dictionary<short, Npc>();
 
         /// <summary>
         /// A slot manager which manages the npc's client indexing.
@@ -53,7 +53,7 @@ namespace RuneScape.Model.Npcs
         /// <summary>
         /// Gets the spawned npcs.
         /// </summary>
-        public List<Npc> Spawns { get { return this.npcSpawns; } }
+        public Dictionary<short, Npc> Spawns { get { return this.npcSpawns; } }
         #endregion Properties
 
         #region Constructors
@@ -100,10 +100,7 @@ namespace RuneScape.Model.Npcs
                         }
 
                         Npc npc = new Npc(id, originalCoords, minRange, maxRange, walkType, definitions[id], messages);
-                        if (this.slotManager.ReserveSlot(npc))
-                        {
-                            this.npcSpawns.Add(npc);
-                        }
+                        RegisterNpc(npc);
                     }
 
                     Program.Logger.WriteInfo("Loaded " + this.definitions.Count + " npc definitions, and " + this.npcSpawns.Count + " spawn(s).");
@@ -127,15 +124,23 @@ namespace RuneScape.Model.Npcs
             return definitions[id];
         }
 
-        public void RemoveNpc(Npc npc)
+        /// <summary>
+        /// Unregisters an npc from the manager.
+        /// </summary>
+        /// <param name="npc">The npc to unregister.</param>
+        public void Unregister(Npc npc)
         {
         }
-
+        
+        /// <summary>
+        /// Registers an npc into the manager.
+        /// </summary>
+        /// <param name="npc">The npc to register.</param>
         public void RegisterNpc(Npc npc)
         {
             if (this.slotManager.ReserveSlot(npc))
             {
-                this.npcSpawns.Add(npc);
+                this.npcSpawns.Add((short)npc.Index, npc);
             }
         }
         #endregion Methods
