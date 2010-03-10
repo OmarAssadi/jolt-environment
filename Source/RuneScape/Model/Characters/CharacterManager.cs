@@ -113,23 +113,23 @@ namespace RuneScape.Model.Characters
         {
             try
             {
-                    if (this.characters.Count < GameServer.TcpConnection.MaxConnections)
+                if (this.characters.Count < GameServer.TcpConnection.MaxConnections)
+                {
+                    if (this.slotManager.ReserveSlot(character))
                     {
-                        if (this.slotManager.ReserveSlot(character))
+                        if (this.characters.TryAdd((short)character.Index, character))
                         {
-                            if (this.characters.TryAdd((short)character.Index, character))
-                            {
-                                UpdateOnlineStatus(character.MasterId, true);
-                                Program.Logger.WriteInfo("Registered character (ID:" + character.SessionId + ").");
-                                return true;
-                            }
-                        }
-                        else
-                        {
-                            return false;
+                            UpdateOnlineStatus(character.MasterId, true);
+                            Program.Logger.WriteInfo("Registered character (ID:" + character.SessionId + ").");
+                            return true;
                         }
                     }
-                    return false;
+                    else
+                    {
+                        return false;
+                    }
+                }
+                return false;
             }
             catch (Exception ex)
             {
@@ -199,7 +199,7 @@ namespace RuneScape.Model.Characters
         }
 
         /// <summary>
-        /// Gets a character instance by it's master id.
+        /// Gets a character instance by it's index id.
         /// </summary>
         /// <param name="id">The index id of the character.</param>
         /// <returns>Returns a RuneScape.Model.Characters.Character object if the character exists; null otherwise.</returns>
@@ -209,6 +209,24 @@ namespace RuneScape.Model.Characters
             if (this.characters.TryGetValue(indexId, out character))
             {
                 return character;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Gets a character instance by it's long name.
+        /// </summary>
+        /// <param name="name">The character's name.</param>
+        /// <returns>Returns a RuneScape.Model.Characters.Character object if the character exists; null otherwise.</returns>
+        public Character Get(long name)
+        {
+            List<Character> chars = new List<Character>(this.characters.Values);
+            foreach (Character c in chars)
+            {
+                if (c.LongName == name)
+                {
+                    return c;
+                }
             }
             return null;
         }

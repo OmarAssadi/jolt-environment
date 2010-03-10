@@ -855,6 +855,7 @@ Source/RuneScape/Communication/Messages/Incoming/TakeItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/WalkingPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/AnimateInterfacePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CharacterRenderingPacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/ClanListPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CloseInterfacePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/ConfigPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CoordinatePacketComposer.cs -text

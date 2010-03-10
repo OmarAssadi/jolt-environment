@@ -47,7 +47,7 @@ namespace JoltEnvironment.Utilities
         /// </summary>
         /// <param name="value">The value of the integer.</param>
         /// <returns>Returns a string.</returns>
-        public static string LongToString(long value)
+        public static string LongToString(this long value)
         {
             if (value <= 0L || value >= 0x5b5b57f8a98a5dd1L)
                 return null;
@@ -69,7 +69,7 @@ namespace JoltEnvironment.Utilities
         /// </summary>
         /// <param name="s">The string to convert.</param>
         /// <returns>Returns a 64-bit integer.</returns>
-        public static long StringToLong(string s)
+        public static long StringToLong(this string s)
         {
             long l = 0L;
             for (int i = 0; i < s.Length && i < 12; i++)

@@ -20,6 +20,7 @@
 using System;
 
 using JoltEnvironment.Utilities;
+using RuneScape.Content;
 using RuneScape.Model.Characters;
 
 namespace RuneScape.Communication.Messages.Incoming
@@ -38,6 +39,15 @@ namespace RuneScape.Communication.Messages.Incoming
         public void Handle(Character character, Packet packet)
         {
             long name = packet.ReadLong();
+
+            if (character.ClanRoom > 0)
+            {
+                GameEngine.Content.ClanChat.Leave(character);
+            }
+            else
+            {
+                GameEngine.Content.ClanChat.Join(character, name);
+            }
         }
         #endregion Methods
     }

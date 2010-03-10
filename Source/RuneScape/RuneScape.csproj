@@ -83,6 +83,7 @@
     <Compile Include="Communication\Messages\Incoming\TakeItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Outgoing\AnimateInterfacePacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\CharacterRenderingPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\ClanListPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\CoordinatePacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\DespawnGroundItemPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\DespawnObjectPacketComposer.cs" />

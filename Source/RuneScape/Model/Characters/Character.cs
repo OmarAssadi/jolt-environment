@@ -58,6 +58,10 @@ namespace RuneScape.Model.Characters
         /// Gets the character's username converted to a Int64 bit integer.
         /// </summary>
         public long LongName { get; private set; }
+        /// <summary>
+        /// Gets or sets the name of the current clan room.
+        /// </summary>
+        public long? ClanRoom { get; set; }
 
         /// <summary>
         /// The character's client-side rights to the server.

@@ -23,39 +23,45 @@ using System.Linq;
 using System.Text;
 
 using RuneScape.Content.ClanChat;
-using RuneScape.Content.Interfaces;
-using RuneScape.Utilities;
+using RuneScape.Model.Characters;
 
-namespace RuneScape.Content
+namespace RuneScape.Communication.Messages.Outgoing
 {
     /// <summary>
-    /// Defines a game contents.
+    /// Composes a packet that sends the character's clan mates.
     /// </summary>
-    public class GameContent
+    public class ClanListPacketComposer : PacketComposer
     {
-        #region Properties
-        /// <summary>
-        /// The interface manager maintaining all interfaces.
-        /// </summary>
-        public InterfaceManager InterfaceManager { get; private set; }
-        /// <summary>
-        /// The clanchat manager maintaining all clanchat content.
-        /// </summary>
-        public ClanChatManager ClanChat { get; private set; }
-        #endregion Properties
-
         #region Constructors
         /// <summary>
-        /// Constructs a new game content management.
+        /// Constructs the packet.
         /// </summary>
-        public GameContent()
+        /// <param name="room">The room of clan mates.</param>
+        public ClanListPacketComposer(Room room)
         {
-            this.InterfaceManager = new InterfaceManager();
-            this.ClanChat = new ClanChatManager();
+            SetOpcode(82);
+            AppendLong(room.Owner);
+            AppendLong(room.Name);
+            AppendByte((byte)(room.KickReq - 1));
+            AppendByte(room.UserCount);
+
+            room.GetUsers().ForEach((l) =>
+            {
+                AppendLong(l);
+                AppendShort((short)GameEngine.World.Id);
+                AppendByte((byte)(l == room.Owner ? 7 : (byte)room.GetRank(l)));
+                AppendString("World " + GameEngine.World.Id);
+            });
+        }
+
+        /// <summary>
+        /// Constructs the packet.
+        /// </summary>
+        public ClanListPacketComposer()
+        {
+            SetOpcode(82);
+            AppendLong(0);
         }
         #endregion Constructors
-
-        #region Methods
-        #endregion Methods
     }
 }
