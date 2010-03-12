@@ -60,6 +60,9 @@ namespace RuneScape.Content.Interfaces
                     if (room != null)
                     {
                         character.Session.SendData(new StringPacketComposer(room.StringName, 590, 22).Serialize());
+                        character.Session.SendData(new StringPacketComposer(Room.RankToString(room.JoinReq), 590, 23).Serialize());
+                        character.Session.SendData(new StringPacketComposer(Room.RankToString(room.TalkReq), 590, 24).Serialize());
+                        character.Session.SendData(new StringPacketComposer(Room.RankToString(room.KickReq), 590, 25).Serialize());
                     }
                     
                     break;

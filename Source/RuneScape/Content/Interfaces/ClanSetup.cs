@@ -23,6 +23,7 @@ using System.Linq;
 using System.Text;
 
 using RuneScape.Communication.Messages.Outgoing;
+using RuneScape.Content.ClanChat;
 using RuneScape.Model.Characters;
 
 namespace RuneScape.Content.Interfaces
@@ -52,19 +53,146 @@ namespace RuneScape.Content.Interfaces
             switch (buttonId)
             {
                 case 22:
+                    if (packetId == 233)
                     {
-                        if (packetId == 233)
-                        {
-                            character.Preferences.Add("clan_name", 1);
-                            character.Session.SendData(new RunScriptPacketComposer(109, "s", new object[] { 
-                                "Enter the player name whose channel you wish to join:" }).Serialize());
-                        }
-                        else if (packetId == 22)
-                        {
-                            GameEngine.Content.ClanChat.RemoveRoom(character);
-                        }
-                        break;
+                        character.Session.SendData(new RunScriptPacketComposer(109, "s", new object[] { 
+                                "Enter your clan prefix:" }).Serialize());
                     }
+                    else if (packetId == 22)
+                    {
+                        GameEngine.Content.ClanChat.RemoveRoom(character);
+                    }
+                    break;
+                case 23:
+                    Room r = GameEngine.Content.ClanChat.Get(character.LongName);
+                    switch (packetId)
+                    {
+                        case 223:
+                            r.JoinReq = Rank.Regular;
+                            character.Session.SendData(new StringPacketComposer("Anyone", 590, 23).Serialize());
+                            break;
+                        case 21:
+                            r.JoinReq = Rank.Friend;
+                            character.Session.SendData(new StringPacketComposer("Any Friends", 590, 23).Serialize());
+                            break;
+                        case 169:
+                            r.JoinReq = Rank.Recruit;
+                            character.Session.SendData(new StringPacketComposer("Recruit+", 590, 23).Serialize());
+                            break;
+                        case 214:
+                            r.JoinReq = Rank.Corporal;
+                            character.Session.SendData(new StringPacketComposer("Corporal+", 590, 23).Serialize());
+                            break;
+                        case 173:
+                            r.JoinReq = Rank.Sergeant;
+                            character.Session.SendData(new StringPacketComposer("Sergeant+", 590, 23).Serialize());
+                            break;
+                        case 232:
+                            r.JoinReq = Rank.Lieutenant;
+                            character.Session.SendData(new StringPacketComposer("Lientenant+", 590, 23).Serialize());
+                            break;
+                        case 133:
+                            r.JoinReq = Rank.Captain;
+                            character.Session.SendData(new StringPacketComposer("Captain+", 590, 23).Serialize());
+                            break;
+                        case 102:
+                            r.JoinReq = Rank.General;
+                            character.Session.SendData(new StringPacketComposer("General+", 590, 23).Serialize());
+                            break;
+                        case 226:
+                            r.JoinReq = Rank.Owner;
+                            character.Session.SendData(new StringPacketComposer("Only me", 590, 23).Serialize());
+                            break;
+                    }
+                    break;
+                case 24:
+                    Room r2 = GameEngine.Content.ClanChat.Get(character.LongName);
+                    switch (packetId)
+                    {
+                        case 223:
+                            r2.TalkReq = Rank.Regular;
+                            character.Session.SendData(new StringPacketComposer("Anyone", 590, 24).Serialize());
+                            break;
+                        case 21:
+                            r2.TalkReq = Rank.Friend;
+                            character.Session.SendData(new StringPacketComposer("Any Friends", 590, 24).Serialize());
+                            break;
+                        case 169:
+                            r2.TalkReq = Rank.Recruit;
+                            character.Session.SendData(new StringPacketComposer("Recruit+", 590, 24).Serialize());
+                            break;
+                        case 214:
+                            r2.TalkReq = Rank.Corporal;
+                            character.Session.SendData(new StringPacketComposer("Corporal+", 590, 24).Serialize());
+                            break;
+                        case 173:
+                            r2.TalkReq = Rank.Sergeant;
+                            character.Session.SendData(new StringPacketComposer("Sergeant+", 590, 24).Serialize());
+                            break;
+                        case 232:
+                            r2.TalkReq = Rank.Lieutenant;
+                            character.Session.SendData(new StringPacketComposer("Lientenant+", 590, 24).Serialize());
+                            break;
+                        case 133:
+                            r2.TalkReq = Rank.Captain;
+                            character.Session.SendData(new StringPacketComposer("Captain+", 590, 24).Serialize());
+                            break;
+                        case 102:
+                            r2.TalkReq = Rank.General;
+                            character.Session.SendData(new StringPacketComposer("General+", 590, 24).Serialize());
+                            break;
+                        case 226:
+                            r2.TalkReq = Rank.Owner;
+                            character.Session.SendData(new StringPacketComposer("Only me", 590, 24).Serialize());
+                            break;
+                    }
+                    break;
+                case 25:
+                    Room r3 = GameEngine.Content.ClanChat.Get(character.LongName);
+                    switch (packetId)
+                    {
+                        case 223:
+                            r3.KickReq = Rank.Regular;
+                            character.Session.SendData(new StringPacketComposer("Anyone", 590, 25).Serialize());
+                            break;
+                        case 21:
+                            r3.KickReq = Rank.Friend;
+                            character.Session.SendData(new StringPacketComposer("Any Friends", 590, 25).Serialize());
+                            break;
+                        case 169:
+                            r3.KickReq = Rank.Recruit;
+                            character.Session.SendData(new StringPacketComposer("Recruit+", 590, 25).Serialize());
+                            break;
+                        case 214:
+                            r3.KickReq = Rank.Corporal;
+                            character.Session.SendData(new StringPacketComposer("Corporal+", 590, 25).Serialize());
+                            break;
+                        case 173:
+                            r3.KickReq = Rank.Sergeant;
+                            character.Session.SendData(new StringPacketComposer("Sergeant+", 590, 25).Serialize());
+                            break;
+                        case 232:
+                            r3.KickReq = Rank.Lieutenant;
+                            character.Session.SendData(new StringPacketComposer("Lientenant+", 590, 25).Serialize());
+                            break;
+                        case 133:
+                            r3.KickReq = Rank.Captain;
+                            character.Session.SendData(new StringPacketComposer("Captain+", 590, 25).Serialize());
+                            break;
+                        case 102:
+                            r3.KickReq = Rank.General;
+                            character.Session.SendData(new StringPacketComposer("General+", 590, 25).Serialize());
+                            break;
+                        case 226:
+                            r3.KickReq = Rank.Owner;
+                            character.Session.SendData(new StringPacketComposer("Only me", 590, 25).Serialize());
+                            break;
+                    }
+                    r3.Refresh();
+                    break;
+                default:
+                    Program.Logger.WriteDebug("Unhandled clansetup button: " + buttonId);
+                    break;
             }
         }
         #endregion Methods

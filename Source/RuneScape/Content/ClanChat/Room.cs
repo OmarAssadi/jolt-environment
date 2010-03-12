@@ -140,6 +140,11 @@ namespace RuneScape.Content.ClanChat
         {
             lock (this.Ranks)
             {
+                if (this.Ranks.ContainsKey(name))
+                {
+                    this.Ranks[name] = rank;
+                    return;
+                }
                 Ranks.Add(name, rank);
             }
         }
@@ -224,6 +229,51 @@ namespace RuneScape.Content.ClanChat
                 return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Gets whether the user is able to talk in the room.
+        /// </summary>
+        /// <param name="name">The name of the user.</param>
+        /// <returns>Returns true if able to talk; false if not.</returns>
+        public bool CanTalk(long name)
+        {
+            if (this.TalkReq <= GetRank(name))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Transforms a given rank to a user-friendly string.
+        /// </summary>
+        /// <param name="rank">The rank to transform.</param>
+        /// <returns>Returns the rank as a (modified) string.</returns>
+        public static string RankToString(Rank rank)
+        {
+            switch (rank)
+            {
+                case Rank.Regular:
+                    return "Anyone";
+                case Rank.Friend:
+                    return "Any Friends";
+                case Rank.Recruit:
+                    return "Recruit+";
+                case Rank.Corporal:
+                    return "Corporal+";
+                case Rank.Sergeant:
+                    return "Sergeant+";
+                case Rank.Lieutenant:
+                    return "Lieutenant+";
+                case Rank.Captain:
+                    return "Captain+";
+                case Rank.General:
+                    return "General+";
+                case Rank.Owner:
+                    return "Only me";
+            }
+            return "";
         }
         #endregion Methods
     }

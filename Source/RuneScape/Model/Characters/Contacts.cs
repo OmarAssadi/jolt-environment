@@ -23,6 +23,7 @@ using System.Linq;
 using System.Text;
 
 using RuneScape.Communication.Messages.Outgoing;
+using RuneScape.Content.ClanChat;
 
 namespace RuneScape.Model.Characters
 {
@@ -137,6 +138,12 @@ namespace RuneScape.Model.Characters
 
                 this.Friends.Add(name);
                 this.character.Session.SendData(new UpdateFriendPacketComposer(name, GetWorld(name)).Serialize());
+
+                Room room = GameEngine.Content.ClanChat.Get(this.character.LongName);
+                if (room != null)
+                {
+                    room.AddRank(name, Rank.Friend);
+                }
             }
         }
 
@@ -161,6 +168,12 @@ namespace RuneScape.Model.Characters
                     return;
                 }
                 this.Ignored.Add(name);
+
+                Room room = GameEngine.Content.ClanChat.Get(this.character.LongName);
+                if (room != null)
+                {
+                    room.RemoveRank(name);
+                }
             }
         }
 

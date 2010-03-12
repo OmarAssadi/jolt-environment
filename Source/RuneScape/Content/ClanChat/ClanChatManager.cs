@@ -192,14 +192,22 @@ namespace RuneScape.Content.ClanChat
             Room r = Get((long)character.ClanRoom);
             if (r != null)
             {
-                lock (r.Users)
+                if (r.CanTalk(character.LongName))
                 {
-                    r.Users.ForEach((l) =>
+                    lock (r.Users)
                     {
-                        GameEngine.World.CharacterManager.Get(l).Session.SendData(
-                            new ClanMessagePacketComposer(message, character.LongName, r.Name, 
-                                r.NextUniqueId, (byte)character.ClientRights).Serialize());
-                    });
+                        r.Users.ForEach((l) =>
+                        {
+                            GameEngine.World.CharacterManager.Get(l).Session.SendData(
+                                new ClanMessagePacketComposer(message, character.LongName, r.Name,
+                                    r.NextUniqueId, (byte)character.ClientRights).Serialize());
+                        });
+                    }
+                }
+                else
+                {
+                    character.Session.SendData(new MessagePacketComposer(
+                        "You do not have a high enough rank to talk.").Serialize());
                 }
             }
         }

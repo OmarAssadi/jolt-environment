@@ -94,13 +94,20 @@ namespace RuneScape.Communication.Messages
         /// <param name="packet">The packet data.</param>
         public void Handle(Character character, Packet packet)
         {
-            if (this.packetHandlers.ContainsKey(packet.Opcode))
+            try
             {
-                this.packetHandlers[packet.Opcode].Handle(character, packet);
+                if (this.packetHandlers.ContainsKey(packet.Opcode))
+                {
+                    this.packetHandlers[packet.Opcode].Handle(character, packet);
+                }
+                else if (character.ServerRights >= ServerRights.SystemAdministrator)
+                {
+                    Program.Logger.WriteDebug("Unhandled packet: " + packet.Opcode + ".");
+                }
             }
-            else if (character.ServerRights >= ServerRights.SystemAdministrator)
+            catch (Exception ex)
             {
-                Program.Logger.WriteDebug("Unhandled packet: " + packet.Opcode + ".");
+                Program.Logger.WriteException(ex);
             }
         }
 
@@ -124,8 +131,10 @@ namespace RuneScape.Communication.Messages
             AddHandler(63, new RemoveInterfacePacketHandler()); // Removes a chatbox interface.
             AddHandler(90, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(99, new QuietPacketHandler()); // Unknown.
+            AddHandler(102, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(107, new CommandPacketHandler()); // Handles commands.
             AddHandler(108, new RemoveInterfacePacketHandler()); // Removes an interface.
+            AddHandler(111, new ChangeRankPacketHandler()); // Handles changing of clan member ranks.
             AddHandler(113, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(115, new PingPacketHandler()); // Sent every second.
             AddHandler(117, new QuietPacketHandler()); // Unkwown.
@@ -141,11 +150,13 @@ namespace RuneScape.Communication.Messages
             AddHandler(178, new PrivateMessagePacketHandler()); // Handles private messaging.
             AddHandler(179, new SwapInterfaceItemPacketHandler()); // Handles item movements between interfaces.
             AddHandler(189, new CreateClanPacketHandler()); // Handles clan creation.
+            AddHandler(200, new KickUserPacketHandler()); // Handles kicking of clan members.
             AddHandler(201, new TakeItemPacketHandler()); // Handles taking items.
             AddHandler(203, new ItemOptionsPacketHandler()); // Handles item options.
             AddHandler(211, new DropItemPacketHandler()); // Handles dropped items.
             AddHandler(214, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(222, new ChatPacketHandler()); // Handles chat messages.
+            AddHandler(226, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(232, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(233, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(248, new QuietPacketHandler()); // Unknown.

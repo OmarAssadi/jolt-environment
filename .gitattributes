@@ -831,6 +831,7 @@ Source/RuneScape/Communication/Messages/Frames.cs -text
 Source/RuneScape/Communication/Messages/Incoming/AddFriendPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/AddIgnorePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ButtonPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/ChangeRankPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ChatPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/CommandPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/CreateClanPacketHandler.cs -text
@@ -841,6 +842,7 @@ Source/RuneScape/Communication/Messages/Incoming/IPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/InputPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ItemOptionsPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/JoinClanChatPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/KickUserPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NewMapRegionPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NullPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/PingPacketHandler.cs -text

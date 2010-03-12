@@ -65,6 +65,7 @@ namespace RuneScape.Communication.Messages.Outgoing
         public ClanListPacketComposer()
         {
             SetOpcode(82);
+            SetType(PacketType.Short);
             AppendLong(0);
         }
         #endregion Constructors
