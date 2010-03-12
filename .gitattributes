@@ -833,6 +833,7 @@ Source/RuneScape/Communication/Messages/Incoming/AddIgnorePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ButtonPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ChatPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/CommandPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/CreateClanPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/DropItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/EquipItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/HdNotificationPacketHandler.cs -text
@@ -856,6 +857,7 @@ Source/RuneScape/Communication/Messages/Incoming/WalkingPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/AnimateInterfacePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CharacterRenderingPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/ClanListPacketComposer.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/ClanMessagePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CloseInterfacePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/ConfigPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CoordinatePacketComposer.cs -text
@@ -900,6 +902,7 @@ Source/RuneScape/Content/Interfaces/Bank.cs -text
 Source/RuneScape/Content/Interfaces/CharacterSetup.cs -text
 Source/RuneScape/Content/Interfaces/ChatOptionsBar.cs -text
 Source/RuneScape/Content/Interfaces/ClanChatTab.cs -text
+Source/RuneScape/Content/Interfaces/ClanSetup.cs -text
 Source/RuneScape/Content/Interfaces/DepositInventory.cs -text
 Source/RuneScape/Content/Interfaces/EmoteTab.cs -text
 Source/RuneScape/Content/Interfaces/EquipmentTab.cs -text

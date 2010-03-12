@@ -1,4 +1,4 @@
-﻿/* 
+﻿/*
     Jolt Environment
     Copyright (C) 2010 Jolt Environment Team
 
@@ -22,28 +22,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using RuneScape.Communication.Messages;
 using RuneScape.Communication.Messages.Outgoing;
-using RuneScape.Content.ClanChat;
 using RuneScape.Model.Characters;
 
 namespace RuneScape.Content.Interfaces
 {
     /// <summary>
-    /// Represents the clan chat tab located on the sidebar.
+    /// Represents the clan setup interface.
     /// </summary>
-    public class ClanChatTab : IInterfaceHandler
+    public class ClanSetup : IInterfaceHandler
     {
         #region Fields
         /// <summary>
         /// The id of this interface.
         /// </summary>
-        public const int InterfaceId = 589;
+        public const int InterfaceId = 590;
         #endregion Fields
 
         #region Methods
         /// <summary>
-        /// Handles the clanchat tab buttons.
+        /// Handles the clan setup buttons.
         /// </summary>
         /// <param name="character">The character to handle for.</param>
         /// <param name="packetId">The packet id of the button.</param>
@@ -53,19 +51,20 @@ namespace RuneScape.Content.Interfaces
         {
             switch (buttonId)
             {
-                case 9:
-                    Frames.SendInterface(character, 590, false);
-                    Room room = GameEngine.Content.ClanChat.Get(character.LongName);
-
-                    if (room != null)
+                case 22:
                     {
-                        character.Session.SendData(new StringPacketComposer(room.StringName, 590, 22).Serialize());
+                        if (packetId == 233)
+                        {
+                            character.Preferences.Add("clan_name", 1);
+                            character.Session.SendData(new RunScriptPacketComposer(109, "s", new object[] { 
+                                "Enter the player name whose channel you wish to join:" }).Serialize());
+                        }
+                        else if (packetId == 22)
+                        {
+                            GameEngine.Content.ClanChat.RemoveRoom(character);
+                        }
+                        break;
                     }
-                    
-                    break;
-                default:
-                    Program.Logger.WriteDebug("Unhandled clanchat button: " + buttonId);
-                    break;
             }
         }
         #endregion Methods

@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using JoltEnvironment.Utilities;
 using RuneScape.Model.Characters;
 using RuneScape.Communication.Messages.Outgoing;
 
@@ -32,11 +33,22 @@ namespace RuneScape.Content.ClanChat
     /// </summary>
     public class Room
     {
+        #region Fields
+        /// <summary>
+        /// The message counter.
+        /// </summary>
+        private int counter = 0;
+        #endregion Fields
+
         #region Properties
         /// <summary>
         /// The room's name.
         /// </summary>
         public long Name { get; private set; }
+        /// <summary>
+        /// Gets the room's name as a readable string.
+        /// </summary>
+        public string StringName { get; private set; }
         /// <summary>
         /// The owner of the room.
         /// </summary>
@@ -58,11 +70,11 @@ namespace RuneScape.Content.ClanChat
         /// <summary>
         /// Gets a list of current users in the room.
         /// </summary>
-        private List<long> Users { get; private set; }
+        public List<long> Users { get; private set; }
         /// <summary>
         /// Gets a list of ranks specified to users.
         /// </summary>
-        private Dictionary<long, Rank> Ranks { get; private set; }
+        private Dictionary<long, Rank> Ranks { get; set; }
 
         /// <summary>
         /// The amount of users in the room.
@@ -77,6 +89,14 @@ namespace RuneScape.Content.ClanChat
                 }
             }
         }
+
+        /// <summary>
+        /// Gets the next unique id.
+        /// </summary>
+        public int NextUniqueId
+        {
+            get { return ++this.counter; }
+        }
         #endregion Properties
 
         #region Constructors
@@ -89,6 +109,7 @@ namespace RuneScape.Content.ClanChat
         {
             this.Name = name;
             this.Owner = owner;
+            this.StringName = name.LongToString();
 
             this.Users = new List<long>();
             this.Ranks = new Dictionary<long, Rank>();
@@ -100,6 +121,16 @@ namespace RuneScape.Content.ClanChat
         #endregion Constructors
 
         #region Methods
+        /// <summary>
+        /// Sets the room's name.
+        /// </summary>
+        /// <param name="name">The name to set</param>
+        public void SetName(long name)
+        {
+            this.Name = name;
+            this.StringName = name.LongToString();
+        }
+
         /// <summary>
         /// Adds a rank to the ranks container.
         /// </summary>
@@ -171,22 +202,13 @@ namespace RuneScape.Content.ClanChat
         /// </summary>
         public void Refresh()
         {
-            GetUsers().ForEach((l) =>
-            {
-                GameEngine.World.CharacterManager.Get(l).Session.SendData(
-                    new ClanListPacketComposer(this).Serialize());
-            });
-        }
-
-        /// <summary>
-        /// Gets the current list of users.
-        /// </summary>
-        /// <returns>A list with the users in this room.</returns>
-        public List<long> GetUsers()
-        {
             lock (this.Users)
             {
-                return new List<long>(this.Users);
+                this.Users.ForEach((l) =>
+                {
+                    GameEngine.World.CharacterManager.Get(l).Session.SendData(
+                        new ClanListPacketComposer(this).Serialize());
+                });
             }
         }
 
@@ -197,7 +219,7 @@ namespace RuneScape.Content.ClanChat
         /// <returns>Returns true if able to join; false if not.</returns>
         public bool CanJoin(long name)
         {
-            if (this.JoinReq >= GetRank(name))
+            if (this.JoinReq <= GetRank(name))
             {
                 return true;
             }

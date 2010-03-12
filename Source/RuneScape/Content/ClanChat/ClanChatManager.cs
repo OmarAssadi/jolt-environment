@@ -42,19 +42,90 @@ namespace RuneScape.Content.ClanChat
 
         #region Methods
         /// <summary>
-        /// Creates a new clan chat room.
+        /// Gets whether there is a room the specified character owns.
+        /// </summary>
+        /// <param name="name">The name of the character.</param>
+        /// <returns>Returns true if contained; false if not.</returns>
+        public bool Contains(long name)
+        {
+            lock (this.rooms)
+            {
+                return this.rooms.ContainsKey(name);
+            }
+        }
+
+        /// <summary>
+        /// Gets a room with the specified name.
+        /// </summary>
+        /// <param name="name">The name to get room from.</param>
+        /// <returns>Returns the room if contained; false if not.</returns>
+        public Room Get(long name)
+        {
+            Room r = null;
+            lock (this.rooms)
+            {
+                if (this.rooms.ContainsKey(name))
+                {
+                    r = this.rooms[name];
+                }
+            }
+            return r;
+        }
+
+        /// <summary>
+        /// Creates a new clanchat room.
         /// </summary>
         /// <param name="character">The character that owns the clanchat.</param>
         /// <param name="name">The name of the clan chat.</param>
         public void CreateRoom(Character character, long name)
         {
-            Room room = new Room(name, character.LongName);
-            character.Contacts.Friends.ForEach((l) => room.AddRank(l, Rank.Friend));
-            character.Session.SendData(new StringPacketComposer(room.Name.LongToString(), 590, 22).Serialize());
-
-            lock (rooms)
+            if (!rooms.ContainsKey(character.LongName))
             {
-                rooms.Add(character.LongName, room);
+                Room room = new Room(name, character.LongName);
+                character.Contacts.Friends.ForEach((l) => room.AddRank(l, Rank.Friend));
+                room.AddRank(character.LongName, Rank.Owner);
+                character.Session.SendData(new StringPacketComposer(room.StringName, 590, 22).Serialize());
+
+                lock (this.rooms)
+                {
+                    this.rooms.Add(character.LongName, room);
+                }
+            }
+            else
+            {
+                Room r = null;
+                lock (this.rooms)
+                {
+                    r = this.rooms[character.LongName];
+                }
+
+                r.SetName(name);
+                character.Session.SendData(new StringPacketComposer(r.StringName, 590, 22).Serialize());
+                Program.Logger.WriteInfo(r.StringName);
+            }
+        }
+
+        /// <summary>
+        /// Removes a clanchat room.
+        /// </summary>
+        /// <param name="character">The character to remove channel from.</param>
+        public void RemoveRoom(Character character)
+        {
+            character.Session.SendData(new StringPacketComposer("Chat disabled", 590, 22).Serialize());
+
+            Room r = Get(character.LongName);
+            if (r != null)
+            {
+                lock (r.Users)
+                {
+                    r.Users.ForEach((l) =>
+                    {
+                        Character c = GameEngine.World.CharacterManager.Get(l);
+                        c.Session.SendData(new MessagePacketComposer("The channel you were in has been disabled").Serialize());
+                        c.Session.SendData(new ClanListPacketComposer().Serialize());
+                    });
+                }
+                character.Session.SendData(new ClanListPacketComposer().Serialize());
             }
         }
 
@@ -64,22 +135,14 @@ namespace RuneScape.Content.ClanChat
         /// <param name="name">The name of the clan to join.</param>
         public void Join(Character character, long name)
         {
-            Room r = null;
-            lock (rooms)
-            {
-                if (this.rooms.ContainsKey(name))
-                {
-                    r = this.rooms[name];
-                }
-            }
-
-            if (rooms != null)
+            Room r = Get(name);
+            if (r != null)
             {
                 if (r.CanJoin(name))
                 {
-                    r.AddUser(name);
+                    r.AddUser(character.LongName);
                     character.Session.SendData(new MessagePacketComposer(
-                        "Now talking in clan channel " + r.Name + ".").Serialize());
+                        "Now talking in clan channel " + r.StringName).Serialize());
                     character.Session.SendData(new MessagePacketComposer(
                         "To talk, start each line of the chat with the / symbol.").Serialize());
                     r.Refresh();
@@ -109,21 +172,35 @@ namespace RuneScape.Content.ClanChat
                 return;
             }
 
-            Room r = null;
-            lock (rooms)
-            {
-                if (this.rooms.ContainsKey((long)character.ClanRoom))
-                {
-                    r = this.rooms[(long)character.ClanRoom];
-                }
-            }
-
+            Room r = Get((long)character.ClanRoom);
             if (r != null)
             {
                 r.RemoveUser(character.LongName);
                 r.Refresh();
                 character.Session.SendData(new ClanListPacketComposer().Serialize());
                 character.ClanRoom = null;
+            }
+        }
+
+        /// <summary>
+        /// Sends a message to everyone inside the clan room.
+        /// </summary>
+        /// <param name="character">The character who is sending the message.</param>
+        /// <param name="message">The message to send.</param>
+        public void Message(Character character, string message)
+        {
+            Room r = Get((long)character.ClanRoom);
+            if (r != null)
+            {
+                lock (r.Users)
+                {
+                    r.Users.ForEach((l) =>
+                    {
+                        GameEngine.World.CharacterManager.Get(l).Session.SendData(
+                            new ClanMessagePacketComposer(message, character.LongName, r.Name, 
+                                r.NextUniqueId, (byte)character.ClientRights).Serialize());
+                    });
+                }
             }
         }
         #endregion Methods

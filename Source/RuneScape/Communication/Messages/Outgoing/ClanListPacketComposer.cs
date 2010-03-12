@@ -40,18 +40,23 @@ namespace RuneScape.Communication.Messages.Outgoing
         public ClanListPacketComposer(Room room)
         {
             SetOpcode(82);
+            SetType(PacketType.Short);
+
             AppendLong(room.Owner);
             AppendLong(room.Name);
             AppendByte((byte)(room.KickReq - 1));
             AppendByte(room.UserCount);
 
-            room.GetUsers().ForEach((l) =>
+            lock (room.Users)
             {
-                AppendLong(l);
-                AppendShort((short)GameEngine.World.Id);
-                AppendByte((byte)(l == room.Owner ? 7 : (byte)room.GetRank(l)));
-                AppendString("World " + GameEngine.World.Id);
-            });
+                room.Users.ForEach((l) =>
+                {
+                    AppendLong(l);
+                    AppendShort((short)GameEngine.World.Id);
+                    AppendByte((byte)room.GetRank(l));
+                    AppendString("World " + GameEngine.World.Id);
+                });
+            }
         }
 
         /// <summary>

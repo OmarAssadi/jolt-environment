@@ -83,6 +83,7 @@ namespace RuneScape.Content.Interfaces
             AddHandler(464, new EmoteTab()); // The emotes tab located on the sidebar.
             AddHandler(548, new SideBar()); // The sidebar.
             AddHandler(589, new ClanChatTab()); // The clanchat tab on the sidebar.
+            AddHandler(590, new ClanSetup()); // The clan setup interface.
             AddHandler(750, new RuneOrbs()); // The orbs to the right of the mini map.
             AddHandler(751, new ChatOptionsBar()); // The options displayed under the chatbox.
             AddHandler(755, new WorldMap()); // The world map interface.

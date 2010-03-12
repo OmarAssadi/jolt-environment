@@ -163,6 +163,7 @@ namespace RuneScape.Model.Characters
                     GameEngine.AccountWorker.Add(character);
                     this.slotManager.ReleaseSlot(character.Index);
                     character.Contacts.OnLogout();
+                    GameEngine.Content.ClanChat.Leave(character);
                     UpdateOnlineStatus(character.MasterId, false);
                     Program.Logger.WriteInfo("Unregistered character (SID:" 
                         + character.SessionId + ", CID: " + character.Index + ").");

@@ -22,46 +22,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using RuneScape.Communication.Messages.Outgoing;
-using RuneScape.Model;
 using RuneScape.Model.Characters;
-using RuneScape.Utilities;
 
 namespace RuneScape.Communication.Messages.Incoming
 {
     /// <summary>
-    /// Handler for the chat packet.
+    /// Handler for creation of clans.
     /// </summary>
-    public class ChatPacketHandler : IPacketHandler
+    public class CreateClanPacketHandler : IPacketHandler
     {
         #region Methods
         /// <summary>
-        /// Handles the chat information sent from the client.
+        /// Handles clan creation.
         /// </summary>
         /// <param name="character">The character to handle packet for.</param>
         /// <param name="packet">The packet containing handle data.</param>
         public void Handle(Character character, Packet packet)
         {
-            int effects = packet.ReadShort() & 0xFFFF;
-            int length = packet.ReadByte();
-            string text = ChatUtilities.DecryptChat(packet, length);
-
-            if (!character.Muted)
-            {
-                if (character.ClanRoom != null && text.StartsWith("/"))
-                {
-                    GameEngine.Content.ClanChat.Message(character, text.Substring(1));
-                }
-                else
-                {
-                    character.Speak(ChatMessage.Create(effects, length, text));
-                }
-            }
-            else
-            {
-                character.Session.SendData(new MessagePacketComposer(
-                    "You cannot talk, because you are muted.").Serialize());
-            }
+            long name = packet.ReadLong();
+            GameEngine.Content.ClanChat.CreateRoom(character, name);
         }
         #endregion Methods
     }

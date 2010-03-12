@@ -179,7 +179,7 @@ namespace RuneScape.Model.Npcs
                 this.WalkingQueue.AddStep(moveX, moveY);
             }
 
-            if (this.SpeakMessages != null && random.NextDouble() > 0.9)
+            if (this.SpeakMessages != null && random.NextDouble() > 0.95)
             {
                 int index = random.Next(0, this.SpeakMessages.Length);
                 Speak(this.SpeakMessages[index]);

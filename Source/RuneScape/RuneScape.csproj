@@ -68,6 +68,7 @@
     <Compile Include="Communication\Login\ProtocolManager.cs" />
     <Compile Include="Communication\Messages\Incoming\AddFriendPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\AddIgnorePacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\CreateClanPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\DropItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\EquipItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\HdNotificationPacketHandler.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Communication\Messages\Outgoing\AnimateInterfacePacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\CharacterRenderingPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\ClanListPacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\ClanMessagePacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\CoordinatePacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\DespawnGroundItemPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\DespawnObjectPacketComposer.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="Content\Interfaces\Bank.cs" />
     <Compile Include="Content\Interfaces\CharacterSetup.cs" />
     <Compile Include="Content\Interfaces\ClanChatTab.cs" />
+    <Compile Include="Content\Interfaces\ClanSetup.cs" />
     <Compile Include="Content\Interfaces\DepositInventory.cs" />
     <Compile Include="Content\Interfaces\EmoteTab.cs" />
     <Compile Include="Content\Interfaces\EquipmentTab.cs" />
