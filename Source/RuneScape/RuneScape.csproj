@@ -85,6 +85,7 @@
     <Compile Include="Communication\Messages\Incoming\SwapInterfaceItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\TakeItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Outgoing\AnimateInterfacePacketComposer.cs" />
+    <Compile Include="Communication\Messages\Outgoing\CharacterOptionPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\CharacterRenderingPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\ClanListPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\ClanMessagePacketComposer.cs" />
@@ -289,6 +290,7 @@
     <Folder Include="Content\Combat\" />
     <Folder Include="Content\Minigames\" />
     <Folder Include="Content\Skills\" />
+    <Folder Include="Content\Trading\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\app.ico" />

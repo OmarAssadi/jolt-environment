@@ -106,10 +106,9 @@ namespace RuneScape.Network
         /// <summary>
         /// Starts listening for new connections.
         /// </summary>
-        public void Start(bool logConnections, bool checkBlacklist)
+        public void Start(bool checkBlacklist)
         {
-            // Since these are checked constantly, they can be changed at any time.
-            this.LogConnections = logConnections;
+            // Check black list option.
             this.CheckBlacklist = checkBlacklist;
 
             // We have to check if the listener is already listening so we don't disrupt it.
@@ -169,21 +168,12 @@ namespace RuneScape.Network
                 Socket socket = this.listener.EndAcceptSocket(result);
                 StandBy();
 
-                string query = string.Empty;
                 if (this.CheckBlacklist)
-                {
-                    query += "SELECT * FROM blacklist WHERE ip_address = @ip LIMIT 1;";
-                }
-                if (this.LogConnections)
-                {
-                    query += "INSERT INTO connection_logs (date,ip) VALUES (NOW(), @ip);";
-                }
-                if (query != string.Empty)
                 {
                     using (SqlDatabaseClient client = GameServer.Database.GetClient())
                     {
                         client.AddParameter("ip", socket.RemoteEndPoint.ToString().Split(':')[0]);
-                        DataRow row = client.ReadDataRow(query);
+                        DataRow row = client.ReadDataRow("SELECT * FROM blacklist WHERE ip_address = @ip LIMIT 1;");
 
                         if (row != null)
                         {

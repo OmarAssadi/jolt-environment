@@ -126,9 +126,7 @@ namespace RuneScape
                     Configuration["TcpConnection.MaxConnections"]);
 
                 // Start the connection manager's core listener with user-specified logging/checking.
-                connectionManager.Listener.Start(
-                    Configuration["TcpConnection.LogConnections"],
-                    Configuration["TcpConnection.CheckBlacklist"]);
+                connectionManager.Listener.Start(Configuration["TcpConnection.CheckBlacklist"]);
 
                 // Check to make sure database verion is valid.
                 if (!(bool)Database.Execute(new DatabaseVersionCheck()))

@@ -72,7 +72,7 @@ namespace RuneScape.Communication.Messages
             // Connect to chat list server.
             character.Session.SendData(new FriendsStatusPacketComposer(2).Serialize());
 
-            //Refresh objects.
+            // Refresh objects.
             character.Contacts.Refresh();
             character.Inventory.Refresh();
             character.Equipment.Refresh();
@@ -84,6 +84,10 @@ namespace RuneScape.Communication.Messages
             SendSkills(character);
             // The character's run energy must be sent.
             character.Session.SendData(new RunEnergyPacketComposer(character.WalkingQueue.RunEnergy).Serialize());
+
+            // Options
+            character.Session.SendData(new CharacterOptionPacketComposer("Trade with", 2, false).Serialize());
+
             // Send warm welcome!
             character.Session.SendData(new MessagePacketComposer(GameEngine.World.WelcomeMessage).Serialize());
         }
@@ -94,7 +98,7 @@ namespace RuneScape.Communication.Messages
         /// <param name="character">The character to produce frame for.</param>
         public static void SendHdInterface(Character character)
         {
-            character.Session.SendData(new InterfacePacketComposer(1, 549, 0, 746).Serialize());
+            character.Session.SendData(new InterfacePacketComposer(1, 549, 0, 746).Serialize()); // Main window
             character.Session.SendData(new InterfacePacketComposer(1, 746, 13, 748).Serialize()); //energy orb
             character.Session.SendData(new InterfacePacketComposer(1, 746, 14, 749).Serialize()); //energy orb
             character.Session.SendData(new InterfacePacketComposer(1, 746, 15, 750).Serialize()); //energy orb

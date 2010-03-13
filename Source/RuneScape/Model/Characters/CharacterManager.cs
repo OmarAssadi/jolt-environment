@@ -120,7 +120,8 @@ namespace RuneScape.Model.Characters
                         if (this.characters.TryAdd((short)character.Index, character))
                         {
                             UpdateOnlineStatus(character.MasterId, true);
-                            Program.Logger.WriteInfo("Registered character (ID:" + character.SessionId + ").");
+                            Program.Logger.WriteInfo("Registered character [sid="
+                                + character.SessionId + ",idx= " + character.Index + "].");
                             return true;
                         }
                     }
@@ -165,8 +166,8 @@ namespace RuneScape.Model.Characters
                     character.Contacts.OnLogout();
                     GameEngine.Content.ClanChat.Leave(character);
                     UpdateOnlineStatus(character.MasterId, false);
-                    Program.Logger.WriteInfo("Unregistered character (SID:" 
-                        + character.SessionId + ", CID: " + character.Index + ").");
+                    Program.Logger.WriteInfo("Unregistered character [sid=" 
+                        + character.SessionId + ",idx=" + character.Index + "].");
                 }
             }
             catch (Exception ex)

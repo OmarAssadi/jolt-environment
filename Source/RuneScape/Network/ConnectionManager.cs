@@ -119,7 +119,7 @@ namespace RuneScape.Network
                 {
                     node.Socket.Close();
                     this.CurrentConnections.Remove(node);
-                    Program.Logger.WriteDebug("Connection (ID:" + node.Id + ") closed.");
+                    Program.Logger.WriteDebug("Connection [id=" + node.Id + "] closed.");
                 }
             }
         }

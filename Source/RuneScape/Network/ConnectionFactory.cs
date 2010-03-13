@@ -48,7 +48,7 @@ namespace RuneScape.Network
                 return null;
 
             Node node = new Node(++this.Count, socket);
-            Program.Logger.WriteDebug("New connection (ID:" + node.Id + ") created for " + node.EndPoint + ".");
+            Program.Logger.WriteDebug("New connection [id=" + node.Id + "] created for " + node.EndPoint + ".");
             return node;
         }
         #endregion Methods
