@@ -87,7 +87,7 @@ namespace RuneScape.Communication.Login
         /// <summary>
         /// Disconnects a user.
         /// </summary>
-        public void OnRequestDisconnect()
+        public void OnRequestDisconnect(Node node)
         {
             GameServer.TcpConnection.DropConnection(this.Connection);
             this.Remove = true;

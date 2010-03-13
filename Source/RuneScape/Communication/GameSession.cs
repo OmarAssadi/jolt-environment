@@ -94,7 +94,7 @@ namespace RuneScape.Communication
         /// <summary>
         /// Handles the session disconnection.
         /// </summary>
-        public void OnSessionDisconnect()
+        public void OnSessionDisconnect(Node node)
         {
             if (this.Connection != null)
             {

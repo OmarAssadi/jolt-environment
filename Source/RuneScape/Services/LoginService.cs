@@ -70,7 +70,7 @@ namespace RuneScape.Services
                         // If the request wasn't finished, it no longer requires processing.
                         if (!request.Finished)
                         {
-                            request.OnRequestDisconnect();
+                            request.OnRequestDisconnect(request.Connection);
                         }
 
                         // A condition has been met, so the request has to be removed.

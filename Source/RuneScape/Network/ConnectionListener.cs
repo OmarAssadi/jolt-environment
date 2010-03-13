@@ -49,7 +49,7 @@ namespace RuneScape.Network
         /// <summary>
         /// The connection manager.
         /// </summary>
-        private ConnectionManager manager;
+        private INetworkManager manager;
         /// <summary>
         /// The connection factory.
         /// </summary>
@@ -79,7 +79,7 @@ namespace RuneScape.Network
         /// <param name="ip">The local ip to listen from (usually 127.0.0.1 or LAN ip).</param>
         /// <param name="port">The port to listen from.</param>
         /// <param name="manager">The connection manager.</param>
-        public ConnectionListener(string ip, int port, ConnectionManager manager)
+        public ConnectionListener(string ip, int port, INetworkManager manager)
         {
             IPAddress boundIP = null;
 

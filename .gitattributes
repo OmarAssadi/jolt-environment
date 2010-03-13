@@ -992,7 +992,9 @@ Source/RuneScape/Model/Objects/MapObject.cs -text
 Source/RuneScape/Network/ConnectionFactory.cs -text
 Source/RuneScape/Network/ConnectionListener.cs -text
 Source/RuneScape/Network/ConnectionManager.cs -text
+Source/RuneScape/Network/INetworkManager.cs -text
 Source/RuneScape/Network/Node.cs -text
+Source/RuneScape/Network/RemoteManager.cs -text
 Source/RuneScape/Program.cs -text
 Source/RuneScape/Properties/AssemblyInfo.cs -text
 Source/RuneScape/Resources/app.ico -text
@@ -1007,6 +1009,7 @@ Source/RuneScape/Utilities/Filtering/BadWords.cs -text
 Source/RuneScape/Utilities/Indexing/ClientSlot.cs -text
 Source/RuneScape/Utilities/Indexing/NpcSlotManager.cs -text
 Source/RuneScape/Utilities/Indexing/SlotManager.cs -text
+Source/RuneScape/Utilities/RemoteCommands.cs -text
 Source/RuneScape/Workers/AccountWorker.cs -text
 Source/RuneScape/Workers/AutoSaveWorker.cs -text
 Source/RuneScape/Workers/ItemsWorker.cs -text

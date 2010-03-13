@@ -151,6 +151,8 @@
     <Compile Include="Model\Objects\MapObject.cs" />
     <Compile Include="Model\IRuneObject.cs" />
     <Compile Include="Events\Event.cs" />
+    <Compile Include="Network\INetworkManager.cs" />
+    <Compile Include="Network\RemoteManager.cs" />
     <Compile Include="Services\EventService.cs" />
     <Compile Include="Services\LoginService.cs" />
     <Compile Include="Services\MajorUpdatesService.cs" />
@@ -273,6 +275,7 @@
     <Compile Include="Utilities\DatabaseVersionCheck.cs" />
     <Compile Include="Utilities\DirectionUtilities.cs" />
     <Compile Include="Utilities\Filtering\BadWords.cs" />
+    <Compile Include="Utilities\RemoteCommands.cs" />
     <Compile Include="Workers\AccountWorker.cs" />
     <Compile Include="Workers\AutoSaveWorker.cs" />
     <Compile Include="Workers\ItemsWorker.cs" />

@@ -29,7 +29,7 @@ namespace RuneScape.Network
     /// <summary>
     /// Provides management for tcp connections.
     /// </summary>
-    public class ConnectionManager
+    public class ConnectionManager : INetworkManager
     {
         #region Fields
         /// <summary>
@@ -100,6 +100,7 @@ namespace RuneScape.Network
         /// <param name="node">The node processed though the connection factory.</param>
         public void HandleNewConnection(Node node)
         {
+            Program.Logger.WriteDebug("New connection [id=" + node.Id + "] created for " + node.EndPoint + ".");
             lock (this.CurrentConnections)
             {
                 this.CurrentConnections.Add(node);
@@ -119,7 +120,7 @@ namespace RuneScape.Network
                 {
                     node.Socket.Close();
                     this.CurrentConnections.Remove(node);
-                    Program.Logger.WriteDebug("Connection [id=" + node.Id + "] closed.");
+                    Program.Logger.WriteDebug("Connection [id=" + node.Id + "] dropped.");
                 }
             }
         }

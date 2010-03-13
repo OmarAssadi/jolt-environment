@@ -30,11 +30,11 @@ namespace RuneScape.Network
     /// Routes the received data.
     /// </summary>
     /// <param name="data">The data to be routed.</param>
-    public delegate void RouteDataCallback(byte[] data);
+    public delegate void RouteDataCallback(Node node, byte[] data);
     /// <summary>
     /// Disconnects the node.
     /// </summary>
-    public delegate void DisconnectCallback();
+    public delegate void DisconnectCallback(Node node);
     ////////////////////////////////////////////////////////
 
 
@@ -61,11 +61,11 @@ namespace RuneScape.Network
         /// <summary>
         /// Called when the data is ready to be routed to a handler.
         /// </summary>
-        private RouteDataCallback routeData = new RouteDataCallback((data) => { });
+        private RouteDataCallback routeData = new RouteDataCallback((n, data) => { });
         /// <summary>
         /// Called when the node disconnects.
         /// </summary>
-        private DisconnectCallback disconnect = new DisconnectCallback(() => { });
+        private DisconnectCallback disconnect = new DisconnectCallback((n) => { });
         #endregion Fields
 
         #region Properties
@@ -161,7 +161,8 @@ namespace RuneScape.Network
         /// <summary>
         /// Starts listening for new data.
         /// </summary>
-        /// <param name="router"></param>
+        /// <param name="router">Routes information recieved.</param>
+        /// <param name="disconnecter">Action tooken on disconnection.</param>
         public void Start(RouteDataCallback router, DisconnectCallback disconnecter)
         {
             this.receiveBuffer = new byte[Node.ReceiveBufferSize];
@@ -176,7 +177,7 @@ namespace RuneScape.Network
         /// </summary>
         public void OnDisconnect()
         {
-            this.disconnect();
+            this.disconnect(this);
         }
 
         /// <summary>
@@ -221,7 +222,7 @@ namespace RuneScape.Network
                     // Trim and handle data.
                     byte[] data = new byte[bytesRecieved];
                     Buffer.BlockCopy(this.receiveBuffer, 0, data, 0, bytesRecieved);
-                    RouteData(data);
+                    RouteData(this, data);
                     StandBy(); // Wait for new data.
                 }
             }
@@ -244,9 +245,9 @@ namespace RuneScape.Network
         /// Routes the data to an external object.
         /// </summary>
         /// <param name="data">The data to be handled.</param>
-        private void RouteData(byte[] data)
+        private void RouteData(Node node, byte[] data)
         {
-            this.routeData(data);
+            this.routeData(node, data);
         }
 
         /// <summary>

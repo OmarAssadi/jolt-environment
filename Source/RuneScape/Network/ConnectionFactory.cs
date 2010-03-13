@@ -44,12 +44,9 @@ namespace RuneScape.Network
         /// <returns>Returns a news RuneScape.Network.Node object.</returns>
         public Node Create(Socket socket)
         {
-            if (socket == null)
+            if (socket == null) 
                 return null;
-
-            Node node = new Node(++this.Count, socket);
-            Program.Logger.WriteDebug("New connection [id=" + node.Id + "] created for " + node.EndPoint + ".");
-            return node;
+            return new Node(++this.Count, socket);
         }
         #endregion Methods
     }
