@@ -356,6 +356,24 @@ namespace RuneScape.Communication.Messages
                 GameServer.Terminate(restart);
             }));
         }
+
+        /// <summary>
+        /// Sends the trading options.
+        /// </summary>
+        /// <param name="character">The character to send options to.</param>
+        public static void SendTradeOptions(Character character)
+        {
+            object[] tparams1 = new Object[] { "", "", "", "Value<col=FF9040>", "Remove-X", "Remove-All", "Remove-10", "Remove-5", "Remove", -1, 0, 7, 4, 90, 21954590 };
+            object[] tparams2 = new Object[] { "", "", "Lend", "Value<col=FF9040>", "Offer-X", "Offer-All", "Offer-10", "Offer-5", "Offer", -1, 0, 7, 4, 93, 22020096 };
+            object[] tparams3 = new Object[] { "", "", "", "", "", "", "", "", "Value<col=FF9040>", -1, 0, 7, 4, 90, 21954592 };
+
+            character.Session.SendData(new AccessMaskPacketComposer(1026, 30, 335, 0, 27).Serialize());
+            character.Session.SendData(new AccessMaskPacketComposer(1026, 32, 335, 0, 27).Serialize());
+            character.Session.SendData(new AccessMaskPacketComposer(1278, 0, 336, 0, 27).Serialize());
+            character.Session.SendData(new RunScriptPacketComposer(150, "IviiiIsssssssss", tparams1).Serialize());
+            character.Session.SendData(new RunScriptPacketComposer(150, "IviiiIsssssssss", tparams2).Serialize());
+            character.Session.SendData(new RunScriptPacketComposer(695, "IviiiIsssssssss", tparams3).Serialize());
+        }
         #endregion Methods
     }
 }

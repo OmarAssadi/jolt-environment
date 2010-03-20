@@ -47,6 +47,10 @@ namespace RuneScape
         /// A manager which manages all tcp related connections.
         /// </summary>
         private static ConnectionManager connectionManager;
+        /// <summary>
+        /// A manager whch manages all remote connections.
+        /// </summary>
+        private static RemoteManager remoteManager;
         #endregion Fields
 
         #region Properties
@@ -69,6 +73,14 @@ namespace RuneScape
         public static ConnectionManager TcpConnection
         {
             get { return connectionManager; }
+        }
+
+        /// <summary>
+        /// Gets the remote connection manager instance.
+        /// </summary>
+        public static RemoteManager RemoteConnection
+        {
+            get { return remoteManager; }
         }
 
         /// <summary>
@@ -127,6 +139,12 @@ namespace RuneScape
 
                 // Start the connection manager's core listener with user-specified logging/checking.
                 connectionManager.Listener.Start(Configuration["TcpConnection.CheckBlacklist"]);
+
+                // Initialize the remote connection manager and start listening.
+                remoteManager = new RemoteManager(
+                    Configuration["RemoteConnection.LocalIP"], 
+                    Configuration["RemoteConnection.Port"]);
+                remoteManager.Listener.Start(false);
 
                 // Check to make sure database verion is valid.
                 if (!(bool)Database.Execute(new DatabaseVersionCheck()))

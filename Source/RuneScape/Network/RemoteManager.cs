@@ -22,6 +22,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using RuneScape.Utilities;
+
 namespace RuneScape.Network
 {
     /// <summary>
@@ -47,6 +49,7 @@ namespace RuneScape.Network
         public RemoteManager(string ip, int port)
         {
             this.Listener = new ConnectionListener(ip, port, this);
+            RemoteCommands.LoadCommands();
         }
         #endregion Constructors
 
@@ -78,8 +81,8 @@ namespace RuneScape.Network
         {
             string[] arguments = Encoding.ASCII.GetString(data).Split('\0');
             string command = arguments[0].ToLower();
-
-            
+            node.SendData(Encoding.ASCII.GetBytes(RemoteCommands.Handle(command, arguments)));
+            node.Socket.Dispose(); // We don't need this connection anymore.
         }
         #endregion Methods
     }

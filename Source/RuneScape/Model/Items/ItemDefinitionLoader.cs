@@ -132,7 +132,7 @@ namespace RuneScape.Model.Items
                     }
                 }
 
-                Program.Logger.WriteInfo("Loaded " + rows.Length + " item definitions.");
+                //Program.Logger.WriteInfo("Loaded " + rows.Length + " item definitions.");
             }
             catch (Exception ex)
             {
@@ -222,7 +222,7 @@ namespace RuneScape.Model.Items
                     }
                 }
 
-                Program.Logger.WriteInfo("Loaded " + rows.Length + " item definitions.");
+                //Program.Logger.WriteInfo("Loaded " + rows.Length + " item definitions.");
             }
             catch (Exception ex)
             {

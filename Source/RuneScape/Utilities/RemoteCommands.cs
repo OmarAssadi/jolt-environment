@@ -25,10 +25,23 @@ using System.Text;
 namespace RuneScape.Utilities
 {
     /// <summary>
+    /// Represents a single command function.
+    /// </summary>
+    /// <param name="arguments">Arguments of the command.</param>
+    public delegate string CommandFunc(string[] arguments);
+
+    /// <summary>
     /// Commands that can be triggered via remote connections.
     /// </summary>
     public static class RemoteCommands
     {
+        #region Fields
+        /// <summary>
+        /// A Dictionary that contains all the commands availible.
+        /// </summary>
+        private static Dictionary<string, CommandFunc> commands = new Dictionary<string, CommandFunc>();
+        #endregion Fields
+
         #region Methods
         /// <summary>
         /// Handles remote commands.
@@ -37,7 +50,35 @@ namespace RuneScape.Utilities
         /// <param name="arguments">Arguments following the command.</param>
         public static string Handle(string command, string[] arguments)
         {
-            return "";
+            try
+            {
+                if (commands.ContainsKey(command))
+                {
+                    return commands[command](arguments);
+                }
+            }
+            catch (Exception ex)
+            {
+                Program.Logger.WriteException(ex);
+            }
+            return "0";
+        }
+
+        /// <summary>
+        /// Loads all commands.
+        /// </summary>
+        public static void LoadCommands()
+        {
+            commands.Add("test", Test);
+        }
+
+        /// <summary>
+        /// Test command.
+        /// </summary>
+        /// <param name="arguments">Arguments passed through for the command.</param>
+        private static string Test(string[] arguments)
+        {
+            return new Random().NextDouble().ToString();
         }
         #endregion Methods
     }

@@ -856,6 +856,7 @@ Source/RuneScape/Communication/Messages/Incoming/SwapInterfaceItemPacketHandler.
 Source/RuneScape/Communication/Messages/Incoming/SwapItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/TakeItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/WalkingPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Outgoing/AccessMaskPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/AnimateInterfacePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CharacterOptionPacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/CharacterRenderingPacketComposer.cs -text
@@ -918,6 +919,9 @@ Source/RuneScape/Content/Interfaces/SideBar.cs -text
 Source/RuneScape/Content/Interfaces/Tab.cs -text
 Source/RuneScape/Content/Interfaces/WelcomeScreen.cs -text
 Source/RuneScape/Content/Interfaces/WorldMap.cs -text
+Source/RuneScape/Content/Request.cs -text
+Source/RuneScape/Content/Trading/Trade.cs -text
+Source/RuneScape/Content/Trading/TradeState.cs -text
 Source/RuneScape/Database/Account/AccountLoadResult.cs -text
 Source/RuneScape/Database/Account/IAccountLoader.cs -text
 Source/RuneScape/Database/Account/IAccountSaver.cs -text

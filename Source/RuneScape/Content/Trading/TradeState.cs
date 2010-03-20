@@ -22,28 +22,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using RuneScape.Content.ClanChat;
-using RuneScape.Model.Characters;
-using RuneScape.Communication.Messages.Outgoing;
-
-namespace RuneScape.Communication.Messages.Incoming
+namespace RuneScape.Content.Trading
 {
     /// <summary>
-    /// Handler for kicking clan members.
+    /// Defines trade state types.
     /// </summary>
-    public class KickUserPacketHandler : IPacketHandler
+    public enum TradeState
     {
-        #region Methods
         /// <summary>
-        /// Handles kicking of clan members.
+        /// The characters are adding/trading items from the trade.
         /// </summary>
-        /// <param name="character">The character to handle packet for.</param>
-        /// <param name="packet">The packet containing handle data.</param>
-        public void Handle(Character character, Packet packet)
-        {
-            long name = packet.ReadLong();
-            GameEngine.Content.ClanChat.Leave(GameEngine.World.CharacterManager.Get(name)); 
-        }
-        #endregion Methods
+        Trade,
+        /// <summary>
+        /// The characters are confirming the trade.
+        /// </summary>
+        Confirm
     }
 }

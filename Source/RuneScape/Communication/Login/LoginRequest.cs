@@ -97,7 +97,7 @@ namespace RuneScape.Communication.Login
         /// When data is recieved, it is processed here.
         /// </summary>
         /// <param name="data">The data to be processed.</param>
-        private void DataRecieved(byte[] data)
+        private void DataRecieved(Node node, byte[] data)
         {
             if (this.Buffer != null) // More data needs to be recieved.
             {

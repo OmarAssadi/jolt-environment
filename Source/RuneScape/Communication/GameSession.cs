@@ -126,7 +126,7 @@ namespace RuneScape.Communication
         /// </summary>
         /// <param name="data">A byte array holding data received 
         /// asychronously from the tcp connection.</param>
-        public void HandlePacket(byte[] data)
+        public void HandlePacket(Node node, byte[] data)
         {
             try
             {

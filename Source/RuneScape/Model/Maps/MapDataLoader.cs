@@ -51,7 +51,7 @@ namespace RuneScape.Model.Maps
                         regionsCollection.Add(mapId, mapData); // Add the data to collection.
                     }
                 }
-                Program.Logger.WriteInfo("Loaded " + regionsCollection.Count + " map regions.");
+                //Program.Logger.WriteInfo("Loaded " + regionsCollection.Count + " map regions.");
             }
             catch (Exception ex)
             {

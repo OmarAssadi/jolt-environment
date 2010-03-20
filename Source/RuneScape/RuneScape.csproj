@@ -84,6 +84,7 @@
     <Compile Include="Communication\Messages\Incoming\SwapItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\SwapInterfaceItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\TakeItemPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Outgoing\AccessMaskPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\AnimateInterfacePacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\CharacterOptionPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\CharacterRenderingPacketComposer.cs" />
@@ -117,6 +118,9 @@
     <Compile Include="Content\Interfaces\EmoteTab.cs" />
     <Compile Include="Content\Interfaces\EquipmentTab.cs" />
     <Compile Include="Content\Interfaces\OptionsTab.cs" />
+    <Compile Include="Content\Request.cs" />
+    <Compile Include="Content\Trading\Trade.cs" />
+    <Compile Include="Content\Trading\TradeState.cs" />
     <Compile Include="Database\Account\IAccountSaver.cs" />
     <Compile Include="Database\Account\SqlAccountSaver.cs" />
     <Compile Include="Events\ProcessCoordinateEvent.cs" />
@@ -293,7 +297,6 @@
     <Folder Include="Content\Combat\" />
     <Folder Include="Content\Minigames\" />
     <Folder Include="Content\Skills\" />
-    <Folder Include="Content\Trading\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\app.ico" />

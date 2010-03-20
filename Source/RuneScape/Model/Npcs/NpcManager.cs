@@ -102,8 +102,7 @@ namespace RuneScape.Model.Npcs
                         Npc npc = new Npc(id, originalCoords, minRange, maxRange, walkType, definitions[id], messages);
                         RegisterNpc(npc);
                     }
-
-                    Program.Logger.WriteInfo("Loaded " + this.definitions.Count + " npc definitions, and " + this.npcSpawns.Count + " spawn(s).");
+                    //Program.Logger.WriteInfo("Loaded " + this.definitions.Count + " npc definitions, and " + this.npcSpawns.Count + " spawn(s).");
                 }
             }
             catch (Exception ex)

@@ -24,6 +24,7 @@ using System.Text;
 
 using JoltEnvironment.Utilities;
 using RuneScape.Communication;
+using RuneScape.Content;
 using RuneScape.Model.Items.Containers;
 using RuneScape.Model.Npcs;
 
@@ -58,6 +59,10 @@ namespace RuneScape.Model.Characters
         /// Gets the character's username converted to a Int64 bit integer.
         /// </summary>
         public long LongName { get; private set; }
+        /// <summary>
+        /// Gets the character's username converted to a pretty string.
+        /// </summary>
+        public string PrettyName { get; private set; }
         /// <summary>
         /// Gets or sets the name of the current clan room.
         /// </summary>
@@ -134,6 +139,10 @@ namespace RuneScape.Model.Characters
         /// Gets the character's contacts.
         /// </summary>
         public Contacts Contacts { get; private set; }
+        /// <summary>
+        /// Gets the character's requests.
+        /// </summary>
+        public Request Request { get; private set; }
         #endregion Properties
 
         #region Constructors
@@ -151,6 +160,7 @@ namespace RuneScape.Model.Characters
             this.Session = details.Session;
             this.Session.Character = this;
             this.LongName = StringUtilities.StringToLong(details.Username);
+            this.PrettyName = StringUtilities.FormatForDisplay(details.Username);
             this.Location = GameEngine.World.SpawnPoint;
 
             // Entity bases.
@@ -173,6 +183,7 @@ namespace RuneScape.Model.Characters
             this.Equipment = new EquipmentContainer(this);
             this.Bank = new BankContainer(this);
             this.Contacts = new Contacts(this);
+            this.Request = new Request(this);
         }
         #endregion Constructors
 

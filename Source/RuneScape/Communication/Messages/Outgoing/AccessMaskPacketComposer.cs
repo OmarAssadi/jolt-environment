@@ -22,28 +22,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using RuneScape.Content.ClanChat;
-using RuneScape.Model.Characters;
-using RuneScape.Communication.Messages.Outgoing;
-
-namespace RuneScape.Communication.Messages.Incoming
+namespace RuneScape.Communication.Messages.Outgoing
 {
     /// <summary>
-    /// Handler for kicking clan members.
+    /// Composes a packet that creates a access mask.
     /// </summary>
-    public class KickUserPacketHandler : IPacketHandler
+    public class AccessMaskPacketComposer : PacketComposer
     {
-        #region Methods
+        #region Constructors
         /// <summary>
-        /// Handles kicking of clan members.
+        /// Constructs the packet composer.
         /// </summary>
-        /// <param name="character">The character to handle packet for.</param>
-        /// <param name="packet">The packet containing handle data.</param>
-        public void Handle(Character character, Packet packet)
+        /// <param name="set">The access mask set.</param>
+        /// <param name="window">The access mask window.</param>
+        /// <param name="inter">The access mask inter.</param>
+        /// <param name="offset">The access mask offset.</param>
+        /// <param name="length">The access mask length.</param>
+        public AccessMaskPacketComposer(short set, short window, short inter, short offset, short length)
         {
-            long name = packet.ReadLong();
-            GameEngine.Content.ClanChat.Leave(GameEngine.World.CharacterManager.Get(name)); 
+            SetOpcode(223);
+            AppendShort(length);
+            AppendLEShortA(offset);
+		    AppendLEShort(window);
+		    AppendLEShort(inter);
+            AppendLEShort(set);
+            AppendLEShort(0);
         }
-        #endregion Methods
+        #endregion Constructors
     }
 }
