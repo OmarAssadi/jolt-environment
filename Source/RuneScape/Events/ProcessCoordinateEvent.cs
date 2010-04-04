@@ -65,6 +65,7 @@ namespace RuneScape.Events
             if (ce.FailedAttempts >= 2)
             {
                 Stop();
+                ce.Cancel();
             }
             // The character is at the required targeted location, execute event.
             else if (atTarget)
@@ -79,6 +80,9 @@ namespace RuneScape.Events
                 if (!ce.Character.Location.Equals(ce.OldLocation))
                 {
                     ce.OldLocation = ce.Character.Location;
+
+                    // NOTE: reference(s) may screw things up.
+                    //ce.OldLocation = Model.Location.Create(ce.Character.Location.X, ce.Character.Location.Y, ce.Character.Location.Z);
                 }
                 else
                 {

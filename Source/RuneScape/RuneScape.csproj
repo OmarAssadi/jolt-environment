@@ -66,6 +66,7 @@
     <Compile Include="Communication\Login\Handlers\SessionRequestProtocolHandler.cs" />
     <Compile Include="Communication\Login\LoginVerification.cs" />
     <Compile Include="Communication\Login\ProtocolManager.cs" />
+    <Compile Include="Communication\Messages\Incoming\AcceptTradePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\AddFriendPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\AddIgnorePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ChangeRankPacketHandler.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Communication\Messages\Incoming\ItemOptionsPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\JoinClanChatPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\KickUserPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\CharacterOptionsPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\RemoveFriendPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\RemoveIgnorePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ReportAbusePacketHandler.cs" />
@@ -119,7 +121,9 @@
     <Compile Include="Content\Interfaces\EquipmentTab.cs" />
     <Compile Include="Content\Interfaces\OptionsTab.cs" />
     <Compile Include="Content\Request.cs" />
+    <Compile Include="Content\Trading\AcceptTradeEvent.cs" />
     <Compile Include="Content\Trading\Trade.cs" />
+    <Compile Include="Content\Trading\RequestTradeEvent.cs" />
     <Compile Include="Content\Trading\TradeState.cs" />
     <Compile Include="Database\Account\IAccountSaver.cs" />
     <Compile Include="Database\Account\SqlAccountSaver.cs" />

@@ -828,10 +828,12 @@ Source/RuneScape/Communication/Login/LoginReturnCode.cs -text
 Source/RuneScape/Communication/Login/LoginVerification.cs -text
 Source/RuneScape/Communication/Login/ProtocolManager.cs -text
 Source/RuneScape/Communication/Messages/Frames.cs -text
+Source/RuneScape/Communication/Messages/Incoming/AcceptTradePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/AddFriendPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/AddIgnorePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ButtonPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ChangeRankPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/CharacterOptionsPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ChatPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/CommandPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/CreateClanPacketHandler.cs -text
@@ -920,6 +922,8 @@ Source/RuneScape/Content/Interfaces/Tab.cs -text
 Source/RuneScape/Content/Interfaces/WelcomeScreen.cs -text
 Source/RuneScape/Content/Interfaces/WorldMap.cs -text
 Source/RuneScape/Content/Request.cs -text
+Source/RuneScape/Content/Trading/AcceptTradeEvent.cs -text
+Source/RuneScape/Content/Trading/RequestTradeEvent.cs -text
 Source/RuneScape/Content/Trading/Trade.cs -text
 Source/RuneScape/Content/Trading/TradeState.cs -text
 Source/RuneScape/Database/Account/AccountLoadResult.cs -text

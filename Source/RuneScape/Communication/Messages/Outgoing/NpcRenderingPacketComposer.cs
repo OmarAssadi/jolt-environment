@@ -37,7 +37,8 @@ namespace RuneScape.Communication.Messages.Outgoing
         /// <summary>
         /// Constructs the npc rendering packet.
         /// </summary>
-        /// <param name="character"></param>
+        /// <param name="character">Character to send rendered npcs to.</param>
+        /// <param name="allNpcs">A list of npcs that are spawned on the server.</param>
         public NpcRenderingPacketComposer(Character character, List<Npc> allNpcs)
         {
             SetOpcode(222);

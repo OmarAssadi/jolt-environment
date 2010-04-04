@@ -21,6 +21,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using RuneScape.Communication.Messages;
+
 namespace RuneScape
 {
     /// <summary>
@@ -59,9 +61,23 @@ namespace RuneScape
                     case "shutdown":
                         GameServer.IsRunning = false;
                         break;
+                    case "restart":
+                        GameServer.Terminate(true);
+                        break;
                     case "update":
                         System.Diagnostics.Process.Start("http://jolte.codeplex.com/Release/ProjectReleases.aspx");
                         Program.Logger.WriteInfo("Successfully brang up downloads page.");
+                        break;
+                    case "systemupdate":
+                        short time = short.Parse(arguments[0]);
+                        bool restart = false;
+
+                        if (arguments.Length == 2)
+                        {
+                            restart = bool.Parse(arguments[1]);
+                        }
+                        Frames.SendSystemUpdate(time, restart);
+                        Program.Logger.WriteInfo("System update countdown started...");
                         break;
                     default:
                         Program.Logger.WriteWarn("Unknown command \"" + command + "\".");

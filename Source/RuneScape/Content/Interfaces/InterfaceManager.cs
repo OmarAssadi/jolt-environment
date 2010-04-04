@@ -65,7 +65,7 @@ namespace RuneScape.Content.Interfaces
             {
                 this.interfacesHandlers[interfaceId].HandleButton(character, opcode, buttonId, buttonId2);
             }
-            else if (character.ServerRights >= ServerRights.SystemAdministrator)
+            else /*if (character.ServerRights >= ServerRights.SystemAdministrator)*/
             {
                 Program.Logger.WriteDebug("Unhandled interface: " + interfaceId + " [" + buttonId + "," + buttonId2 + "]");
             }

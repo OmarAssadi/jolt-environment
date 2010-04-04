@@ -44,11 +44,11 @@ namespace RuneScape.Content
         /// <summary>
         /// The trade manager between this character, and the other.
         /// </summary>
-        public Trade Trade { get; private set; }
+        public Trade Trade { get; set; }
         /// <summary>
         /// The character requesting a trade with this character.
         /// </summary>
-        public Character TradeReq { get; private set; }
+        public Character TradeReq { get; set; }
 
         /// <summary>
         /// Gets whether this request/character is trading.
@@ -84,7 +84,7 @@ namespace RuneScape.Content
             else
             {
                 this.character.Session.SendData(new MessagePacketComposer("Sending trade request...").Serialize());
-                other.Session.SendData(new MessagePacketComposer(other.PrettyName + ":tradereq:").Serialize());
+                other.Session.SendData(new MessagePacketComposer(this.character.PrettyName + ":tradereq:").Serialize());
                 this.TradeReq = other;
             }
         }
@@ -97,6 +97,16 @@ namespace RuneScape.Content
         {
             if (this.Trade != null)
             {
+                if (this.Trade.Character1 == other && this.Trade.Character2 == this.character)
+                {
+                    return;
+                }
+
+                if (this.Trade.Character2 == other && this.Trade.Character1 == this.character)
+                {
+                    return;
+                }
+                this.Trade.Close();
             }
 
             if (other.Request.TradeReq == this.character)
@@ -115,7 +125,7 @@ namespace RuneScape.Content
         /// <param name="other">The character to establish trade with.</param>
         private void EstablishTrade(Character other)
         {
-            Trade trade = new Trade();
+            Trade trade = new Trade(this.character, other);
             this.character.Request.Trade = trade;
             other.Request.Trade = trade;
         }
@@ -127,6 +137,7 @@ namespace RuneScape.Content
         {
             if (this.Trade != null)
             {
+                this.Trade.Close();
             }
         }
         #endregion Methods

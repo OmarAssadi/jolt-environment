@@ -169,7 +169,9 @@ namespace RuneScape
                 Program.Logger.WriteException(ex);
                 Program.Logger.WriteError("Could not set up server correctly."
                     + "\nPlease referr to the error message above. Shutting down...");
-                Terminate(false);
+                Thread.Sleep(5000);
+                Environment.Exit(0);
+                //Terminate(false);
             }
         }
 
@@ -189,8 +191,13 @@ namespace RuneScape
                 TcpConnection.Destroy();
             }
 
-            Program.Logger.WriteWarn("The environment is now waiting 10 seconds for\nall networking transactions to be completed.");
-            Thread.Sleep(10000);
+            for (int i = 10; i >= 0; i--)
+            {
+                Console.Clear();
+                Console.WriteLine("Waiting for I/O completions, " 
+                    + i + " seconds left...");
+                Thread.Sleep(1000);
+            }
 
             if (restart)
             {

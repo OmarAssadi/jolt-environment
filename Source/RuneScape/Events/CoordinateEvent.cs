@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using RuneScape.Communication.Messages.Outgoing;
 using RuneScape.Model;
 using RuneScape.Model.Characters;
 
@@ -80,6 +81,14 @@ namespace RuneScape.Events
         /// happend when the character reaches location.
         /// </summary>
         public abstract void Execute();
+
+        /// <summary>
+        /// Cancels the event.
+        /// </summary>
+        public void Cancel()
+        {
+            this.Character.Session.SendData(new MessagePacketComposer("You can't reach that!").Serialize());
+        }
         #endregion Methods
     }
 }

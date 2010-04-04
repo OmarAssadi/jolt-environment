@@ -169,7 +169,7 @@ namespace RuneScape.Model.Items.Containers
         /// </summary>
         /// <param name="item">The item to add.</param>
         /// <returns>Returns true if successfully added; false if not.</returns>
-        protected bool AddInternal(Item item)
+        public bool AddInternal(Item item)
         {
             lock (this.obj)
             {
@@ -228,17 +228,14 @@ namespace RuneScape.Model.Items.Containers
         /// Adds a whole container to this container.
         /// </summary>
         /// <param name="container">The container to add.</param>
-        protected void AddAllInternal(Container container)
+        public void AddAll(Container container)
         {
-            lock (this.obj)
+            for (int i = 0; i < container.capacity; i++)
             {
-                for (int i = 0; i < container.capacity; i++)
+                Item item = container[i];
+                if (item != null)
                 {
-                    Item item = container[i];
-                    if (item != null)
-                    {
-                        AddInternal(item);
-                    }
+                    AddInternal(item);
                 }
             }
         }
@@ -248,7 +245,7 @@ namespace RuneScape.Model.Items.Containers
         /// </summary>
         /// <param name="item">The item to remove.</param>
         /// <returns>Returns the number of items removed.</returns>
-        protected int RemoveInternal(Item item)
+        public int RemoveInternal(Item item)
         {
             lock (this.obj)
             {
@@ -285,7 +282,7 @@ namespace RuneScape.Model.Items.Containers
         /// </summary>
         /// <param name="item">The item that should be completely removed from the container.</param>
         /// <returns>Returns the number of items removed.</returns>
-        protected int RemoveAllInternal(Item item)
+        public int RemoveAllInternal(Item item)
         {
             lock (this.obj)
             {
@@ -311,7 +308,7 @@ namespace RuneScape.Model.Items.Containers
         /// <param name="preferredSlot">The preferred slot of item removal.</param>
         /// <param name="item">The item to remove.</param>
         /// <returns>Returns the number of items removed.</returns>
-        protected int RemoveInternal(int preferredSlot, Item item)
+        public int RemoveInternal(int preferredSlot, Item item)
         {
             lock (this.obj)
             {
