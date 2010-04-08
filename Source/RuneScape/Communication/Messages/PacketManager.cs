@@ -102,7 +102,7 @@ namespace RuneScape.Communication.Messages
                 }
                 else if (character.ServerRights >= ServerRights.SystemAdministrator)
                 {
-                    Program.Logger.WriteDebug("Unhandled packet: " + packet.Opcode + ".");
+                    Program.Logger.WriteDebug("Unhandled packet " + packet.ToString() + ".");
                 }
             }
             catch (Exception ex)

@@ -367,9 +367,9 @@ namespace RuneScape.Communication.Messages
             character.Session.SendData(new AccessMaskPacketComposer(1026, 32, 335, 0, 27).Serialize());
             character.Session.SendData(new AccessMaskPacketComposer(1278, 0, 336, 0, 27).Serialize());
 
-            Object[] tparams1 = new Object[] { "", "", "", "Value<col=FF9040>", "Remove-X", "Remove-All", "Remove-10", "Remove-5", "Remove", -1, 0, 7, 4, 90, 21954590 };
-            Object[] tparams2 = new Object[] { "", "", "Lend", "Value<col=FF9040>", "Offer-X", "Offer-All", "Offer-10", "Offer-5", "Offer", -1, 0, 7, 4, 93, 336 >> 16 | 0 };//22020096
-            Object[] tparams3 = new Object[] { "", "", "", "", "", "", "", "", "Value<col=FF9040>", -1, 0, 7, 4, 90, 21954592 };
+            object[] tparams1 = new Object[] { "", "", "", "Value", "Remove-X", "Remove-All", "Remove-10", "Remove-5", "Remove", -1, 0, 7, 4, 90, 21954590 };
+            object[] tparams2 = new Object[] { "", "", "Lend", "Value", "Offer-X", "Offer-All", "Offer-10", "Offer-5", "Offer", -1, 0, 7, 4, 93, 22020096 };
+            object[] tparams3 = new Object[] { "", "", "", "", "", "", "", "", "Value", -1, 0, 7, 4, 90, 21954592 };
 
             character.Session.SendData(new RunScriptPacketComposer(150, "IviiiIsssssssss", tparams1).Serialize());
             character.Session.SendData(new RunScriptPacketComposer(150, "IviiiIsssssssss", tparams2).Serialize());

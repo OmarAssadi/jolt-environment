@@ -122,10 +122,16 @@ namespace RuneScape.Communication.Messages
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("[opcode=" + this.Opcode + ",length=" + this.Length + ",data=0x");
             for (int i = 0; i < this.Length; i++)
-                sb.Append(ByteToHex(this.Payload[i], true));
+            {
+                if (sb.Length != 0)
+                {
+                    sb.Append(",");
+                }
+                sb.Append("0x").Append(ByteToHex(this.Payload[i], true));
+            }
             sb.Append("]");
+            sb.Insert(0, "[opcode=" + this.Opcode + ",length=" + this.Length + ",data=");
             return sb.ToString();
         }
 

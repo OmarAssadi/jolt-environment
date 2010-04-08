@@ -67,7 +67,9 @@ namespace RuneScape.Content.Interfaces
             }
             else /*if (character.ServerRights >= ServerRights.SystemAdministrator)*/
             {
-                Program.Logger.WriteDebug("Unhandled interface: " + interfaceId + " [" + buttonId + "," + buttonId2 + "]");
+                Program.Logger.WriteDebug("Unhandled interface " + interfaceId 
+                    + " [userid=" + character.MasterId + ",buttonId1=" 
+                    + buttonId + ",buttonId2=" + buttonId2 + "].");
             }
         }
 

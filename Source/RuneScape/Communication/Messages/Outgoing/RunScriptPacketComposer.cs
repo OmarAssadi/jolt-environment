@@ -60,8 +60,8 @@ namespace RuneScape.Communication.Messages.Outgoing
                 {
                     AppendInt((int)arguments[j]);
                 }
-                AppendInt(scriptId);
             }
+            AppendInt(scriptId);
         }
         #endregion Constructors
     }

@@ -35,16 +35,16 @@ namespace RuneScape.Communication.Messages.Outgoing
         /// </summary>
         /// <param name="set">The access mask set.</param>
         /// <param name="window">The access mask window.</param>
-        /// <param name="inter">The access mask inter.</param>
+        /// <param name="interfaceId">The access mask interface.</param>
         /// <param name="offset">The access mask offset.</param>
         /// <param name="length">The access mask length.</param>
-        public AccessMaskPacketComposer(short set, short window, short inter, short offset, short length)
+        public AccessMaskPacketComposer(short set, short window, short interfaceId, short offset, short length)
         {
             SetOpcode(223);
             AppendShort(length);
             AppendLEShortA(offset);
 		    AppendLEShort(window);
-		    AppendLEShort(inter);
+            AppendLEShort(interfaceId);
             AppendLEShort(set);
             AppendLEShort(0);
         }
