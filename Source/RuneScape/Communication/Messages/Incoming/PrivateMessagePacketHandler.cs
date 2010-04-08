@@ -40,10 +40,13 @@ namespace RuneScape.Communication.Messages.Incoming
         /// <param name="packet">The packet containing handle data.</param>
         public void Handle(Character character, Packet packet)
         {
-            long name = packet.ReadLong();
-            int length = packet.ReadByte() & 0xFF;
-            string message = ChatUtilities.DecryptChat(packet, length);
-            character.Contacts.SendMessage(name, message);
+            if (!character.Muted)
+            {
+                long name = packet.ReadLong();
+                int length = packet.ReadByte() & 0xFF;
+                string message = ChatUtilities.DecryptChat(packet, length);
+                character.Contacts.SendMessage(name, message);
+            }
         }
         #endregion Methods
     }

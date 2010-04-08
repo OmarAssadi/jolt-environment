@@ -42,12 +42,12 @@ namespace RuneScape.Communication.Messages.Incoming
         /// <param name="packet">The packet containing handle data.</param>
         public void Handle(Character character, Packet packet)
         {
-            int effects = packet.ReadShort() & 0xFFFF;
-            int length = packet.ReadByte();
-            string text = ChatUtilities.DecryptChat(packet, length);
-
             if (!character.Muted)
             {
+                int effects = packet.ReadShort() & 0xFFFF;
+                int length = packet.ReadByte();
+                string text = ChatUtilities.DecryptChat(packet, length);
+
                 if (character.ClanRoom != null && text.StartsWith("/"))
                 {
                     GameEngine.Content.ClanChat.Message(character, text.Substring(1));
@@ -55,12 +55,8 @@ namespace RuneScape.Communication.Messages.Incoming
                 else
                 {
                     character.Speak(ChatMessage.Create(effects, length, text));
+                    ChatUtilities.LogChat(character.MasterId, ChatType.Normal, 0, text);
                 }
-            }
-            else
-            {
-                character.Session.SendData(new MessagePacketComposer(
-                    "You cannot talk, because you are muted.").Serialize());
             }
         }
         #endregion Methods

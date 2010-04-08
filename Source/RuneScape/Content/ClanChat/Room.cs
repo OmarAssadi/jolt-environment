@@ -53,6 +53,10 @@ namespace RuneScape.Content.ClanChat
         /// The owner of the room.
         /// </summary>
         public long Owner { get; private set; }
+        /// <summary>
+        /// Gets the owner id.
+        /// </summary>
+        public uint OwnerId { get; private set; }
 
         /// <summary>
         /// Rank requirement to kick.
@@ -105,10 +109,11 @@ namespace RuneScape.Content.ClanChat
         /// </summary>
         /// <param name="name">The name of the clan chat.</param>
         /// <param name="owner">The owner of the room.</param>
-        public Room(long name, long owner)
+        public Room(long name, long owner, uint ownerId)
         {
             this.Name = name;
             this.Owner = owner;
+            this.OwnerId = ownerId;
             this.StringName = name.LongToString();
 
             this.Users = new List<long>();

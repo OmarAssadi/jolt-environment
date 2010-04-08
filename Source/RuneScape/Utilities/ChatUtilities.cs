@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using JoltEnvironment.Storage.Sql;
 using RuneScape.Communication.Messages;
 
 namespace RuneScape.Utilities
@@ -139,6 +140,26 @@ namespace RuneScape.Utilities
         #endregion Fields
 
         #region Methods
+        /// <summary>
+        /// Logs the given chat information into the database.
+        /// </summary>
+        /// <param name="userId">The id of the user chatting.</param>
+        /// <param name="type">The type of chat.</param>
+        /// <param name="toId">The user who recieved the chat.</param>
+        /// <param name="message">The message written.</param>
+        public static void LogChat(uint userId, ChatType type, uint toId, string message)
+        {
+            using (SqlDatabaseClient client = GameServer.Database.GetClient())
+            {
+                client.AddParameter("userid", userId);
+                client.AddParameter("date", DateTime.Now);
+                client.AddParameter("type", type.ToString().ToLower());
+                client.AddParameter("toid", toId);
+                client.AddParameter("message", message);
+                client.ExecuteUpdate("INSERT INTO chat_logs (userid,date,type,toid,message) VALUES(@userid,@date,@type,@toid,@message);");
+            }
+        }
+
         /// <summary>
         /// Encrypts a character's chat.
         /// </summary>

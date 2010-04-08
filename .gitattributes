@@ -1010,6 +1010,7 @@ Source/RuneScape/RuneScape.csproj -text
 Source/RuneScape/Services/EventService.cs -text
 Source/RuneScape/Services/LoginService.cs -text
 Source/RuneScape/Services/MajorUpdatesService.cs -text
+Source/RuneScape/Utilities/ChatType.cs -text
 Source/RuneScape/Utilities/ChatUtilities.cs -text
 Source/RuneScape/Utilities/DatabaseVersionCheck.cs -text
 Source/RuneScape/Utilities/DirectionUtilities.cs -text

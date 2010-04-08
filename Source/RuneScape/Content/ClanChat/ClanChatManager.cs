@@ -25,6 +25,7 @@ using System.Text;
 using RuneScape.Communication.Messages.Outgoing;
 using RuneScape.Model.Characters;
 using JoltEnvironment.Utilities;
+using RuneScape.Utilities;
 
 namespace RuneScape.Content.ClanChat
 {
@@ -81,7 +82,7 @@ namespace RuneScape.Content.ClanChat
         {
             if (!rooms.ContainsKey(character.LongName))
             {
-                Room room = new Room(name, character.LongName);
+                Room room = new Room(name, character.LongName, character.MasterId);
                 character.Contacts.Friends.ForEach((l) => room.AddRank(l, Rank.Friend));
                 room.AddRank(character.LongName, Rank.Owner);
                 character.Session.SendData(new StringPacketComposer(room.StringName, 590, 22).Serialize());
@@ -201,6 +202,7 @@ namespace RuneScape.Content.ClanChat
                             GameEngine.World.CharacterManager.Get(l).Session.SendData(
                                 new ClanMessagePacketComposer(message, character.LongName, r.Name,
                                     r.NextUniqueId, (byte)character.ClientRights).Serialize());
+                            ChatUtilities.LogChat(character.MasterId, ChatType.Clanchat, r.OwnerId, message);
                         });
                     }
                 }

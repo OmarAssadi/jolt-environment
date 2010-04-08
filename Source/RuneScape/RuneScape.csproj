@@ -242,6 +242,7 @@
     <Compile Include="Model\Characters\Appearance.cs" />
     <Compile Include="Model\Characters\Skills.cs" />
     <Compile Include="Events\CoordinateEvent.cs" />
+    <Compile Include="Utilities\ChatType.cs" />
     <Compile Include="Utilities\Indexing\ClientSlot.cs" />
     <Compile Include="Model\Characters\DeathIcons.cs" />
     <Compile Include="Model\Characters\Details.cs" />
