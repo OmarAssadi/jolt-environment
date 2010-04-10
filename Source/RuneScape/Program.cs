@@ -52,6 +52,10 @@ namespace RuneScape
         /// Whether to show memory usage and server uptime.
         /// </summary>
         private static bool showInfo = false;
+        /// <summary>
+        /// Time the server started.
+        /// </summary>
+        private static DateTime startupTime;
         #endregion Fields
 
         #region Properties
@@ -75,6 +79,14 @@ namespace RuneScape
         /// The amount of bytes send and recieved.
         /// </summary>
         public static int NetworkUsage { get; set; }
+
+        /// <summary>
+        /// Gets the application startup time.
+        /// </summary>
+        public static DateTime StartupTime
+        {
+            get { return startupTime; }
+        }
         #endregion Properties
 
         #region Methods
@@ -87,6 +99,7 @@ namespace RuneScape
         /// </summary>
         public static void Main()
         {
+            startupTime = DateTime.Now;
             Console.Title = "Jolt Environment";
 
             // Load and configure console settings from console.ini
@@ -134,7 +147,7 @@ namespace RuneScape
             Console.WriteLine(@" \__/\___/_|\__| |___|_||_\_/|_|_| \___/_||_|_|_|_\___|_||_\__|");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine(" Jolt Environment [" + version + "] x" + (Environment.Is64BitProcess ? "64" : "32") + "-bit");
+            Console.WriteLine(" Jolt Environment [" + version + " x" + (Environment.Is64BitProcess ? "64" : "32") + "-bit]");
             Console.WriteLine(" Copyright (C) 2010 Jolt Environment Team");
             Console.WriteLine(" http://www.ajravindiran.com/projects/jolt/");
             Console.WriteLine();
@@ -186,7 +199,6 @@ namespace RuneScape
         /// </summary>
         private static void Monitor()
         {
-            var startTime = DateTime.Now;
             while (true)
             {
                 try
@@ -197,7 +209,7 @@ namespace RuneScape
 
                 Console.Title = 
                     "Jolt Environment [Memory: " +  GC.GetTotalMemory(false) / 1024 
-                    + "KB | Uptime: " + (DateTime.Now - startTime) + "]";
+                    + "KB | Uptime: " + (DateTime.Now - startupTime) + "]";
             }
         }
         #endregion Methods

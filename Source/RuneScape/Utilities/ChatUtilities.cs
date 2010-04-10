@@ -155,7 +155,7 @@ namespace RuneScape.Utilities
                 client.AddParameter("date", DateTime.Now);
                 client.AddParameter("type", type.ToString().ToLower());
                 client.AddParameter("toid", toId);
-                client.AddParameter("message", message);
+                client.AddParameter("message", @message);
                 client.ExecuteUpdate("INSERT INTO chat_logs (userid,date,type,toid,message) VALUES(@userid,@date,@type,@toid,@message);");
             }
         }

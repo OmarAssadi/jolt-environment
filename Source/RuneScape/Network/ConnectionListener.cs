@@ -70,6 +70,10 @@ namespace RuneScape.Network
         /// Gets whether the connections requested should be checked in blacklist.
         /// </summary>
         public bool CheckBlacklist { get; private set; }
+        /// <summary>
+        /// Gets the connection factory.
+        /// </summary>
+        public ConnectionFactory Factory { get { return this.factory; } }
         #endregion Proeprties
 
         #region Constructors

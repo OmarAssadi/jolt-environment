@@ -70,15 +70,51 @@ namespace RuneScape.Utilities
         public static void LoadCommands()
         {
             commands.Add("test", Test);
+            commands.Add("ping", Ping);
+            commands.Add("server_info", ServerInfo);
         }
 
         /// <summary>
         /// Test command.
         /// </summary>
         /// <param name="arguments">Arguments passed through for the command.</param>
+        /// <returns>A random double.</returns>
         private static string Test(string[] arguments)
         {
             return new Random().NextDouble().ToString();
+        }
+
+        /// <summary>
+        /// A ping request.
+        /// </summary>
+        /// <param name="arguments">Arguments passed through for the command.</param>
+        /// <returns>"pong" is successful; "0" if not.</returns>
+        private static string Ping(string[] arguments)
+        {
+            if (GameServer.IsRunning)
+            {
+                return "pong";
+            }
+            else
+            {
+                return "0";
+            }
+        }
+
+        /// <summary>
+        /// A request for server information.
+        /// </summary>
+        /// <param name="arguments">Arguments passed through for the command.</param>
+        /// <returns>Returns server information.</returns>
+        private static string ServerInfo(string[] arguments)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Jolt Environment [").Append(Program.Version).Append(" x" + (Environment.Is64BitProcess ? "64" : "32") + "-bit]<br>");
+            sb.Append("Server Uptime: ").Append(DateTime.Now - Program.StartupTime).Append("<br>");
+            sb.Append("Memory Usage: ").Append(GC.GetTotalMemory(false) / 1024).Append("MB<br>");
+            sb.Append("Recieved Connections: ").Append(GameServer.TcpConnection.Listener.Factory.Count).Append("<br>");
+            sb.Append("Current Connections: ").Append(GameServer.TcpConnection.CurrentConnections.Count).Append("<br>");
+            return sb.ToString();
         }
         #endregion Methods
     }
