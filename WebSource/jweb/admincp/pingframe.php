@@ -17,19 +17,18 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-define('ACP_TITLE', 'Moderation');
-define('ACP_TAB', 5);
+require_once("../includes/functions_remote.php");
 
-require_once("adminglobal.php");
-check_rights();
-
-require_once("header.php");
+$data = send_data("ping");
+if ($data == null) {
+    echo "failed";
+} else {
+    if ($data == "pong") {
+        echo "successful";
+    } else if ($data == "0") {
+        echo "successful, but gameserver not running.";
+    } else {
+        echo "sucessful, but unhandled response.";
+    }
+}
 ?>
-
-<h1>Moderation</h1><hr>
-<p>Moderators and Administrators can manage moderation here. They are provided with tools, logs, and information to make the best out of the evidence they have.</p><br />
-
-<h2>Actions requiring moderation</h2>
-<p>A list of actions that are currently under moderation.</p>
-
-<?php include_once("footer.php"); ?>

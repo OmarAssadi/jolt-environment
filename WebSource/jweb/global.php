@@ -68,4 +68,5 @@ $users = new users();
 // #############################################################################
 require_once(INCLUDES . "functions_database.php");
 require_once(INCLUDES . "functions_filtering.php");
+require_once(INCLUDES . "functions_remote.php");
 ?>

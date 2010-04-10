@@ -1027,6 +1027,8 @@ Source/RuneScape/Workers/MajorWorker.cs -text
 Source/RuneScape/Workers/Worker.cs -text
 WebSource/jweb/.htaccess -text
 WebSource/jweb/admincp/adminglobal.php -text
+WebSource/jweb/admincp/adminlogs.php -text
+WebSource/jweb/admincp/adminnotes.php -text
 WebSource/jweb/admincp/dashboard.php -text
 WebSource/jweb/admincp/footer.php -text
 WebSource/jweb/admincp/header.php -text
@@ -1080,14 +1082,20 @@ WebSource/jweb/admincp/images/progress_bar.gif -text
 WebSource/jweb/admincp/images/spacer.gif -text
 WebSource/jweb/admincp/images/toggle.gif -text
 WebSource/jweb/admincp/index.php -text
+WebSource/jweb/admincp/infoframe.php -text
 WebSource/jweb/admincp/login.php -text
 WebSource/jweb/admincp/logout.php -text
 WebSource/jweb/admincp/logs.php -text
 WebSource/jweb/admincp/moderation.php -text
+WebSource/jweb/admincp/pingframe.php -text
+WebSource/jweb/admincp/rmcpingtest.php -text
+WebSource/jweb/admincp/server.php -text
 WebSource/jweb/admincp/style/admin.css -text
 WebSource/jweb/admincp/style/editor.js -text
 WebSource/jweb/admincp/style/permissions.js -text
 WebSource/jweb/admincp/style/tooltip.js -text
+WebSource/jweb/admincp/worldedit.php -text
+WebSource/jweb/admincp/worldslist.php -text
 WebSource/jweb/favicon.ico -text
 WebSource/jweb/footer.php -text
 WebSource/jweb/global.php -text
@@ -1100,6 +1108,7 @@ WebSource/jweb/includes/class_users.php -text
 WebSource/jweb/includes/config.php -text
 WebSource/jweb/includes/functions_database.php -text
 WebSource/jweb/includes/functions_filtering.php -text
+WebSource/jweb/includes/functions_remote.php -text
 WebSource/jweb/index.php -text
 WebSource/jweb/nbproject/project.properties -text
 WebSource/jweb/nbproject/project.xml -text

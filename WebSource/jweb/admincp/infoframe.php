@@ -16,20 +16,18 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-define('ACP_TITLE', 'Moderation');
-define('ACP_TAB', 5);
-
 require_once("adminglobal.php");
-check_rights();
 
-require_once("header.php");
+echo "<html>
+<head>
+<meta http-equiv=\"refresh\" content=\"5\">
+</head>
+<font face='consolas' size='2'>";
+
+$data = send_data("server_info");
+if ($data) {
+    echo $data;
+} else {
+    acp_error("<b>Error:</b> cannot connect to server.");
+}
 ?>
-
-<h1>Moderation</h1><hr>
-<p>Moderators and Administrators can manage moderation here. They are provided with tools, logs, and information to make the best out of the evidence they have.</p><br />
-
-<h2>Actions requiring moderation</h2>
-<p>A list of actions that are currently under moderation.</p>
-
-<?php include_once("footer.php"); ?>

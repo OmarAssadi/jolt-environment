@@ -17,6 +17,13 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+function str_rights() {
+    switch (ACP_RIGHTS) {
+        case 1: return "Normal";
+        case 2: return "Donator";
+    }
+}
+
 /**
  * Sets admincp default vars.
  */
@@ -41,7 +48,7 @@ function check_rights($rights = 1) {
         exit;
     }
     if (ACP_RIGHTS < $rights) {
-        header("Location: 403.php");
+        header("Location: dashboard.php?access_denied=true");
         exit;
     }
 }
@@ -52,13 +59,7 @@ function check_rights($rights = 1) {
  * @return string The formatted size.
  */
 function formatsize($data) {
-    if( $data < 1024 ) {
-        return $data . ' Bytes';
-    } else if( $data < 1024000 ) {
-        return round( ( $data / 1024 ), 2 ) . ' KiB';
-    } else {
-        return round( ( $data / 1024000 ), 2 ) . ' MiB';
-    }
+    return number_format(round(( $data / 1024 ), 2)) . ' KiB';
 }
 
 /**

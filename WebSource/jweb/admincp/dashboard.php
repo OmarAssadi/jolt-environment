@@ -20,8 +20,9 @@
 define('ACP_TITLE', 'Dashboard');
 define('ACP_TAB', 1);
 
-include_once("adminglobal.php");
+require_once("adminglobal.php");
 check_rights();
+require_once("header.php");
 
 $stat['server_version'] = dbevaluate("SELECT server_version FROM versioning;");
 $stat['website_version'] = dbevaluate("SELECT website_version FROM versioning;");
@@ -49,11 +50,11 @@ if (isset($_GET['add_note'])) {
     $note = filter_for_input($_GET['add_note']);
 
     if (strlen($note) < 3 || strlen($note) >500) {
-        $note_added = false;
+        acp_error("Unable to add note.");
     } else {
         dbquery("INSERT INTO web_acp_notes (user,note_date,note_message) VALUES ('" . ACP_NAME . "', NOW(), '" . $note . "')");
         add_log(ACP_NAME, USER_IP, "Added a note.");
-        $note_added = true;
+        acp_success("Successfully added note.");
     }
 }
 
@@ -63,30 +64,21 @@ if (isset($_GET['add_note'])) {
 if (isset($_GET['delete_note'])) {
     dbquery("DELETE FROM web_acp_notes WHERE id = '" . $_GET['delete_note'] . "'");
     add_log(ACP_NAME, USER_IP, "Deleted a note.");
-    $note_deleted = true;
+    acp_success("Successfully deleted note.");
 }
 
-include_once("header.php");
+/**
+ * Check if access denied error has redirected the user to this page.
+ */
+if (isset($_GET['access_denied'])) {
+    acp_error("You do not have permissions to view that page.");
+}
 ?>
 <h1>Dashboard</h1><hr>
 <p>Welcome to the administration backend. You can find tools for managing the game, server, website, and all the configurations. Depending on your given priviledges, you will only be able to access certain controls within the administration.</p><br />
 
-<?php
-if (isset($note_added)) {
-    if ($note_added) {
-        acp_success("Successfully added note.");
-    } else {
-        acp_error("Unable to add note.");
-    }
-}
-
-if (isset($note_deleted)) {
-    acp_success("Successfully deleted note.");
-}
-?>
-
+<h2>Server statistics</h2>
 <table cellspacing="1">
-    <caption>Board statistics</caption>
     <col class="col1" /><col class="col2" /><col class="col1" /><col class="col2" />
     <thead>
         <tr>
@@ -138,8 +130,8 @@ if (isset($note_deleted)) {
 <br />
 
 <h2>Administration Notes</h2>
-<p>Notes and general chatting between staff can be done with this.</p>
-
+<div style="float: left;"><p>Notes and general chatting between staff can be done with this.</p></div>
+<div style="float: right;"><a href="adminnotes.php?viewall">&raquo; View administration notes</a></div>
 <table cellspacing="1">
     <thead>
         <tr>
@@ -157,7 +149,7 @@ if (isset($note_deleted)) {
                 echo "<tr>
                 <td>" . $note['user'] . " <a href='dashboard.php?delete_note=" . $note['id'] . "'>[ Delete ]</a></td>
                 <td>" . $note['note_date'] . "</td>
-                <td>" . $note['note_message'] . "</td>
+                <td>" . filter_for_outout($note['note_message'], true) . "</td>
                 </tr>";
             }
         } else {
@@ -177,7 +169,8 @@ if (isset($note_deleted)) {
 </table>
 
 <h2>Administration Logs</h2>
-<p>This gives an overview of the last five actions carried out by staff.</p>
+<div style="float: left;"><p>This gives an overview of the last five actions carried out by staff.</p></div>
+<div style="float: right;"><a href="adminlogs.php?viewall">&raquo; View administration logs</a></div>
 
 <table cellspacing="1">
     <thead>
@@ -191,7 +184,6 @@ if (isset($note_deleted)) {
     <tbody>
         <?php
         $logs = dbquery("SELECT * FROM web_acp_logs ORDER BY id DESC LIMIT 5");
-        //$getNotes = dbquery("SELECT * FROM admin_notes ORDER BY id DESC LIMIT 5");
 
         if (mysql_num_rows($logs) > 0) {
             while ($log = mysql_fetch_assoc($logs)) {

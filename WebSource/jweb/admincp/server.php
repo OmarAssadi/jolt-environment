@@ -16,20 +16,26 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-define('ACP_TITLE', 'Moderation');
-define('ACP_TAB', 5);
-
+define('ACP_TITLE', 'Server');
+define('ACP_TAB', 2);
 require_once("adminglobal.php");
 check_rights();
 
 require_once("header.php");
 ?>
+<h1>Server Information</h1><hr>
+<p>The given information is a live feed given from the server.<br>
+<i>Note: this feature is only availible when the server is online.</i></p><br />
 
-<h1>Moderation</h1><hr>
-<p>Moderators and Administrators can manage moderation here. They are provided with tools, logs, and information to make the best out of the evidence they have.</p><br />
+<script type="text/javascript">
+    function reload() {
+        var f = document.getElementById('infoframe');
+        f.src = f.src;
+    }
+</script>
+<iframe id="infoframe" height="100" width="500"
+        frameborder='0' src="infoframe.php"></iframe>
+<br>
+<input type='button' class="button2" onclick='reload()' value='Refresh'/>
 
-<h2>Actions requiring moderation</h2>
-<p>A list of actions that are currently under moderation.</p>
-
-<?php include_once("footer.php"); ?>
+<?php require_once("footer.php"); ?>

@@ -36,11 +36,11 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
     $pass = sha1($user . sha1(($_POST['pass'])));
 
     if ($users->validate_details($user, $pass)) {
-        if ($users->get_server_rights($users->get_id($user)) > 1) {
+        if ($users->get_server_rights($users->get_id($user)) > 2) {
             $_SESSION['JWEB_ACP_USER'] = $user;
             $_SESSION['JWEB_ACP_HASH'] = $pass;
 
-            add_log($user, USER_IP, "Sucessfully logged in.");
+            add_log($user, USER_IP, "Successfully logged in.");
             die('<script type="text/javascript">top.location.href = \'dashboard.php\';</script>');
         }
     } else {

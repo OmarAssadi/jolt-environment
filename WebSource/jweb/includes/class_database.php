@@ -58,7 +58,7 @@ class database {
      */
     public function connect($database) {
         $this->database = $database;
-        $this->connection = @mysql_connect($this->host, $this->username, $this->password) or $this->error(mysql_error());
+        $this->connection = @mysql_pconnect($this->host, $this->username, $this->password) or $this->error(mysql_error());
         @mysql_select_db($this->database, $this->connection) or $this->error(mysql_error());
 
         /*
@@ -75,7 +75,7 @@ class database {
      */
     public function disconnect() {
         if ($this->connected) {
-            @mysql_close($this->connection);
+            @mysql_pclose($this->connection);
             $this->connected = false;
         }
     }

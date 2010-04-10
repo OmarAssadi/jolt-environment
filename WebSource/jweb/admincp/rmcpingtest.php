@@ -15,21 +15,26 @@
  * 
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-define('ACP_TITLE', 'Moderation');
-define('ACP_TAB', 5);
-
+*/
+define('ACP_TITLE', 'RMC Ping');
+define('ACP_TAB', 2);
 require_once("adminglobal.php");
 check_rights();
 
 require_once("header.php");
 ?>
+<h1>RMC Ping Test</h1><hr>
+<p>RMC (Remotely Managed Communication) is networking between the website, and the server.<br>This script will help notify if the server is responsive to a test.</p><br />
 
-<h1>Moderation</h1><hr>
-<p>Moderators and Administrators can manage moderation here. They are provided with tools, logs, and information to make the best out of the evidence they have.</p><br />
+<script type="text/javascript">
+    function reload() {
+        var f = document.getElementById('pingframe');
+        f.src = f.src;
+    }
+</script>
+<iframe id="pingframe" height="40" width="300"
+        frameborder='0' src="pingframe.php"></iframe>
+<br>
+<input type='button' class="button2" onclick='reload()' value='Ping'/>
 
-<h2>Actions requiring moderation</h2>
-<p>A list of actions that are currently under moderation.</p>
-
-<?php include_once("footer.php"); ?>
+<?php require_once("footer.php"); ?>

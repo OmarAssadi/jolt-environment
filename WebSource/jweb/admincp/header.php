@@ -56,22 +56,21 @@
                                     <li class="header">Quick access</li>
                                     <li><a href="dashboard.php"><span>Dashboard</span></a></li>
                                     <li><a href="../index.php"><span>View Site</span></a></li>
-
-                                    <li class="header">Information</li>
-                                    <li><a href="dashboard.php"><span>Dashboard</span></a></li>
-                                    <li><a href="../index.php"><span>View Site</span></a></li>
                                 </ul>
 
                                 <!-- Server !-->
                                 <?php } else if (ACP_TAB == 2) { ?>
                                 <ul>
-                                    <li class="header">Quick access</li>
-                                    <li><a href="dashboard.php"><span>Dashboard</span></a></li>
-                                    <li><a href="../index.php"><span>View Site</span></a></li>
+                                    <li class="header">General</li>
+                                    <li><a href="server.php"><span>Information</span></a></li>
+                                    <li><a href="gensettings.php"><span>Settings</span></a></li>
 
-                                    <li class="header">Information</li>
-                                    <li><a href="dashboard.php"><span>Dashboard</span></a></li>
-                                    <li><a href="../index.php"><span>View Site</span></a></li>
+                                    <li class="header">Worlds</li>
+                                    <li><a href="worldslist.php"><span>Current worlds</span></a></li>
+                                    <li><a href="createworld.php"><span>Create world</span></a></li>
+
+                                    <li class="header">Remote</li>
+                                    <li><a href="rmcpingtest.php"><span>RMC Ping</span></a></li>
                                 </ul>
 
                                 <!-- Website !-->
@@ -115,7 +114,7 @@
                                     <li><a href="#"><span>Muted Characters</span></a></li>
 
                                     <li class="header">Logs</li>
-                                    <li><a href="#"><span>Administration Logs</span></a></li>
+                                    <li><a href="adminlogs.php?viewall"><span>Admin Logs</span></a></li>
                                     <li><a href="#"><span>Chat Logs</span></a></li>
                                     <li><a href="#"><span>IP Logs</span></a></li>
                                     <li><a href="#"><span>Login Logs</span></a></li>

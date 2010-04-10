@@ -17,19 +17,21 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-define('ACP_TITLE', 'Moderation');
-define('ACP_TAB', 5);
-
-require_once("adminglobal.php");
-check_rights();
-
-require_once("header.php");
+/**
+ * Sends information to the given remote server.
+ * @param string $data Information about the command and arguments.
+ * @return string Information recieved according to the data sent.
+ */
+function send_data($data) {
+    $connection = @fsockopen ("127.0.0.1", 43595, $fserrno, $fserrstr, 1);
+    
+    if ($connection) {
+        fwrite($connection, $data);
+        $rd = fread($connection, 256);
+        fclose($connection);
+        return $rd;
+    } else {
+        return null;
+    }
+}
 ?>
-
-<h1>Moderation</h1><hr>
-<p>Moderators and Administrators can manage moderation here. They are provided with tools, logs, and information to make the best out of the evidence they have.</p><br />
-
-<h2>Actions requiring moderation</h2>
-<p>A list of actions that are currently under moderation.</p>
-
-<?php include_once("footer.php"); ?>

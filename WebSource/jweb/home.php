@@ -31,6 +31,15 @@ echo mysql_error();
 <body>
     jWeb coming soon.
 
-    number: <?php echo $array[3] ?>
+    number: <?php echo $array[3] ?><br>
 </body>
-<?php include_once("./footer.php"); ?>
+<?php
+$data = send_data("test\0hey there buddy ol' pal!");
+if ($data == null) {
+    echo "failed";
+} else {
+    echo $data;
+}
+
+include_once("./footer.php");
+?>
