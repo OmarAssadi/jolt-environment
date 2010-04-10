@@ -1030,6 +1030,7 @@ WebSource/jweb/admincp/adminglobal.php -text
 WebSource/jweb/admincp/adminlogs.php -text
 WebSource/jweb/admincp/adminnotes.php -text
 WebSource/jweb/admincp/dashboard.php -text
+WebSource/jweb/admincp/favicon.ico -text
 WebSource/jweb/admincp/footer.php -text
 WebSource/jweb/admincp/header.php -text
 WebSource/jweb/admincp/images/arrow_down.gif -text
@@ -1090,6 +1091,7 @@ WebSource/jweb/admincp/moderation.php -text
 WebSource/jweb/admincp/pingframe.php -text
 WebSource/jweb/admincp/rmcpingtest.php -text
 WebSource/jweb/admincp/server.php -text
+WebSource/jweb/admincp/staff.php -text
 WebSource/jweb/admincp/style/admin.css -text
 WebSource/jweb/admincp/style/editor.js -text
 WebSource/jweb/admincp/style/permissions.js -text

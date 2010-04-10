@@ -97,7 +97,7 @@ class users {
      */
     public function get_name($user_id) {
         if(is_numeric($user_id)) {
-            $q = dbquery("SELECT username FROM characters WHERE id = '" . filter_for_input($user_id) . "' LIMIT 1");
+            $q = dbquery("SELECT username FROM characters WHERE id = '$user_id' LIMIT 1");
 
             if(mysql_num_rows($q) > 0) {
                 $row = mysql_fetch_assoc($q);
@@ -105,7 +105,55 @@ class users {
             }
         }
 
-        return "";	
+        return "";
+    }
+
+    /**
+     * Gets whether the following id exists.
+     * @param int $id The user's master id.
+     * @return boolean Whether the id exists in the database.
+     */
+    public function id_exists($id) {
+        if(is_numeric($id)) {
+            $q = dbquery("SELECT id FROM characters WHERE id = '$id' LIMIT 1;");
+
+            if (mysql_num_rows($q) > 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Gets whether the following name exists.
+     * @param string $username The user's name.
+     * @return boolean Whether the username exists in the database.
+     */
+    public function name_exists($username) {
+        $q = dbquery("SELECT name FROM characters WHERE username = '" . filter_for_input($username) . "' LIMIT 1");
+        if (mysql_num_rows($q) > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Formats the given name into a visually appealing verson.
+     * @param string $username The username to format.
+     * @return string The formatted username.
+     */
+    public function format_name($username) {
+        return ucwords(str_replace('_', ' ', $username));
+    }
+
+    /**
+     * Formats the given name for safe database works.
+     * @param string $username The username to format.
+     * @return string The formatted username.
+     */
+    public function format_dbname($username) {
+        return str_replace(' ', '_', strtolower($username));
     }
 }
 ?>

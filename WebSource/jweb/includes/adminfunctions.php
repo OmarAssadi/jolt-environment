@@ -17,10 +17,31 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-function str_rights() {
-    switch (ACP_RIGHTS) {
-        case 1: return "Normal";
-        case 2: return "Donator";
+/**
+ * Gets the user's rights as a string.
+ * @param int $rights The user's rights.
+ * @return string A readable version of the user's rights.
+ */
+function get_rights($rights) {
+    switch ($rights) {
+        case 0: return "Player";
+        case 1: return "Donator";
+        case 2: return "Moderator";
+        case 3: return "Administrator";
+        case 4: return "System Administrator";
+    }
+}
+
+/**
+ * Gets the user's client rights as a string.
+ * @param int $rights The user's rights.
+ * @return string A readable version of the user's client rights.
+ */
+function get_client_rights($rights) {
+    switch ($rights) {
+        case 0: return "Player";
+        case 1: return "Moderator";
+        case 2: return "Administrator";
     }
 }
 
@@ -39,7 +60,7 @@ function set_default_vars() {
  * Checks the rights required to access to the page.
  * @param int $rights Minimum rights require to check against user.
  */
-function check_rights($rights = 1) {
+function check_rights($rights = 2) {
     if (!ADMINCP) {
         exit;
     }

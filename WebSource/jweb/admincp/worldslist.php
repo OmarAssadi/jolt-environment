@@ -45,14 +45,16 @@ require_once("header.php");
                 <td><strong>" . $world['world_id'] ."</strong></td>
                 <td>" . $world['world_name'] ."</td>
                 <td>" . $world['startup_time'] ."</td>
-                <td><strong><a href='worldedit.php?id=" . $world['world_id'] . "'>[Edit]</a></strong></td>
+                <td><strong><a href='worldedit.php?id=" . $world['world_id'] . "'><img src='./images/icon_edit.gif' alt='Edit' /></a></strong></td>
             </tr>";
             }
         } else {
-            echo "<tr><td colspan='5' style='text-align: center;'>No logs have been created.</td></tr>";
+            echo "<tr><td colspan='5' style='text-align: center;'>No worlds have been created.</td></tr>";
         }
         ?>
     </tbody>
 </table>
+
+<img  />
 
 <?php require_once("footer.php"); ?>

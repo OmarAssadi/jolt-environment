@@ -87,9 +87,7 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
                                 <br />
                                 <form method="post" action="login.php" onsubmit="submit.disabled = 'disabled';">
 
-
                                     <fieldset>
-                                        <legend>Login Credentials</legend>
                                         <dl>
                                             <dt><label for="userinput">Username:</label></dt>
                                             <dd><input id="userinput" type="text" name="user" /></dd>
@@ -102,8 +100,7 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
 
                                     <fieldset class="submit-buttons">
                                         <legend>Proceed to dashboard</legend>
-                                        <input type="hidden" name="language" value="en" /><input type="hidden" name="testdb" value="true" />
-                                        <input class="button1" type="submit" id="submit" onclick="this.className = 'button1 disabled';" name="submit" value="Proceed to dashboard" />
+                                        <input class="button1" type="submit" id="submit" onclick="this.className = 'button1 disabled';" name="submit" value="  Proceed to dashboard  " />
                                     </fieldset>
                                 </form>
                             </div>

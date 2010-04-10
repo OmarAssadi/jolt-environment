@@ -30,6 +30,7 @@
         <title>AdminCP<?php if(defined('ACP_TITLE')) echo " - " . ACP_TITLE ?></title>
 
         <link href="./style/admin.css" rel="stylesheet" type="text/css" media="screen" />
+        <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
     </head>
     <body class="ltr">
         <div id="wrap">
@@ -48,7 +49,7 @@
                         <span class="corners-top"><span></span></span>
                         <div id="content">
                             <div id="menu">
-                                <p>Logged in as:<br /><strong><?php echo ACP_NAME ?></strong> [&nbsp;<a href="logout.php">Logout</a>&nbsp;]</p>
+                                <p>Logged in as:<br /><strong><?php echo ucwords(str_replace('_', ' ', ACP_NAME)); ?></strong> [&nbsp;<a href="logout.php">Logout</a>&nbsp;]</p>
 
                                 <!-- General !-->
                                 <?php if (ACP_TAB == 1) { ?>
@@ -102,7 +103,7 @@
                                 <ul>
                                     <li class="header">Overview</li>
                                     <li><a href="moderation.php"><span>Overview</span></a></li>
-                                    <li><a href="#"><span>Staff Members</span></a></li>
+                                    <li><a href="staff.php"><span>Staff Members</span></a></li>
 
                                     <li class="header">Reports</li>
                                     <li><a href="dashboard.php"><span>Reports</span></a></li>
@@ -116,7 +117,6 @@
                                     <li class="header">Logs</li>
                                     <li><a href="adminlogs.php?viewall"><span>Admin Logs</span></a></li>
                                     <li><a href="#"><span>Chat Logs</span></a></li>
-                                    <li><a href="#"><span>IP Logs</span></a></li>
                                     <li><a href="#"><span>Login Logs</span></a></li>
                                 </ul>
                                 <?php } ?>

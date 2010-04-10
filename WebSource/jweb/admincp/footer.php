@@ -26,7 +26,8 @@
 </div>
 </div>
 </div>
-<div id="page-footer">Powered by jWeb &copy; 2010 <a href="http://jolte.codeplex.com/">Jolt Environment Team</a>
+<div id="page-footer">Powered by jWeb &copy; 2010 <a href="http://jolte.codeplex.com/" target="_blank">Jolt Environment Team</a>.
+    Style  by <a href="http://phpbb.com" target="_blank">phpBB</a>.
 </div>
 </div>
 </body>

@@ -15,7 +15,7 @@
  * 
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+*/
 
 /**
  * Filters the given input by stripping slashes, trimming
@@ -48,6 +48,24 @@ function filter_for_outout($string, $ignore_html = false, $break_lines = false) 
     }
 
     return $output;
+}
+
+/**
+ * Generates a visually pretty date with a specified timestamp.
+ * @param int $timestamp The timestamp.
+ * @return string A pretty date.
+ */
+function prettydate($timestamp) {
+    return date("F dS, Y h:i A", $timestamp);
+}
+
+/**
+ * Generates a simplized date with the specified timestamp.
+ * @param int $timestamp The timestamp.
+ * @return string A simple date.
+ */
+function simpledate($timestamp) {
+    return date('m-d-y', $timestamp);
 }
 
 ?>
