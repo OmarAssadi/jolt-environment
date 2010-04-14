@@ -49,7 +49,7 @@ $db_size = formatsize($db_size);
 if (isset($_GET['add_note'])) {
     $note = filter_for_input($_GET['add_note']);
 
-    if (strlen($note) < 3 || strlen($note) >500) {
+    if (strlen($note) < 3 || strlen($note) > 100) {
         acp_error("Unable to add note.");
     } else {
         dbquery("INSERT INTO web_acp_notes (user,note_date,note_message) VALUES ('" . ACP_NAME . "', NOW(), '" . $note . "')");
@@ -62,9 +62,13 @@ if (isset($_GET['add_note'])) {
  * Attempts to delete the specified note id.
  */
 if (isset($_GET['delete_note'])) {
-    dbquery("DELETE FROM web_acp_notes WHERE id = '" . $_GET['delete_note'] . "'");
-    add_log(ACP_NAME, USER_IP, "Deleted a note.");
-    acp_success("Successfully deleted note.");
+    if (ACP_RIGHTS > 2) {
+        dbquery("DELETE FROM web_acp_notes WHERE id = '" . $_GET['delete_note'] . "'");
+        add_log(ACP_NAME, USER_IP, "Deleted a note.");
+        acp_success("Successfully deleted note.");
+    } else {
+        acp_error("Moderators cannot delete notes.");
+    }
 }
 
 /**
@@ -73,9 +77,13 @@ if (isset($_GET['delete_note'])) {
 if (isset($_GET['access_denied'])) {
     acp_error("You do not have permissions to view that page.");
 }
+
 ?>
 <h1>Dashboard</h1><hr>
 <p>Welcome to the administration backend. You can find tools for managing the game, server, website, and all the configurations. Depending on your given priviledges, you will only be able to access certain controls within the administration.</p><br />
+
+<?php if (is_int($core->get_config("remote.port"))) { echo "fail"; } ?>
+
 
 <h2>Server statistics</h2>
 <table cellspacing="1">
@@ -146,8 +154,8 @@ if (isset($_GET['access_denied'])) {
 
         if (mysql_num_rows($notes) > 0) {
             while ($note = mysql_fetch_assoc($notes)) {
-                echo "<tr>
-                <td>" . $note['user'] . " <a href='dashboard.php?delete_note=" . $note['id'] . "'>[ Delete ]</a></td>
+                echo "<tr id='" . $note['id'] . "'>
+                <td><a href='dashboard.php?delete_note=" . $note['id'] . "'><img src='./images/icon_delete.gif' /></a> <a href='viewuser.php?id=" . $note['user'] . "'><strong>" . $users->format_name($note['user']) . "</strong></a></td>
                 <td>" . $note['note_date'] . "</td>
                 <td>" . filter_for_outout($note['note_message'], true) . "</td>
                 </tr>";
@@ -188,7 +196,7 @@ if (isset($_GET['access_denied'])) {
         if (mysql_num_rows($logs) > 0) {
             while ($log = mysql_fetch_assoc($logs)) {
                 echo "            <tr>
-                <td><strong>" . $log['user'] ."</strong></td>
+                <td><strong><a href='viewuser.php?id=" . $log['user'] . "'>" . $users->format_name($log['user']) ."</a></strong></td>
                 <td>" . $log['user_ip'] ."</td>
                 <td>" . $log['log_time'] ."</td>
                 <td><strong>" . $log['log_message'] ."</strong></td>
@@ -200,6 +208,5 @@ if (isset($_GET['access_denied'])) {
         ?>
     </tbody>
 </table>
-<br />
 
 <?php include_once("footer.php"); ?>

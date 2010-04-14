@@ -15,7 +15,7 @@
  * 
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+*/
 
 /**
  * Sends information to the given remote server.
@@ -23,8 +23,8 @@
  * @return string Information recieved according to the data sent.
  */
 function send_data($data) {
-    $connection = @fsockopen ("127.0.0.1", 43595, $fserrno, $fserrstr, 1);
-    
+    $connection = @fsockopen("127.0.0.1", 43595, $fserrno, $fserrstr, 1);
+
     if ($connection) {
         fwrite($connection, $data);
         $rd = fread($connection, 256);

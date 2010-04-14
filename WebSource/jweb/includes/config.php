@@ -17,7 +17,7 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-$config['database.host'] = "localhost";
+$config['database.host'] = "127.0.0.1";
 $config['database.user'] = "root";
 $config['database.pass'] = "MSxa5y";
 $config['database.name'] = "runescapedb";

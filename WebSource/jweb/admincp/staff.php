@@ -26,71 +26,6 @@ require_once("header.php");
 <h1>Staff Members</h1><hr>
 <p>A list of staff members who have certain rights around the AdminCP and in game.</p><br />
 
-<?php
-if (isset($_GET['view'])) {
-    $staff_id = $_GET['view'];
-    $qry = dbquery("SELECT * FROM characters WHERE id = '$staff_id' AND server_rights >= 2 LIMIT 1;");
-
-    if (mysql_num_rows($qry) > 0) {
-        $staff_vars = mysql_fetch_assoc($qry);
-        ?>
-<fieldset>
-    <dl>
-        <dt><label>Name</label></dt>
-        <dd><strong><?php echo ucwords($staff_vars['username']); ?></strong></dd>
-    </dl>
-    <dl>
-        <dt><label>Client rights</label></dt>
-        <dd><strong><?php echo get_client_rights($staff_vars['client_rights']); ?></strong></dd>
-    </dl>
-    <dl>
-        <dt><label>Server rights</label></dt>
-        <dd><strong><?php echo get_rights($staff_vars['server_rights']); ?></strong></dd>
-    </dl>
-    <dl>
-        <dt><label>Online</label></dt>
-        <dd><strong><?php echo $staff_vars['online'] == 1 ? "Yes" : "No"; ?></strong></dd>
-    </dl>
-    <dl>
-        <dt><label>Active</label></dt>
-        <dd><strong><?php echo $staff_vars['active'] == 1 ? "Yes" : "No"; ?></strong></dd>
-    </dl>
-    <dl>
-        <dt><label>Email</label></dt>
-        <dd><strong><a href='mailto:<?php echo $staff_vars['email']; ?>'><?php echo $staff_vars['email'] ?></a></strong></dd>
-    </dl>
-    <dl>
-        <dt><label>Register date</label></dt>
-        <dd><strong><?php echo $staff_vars['register_date']; ?></strong></dd>
-    </dl>
-    <dl>
-        <dt><label>Register IP</label></dt>
-        <dd><strong><?php echo $staff_vars['register_ip']; ?></strong></dd>
-    </dl>
-    <dl>
-        <dt><label>Last IP</label></dt>
-        <dd><strong><?php echo $staff_vars['last_ip']; ?></strong></dd>
-    </dl>
-    <dl>
-        <dt><label>Last signin</label></dt>
-        <dd><strong><?php echo $staff_vars['last_signin']; ?></strong></dd>
-    </dl>
-
-
-
-
-    <p class="quick">
-        <input class="button1" type="submit" value=" Edit User "
-               onclick="parent.location='edituser.php?id=<?php echo $staff_id; ?>'" />
-        <input class="button1" type="submit" value=" Staff Overview "
-               onclick="parent.location='staff.php'" />
-    </p>
-</fieldset> 
-        <?php
-    } else {
-        acp_error("The specified user does not exist or is not staff.");
-    }
-} else { ?>
 <table cellspacing="1">
     <thead>
         <tr>
@@ -107,7 +42,7 @@ if (isset($_GET['view'])) {
             if (mysql_num_rows($staff) > 0) {
                 while ($person = mysql_fetch_assoc($staff)) {
                     echo "            <tr>
-                <td><strong><a href='staff.php?view=" . $person['id'] . "'>" . $users->format_name($person['username']) ."</a></strong></td>
+                <td><strong><a href='viewuser.php?id=" . $person['id'] . "'>" . $users->format_name($person['username']) ."</a></strong></td>
                 <td>" . get_rights($person['server_rights']) ."</td>
                 <td><a href='mailto:" . $person['email'] . "'>" . $person['email'] ."</a></td>
                 <td>" . ($person['online'] == 1 ? "Yes" : "No") ."</td>
@@ -119,6 +54,5 @@ if (isset($_GET['view'])) {
             ?>
     </tbody>
 </table>
-    <?php } ?>
 
 <?php require_once("footer.php"); ?>

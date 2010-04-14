@@ -42,6 +42,8 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
 
             add_log($user, USER_IP, "Successfully logged in.");
             die('<script type="text/javascript">top.location.href = \'dashboard.php\';</script>');
+        } else {
+            $login_failed = true;
         }
     } else {
         $login_failed = true;

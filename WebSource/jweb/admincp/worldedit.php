@@ -37,6 +37,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         dbquery($result);
 
         acp_success("Successfully saved world information.");
+        add_log(ACP_NAME, USER_IP, "Edited world (World ID: $w_id).");
     }
 } else {
     header("Location: worldslist.php");

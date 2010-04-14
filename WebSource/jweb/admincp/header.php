@@ -116,8 +116,8 @@
 
                                     <li class="header">Logs</li>
                                     <li><a href="adminlogs.php?viewall"><span>Admin Logs</span></a></li>
-                                    <li><a href="#"><span>Chat Logs</span></a></li>
-                                    <li><a href="#"><span>Login Logs</span></a></li>
+                                    <li><a href="chatlogs.php?viewall"><span>Chat Logs</span></a></li>
+                                    <li><a href="loginlogs.php?viewall"><span>Login Logs</span></a></li>
                                 </ul>
                                 <?php } ?>
                              </div>
