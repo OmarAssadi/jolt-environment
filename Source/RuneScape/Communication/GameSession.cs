@@ -30,7 +30,7 @@ namespace RuneScape.Communication
     /// <summary>
     /// Represents a single session on the server.
     /// </summary>
-    public class GameSession
+    public class GameSession : IDisposable
     {
         #region Fields
         /// <summary>
@@ -176,6 +176,16 @@ namespace RuneScape.Communication
                 Program.Logger.WriteException(ex);
             }
         }
+
+        #region IDispose Members
+        /// <summary>
+        /// Attempts to dispose the session.
+        /// </summary>
+        public void Dispose()
+        {
+            this.handleTask.Dispose();
+        }
+        #endregion IDispose Memebrs
         #endregion Methods
     }
 }

@@ -37,8 +37,8 @@ namespace RuneScape.Model.Maps
         {
             try
             {
-                using (BinaryReader reader = new BinaryReader(
-                    File.OpenRead(@"..\data\mapdata\regions.dat")))
+                FileStream fs = File.OpenRead(@"..\data\mapdata\regions.dat");
+                using (BinaryReader reader = new BinaryReader(fs))
                 {
                     while (reader.PeekChar() >= 0)
                     {
@@ -50,7 +50,9 @@ namespace RuneScape.Model.Maps
 
                         regionsCollection.Add(mapId, mapData); // Add the data to collection.
                     }
+                    reader.Dispose();
                 }
+                fs.Dispose();
                 //Program.Logger.WriteInfo("Loaded " + regionsCollection.Count + " map regions.");
             }
             catch (Exception ex)

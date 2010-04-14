@@ -107,9 +107,9 @@ namespace RuneScape
                     // Load "general" settings from runescape.ini.
                     Configuration = Configuration.Load(@"..\data\runescape.ini");
                 }
-                catch (Exception ex) // Most likely error in config file or no file found.
+                catch (Exception) // Most likely error in config file or no file found.
                 {
-                    throw ex;
+                    throw;
                 }
 
                 // Initialize the database server.

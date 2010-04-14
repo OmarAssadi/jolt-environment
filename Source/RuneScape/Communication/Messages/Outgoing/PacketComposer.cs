@@ -227,7 +227,9 @@ namespace RuneScape.Communication.Messages.Outgoing
                         }
                     }
                     buffer.Write(data, 0, data.Length);
-                    return buffer.ToArray();
+                    byte[] bData = buffer.ToArray();
+                    buffer.Dispose();
+                    return bData;
                 }
             }
             catch (Exception ex)

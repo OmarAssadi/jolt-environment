@@ -86,6 +86,7 @@ namespace RuneScape.Workers
                 catch (Exception ex)
                 {
                     Program.Logger.WriteException(ex);
+                    this.toSave.Dispose();
                 }
             }
         }
