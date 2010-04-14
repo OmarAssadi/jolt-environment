@@ -202,7 +202,8 @@ namespace RuneScape.Content.ClanChat
                             GameEngine.World.CharacterManager.Get(l).Session.SendData(
                                 new ClanMessagePacketComposer(message, character.LongName, r.Name,
                                     r.NextUniqueId, (byte)character.ClientRights).Serialize());
-                            ChatUtilities.LogChat(character.MasterId, ChatType.Clanchat, r.OwnerId, message);
+                            ChatUtilities.LogChat(character.Name, ChatType.Clanchat, 
+                                StringUtilities.LongToString(r.Owner), message);
                         });
                     }
                 }

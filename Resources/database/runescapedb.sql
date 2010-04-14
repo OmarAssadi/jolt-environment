@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50141
+Source Server Version : 50137
 Source Host           : localhost:3306
 Source Database       : runescapedb
 
 Target Server Type    : MYSQL
-Target Server Version : 50141
+Target Server Version : 50137
 File Encoding         : 65001
 
-Date: 2010-04-10 17:57:13
+Date: 2010-04-14 19:22:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -141,9 +141,9 @@ CREATE TABLE `characters` (
 -- ----------------------------
 -- Records of characters
 -- ----------------------------
-INSERT INTO `characters` VALUES ('1', 'aj', '45ceeb2b9dbbda7ff3ce5b1a31ee82e59c763939', '2', '4', '0', '1', '27-3-1993', '38', 'aj@ajravindiran.com', '127.0.0.1', '2010-01-11 22:33:57', '99.244.155.103', '2010-04-08 20:51:56', '0', '6', '112', '106', '34', '36', '43', '16', '12', '5', '16', '5', '4', '3224', '3217', '0', '100', '0=4151:1,1=4151:1,2=4151:1,3=4151:1,4=4151:1,5=4151:1', null, '0=4153:2,1=882:5,2=4151:3', '34754328082349950,1020628', null);
+INSERT INTO `characters` VALUES ('1', 'aj', '45ceeb2b9dbbda7ff3ce5b1a31ee82e59c763939', '2', '4', '0', '1', '27-3-1993', '38', 'aj@ajravindiran.com', '127.0.0.1', '2010-01-11 22:33:57', '127.0.0.1', '2010-04-12 13:59:29', '0', '6', '112', '106', '34', '36', '43', '16', '12', '5', '16', '5', '4', '3225', '3223', '0', '100', '1=4151:1,2=4151:1,3=4151:1,4=4151:1', '3=4151:1', '0=4153:2,1=882:5,2=4151:4', '34754328082349950,1020628', null);
 INSERT INTO `characters` VALUES ('2', 'futwurk', 'c9384426089f49224132ea6567d45a1fdaf0783a', '0', '0', '0', '1', '10-2-1993', '225', null, '24.136.5.241', '2010-01-13 22:53:18', '127.0.0.1', '2010-04-04 18:45:22', '0', '1', '18', '108', '33', '87', '42', '10', '12', '16', '16', '3', '3', '3221', '3221', '0', '100', null, null, null, null, null);
-INSERT INTO `characters` VALUES ('3', 'test', '7bce0330eebbb559313dfbf9408d850758b11b79', '0', '4', '0', '1', '1-1-2009', '77', null, '99.244.155.103', '2010-03-02 21:24:41', '99.244.155.103', '2010-04-07 21:34:40', '0', '0', '18', '26', '33', '36', '42', '10', '0', '0', '0', '0', '0', '3221', '3218', '0', '100', null, null, null, '47', null);
+INSERT INTO `characters` VALUES ('3', 'test', '7bce0330eebbb559313dfbf9408d850758b11b79', '0', '4', '0', '1', '1-1-2009', '77', null, '99.244.155.103', '2010-03-02 21:24:41', '127.0.0.1', '2010-04-10 21:20:46', '0', '0', '18', '26', '33', '36', '42', '10', '0', '0', '0', '0', '0', '3222', '3213', '0', '100', null, null, null, '47', null);
 INSERT INTO `characters` VALUES ('4', 'test2', '006df43c64af57a995137ac1b04497bdf39ea182', '0', '0', '0', '0', '1-1-2009', '77', null, '99.244.155.103', '2010-03-02 21:26:32', null, null, '0', '0', '18', '26', '33', '36', '42', '10', '0', '0', '0', '0', '0', '3222', '3219', '0', '100', null, null, null, null, null);
 INSERT INTO `characters` VALUES ('5', 'test3', '348d91e18abfdac5eb2dd38d3144a8ba38ed33cd', '0', '0', '0', '0', '1-1-2009', '77', null, '99.244.155.103', '2010-03-02 21:40:43', null, null, '0', '0', '18', '26', '33', '36', '42', '10', '0', '0', '0', '0', '0', '3222', '3219', '0', '100', null, null, null, null, null);
 INSERT INTO `characters` VALUES ('6', 'test4', 'f95f5a42d39b2ad619c7ab0f460716729fa58514', '0', '0', '0', '0', '1-1-2009', '77', null, '99.244.155.103', '2010-03-02 22:45:04', null, null, '0', '0', '18', '26', '33', '36', '42', '10', '0', '0', '0', '0', '0', '3222', '3219', '0', '100', null, null, null, null, null);
@@ -164,51 +164,67 @@ INSERT INTO `characters` VALUES ('16', 'hdtest', '36b1e6025838ab47eff2cc1218ca9f
 DROP TABLE IF EXISTS `chat_logs`;
 CREATE TABLE `chat_logs` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `userid` int(10) unsigned DEFAULT NULL,
+  `name` varchar(12) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
   `type` enum('clanchat','normal','private') DEFAULT 'normal',
-  `toid` int(10) unsigned DEFAULT NULL,
+  `toname` varchar(12) DEFAULT NULL,
   `message` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of chat_logs
 -- ----------------------------
-INSERT INTO `chat_logs` VALUES ('1', '1', '2010-04-07 21:11:34', 'normal', '0', 'lol');
-INSERT INTO `chat_logs` VALUES ('2', '1', '2010-04-07 21:11:43', 'normal', '0', 'hows you?');
-INSERT INTO `chat_logs` VALUES ('3', '1', '2010-04-07 21:11:46', 'normal', '0', 'sucka');
-INSERT INTO `chat_logs` VALUES ('4', '1', '2010-04-07 21:12:01', 'normal', '0', 'lol');
-INSERT INTO `chat_logs` VALUES ('5', '1', '2010-04-07 21:12:04', 'normal', '0', 'bitch');
-INSERT INTO `chat_logs` VALUES ('6', '1', '2010-04-07 21:12:45', 'clanchat', '1', 'sup');
-INSERT INTO `chat_logs` VALUES ('7', '1', '2010-04-07 21:14:22', 'normal', '0', 'wut?');
-INSERT INTO `chat_logs` VALUES ('8', '1', '2010-04-07 21:14:29', 'normal', '0', 'lol');
-INSERT INTO `chat_logs` VALUES ('9', '1', '2010-04-07 21:15:15', 'normal', '0', 'wtf????????????????????????');
-INSERT INTO `chat_logs` VALUES ('10', '1', '2010-04-07 21:16:36', 'normal', '0', 'lol');
-INSERT INTO `chat_logs` VALUES ('11', '1', '2010-04-07 21:16:39', 'normal', '0', 'hey there');
-INSERT INTO `chat_logs` VALUES ('12', '1', '2010-04-07 21:16:41', 'normal', '0', 'nigger');
-INSERT INTO `chat_logs` VALUES ('13', '1', '2010-04-07 21:16:45', 'normal', '0', 'adashdkjahsfdkljshgfdjskhfadhsfkdhsfkjhdshfkljsdhfjahsfkljhalsdhfjsdhf');
-INSERT INTO `chat_logs` VALUES ('14', '1', '2010-04-07 21:16:49', 'normal', '0', 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff');
-INSERT INTO `chat_logs` VALUES ('15', '1', '2010-04-07 21:17:30', 'normal', '0', 'realtalkz?');
-INSERT INTO `chat_logs` VALUES ('16', '1', '2010-04-07 21:17:34', 'normal', '0', 'ohshiz');
-INSERT INTO `chat_logs` VALUES ('17', '1', '2010-04-07 21:17:37', 'normal', '0', 'ss');
-INSERT INTO `chat_logs` VALUES ('18', '1', '2010-04-07 21:17:41', 'normal', '0', 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz');
-INSERT INTO `chat_logs` VALUES ('19', '1', '2010-04-07 21:17:43', 'normal', '0', 'zzzzzzzzzzzzzzzzzzzzz');
-INSERT INTO `chat_logs` VALUES ('20', '1', '2010-04-07 21:17:45', 'normal', '0', 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz');
-INSERT INTO `chat_logs` VALUES ('21', '1', '2010-04-07 21:17:47', 'normal', '0', 'zzzzzzzzzzzzzzzzzzzzzzzzzzzz');
-INSERT INTO `chat_logs` VALUES ('22', '1', '2010-04-07 21:17:49', 'normal', '0', 'lol');
-INSERT INTO `chat_logs` VALUES ('23', '1', '2010-04-07 21:17:52', 'normal', '0', 'l');
-INSERT INTO `chat_logs` VALUES ('24', '1', '2010-04-07 21:17:54', 'normal', '0', ' ');
-INSERT INTO `chat_logs` VALUES ('25', '1', '2010-04-07 21:17:57', 'normal', '0', '  ');
-INSERT INTO `chat_logs` VALUES ('26', '1', '2010-04-07 21:17:59', 'normal', '0', ' ');
-INSERT INTO `chat_logs` VALUES ('27', '1', '2010-04-07 21:26:09', 'normal', '0', 'lol');
-INSERT INTO `chat_logs` VALUES ('28', '1', '2010-04-07 21:34:21', 'normal', '0', 'lol\\\\lol\\o\\lio\\lo\\il\\\\\\\\lolol\\');
-INSERT INTO `chat_logs` VALUES ('29', '1', '2010-04-07 21:34:39', 'normal', '0', '///fds/f/d/fsd/fd/fd/fd/fd');
-INSERT INTO `chat_logs` VALUES ('30', '3', '2010-04-07 21:35:12', 'normal', '0', 'hay there');
-INSERT INTO `chat_logs` VALUES ('31', '3', '2010-04-07 21:35:26', 'normal', '0', 'wutcha lookin at sucka');
-INSERT INTO `chat_logs` VALUES ('32', '3', '2010-04-07 21:35:41', 'private', '1', 'suckadick');
-INSERT INTO `chat_logs` VALUES ('33', '1', '2010-04-07 21:35:45', 'private', '3', 'no');
-INSERT INTO `chat_logs` VALUES ('34', '3', '2010-04-07 21:35:49', 'private', '1', 'why not');
+INSERT INTO `chat_logs` VALUES ('1', 'aj', '2010-04-10 21:16:28', 'normal', null, 'hey dere');
+INSERT INTO `chat_logs` VALUES ('2', 'test', '2010-04-10 21:16:32', 'normal', null, 'oh hey');
+INSERT INTO `chat_logs` VALUES ('3', 'test', '2010-04-10 21:16:57', 'normal', null, 'aaaaaaaaaaaaaaaaaaaaaa');
+INSERT INTO `chat_logs` VALUES ('4', 'test', '2010-04-10 21:16:58', 'normal', null, 'bbbbbbbbbbbbbbbbbbbb');
+INSERT INTO `chat_logs` VALUES ('5', 'test', '2010-04-10 21:16:59', 'normal', null, 'ccccccccccccccccccccccccccccc');
+INSERT INTO `chat_logs` VALUES ('6', 'test', '2010-04-10 21:17:01', 'normal', null, 'dddddddddddddddddddddddd');
+INSERT INTO `chat_logs` VALUES ('7', 'test', '2010-04-10 21:17:02', 'normal', null, 'eeeeeeeeeeeeeeeeeeeeeee');
+INSERT INTO `chat_logs` VALUES ('8', 'test', '2010-04-10 21:17:03', 'normal', null, 'fffffffffffffffffffffffffff');
+INSERT INTO `chat_logs` VALUES ('9', 'test', '2010-04-10 21:17:05', 'normal', null, 'ggggggggggggggggggggggggggg');
+INSERT INTO `chat_logs` VALUES ('10', 'test', '2010-04-10 21:17:06', 'normal', null, 'hhhhhhhhhhhhhhhhhhhhhhhhhh');
+INSERT INTO `chat_logs` VALUES ('11', 'test', '2010-04-10 21:17:08', 'normal', null, 'iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
+INSERT INTO `chat_logs` VALUES ('12', 'test', '2010-04-10 21:17:14', 'normal', null, 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj');
+INSERT INTO `chat_logs` VALUES ('13', 'test', '2010-04-10 21:17:16', 'normal', null, 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk');
+INSERT INTO `chat_logs` VALUES ('14', 'test', '2010-04-10 21:17:18', 'normal', null, 'lllllllllllllllllllllllllllllllllllllllllllll');
+INSERT INTO `chat_logs` VALUES ('15', 'test', '2010-04-10 21:17:19', 'normal', null, 'm');
+INSERT INTO `chat_logs` VALUES ('16', 'test', '2010-04-10 21:17:20', 'normal', null, 'mmmmmmmmmmmmmmmmmmmm');
+INSERT INTO `chat_logs` VALUES ('17', 'test', '2010-04-10 21:17:22', 'normal', null, 'nnnnnnnnnnnnnnnnnnnnnnnnnn');
+INSERT INTO `chat_logs` VALUES ('18', 'test', '2010-04-10 21:17:23', 'normal', null, 'ooooooooooooooooooooooooo');
+INSERT INTO `chat_logs` VALUES ('19', 'test', '2010-04-10 21:17:25', 'normal', null, 'ppppppppppppppppppppppppppp');
+INSERT INTO `chat_logs` VALUES ('20', 'test', '2010-04-10 21:17:27', 'normal', null, 'qqqqqqqqqqqqqqqqqqqqqqqqqqqqq');
+INSERT INTO `chat_logs` VALUES ('21', 'test', '2010-04-10 21:17:29', 'normal', null, 'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr');
+INSERT INTO `chat_logs` VALUES ('22', 'test', '2010-04-10 21:17:30', 'normal', null, 'ssssssssssssssssssssssss');
+INSERT INTO `chat_logs` VALUES ('23', 'test', '2010-04-10 21:17:32', 'normal', null, 'tttttttttttttttttttttttttttttttttttttt');
+INSERT INTO `chat_logs` VALUES ('24', 'test', '2010-04-10 21:17:34', 'normal', null, 'uuuuuuuuuuuuuuuuuuuuuuuuuuu');
+INSERT INTO `chat_logs` VALUES ('25', 'test', '2010-04-10 21:17:36', 'normal', null, 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
+INSERT INTO `chat_logs` VALUES ('26', 'test', '2010-04-10 21:17:38', 'normal', null, 'wwwwwwwwwwwwwwwwwwwwwwwwwwwww');
+INSERT INTO `chat_logs` VALUES ('27', 'test', '2010-04-10 21:17:40', 'normal', null, 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+INSERT INTO `chat_logs` VALUES ('28', 'test', '2010-04-10 21:17:41', 'normal', null, 'yyyyyyyyyyyyyyyyyyyyyyyyyyy');
+INSERT INTO `chat_logs` VALUES ('29', 'test', '2010-04-10 21:17:43', 'normal', null, 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz');
+INSERT INTO `chat_logs` VALUES ('30', 'test', '2010-04-10 21:17:45', 'normal', null, 'fhdsfkjhfahsdfkjhadsfkjhsdf');
+INSERT INTO `chat_logs` VALUES ('31', 'test', '2010-04-10 21:17:46', 'normal', null, 'fdshfaskjdhfkjadsfhsjf');
+INSERT INTO `chat_logs` VALUES ('32', 'aj', '2010-04-10 21:17:52', 'normal', null, 'sahfdskfadsfkjdshafshfjahsf');
+INSERT INTO `chat_logs` VALUES ('33', 'aj', '2010-04-10 21:17:53', 'normal', null, 'sdfhsdkjfhdkjfh');
+INSERT INTO `chat_logs` VALUES ('34', 'aj', '2010-04-10 21:18:00', 'private', 'test', 'ashdfkhasflhdfhas');
+INSERT INTO `chat_logs` VALUES ('35', 'aj', '2010-04-10 21:18:01', 'normal', null, 'lol');
+INSERT INTO `chat_logs` VALUES ('36', 'aj', '2010-04-10 21:18:05', 'private', 'test', 'ttesting');
+INSERT INTO `chat_logs` VALUES ('37', 'test', '2010-04-10 21:18:10', 'private', 'aj', 'ajing');
+INSERT INTO `chat_logs` VALUES ('38', 'aj', '2010-04-10 21:18:18', 'normal', null, '??');
+INSERT INTO `chat_logs` VALUES ('39', 'test', '2010-04-10 21:18:38', 'private', 'aj', 'test??');
+INSERT INTO `chat_logs` VALUES ('40', 'aj', '2010-04-10 21:18:42', 'normal', null, 'test???????');
+INSERT INTO `chat_logs` VALUES ('41', 'aj', '2010-04-10 21:18:58', 'clanchat', 'aj', '/test??');
+INSERT INTO `chat_logs` VALUES ('42', 'aj', '2010-04-10 21:19:01', 'clanchat', 'aj', '/test????');
+INSERT INTO `chat_logs` VALUES ('43', 'aj', '2010-04-10 21:20:46', 'clanchat', 'aj', 'wut?');
+INSERT INTO `chat_logs` VALUES ('44', 'aj', '2010-04-10 21:20:49', 'clanchat', 'aj', 'finally');
+INSERT INTO `chat_logs` VALUES ('45', 'aj', '2010-04-10 21:20:53', 'clanchat', 'aj', 'lol');
+INSERT INTO `chat_logs` VALUES ('46', 'test', '2010-04-10 21:21:22', 'private', 'aj', 'hey?');
+INSERT INTO `chat_logs` VALUES ('47', 'aj', '2010-04-10 21:21:49', 'private', 'test', '???????');
+INSERT INTO `chat_logs` VALUES ('48', 'test', '2010-04-10 21:21:57', 'private', 'aj', ':S');
+INSERT INTO `chat_logs` VALUES ('49', 'aj', '2010-04-11 16:32:13', 'normal', null, 'lol');
+INSERT INTO `chat_logs` VALUES ('50', 'aj', '2010-04-11 16:32:16', 'normal', null, 'updatez');
 
 -- ----------------------------
 -- Table structure for `configurations`
@@ -227,6 +243,31 @@ CREATE TABLE `configurations` (
 -- ----------------------------
 INSERT INTO `configurations` VALUES ('Login', 'LogSessions', 'Boolean', 'true', 'Whether to log login sessions.');
 INSERT INTO `configurations` VALUES ('Login', 'LogAttempts', 'Boolean', 'true', 'Whether to log login attemps.');
+
+-- ----------------------------
+-- Table structure for `connection_logs`
+-- ----------------------------
+DROP TABLE IF EXISTS `connection_logs`;
+CREATE TABLE `connection_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` datetime NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of connection_logs
+-- ----------------------------
+INSERT INTO `connection_logs` VALUES ('1', '2010-02-27 20:08:52', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('2', '2010-02-27 20:09:02', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('3', '2010-02-27 20:13:03', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('4', '2010-02-27 20:13:11', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('5', '2010-02-27 20:15:24', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('6', '2010-02-27 20:15:33', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('7', '2010-02-27 20:23:54', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('8', '2010-02-27 20:24:03', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('9', '2010-02-27 20:31:38', '127.0.0.1');
+INSERT INTO `connection_logs` VALUES ('10', '2010-02-27 20:31:46', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for `item_animations`
@@ -13594,7 +13635,7 @@ CREATE TABLE `login_attempts` (
   `ip` varchar(40) DEFAULT NULL,
   `attempt` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=330 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=342 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of login_attempts
@@ -13928,6 +13969,18 @@ INSERT INTO `login_attempts` VALUES ('326', 'aj', '2010-04-07 21:33:49', '99.244
 INSERT INTO `login_attempts` VALUES ('327', 'test', '2010-04-07 21:34:40', '99.244.155.103', 'Successful');
 INSERT INTO `login_attempts` VALUES ('328', 'aj', '2010-04-08 18:11:17', '99.244.155.103', 'Successful');
 INSERT INTO `login_attempts` VALUES ('329', 'aj', '2010-04-08 20:51:56', '99.244.155.103', 'Successful');
+INSERT INTO `login_attempts` VALUES ('330', 'aj', '2010-04-10 21:01:40', '127.0.0.1', 'BadSession');
+INSERT INTO `login_attempts` VALUES ('331', 'aj', '2010-04-10 21:01:55', '127.0.0.1', 'BadSession');
+INSERT INTO `login_attempts` VALUES ('332', 'aj', '2010-04-10 21:05:12', '127.0.0.1', 'Successful');
+INSERT INTO `login_attempts` VALUES ('333', 'aj', '2010-04-10 21:12:37', '127.0.0.1', 'Successful');
+INSERT INTO `login_attempts` VALUES ('334', 'test', '2010-04-10 21:12:49', '127.0.0.1', 'Successful');
+INSERT INTO `login_attempts` VALUES ('335', 'aj', '2010-04-10 21:15:55', '127.0.0.1', 'Successful');
+INSERT INTO `login_attempts` VALUES ('336', 'test', '2010-04-10 21:16:00', '127.0.0.1', 'Successful');
+INSERT INTO `login_attempts` VALUES ('337', 'aj', '2010-04-10 21:19:58', '127.0.0.1', 'Successful');
+INSERT INTO `login_attempts` VALUES ('338', 'test', '2010-04-10 21:20:46', '127.0.0.1', 'Successful');
+INSERT INTO `login_attempts` VALUES ('339', 'aj', '2010-04-11 16:28:28', '127.0.0.1', 'Successful');
+INSERT INTO `login_attempts` VALUES ('340', 'aj', '2010-04-11 16:35:45', '127.0.0.1', 'Successful');
+INSERT INTO `login_attempts` VALUES ('341', 'aj', '2010-04-12 13:59:29', '127.0.0.1', 'Successful');
 
 -- ----------------------------
 -- Table structure for `npc_definitions`
@@ -14029,7 +14082,7 @@ CREATE TABLE `web_acp_logs` (
   `log_time` datetime DEFAULT NULL,
   `log_message` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=116 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=135 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of web_acp_logs
@@ -14149,6 +14202,25 @@ INSERT INTO `web_acp_logs` VALUES ('112', 'test', '86.158.121.189', '2010-04-08 
 INSERT INTO `web_acp_logs` VALUES ('113', 'aj', '99.244.155.103', '2010-04-08 22:50:37', 'Added a note.');
 INSERT INTO `web_acp_logs` VALUES ('114', 'aj', '99.244.155.103', '2010-04-10 14:01:10', 'Successfully logged in.');
 INSERT INTO `web_acp_logs` VALUES ('115', 'aj', '99.244.155.103', '2010-04-10 14:09:11', 'Successfully logged in.');
+INSERT INTO `web_acp_logs` VALUES ('116', 'aj', '127.0.0.1', '2010-04-10 19:30:24', 'Successfully logged in.');
+INSERT INTO `web_acp_logs` VALUES ('117', 'aj', '127.0.0.1', '2010-04-10 19:46:50', 'Deleted a note.');
+INSERT INTO `web_acp_logs` VALUES ('118', 'aj', '127.0.0.1', '2010-04-10 19:48:01', 'Deleted a note.');
+INSERT INTO `web_acp_logs` VALUES ('119', 'aj', '127.0.0.1', '2010-04-10 19:51:11', 'Deleted a note.');
+INSERT INTO `web_acp_logs` VALUES ('120', 'aj', '127.0.0.1', '2010-04-10 20:11:28', 'Edited world (World ID: 1).');
+INSERT INTO `web_acp_logs` VALUES ('121', 'test', '127.0.0.1', '2010-04-11 14:59:40', 'Successfully logged in.');
+INSERT INTO `web_acp_logs` VALUES ('122', 'aj', '127.0.0.1', '2010-04-11 15:00:00', 'Successfully logged in.');
+INSERT INTO `web_acp_logs` VALUES ('123', 'aj', '127.0.0.1', '2010-04-11 16:04:56', 'Added a note.');
+INSERT INTO `web_acp_logs` VALUES ('124', 'aj', '127.0.0.1', '2010-04-11 16:05:08', 'Deleted a note.');
+INSERT INTO `web_acp_logs` VALUES ('125', 'aj', '127.0.0.1', '2010-04-11 16:05:17', 'Added a note.');
+INSERT INTO `web_acp_logs` VALUES ('126', 'aj', '127.0.0.1', '2010-04-11 16:05:28', 'Added a note.');
+INSERT INTO `web_acp_logs` VALUES ('127', 'aj', '127.0.0.1', '2010-04-11 16:05:42', 'Added a note.');
+INSERT INTO `web_acp_logs` VALUES ('128', 'aj', '127.0.0.1', '2010-04-11 16:05:51', 'Added a note.');
+INSERT INTO `web_acp_logs` VALUES ('129', 'aj', '127.0.0.1', '2010-04-11 16:08:49', 'Deleted a note.');
+INSERT INTO `web_acp_logs` VALUES ('130', 'aj', '127.0.0.1', '2010-04-11 16:09:17', 'Deleted a note.');
+INSERT INTO `web_acp_logs` VALUES ('131', 'aj', '127.0.0.1', '2010-04-11 16:09:37', 'Deleted a note.');
+INSERT INTO `web_acp_logs` VALUES ('132', 'aj', '127.0.0.1', '2010-04-11 16:21:54', 'Deleted a note.');
+INSERT INTO `web_acp_logs` VALUES ('133', 'aj', '127.0.0.1', '2010-04-12 13:56:28', 'Successfully logged in.');
+INSERT INTO `web_acp_logs` VALUES ('134', 'aj', '127.0.0.1', '2010-04-12 14:21:00', 'Successfully logged in.');
 
 -- ----------------------------
 -- Table structure for `web_acp_notes`
@@ -14160,7 +14232,7 @@ CREATE TABLE `web_acp_notes` (
   `note_date` datetime DEFAULT NULL,
   `note_message` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of web_acp_notes
@@ -14210,8 +14282,9 @@ INSERT INTO `web_acp_notes` VALUES ('62', 'aj', '2010-04-08 13:49:32', '<b>lol</
 INSERT INTO `web_acp_notes` VALUES ('63', 'aj', '2010-04-08 13:51:50', 'heynthere');
 INSERT INTO `web_acp_notes` VALUES ('64', 'aj', '2010-04-08 13:51:57', 'heynthere');
 INSERT INTO `web_acp_notes` VALUES ('65', 'aj', '2010-04-08 13:54:31', 'kik');
-INSERT INTO `web_acp_notes` VALUES ('66', 'aj', '2010-04-08 14:07:16', '<b>...</b>');
 INSERT INTO `web_acp_notes` VALUES ('67', 'aj', '2010-04-08 22:50:37', 'hay there');
+INSERT INTO `web_acp_notes` VALUES ('69', 'aj', '2010-04-11 16:05:17', 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff');
+INSERT INTO `web_acp_notes` VALUES ('70', 'aj', '2010-04-11 16:05:28', 'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq');
 
 -- ----------------------------
 -- Table structure for `worlds`
@@ -14231,4 +14304,4 @@ CREATE TABLE `worlds` (
 -- ----------------------------
 -- Records of worlds
 -- ----------------------------
-INSERT INTO `worlds` VALUES ('1', 'RageScape', 'Welcome to RageScape.', '3222,3219,0', 'Beware of the pedobear lurking RuneScape!', '10', '2010-04-08 22:46:54');
+INSERT INTO `worlds` VALUES ('1', 'RageScape', 'Welcome to RageScape.', '3222,3219,0', 'RageScape 3.0 Beta!', '10', '2010-04-12 14:21:26');

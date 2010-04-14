@@ -261,7 +261,7 @@ namespace RuneScape.Model.Characters
                     c.Session.SendData(new RecievePMPacketComposer(this.character.LongName,
                         (byte)this.character.ClientRights, message, this.character.Contacts.NextUniqueId).Serialize());
                     this.character.Session.SendData(new SendPMPacketComposer(name, message).Serialize());
-                    ChatUtilities.LogChat(this.character.MasterId, ChatType.Private, c.MasterId, message);
+                    ChatUtilities.LogChat(this.character.Name, ChatType.Private, c.Name, message);
                     return;
                 }
             }

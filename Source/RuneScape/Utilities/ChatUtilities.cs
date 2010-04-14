@@ -143,20 +143,20 @@ namespace RuneScape.Utilities
         /// <summary>
         /// Logs the given chat information into the database.
         /// </summary>
-        /// <param name="userId">The id of the user chatting.</param>
+        /// <param name="name">The name of the character chatting.</param>
         /// <param name="type">The type of chat.</param>
-        /// <param name="toId">The user who recieved the chat.</param>
+        /// <param name="toName">The character who recieved the chat.</param>
         /// <param name="message">The message written.</param>
-        public static void LogChat(uint userId, ChatType type, uint toId, string message)
+        public static void LogChat(string name, ChatType type, string toName, string message)
         {
             using (SqlDatabaseClient client = GameServer.Database.GetClient())
             {
-                client.AddParameter("userid", userId);
+                client.AddParameter("name", name);
                 client.AddParameter("date", DateTime.Now);
                 client.AddParameter("type", type.ToString().ToLower());
-                client.AddParameter("toid", toId);
+                client.AddParameter("toName", toName);
                 client.AddParameter("message", @message);
-                client.ExecuteUpdate("INSERT INTO chat_logs (userid,date,type,toid,message) VALUES(@userid,@date,@type,@toid,@message);");
+                client.ExecuteUpdate("INSERT INTO chat_logs (name,date,type,toname,message) VALUES(@name,@date,@type,@toName,@message);");
             }
         }
 

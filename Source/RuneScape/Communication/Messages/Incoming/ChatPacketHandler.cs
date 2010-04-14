@@ -55,7 +55,7 @@ namespace RuneScape.Communication.Messages.Incoming
                 else
                 {
                     character.Speak(ChatMessage.Create(effects, length, text));
-                    ChatUtilities.LogChat(character.MasterId, ChatType.Normal, 0, text);
+                    ChatUtilities.LogChat(character.Name, ChatType.Normal, null, text);
                 }
             }
         }

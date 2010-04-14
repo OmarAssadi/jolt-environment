@@ -100,45 +100,45 @@ namespace RuneScape.Database.Account
                         result.Active = (bool)data[6];
 
                         // Appearance.
-                        result.Character.Appearance.Gender = (Gender)data[13];
-                        result.Character.Appearance.Head = (short)data[14];
-                        result.Character.Appearance.Torso = (short)data[15];
-                        result.Character.Appearance.Arms = (short)data[16];
-                        result.Character.Appearance.Wrist = (short)data[17];
-                        result.Character.Appearance.Legs = (short)data[18];
-                        result.Character.Appearance.Feet = (short)data[19];
-                        result.Character.Appearance.Beard = (short)data[20];
-                        result.Character.Appearance.HairColor = (byte)data[21];
-                        result.Character.Appearance.TorsoColor = (byte)data[22];
-                        result.Character.Appearance.LegColor = (byte)data[23];
-                        result.Character.Appearance.FeetColor = (byte)data[24];
-                        result.Character.Appearance.SkinColor = (byte)data[25];
+                        result.Character.Appearance.Gender = (Gender)data[14];
+                        result.Character.Appearance.Head = (short)data[15];
+                        result.Character.Appearance.Torso = (short)data[16];
+                        result.Character.Appearance.Arms = (short)data[17];
+                        result.Character.Appearance.Wrist = (short)data[18];
+                        result.Character.Appearance.Legs = (short)data[19];
+                        result.Character.Appearance.Feet = (short)data[20];
+                        result.Character.Appearance.Beard = (short)data[21];
+                        result.Character.Appearance.HairColor = (byte)data[22];
+                        result.Character.Appearance.TorsoColor = (byte)data[23];
+                        result.Character.Appearance.LegColor = (byte)data[24];
+                        result.Character.Appearance.FeetColor = (byte)data[25];
+                        result.Character.Appearance.SkinColor = (byte)data[26];
                         
                         // Location.
-                        result.Character.Location = Location.Create((short)data[26], (short)data[27], (byte)data[28]);
+                        result.Character.Location = Location.Create((short)data[27], (short)data[28], (byte)data[29]);
 
                         // Energy.
-                        result.Character.WalkingQueue.RunEnergy = (byte)data[29];
+                        result.Character.WalkingQueue.RunEnergy = (byte)data[30];
 
                         // Containers.
-                        if (data[30] is string)
-                            result.Character.Inventory.Deserialize((string)data[30]);
                         if (data[31] is string)
-                            result.Character.Equipment.Deserialize((string)data[31]);
+                            result.Character.Inventory.Deserialize((string)data[31]);
                         if (data[32] is string)
-                            result.Character.Bank.Deserialize((string)data[32]);
+                            result.Character.Equipment.Deserialize((string)data[32]);
+                        if (data[33] is string)
+                            result.Character.Bank.Deserialize((string)data[33]);
 
                         // Friends and ignores
-                        if (data[33] is string)
-                            result.Character.Contacts.DeserializeFriends((string)data[33]);
                         if (data[34] is string)
-                            result.Character.Contacts.DeserializeIgnores((string)data[34]);
+                            result.Character.Contacts.DeserializeFriends((string)data[34]);
+                        if (data[35] is string)
+                            result.Character.Contacts.DeserializeIgnores((string)data[35]);
 
                         // Preferences.
-                        result.Character.Preferences.SingleMouse = (bool)data[36];
-                        result.Character.Preferences.DisableChatEffects = (bool)data[37];
-                        result.Character.Preferences.SplitChat = (bool)data[38];
-                        result.Character.Preferences.AcceptAid = (bool)data[39];
+                        result.Character.Preferences.SingleMouse = (bool)data[37];
+                        result.Character.Preferences.DisableChatEffects = (bool)data[38];
+                        result.Character.Preferences.SplitChat = (bool)data[39];
+                        result.Character.Preferences.AcceptAid = (bool)data[40];
                     }
                 }
                 else // User doesn't exist or password is wrong.
