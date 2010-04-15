@@ -133,13 +133,12 @@ namespace RuneScape.Model.Characters
         }
 
         /// <summary>
-        /// Gets or sets the character's appearance.
+        /// Gets the all apearance properties as an array.
         /// </summary>
-        public short[] Look
+        /// <returns>Returns an array of Int16 values representing appearance properties.</returns>
+        public short[] GetLook()
         {
-            get
-            {
-                return new short[]
+            return new short[]
                 {
                     (byte)this.Gender,
                     this.HairColor,
@@ -155,25 +154,29 @@ namespace RuneScape.Model.Characters
 			        this.Feet,
 			        this.Beard
                 };
-            }
-            set
-            {
-                if (value.Length != 13)
-                    throw new ArgumentOutOfRangeException("Length of array must be 13.");
-                Gender = (Gender)value[0];
-                this.Head = value[6];
-                this.Torso = value[7];
-                this.Arms = value[8];
-                this.Wrist = value[9];
-                this.Legs = value[10];
-                this.Feet = value[11];
-                this.Beard = value[12];
-                this.HairColor = (byte)value[1];
-                this.TorsoColor = (byte)value[2];
-                this.LegColor = (byte)value[3];
-                this.FeetColor = (byte)value[4];
-                this.SkinColor = (byte)value[5];
-            }
+        }
+
+        /// <summary>
+        /// Sets the character's appearance by using properties from the specified array.
+        /// </summary>
+        /// <param name="value">An array of Int16 values representing appearance properties.</param>
+        public void SetLook(short[] value)
+        {
+            if (value.Length != 13)
+                throw new ArgumentOutOfRangeException("Length of array must be 13.");
+            Gender = (Gender)value[0];
+            this.Head = value[6];
+            this.Torso = value[7];
+            this.Arms = value[8];
+            this.Wrist = value[9];
+            this.Legs = value[10];
+            this.Feet = value[11];
+            this.Beard = value[12];
+            this.HairColor = (byte)value[1];
+            this.TorsoColor = (byte)value[2];
+            this.LegColor = (byte)value[3];
+            this.FeetColor = (byte)value[4];
+            this.SkinColor = (byte)value[5];
         }
 
         /// <summary>

@@ -27,6 +27,7 @@ using JoltEnvironment;
 using JoltEnvironment.Debug;
 using JoltEnvironment.Utilities;
 using System.Diagnostics;
+using System.Security.Permissions;
 
 namespace RuneScape
 {

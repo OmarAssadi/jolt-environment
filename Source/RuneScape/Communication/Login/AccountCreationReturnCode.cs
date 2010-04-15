@@ -30,6 +30,10 @@ namespace RuneScape.Communication.Login
     public enum AccountCreationReturnCode
     {
         /// <summary>
+        /// No return code can describe problem.
+        /// </summary>
+        None = 0,
+        /// <summary>
         /// The input is valid.
         /// </summary>
         Good = 2,

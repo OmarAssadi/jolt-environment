@@ -32,6 +32,7 @@ namespace RuneScape.Workers
     /// <summary>
     /// A worker processing "account" tasks.
     /// </summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
     public class AccountWorker : Worker
     {
         #region Fields

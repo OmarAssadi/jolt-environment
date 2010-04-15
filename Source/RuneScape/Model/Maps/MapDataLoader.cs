@@ -37,23 +37,38 @@ namespace RuneScape.Model.Maps
         {
             try
             {
-                FileStream fs = File.OpenRead(@"..\data\mapdata\regions.dat");
-                using (BinaryReader reader = new BinaryReader(fs))
+                FileStream fs = null;
+
+                try
                 {
-                    while (reader.PeekChar() >= 0)
+                    fs = File.OpenRead(@"..\data\mapdata\regions.dat");
+                    using (BinaryReader reader = new BinaryReader(fs))
                     {
-                        int mapId = reader.ReadInt32(); // The map id.
-                        int[] mapData = new int[4]; // The map data.
+                        fs = null;
+                        while (reader.PeekChar() >= 0)
+                        {
+                            int mapId = reader.ReadInt32(); // The map id.
+                            int[] mapData = new int[4]; // The map data.
 
-                        for (int i = 0; i < 4; i++)
-                            mapData[i] = reader.ReadInt32();
+                            for (int i = 0; i < 4; i++)
+                                mapData[i] = reader.ReadInt32();
 
-                        regionsCollection.Add(mapId, mapData); // Add the data to collection.
+                            regionsCollection.Add(mapId, mapData); // Add the data to collection.
+                        }
                     }
-                    reader.Dispose();
                 }
-                fs.Dispose();
+                finally
+                {
+                    if (fs != null)
+                    {
+                        fs.Dispose();
+                    }
+                }
                 //Program.Logger.WriteInfo("Loaded " + regionsCollection.Count + " map regions.");
+            }
+            catch (ObjectDisposedException ode)
+            {
+                Program.Logger.WriteException(ode);
             }
             catch (Exception ex)
             {

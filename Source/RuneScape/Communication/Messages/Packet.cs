@@ -70,20 +70,6 @@ namespace RuneScape.Communication.Messages
         /// Gets the remaining amount of data within the buffer.
         /// </summary>
         public int RemainingAmount { get { return this.Payload.Length - this.Position; } }
-        /// <summary>
-        /// Gets the remaining data within the buffer and returns it as a new byte array.
-        /// </summary>
-        public byte[] RemainingData
-        {
-            get
-            {
-                byte[] remaining = new byte[this.RemainingAmount];
-                for (int i = 0; i < remaining.Length; i++)
-                    remaining[i] = this.Payload[i + this.Position];
-                this.Position += remaining.Length;
-                return remaining;
-            }
-        }
         #endregion Properties
 
         #region Constructors
@@ -116,6 +102,19 @@ namespace RuneScape.Communication.Messages
 
         #region Methods
         /// <summary>
+        /// Gets the remaining data as a seperate array.
+        /// </summary>
+        /// <param name="movePosition">Whether to move the position of the payload index to the end.</param>
+        /// <returns>Returns an array of Int8 integers.</returns>
+        public byte[] GetRemainingData(bool movePosition = true)
+        {
+            byte[] remaining = new byte[this.RemainingAmount];
+            Buffer.BlockCopy(this.Payload, this.Position, remaining, 0, this.RemainingAmount);
+            this.Position += remaining.Length;
+            return remaining;
+        }
+
+        /// <summary>
         /// Prints out the packet opcode, length and the payload itself.
         /// </summary>
         /// <returns>Returns a string.</returns>
@@ -128,7 +127,7 @@ namespace RuneScape.Communication.Messages
                 {
                     sb.Append(",");
                 }
-                sb.Append("0x").Append(ByteToHex(this.Payload[i], true));
+                sb.Append(ByteToHex(this.Payload[i], true));
             }
             sb.Append("]");
             sb.Insert(0, "[opcode=" + this.Opcode + ",length=" + this.Length + ",data=");

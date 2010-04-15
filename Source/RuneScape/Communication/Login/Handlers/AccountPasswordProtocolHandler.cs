@@ -58,7 +58,7 @@ namespace RuneScape.Communication.Login.Handlers
 
             if (request.Buffer.RemainingAmount >= packetSize)
             {
-                Packet p = new Packet(request.Buffer.RemainingData);
+                Packet p = new Packet(request.Buffer.GetRemainingData());
 
                 /* 
                  * I don't know why, but the packet structure changes 

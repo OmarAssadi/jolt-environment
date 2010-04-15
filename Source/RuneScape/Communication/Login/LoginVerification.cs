@@ -53,7 +53,7 @@ namespace RuneScape.Communication.Login
 
             if (request.Buffer.RemainingAmount >= packetSize)
             {
-                Packet p = new Packet(request.Buffer.RemainingData);
+                Packet p = new Packet(request.Buffer.GetRemainingData());
                 int encryptedPacketSize = packetSize - packetSize - (36 + 1 + 1 + 2); // Shouldn't be under 0.
 
                 int clientVersion = p.ReadInt();

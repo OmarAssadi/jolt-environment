@@ -100,6 +100,7 @@ namespace RuneScape.Communication
             {
                 GameEngine.World.CharacterManager.Unregister((short)this.Character.Index);
                 GameServer.TcpConnection.DropConnection(this.Connection);
+                Dispose();
             }
         }
 
@@ -183,7 +184,27 @@ namespace RuneScape.Communication
         /// </summary>
         public void Dispose()
         {
-            this.handleTask.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes the object.
+        /// </summary>
+        /// <param name="disposing">Whether to dispose managed code.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (this.handleTask != null)
+                {
+                    this.handleTask.Dispose();
+                    this.handleTask = null;
+
+                    this.Character = null;
+                    this.Connection = null;
+                }
+            }
         }
         #endregion IDispose Memebrs
         #endregion Methods

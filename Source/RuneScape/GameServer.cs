@@ -28,6 +28,7 @@ using JoltEnvironment.Debug;
 using JoltEnvironment.Storage.Sql;
 using RuneScape.Network;
 using RuneScape.Utilities;
+using System.Security.Permissions;
 
 namespace RuneScape
 {
@@ -160,7 +161,6 @@ namespace RuneScape
 
                 // Initilize the game engine.
                 GameEngine.Initialize();
-                GC.Collect();
 
                 Program.Logger.WriteInfo("Initialized a new runescape gaming environment.");
             }
@@ -178,6 +178,7 @@ namespace RuneScape
         /// <summary>
         /// Terminates the environment.
         /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands")]
         public static void Terminate(bool restart)
         {
             Program.Logger.WriteInfo("Shutting down game server...");

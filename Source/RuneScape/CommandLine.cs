@@ -17,9 +17,7 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Security.Permissions;
 
 using RuneScape.Communication.Messages;
 
@@ -37,6 +35,7 @@ namespace RuneScape
         /// </summary>
         /// <param name="command">Command to handle.</param>
         /// <param name="arguments">Arguments to handle.</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands")]
         public static void Handle(string command, string[] arguments)
         {
             try
@@ -54,9 +53,6 @@ namespace RuneScape
                         Console.WriteLine("Processors/Cores: " + Environment.ProcessorCount);
                         Console.WriteLine("Logged in username: " + Environment.MachineName);
                         Console.WriteLine("You are running the " + (Environment.Is64BitProcess ? "x64" : "x86") + "-bit jolt version.");
-                        break;
-                    case "gc":
-                        GC.Collect();
                         break;
                     case "shutdown":
                         GameServer.IsRunning = false;

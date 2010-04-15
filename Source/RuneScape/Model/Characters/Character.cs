@@ -85,11 +85,11 @@ namespace RuneScape.Model.Characters
         /// <summary>
         /// Gets the local characters surrounding this character.
         /// </summary>
-        public List<Character> LocalCharacters { get; set; }
+        public List<Character> LocalCharacters { get; private set; }
         /// <summary>
         /// Gets the local npcs surrouding this character.
         /// </summary>
-        public List<Npc> LocalNpcs { get; set; }
+        public List<Npc> LocalNpcs { get; private set; }
 
         /// <summary>
         /// Gets character preferences.

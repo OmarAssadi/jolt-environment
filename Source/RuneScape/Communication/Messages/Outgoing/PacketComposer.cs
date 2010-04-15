@@ -208,35 +208,38 @@ namespace RuneScape.Communication.Messages.Outgoing
                 else
                 {
                     byte[] data = this.SerializeBuffer(); // Trim the current buffer.
-                    MemoryStream buffer = new MemoryStream(data.Length + 3);
-                    buffer.WriteByte((byte)this.Opcode);
-                    if (this.Type != PacketType.Fixed)
+                    //MemoryStream buffer = new MemoryStream(data.Length + 3);
+                    using (MemoryStream buffer = new MemoryStream(data.Length + 3))
                     {
-                        if (this.Type == PacketType.Byte) // A 8-bit packet type.
+                        buffer.WriteByte((byte)this.Opcode);
+                        if (this.Type != PacketType.Fixed)
                         {
-                            if (data.Length > 255) // Stack overflow.
-                                throw new ArgumentOutOfRangeException("Could not send a packet with " + data.Length + " bytes within 8 bits.");
-                            buffer.WriteByte((byte)data.Length);
+                            if (this.Type == PacketType.Byte) // A 8-bit packet type.
+                            {
+                                if (data.Length > 255) // Stack overflow.
+                                    throw new ArgumentOutOfRangeException("Could not send a packet with " + data.Length + " bytes within 8 bits.");
+                                buffer.WriteByte((byte)data.Length);
+                            }
+                            else if (this.Type == PacketType.Short) // A 16-bit packet type.
+                            {
+                                if (data.Length > 65535) // Stack overflow.
+                                    throw new ArgumentOutOfRangeException("Could not send a packet with " + data.Length + " bytes within 16 bits.");
+                                buffer.WriteByte((byte)(data.Length >> 8));
+                                buffer.WriteByte((byte)data.Length);
+                            }
                         }
-                        else if (this.Type == PacketType.Short) // A 16-bit packet type.
-                        {
-                            if (data.Length > 65535) // Stack overflow.
-                                throw new ArgumentOutOfRangeException("Could not send a packet with " + data.Length + " bytes within 16 bits.");
-                            buffer.WriteByte((byte)(data.Length >> 8));
-                            buffer.WriteByte((byte)data.Length);
-                        }
+                        buffer.Write(data, 0, data.Length);
+                        //byte[] bData = buffer.ToArray();
+                        //buffer.Dispose();
+                        return buffer.ToArray();
                     }
-                    buffer.Write(data, 0, data.Length);
-                    byte[] bData = buffer.ToArray();
-                    buffer.Dispose();
-                    return bData;
                 }
             }
             catch (Exception ex)
             {
                 Program.Logger.WriteException(ex);
             }
-            return null;
+            return new byte[] { 0 };
         }
 
         /// <summary>

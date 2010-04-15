@@ -88,12 +88,12 @@ namespace RuneScape.Utilities
         /// A ping request.
         /// </summary>
         /// <param name="arguments">Arguments passed through for the command.</param>
-        /// <returns>"pong" is successful; "0" if not.</returns>
+        /// <returns>Returns "1" if successful; "0" if not.</returns>
         private static string Ping(string[] arguments)
         {
             if (GameServer.IsRunning)
             {
-                return "pong";
+                return "1";
             }
             else
             {
@@ -111,7 +111,7 @@ namespace RuneScape.Utilities
             StringBuilder sb = new StringBuilder();
             sb.Append("Jolt Environment [").Append(Program.Version).Append(" x" + (Environment.Is64BitProcess ? "64" : "32") + "-bit]<br>");
             sb.Append("Server Uptime: ").Append(DateTime.Now - Program.StartupTime).Append("<br>");
-            sb.Append("Memory Usage: ").Append(GC.GetTotalMemory(false) / 1024).Append("MB<br>");
+            sb.Append("Memory Usage: ").Append(GC.GetTotalMemory(false) / 1024).Append("KB<br>");
             sb.Append("Recieved Connections: ").Append(GameServer.TcpConnection.Listener.Factory.Count).Append("<br>");
             sb.Append("Current Connections: ").Append(GameServer.TcpConnection.CurrentConnections.Count).Append("<br>");
             return sb.ToString();

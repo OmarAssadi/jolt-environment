@@ -32,6 +32,7 @@ using RuneScape.Database.Config;
 using RuneScape.Network;
 using RuneScape.Utilities;
 using RuneScape.Utilities.Indexing;
+using System.Text;
 
 namespace RuneScape.Model.Characters
 {
@@ -305,7 +306,7 @@ namespace RuneScape.Model.Characters
         /// <param name="details">The character details to look at when loading.</param>
         public void LoadAccount(Details details, LoginConnectionType loginType)
         {
-            string query = string.Empty;
+            StringBuilder sbQuery = new StringBuilder();
             AccountLoadResult result = this.accountLoader.Load(details, loginType); // Try to load the account.
             GenericPacketComposer composer = new GenericPacketComposer(); // The packet going to be sent.
 
@@ -334,19 +335,19 @@ namespace RuneScape.Model.Characters
 
                 if (this.logSessions)
                 {
-                    query += "UPDATE characters SET last_ip=@ip, last_signin=NOW() WHERE id = @id;";
+                    sbQuery.Append("UPDATE characters SET last_ip=@ip, last_signin=NOW() WHERE id = @id;");
                 }
             }
 
             if (this.logAttempts)
             {
-                query += "INSERT INTO login_attempts (username,date,ip,attempt) VALUES (@name, NOW(), @ip, @attempt);";
+                sbQuery.Append("INSERT INTO login_attempts (username,date,ip,attempt) VALUES (@name, NOW(), @ip, @attempt);");
             }
             if (!result.Active)
             {
-                query += "UPDATE characters SET active = '1' WHERE id = @id;";
+                sbQuery.Append("UPDATE characters SET active = '1' WHERE id = @id;");
             }
-            if (query != string.Empty)
+            if (sbQuery.Length != 0)
             {
                 // Log the user's login attempt. This is useful for tracking hacking, ddos, etc.
                 using (SqlDatabaseClient client = GameServer.Database.GetClient())
@@ -355,7 +356,7 @@ namespace RuneScape.Model.Characters
                     client.AddParameter("name", details.Username);
                     client.AddParameter("ip", details.Session.Connection.IPAddress);
                     client.AddParameter("attempt", result.ReturnCode.ToString());
-                    client.ExecuteUpdate(query);
+                    client.ExecuteUpdate(sbQuery.ToString());
                 }
             }
 
