@@ -45,7 +45,7 @@ namespace RuneScape.Communication.Messages.Incoming
                 case 43:
                     int count = packet.ReadInt();
 
-                    #region Deposit
+                    #region Bank/Deposit
                     /**
                      * Checks if the character requested a deposit.
                      */
@@ -56,9 +56,9 @@ namespace RuneScape.Communication.Messages.Incoming
                         character.Preferences.BankX = count;
                         character.Session.SendData(new ConfigPacketComposer(1249, count).Serialize());
                     }
-                    #endregion Deposit
+                    #endregion Bank/Deposit
 
-                    #region Withdraw
+                    #region Bank/Withdraw
                     /**
                      * Checks if the character requested a deposit.
                      */
@@ -69,7 +69,19 @@ namespace RuneScape.Communication.Messages.Incoming
                         character.Preferences.BankX = count;
                         character.Session.SendData(new ConfigPacketComposer(1249, count).Serialize());
                     }
-                    #endregion Deposit
+                    #endregion Bank/Deposit
+
+                    #region Trade/Offer
+                    /*
+                     * Checks if the character inputed a trade offer value (Offer X).
+                     */
+                    if (character.Preferences["trade_offer"] != null)
+                    {
+                        int slot = (int)character.Preferences["trade_offer"];
+                        character.Preferences.Remove("trade_offer");
+                        character.Request.Trade.OfferItem(character, slot, count);
+                    }
+                    #endregion Trade/Offer
                     break;
             }
         }

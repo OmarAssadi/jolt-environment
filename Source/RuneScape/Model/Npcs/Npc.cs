@@ -33,6 +33,13 @@ namespace RuneScape.Model.Npcs
     /// </summary>
     public class Npc : Creature
     {
+        #region Fields
+        /// <summary>
+        /// Messages that the npc is able to speak.
+        /// </summary>
+        private string[] speakMessages;
+        #endregion Fields
+
         #region Properties
         /// <summary>
         /// Gets the npc's cache index.
@@ -58,7 +65,7 @@ namespace RuneScape.Model.Npcs
         /// <summary>
         /// Gets the npc's speakable messages.
         /// </summary>
-        public string[] SpeakMessages { get; private set; }
+        public string[] SpeakMessages { get { return this.speakMessages; } }
 
         /// <summary>
         /// Gets the npc's current hitpoints.
@@ -77,7 +84,9 @@ namespace RuneScape.Model.Npcs
         /// Gets the npc's update flags.
         /// </summary>
         public UpdateFlags UpdateFlags { get; private set; }
-
+        /// <summary>
+        /// Gets the npc's walking queue.
+        /// </summary>
         public WalkingQueue WalkingQueue { get; private set; }
 
         /// <summary>
@@ -109,7 +118,7 @@ namespace RuneScape.Model.Npcs
             this.Definition = definition;
             this.Name = this.Definition.Name;
             this.HitPoints = this.Definition.HitPoints;
-            this.SpeakMessages = messages;
+            this.speakMessages = messages;
 
             this.UpdateFlags = new UpdateFlags();
             this.WalkingQueue = new WalkingQueue(this);

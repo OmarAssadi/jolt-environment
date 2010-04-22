@@ -48,7 +48,7 @@ namespace RuneScape.Content.Interfaces
         /// <param name="packetId">The packet id of the button.</param>
         /// <param name="buttonId">The button to handle.</param>
         /// <param name="buttonId2">The secondary button to handle.</param>
-        public void HandleButton(Model.Characters.Character character, int packetId, int buttonId, int buttonId2)
+        public void HandleButton(Character character, int packetId, int buttonId, int buttonId2)
         {
             switch (buttonId)
             {
@@ -66,7 +66,7 @@ namespace RuneScape.Content.Interfaces
                             break;
                         case 173:
                             character.Preferences.Add("withdraw", (byte)buttonId2);
-                            character.Session.SendData(new RunScriptPacketComposer(108, "s", new object[] { "Please enter the amount to withdraw!" }).Serialize());
+                            character.Session.SendData(new RunScriptPacketComposer(108, "s", new object[] { "Please enter the amount to withdraw:" }).Serialize());
                             break;
                         case 232:
                             character.Bank.Withdraw((byte)buttonId2,

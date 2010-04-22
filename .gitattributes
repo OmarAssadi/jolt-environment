@@ -919,6 +919,8 @@ Source/RuneScape/Content/Interfaces/OptionsTab.cs -text
 Source/RuneScape/Content/Interfaces/RuneOrbs.cs -text
 Source/RuneScape/Content/Interfaces/SideBar.cs -text
 Source/RuneScape/Content/Interfaces/Tab.cs -text
+Source/RuneScape/Content/Interfaces/TradeOfferInventory.cs -text
+Source/RuneScape/Content/Interfaces/TradeOfferScreen.cs -text
 Source/RuneScape/Content/Interfaces/WelcomeScreen.cs -text
 Source/RuneScape/Content/Interfaces/WorldMap.cs -text
 Source/RuneScape/Content/Request.cs -text
@@ -1019,6 +1021,7 @@ Source/RuneScape/Utilities/Indexing/ClientSlot.cs -text
 Source/RuneScape/Utilities/Indexing/NpcSlotManager.cs -text
 Source/RuneScape/Utilities/Indexing/SlotManager.cs -text
 Source/RuneScape/Utilities/RemoteCommands.cs -text
+Source/RuneScape/Utilities/SqlLogUtilities.cs -text
 Source/RuneScape/Workers/AccountWorker.cs -text
 Source/RuneScape/Workers/AutoSaveWorker.cs -text
 Source/RuneScape/Workers/ItemsWorker.cs -text

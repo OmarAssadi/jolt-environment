@@ -68,8 +68,8 @@ namespace RuneScape.Content.Interfaces
             else /*if (character.ServerRights >= ServerRights.SystemAdministrator)*/
             {
                 Program.Logger.WriteDebug("Unhandled interface " + interfaceId 
-                    + " [userid=" + character.MasterId + ",buttonId1=" 
-                    + buttonId + ",buttonId2=" + buttonId2 + "].");
+                    + " [uid=" + character.MasterId + ",opcode=" + opcode 
+                    + ",button1=" + buttonId + ",button2=" + buttonId2 + "].");
             }
         }
 
@@ -80,6 +80,8 @@ namespace RuneScape.Content.Interfaces
         {
             AddHandler(182, new LogoutTab()); // The logout tab located on the sidebar.
             AddHandler(261, new OptionsTab()); // The options tab located on the sidebar.
+            AddHandler(335, new TradeOfferScreen()); // The trade offering screen.
+            AddHandler(336, new TradeOfferInventory()); // The trade offering inventory.
             AddHandler(378, new WelcomeScreen()); // The welcome screen displayed on login.
             AddHandler(387, new EquipmentTab()); // The equipment tab lcoated on the sidebar.
             AddHandler(464, new EmoteTab()); // The emotes tab located on the sidebar.

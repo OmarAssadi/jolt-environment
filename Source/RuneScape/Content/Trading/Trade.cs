@@ -231,6 +231,9 @@ namespace RuneScape.Content.Trading
             this.Character1.Request.TradeReq = null;
             this.Character2.Request.Trade = null;
             this.Character2.Request.TradeReq = null;
+
+            this.Character1.Session.SendData(new MessagePacketComposer("The trade was declined.").Serialize());
+            this.Character2.Session.SendData(new MessagePacketComposer("The trade was declined.").Serialize());
         }
 
         /// <summary>
@@ -417,6 +420,56 @@ namespace RuneScape.Content.Trading
                     }
                 }
                 RefreshInventories();
+            }
+        }
+
+        /// <summary>
+        /// Examines the character's specified item.
+        /// </summary>
+        /// <param name="character">The character examining</param>
+        /// <param name="slot">The slot at which the item to examine is located.</param>
+        public void ExamineMy(Character character, int slot)
+        {
+            if (character == this.Character1)
+            {
+                Item item = this.Container1[slot];
+                if (item != null)
+                {
+                    this.Character1.Session.SendData(new MessagePacketComposer(item.Definition.Examine).Serialize());
+                }
+            }
+            else
+            {
+                Item item = this.Container2[slot];
+                if (item != null)
+                {
+                    this.Character2.Session.SendData(new MessagePacketComposer(item.Definition.Examine).Serialize());
+                }
+            }
+        }
+
+        /// <summary>
+        /// Examines the other character's specified item.
+        /// </summary>
+        /// <param name="character">The character examining</param>
+        /// <param name="slot">The slot at which the item to examine is located.</param>
+        public void ExamineOther(Character character, int slot)
+        {
+            if (character == this.Character1)
+            {
+                Item item = this.Container2[slot];
+                if (item != null)
+                {
+                    this.Character1.Session.SendData(new MessagePacketComposer(item.Definition.Examine).Serialize());
+                }
+            }
+            else
+            {
+                Item item = this.Container1[slot];
+                if (item != null)
+                {
+                    this.Character2.Session.SendData(new MessagePacketComposer(item.Definition.Examine).Serialize());
+                }
             }
         }
         #endregion Methods

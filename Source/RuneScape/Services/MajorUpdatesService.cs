@@ -83,6 +83,7 @@ namespace RuneScape.Services
                 Parallel.ForEach(characters, EntityManipulation.RestoreRunEnergy);
             }
 
+            // Process events.
             GameEngine.Events.Process();
         }
         #endregion Methods

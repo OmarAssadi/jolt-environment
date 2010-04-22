@@ -65,7 +65,7 @@ namespace RuneScape.Content.Interfaces
                             break;
                         case 173:
                             character.Preferences.Add("deposit", (byte)buttonId2);
-                            character.Session.SendData(new RunScriptPacketComposer(108, "s", new object[] { "Please enter the amount to deposit!" }).Serialize());
+                            character.Session.SendData(new RunScriptPacketComposer(108, "s", new object[] { "Please enter the amount to deposit:" }).Serialize());
                             break;
                         case 232:
                             character.Bank.Deposit((byte)buttonId2,

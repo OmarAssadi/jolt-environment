@@ -121,6 +121,8 @@
     <Compile Include="Content\Interfaces\EmoteTab.cs" />
     <Compile Include="Content\Interfaces\EquipmentTab.cs" />
     <Compile Include="Content\Interfaces\OptionsTab.cs" />
+    <Compile Include="Content\Interfaces\TradeOfferInventory.cs" />
+    <Compile Include="Content\Interfaces\TradeOfferScreen.cs" />
     <Compile Include="Content\Request.cs" />
     <Compile Include="Content\Trading\AcceptTradeEvent.cs" />
     <Compile Include="Content\Trading\Trade.cs" />
@@ -285,6 +287,7 @@
     <Compile Include="Utilities\DatabaseVersionCheck.cs" />
     <Compile Include="Utilities\DirectionUtilities.cs" />
     <Compile Include="Utilities\Filtering\BadWords.cs" />
+    <Compile Include="Utilities\SqlLogUtilities.cs" />
     <Compile Include="Utilities\RemoteCommands.cs" />
     <Compile Include="Workers\AccountWorker.cs" />
     <Compile Include="Workers\AutoSaveWorker.cs" />

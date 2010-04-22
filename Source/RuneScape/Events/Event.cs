@@ -54,7 +54,7 @@ namespace RuneScape.Events
                 {
                     return false;
                 }
-                return (DateTime.Now - LastRun).TotalMilliseconds > this.Delay;
+                return (DateTime.Now - LastRun).TotalMilliseconds >= this.Delay;
             }
         }
         #endregion Properties
