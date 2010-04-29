@@ -106,15 +106,15 @@ namespace RuneScape.Model.Characters
 
                 if (melee >= ranger && melee >= mage)
                 {
-                    combatLevel += melee;
+                    combatLevel += (int)melee;
                 }
                 else if (ranger >= melee && ranger >= mage)
                 {
-                    combatLevel += ranger;
+                    combatLevel += (int)ranger;
                 }
                 else if (mage >= melee && mage >= ranger)
                 {
-                    combatLevel += mage;
+                    combatLevel += (int)mage;
                 }
 
                 return (int)(combatLevel + (LevelForExperience(Skills.Summoning) / 8));

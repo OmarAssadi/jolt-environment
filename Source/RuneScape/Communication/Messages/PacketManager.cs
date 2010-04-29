@@ -40,41 +40,14 @@ namespace RuneScape.Communication.Messages
         /// Container holding all loaded packet handlers.
         /// </summary>
         private Dictionary<int, IPacketHandler> packetHandlers = new Dictionary<int, IPacketHandler>();
-
-        /// <summary>
-        /// Packet lengths from opcodes sent to server.
-        /// </summary>
-        private static int[] packetLengths = 
-        {                                        		
-            //1  2  3   4    5   6   7  8    9   10
-		    -3,	-3,	8,	8,	-3,	-3,	-3,	2,	-3,	-3,	// 0
-		    -3,	-3,	-3,	10,	-3,	-3,	-3,	-3,	-3,	-3,	// 1
-		    -3,	6,	4,	-3,	-3,	-3,	-3,	-3,	-3,	-3,	// 2
-		    8,	-3,	-3,	-3,	-3,	-3,	-3,	2,	2,	-3,	// 3
-		    16,	-3,	-3,	-3,	-3,	-3,	-3,	0,	-3,	-1,	// 4
-		    -3,	-3,	2,	-3,	-3,	-3,	-3,	-3,	-3,	6,	// 5
-		    0,	8,	-3,	6,	-3,	-3,	-3,	-3,	-3,	-3,	// 6
-		    -3,	-3,	-3,	-3,	-3,	-3,	-3,	-3,	-3,	-3,	// 7
-		    -3,	-3,	-3,	-3,	2,	-3,	-3,	-3,	2,	-3,	// 8
-		    6,	-3,	-3,	-3,	-3,	-3,	-3,	-3,	-3,	4,	// 9
-		    -3,	-3,	-3,	-3,	-3,	-3,	-3,	-1,	0,	-3,	// 10
-		    -3,	-3, -3,	4,	-3,	0,	-3,	-1,	-3,	-1,	// 11
-		    -3,	-3,	-3,	2,	-3,	-3,	-3,	-3,	-3,	6,	// 12
-		    -3,	10,	8,	6,	-3,	-3,	-3,	-3,	-1,	-3,	// 13
-		    -3,	-3,	-3,	-3,	-3,	-3,	-3,	-3,	-3,	-3,	// 14
-		    -3,	-3,	-3,	-3,	-3,	-3,	-3,	-3,	6,	-3,	// 15
-		    2,	-3,	-3,	-3,	-3,	4,	-3,	9,	-3,	6,	// 16
-		    -3,	-3,	-3,	6,	-3,	-3,	-3,	-3,	-1,	12,	// 17
-		    -3,	-3,	-3,	-3,	-3,	-3,	8,	-3,	-3,	-3,	// 18
-		    -3,	-3,	-3,	-3,	-3,	-3,	-3,	-3,	-3,	2,	// 19
-		    -3,	6,	-3,	8,	-3,	-3,	-3,	-3,	-3,	-3,	// 20
-		    -3,	8,	-3,	-3,	6,	-3,	-3,	-3,	-3,	-3,	// 21
-		    8,	-3,	-1,	-3,	14,	-3,	-3,	2,	6,	-3,	// 22
-		    -3,	-3,	6,	6,	-3,	-3,	-3,	-3,	-3,	-3,	// 23
-		    -3,	-3,	-3,	-3,	-3,	-3,	-3,	4,	1,	-3,	// 24
-		    4,	-3,	-3,	2,	-3,		                // 25
-        };
         #endregion Fields
+
+        #region Properties
+        /// <summary>
+        /// Gets the packet lenghts.
+        /// </summary>
+        public static PacketLengths Lengths { get; set; }
+        #endregion Properties
 
         #region Constructors
         /// <summary>
@@ -82,6 +55,7 @@ namespace RuneScape.Communication.Messages
         /// </summary>
         public PacketManager()
         {
+            Lengths = new PacketLengths();
             LoadHandlers(); // Load the packet handlers.
         }
         #endregion Constructors
@@ -131,7 +105,7 @@ namespace RuneScape.Communication.Messages
             AddHandler(61, new AddIgnorePacketHandler()); // Handles added ignores.
             AddHandler(63, new RemoveInterfacePacketHandler()); // Removes a chatbox interface.
             AddHandler(90, new ButtonPacketHandler()); // Handles buttons.
-            AddHandler(99, new QuietPacketHandler()); // Unknown.
+            AddHandler(99, new QuietPacketHandler()); // Client rotation position.
             AddHandler(102, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(107, new CommandPacketHandler()); // Handles commands.
             AddHandler(108, new RemoveInterfacePacketHandler()); // Removes an interface.
@@ -160,7 +134,7 @@ namespace RuneScape.Communication.Messages
             AddHandler(226, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(232, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(233, new ButtonPacketHandler()); // Handles buttons.
-            AddHandler(248, new QuietPacketHandler()); // Unknown.
+            AddHandler(248, new ActiveWindowPacketHandler()); // Handles client window activity.
             AddHandler(253, new AcceptTradePacketHandler()); // Handles accepting of trade requests.
         }
 
@@ -178,18 +152,8 @@ namespace RuneScape.Communication.Messages
         /// <param name="opcode">The opcode of the packet.</param>
         /// <param name="handler">The handler for the packet.</param>
         private void AddHandler(int opcode, IPacketHandler handler)
-        { // I did this cause i was too lazy to type :P
-            this.packetHandlers.Add(opcode, handler);
-        }
-
-        /// <summary>
-        /// Gets the packet length for the given opcode.
-        /// </summary>
-        /// <param name="opcode">The opcode.</param>
-        /// <returns>Returns an integer with the value of the opcode length.</returns>
-        public static int GetPacketLength(int opcode)
         {
-            return packetLengths[opcode];
+            this.packetHandlers.Add(opcode, handler);
         }
         #endregion Methods
     }

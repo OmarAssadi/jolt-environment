@@ -49,7 +49,7 @@ namespace JoltEnvironment.Utilities
         /// <returns>Returns a string.</returns>
         public static string LongToString(this long value)
         {
-            if (value <= 0L || value >= 0x5b5b57f8a98a5dd1L)
+            if (value <= 0L || value >= 0x5B5B57F8A98A5DD1L)
                 return null;
             if (value % 37L == 0L)
                 return null;

@@ -102,6 +102,10 @@ namespace RuneScape.Model.Characters
         /// Gets or sets whether the character accepts aid.
         /// </summary>
         public bool AcceptAid { get; set; }
+        /// <summary>
+        /// Gets or sets whether the character's window is currently the active window.
+        /// </summary>
+        public bool ActiveWindow { get; set; }
 
         /// <summary>
         /// Gets or sets the character's attack style.
@@ -119,6 +123,7 @@ namespace RuneScape.Model.Characters
         /// </summary>
         public Preferences()
         {
+            this.ActiveWindow = true;
             this.BankX = 50;
         }
         #endregion Constructors

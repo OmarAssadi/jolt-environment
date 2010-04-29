@@ -92,8 +92,9 @@ namespace RuneScape.Communication.Login
                 }
 
                 // User data.
-                string username = StringUtilities.LongToString(longName);
-                string password = Hash.GetHash(username + Hash.GetHash(p.ReadString(), HashType.SHA1), HashType.SHA1);
+                string username = longName.LongToString();
+                string password = Hash.GetHash(username + Hash.GetHash(
+                    p.ReadString(), HashType.SHA1), HashType.SHA1);
 
                 // Try to load the account with the given details.
                 Details details = new Details(request.Connection, username, password, hd, resized, clientKey, serverKey);

@@ -138,7 +138,7 @@ namespace RuneScape.Communication
                 {
                     // The packet headers.
                     int opcode = buffer.ReadByte();
-                    int length = PacketManager.GetPacketLength(opcode);
+                    int length = PacketManager.Lengths[opcode];
 
                     // The packet length is determined from the packet.
                     if (length == -1)

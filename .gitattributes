@@ -829,6 +829,7 @@ Source/RuneScape/Communication/Login/LoginVerification.cs -text
 Source/RuneScape/Communication/Login/ProtocolManager.cs -text
 Source/RuneScape/Communication/Messages/Frames.cs -text
 Source/RuneScape/Communication/Messages/Incoming/AcceptTradePacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/ActiveWindowPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/AddFriendPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/AddIgnorePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ButtonPacketHandler.cs -text
@@ -896,6 +897,7 @@ Source/RuneScape/Communication/Messages/Outgoing/UpdateIgnorePacketComposer.cs -
 Source/RuneScape/Communication/Messages/Outgoing/WindowPanePacketComposer.cs -text
 Source/RuneScape/Communication/Messages/Outgoing/WriteStreams.cs -text
 Source/RuneScape/Communication/Messages/Packet.cs -text
+Source/RuneScape/Communication/Messages/PacketLengths.cs -text
 Source/RuneScape/Communication/Messages/PacketManager.cs -text
 Source/RuneScape/Communication/Messages/PacketType.cs -text
 Source/RuneScape/Communication/Messages/ReadStreams.cs -text

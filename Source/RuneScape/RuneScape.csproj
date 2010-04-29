@@ -68,6 +68,7 @@
     <Compile Include="Communication\Login\LoginVerification.cs" />
     <Compile Include="Communication\Login\ProtocolManager.cs" />
     <Compile Include="Communication\Messages\Incoming\AcceptTradePacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\ActiveWindowPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\AddFriendPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\AddIgnorePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ChangeRankPacketHandler.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Communication\Messages\Outgoing\SystemUpdatePacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\UpdateFriendPacketComposer.cs" />
     <Compile Include="Communication\Messages\Outgoing\UpdateIgnorePacketComposer.cs" />
+    <Compile Include="Communication\Messages\PacketLengths.cs" />
     <Compile Include="Content\ClanChat\ClanChatManager.cs" />
     <Compile Include="Content\ClanChat\Rank.cs" />
     <Compile Include="Content\ClanChat\Room.cs" />
