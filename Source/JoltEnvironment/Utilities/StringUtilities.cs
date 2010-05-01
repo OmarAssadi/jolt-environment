@@ -56,7 +56,8 @@ namespace JoltEnvironment.Utilities
 
             int i = 0;
 		    char[] ac = new char[12];
-		    while (value != 0L) {
+		    while (value != 0L) 
+            {
 			    long l1 = value;
 			    value /= 37L;
 			    ac[11 - i++] = validChars[(int)(l1 - value * 37L)];
@@ -76,9 +77,13 @@ namespace JoltEnvironment.Utilities
             {
                 char c = s[i];
                 l *= 37L;
-                if (c >= 'A' && c <= 'Z') l += (1 + c) - 65;
-                else if (c >= 'a' && c <= 'z') l += (1 + c) - 97;
-                else if (c >= '0' && c <= '9') l += (27 + c) - 48;
+
+                if (c >= 'A' && c <= 'Z') 
+                    l += (1 + c) - 65;
+                else if (c >= 'a' && c <= 'z') 
+                    l += (1 + c) - 97;
+                else if (c >= '0' && c <= '9') 
+                    l += (27 + c) - 48;
             }
             while (l % 37L == 0L && l != 0L) l /= 37L;
             return l;
