@@ -68,6 +68,9 @@ namespace RuneScape.Content.Interfaces
                             character.Preferences.Add("withdraw", (byte)buttonId2);
                             character.Session.SendData(new RunScriptPacketComposer(108, "s", new object[] { "Please enter the amount to withdraw:" }).Serialize());
                             break;
+                        case 214:
+                            character.Bank.Withdraw((byte)buttonId2, character.Preferences.BankX);
+                            break;
                         case 232:
                             character.Bank.Withdraw((byte)buttonId2,
                                 character.Bank.GetAmount(character.Bank[buttonId2]));

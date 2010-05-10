@@ -266,6 +266,11 @@ namespace RuneScape.Content
                         }
                     }
                     #endregion Update
+
+                    else if (command.Equals("test"))
+                    {
+                        Frames.TestPacket(character);
+                    }
                 }
             }
             catch (Exception ex)

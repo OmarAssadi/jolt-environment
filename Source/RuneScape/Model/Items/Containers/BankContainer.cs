@@ -91,11 +91,9 @@ namespace RuneScape.Model.Items.Containers
             {
                 return false;
             }
-            
-            if (count < this.Character.Inventory.GetAmount(item))
-            {
-                item = new Item(item.Id, count);
-            }
+
+            int invAmt = this.Character.Inventory.GetAmount(item);
+            item = new Item(item.Id, count < invAmt ? count : invAmt);
 
             if (this.Character.Inventory.Contains(item))
             {
@@ -149,10 +147,7 @@ namespace RuneScape.Model.Items.Containers
                 return false;
             }
 
-            if (count < item.Count)
-            {
-                item = new Item(item.Id, count);
-            }
+            item = new Item(item.Id, count < item.Count ? count : item.Count);
 
             if (this.Contains(item))
             {
