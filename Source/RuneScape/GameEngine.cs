@@ -17,6 +17,7 @@
 
 */
 
+using System;
 
 using RuneScape.Content;
 using RuneScape.Model;

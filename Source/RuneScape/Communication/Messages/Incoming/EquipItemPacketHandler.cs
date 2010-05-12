@@ -44,14 +44,15 @@ namespace RuneScape.Communication.Messages.Incoming
             packet.Skip(4);
             short wearId = packet.ReadLEShort();
             short index = packet.ReadLEShort();
-            Item item = character.Inventory[index];
 
-            if (index < 0 || index >= InventoryContainer.Size || item == null)
+            if (index < 0 || index >= InventoryContainer.Size)
             {
                 return;
             }
 
-            if (item.Definition.Id == wearId)
+            Item item = character.Inventory[index];
+
+            if (item != null && item.Id == wearId)
             {
                 sbyte targetSlot = EquipmentItems.GetItemType(wearId);
                 if (targetSlot == -1)

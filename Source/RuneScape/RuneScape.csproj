@@ -132,6 +132,7 @@
     <Compile Include="Content\Trading\TradeState.cs" />
     <Compile Include="Database\Account\IAccountSaver.cs" />
     <Compile Include="Database\Account\SqlAccountSaver.cs" />
+    <Compile Include="Database\Config\SqlConfig.cs" />
     <Compile Include="Events\ProcessCoordinateEvent.cs" />
     <Compile Include="Model\Characters\Bonuses.cs" />
     <Compile Include="Model\Characters\Contacts.cs" />
@@ -234,10 +235,7 @@
     <Compile Include="Database\Account\AccountLoadResult.cs" />
     <Compile Include="Database\Account\IAccountLoader.cs" />
     <Compile Include="Database\Account\SqlAccountLoader.cs" />
-    <Compile Include="Database\Config\Configuration.cs" />
-    <Compile Include="Database\Config\IConfigLoader.cs" />
-    <Compile Include="Database\Config\IniConfigLoader.cs" />
-    <Compile Include="Database\Config\MySqlConfigLoader.cs" />
+    <Compile Include="Database\Config\SqlConfigLoader.cs" />
     <Compile Include="Database\Offence\OffenceManager.cs" />
     <Compile Include="Database\Offence\OffenceType.cs" />
     <Compile Include="GameEngine.cs" />

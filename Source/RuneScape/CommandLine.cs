@@ -43,10 +43,9 @@ namespace RuneScape
                 switch (command.ToLower())
                 {
                     case "about": // Displays information about jolt environment.
-                        Console.WriteLine(" Jolt Environment [" + Program.Version.ToString() + " Release-Win32-x86/x64]");
-                        Console.WriteLine(" Copyright (C) 2010 Jolt Environment Team <aj@ajravindiran.com>");
-                        Console.WriteLine(" Website: http://www.ajravindiran.com/projects/jolt/");
-                        Console.WriteLine(" Credits: http://www.ajravindiran.com/projects/jolt/credits/");
+                        Console.WriteLine(" Jolt Environment [" + Program.Version + " x" + (Environment.Is64BitProcess ? "64" : "32") + "-bit]");
+                        Console.WriteLine(" Copyright (C) 2010 Jolt Environment Team");
+                        Console.WriteLine(" http://www.ajravindiran.com/projects/jolt/");
                         break;
                     case "system": // Displays information about the system.
                         Console.WriteLine("Operating system: " + Environment.OSVersion);

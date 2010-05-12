@@ -28,7 +28,7 @@ namespace RuneScape.Database.Config
     /// <summary>
     /// Allows loading of configurations from a mysql database.
     /// </summary>
-    public class MySqlConfigLoader : IConfigLoader
+    public class SqlConfigLoader
     {
         #region Methods
         /// <summary>
@@ -37,7 +37,7 @@ namespace RuneScape.Database.Config
         /// <param name="query">The query to execute.</param>
         /// <returns>Returns a System.Collections.Generic.Dictionary object
         /// containing all configurations loadaed from the given location.</returns>
-        public Dictionary<string, object> Load(string query)
+        public SqlConfig Load(string query)
         {
             DataTable data = null;
             Dictionary<string, dynamic> configs = new Dictionary<string, dynamic>();
@@ -91,6 +91,11 @@ namespace RuneScape.Database.Config
                             configs.Add(key, Convert.ToUInt32(value));
                         else if (type.Equals("UInt64"))
                             configs.Add(key, Convert.ToUInt64(value));
+                        else if (type.Equals("DateTime"))
+                            if (value.Equals(string.Empty))
+                                configs.Add(key, DateTime.Now);
+                            else
+                                configs.Add(key, Convert.ToDateTime(value));
                     }
                 }
             }
@@ -98,29 +103,7 @@ namespace RuneScape.Database.Config
             {
                 Program.Logger.WriteException(ex);
             }
-            return configs;
-        }
-
-        /// <summary>
-        /// Loads a set of configurations from the specified table.
-        /// </summary>
-        /// <param name="table">The table to load configurations from.</param>
-        /// <returns>Returns a System.Collections.Generic.Dictionary object
-        /// containing all configurations loadaed from the given location.</returns>
-        public Dictionary<string, object> LoadFromTable(string table)
-        {
-            return Load("SELECT * FROM " + table + "");
-        }
-
-        /// <summary>
-        /// Loads a set of configurations form a specified table.
-        /// </summary>
-        /// <param name="section">The section to load configurations from.</param>
-        /// <returns>Returns a System.Collections.Generic.Dictionary object
-        /// containing all configurations loadaed from the given location.</returns>
-        public Dictionary<string, object> LoadFromSection(string section)
-        {
-            return Load("SELECT * FROM configurations WHERE section = '" + section + "';");
+            return new SqlConfig(configs);
         }
         #endregion Methods
     }

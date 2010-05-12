@@ -44,7 +44,6 @@ namespace RuneScape.Communication.Messages
             gpc.AppendShortA(unchecked((short)-65536));
             gpc.AppendIntSecondary(1);
             character.Session.SendData(gpc.Serialize());
-
         }
 
         /// <summary>

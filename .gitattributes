@@ -777,6 +777,7 @@ Documents/gameinfo/other-animation.txt -text
 Documents/gameinfo/player-animation.txt -text
 Documents/gameinfo/shop-packets.txt -text
 Documents/login_protocol.txt -text
+Documents/rs_locations.txt -text
 Documents/weps.xlsx -text
 /LICENSE.TXT -text
 /RUN_DEBUG.BAT -text
@@ -935,10 +936,8 @@ Source/RuneScape/Database/Account/IAccountLoader.cs -text
 Source/RuneScape/Database/Account/IAccountSaver.cs -text
 Source/RuneScape/Database/Account/SqlAccountLoader.cs -text
 Source/RuneScape/Database/Account/SqlAccountSaver.cs -text
-Source/RuneScape/Database/Config/Configuration.cs -text
-Source/RuneScape/Database/Config/IConfigLoader.cs -text
-Source/RuneScape/Database/Config/IniConfigLoader.cs -text
-Source/RuneScape/Database/Config/MySqlConfigLoader.cs -text
+Source/RuneScape/Database/Config/SqlConfig.cs -text
+Source/RuneScape/Database/Config/SqlConfigLoader.cs -text
 Source/RuneScape/Database/Offence/OffenceManager.cs -text
 Source/RuneScape/Database/Offence/OffenceType.cs -text
 Source/RuneScape/Events/CoordinateEvent.cs -text

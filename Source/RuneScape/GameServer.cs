@@ -167,10 +167,10 @@ namespace RuneScape
             catch (Exception ex)
             {
                 Program.Logger.WriteException(ex);
-                Program.Logger.WriteError("Could not set up server correctly."
-                    + "\nPlease referr to the error message above. Shutting down...");
-                Thread.Sleep(5000);
-                Environment.Exit(0);
+                //Program.Logger.WriteError("Could not set up server correctly."
+                //    + "\nPlease referr to the error message above. Shutting down...");
+                //Thread.Sleep(5000);
+                //Environment.Exit(0);
                 //Terminate(false);
             }
         }

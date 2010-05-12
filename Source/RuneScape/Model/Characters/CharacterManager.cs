@@ -91,7 +91,7 @@ namespace RuneScape.Model.Characters
             try
             {
                 // Try to loading the "Login" configuration section.
-                var loginVars = Configuration.MySql.LoadFromSection("Login");
+                var loginVars = SqlConfig.LoadFromSection("Login");
 
                 this.logAttempts = (bool)loginVars["LogAttempts"];
                 this.logSessions = (bool)loginVars["LogSessions"];
