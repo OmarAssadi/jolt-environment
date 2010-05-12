@@ -60,7 +60,7 @@
                                 </ul>
 
                                 <!-- Server !-->
-                                <?php } else if (ACP_TAB == 2) { ?>
+                                    <?php } else if (ACP_TAB == 2) { ?>
                                 <ul>
                                     <li class="header">General</li>
                                     <li><a href="server.php"><span>Information</span></a></li>
@@ -75,7 +75,7 @@
                                 </ul>
 
                                 <!-- Website !-->
-                                <?php } else if (ACP_TAB == 3) { ?>
+                                    <?php } else if (ACP_TAB == 3) { ?>
                                 <ul>
                                     <li class="header">Quick access</li>
                                     <li><a href="dashboard.php"><span>Dashboard</span></a></li>
@@ -87,7 +87,7 @@
                                 </ul>
 
                                 <!-- Users !-->
-                                <?php } else if (ACP_TAB == 4) { ?>
+                                    <?php } else if (ACP_TAB == 4) { ?>
                                 <ul>
                                     <li class="header">Quick access</li>
                                     <li><a href="dashboard.php"><span>Dashboard</span></a></li>
@@ -99,7 +99,7 @@
                                 </ul>
 
                                 <!--Moderation !-->
-                                <?php } else if (ACP_TAB == 5) { ?>
+                                    <?php } else if (ACP_TAB == 5) { ?>
                                 <ul>
                                     <li class="header">Overview</li>
                                     <li><a href="moderation.php"><span>Overview</span></a></li>
@@ -119,7 +119,8 @@
                                     <li><a href="chatlogs.php?viewall"><span>Chat Logs</span></a></li>
                                     <li><a href="loginlogs.php?viewall"><span>Login Logs</span></a></li>
                                 </ul>
-                                <?php } ?>
-                             </div>
+                                    <?php } ?>
+                            </div>
                             <div id="main">
+                                <a name="maincontent"></a>
 

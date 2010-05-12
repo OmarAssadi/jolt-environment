@@ -33,25 +33,21 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $motw = $_POST['motw'];
         $exp_rate = $_POST['exp_rate'];
 
-        $result = "UPDATE worlds SET world_name='$name',welcome_message='$welcome_message',spawn_point='$spawn_point',motw='$motw',exp_rate='$exp_rate' WHERE world_id=$world_id";
+        $result = "UPDATE worlds SET world_name='$name',welcome_message='$welcome_message',spawn_point='$spawn_point',motw='$motw',exp_rate='$exp_rate' WHERE world_id=$w_id";
         dbquery($result);
 
         acp_success("Successfully saved world information.");
-        add_log(ACP_NAME, USER_IP, "Edited world (World ID: $w_id).");
+        add_log(ACP_NAME, USER_IP, "Edited world details. <br />» ID: $w_id");
     }
 } else {
-    header("Location: worldslist.php");
+    die('<script type="text/javascript">top.location.href = \'dashboard.php\';</script>');
 }
 
 $world_qry = dbquery("SELECT * FROM worlds WHERE world_id = $world_id LIMIT 1;");
 
 if (mysql_num_rows($world_qry) > 0) {
     $world_vars = mysql_fetch_assoc($world_qry);
-} else {
-    acp_error("<b>Error:</b> World (id:$world_id) does not exist. ");
-}
-?>
-
+    ?>
 <h2>Editing World...</h2>
 <form method="post" action="worldedit.php?id=<?php echo $world_id; ?>">
     <input type="hidden" name="w_id" value="<?php echo $world_id; ?>" />
@@ -61,9 +57,7 @@ if (mysql_num_rows($world_qry) > 0) {
                 <label for="w_id">ID: </label><br />
                 <span>A unique ID assigned to each world.</span>
             </dt>
-            <dd><input id="w_id" type="text" size="3" maxlength="255" disabled="true"
-                       name="w_id" value="<?php echo $world_vars['world_id'] ?>" />
-            </dd>
+            <dd><strong><?php echo $world_vars['world_id'] ?></strong></dd>
         </dl>
 
         <dl>
@@ -122,4 +116,9 @@ if (mysql_num_rows($world_qry) > 0) {
     </fieldset>
 </form>
 
-<?php require_once("footer.php"); ?>
+    <?php
+} else {
+    acp_error("<b>Error:</b> World (id:$world_id) does not exist. ");
+}
+require_once("footer.php");
+?>

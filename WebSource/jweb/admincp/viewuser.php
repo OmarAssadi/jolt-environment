@@ -16,7 +16,7 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-define('ACP_TITLE', 'Staff');
+define('ACP_TITLE', 'View User');
 define('ACP_TAB', 4);
 require_once("adminglobal.php");
 check_rights();

@@ -1035,6 +1035,7 @@ WebSource/jweb/admincp/adminlogs.php -text
 WebSource/jweb/admincp/adminnotes.php -text
 WebSource/jweb/admincp/chatlogs.php -text
 WebSource/jweb/admincp/dashboard.php -text
+WebSource/jweb/admincp/edituser.php -text
 WebSource/jweb/admincp/favicon.ico -text
 WebSource/jweb/admincp/footer.php -text
 WebSource/jweb/admincp/header.php -text

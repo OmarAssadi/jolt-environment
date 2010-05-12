@@ -82,7 +82,9 @@ if (isset($_GET['access_denied'])) {
 <h1>Dashboard</h1><hr>
 <p>Welcome to the administration backend. You can find tools for managing the game, server, website, and all the configurations. Depending on your given priviledges, you will only be able to access certain controls within the administration.</p><br />
 
-<?php if (is_int($core->get_config("remote.port"))) { echo "fail"; } ?>
+<?php if (is_int($core->get_config("remote.port"))) {
+    echo "fail";
+} ?>
 
 
 <h2>Server statistics</h2>
@@ -138,8 +140,9 @@ if (isset($_GET['access_denied'])) {
 <br />
 
 <h2>Administration Notes</h2>
-<div style="float: left;"><p>Notes and general chatting between staff can be done with this.</p></div>
+<p>Notes and general chatting between staff can be done with this.</p>
 <div style="float: right;"><a href="adminnotes.php?viewall">&raquo; View administration notes</a></div>
+
 <table cellspacing="1">
     <thead>
         <tr>
@@ -151,20 +154,23 @@ if (isset($_GET['access_denied'])) {
     <tbody>
         <?php
         $notes = dbquery("SELECT * FROM web_acp_notes ORDER BY id DESC LIMIT 10");
+        $notebool = true;
 
         if (mysql_num_rows($notes) > 0) {
             while ($note = mysql_fetch_assoc($notes)) {
-                echo "<tr id='" . $note['id'] . "'>
-                <td><a href='dashboard.php?delete_note=" . $note['id'] . "'><img src='./images/icon_delete.gif' /></a> <a href='viewuser.php?id=" . $note['user'] . "'><strong>" . $users->format_name($note['user']) . "</strong></a></td>
-                <td>" . $note['note_date'] . "</td>
-                <td>" . filter_for_outout($note['note_message'], true) . "</td>
-                </tr>";
+                echo "
+                <tr>
+                    <td><a href='dashboard.php?delete_note=" . $note['id'] . "'><img src='./images/icon_delete.gif' /></a> <a href='viewuser.php?id=" . $note['user'] . "'><strong>" . $users->format_name($note['user']) . "</strong></a></td>
+                    <td style='text-align: center;'>" . $note['note_date'] . "</td>
+                    <td>" . filter_for_outout($note['note_message'], true) . "</td>
+                </tr>
+                ";
+                $notebool = !$notebool;
             }
         } else {
             echo "<tr><td colspan='5' style='text-align: center;'>No notes have been created.</td></tr>";
-        }
-        ?>
-
+}
+?>
         <tr>
     <form method="get" action="dashboard.php">
         <td colspan='5' style='text-align: center;'>
@@ -175,9 +181,10 @@ if (isset($_GET['access_denied'])) {
 </tr>
 </tbody>
 </table>
+<br />
 
 <h2>Administration Logs</h2>
-<div style="float: left;"><p>This gives an overview of the last five actions carried out by staff.</p></div>
+<p>This gives an overview of the last five actions carried out by staff.</p>
 <div style="float: right;"><a href="adminlogs.php?viewall">&raquo; View administration logs</a></div>
 
 <table cellspacing="1">
@@ -197,15 +204,15 @@ if (isset($_GET['access_denied'])) {
             while ($log = mysql_fetch_assoc($logs)) {
                 echo "            <tr>
                 <td><strong><a href='viewuser.php?id=" . $log['user'] . "'>" . $users->format_name($log['user']) ."</a></strong></td>
-                <td>" . $log['user_ip'] ."</td>
-                <td>" . $log['log_time'] ."</td>
+                <td style='text-align: center;'>" . $log['user_ip'] ."</td>
+                <td style='text-align: center;'>" . $log['log_time'] ."</td>
                 <td><strong>" . $log['log_message'] ."</strong></td>
             </tr>";
             }
         } else {
             echo "<tr><td colspan='5' style='text-align: center;'>No logs have been created.</td></tr>";
-        }
-        ?>
+}
+?>
     </tbody>
 </table>
 
