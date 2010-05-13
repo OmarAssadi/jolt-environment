@@ -40,6 +40,12 @@ if (isset($_GET['id'])) {
         acp_success("Successfully saved user details.");
         add_log(ACP_NAME, USER_IP, "Edited user general details. <br />» " . $users->get_name($uid));
     }
+    
+    if (isset($_POST['submit_appearance'])) {
+        
+    }
+
+
 } else {
     die('<script type="text/javascript">top.location.href = \'dashboard.php\';</script>');
 }
@@ -104,7 +110,7 @@ if (mysql_num_rows($user_qry) > 0) {
 
         <dl>
             <dt>
-                <label for="dob">DOB: </label><br />
+                <label for="dob">DOB:</label><br />
                 <span>The user's date of birth.</span>
             </dt>
             <dd><input id="dob" type="text" size="20" maxlength="255"
@@ -114,7 +120,7 @@ if (mysql_num_rows($user_qry) > 0) {
 
         <dl>
             <dt>
-                <label for="country_code">Country code: </label><br />
+                <label for="country_code">Country code:</label><br />
                 <span>The country code of the user's current residence.</span>
             </dt>
             <dd><input id="country_code" type="text" size="20" maxlength="255"
@@ -124,7 +130,7 @@ if (mysql_num_rows($user_qry) > 0) {
 
         <dl>
             <dt>
-                <label for="client_rights">Client rights: </label><br />
+                <label for="client_rights">Client rights:</label><br />
             </dt>
             <dd>
                 <select id="client_rights" name="client_rights">
@@ -137,7 +143,7 @@ if (mysql_num_rows($user_qry) > 0) {
 
         <dl>
             <dt>
-                <label for="server_rights">Server rights: </label><br />
+                <label for="server_rights">Server rights:</label><br />
             </dt>
             <dd>
                 <select id="server_rights" name="server_rights">
@@ -149,6 +155,109 @@ if (mysql_num_rows($user_qry) > 0) {
                 </select>
             </dd>
         </dl>
+
+        <p class="quick">
+            <input class="button1" type="submit" id="submit_general" name="submit_general" value=" Save " />
+        </p>
+    </fieldset>
+</form>
+<br />
+<form method="post" action="edituser.php?id=<?php echo $uid; ?>">
+    <input type="hidden" name="user_id" value="<?php echo $uid; ?>" />
+    <fieldset>
+        <legend>In-Game</legend>
+
+        <dl>
+            <dt>
+                <label for="coord_x">Coord X:</label><br />
+                <span>The X coordiante of where the character is located.</span>
+            </dt>
+            <dd><input id="coord_x" type="text" size="5" maxlength="5"
+                       name="coord_x" value="<?php echo $user_vars['coord_x'] ?>" />
+            </dd>
+        </dl>
+
+        <dl>
+            <dt>
+                <label for="coord_y">Coord Y:</label><br />
+                <span>The Y coordiante of where the character is located.</span>
+            </dt>
+            <dd><input id="coord_y" type="text" size="5" maxlength="5"
+                       name="coord_y" value="<?php echo $user_vars['coord_y'] ?>" />
+            </dd>
+        </dl>
+
+        <dl>
+            <dt>
+                <label for="coord_z">Coord Z:</label><br />
+                <span>The Z coordiante of where the character is located.</span>
+            </dt>
+            <dd><input id="coord_z" type="text" size="5" maxlength="5"
+                       name="coord_z" value="<?php echo $user_vars['coord_z'] ?>" />
+            </dd>
+        </dl>
+
+        <dl>
+            <dt>
+                <label for="energy">Energy:</label><br />
+                <span>The amount of running energy the character has.</span>
+            </dt>
+            <dd><input id="energy" type="text" size="5" maxlength="5"
+                       name="energy" value="<?php echo $user_vars['run_energy'] ?>" />
+            </dd>
+        </dl>
+
+        <dl>
+            <dt>
+                <label for="inventory">Inventory:</label><br />
+                <span>Items located in the character's inventory.</span>
+            </dt>
+            <dd><input id="inventory" type="text" size="20"
+                       name="inventory" value="<?php echo $user_vars['inventory_items'] ?>" />
+            </dd>
+        </dl>
+
+        <dl>
+            <dt>
+                <label for="equipment">Equipment:</label><br />
+                <span>Items located in the character's equipment.</span>
+            </dt>
+            <dd><input id="equipment" type="text" size="20"
+                       name="equipment" value="<?php echo $user_vars['equipment_items'] ?>" />
+            </dd>
+        </dl>
+
+        <dl>
+            <dt>
+                <label for="bank">Bank:</label><br />
+                <span>Items located in the character's bank.</span>
+            </dt>
+            <dd><input id="bank" type="text" size="20"
+                       name="bank" value="<?php echo $user_vars['bank_items'] ?>" />
+            </dd>
+        </dl>
+
+        <dl>
+            <dt>
+                <label for="friends">Friends:</label><br />
+                <span>The character's friends.</span>
+            </dt>
+            <dd><input id="friends" type="text" size="20"
+                       name="friends" value="<?php echo $user_vars['friends'] ?>" />
+            </dd>
+        </dl>
+
+        <dl>
+            <dt>
+                <label for="ignores">Ignores:</label><br />
+                <span>The character's ignores.</span>
+            </dt>
+            <dd><input id="ignores" type="text" size="20"
+                       name="ignores" value="<?php echo $user_vars['friends'] ?>" />
+            </dd>
+        </dl>
+
+
 
         <p class="quick">
             <input class="button1" type="submit" id="submit_general" name="submit_general" value=" Save " />
