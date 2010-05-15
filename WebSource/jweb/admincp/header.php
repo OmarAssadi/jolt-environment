@@ -109,10 +109,8 @@
                                     <li><a href="dashboard.php"><span>Reports</span></a></li>
                                     <li><a href="../index.php"><span>Resolved Reports</span></a></li>
 
-                                    <li class="header">Offenses</li>
-                                    <li><a href="#"><span>Banned Characters</span></a></li>
-                                    <li><a href="#"><span>Banned Addresses</span></a></li>
-                                    <li><a href="#"><span>Muted Characters</span></a></li>
+                                    <li class="header">Offences</li>
+                                    <li><a href="offences.php"><span>Active Offences</span></a></li>
 
                                     <li class="header">Logs</li>
                                     <li><a href="adminlogs.php?viewall"><span>Admin Logs</span></a></li>

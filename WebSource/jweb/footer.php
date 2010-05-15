@@ -15,7 +15,23 @@
  * 
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+*/
 
 ?>
+<br class="clear"/>
+</div>
+<div id="footer">
+    <div class="contain">
+        <div class="footerdesc">
+            Copyright &copy; 2010 RageScape. Website developed by <a href="mailto:ajravindiran@gmail.com">AJ Ravindiran</a><br />
+            This website's images are copyright &copy; 1999 - 2010 Jagex Ltd<br />
+        </div>
+        <br class="clear"/>
+    </div>
+    <br class="clear"/>
+</div>
+</div>
+
+</body>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
 </html>

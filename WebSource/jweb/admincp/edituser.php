@@ -28,7 +28,7 @@ if (isset($_GET['id'])) {
         $uid = $users->get_id($uid);
     }
 
-    if (isset($_POST['submit_general'])) {
+    if (isset($_POST['submit_preferences'])) {
         $user_id2 = $_POST['user_id'];
         $email = $_POST['email'];
         $dob = $_POST['dob'];
@@ -36,13 +36,36 @@ if (isset($_GET['id'])) {
         $c_rights = $_POST['client_rights'];
         $s_rights = $_POST['server_rights'];
 
-        dbquery("UPDATE characters SET email='$email',dob='$dob',country='$country_code',client_rights='$c_rights',server_rights='$s_rights' WHERE id='$user_id2'");
+        dbquery("UPDATE characters SET email='$email',dob='$dob',country='$country_code',
+                client_rights='$c_rights',server_rights='$s_rights' WHERE id='$user_id2';");
         acp_success("Successfully saved user details.");
-        add_log(ACP_NAME, USER_IP, "Edited user general details. <br />» " . $users->get_name($uid));
+        add_log(ACP_NAME, USER_IP, "Edited user preferences. <br />» " . $users->get_name($uid));
     }
     
-    if (isset($_POST['submit_appearance'])) {
-        
+    if (isset($_POST['submit_ingame'])) {
+        $user_id2 = $_POST['user_id'];
+        $coord_x = $_POST['coord_x'];
+        $coord_y = $_POST['coord_y'];
+        $coord_z = $_POST['coord_z'];
+        $energy = $_POST['energy'];
+        $inventory = $_POST['inventory'];
+        $equipment = $_POST['equipment'];
+        $bank = $_POST['bank'];
+        $friends = $_POST['friends'];
+        $ignores = $_POST['ignores'];
+
+        if ($coord_x < 0 || $coord_y < 0 || $coord_z < 0) {
+            acp_error("Coordinate values cannot be below zero.");
+        } else if ($energy < 0 || $energy > 100) {
+            acp_error("Energy cannot be below 0, and above 100.");
+        } else {
+            dbquery("UPDATE characters
+                    SET coord_x='$coord_x',coord_y='$coord_y',coord_z='$coord_z',
+                    run_energy='$energy',inventory_items='$inventory',equipment_items='$equipment',
+                    bank_items='$bank',friends='$friends',ignores='$ignores' WHERE id='$user_id2';");
+            acp_success("Successfully saved user details.");
+            add_log(ACP_NAME, USER_IP, "Edited user in-game details. <br />» " . $users->get_name($uid));
+        }
     }
 
 
@@ -157,7 +180,7 @@ if (mysql_num_rows($user_qry) > 0) {
         </dl>
 
         <p class="quick">
-            <input class="button1" type="submit" id="submit_general" name="submit_general" value=" Save " />
+            <input class="button1" type="submit" id="submit_preferences" name="submit_preferences" value=" Save " />
         </p>
     </fieldset>
 </form>
@@ -253,14 +276,14 @@ if (mysql_num_rows($user_qry) > 0) {
                 <span>The character's ignores.</span>
             </dt>
             <dd><input id="ignores" type="text" size="20"
-                       name="ignores" value="<?php echo $user_vars['friends'] ?>" />
+                       name="ignores" value="<?php echo $user_vars['ignores'] ?>" />
             </dd>
         </dl>
 
 
 
         <p class="quick">
-            <input class="button1" type="submit" id="submit_general" name="submit_general" value=" Save " />
+            <input class="button1" type="submit" id="submit_ingame" name="submit_ingame" value=" Save " />
         </p>
     </fieldset>
 </form>

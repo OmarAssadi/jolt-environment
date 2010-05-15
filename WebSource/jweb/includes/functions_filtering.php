@@ -67,5 +67,4 @@ function prettydate($timestamp) {
 function simpledate($timestamp) {
     return date('m-d-y', $timestamp);
 }
-
 ?>
