@@ -42,11 +42,8 @@ require_once("header.php");
             <th>Type</th>
             <th>Date</th>
             <th>Expire Date</th>
-            <th>Moderator</th>
-            <th>Reason</th>
-            <th>Appeal Status</th>
-            <th>Appeal Data</th>
-            <th>Expired</th>
+            <th>Appealed</th>
+            <th>Manage</th>
         </tr>
     </thead>
     <tbody>
@@ -55,16 +52,17 @@ require_once("header.php");
 
             if (mysql_num_rows($logs) > 0) {
                 while ($log = mysql_fetch_assoc($logs)) {
+                    $appealed = ($log['appeal_data'] != "" ? "Yes" : "No");
+                    if ($log['appeal_status'] == 1) {
+                        $appealed = "Yes, denied";
+                    }
                     echo "<tr>
                 <td>" . $users->get_name($log['userid']) . "</td>
                 <td>" . get_type($log['type']) . "</td
                 <td>" . $log['date'] . "</td>
                 <td>" . $log['expire_date'] . "</td>
-                <td>" . $users->get_name($log['moderatorid']) . "</td>
-                <td>" . $log['reason'] . "</td>
-                <td>" . $log['appeal_status'] . "</td>
-                <td>" . $log['appeal_data'] . "</td>
-                <td>" . yesno($log['expired']) . "</td>
+                <td>" . $appealed . "</td>
+                <td><a href='manageoffence.php?id=" . $log['id'] . "'><img src='./images/icon_edit.gif' alt='Edit' /></a></td>
                 </tr>";
                 }
             } else {
@@ -76,24 +74,6 @@ require_once("header.php");
                     return "No";
                 } else if ($data == 1) {
                     return "Yes";
-                }
-            }
-
-            function get_type($type) {
-                if ($type == 0) {
-                    return "Mute";
-                } else if ($type == 1) {
-                    return "Ban";
-                } else {
-                    return "N/A";
-                }
-            }
-
-            function get_appeal($appeal, $status) {
-                if ($appeal == "" || $appeal == null) {
-                    return "Not submitted";
-                } else {
-
                 }
             }
             ?>

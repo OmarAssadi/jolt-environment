@@ -16,36 +16,35 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-define('ACP_TITLE', 'Worlds');
-define('ACP_TAB', 2);
+define('ACP_TITLE', 'Website');
+define('ACP_TAB', 3);
 require_once("adminglobal.php");
 check_rights();
 
 require_once("header.php");
 ?>
-<h1>Current Worlds</h1><hr>
-<p>A list of worlds that are currently availible for the server.</p><br>
+<h1>News Articles</h1><hr>
+<p>All published news articles are shown here. Allows you to see who made the article,
+    when it was made, and an option to edit the article.</p><br />
 
 <table cellspacing="1">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Last Startup</th>
-            <th>Actions</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Author</th>
         </tr>
     </thead>
     <tbody>
         <?php
-        $worlds = dbquery("SELECT world_id,world_name,startup_time FROM worlds ORDER BY world_id DESC");
+        $articles = dbquery("SELECT id,author_id,date,title FROM web_news ORDER BY id DESC");
 
-        if (mysql_num_rows($worlds) > 0) {
-            while ($world = mysql_fetch_assoc($worlds)) {
+        if (mysql_num_rows($articles) > 0) {
+            while ($article = mysql_fetch_assoc($articles)) {
                 echo "            <tr>
-                <td><strong>" . $world['world_id'] ."</strong></td>
-                <td>" . $world['world_name'] ."</td>
-                <td>" . $world['startup_time'] ."</td>
-                <td><strong><a href='worldedit.php?id=" . $world['world_id'] . "'><img src='./images/icon_edit.gif' alt='Edit' /></a></strong></td>
+                <td><strong><a href='editarticle.php?id=" . $article['id'] . "'>" . $article['title'] ."</a></strong></td>
+                <td>" . $article['date'] ."</td>
+                <td>" . $users->get_name($article['author_id']) ."</td>
             </tr>";
             }
         } else {

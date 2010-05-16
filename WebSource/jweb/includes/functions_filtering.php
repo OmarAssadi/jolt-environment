@@ -67,4 +67,10 @@ function prettydate($timestamp) {
 function simpledate($timestamp) {
     return date('m-d-y', $timestamp);
 }
+
+
+function dbdate($timestamp) {
+    return date("Y-m-d H:i:s", $timestamp);
+}
+
 ?>

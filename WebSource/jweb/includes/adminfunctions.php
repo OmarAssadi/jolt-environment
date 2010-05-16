@@ -18,6 +18,21 @@
 */
 
 /**
+ * Get the type of ban.
+ * @param <type> $type Data to decide type for.
+ * @return <type> Returns Mute, Ban, or N/A.
+ */
+function get_type($type) {
+    if ($type == 0) {
+        return "Mute";
+    } else if ($type == 1) {
+        return "Ban";
+    } else {
+        return "N/A";
+    }
+}
+
+/**
  * Gets the user's rights as a string.
  * @param int $rights The user's rights.
  * @return string A readable version of the user's rights.

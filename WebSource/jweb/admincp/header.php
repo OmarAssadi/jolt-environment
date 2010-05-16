@@ -78,12 +78,11 @@
                                     <?php } else if (ACP_TAB == 3) { ?>
                                 <ul>
                                     <li class="header">Quick access</li>
-                                    <li><a href="dashboard.php"><span>Dashboard</span></a></li>
                                     <li><a href="../index.php"><span>View Site</span></a></li>
 
-                                    <li class="header">Information</li>
-                                    <li><a href="dashboard.php"><span>Dashboard</span></a></li>
-                                    <li><a href="../index.php"><span>View Site</span></a></li>
+                                    <li class="header">News</li>
+                                    <li><a href="addarticle.php"><span>Add Article</span></a></li>
+                                    <li><a href="viewarticles.php"><span>View Articles</span></a></li>
                                 </ul>
 
                                 <!-- Users !-->

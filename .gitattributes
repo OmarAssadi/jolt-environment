@@ -1030,11 +1030,14 @@ Source/RuneScape/Workers/LoginWorker.cs -text
 Source/RuneScape/Workers/MajorWorker.cs -text
 Source/RuneScape/Workers/Worker.cs -text
 WebSource/jweb/.htaccess -text
+WebSource/jweb/admincp/addarticle.php -text
+WebSource/jweb/admincp/addoffence.php -text
 WebSource/jweb/admincp/adminglobal.php -text
 WebSource/jweb/admincp/adminlogs.php -text
 WebSource/jweb/admincp/adminnotes.php -text
 WebSource/jweb/admincp/chatlogs.php -text
 WebSource/jweb/admincp/dashboard.php -text
+WebSource/jweb/admincp/editarticle.php -text
 WebSource/jweb/admincp/edituser.php -text
 WebSource/jweb/admincp/favicon.ico -text
 WebSource/jweb/admincp/footer.php -text
@@ -1094,6 +1097,7 @@ WebSource/jweb/admincp/login.php -text
 WebSource/jweb/admincp/loginlogs.php -text
 WebSource/jweb/admincp/logout.php -text
 WebSource/jweb/admincp/logs.php -text
+WebSource/jweb/admincp/manageoffence.php -text
 WebSource/jweb/admincp/moderation.php -text
 WebSource/jweb/admincp/offences.php -text
 WebSource/jweb/admincp/pingframe.php -text
@@ -1104,7 +1108,9 @@ WebSource/jweb/admincp/style/admin.css -text
 WebSource/jweb/admincp/style/editor.js -text
 WebSource/jweb/admincp/style/permissions.js -text
 WebSource/jweb/admincp/style/tooltip.js -text
+WebSource/jweb/admincp/viewarticles.php -text
 WebSource/jweb/admincp/viewuser.php -text
+WebSource/jweb/admincp/website.php -text
 WebSource/jweb/admincp/worldedit.php -text
 WebSource/jweb/admincp/worldslist.php -text
 WebSource/jweb/css/global-30.css -text
