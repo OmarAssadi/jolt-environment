@@ -98,7 +98,7 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
                     </div>
                     <div id="menubox">
                         <ul id="menus">
-                            <li class="top"><a href="home.php" id="home" class="tl"><span class="ts">Home</span></a></li
+                            <li class="top"><a href="home.php" id="home" class="tl"><span class="ts">Home</span></a></li>
 
                             <li class="top"><a id="play" class="tl" href="game.html" onclick="if(!this.j){this.href+='?j=1';this.j=true;}"><span class="ts">Play Now</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
                             <!--[if lte IE 6]><table><tr><td><![endif]-->

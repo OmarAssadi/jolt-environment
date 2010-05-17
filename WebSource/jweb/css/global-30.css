@@ -518,17 +518,17 @@ a {
 }
 
 .navigation {
- background: transparent url('http://www.runescape.com/img/main/kbase/trail1.png') no-repeat left top;
+ background: transparent url('../img/main/kbase/trail1.png') no-repeat left top;
  height: 24px;
 }
 
 .navigation2 {
- background: transparent url('http://www.runescape.com/img/main/kbase/trail2.png') no-repeat left top;
+ background: transparent url('../img/main/kbase/trail2.png') no-repeat left top;
  height: 36px;
 }
 
 .navigation3 {
- background: transparent url('http://www.runescape.com/img/main/kbase/trail3.png') no-repeat left top;
+ background: transparent url('../img/main/kbase/trail3.png') no-repeat left top;
  height: 50px;
 }
 
@@ -606,36 +606,40 @@ a {
 }
 
 .topshadow {
- background: url(http://www.runescape.com/img/main/kbase/sidebart.png) repeat-x scroll left top;
+ background: url(../img/main/kbase/sidebart.png) repeat-x scroll left top;
 }
 
 .bottombordershad {
- background: transparent url(http://www.runescape.com/img/main/kbase/articlebottom.png) repeat-x scroll left bottom;
+ background: transparent url(../img/main/kbase/articlebottom.png) repeat-x scroll left bottom;
 }
 
 .leftshadow {
- background: url(http://www.runescape.com/img/main/kbase/sidebarl.png) repeat-y scroll left center;
+ background: url(../img/main/kbase/sidebarl.png) repeat-y scroll left center;
 }
 
 .rightshadow {
- background: url(http://www.runescape.com/img/main/kbase/sidebar.png) repeat-y scroll right center;
+ background: url(../img/main/kbase/sidebar.png) repeat-y scroll right center;
 }
 
 .leftcorner {
- background: transparent url(http://www.runescape.com/img/main/kbase/artroundtl.png) no-repeat scroll left top;
+ background: transparent url(../img/main/kbase/artroundtl.png) no-repeat scroll left top;
 }
 
 .rightcorner {
- background: transparent url(http://www.runescape.com/img/main/kbase/artroundtr.png) no-repeat scroll right top;
+ background: transparent url(../img/main/kbase/artroundtr.png) no-repeat scroll right top;
 }
 
 .bottomleftshad{
- background: transparent url(http://www.runescape.com/img/main/kbase/articlebottomshad.png) no-repeat scroll left bottom;
+ background: transparent url(../img/main/kbase/articlebottomshad.png) no-repeat scroll left bottom;
 }
 
 .bottomrightshad{
- background: transparent url(http://www.runescape.com/img/main/kbase/artbottomshadr.png) no-repeat scroll right bottom;
+ background: transparent url(../img/main/kbase/artbottomshadr.png) no-repeat scroll right bottom;
  height: 1%;
+}
+
+.sectioncontainer{
+	padding: 55px 40px 65px;
 }
 
 .article_theme_1 ul {
@@ -646,7 +650,7 @@ a {
 
 .article_theme_1 ul li {
  padding: 0 0 1px 38px;
- background: transparent url(http://www.runescape.com/img/main/kbase/sunburst_bullet.png) no-repeat 12px 3px;
+ background: transparent url(../img/main/kbase/sunburst_bullet.png) no-repeat 12px 3px;
 }
 
 .article_theme_1 ol li {
@@ -663,7 +667,7 @@ a {
 }
 
 .headertitleleft{
- background: transparent url(http://www.runescape.com/img/main/kbase/headertitleleft.png) no-repeat scroll left center;
+ background: transparent url(../img/main/kbase/headertitleleft.png) no-repeat scroll left center;
  padding-left: 43px;
 }
 
@@ -678,7 +682,7 @@ a {
 }
 
 .headertitleright{
- background: transparent url(http://www.runescape.com/img/main/kbase/headertitleright.png) no-repeat scroll right center;
+ background: transparent url(../img/main/kbase/headertitleright.png) no-repeat scroll right center;
  padding-right: 42px;
 }
 
@@ -690,7 +694,7 @@ a {
 }
 
 .hr {
- background: transparent url(http://www.runescape.com/img/main/kbase/hr.png) repeat-x scroll center;
+ background: transparent url(../img/main/kbase/hr.png) repeat-x scroll center;
  border: medium none;
  font-size: 1px;
  height: 36px;

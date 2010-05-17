@@ -122,7 +122,7 @@ require_once("header.php");
                     <!--[if gte IE 7]><!---><img title="Subscribe to RSS" alt="" src="./img/rss/logo.png"/><!--<![endif]-->
                     <!--[if IE 6]><img title="Subscribe to RSS" alt="" src="http://www.jagex.com/img/crossservice/RSS/logo_ie6.png"/><![endif]--> <span>Subscribe to RSS</span></a>
             </div>
-            <div class="moreArchive"><a href="http://services.runescape.com/m=news/list.ws">Browse our news archive</a></div>
+            <div class="moreArchive"><a href="listnews.php">Browse our news archive</a></div>
         </div>
     </div>
 </div>
