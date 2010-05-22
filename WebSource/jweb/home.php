@@ -24,7 +24,7 @@ require_once("header.php");
 
 ?>
 <div id="left">
-    <a href="https://secure.runescape.com/m=create/index.ws" class="createbutton" onmouseover="h(this)" onmouseout="u(this)">
+    <a href="create" class="createbutton" onmouseover="h(this)" onmouseout="u(this)">
         <img src="img/main/skins/default/created3d9.jpg?10" alt="Create a Free Account - Start your adventure today!" />
         <span class="shim"></span>
     </a>
@@ -82,7 +82,7 @@ require_once("header.php");
     </div>
 </div>
 <div id="right">
-    <a href="game.html" id="playbutton" onmouseover="h(this)" onmouseout="u(this)" onclick="if(!this.j){this.href+='?j=1';this.j=true;}">
+    <a href="play" id="playbutton" onmouseover="h(this)" onmouseout="u(this)" onclick="if(!this.j){this.href+='?j=1';this.j=true;}">
         <img src="img/main/skins/default/playd3d9.jpg?10" alt="Play RuneScape - Continue Your Adventure" />
         <span class="shim"></span>
     </a>
@@ -110,7 +110,7 @@ require_once("header.php");
                                     <h3>' . $news['title'] . ' </h3>
                                     <span>' . $news['date'] . '</span>
                                 </div>
-                                <p>' . $news['description'] . ' <a href="viewnews.php?id=' . $news['id'] . '">Read more...</a></p>
+                                <p>' . $news['description'] . ' <a href="viewnews?id=' . $news['id'] . '">Read more...</a></p>
                             </div>
                         </div>';
                 }
@@ -122,7 +122,7 @@ require_once("header.php");
                     <!--[if gte IE 7]><!---><img title="Subscribe to RSS" alt="" src="./img/rss/logo.png"/><!--<![endif]-->
                     <!--[if IE 6]><img title="Subscribe to RSS" alt="" src="http://www.jagex.com/img/crossservice/RSS/logo_ie6.png"/><![endif]--> <span>Subscribe to RSS</span></a>
             </div>
-            <div class="moreArchive"><a href="listnews.php">Browse our news archive</a></div>
+            <div class="moreArchive"><a href="listnews">Browse our news archive</a></div>
         </div>
     </div>
 </div>

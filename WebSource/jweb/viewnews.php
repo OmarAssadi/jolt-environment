@@ -17,7 +17,7 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 define('PAGE_TAB', 0);
-define('PAGE_TITLE', 'Homepage');
+define('PAGE_TITLE', 'News');
 
 require_once("global.php");
 require_once("header.php");

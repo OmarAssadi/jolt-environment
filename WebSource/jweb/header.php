@@ -80,7 +80,7 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
             <div id="head"><div id="headBg">
                     <div id="headOrangeTop"></div>
                     <img src="img/main/skins/default/head_image.jpg" alt="RuneScape" />
-                    <div id="headImage"><a href="home.php" id="logo_select"></a>
+                    <div id="headImage"><a href="home" id="logo_select"></a>
 
                         <div id="player_no">There are currently <?php echo $online; ?> people playing!</div>
                     </div>
@@ -98,7 +98,7 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
                     </div>
                     <div id="menubox">
                         <ul id="menus">
-                            <li class="top"><a href="home.php" id="home" class="tl"><span class="ts">Home</span></a></li>
+                            <li class="top"><a href="home" id="home" class="tl"><span class="ts">Home</span></a></li>
 
                             <li class="top"><a id="play" class="tl" href="game.html" onclick="if(!this.j){this.href+='?j=1';this.j=true;}"><span class="ts">Play Now</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
                             <!--[if lte IE 6]><table><tr><td><![endif]-->
