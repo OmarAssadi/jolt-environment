@@ -206,11 +206,11 @@ namespace JoltEnvironment.Debug
             if (this.LogPriority <= LogPriority.Warn)
             {
                 StackFrame frame = new StackTrace().GetFrame(1);
-                WriteLog(frame, ConsoleColor.Yellow, message);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, ConsoleColor.Yellow, message)));
 
                 if (logEvent)
                 {
-                    WriteFile(frame, LogPriority.Warn, message);
+                    this.worker.QueueLog(new Action(() => WriteFile(frame, LogPriority.Warn, message)));
                 }
             }
         }
@@ -225,7 +225,7 @@ namespace JoltEnvironment.Debug
             if (this.LogPriority <= LogPriority.Error)
             {
                 StackFrame frame = new StackTrace().GetFrame(1);
-                WriteLog(frame, ConsoleColor.Red, message);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, ConsoleColor.Red, message)));
             }
         }
 
@@ -239,11 +239,11 @@ namespace JoltEnvironment.Debug
             if (this.LogPriority <= LogPriority.Error)
             {
                 StackFrame frame = new StackTrace().GetFrame(1);
-                WriteLog(frame, ConsoleColor.Red, message);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, ConsoleColor.Red, message)));
 
                 if (logEvent)
                 {
-                    WriteFile(frame, LogPriority.Error, message);
+                    this.worker.QueueLog(new Action(() => WriteFile(frame, LogPriority.Error, message)));
                 }
             }
         }
@@ -257,8 +257,8 @@ namespace JoltEnvironment.Debug
             if (this.LogPriority <= LogPriority.Error)
             {
                 StackFrame frame = new StackTrace().GetFrame(1);
-                WriteLog(frame, ConsoleColor.Red, ex);
-                WriteFile(frame, LogPriority.Error, ex);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, ConsoleColor.Red, ex)));
+                this.worker.QueueLog(new Action(() => WriteFile(frame, LogPriority.Error, ex)));
             }
         }
 
@@ -272,11 +272,11 @@ namespace JoltEnvironment.Debug
             if (this.LogPriority <= LogPriority.Error)
             {
                 StackFrame frame = new StackTrace().GetFrame(1);
-                WriteLog(frame, ConsoleColor.Red, ex);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, ConsoleColor.Red, ex)));
 
                 if (logEvent)
                 {
-                    WriteFile(frame, LogPriority.Error, ex);
+                    this.worker.QueueLog(new Action(() => WriteFile(frame, LogPriority.Error, ex)));
                 }
             }
         }
@@ -291,8 +291,8 @@ namespace JoltEnvironment.Debug
             if (this.LogPriority <= LogPriority.Error)
             {
                 StackFrame frame = new StackTrace().GetFrame(1);
-                WriteLog(frame, ConsoleColor.Red, message + "\n" + ex.StackTrace);
-                WriteFile(frame, LogPriority.Error, message + "\n" + ex.StackTrace);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, ConsoleColor.Red, message + "\n" + ex.StackTrace)));
+                this.worker.QueueLog(new Action(() => WriteFile(frame, LogPriority.Error, message + "\n" + ex.StackTrace)));
             }
         }
 
@@ -307,11 +307,11 @@ namespace JoltEnvironment.Debug
             if (this.LogPriority <= LogPriority.Error)
             {
                 StackFrame frame = new StackTrace().GetFrame(1);
-                WriteLog(frame, ConsoleColor.Red, message + "\n" + ex.StackTrace);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, ConsoleColor.Red, message + "\n" + ex.StackTrace)));
 
                 if (logEvent)
                 {
-                    WriteFile(frame, LogPriority.Error, ex);
+                    this.worker.QueueLog(new Action(() => WriteFile(frame, LogPriority.Error, ex)));
                 }
             }
         }
@@ -329,16 +329,16 @@ namespace JoltEnvironment.Debug
             StackFrame frame = new StackTrace().GetFrame(1);
             if (this.LogPriority <= priority)
             {
-                WriteLog(frame, color, message);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, color, message)));
             }
             else if (ignorePriority)
             {
-                WriteLog(frame, color, message);
+                this.worker.QueueLog(new Action(() => WriteLog(frame, color, message)));
             }
 
             if (logEvent)
             {
-                WriteFile(frame, priority, message);
+                this.worker.QueueLog(new Action(() => WriteFile(frame, priority, message)));
             }
         }
 

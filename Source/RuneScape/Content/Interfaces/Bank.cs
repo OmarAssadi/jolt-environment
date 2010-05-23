@@ -136,6 +136,7 @@ namespace RuneScape.Content.Interfaces
             character.Bank.Refresh();
             Frames.SendInterface(character, 762, true);
             Frames.SendInventoryInterface(character, 763);
+            Frames.SendHideTabs(character);
         }
         #endregion Methods
     }
