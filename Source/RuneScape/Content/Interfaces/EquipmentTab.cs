@@ -55,7 +55,8 @@ namespace RuneScape.Content.Interfaces
                 case 55:
                     {
                         Frames.SendInterface(character, 667, false);
-                        Frames.SendInventoryInterface(character, 670);
+                        Frames.SendInventoryInterface(character, 149); // 670
+                        Frames.SendHideTabs(character);
                         character.Session.SendData(new InterfaceItemsPacketComposer(-1, unchecked((short)64209), 93, character.Inventory).Serialize());
                         character.Session.SendData(new InterfaceItemsPacketComposer(-1, unchecked((short)64208), 94, character.Equipment).Serialize());
                         character.Bonuses.Refresh(true);

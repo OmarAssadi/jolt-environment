@@ -192,13 +192,8 @@ namespace RuneScape
                 TcpConnection.Destroy();
             }
 
-            for (int i = 10; i >= 0; i--)
-            {
-                Console.Clear();
-                Console.WriteLine("Waiting for I/O completions, " 
-                    + i + " seconds left...");
-                Thread.Sleep(1000);
-            }
+            Console.WriteLine("Please wait 10 seconds for I/O completions.");
+            Thread.Sleep(10000);
 
             if (restart)
             {

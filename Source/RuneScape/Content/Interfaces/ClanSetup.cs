@@ -65,6 +65,12 @@ namespace RuneScape.Content.Interfaces
                     break;
                 case 23:
                     Room r = GameEngine.Content.ClanChat.Get(character.LongName);
+
+                    if (r == null)
+                    {
+                        break;
+                    }
+
                     switch (packetId)
                     {
                         case 223:
@@ -107,6 +113,12 @@ namespace RuneScape.Content.Interfaces
                     break;
                 case 24:
                     Room r2 = GameEngine.Content.ClanChat.Get(character.LongName);
+
+                    if (r2 == null)
+                    {
+                        break;
+                    }
+
                     switch (packetId)
                     {
                         case 223:
@@ -149,6 +161,12 @@ namespace RuneScape.Content.Interfaces
                     break;
                 case 25:
                     Room r3 = GameEngine.Content.ClanChat.Get(character.LongName);
+
+                    if (r3 == null)
+                    {
+                        break;
+                    }
+
                     switch (packetId)
                     {
                         case 223:

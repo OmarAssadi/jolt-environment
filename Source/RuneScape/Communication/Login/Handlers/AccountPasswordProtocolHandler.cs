@@ -135,7 +135,6 @@ namespace RuneScape.Communication.Login.Handlers
 
                         uint id = (uint)client.ExecuteQuery("SELECT id FROM characters WHERE username = @username AND password = @password;");
                         client.AddParameter("id", id);
-
                         client.ExecuteUpdate("INSERT INTO character_preferences (master_id) VALUES (@id);");
 
                         

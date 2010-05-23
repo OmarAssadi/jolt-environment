@@ -54,7 +54,7 @@ namespace RuneScape.Communication.Messages
         {
             SendMapRegion(character);
             WelcomeScreen.Show(character);
-            SendCloseInventoryInterface(character);
+            //SendCloseInventoryInterface(character);
 
             // Send interfaces.
             if (character.Preferences.Resized)
@@ -151,17 +151,17 @@ namespace RuneScape.Communication.Messages
         public static void SendLdInterface(Character character)
         {
             SendTab(character, 6, 745);
-            SendTab(character, 7, 754);
+
+            // Chat
             SendTab(character, 11, 751); // Chat options
             SendTab(character, 68, 752); // Chatbox
-            SendTab(character, 64, 748); // HP bar
-            SendTab(character, 65, 749); // Prayer bar
-            SendTab(character, 66, 750); // Energy bar
-            SendTab(character, 67, 747);
             SendTab(character, 8, 137); // Playername on chat
+            SendTab(character, 7, 754);
+
+            // Tab interfaces
             SendTab(character, 73, 92); // Attack tab
             SendTab(character, 74, 320); // Skill tab
-            SendTab(character, 75, 274); //  Quest tab
+            SendTab(character, 75, 274); // Quest tab
             SendTab(character, 76, 149); // Inventory tab
             SendTab(character, 77, 387); // Equipment tab
             SendTab(character, 78, 271); // Prayer tab
@@ -173,10 +173,14 @@ namespace RuneScape.Communication.Messages
             SendTab(character, 85, 464); // Emote tab
             SendTab(character, 86, 187); // Music tab
             SendTab(character, 87, 182); // Logout tab
+
+            // Orbs
             SendTab(character, 64, 748); // HP orb
             SendTab(character, 65, 749); // Prayer orb
             SendTab(character, 66, 750); // Energy orb
+            SendTab(character, 67, 747); // Summoning orb
 
+            // Configure the summoning orb
             for (byte i = 0; i < 6; i++)
             {
                 character.Session.SendData(new InterfaceConfigPacketComposer(747, i, false).Serialize());
@@ -206,19 +210,20 @@ namespace RuneScape.Communication.Messages
         {
             if (character.Preferences.Resized)
             {
-                character.Session.SendData(new InterfaceConfigPacketComposer(746, 71, false).Serialize());
+                character.Session.SendData(new InterfaceConfigPacketComposer(746, 69, false).Serialize());
             }
             else
             {
-                character.Session.SendData(new InterfaceConfigPacketComposer(548, 71, false).Serialize());
+                character.Session.SendData(new InterfaceConfigPacketComposer(548, 69, false).Serialize());
             }
+
             if (character.Preferences.Resized)
             {
-                character.Session.SendData(new InterfacePacketComposer(0, 746, 71, childId).Serialize());
+                character.Session.SendData(new InterfacePacketComposer(0, 746, 69, childId).Serialize());
             }
             else
             {
-                character.Session.SendData(new InterfacePacketComposer(0, 548, 71, childId).Serialize());
+                character.Session.SendData(new InterfacePacketComposer(0, 548, 69, childId).Serialize());
             }
         }
 
@@ -230,7 +235,7 @@ namespace RuneScape.Communication.Messages
         {
             character.Preferences.Remove("interface");
             character.Session.SendData(new InterfaceConfigPacketComposer(
-                (short)(character.Preferences.Resized ? 746 : 548), 71, true).Serialize());
+                (short)(character.Preferences.Resized ? 746 : 548), 69, true).Serialize());
         }
 
         /// <summary>
@@ -253,7 +258,7 @@ namespace RuneScape.Communication.Messages
         /// <param name="inventoryInterface">Whether or not the interface is an intventory interface.</param>
         public static void SendInterface(Character character, short id, bool inventoryInterface)
         {
-            SendCloseInterface(character);
+            //SendCloseInterface(character);
             character.Preferences.Add("interface", id);
             if (character.Preferences.Resized)
             {
@@ -282,8 +287,18 @@ namespace RuneScape.Communication.Messages
             }
             else
             {
-                character.Session.SendData(new CloseInterfacePacketComposer(548, 8).Serialize());
+                //character.Session.SendData(new CloseInterfacePacketComposer(548, 8).Serialize());
+                character.Session.SendData(new InterfacePacketComposer(1, 548, 8, 56).Serialize());
             }
+        }
+
+        /// <summary>
+        /// Closes an open interface.
+        /// </summary>
+        /// <param name="character">The character to produce frame for.</param>
+        public static void SendRestoreInventory(Character character)
+        {
+            character.Session.SendData(new InterfacePacketComposer(1, 548, 69, 56).Serialize());
         }
 
         /// <summary>
@@ -349,6 +364,26 @@ namespace RuneScape.Communication.Messages
             character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Resized ? 746 : 548), 31, false).Serialize());
             character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Resized ? 746 : 548), 63, false).Serialize());
             character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Resized ? 746 : 548), 72, false).Serialize());
+        }
+
+        /// <summary>
+        /// Hides all the tabs on the main interface.
+        /// </summary>
+        /// <param name="character">The character to hide the tabs for.</param>
+        public static void SendHideTabs(Character character)
+        {
+            for (short i = 16; i <= 21; i++)
+            {
+                character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Resized ? 746 : 548), i, true).Serialize());
+            }
+            for (short i = 32; i <= 38; i++)
+            {
+                character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Resized ? 746 : 548), i, true).Serialize());
+            }
+            character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Resized ? 746 : 548), 14, true).Serialize());
+            character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Resized ? 746 : 548), 31, true).Serialize());
+            character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Resized ? 746 : 548), 63, true).Serialize());
+            character.Session.SendData(new InterfaceConfigPacketComposer((short)(character.Preferences.Resized ? 746 : 548), 72, true).Serialize());
         }
 
         /// <summary>

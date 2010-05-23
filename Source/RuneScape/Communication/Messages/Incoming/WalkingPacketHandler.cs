@@ -47,20 +47,25 @@ namespace RuneScape.Communication.Messages.Incoming
                 short interfaceId = (short)character.Preferences["interface"];
 
                 // Close interface first.
-                Frames.SendCloseInterface(character);
+                //Frames.SendCloseInterface(character);
+
 
                 // Call any extra requirements.
                 switch (interfaceId)
                 {
+                    // Bank interface
                     case 762:
+                        Frames.SendRestoreInventory(character);
                         Frames.SendTabs(character);
-                        Frames.SendCloseInventoryInterface(character);
+                        //Frames.SendCloseInventoryInterface(character);
                         break;
                     case 667:
+                        Frames.SendRestoreInventory(character);
                         Frames.SendTabs(character);
-                        Frames.SendCloseInventoryInterface(character);
+                        //Frames.SendCloseInventoryInterface(character);
                         break;
                 }
+                Frames.SendCloseInterface(character);
             }
 
             // Walking via minimap.

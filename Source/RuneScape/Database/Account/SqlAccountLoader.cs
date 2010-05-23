@@ -130,9 +130,21 @@ namespace RuneScape.Database.Account
 
                         // Friends and ignores
                         if (data[34] is string)
-                            result.Character.Contacts.DeserializeFriends((string)data[34]);
+                        {
+                            string friends = (string)data[34];
+                            if (friends != string.Empty)
+                            {
+                                result.Character.Contacts.DeserializeFriends(friends);
+                            }
+                        }
                         if (data[35] is string)
-                            result.Character.Contacts.DeserializeIgnores((string)data[35]);
+                        {
+                            string ignores = (string)data[35];
+                            if (ignores != string.Empty)
+                            {
+                                result.Character.Contacts.DeserializeIgnores((string)data[35]);
+                            }
+                        }
 
                         // Preferences.
                         result.Character.Preferences.SingleMouse = (bool)data[37];
