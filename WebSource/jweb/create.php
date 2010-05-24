@@ -37,6 +37,7 @@ if (isset($_POST['submit'])) {
         $pass = sha1($dbname . sha1($pass1));
         $dob = $day . '-' . $month . '-' . $year;
         $ip = $_SERVER["REMOTE_ADDR"];
+
         if ($email == "") {
             dbquery("INSERT INTO characters (username,password,dob,country,register_ip,register_date)
             VALUES ('$dbname','$pass','$dob','$country','$ip',NOW());");
@@ -44,9 +45,11 @@ if (isset($_POST['submit'])) {
             dbquery("INSERT INTO characters (username,password,dob,country,email,register_ip,register_date)
             VALUES ('$dbname','$pass','$dob','$country','$email','$ip',NOW());");
         }
-        die('<script type="text/javascript">top.location.href = \'create?created=' . $dbname . '\';</script>');
-    } else {
+        
+        $uid = dbevaluate("SELECT id FROM characters WHERE username = '$dbname' AND password = '$pass';");
+        dbquery("INSERT INTO character_preferences (master_id) VALUES ('$uid');");
 
+        die('<script type="text/javascript">top.location.href = \'create?created=' . $dbname . '\';</script>');
     }
 }
 
@@ -84,7 +87,7 @@ function check_passwords($pass1, $pass2) {
 }
 
 function check_year($year) {
-    if (is_numeric($year) || $year < 1800 || $year > 2010) {
+    if (!is_numeric($year) || $year < 1800 || $year > 2010) {
         return false;
     } else {
         return true;
@@ -171,6 +174,7 @@ function check_email($email) {
         var msg = document.getElementById('errorPassword');
 
         var l = pass1.value.toString().length;
+        var l2 = pass2.value.toString().length;
 
         if (l < 5 || l > 20)
         {
@@ -179,8 +183,9 @@ function check_email($email) {
             msg.style.color = "red";
             msg.innerHTML = "Password needs to be more than 5 characters, and below 20.";
         }
-        else if (pass1.value != pass2.value)
+        else if (l2 > 1 && pass1.value != pass2.value)
         {
+
             pass1.className = "";
             pass1.style.border = "";
 
@@ -189,7 +194,7 @@ function check_email($email) {
             msg.style.color = "red";
             msg.innerHTML = "Passwords do not match.";
         }
-        else
+        else if (pass1.value == pass2.value)
         {
             pass1.className = "success";
             pass1.style.border = "2px solid green";

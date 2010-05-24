@@ -22,7 +22,7 @@ require_once("global.php");
 if (isset($_GET['username'])) {
     $user = str_replace(' ', '_', strtolower(trim($_GET['username'])));
 
-    if(strlen($user) < 1 || !preg_match("%[a-zA-Z0-9\ ]%", $user)) {
+    if(strlen($user) < 1 || !preg_match("/^([a-z0-9_])+$/", $user)) {
         echo json_encode(array('code'  =>  -1,
         'result'  =>  '<b>Invalid username, please try again.</b>'
         ));
@@ -44,7 +44,7 @@ if (isset($_GET['username'])) {
         die;
     }
 } else if (isset($_GET['email'])) {
-    if ($_GET['email'] != "" && preg_match('/^\S+@[\w\d.-]{2,}\.[\w]{2,6}$/iU', $_GET['email'])) {
+    if ($_GET['email'] != "" && !preg_match('/^\S+@[\w\d.-]{2,}\.[\w]{2,6}$/iU', $_GET['email'])) {
         echo  json_encode(array('code'  =>  0,
         'result'  =>  "<b>Invalid email address.</b>"
         ));

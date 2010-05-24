@@ -22,6 +22,10 @@ require_once("adminglobal.php");
 check_rights();
 
 require_once("header.php");
+
+if (isset($_GET['new'])) {
+    acp_success("Successfully added new offence ban.");
+}
 ?>
 <h1>Active Offenses</h1><hr>
 <p>A list of current offenses. This page allows you to see the characters banned, 

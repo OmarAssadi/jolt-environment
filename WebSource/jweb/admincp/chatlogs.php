@@ -135,10 +135,10 @@ require_once("header.php");
             if (mysql_num_rows($logs) > 0) {
                 while ($log = mysql_fetch_assoc($logs)) {
                     echo "<tr>
-                <td><strong><a href='viewuser.php?id=" . $log['name'] . "'>" . $users->format_name($log['name']) ."</a></strong></td>
+                <td><strong><a href='viewuser.php?name=" . $log['name'] . "'>" . $users->format_name($log['name']) ."</a></strong></td>
                 <td>" . $log['date'] . "</td>
                 <td>" . $log['type'] . "</td>
-                <td><strong><a href='viewuser.php?id=" . $log['toname'] . "'>" . $users->format_name($log['toname']) . "</a></strong></td>
+                <td><strong><a href='viewuser.php?name=" . $log['toname'] . "'>" . $users->format_name($log['toname']) . "</a></strong></td>
                 <td>" . $log['message'] . "</td>
                     </tr>";
                 }

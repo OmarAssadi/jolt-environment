@@ -61,7 +61,7 @@ require_once("header.php");
                                                 <ul>
                                                     <li><b><a href="http://www.mediafire.com/?5hguonrzwn4">MediaFire</a></b></li>
                                                     <li><b><a href="http://hotfile.com/dl/42892997/3a99492/ragescape.zip.htm">Hotfile</a></b></li>
-                                                    <li><b><a href="http://hotfile.com/dl/42892997/3a99492/ragescape.zip.htm">Hotfile</a></b></li>
+                                                    <li><b><a href="http://www.megaupload.com/?d=NXW0LFBB">Megaupload</a></b></li>
                                                     <li><b><a href="http://www.file-freak.com/5753411">File-Freak</a></b></li>
                                                 </ul>
 

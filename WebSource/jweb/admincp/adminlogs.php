@@ -134,7 +134,7 @@ require_once("header.php");
             if (mysql_num_rows($logs) > 0) {
                 while ($log = mysql_fetch_assoc($logs)) {
                     echo "<tr>
-                <td><strong><a href='viewuser.php?id=" . $log['user'] . "'>" . $users->format_name($log['user']) ."</a></strong></td>
+                <td><strong><a href='viewuser.php?name=" . $log['user'] . "'>" . $users->format_name($log['user']) ."</a></strong></td>
                 <td>" . $log['user_ip'] ."</td>
                 <td>" . $log['log_time'] ."</td>
                 <td><strong>" . $log['log_message'] ."</strong></td>

@@ -109,6 +109,7 @@
                                     <li><a href="../index.php"><span>Resolved Reports</span></a></li>
 
                                     <li class="header">Offences</li>
+                                    <li><a href="addoffence.php"><span>Add Offence</span></a></li>
                                     <li><a href="offences.php"><span>Active Offences</span></a></li>
 
                                     <li class="header">Logs</li>

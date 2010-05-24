@@ -22,10 +22,11 @@ require_once("adminglobal.php");
 check_rights(4);
 require_once("header.php");
 
-if (isset($_GET['id'])) {
-    $uid = $_GET['id'];
-    if (!is_numeric($uid)) {
-        $uid = $users->get_id($uid);
+if (isset($_GET['id']) || isset($_GET['name'])) {
+    if (isset($_GET['id'])) {
+        $uid = $_GET['id'];
+    } else if (isset($_GET['name'])) {
+        $uid = $users->get_id($_GET['name']);
     }
 
     if (isset($_POST['submit_preferences'])) {
@@ -64,7 +65,7 @@ if (isset($_GET['id'])) {
                     run_energy='$energy',inventory_items='$inventory',equipment_items='$equipment',
                     bank_items='$bank',friends='$friends',ignores='$ignores' WHERE id='$user_id2';");
             acp_success("Successfully saved user details.");
-            add_log(ACP_NAME, USER_IP, "Edited user in-game details. <br />» " . $users->get_name($uid));
+            add_log(ACP_NAME, USER_IP, "Edited user in-game details.<br />» " . $users->get_name($uid));
         }
     }
 

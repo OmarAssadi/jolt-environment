@@ -27,10 +27,11 @@ require_once("header.php");
 <p>A small amount of information availible to staff who cannot edit/view all information (moderators, etc).</p><br />
 
 <?php
-if (isset($_GET['id'])) {
-    $uid = $_GET['id'];
-    if (!is_numeric($uid)) {
-        $uid = $users->get_id($uid);
+if (isset($_GET['id']) || isset($_GET['name'])) {
+    if (isset($_GET['id'])) {
+        $uid = $_GET['id'];
+    } else if (isset($_GET['name'])) {
+        $uid = $users->get_id($_GET['name']);
     }
     $qry = dbquery("SELECT * FROM characters WHERE id = '$uid' LIMIT 1;");
 

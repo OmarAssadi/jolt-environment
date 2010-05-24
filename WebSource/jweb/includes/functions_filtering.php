@@ -68,9 +68,22 @@ function simpledate($timestamp) {
     return date('m-d-y', $timestamp);
 }
 
-
+/**
+ * Formats a timestamp to MySQL datetime format.
+ * @param int $timestamp The time to format.
+ * @return string The formatted time.
+ */
 function dbdate($timestamp) {
     return date("Y-m-d H:i:s", $timestamp);
+}
+
+/**
+ * Formats a DateTime object to MySQL datetime format.
+ * @param DateTime $date The time to format
+ * @return string The formatted time.
+ */
+function dbdate_format($date) {
+    return date_format($date, "Y-m-d H:i:s");
 }
 
 ?>

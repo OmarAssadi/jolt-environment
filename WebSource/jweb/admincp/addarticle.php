@@ -25,11 +25,12 @@ require_once("header.php");
 if (isset($_POST['submit'])) {
     $uid = ACP_UID;
     $title = $_POST['title'];
-    $description = $_POST['description'];
-    $story = $_POST['story'];
+    $description = filter_for_input($_POST['description']);
+    $story = filter_for_input($_POST['story']);
 
     dbquery("INSERT INTO web_news (author_id,date,title,description,story) VALUES ($uid, NOW(), '$title', '$description', '$story');");
     acp_success("Successfully created a new article.");
+    add_log(ACP_NAME, USER_IP, "Added a new article.<br />» $title");
 }
 ?>
 <h1>Add Article</h1><hr>
@@ -39,7 +40,7 @@ if (isset($_POST['submit'])) {
     <fieldset>
         <dl>
             <dt>
-                <label for="title">Title:</label>
+                <label for="title">Title:</label><br />
                 <span>A title shown on the news heading on front page.</span>
             </dt>
             <dd><input id="title" type="text" size="20" maxlength="255"

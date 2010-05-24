@@ -28,13 +28,26 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     if (isset($_GET['appeal_denied'])) {
         $denied = $_GET['appeal_denied'];
 
+        $name = dbevaluate("SELECT userid FROM offences WHERE id='$offence_id' LIMIT 1;");
         if ($denied == "true") {
             dbquery("UPDATE offences SET appeal_status ='1' WHERE id='$offence_id';");
+            acp_success("The offence's appeal has been denied.");
+            add_log(ACP_NAME, USER_IP, "Denied offence appeal (id=$offence_id).");
         } else if ($denied == "false") {
             dbquery("DELETE FROM offences WHERE id='$offence_id';");
             acp_success("The ban's appeal has been approved and is removed.");
+            add_log(ACP_NAME, USER_IP, "Accepted offence appeal (id=$offence_id).");
             die;
         }
+    }
+
+    if (isset($_POST['submit'])) {
+        $reason = $_POST['reason'];
+        $data = $_POST['data'];
+
+        dbquery("UPDATE offences SET reason='$reason',appeal_data='$data' WHERE id='$offence_id';");
+        acp_success("Updated offence information.");
+        add_log(ACP_NAME, USER_IP, "Updated offence information (id=$offence_id).");
     }
 } else {
     die('<script type="text/javascript">top.location.href = \'offences.php\';</script>');
@@ -46,7 +59,7 @@ if (mysql_num_rows($offence_qry) > 0) {
     ?>
 
 <form method="post" action="manageoffence.php?id=<?php echo $offence_id; ?>">
-    <input type="hidden" name="w_id" value="<?php echo $offence_id; ?>" />
+    <input type="hidden" name="o_id" value="<?php echo $offence_id; ?>" />
     <fieldset>
         <dl>
             <dt><label>Name:</label><br /></dt>
@@ -109,11 +122,11 @@ if (mysql_num_rows($offence_qry) > 0) {
 
         <dl>
             <dt>
-                <label for="reason">Appeal Data:</label><br />
+                <label for="data">Appeal Data:</label><br />
                 <span>A message by the user in attempt to appeal the ban.</span>
             </dt>
             <dd>
-                <textarea id="reason" name="reason" rows="3" cols="45"><?php echo $offence_vars['appeal_data']; ?></textarea>
+                <textarea id="data" name="data" rows="3" cols="45"><?php echo $offence_vars['appeal_data']; ?></textarea>
             </dd>
         </dl>
 
@@ -140,11 +153,8 @@ if (mysql_num_rows($offence_qry) > 0) {
         </dl>
 
         <p class="quick">
-            <input class="button1" value=" Deny Appeal "
-                   onclick="parent.location='manageoffence.php?id=<?php echo $offence_id; ?>&appeal_denied=true'" />
-
-            <input class="button1" value=" Approve Appeal "
-                   onclick="parent.location='manageoffence.php?id=<?php echo $offence_id; ?>&appeal_denied=false'" />
+            <input class="button1" value="Deny Appeal" onclick="parent.location='manageoffence.php?id=<?php echo $offence_id; ?>&appeal_denied=true'" />
+            <input class="button1" value="Approve Appeal" onclick="parent.location='manageoffence.php?id=<?php echo $offence_id; ?>&appeal_denied=false'" />
         </p>
     </fieldset>
 
