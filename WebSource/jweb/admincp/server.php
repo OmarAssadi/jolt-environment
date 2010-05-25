@@ -19,7 +19,7 @@
 define('ACP_TITLE', 'Server');
 define('ACP_TAB', 2);
 require_once("adminglobal.php");
-check_rights();
+check_rights(3);
 
 require_once("header.php");
 ?>
