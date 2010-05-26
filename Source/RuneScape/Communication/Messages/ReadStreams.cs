@@ -69,7 +69,7 @@ namespace RuneScape.Communication.Messages
         /// <summary>
         /// Reads the buffer and fulls up the whole specified array.
         /// </summary>
-        /// <param name="array"></param>
+        /// <param name="array">The array to read values to.</param>
         public void Read(byte[] array)
         {
             Read(array, 0, array.Length);

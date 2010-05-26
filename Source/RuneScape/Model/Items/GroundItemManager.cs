@@ -126,8 +126,8 @@ namespace RuneScape.Model.Items
                 foreach (GroundItem g in this.Items)
                 {
                     if (g.Character == character && !g.Destroyed && !g.Spawned
-                        && g.Location.Equals(location) && g.Id == item.Id 
-                        && (g.Definition.Noted || g.Definition.Stackable))
+                                && g.Location.Equals(location) && g.Id == item.Id
+                                && (g.Definition.Noted || g.Definition.Stackable))
                     {
                         g.Count += item.Count;
                         return;
@@ -253,11 +253,13 @@ namespace RuneScape.Model.Items
                 {
                     if (character.Location.WithinDistance(g.Location) && !g.Destroyed)
                     {
-                        if (g.Character != null && character != g.Character
-                            && character.MasterId == g.Character.MasterId)
+                        if (g.Character != null)
                         {
-                            g.Character = character;
-                            g.Spawn();
+                            if (character != g.Character && character.MasterId == g.Character.MasterId)
+                            {
+                                g.Character = character;
+                                g.Spawn();
+                            }
                         }
                         else
                         {

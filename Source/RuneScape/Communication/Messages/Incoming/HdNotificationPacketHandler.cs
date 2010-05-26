@@ -39,7 +39,6 @@ namespace RuneScape.Communication.Messages.Incoming
         /// <param name="packet">The packet containing handle data.</param>
         public void Handle(Character character, Packet packet)
         {
-            Program.Logger.WriteDebug("HD notification.");
             character.Preferences.Hd = true;
             Frames.SendHdInterface(character);
         }

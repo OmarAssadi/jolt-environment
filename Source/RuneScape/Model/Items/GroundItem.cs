@@ -32,16 +32,42 @@ namespace RuneScape.Model.Items
     /// </summary>
     public class GroundItem : Item, IEntity
     {
+        #region Fields
+        /// <summary>
+        /// The character who dropped the item (null if none).
+        /// </summary>
+        private Character character;
+        /// <summary>
+        /// Synchronized access for the character.
+        /// </summary>
+        private object charObj = new object();
+        #endregion Fields
+
         #region Properties
         /// <summary>
         /// Gets or sets the location at which the item is located on the ground.
         /// </summary>
         public Location Location { get; set; }
         /// <summary>
-        /// The character who had dropped the item (if there is no owner, returns null).
+        /// Gets the character.
         /// </summary>
-        public Character Character { get; set; }
-
+        public Character Character 
+        {
+            get
+            {
+                lock (this.charObj)
+                {
+                    return this.character;
+                }
+            }
+            set
+            {
+                lock (this.charObj)
+                {
+                    this.character = value;
+                }
+            } 
+        }
         /// <summary>
         /// Gets or sets the time at which the item was dropped.
         /// </summary>
@@ -150,7 +176,7 @@ namespace RuneScape.Model.Items
         /// </summary>
         public void Despawn()
         {
-            if (this.Character != null)
+            if (this.Character != null && !this.Character.Session.Disconnected)
             {
                 this.Character.Session.SendData(new CoordinatePacketComposer(this.Character, this.Location).Serialize());
                 this.Character.Session.SendData(new DespawnGroundItemPacketComposer(this.Id).Serialize());

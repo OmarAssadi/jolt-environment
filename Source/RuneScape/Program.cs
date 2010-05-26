@@ -138,7 +138,11 @@ namespace RuneScape
             }
 
             // Catch any unhandled exceptions.
-            AppDomain.CurrentDomain.UnhandledException += (sender, e) => Logger.WriteError("UNHANDLED EXCEPTION: " + e.ExceptionObject);
+            AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
+                {
+                    Logger.WriteError("UNHANDLED EXCEPTION: " + e.ExceptionObject);
+                    Logger.WriteFile(e.ExceptionObject, "UE_" + DateTime.Now.ToString());
+                };
 
             // DO NOT EDIT / REMOVE THIS BANNER.
             Console.ForegroundColor = ConsoleColor.Cyan;

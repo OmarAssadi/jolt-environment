@@ -57,6 +57,10 @@ namespace RuneScape.Communication
         /// The session's server key.
         /// </summary>
         public long ServerKey { get; private set; }
+        /// <summary>
+        /// Gets or sets whether the character has disconnected.
+        /// </summary>
+        public bool Disconnected { get; private set; }
         #endregion Properties
 
         #region Constructors
@@ -98,6 +102,7 @@ namespace RuneScape.Communication
         {
             if (this.Connection != null)
             {
+                this.Disconnected = true;
                 GameEngine.World.CharacterManager.Unregister((short)this.Character.Index);
                 GameServer.TcpConnection.DropConnection(this.Connection);
                 Dispose();
@@ -167,8 +172,11 @@ namespace RuneScape.Communication
                         buffer.Read(payload);
                         Packet packet = new Packet(opcode, payload);
 
-                        // Handle the packets via a task, so processing is much quicker and more efficient.
-                        this.handleTask.ContinueWith((t) => GameEngine.World.PacketManager.Handle(this.Character, packet));
+                        if (this.Character != null)
+                        {
+                            // Handle the packets via a task, so processing is much quicker and more efficient.
+                            this.handleTask.ContinueWith((t) => GameEngine.World.PacketManager.Handle(this.Character, packet));
+                        }
                     }
                 }
             }
