@@ -72,14 +72,6 @@ if (isset($_GET['new'])) {
             } else {
                 echo "<tr><td colspan='5' style='text-align: center;'>No offences found.</td></tr>";
             }
-
-            function yesno($data) {
-                if ($data == 0) {
-                    return "No";
-                } else if ($data == 1) {
-                    return "Yes";
-                }
-            }
             ?>
 </tbody>
 </table>

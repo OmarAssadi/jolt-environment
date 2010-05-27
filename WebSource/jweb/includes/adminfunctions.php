@@ -18,6 +18,19 @@
 */
 
 /**
+ * Returns whether the given data is a yes or no.
+ * @param int $data Integer type data.
+ * @return string Yes if data is 1; No if 0.
+ */
+function yesno($data) {
+    if ($data == 0) {
+        return "No";
+    } else if ($data == 1) {
+        return "Yes";
+    }
+}
+
+/**
  * Get the type of ban.
  * @param <type> $type Data to decide type for.
  * @return <type> Returns Mute, Ban, or N/A.

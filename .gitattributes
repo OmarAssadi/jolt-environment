@@ -1093,10 +1093,10 @@ WebSource/jweb/admincp/images/spacer.gif -text
 WebSource/jweb/admincp/images/toggle.gif -text
 WebSource/jweb/admincp/index.php -text
 WebSource/jweb/admincp/infoframe.php -text
+WebSource/jweb/admincp/listusers.php -text
 WebSource/jweb/admincp/login.php -text
 WebSource/jweb/admincp/loginlogs.php -text
 WebSource/jweb/admincp/logout.php -text
-WebSource/jweb/admincp/logs.php -text
 WebSource/jweb/admincp/manageoffence.php -text
 WebSource/jweb/admincp/moderation.php -text
 WebSource/jweb/admincp/offences.php -text
@@ -1108,6 +1108,7 @@ WebSource/jweb/admincp/style/admin.css -text
 WebSource/jweb/admincp/style/editor.js -text
 WebSource/jweb/admincp/style/permissions.js -text
 WebSource/jweb/admincp/style/tooltip.js -text
+WebSource/jweb/admincp/users.php -text
 WebSource/jweb/admincp/viewarticles.php -text
 WebSource/jweb/admincp/viewuser.php -text
 WebSource/jweb/admincp/website.php -text
@@ -1369,6 +1370,5 @@ WebSource/jweb/listnews.php -text
 WebSource/jweb/nbproject/project.properties -text
 WebSource/jweb/nbproject/project.xml -text
 WebSource/jweb/play.php -text
-WebSource/jweb/test.php -text
 WebSource/jweb/validate.php -text
 WebSource/jweb/viewnews.php -text

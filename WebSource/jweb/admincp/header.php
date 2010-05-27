@@ -88,13 +88,8 @@
                                 <!-- Users !-->
                                     <?php } else if (ACP_TAB == 4) { ?>
                                 <ul>
-                                    <li class="header">Quick access</li>
-                                    <li><a href="dashboard.php"><span>Dashboard</span></a></li>
-                                    <li><a href="../index.php"><span>View Site</span></a></li>
-
-                                    <li class="header">Information</li>
-                                    <li><a href="dashboard.php"><span>Dashboard</span></a></li>
-                                    <li><a href="../index.php"><span>View Site</span></a></li>
+                                    <li class="header">Users</li>
+                                    <li><a href="listusers.php?viewall"><span>List Users</span></a></li>
                                 </ul>
 
                                 <!--Moderation !-->
