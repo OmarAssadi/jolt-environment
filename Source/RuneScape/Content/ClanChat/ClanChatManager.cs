@@ -168,7 +168,7 @@ namespace RuneScape.Content.ClanChat
         /// <param name="character">The character to leave.</param>
         public void Leave(Character character)
         {
-            if (character.ClanRoom == null)
+            if (character == null || character.ClanRoom == null)
             {
                 return;
             }

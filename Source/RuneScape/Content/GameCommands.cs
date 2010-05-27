@@ -140,7 +140,7 @@ namespace RuneScape.Content
                     #region Teleport
                     /*
                      * Teleports the character to the specified coordinates.
-                     */ 
+                     */
                     if (command.Equals("teleport"))
                     {
                         if (arguments.Length == 3 || arguments.Length == 4)
@@ -160,7 +160,7 @@ namespace RuneScape.Content
                     }
                     #endregion Teleport
                 }
-                
+
                 /*
                  * Commands that are specified for system administrators (development).
                  */
@@ -211,12 +211,12 @@ namespace RuneScape.Content
                     #region Coords
                     /*
                      * Prints out the character's current coordinates.
-                     */ 
+                     */
                     else if (command.Equals("coords"))
                     {
                         byte[] packet = new MessagePacketComposer(
-                            "Current X: " + character.Location.X + 
-                            ", Current Y: " + character.Location.Y + 
+                            "Current X: " + character.Location.X +
+                            ", Current Y: " + character.Location.Y +
                             ", Current Z: " + character.Location.Z).Serialize();
                         character.Session.SendData(packet);
                     }
@@ -225,7 +225,7 @@ namespace RuneScape.Content
                     #region Set Energy
                     /*
                      * Sets the character's energy to the specified amount.
-                     */ 
+                     */
                     else if (command.Equals("setenergy"))
                     {
                         if (arguments.Length == 2)
@@ -249,7 +249,7 @@ namespace RuneScape.Content
                     #region Add Item
                     /*
                      * Spawns an item.
-                     */ 
+                     */
                     else if (command.Equals("additem"))
                     {
                         if (arguments.Length == 2 || arguments.Length == 3)
@@ -269,7 +269,7 @@ namespace RuneScape.Content
                     #region Delete Item
                     /*
                      * Deletes an item.
-                     */ 
+                     */
                     else if (command.Equals("deleteitem"))
                     {
                         if (arguments.Length == 2 || arguments.Length == 3)
@@ -312,6 +312,12 @@ namespace RuneScape.Content
                         Frames.TestPacket(character);
                     }
                 }
+            }
+            catch (FormatException)
+            {
+            }
+            catch (OverflowException)
+            {
             }
             catch (Exception ex)
             {

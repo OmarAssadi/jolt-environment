@@ -33,7 +33,7 @@ namespace RuneScape.Communication.Messages
         /// <summary>
         /// An array of integers representing the length of the packet.
         /// </summary>
-        private int[] length = new int[255];
+        private int[] length = new int[256];
         #endregion Fields
 
         #region Properties
@@ -46,7 +46,11 @@ namespace RuneScape.Communication.Messages
         {
             get
             {
-                return length[packetOpcode];
+                if (packetOpcode < length.Length)
+                {
+                    return length[packetOpcode];
+                }
+                return -3;
             }
         }
         #endregion Properties
@@ -312,6 +316,7 @@ namespace RuneScape.Communication.Messages
             length[252] = -3;
             length[253] = 2;
             length[254] = -3;
+            length[255] = -3;
         }
         #endregion Constructor
     }
