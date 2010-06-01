@@ -1030,7 +1030,6 @@ Source/RuneScape/Workers/LoginWorker.cs -text
 Source/RuneScape/Workers/MajorWorker.cs -text
 Source/RuneScape/Workers/Worker.cs -text
 WebSource/jweb/.htaccess -text
-WebSource/jweb/EmptyPHP.php -text
 WebSource/jweb/account.php -text
 WebSource/jweb/admincp/addarticle.php -text
 WebSource/jweb/admincp/addoffence.php -text
