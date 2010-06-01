@@ -38,6 +38,7 @@ if (defined("PAGE_TAB")) {
         case 4: $tab = "navguide"; break;
         case 5: $tab = "navcommunity"; break;
         case 6: $tab = "navhelp"; break;
+        case 7: $tab = "login"; break;
     }
 }
 
@@ -81,7 +82,6 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
                     <div id="headOrangeTop"></div>
                     <img src="img/main/skins/default/head_image.jpg" alt="RuneScape" />
                     <div id="headImage"><a href="home" id="logo_select"></a>
-
                         <div id="player_no">There are currently <?php echo $online; ?> people playing!</div>
                     </div>
                     <div id="headOrangeBottom"></div>
@@ -100,22 +100,20 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
                         <ul id="menus">
                             <li class="top"><a href="home" id="home" class="tl"><span class="ts">Home</span></a></li>
 
-                            <li class="top"><a id="play" class="tl" href="game.html" onclick="if(!this.j){this.href+='?j=1';this.j=true;}"><span class="ts">Play Now</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
+                            <li class="top"><a id="play" class="tl" href="play" onclick="if(!this.j){this.href+='?j=1';this.j=true;}"><span class="ts">Play Now</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
                             <!--[if lte IE 6]><table><tr><td><![endif]-->
                                 <ul>
-                                    <li><a href="https://secure.runescape.com/m=create/index.ws" class="fly"><span>New Users</span></a></li>
-                                    <li><a href="game.html" onclick="if(!this.j){this.href+='?j=1';this.j=true;}" class="fly"><span>Existing Users</span></a></li>
-                                    <li><a href="options.html" class="fly"><span>Java Options</span></a></li>
+                                    <li><a href="create" class="fly"><span>New Users</span></a></li>
+                                    <li><a href="play" onclick="if(!this.j){this.href+='?j=1';this.j=true;}" class="fly"><span>Existing Users</span></a></li>
                                 </ul>
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
                             </li>
 
-                            <li class="top"><a id="account" class="tl" href="account_management.html"><span class="ts">Account</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
+                            <li class="top"><a id="account" class="tl" href="account"><span class="ts">Account</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
                             <!--[if lte IE 6]><table><tr><td><![endif]-->
                                 <ul>
-                                    <li><a href="members/members.html" class="fly"><span>Upgrade Your Account</span></a></li>
-                                    <li><a href="https://secure.runescape.com/m=create/index.html" class="fly"><span>Create New Account</span></a></li>
-                                    <li><a href="account_management.html" class="fly"><span>Account Management</span></a></li>
+                                    <li><a href="create" class="fly"><span>Create New Account</span></a></li>
+                                    <li><a href="account" class="fly"><span>Account Management</span></a></li>
                                 </ul>
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
                             </li>
@@ -163,7 +161,11 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
                             </li>
 
-                            <li class="top"><a href="https://secure.runescape.com/m=weblogin/loginform.ws?mod=www&amp;ssl=0&amp;dest=title.ws" id="login" class="tl"><span class="ts">Log In</span></a></li>
+                            <?php if (LOGGED_IN) { ?>
+                            <li class="top"><a href="logout" id="logout" class="tl"><span class="ts">Log Out</span></a></li>
+                            <?php } else { ?>
+                            <li class="top"><a href="login" id="login" class="tl"><span class="ts">Log In</span></a></li>
+                            <?php } ?>
                         </ul>
                         <br class="clear" />
                     </div>

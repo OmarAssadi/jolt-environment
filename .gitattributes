@@ -1030,6 +1030,8 @@ Source/RuneScape/Workers/LoginWorker.cs -text
 Source/RuneScape/Workers/MajorWorker.cs -text
 Source/RuneScape/Workers/Worker.cs -text
 WebSource/jweb/.htaccess -text
+WebSource/jweb/EmptyPHP.php -text
+WebSource/jweb/account.php -text
 WebSource/jweb/admincp/addarticle.php -text
 WebSource/jweb/admincp/addoffence.php -text
 WebSource/jweb/admincp/adminglobal.php -text
@@ -1345,6 +1347,7 @@ WebSource/jweb/img/weblogin/create.png -text
 WebSource/jweb/img/weblogin/ie8.png -text
 WebSource/jweb/img/weblogin/image_recaptcha_highlight.png -text
 WebSource/jweb/img/weblogin/input_bg.png -text
+WebSource/jweb/img/weblogin/login.png -text
 WebSource/jweb/img/weblogin/login_box_bottom.png -text
 WebSource/jweb/img/weblogin/login_box_repeat.png -text
 WebSource/jweb/img/weblogin/login_box_top.png -text
@@ -1367,6 +1370,8 @@ WebSource/jweb/includes/functions_remote.php -text
 WebSource/jweb/index.php -text
 WebSource/jweb/js/jquery/jquery_1_3_2.js -text
 WebSource/jweb/listnews.php -text
+WebSource/jweb/login.php -text
+WebSource/jweb/logout.php -text
 WebSource/jweb/nbproject/project.properties -text
 WebSource/jweb/nbproject/project.xml -text
 WebSource/jweb/play.php -text

@@ -31,10 +31,18 @@ define('CWD', str_replace('admincp' . DIRECTORY_SEPARATOR, '', dirname(__FILE__)
 define('INCLUDES', CWD . 'includes' . DIRECTORY_SEPARATOR);
 
 // #############################################################################
+// GLOBAL FUNCTIONS
+require_once(INCLUDES . "functions_database.php");
+require_once(INCLUDES . "functions_filtering.php");
+require_once(INCLUDES . "functions_remote.php");
+
+// #############################################################################
+// CONFIGURATION
 set_magic_quotes_runtime(0);
 error_reporting(E_ALL ^ E_NOTICE);
 
 // #############################################################################
+// DEBUGGING
 if (DEBUG_MODE) {
 
     // We don't want customers to see errors / bugs while debugging!
@@ -47,14 +55,17 @@ if (DEBUG_MODE) {
 }
 
 // #############################################################################
+// SESSION
 session_start();
 
 // #############################################################################
+// INITIALIZATION
 require_once(INCLUDES . "class_core.php");
 require_once(INCLUDES . "class_database.php");
 require_once(INCLUDES . "class_users.php");
 
 $core = new core();
+$users = new users();
 $core->parse_configs();
 
 $database = new database(
@@ -63,10 +74,23 @@ $database = new database(
         $core->get_config("database.pass"));
 $database->connect($core->get_config("database.name"));
 
-$users = new users();
-
 // #############################################################################
-require_once(INCLUDES . "functions_database.php");
-require_once(INCLUDES . "functions_filtering.php");
-require_once(INCLUDES . "functions_remote.php");
+// SESSION(S)
+if (isset($_SESSION['JWEB_USER']) && isset($_SESSION['JWEB_HASH'])) {
+    if ($users->validate_details($_SESSION['JWEB_USER'], $_SESSION['JWEB_HASH'])) {
+        define("LOGGED_IN", true);
+        define("USER_NAME", $_SESSION['JWEB_USER']);
+        define("USER_HASH", $_SESSION['JWEB_HASH']);
+        define("USER_ID", $users->get_id(USERNAME));
+        define("USER_RIGHTS", $users->get_server_rights(USER_ID));
+    } else {
+        session_destroy();
+    }
+} else {
+    define("LOGGED_IN", false);
+    define("USER_NAME", "Guest");
+    define("USER_HASH", "");
+    define("USER_ID", -1);
+    define("USER_RIGHTS", 0);
+}
 ?>

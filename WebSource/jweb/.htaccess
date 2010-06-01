@@ -10,3 +10,6 @@ RewriteRule ^play(|/)$ play.php
 RewriteRule ^register(|/)$ create.php
 RewriteRule ^register.php(|/)$ create.php
 RewriteRule ^create(|/)$ create.php
+
+RewriteRule ^login(|/)$ login.php
+RewriteRule ^logout(|/)$ logout.php
