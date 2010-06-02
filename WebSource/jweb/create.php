@@ -181,7 +181,7 @@ function check_email($email) {
             pass1.className = "fail";
             pass1.style.border = "2px solid red";
             msg.style.color = "red";
-            msg.innerHTML = "Password needs to be more than 5 characters, and below 20.";
+            msg.innerHTML = "<b>Password needs to be more than 5 characters, and below 20.</b>";
         }
         else if (l2 > 1 && pass1.value != pass2.value)
         {
@@ -192,7 +192,7 @@ function check_email($email) {
             pass2.className = "fail";
             pass2.style.border = "2px solid red";
             msg.style.color = "red";
-            msg.innerHTML = "Passwords do not match.";
+            msg.innerHTML = "<b>Passwords do not match.</b>";
         }
         else if (pass1.value == pass2.value)
         {

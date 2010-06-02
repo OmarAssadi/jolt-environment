@@ -69,9 +69,9 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
         <script type="text/javascript">
             function h(o){o.getElementsByTagName('span')[0].className='shimHover';}
             function u(o){o.getElementsByTagName('span')[0].className='shim';}
-            document.domain='runescape.com';
+            document.domain='ragescape.org';
         </script>
-        <link rel="alternate" type="application/rss+xml" title="RageScape - Latest news" href="http://services.runescape.com/m=news/latest_news.rss">
+        <link rel="alternate" type="application/rss+xml" title="RageScape - Latest news" href="rss.php">
     </head>
 
     <body id="<?php echo $tab; ?>" class="bodyBackground">

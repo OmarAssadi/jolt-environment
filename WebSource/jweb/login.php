@@ -34,8 +34,10 @@ if (isset($_POST['submit'])) {
         $_SESSION['JWEB_USER'] = $username;
         $_SESSION['JWEB_HASH'] = $password;
 
-        if ($remember) {
+        if ($remember && !isset($_COOKIE['JWEB_REM_NAME'])) {
             setcookie("JWEB_REM_NAME", $username, time()+60*60*24*30);
+        } else {
+            setcookie("JWEB_REM_NAME", "", time() - 3600);
         }
         
         die('<script type="text/javascript">top.location.href = \'home\';</script>');
@@ -102,7 +104,7 @@ require_once("header.php");
                                 <div class="bottom_section">
                                     <div id="remember">
                                         <label for="rem">
-                                            <input type="checkbox" name="rem" id="rem" value="1" class="checkbox"/>
+                                            <input type="checkbox" name="rem" id="rem" value="1" class="checkbox" <?php if (isset($_COOKIE['JWEB_REM_NAME'])) { echo "checked='checked'"; } ?>/>
                                             Check this box to remember username</label>
                                     </div>
                                     <div id="submit_button">

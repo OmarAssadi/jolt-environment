@@ -160,7 +160,7 @@ if (isset($_GET['access_denied'])) {
             while ($note = mysql_fetch_assoc($notes)) {
                 echo "
                 <tr>
-                    <td><a href='dashboard.php?delete_note=" . $note['id'] . "'><img src='./images/icon_delete.gif' /></a> <a href='viewuser.php?id=" . $note['user'] . "'><strong>" . $users->format_name($note['user']) . "</strong></a></td>
+                    <td><a href='dashboard.php?delete_note=" . $note['id'] . "'><img src='./images/icon_delete.gif' /></a> <a href='viewuser.php?name=" . $note['user'] . "'><strong>" . $users->format_name($note['user']) . "</strong></a></td>
                     <td style='text-align: center;'>" . $note['note_date'] . "</td>
                     <td>" . filter_for_outout($note['note_message'], true) . "</td>
                 </tr>
@@ -203,7 +203,7 @@ if (isset($_GET['access_denied'])) {
         if (mysql_num_rows($logs) > 0) {
             while ($log = mysql_fetch_assoc($logs)) {
                 echo "            <tr>
-                <td><strong><a href='viewuser.php?id=" . $log['user'] . "'>" . $users->format_name($log['user']) ."</a></strong></td>
+                <td><strong><a href='viewuser.php?name=" . $log['user'] . "'>" . $users->format_name($log['user']) ."</a></strong></td>
                 <td style='text-align: center;'>" . $log['user_ip'] ."</td>
                 <td style='text-align: center;'>" . $log['log_time'] ."</td>
                 <td><strong>" . $log['log_message'] ."</strong></td>
