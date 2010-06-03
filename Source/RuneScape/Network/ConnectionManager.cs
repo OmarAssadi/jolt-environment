@@ -82,15 +82,13 @@ namespace RuneScape.Network
         {
             lock (this.CurrentConnections)
             {
-                int count = 0;
                 // Safely disconnect all the users.
-                this.CurrentConnections.ForEach((n) =>
-                {
-                    n.OnDisconnect();
-                    count++;
-                });
+                List<Node> connections = new List<Node>(this.CurrentConnections);
+                Action<Node> disconnectAction = new Action<Node>((n) => n.OnDisconnect());
+                connections.ForEach(disconnectAction);
+
                 this.CurrentConnections.Clear();
-                Console.WriteLine(" -> Removed and saved " + count + " online characters.");
+                Console.WriteLine(" -> Removed and saved " + connections.Count + " online characters.");
             }
         }
 

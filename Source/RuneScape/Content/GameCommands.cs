@@ -246,46 +246,6 @@ namespace RuneScape.Content
                     }
                     #endregion Set Energy
 
-                    #region Add Item
-                    /*
-                     * Spawns an item.
-                     */
-                    else if (command.Equals("additem"))
-                    {
-                        if (arguments.Length == 2 || arguments.Length == 3)
-                        {
-                            short item = short.Parse(arguments[1]);
-                            int count = 1;
-
-                            if (arguments.Length == 3)
-                            {
-                                count = int.Parse(arguments[2]);
-                            }
-                            character.Inventory.AddItem(new Item(item, count));
-                        }
-                    }
-                    #endregion Add Item
-
-                    #region Delete Item
-                    /*
-                     * Deletes an item.
-                     */
-                    else if (command.Equals("deleteitem"))
-                    {
-                        if (arguments.Length == 2 || arguments.Length == 3)
-                        {
-                            short item = short.Parse(arguments[1]);
-                            int count = 1;
-
-                            if (arguments.Length == 3)
-                            {
-                                count = int.Parse(arguments[2]);
-                            }
-                            character.Inventory.DeleteItem(new Item(item, count));
-                        }
-                    }
-                    #endregion Delete Item
-
                     #region Update
                     /*
                      * Sends a system update to all characters online, 
@@ -306,11 +266,6 @@ namespace RuneScape.Content
                         }
                     }
                     #endregion Update
-
-                    else if (command.Equals("test"))
-                    {
-                        Frames.TestPacket(character);
-                    }
                 }
             }
             catch (FormatException)

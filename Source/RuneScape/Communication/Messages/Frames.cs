@@ -37,15 +37,6 @@ namespace RuneScape.Communication.Messages
     public static class Frames
     {
         #region Methods
-        public static void TestPacket(Character character)
-        {
-            GenericPacketComposer gpc = new GenericPacketComposer();
-            gpc.SetOpcode(64);
-            gpc.AppendShortA(unchecked((short)-65536));
-            gpc.AppendIntSecondary(1);
-            character.Session.SendData(gpc.Serialize());
-        }
-
         /// <summary>
         /// Sends a few packets at login to prepare the character for gameplay.
         /// </summary>

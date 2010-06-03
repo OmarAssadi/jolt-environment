@@ -72,7 +72,7 @@ namespace RuneScape
                             restart = bool.Parse(arguments[1]);
                         }
                         Frames.SendSystemUpdate(time, restart);
-                        Program.Logger.WriteInfo("System update countdown started...");
+                        Program.Logger.WriteInfo("System update countdown started... (" + ((time * 600) / 1000) + " seconds till update)");
                         break;
                     default:
                         Program.Logger.WriteWarn("Unknown command \"" + command + "\".");
