@@ -90,6 +90,11 @@ namespace RuneScape.Services
             }
         }
 
+        public int Count
+        {
+            get { return this.requests.Count; }
+        }
+
         /// <summary>
         /// Adds a request to the request container.
         /// </summary>

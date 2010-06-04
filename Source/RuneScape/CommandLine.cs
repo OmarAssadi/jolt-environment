@@ -42,6 +42,13 @@ namespace RuneScape
             {
                 switch (command.ToLower())
                 {
+                    case "count":
+                        Console.WriteLine(GameEngine.LoginWorker.service.Count);
+                        break;
+                    case "running":
+                        Console.WriteLine(GameEngine.LoginWorker.Running);
+                        Console.WriteLine(GameEngine.LoginWorker.State);
+                        break;
                     case "about": // Displays information about jolt environment.
                         Console.WriteLine(" Jolt Environment [" + Program.Version + " x" + (Environment.Is64BitProcess ? "64" : "32") + "-bit]");
                         Console.WriteLine(" Copyright (C) 2010 Jolt Environment Team");

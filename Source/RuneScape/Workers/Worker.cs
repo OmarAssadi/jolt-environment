@@ -34,6 +34,24 @@ namespace RuneScape.Workers
         protected Thread workerThread;
         #endregion Fields
 
+        #region Properties
+        /// <summary>
+        /// Gets whether the worker is running.
+        /// </summary>
+        public bool Running
+        {
+            get { return this.workerThread.ThreadState == ThreadState.Running; }
+        }
+
+        /// <summary>
+        /// Gets the worker's current state.
+        /// </summary>
+        public ThreadState State
+        {
+            get { return this.workerThread.ThreadState; }
+        }
+        #endregion Properties
+
         #region Constructors
         /// <summary>
         /// Constructs a new worker.
