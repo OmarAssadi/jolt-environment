@@ -48,7 +48,7 @@ namespace RuneScape.Model.Items
         /// containing specified item definitions.</returns>
         public static ItemDefinition Get(short itemId)
         {
-            if (itemId < definitions.Length)
+            if (itemId > 0 && itemId < definitions.Length)
             {
                 return definitions[itemId];
             }

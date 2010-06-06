@@ -278,7 +278,10 @@ namespace RuneScape.Network
         {
             try
             {
-                this.Socket.BeginSend(data, offset, length, SocketFlags.None, new AsyncCallback(DataSent), data);
+                if (data != null)
+                {
+                    this.Socket.BeginSend(data, offset, length, SocketFlags.None, new AsyncCallback(DataSent), data);
+                }
             }
             catch (ObjectDisposedException)
             {

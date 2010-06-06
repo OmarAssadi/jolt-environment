@@ -60,7 +60,6 @@ namespace RuneScape.Database.Account
                     client.AddParameter("username", details.Username);
                     client.AddParameter("password", details.Password);
                     data = client.ReadDataRow("SELECT * FROM characters LEFT JOIN (character_preferences) ON (characters.id = character_preferences.master_id) WHERE username = @username AND password = @password LIMIT 1;");
-                    //LEFT JOIN (character_appearance) ON (characters.id = character_appearance.master_id)
                 }
 
                 if (data != null) // Meaning the character exists, and the password is correct.
