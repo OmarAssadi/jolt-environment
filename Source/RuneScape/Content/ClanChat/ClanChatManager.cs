@@ -122,7 +122,7 @@ namespace RuneScape.Content.ClanChat
                     r.Users.ForEach((l) =>
                     {
                         Character c = GameEngine.World.CharacterManager.Get(l);
-                        c.Session.SendData(new MessagePacketComposer("The channel you were in has been disabled").Serialize());
+                        c.Session.SendData(new MessagePacketComposer("The channel you were in has been disabled.").Serialize());
                         c.Session.SendData(new ClanListPacketComposer().Serialize());
                     });
                 }
@@ -158,7 +158,7 @@ namespace RuneScape.Content.ClanChat
             else
             {
                 character.Session.SendData(new MessagePacketComposer(
-                        "This channel does not exist.").Serialize());
+                        "The channel you tried to join does not exist.").Serialize());
             }
         }
 

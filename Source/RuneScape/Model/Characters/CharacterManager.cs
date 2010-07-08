@@ -161,7 +161,12 @@ namespace RuneScape.Model.Characters
                 Character character = null;
                 if (this.characters.TryRemove(indexId, out character))
                 {
-                    // TODO: save.
+                    // Make sure that if the character is trading, he recieves his items back.
+                    if (character.Request.Trading)
+                    {
+                        character.Request.Trade.Close(true);
+                    }
+
                     GameEngine.AccountWorker.Add(character);
                     this.slotManager.ReleaseSlot(character.Index);
                     character.Contacts.OnLogout();

@@ -76,7 +76,7 @@ namespace RuneScape.Communication.Messages
                 }
                 else if (character.ServerRights >= ServerRights.SystemAdministrator)
                 {
-                    Program.Logger.WriteDebug("Unhandled packet " + packet.ToString() + ".");
+                    Program.Logger.WriteDebug("Unhandled packet " + packet.ToString() + " by " + character.Name + ".");
                 }
             }
             catch (Exception ex)
@@ -99,6 +99,7 @@ namespace RuneScape.Communication.Messages
             AddHandler(37, new CharacterOptionsPacketHandler()); // Handles character options.
             AddHandler(42, new JoinClanChatPacketHandler()); // Handles clan chat joining.
             AddHandler(43, new InputPacketHandler()); // Handles input from interfaces.
+            AddHandler(47, new IdlePacketHandler()); // Handle client idling.
             AddHandler(49, new WalkingPacketHandler()); // Handles walking.
             AddHandler(59, new QuietPacketHandler()); // Character's mouse click.
             AddHandler(60, new NewMapRegionPacketHandler()); // Handles region changing.

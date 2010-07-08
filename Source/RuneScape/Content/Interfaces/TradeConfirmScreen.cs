@@ -23,25 +23,25 @@ using System.Linq;
 using System.Text;
 
 using RuneScape.Model.Characters;
-using RuneScape.Communication.Messages.Outgoing;
 
 namespace RuneScape.Content.Interfaces
 {
     /// <summary>
-    /// Represents the first trading screen, where offering of items is done.
+    /// Represents the second trading screen, where 
+    /// characters finalize and confirm their tradings.
     /// </summary>
-    public class TradeOfferScreen : IInterfaceHandler
+    public class TradeConfirmScreen : IInterfaceHandler
     {
         #region Fields
         /// <summary>
         /// The id of this interface.
         /// </summary>
-        public const int InterfaceId = 335;
+        public const int InterfaceId = 334;
         #endregion Fields
 
         #region Methods
         /// <summary>
-        /// Handles the character trading offer screen.
+        /// Handles the character trading confirm screen.
         /// </summary>
         /// <param name="character">The character to handle for.</param>
         /// <param name="packetId">The packet id of the button.</param>
@@ -56,28 +56,16 @@ namespace RuneScape.Content.Interfaces
 
             switch (buttonId)
             {
-                case 12:
-                case 18:
-                    character.Request.Trade.Close(true);
-                    return;
-                case 16:
+                case 20:
                     character.Request.Trade.Accept(character);
-                    return;
-                case 30:
-                    if (packetId == 233)
-                    {
-                        character.Request.Trade.RemoveItem(character, buttonId2, 1);
-                    }
-                    else if (packetId == 90)
-                    {
-                        character.Request.Trade.ExamineMy(character, buttonId2);
-                    }
-                    return;
-                case 32:
-                    return;
+                    break;
+                case 8:
+                case 21:
+                    character.Request.Trade.Close(true);
+                    break;
                 default:
                     Console.WriteLine("Unhandled: " + buttonId);
-                    return;
+                    break;
             }
         }
         #endregion Methods

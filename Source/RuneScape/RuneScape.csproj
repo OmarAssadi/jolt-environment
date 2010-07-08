@@ -76,6 +76,7 @@
     <Compile Include="Communication\Messages\Incoming\DropItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\EquipItemPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\HdNotificationPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\IdlePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\InputPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ItemOptionsPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\JoinClanChatPacketHandler.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="Content\Interfaces\EmoteTab.cs" />
     <Compile Include="Content\Interfaces\EquipmentTab.cs" />
     <Compile Include="Content\Interfaces\OptionsTab.cs" />
+    <Compile Include="Content\Interfaces\TradeConfirmScreen.cs" />
     <Compile Include="Content\Interfaces\TradeOfferInventory.cs" />
     <Compile Include="Content\Interfaces\TradeOfferScreen.cs" />
     <Compile Include="Content\Request.cs" />

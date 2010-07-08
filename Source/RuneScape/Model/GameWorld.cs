@@ -101,6 +101,11 @@ namespace RuneScape.Model
         /// Gets or sets whether the world has an upcoming system update.
         /// </summary>
         public bool SystemUpdate { get; set; }
+        /// <summary>
+        /// Gets or sets whether the world has idling enabled 
+        /// (characters logout in 90 seconds if no activity).
+        /// </summary>
+        public bool IdlingEnabled { get; set; }
 
         /// <summary>
         /// Gets the character manager.
@@ -166,6 +171,7 @@ namespace RuneScape.Model
                 this.Motw = (string)vars["motw"];
                 this.ExperienceRate = (int)vars["exp_rate"];
                 this.AccountCreationEnabled = true;
+                this.IdlingEnabled = (bool)vars["enable_idling"];
             }
             else
             {

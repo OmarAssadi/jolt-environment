@@ -843,6 +843,7 @@ Source/RuneScape/Communication/Messages/Incoming/DropItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/EquipItemPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/HdNotificationPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/IPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/IdlePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/InputPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ItemOptionsPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/JoinClanChatPacketHandler.cs -text
@@ -922,6 +923,7 @@ Source/RuneScape/Content/Interfaces/OptionsTab.cs -text
 Source/RuneScape/Content/Interfaces/RuneOrbs.cs -text
 Source/RuneScape/Content/Interfaces/SideBar.cs -text
 Source/RuneScape/Content/Interfaces/Tab.cs -text
+Source/RuneScape/Content/Interfaces/TradeConfirmScreen.cs -text
 Source/RuneScape/Content/Interfaces/TradeOfferInventory.cs -text
 Source/RuneScape/Content/Interfaces/TradeOfferScreen.cs -text
 Source/RuneScape/Content/Interfaces/WelcomeScreen.cs -text

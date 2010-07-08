@@ -49,7 +49,7 @@ namespace RuneScape.Communication.Messages.Incoming
                     short interfaceId = (short)character.Preferences["interface"];
 
                     // Close interface first.
-                    //Frames.SendCloseInterface(character);
+                    Frames.SendCloseInterface(character);
 
 
                     // Call any extra requirements.
@@ -67,7 +67,7 @@ namespace RuneScape.Communication.Messages.Incoming
                             //Frames.SendCloseInventoryInterface(character);
                             break;
                     }
-                    Frames.SendCloseInterface(character);
+                    //Frames.SendCloseInterface(character);
                 }
 
                 // Walking via minimap.

@@ -94,7 +94,7 @@ namespace RuneScape.Communication.Messages
             // Warn the character that he/she is muted.
             if (character.Muted)
             {
-                character.Session.SendData(new MessagePacketComposer("You cannot talk, because you are muted.").Serialize());
+                character.Session.SendData(new MessagePacketComposer("You have been muted for breaking a rule.").Serialize());
                 character.Session.SendData(new MessagePacketComposer("Please visit our website for more information on your offense.").Serialize());
             }
         }

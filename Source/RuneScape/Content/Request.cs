@@ -106,7 +106,7 @@ namespace RuneScape.Content
                 {
                     return;
                 }
-                this.Trade.Close();
+                this.Trade.Close(false);
             }
 
             if (other.Request.TradeReq == this.character)
@@ -137,7 +137,7 @@ namespace RuneScape.Content
         {
             if (this.Trade != null)
             {
-                this.Trade.Close();
+                this.Trade.Close(true);
             }
         }
         #endregion Methods

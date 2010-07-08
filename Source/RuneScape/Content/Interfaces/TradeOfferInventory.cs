@@ -60,7 +60,7 @@ namespace RuneScape.Content.Interfaces
             switch (packetId)
             {
                 // Offer 1
-                case 223:
+                case 233:
                     character.Request.Trade.OfferItem(character, buttonId2, 1);
                     break;
                 // Offer 5

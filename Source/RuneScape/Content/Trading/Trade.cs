@@ -68,7 +68,7 @@ namespace RuneScape.Content.Trading
         /// </summary>
         public bool Accept1 { get; private set; }
         /// <summary>
-        /// Gets whether the second cahracter has accepted the trade.
+        /// Gets whether the second character has accepted the trade.
         /// </summary>
         public bool Accept2 { get; private set; }
         #endregion Properties
@@ -102,12 +102,13 @@ namespace RuneScape.Content.Trading
         /// <param name="character">The character to open interface for.</param>
         private void OpenFirstInterface(Character character)
         {
-            Frames.SendTradeOptions(character);
             Frames.SendInterface(character, 335, true);
             Frames.SendInventoryInterface(character, 336);
+            Frames.SendTradeOptions(character);
             character.Session.SendData(new StringPacketComposer("Trading With: " 
                 + GetOther(character).PrettyName, 335, 15).Serialize());
             character.Session.SendData(new StringPacketComposer("", 335, 36).Serialize());
+            Frames.SendHideTabs(character);
         }
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace RuneScape.Content.Trading
                 ? this.Container1 : this.Container2), 334, 37).Serialize());
             character.Session.SendData(new StringPacketComposer(BuildString(character == this.Character1 
                 ? this.Container2 : this.Container1), 334, 41).Serialize());
-            character.Session.SendData(new StringPacketComposer("<col=00FFFF>Trading With: " 
+            character.Session.SendData(new StringPacketComposer("<col=00FFFF>Trading With: "
                 + GetOther(character).PrettyName, 334, 46).Serialize());
             character.Session.SendData(new InterfaceConfigPacketComposer(334, 37, false).Serialize());
             character.Session.SendData(new InterfaceConfigPacketComposer(334, 41, false).Serialize());
@@ -209,7 +210,7 @@ namespace RuneScape.Content.Trading
         /// <summary>
         /// Closes the trade.
         /// </summary>
-        public void Close()
+        public void Close(bool cancelled)
         {
             if (!this.Exchanged)
             {
@@ -217,23 +218,77 @@ namespace RuneScape.Content.Trading
                 this.Character2.Inventory.AddAll(this.Container2);
             }
 
-            Frames.SendCloseInterface(this.Character1);
-            Frames.SendCloseInterface(this.Character2);
-            this.Character1.Session.SendData(new InterfaceItemsPacketComposer(-1, 1, 93, new InventoryContainer(null)).Serialize());
-            this.Character1.Session.SendData(new InterfaceItemsPacketComposer(-1, 1, 93, new InventoryContainer(null)).Serialize());
-            Frames.SendCloseInventoryInterface(this.Character1);
-            Frames.SendCloseInventoryInterface(this.Character2);
-            Frames.SendTabs(this.Character1);
-            Frames.SendTabs(this.Character2);
-            this.Character1.Inventory.Refresh();
-            this.Character2.Inventory.Refresh();
-            this.Character1.Request.Trade = null;
-            this.Character1.Request.TradeReq = null;
-            this.Character2.Request.Trade = null;
-            this.Character2.Request.TradeReq = null;
+            //Frames.SendCloseInterface(this.Character1);
+            //Frames.SendCloseInterface(this.Character2);
 
-            this.Character1.Session.SendData(new MessagePacketComposer("The trade was declined.").Serialize());
-            this.Character2.Session.SendData(new MessagePacketComposer("The trade was declined.").Serialize());
+            //Interfaces.Bank.Show(this.Character1);
+            //Interfaces.Bank.Show(this.Character2);
+
+            try
+            {
+                if (!this.Character1.Session.Disconnected)
+                {
+                    Frames.SendCloseInterface(this.Character1);
+                    Frames.SendRestoreInventory(this.Character1);
+                    Frames.SendTabs(this.Character1);
+                    this.Character1.Session.SendData(new InterfaceItemsPacketComposer(-1, 1, 93, new InventoryContainer(null)).Serialize());
+                    this.Character1.Inventory.Refresh();
+                    this.Character1.Request.Trade = null;
+                    this.Character1.Request.TradeReq = null;
+
+                    if (cancelled)
+                    {
+                        this.Character1.Session.SendData(new MessagePacketComposer("The trade was declined or cancelled.").Serialize());
+                    }
+                }
+            }
+            catch (NullReferenceException)
+            {
+            }
+
+            try
+            {
+                if (!this.Character2.Session.Disconnected)
+                {
+                    Frames.SendCloseInterface(this.Character2);
+                    Frames.SendRestoreInventory(this.Character2);
+                    Frames.SendTabs(this.Character2);
+                    this.Character2.Session.SendData(new InterfaceItemsPacketComposer(-1, 1, 93, new InventoryContainer(null)).Serialize());
+                    this.Character2.Inventory.Refresh();
+                    this.Character2.Request.Trade = null;
+                    this.Character2.Request.TradeReq = null;
+
+                    if (cancelled)
+                    {
+                        this.Character2.Session.SendData(new MessagePacketComposer("The trade was declined or cancelled.").Serialize());
+                    }
+                }
+            }
+            catch (NullReferenceException)
+            {
+            }
+
+            //Frames.SendRestoreInventory(this.Character1);
+            //Frames.SendRestoreInventory(this.Character2);
+
+            //this.Character1.Session.SendData(new InterfaceItemsPacketComposer(-1, 1, 93, new InventoryContainer(null)).Serialize());
+            //this.Character2.Session.SendData(new InterfaceItemsPacketComposer(-1, 1, 93, new InventoryContainer(null)).Serialize());
+
+            //Frames.SendCloseInventoryInterface(this.Character1);
+            //Frames.SendCloseInventoryInterface(this.Character2);
+            //Frames.SendTabs(this.Character1);
+            //Frames.SendTabs(this.Character2);
+
+            //this.Character1.Inventory.Refresh();
+            //this.Character2.Inventory.Refresh();
+            //this.Character1.Request.Trade = null;
+            //this.Character1.Request.TradeReq = null;
+            //this.Character2.Request.Trade = null;
+            //this.Character2.Request.TradeReq = null;
+
+
+            //this.Character1.Session.SendData(new MessagePacketComposer("The trade was declined.").Serialize());
+            //this.Character2.Session.SendData(new MessagePacketComposer("The trade was declined.").Serialize());
         }
 
         /// <summary>
@@ -267,14 +322,14 @@ namespace RuneScape.Content.Trading
                         {
                             this.Character2.Session.SendData(new MessagePacketComposer("Other player does not have enough space in their inventory.").Serialize());
                             this.Character1.Session.SendData(new MessagePacketComposer("You do not have enough space in your inventory.").Serialize());
-                            Close();
+                            Close(true);
                             return;
                         }
                         if (!this.Character2.Inventory.HasSpace(this.Container2))
                         {
                             this.Character1.Session.SendData(new MessagePacketComposer("Other player does not have enough space in their inventory.").Serialize());
                             this.Character2.Session.SendData(new MessagePacketComposer("You do not have enough space in your inventory.").Serialize());
-                            Close();
+                            Close(true);
                             return;
                         }
 
@@ -306,7 +361,7 @@ namespace RuneScape.Content.Trading
                         this.Accept1 = false;
                         this.Accept2 = false;
                         Exchange();
-                        Close();
+                        Close(false);
                     }
                     else if (this.Accept1 && !this.Accept2)
                     {
