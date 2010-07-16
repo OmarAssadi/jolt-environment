@@ -25,6 +25,8 @@ using System.Text;
 using RuneScape.Events;
 using RuneScape.Model.Characters;
 
+using RuneScape.Communication.Messages.Outgoing;
+
 namespace RuneScape.Content.Trading
 {
     /// <summary>

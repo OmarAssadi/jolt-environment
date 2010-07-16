@@ -59,25 +59,28 @@ namespace RuneScape.Content.Interfaces
                 case 12:
                 case 18:
                     character.Request.Trade.Close(true);
-                    return;
+                    break;
                 case 16:
                     character.Request.Trade.Accept(character);
-                    return;
+                    break;
                 case 30:
                     if (packetId == 233)
                     {
                         character.Request.Trade.RemoveItem(character, buttonId2, 1);
+                        character.Request.Trade.FlashIcon(character, buttonId2);
+                        character.Request.Trade.TradeModified = true;
                     }
                     else if (packetId == 90)
                     {
                         character.Request.Trade.ExamineMy(character, buttonId2);
                     }
-                    return;
+                    break;
                 case 32:
-                    return;
+                    character.Request.Trade.ExamineOther(character, buttonId2);
+                    break;
                 default:
                     Console.WriteLine("Unhandled: " + buttonId);
-                    return;
+                    break;
             }
         }
         #endregion Methods

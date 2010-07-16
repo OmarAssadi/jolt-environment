@@ -266,6 +266,15 @@ namespace RuneScape.Content
                         }
                     }
                     #endregion Update
+
+                    else if (command.Equals("show"))
+                    {
+                        Frames.SendInterface(character, 335, false);
+                        for (short i = 0; i < 88; i++)
+                        {
+                            character.Session.SendData(new StringPacketComposer(i.ToString(), 335, i).Serialize());
+                        }
+                    }
                 }
             }
             catch (FormatException)

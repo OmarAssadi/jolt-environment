@@ -71,6 +71,10 @@ namespace RuneScape.Content.Trading
         /// Gets whether the second character has accepted the trade.
         /// </summary>
         public bool Accept2 { get; private set; }
+        /// <summary>
+        /// Gets or sets whether the trade has been modified.
+        /// </summary>
+        public bool TradeModified { get; set; }
         #endregion Properties
 
         #region Constructors
@@ -102,12 +106,19 @@ namespace RuneScape.Content.Trading
         /// <param name="character">The character to open interface for.</param>
         private void OpenFirstInterface(Character character)
         {
+            Character other = GetOther(character);
             Frames.SendInterface(character, 335, true);
             Frames.SendInventoryInterface(character, 336);
             Frames.SendTradeOptions(character);
             character.Session.SendData(new StringPacketComposer("Trading With: " 
-                + GetOther(character).PrettyName, 335, 15).Serialize());
+                + other.PrettyName, 335, 15).Serialize());
+            character.Session.SendData(new StringPacketComposer(
+                other.PrettyName + " has " + other.Inventory.FreeSlots 
+                + " free inventory slots.", 335, 21).Serialize());
             character.Session.SendData(new StringPacketComposer("", 335, 36).Serialize());
+            character.Session.SendData(new StringPacketComposer("", 335, 40).Serialize());
+            character.Session.SendData(new StringPacketComposer("", 335, 41).Serialize());
+            character.Session.SendData(new StringPacketComposer("", 335, 42).Serialize());
             Frames.SendHideTabs(character);
         }
 
@@ -123,11 +134,18 @@ namespace RuneScape.Content.Trading
             character.Session.SendData(new StringPacketComposer(BuildString(character == this.Character1 
                 ? this.Container2 : this.Container1), 334, 41).Serialize());
             character.Session.SendData(new StringPacketComposer("<col=00FFFF>Trading With: "
-                + GetOther(character).PrettyName, 334, 46).Serialize());
+                + GetOther(character).PrettyName, 334, 45).Serialize()); // "Trading With:"
+
+            if (!this.TradeModified)
+            {
+                character.Session.SendData(new StringPacketComposer("", 334, 46).Serialize()); // "Trade Modified"
+            }
+
             character.Session.SendData(new InterfaceConfigPacketComposer(334, 37, false).Serialize());
             character.Session.SendData(new InterfaceConfigPacketComposer(334, 41, false).Serialize());
             character.Session.SendData(new InterfaceConfigPacketComposer(334, 45, false).Serialize());
             character.Session.SendData(new InterfaceConfigPacketComposer(334, 46, false).Serialize());
+            Frames.SendHideTabs(character);
         }
 
         /// <summary>
@@ -186,7 +204,7 @@ namespace RuneScape.Content.Trading
             this.Character2.Session.SendData(new InterfaceItemsPacketComposer(-1, 1, 93, this.Character2.Inventory).Serialize());
         }
 
-        /// <summary>
+        /*/// <summary>
         /// Shows a flashing icon where a item was removed.
         /// </summary>
         /// <param name="character">The character to show icon for.</param>
@@ -195,6 +213,19 @@ namespace RuneScape.Content.Trading
         {
             object[] p = new object[] { slot, 7, 4, 21954593 };
             character.Session.SendData(new RunScriptPacketComposer(143, "Iiii", p).Serialize());
+        }*/
+
+        /// <summary>
+        /// Places a flashing icon at the specified slot.
+        /// </summary>
+        /// <param name="slot">The slot to add flashing icon to.</param>
+        /// <param name="localInterface">Whether the flashing icon is local to the character.</param>
+        public void FlashIcon(Character character, int slot)
+        {
+            object[] tparams2 = new object[] { slot, 7, 4, 21954593 };
+            object[] tparams1 = new object[] { slot, 7, 4, 21954591 };
+            character.Session.SendData(new RunScriptPacketComposer(143, "Iiii", tparams1).Serialize());
+            GetOther(character).Session.SendData(new RunScriptPacketComposer(143, "Iiii", tparams2).Serialize());
         }
 
         /// <summary>
@@ -362,6 +393,8 @@ namespace RuneScape.Content.Trading
                         this.Accept2 = false;
                         Exchange();
                         Close(false);
+                        this.Character1.Session.SendData(new MessagePacketComposer("Accepted trade.").Serialize());
+                        this.Character2.Session.SendData(new MessagePacketComposer("Accepted trade.").Serialize());
                     }
                     else if (this.Accept1 && !this.Accept2)
                     {
@@ -406,6 +439,9 @@ namespace RuneScape.Content.Trading
                         item = new Item(item.Id, trueAmount);
                         this.Character1.Inventory.RemoveInternal(slot, item);
                         this.Container1.AddInternal(item);
+                        this.Character2.Session.SendData(new StringPacketComposer(
+                            this.Character1.PrettyName + " has " + this.Character1.Inventory.FreeSlots
+                            + " free inventory slots.", 335, 21).Serialize());
                     }
                 }
                 else if (character == this.Character2)
@@ -422,6 +458,9 @@ namespace RuneScape.Content.Trading
                         item = new Item(item.Id, trueAmount);
                         this.Character2.Inventory.RemoveInternal(slot, item);
                         this.Container2.AddInternal(item);
+                        this.Character1.Session.SendData(new StringPacketComposer(
+                            this.Character2.PrettyName + " has " + this.Character2.Inventory.FreeSlots
+                            + " free inventory slots.", 335, 21).Serialize());
                     }
                 }
                 RefreshInventories();
@@ -454,6 +493,9 @@ namespace RuneScape.Content.Trading
                     {
                         this.Container1.RemoveInternal(slot, item);
                         this.Character1.Inventory.AddItem(item);
+                        this.Character2.Session.SendData(new StringPacketComposer(
+                            this.Character1.PrettyName + " has " + this.Character1.Inventory.FreeSlots
+                            + " free inventory slots.", 335, 21).Serialize());
                     }
                 }
                 else if (character == this.Character2)
@@ -472,6 +514,9 @@ namespace RuneScape.Content.Trading
                     {
                         this.Container2.RemoveInternal(slot, item);
                         this.Character2.Inventory.AddItem(item);
+                        this.Character1.Session.SendData(new StringPacketComposer(
+                            this.Character2.PrettyName + " has " + this.Character2.Inventory.FreeSlots
+                            + " free inventory slots.", 335, 21).Serialize());
                     }
                 }
                 RefreshInventories();

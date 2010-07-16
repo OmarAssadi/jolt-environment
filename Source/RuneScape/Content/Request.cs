@@ -87,6 +87,7 @@ namespace RuneScape.Content
                 other.Session.SendData(new MessagePacketComposer(this.character.PrettyName + ":tradereq:").Serialize());
                 this.TradeReq = other;
             }
+            
         }
 
         /// <summary>

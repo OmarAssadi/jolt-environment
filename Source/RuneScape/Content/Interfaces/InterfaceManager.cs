@@ -80,6 +80,7 @@ namespace RuneScape.Content.Interfaces
         {
             AddHandler(182, new LogoutTab()); // The logout tab located on the sidebar.
             AddHandler(261, new OptionsTab()); // The options tab located on the sidebar.
+            AddHandler(334, new TradeConfirmScreen()); // The trade confirmation screen.
             AddHandler(335, new TradeOfferScreen()); // The trade offering screen.
             AddHandler(336, new TradeOfferInventory()); // The trade offering inventory.
             AddHandler(378, new WelcomeScreen()); // The welcome screen displayed on login.
