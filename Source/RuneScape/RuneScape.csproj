@@ -78,10 +78,12 @@
     <Compile Include="Communication\Messages\Incoming\HdNotificationPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\IdlePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\InputPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\ItemExaminePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ItemOptionsPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\JoinClanChatPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\KickUserPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\CharacterOptionsPacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\NpcExaminePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\RemoveFriendPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\RemoveIgnorePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ReportAbusePacketHandler.cs" />

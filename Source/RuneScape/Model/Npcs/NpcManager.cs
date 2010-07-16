@@ -120,7 +120,11 @@ namespace RuneScape.Model.Npcs
         /// <returns>Returns the npc definition set.</returns>
         public NpcDefinition GetDefinition(short id)
         {
-            return definitions[id];
+            if (this.definitions.ContainsKey(id))
+            {
+                return definitions[id];
+            }
+            return null;
         }
 
         /// <summary>

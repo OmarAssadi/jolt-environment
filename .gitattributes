@@ -845,10 +845,12 @@ Source/RuneScape/Communication/Messages/Incoming/HdNotificationPacketHandler.cs 
 Source/RuneScape/Communication/Messages/Incoming/IPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/IdlePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/InputPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/ItemExaminePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/ItemOptionsPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/JoinClanChatPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/KickUserPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NewMapRegionPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/NpcExaminePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NullPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/PingPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/PrivateMessagePacketHandler.cs -text

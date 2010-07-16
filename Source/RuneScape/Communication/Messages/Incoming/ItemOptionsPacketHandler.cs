@@ -85,7 +85,7 @@ namespace RuneScape.Communication.Messages.Incoming
                     }
                 default:
                     {
-                        Program.Logger.WriteDebug("Unhandled item option: " + interfaceId);
+                        Program.Logger.WriteDebug("Unhandled interface: " + interfaceId);
                         break;
                     }
             }

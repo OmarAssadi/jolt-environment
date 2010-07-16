@@ -97,6 +97,7 @@ namespace RuneScape.Communication.Messages
             AddHandler(22, new QuietPacketHandler()); // Recieved when update is required.
             AddHandler(30, new AddFriendPacketHandler()); // Handles added friends.
             AddHandler(37, new CharacterOptionsPacketHandler()); // Handles character options.
+            AddHandler(38, new ItemExaminePacketHandler()); // Handles item examine option.
             AddHandler(42, new JoinClanChatPacketHandler()); // Handles clan chat joining.
             AddHandler(43, new InputPacketHandler()); // Handles input from interfaces.
             AddHandler(47, new IdlePacketHandler()); // Handle client idling.
@@ -105,6 +106,7 @@ namespace RuneScape.Communication.Messages
             AddHandler(60, new NewMapRegionPacketHandler()); // Handles region changing.
             AddHandler(61, new AddIgnorePacketHandler()); // Handles added ignores.
             AddHandler(63, new RemoveInterfacePacketHandler()); // Removes a chatbox interface.
+            AddHandler(88, new NpcExaminePacketHandler()); // Handles npc examine option.
             AddHandler(90, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(99, new QuietPacketHandler()); // Client rotation position.
             AddHandler(102, new ButtonPacketHandler()); // Handles buttons.
