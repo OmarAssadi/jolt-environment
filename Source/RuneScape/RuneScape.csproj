@@ -35,6 +35,9 @@
     <Reference Include="CommonLibrary">
       <HintPath>..\..\Resources\libs\external\CommonLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="CSScriptLibrary">
+      <HintPath>..\..\Resources\libs\external\CSScriptLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="PowerCollections">
       <HintPath>..\..\Resources\libs\external\PowerCollections.dll</HintPath>
     </Reference>
@@ -84,6 +87,7 @@
     <Compile Include="Communication\Messages\Incoming\KickUserPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\CharacterOptionsPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\NpcExaminePacketHandler.cs" />
+    <Compile Include="Communication\Messages\Incoming\ObjectOptionsPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\RemoveFriendPacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\RemoveIgnorePacketHandler.cs" />
     <Compile Include="Communication\Messages\Incoming\ReportAbusePacketHandler.cs" />

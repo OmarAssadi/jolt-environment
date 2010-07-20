@@ -29,6 +29,8 @@ using JoltEnvironment.Utilities;
 using System.Diagnostics;
 using System.Security.Permissions;
 
+using CSScriptLibrary;
+
 namespace RuneScape
 {
     /// <summary>
@@ -48,7 +50,7 @@ namespace RuneScape
         /// <summary>
         /// Jolt Environment's main version details.
         /// </summary>
-        private static Version version = new Version(1, 0, 6000);
+        private static Version version = new Version(1, 0, 7000);
         /// <summary>
         /// Whether to show memory usage and server uptime.
         /// </summary>
@@ -156,10 +158,23 @@ namespace RuneScape
             Console.WriteLine(" Copyright (C) 2010 Jolt Environment Team");
             Console.WriteLine(" http://www.ajravindiran.com/projects/jolt/");
             Console.WriteLine();
+            
+            /*string code = @"using System;
+              using RuneScape;
+              public class Script
+              {
+                  public void SayHello(string message)
+                  {
+                      Console.WriteLine(typeof(Program).FullName);
+                      Console.WriteLine(message);
+                  }
+              }";
+            dynamic script = CSScript.LoadCode(code).CreateObject("*");
 
-            /*Benchmark benchmark = new Benchmark(
+            Benchmark benchmark = new Benchmark(
                 new Action(() =>
                 {
+                    script.SayHello("hi");
                 }));
             benchmark.Process();
             Console.WriteLine(benchmark.GetTime());*/

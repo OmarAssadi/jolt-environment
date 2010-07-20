@@ -28,7 +28,7 @@ using RuneScape.Model.Characters;
 namespace RuneScape.Communication.Messages.Incoming
 {
     /// <summary>
-    /// Handler for the hd notification packet.
+    /// Handler for item options packets.
     /// </summary>
     public class ItemOptionsPacketHandler : IPacketHandler
     {

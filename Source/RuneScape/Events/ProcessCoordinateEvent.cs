@@ -56,8 +56,17 @@ namespace RuneScape.Events
             if (this.ce.Character.UpdateFlags.Teleporting)
             {
                 Stop();
+                ce.Cancel();
                 return;
             }
+            if (!this.ce.Character.Location.WithinDistance(this.ce.Location))
+            {
+                Stop();
+                ce.Cancel();
+                return;
+            }
+
+            //Console.WriteLine(this.ce.Location);
 
             bool atTarget = this.ce.Character.Location.WithinDistance(this.ce.Location, this.ce.Distance);
 

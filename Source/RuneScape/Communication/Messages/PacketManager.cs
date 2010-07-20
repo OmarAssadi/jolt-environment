@@ -90,7 +90,7 @@ namespace RuneScape.Communication.Messages
         /// </summary>
         private void LoadHandlers()
         {
-            AddHandler(0, new NullPacketHandler()); // Handles the null packets (usually sent at login).
+            AddHandler(0, new NullPacketHandler()); // Handles the null packets (Ssent at login).
             AddHandler(2, new RemoveIgnorePacketHandler()); // Handles removed ignores.
             AddHandler(3, new EquipItemPacketHandler()); // Handles item equiping.
             AddHandler(21, new ButtonPacketHandler()); // Handles buttons.

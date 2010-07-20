@@ -22,20 +22,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using RuneScape.Content.Trading;
-using RuneScape.Events;
+using RuneScape.Model;
 using RuneScape.Model.Characters;
 
 namespace RuneScape.Communication.Messages.Incoming
-{
+{    
     /// <summary>
-    /// Handler for character options (shown when right click player).
+    /// Handler for object options packets.
     /// </summary>
-    public class CharacterOptionsPacketHandler : IPacketHandler
+    public class ObjectOptionsPacketHandler
     {
         #region Methods
         /// <summary>
-        /// Handles character options.
+        /// Handles the item options.
         /// </summary>
         /// <param name="character">The character to handle packet for.</param>
         /// <param name="packet">The packet containing handle data.</param>
@@ -43,26 +42,25 @@ namespace RuneScape.Communication.Messages.Incoming
         {
             switch (packet.Opcode)
             {
-                case 37:
-                    Option1(character, packet);
-                    break;
+                case 158:
+                    {
+                        HandleOption1(character, packet);
+                        break;
+                    }
             }
         }
 
         /// <summary>
-        /// Handles the trade option.
+        /// Handles the first option.
         /// </summary>
-        /// <param name="character">The character wishing to trade.</param>
+        /// <param name="character">The character to handle packet for.</param>
         /// <param name="packet">The packet containing handle data.</param>
-        private void Option1(Character character, Packet packet)
+        private void HandleOption1(Character character, Packet packet)
         {
-            short id = (short)(packet.ReadShort() & 0xFFFF);
-            Character other = GameEngine.World.CharacterManager.Get(id);
-
-            if (other != null)
-            {
-                GameEngine.Events.RegisterCoordinateEvent(new RequestTradeEvent(character, other));
-            }
+            short x = packet.ReadLEShort();
+            short id = packet.ReadShort();
+            short y = packet.ReadLEShortA();
+            Location location = Location.Create(x, y, character.Location.Z);
         }
         #endregion Methods
     }

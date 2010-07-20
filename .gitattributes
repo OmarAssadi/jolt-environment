@@ -852,6 +852,7 @@ Source/RuneScape/Communication/Messages/Incoming/KickUserPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NewMapRegionPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NpcExaminePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/NullPacketHandler.cs -text
+Source/RuneScape/Communication/Messages/Incoming/ObjectOptionsPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/PingPacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/PrivateMessagePacketHandler.cs -text
 Source/RuneScape/Communication/Messages/Incoming/QuietPacketHandler.cs -text
