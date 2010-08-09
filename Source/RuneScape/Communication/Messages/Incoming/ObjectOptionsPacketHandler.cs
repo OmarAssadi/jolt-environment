@@ -22,15 +22,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using RuneScape.Events;
 using RuneScape.Model;
 using RuneScape.Model.Characters;
+using RuneScape.Model.Objects;
 
 namespace RuneScape.Communication.Messages.Incoming
 {    
     /// <summary>
     /// Handler for object options packets.
     /// </summary>
-    public class ObjectOptionsPacketHandler
+    public class ObjectOptionsPacketHandler : IPacketHandler   
     {
         #region Methods
         /// <summary>
@@ -57,10 +59,16 @@ namespace RuneScape.Communication.Messages.Incoming
         /// <param name="packet">The packet containing handle data.</param>
         private void HandleOption1(Character character, Packet packet)
         {
-            short x = packet.ReadLEShort();
-            short id = packet.ReadShort();
-            short y = packet.ReadLEShortA();
+            short x = (short)(packet.ReadLEShort() & 0xFFFF);
+            int id = packet.ReadShort() & 0xFFFF;
+            short y = (short)(packet.ReadLEShortA() & 0xFFFF);
             Location location = Location.Create(x, y, character.Location.Z);
+
+            Console.WriteLine(id);
+            Console.WriteLine(location);
+            Console.WriteLine(character.Location);
+
+            GameEngine.Events.RegisterCoordinateEvent(new WalkToObjectEvent(character, location));
         }
         #endregion Methods
     }

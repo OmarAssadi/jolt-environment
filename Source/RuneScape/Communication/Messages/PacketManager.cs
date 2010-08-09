@@ -121,6 +121,7 @@ namespace RuneScape.Communication.Messages
             AddHandler(132, new RemoveFriendPacketHandler()); // Handles removed friends.
             AddHandler(133, new ButtonPacketHandler()); // Handles buttons.
             AddHandler(138, new WalkingPacketHandler()); // Handles walking.
+            AddHandler(158, new ObjectOptionsPacketHandler()); // Handles object options.
             AddHandler(159, new ReportAbusePacketHandler()); // Handles reported abuses.
             AddHandler(167, new SwapItemPacketHandler()); // Handles item movements.
             AddHandler(169, new ButtonPacketHandler()); // Handles buttons.

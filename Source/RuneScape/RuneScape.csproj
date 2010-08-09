@@ -173,6 +173,7 @@
     <Compile Include="Model\Objects\MapObject.cs" />
     <Compile Include="Model\IRuneObject.cs" />
     <Compile Include="Events\Event.cs" />
+    <Compile Include="Model\Objects\WalkToObjectEvent.cs" />
     <Compile Include="Network\INetworkManager.cs" />
     <Compile Include="Network\RemoteManager.cs" />
     <Compile Include="Services\EventService.cs" />

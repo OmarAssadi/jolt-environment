@@ -176,6 +176,26 @@ namespace RuneScape.Model
         /// Measures the distance between two locations.
         /// </summary>
         /// <param name="other">The location to compare with.</param>
+        /// <param name="distance">The instance that the distance has to be within</param>
+        /// <returns>Returns true if the given location is within distance of the given distance range; false if not.</returns>
+        public bool WithinDistance(Location other, int distanceX, int distanceY)
+        {
+            if (other.Z != this.Z)
+            {
+                return false;
+            }
+
+            int deltaX = other.X - this.X, deltaY = other.Y - this.Y;
+            return (deltaX <= (distanceX)
+                && deltaX >= (0 - distanceX - 1)
+                && deltaY <= (distanceY)
+                && deltaY >= (0 - distanceY - 1));
+        }
+
+        /// <summary>
+        /// Measures the distance between two locations.
+        /// </summary>
+        /// <param name="other">The location to compare with.</param>
         /// <returns>Returns true if the given location is within distance of the 16 distance range; false if not.</returns>
         public bool WithinDistance(Location other)
         {

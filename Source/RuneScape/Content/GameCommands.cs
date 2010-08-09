@@ -217,7 +217,9 @@ namespace RuneScape.Content
                         byte[] packet = new MessagePacketComposer(
                             "Current X: " + character.Location.X +
                             ", Current Y: " + character.Location.Y +
-                            ", Current Z: " + character.Location.Z).Serialize();
+                            ", Current Z: " + character.Location.Z +
+                            ", Area X: " + character.Location.RegionX +
+                            ", Area X: " + character.Location.RegionY).Serialize();
                         character.Session.SendData(packet);
                     }
                     #endregion Coords
@@ -274,6 +276,11 @@ namespace RuneScape.Content
                         {
                             character.Session.SendData(new StringPacketComposer(i.ToString(), 335, i).Serialize());
                         }
+                    }
+
+                    else if (command.Equals("object"))
+                    {
+                        new MapObject(2, 10, 1, character.Location).Spawn(character);
                     }
                 }
             }

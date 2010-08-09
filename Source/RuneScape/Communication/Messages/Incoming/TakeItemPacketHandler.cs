@@ -46,6 +46,7 @@ namespace RuneScape.Communication.Messages.Incoming
             short x = packet.ReadShort();
             short id = packet.ReadLEShortA();
             Location location = Location.Create(x, y, character.Location.Z);
+
             GameEngine.Events.RegisterCoordinateEvent(new TakeItemEvent(character, location, id));
         }
         #endregion Methods
