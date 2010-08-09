@@ -29,10 +29,10 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     if (mysql_num_rows($news_qry) > 0) {
         $news_item = mysql_fetch_assoc($news_qry);
     } else {
-        //die('<script type="text/javascript">top.location.href = \''. WWW . '/home.php\';</script>');
+        die('<script type="text/javascript">top.location.href = \''. WWW . '/home.php\';</script>');
     }
 } else {
-    //die('<script type="text/javascript">top.location.href = \''. WWW . '/home.php\';</script>');
+    die('<script type="text/javascript">top.location.href = \''. WWW . '/home.php\';</script>');
 }
 ?>
 <style type="text/css">/*\*/@import url(<?php echo WWW; ?>/css/news-2.css);/**/</style>
@@ -61,7 +61,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                                         <div class="bottomrightshad">
                                             <div class="pagepad">
                                                 <div id="newsTitle">
-                                                    <a href="viewnews.php?id=<?php echo $news_id - 1; ?>">
+                                                    <a href="<?php echo WWW . '/viewnews/id/' . ($news_id - 1); ?>">
                                                         <img class=imiddle border="0" width="30" height="15" hspace="0" vspace="0" alt="Previous" title="Previous" src="<?php echo WWW; ?>/img/news/arrow_back.gif">
                                                     </a>
 
@@ -69,7 +69,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                                                     <b><?php echo $news_item['date'] . ' - ' . $news_item['title']; ?></b>
                                                     &nbsp;
 
-                                                    <a href="viewnews.php?id=<?php echo $news_id + 1; ?>">
+                                                    <a href="<?php echo WWW . '/viewnews/id/' . ($news_id + 1); ?>">
                                                         <img class=imiddle border="0" width="30" height="15" hspace="0" vspace="0" alt="Next" title="Next" src="<?php echo WWW; ?>/img/news/arrow_forward.gif">
                                                     </a>
                                                 </div>
