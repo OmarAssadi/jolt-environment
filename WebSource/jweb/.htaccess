@@ -3,9 +3,9 @@ RewriteEngine on
 RewriteRule (.*)\.ws $1.php
 
 RewriteRule ^home(|/)$ home.php
-RewriteRule ^viewnews(|/)$ viewnews.php
 RewriteRule ^listnews(|/)$ listnews.php
 RewriteRule ^play(|/)$ play.php
+RewriteRule ^account(|/)$ account.php
 
 RewriteRule ^register(|/)$ create.php
 RewriteRule ^register.php(|/)$ create.php
@@ -13,3 +13,5 @@ RewriteRule ^create(|/)$ create.php
 
 RewriteRule ^login(|/)$ login.php
 RewriteRule ^logout(|/)$ logout.php
+
+RewriteRule ^viewnews/id/([^/]+)(|/)$ viewnews.php?id=$1

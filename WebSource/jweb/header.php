@@ -62,14 +62,14 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
         <meta name="description" content="RageScape is a massive 3d multiplayer adventure, with monsters to kill, quests to complete, and treasure to win. You control your own character who will improve and become more powerful the more you play.">
         <meta name="title" content="RageScape - Ragezone's RuneScape Server">
         <title><?php echo $title; ?></title>
-        <style type="text/css">/*\*/@import url(css/global-30.css);/**/</style>
-        <script type="text/javascript" src="./js/jquery/jquery_1_3_2.js"></script>
+        <style type="text/css">/*\*/@import url(<?php echo WWW; ?>/css/global-30.css);/**/</style>
+        <script type="text/javascript" src="<?php echo WWW; ?>/js/jquery/jquery_1_3_2.js"></script>
 
-        <style type="text/css">/*\*/@import url(css/home-28.css);/**/</style>
+        <style type="text/css">/*\*/@import url(<?php echo WWW; ?>/css/home-28.css);/**/</style>
         <script type="text/javascript">
             function h(o){o.getElementsByTagName('span')[0].className='shimHover';}
             function u(o){o.getElementsByTagName('span')[0].className='shim';}
-            document.domain='ragescape.org';
+            document.domain='<?php $_SERVER["HTTP_HOST"] ?>';
         </script>
         <link rel="alternate" type="application/rss+xml" title="RageScape - Latest news" href="rss.php">
     </head>
@@ -80,8 +80,8 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
         <div id="scroll">
             <div id="head"><div id="headBg">
                     <div id="headOrangeTop"></div>
-                    <img src="img/main/skins/default/head_image.jpg" alt="RuneScape" />
-                    <div id="headImage"><a href="home" id="logo_select"></a>
+                    <img src="<?php echo WWW; ?>/img/main/skins/default/head_image.jpg" alt="RuneScape" />
+                    <div id="headImage"><a href="<?php echo WWW; ?>/home" id="logo_select"></a>
                         <div id="player_no">There are currently <?php echo $online; ?> people playing!</div>
                     </div>
                     <div id="headOrangeBottom"></div>
@@ -98,22 +98,22 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
                     </div>
                     <div id="menubox">
                         <ul id="menus">
-                            <li class="top"><a href="home" id="home" class="tl"><span class="ts">Home</span></a></li>
+                            <li class="top"><a href="<?php echo WWW; ?>/home" id="home" class="tl"><span class="ts">Home</span></a></li>
 
-                            <li class="top"><a id="play" class="tl" href="play" onclick="if(!this.j){this.href+='?j=1';this.j=true;}"><span class="ts">Play Now</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
+                            <li class="top"><a id="<?php echo WWW; ?>/play" class="tl" href="play" onclick="if(!this.j){this.href+='?j=1';this.j=true;}"><span class="ts">Play Now</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
                             <!--[if lte IE 6]><table><tr><td><![endif]-->
                                 <ul>
-                                    <li><a href="create" class="fly"><span>New Users</span></a></li>
-                                    <li><a href="play" onclick="if(!this.j){this.href+='?j=1';this.j=true;}" class="fly"><span>Existing Users</span></a></li>
+                                    <li><a href="<?php echo WWW; ?>/create" class="fly"><span>New Users</span></a></li>
+                                    <li><a href="<?php echo WWW; ?>/play" onclick="if(!this.j){this.href+='?j=1';this.j=true;}" class="fly"><span>Existing Users</span></a></li>
                                 </ul>
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
                             </li>
 
-                            <li class="top"><a id="account" class="tl" href="account"><span class="ts">Account</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
+                            <li class="top"><a id="<?php echo WWW; ?>/account" class="tl" href="account"><span class="ts">Account</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
                             <!--[if lte IE 6]><table><tr><td><![endif]-->
                                 <ul>
-                                    <li><a href="create" class="fly"><span>Create New Account</span></a></li>
-                                    <li><a href="account" class="fly"><span>Account Management</span></a></li>
+                                    <li><a href="<?php echo WWW; ?>/create" class="fly"><span>Create New Account</span></a></li>
+                                    <li><a href="<?php echo WWW; ?>/account" class="fly"><span>Account Management</span></a></li>
                                 </ul>
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
                             </li>
@@ -162,9 +162,9 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
                             </li>
 
                             <?php if (LOGGED_IN) { ?>
-                            <li class="top"><a href="logout" id="logout" class="tl"><span class="ts">Log Out</span></a></li>
+                            <li class="top"><a href="<?php echo WWW; ?>/logout" id="logout" class="tl"><span class="ts">Log Out</span></a></li>
                             <?php } else { ?>
-                            <li class="top"><a href="login" id="login" class="tl"><span class="ts">Log In</span></a></li>
+                            <li class="top"><a href="<?php echo WWW; ?>/login" id="login" class="tl"><span class="ts">Log In</span></a></li>
                             <?php } ?>
                         </ul>
                         <br class="clear" />

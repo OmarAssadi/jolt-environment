@@ -21,4 +21,5 @@ $config['database.host'] = "127.0.0.1";
 $config['database.user'] = "root";
 $config['database.pass'] = "MSxa5y";
 $config['database.name'] = "runescapedb";
+$config['site.address'] = "http://127.0.0.1/jweb";
 ?>

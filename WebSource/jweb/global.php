@@ -74,6 +74,8 @@ $database = new database(
         $core->get_config("database.pass"));
 $database->connect($core->get_config("database.name"));
 
+define('WWW', $core->get_config("site.address"));
+
 // #############################################################################
 // SESSION(S)
 if (isset($_SESSION['JWEB_USER']) && isset($_SESSION['JWEB_HASH'])) {

@@ -24,57 +24,57 @@ require_once("header.php");
 
 ?>
 <div id="left">
-    <a href="create" class="createbutton" onmouseover="h(this)" onmouseout="u(this)">
-        <img src="img/main/skins/default/created3d9.jpg?10" alt="Create a Free Account - Start your adventure today!" />
+    <a href="<?php echo WWW; ?>/create" class="createbutton" onmouseover="h(this)" onmouseout="u(this)">
+        <img src="<?php echo WWW; ?>/img/main/skins/default/created3d9.jpg?10" alt="Create a Free Account - Start your adventure today!" />
         <span class="shim"></span>
     </a>
     <div id="features">
-        <div class="narrowHeader"><img src="img/main/titles/websitefeatures.png" alt="Website Features" /></div>
+        <div class="narrowHeader"><img src="<?php echo WWW; ?>/img/main/titles/websitefeatures.png" alt="Website Features" /></div>
         <div class="section">
             <div class="feature">
-                <img src="img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
+                <img src="<?php echo WWW; ?>/img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
                 <div class="featureTitle">stub</div>
                 <div class="featureDesc">stub</div>
             </div>
 
             <div class="feature">
-                <img src="img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
+                <img src="<?php echo WWW; ?>/img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
                 <div class="featureTitle">stub</div>
                 <div class="featureDesc">stub</div>
             </div>
 
             <div class="feature">
-                <img src="img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
+                <img src="<?php echo WWW; ?>/img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
                 <div class="featureTitle">stub</div>
                 <div class="featureDesc">stub</div>
             </div>
 
             <div class="feature">
-                <img src="img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
+                <img src="<?php echo WWW; ?>/img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
                 <div class="featureTitle">stub</div>
                 <div class="featureDesc">stub</div>
             </div>
 
             <div class="feature">
-                <img src="img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
+                <img src="<?php echo WWW; ?>/img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
                 <div class="featureTitle">stub</div>
                 <div class="featureDesc">stub</div>
             </div>
 
             <div class="feature">
-                <img src="img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
+                <img src="<?php echo WWW; ?>/img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
                 <div class="featureTitle">stub</div>
                 <div class="featureDesc">stub</div>
             </div>
 
             <div class="feature">
-                <img src="img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
+                <img src="<?php echo WWW; ?>/img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
                 <div class="featureTitle">stub</div>
                 <div class="featureDesc">stub</div>
             </div>
 
             <div class="feature">
-                <img src="img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
+                <img src="<?php echo WWW; ?>/img/main/home/feature_upgrade_icon.jpg" alt="Upgrade Your Account" />
                 <div class="featureTitle">stub</div>
                 <div class="featureDesc">stub</div>
             </div>
@@ -82,8 +82,8 @@ require_once("header.php");
     </div>
 </div>
 <div id="right">
-    <a href="play" id="playbutton" onmouseover="h(this)" onmouseout="u(this)" onclick="if(!this.j){this.href+='?j=1';this.j=true;}">
-        <img src="img/main/skins/default/playd3d9.jpg?10" alt="Play RuneScape - Continue Your Adventure" />
+    <a href="<?php echo WWW; ?>/play" id="playbutton" onmouseover="h(this)" onmouseout="u(this)" onclick="if(!this.j){this.href+='?j=1';this.j=true;}">
+        <img src="<?php echo WWW; ?>/img/main/skins/default/playd3d9.jpg?10" alt="Play RuneScape - Continue Your Adventure" />
         <span class="shim"></span>
     </a>
     <div id="recentnews">
@@ -91,7 +91,7 @@ require_once("header.php");
             <div class="left">
                 <div class="right">
                     <div class="plaque">
-                        <img src="img/main/titles/recentnews.png" alt="Recent News" />
+                        <img src="<?php echo WWW; ?>/img/main/titles/recentnews.png" alt="Recent News" />
                     </div>
                 </div>
             </div>
@@ -110,7 +110,7 @@ require_once("header.php");
                                     <h3>' . $news['title'] . ' </h3>
                                     <span>' . $news['date'] . '</span>
                                 </div>
-                                <p>' . $news['description'] . ' <a href="viewnews?id=' . $news['id'] . '">Read more...</a></p>
+                                <p>' . $news['description'] . ' <a href="' . WWW . '/viewnews/id/' . $news['id'] . '">Read more...</a></p>
                             </div>
                         </div>';
                 }
@@ -119,7 +119,7 @@ require_once("header.php");
 
             <div id="feed">
                 <a href="http://services.runescape.com/m=news/latest_news.rss">
-                    <!--[if gte IE 7]><!---><img title="Subscribe to RSS" alt="" src="./img/rss/logo.png"/><!--<![endif]-->
+                    <!--[if gte IE 7]><!---><img title="Subscribe to RSS" alt="" src="<?php echo WWW; ?>/img/rss/logo.png"/><!--<![endif]-->
                     <!--[if IE 6]><img title="Subscribe to RSS" alt="" src="http://www.jagex.com/img/crossservice/RSS/logo_ie6.png"/><![endif]--> <span>Subscribe to RSS</span></a>
             </div>
             <div class="moreArchive"><a href="listnews">Browse our news archive</a></div>

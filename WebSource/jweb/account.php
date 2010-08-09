@@ -17,9 +17,14 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 define('PAGE_TAB', 3);
-define('PAGE_TITLE', 'Play');
+define('PAGE_TITLE', 'Account');
 
 require_once("global.php");
+
+if (!LOGGED_IN) {
+    header("Location: " . WWW . "/login");
+}
+
 require_once("header.php");
 ?>
 
@@ -66,7 +71,7 @@ require_once("header.php");
         margin: 0px 3px 20px;
     }
     .listBoxButton_Big, .listBoxButton {
-        background-image: url('img/main/account_management/button_back.gif');
+        background-image: url('<?php echo WWW; ?>/img/main/account_management/button_back.gif');
         width: 348px;
         position: absolute;
         bottom: 4px;
@@ -81,7 +86,7 @@ require_once("header.php");
         height: 17px;
         padding-top: 5px;
         font-weight: bold;
-        background: transparent url(img/main/account_management/button.gif) no-repeat top left;
+        background: transparent url(<?php echo WWW; ?>/img/main/account_management/button.gif) no-repeat top left;
         margin:auto;
         text-align: center;
         vertical-align: middle;

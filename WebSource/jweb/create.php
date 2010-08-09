@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
         $uid = dbevaluate("SELECT id FROM characters WHERE username = '$dbname' AND password = '$pass';");
         dbquery("INSERT INTO character_preferences (master_id) VALUES ('$uid');");
 
-        die('<script type="text/javascript">top.location.href = \'create?created=' . $dbname . '\';</script>');
+        die('<script type="text/javascript">top.location.href = \'' . WWW . '/create?created=' . $dbname . '\';</script>');
     }
 }
 
@@ -263,7 +263,7 @@ function check_email($email) {
     }
 </script>
 
-<style type="text/css">/*\*/@import url(css/create3-11.css);/**/</style> 
+<style type="text/css">/*\*/@import url(<?php echo WWW; ?>/css/create3-11.css);/**/</style>
 
 <div id="article">
     <div class="sectionHeader">
@@ -286,7 +286,7 @@ function check_email($email) {
                     <div class="width756">
                         <div class="inner_brown_box" style="padding: 8px;">
                             <p>Your account <span class="usernamecreate"><?php echo $created ?></span> has now been created with the password you have chosen. We recommend you make a note of it on a bit of paper and keep it somewhere <strong>really</strong> safe, in case you forget it.</p>
-                            <center><h2><a href="play.php">Play Now</a></h2></center>
+                            <center><h2><a href="<?php echo WWW; ?>/play.php">Play Now</a></h2></center>
                         </div>
                         <br class="clear" />
                     </div>

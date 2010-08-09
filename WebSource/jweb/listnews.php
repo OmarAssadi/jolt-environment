@@ -25,7 +25,7 @@ require_once("header.php");
 
 ?>
 
-<style type="text/css">/*\*/@import url(css/news-2.css);/**/</style>
+<style type="text/css">/*\*/@import url(<?php echo WWW; ?>/css/news-2.css);/**/</style>
 <style type="text/css">#feed {float: none;}</style> 
 
 <div id="article">
