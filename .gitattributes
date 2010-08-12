@@ -1005,6 +1005,7 @@ Source/RuneScape/Model/Npcs/UpdateFlags.cs -text
 Source/RuneScape/Model/Npcs/WalkType.cs -text
 Source/RuneScape/Model/Npcs/WalkingQueue.cs -text
 Source/RuneScape/Model/Objects/MapObject.cs -text
+Source/RuneScape/Model/Objects/WalkToObjectEvent.cs -text
 Source/RuneScape/Network/ConnectionFactory.cs -text
 Source/RuneScape/Network/ConnectionListener.cs -text
 Source/RuneScape/Network/ConnectionManager.cs -text
