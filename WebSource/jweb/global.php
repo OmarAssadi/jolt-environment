@@ -83,7 +83,7 @@ if (isset($_SESSION['JWEB_USER']) && isset($_SESSION['JWEB_HASH'])) {
         define("LOGGED_IN", true);
         define("USER_NAME", $_SESSION['JWEB_USER']);
         define("USER_HASH", $_SESSION['JWEB_HASH']);
-        define("USER_ID", $users->get_id(USERNAME));
+        define("USER_ID", $users->get_id(USER_NAME));
         define("USER_RIGHTS", $users->get_server_rights(USER_ID));
     } else {
         session_destroy();

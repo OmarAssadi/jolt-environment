@@ -16,7 +16,7 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-define('PAGE_TAB', 0);
+define('PAGE_TAB', 2);
 define('PAGE_TITLE', 'Play');
 
 require_once("global.php");

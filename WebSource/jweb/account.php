@@ -127,16 +127,16 @@ require_once("header.php");
                 <div style="margin-bottom:5px" class="brown_box">
                     <div class="subsectionHeader">Account Settings</div>
                     <div class="inner_brown_box">
-                        We recommend that you change your password from time to time. If you have received a ban or caused an offence, you can appeal against it (see below). Also, by clicking 'Read Messages' below, you can read correspondence from Jagex.
+                        We recommend that you change your password from time to time. If you have received a ban or caused an offence, you can appeal against it (see below). Also, by clicking 'Read Messages' below, you can read correspondence from <?php echo SITE_NAME; ?>.
                     </div>
 
                     <center>
                         <div class="listBox_left">
                             <div class="padded">
-                                <div class="listBoxTitle"><a href="http://www.runescape.com/c=vac8Ay3GozQ/redirect.ws?mod=password_history&dest=password.ws">Change Password</a></div>
+                                <div class="listBoxTitle"><a href="<?php echo WWW; ?>/account/password">Change Password</a></div>
                                 <div class="description">Change your password every few months.</div>
                                 <div class="listBoxButton_Big">
-                                    <a href="http://www.runescape.com/c=vac8Ay3GozQ/redirect.ws?mod=password_history&dest=password.ws">Change Password</a>
+                                    <a href="<?php echo WWW; ?>/account/password">Change Password</a>
                                 </div>
                             </div>
                         </div>

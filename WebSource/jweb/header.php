@@ -31,14 +31,22 @@ if (defined("PAGE_TAB")) {
     $tab_id = PAGE_TAB;
 
     switch ($tab_id) {
-        case 0: $tab = "nav"; break;
-        case 1: $tab = "navhome"; break;
-        case 2: $tab = "navplay"; break;
-        case 3: $tab = "navaccount"; break;
-        case 4: $tab = "navguide"; break;
-        case 5: $tab = "navcommunity"; break;
-        case 6: $tab = "navhelp"; break;
-        case 7: $tab = "login"; break;
+        case 0: $tab = "nav";
+            break;
+        case 1: $tab = "navhome";
+            break;
+        case 2: $tab = "navplay";
+            break;
+        case 3: $tab = "navaccount";
+            break;
+        case 4: $tab = "navguide";
+            break;
+        case 5: $tab = "navcommunity";
+            break;
+        case 6: $tab = "navhelp";
+            break;
+        case 7: $tab = "login";
+            break;
     }
 }
 
@@ -76,7 +84,7 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
 
     <body id="<?php echo $tab; ?>" class="bodyBackground">
         <a name="top"></a>
-        
+
         <div id="scroll">
             <div id="head"><div id="headBg">
                     <div id="headOrangeTop"></div>
@@ -87,20 +95,20 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
                     <div id="headOrangeBottom"></div>
                     <div id="headAdvert">
                         <script type="text/javascript"><!--
-					google_ad_client = "pub-9355552874197940";
-					/* 728x90, created 3/2/09 */
-					google_ad_slot = "0844195204";
-					google_ad_width = 728;
-					google_ad_height = 90;
-					//-->
-			</script>
-			<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+                            google_ad_client = "pub-9355552874197940";
+                            /* 728x90, created 3/2/09 */
+                            google_ad_slot = "0844195204";
+                            google_ad_width = 728;
+                            google_ad_height = 90;
+                            //-->
+                        </script>
+                        <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
                     </div>
                     <div id="menubox">
                         <ul id="menus">
                             <li class="top"><a href="<?php echo WWW; ?>/home" id="home" class="tl"><span class="ts">Home</span></a></li>
 
-                            <li class="top"><a id="<?php echo WWW; ?>/play" class="tl" href="play" onclick="if(!this.j){this.href+='?j=1';this.j=true;}"><span class="ts">Play Now</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
+                            <li class="top"><a id="play" class="tl" href="<?php echo WWW; ?>/play" onclick="if(!this.j){this.href+='?j=1';this.j=true;}"><span class="ts">Play Now</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
                             <!--[if lte IE 6]><table><tr><td><![endif]-->
                                 <ul>
                                     <li><a href="<?php echo WWW; ?>/create" class="fly"><span>New Users</span></a></li>
@@ -109,7 +117,7 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
                             </li>
 
-                            <li class="top"><a id="<?php echo WWW; ?>/account" class="tl" href="account"><span class="ts">Account</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
+                            <li class="top"><a id="account" class="tl" href="<?php echo WWW; ?>/account"><span class="ts">Account</span><!--[if gt IE 6]><!--></a><!--<![endif]-->
                             <!--[if lte IE 6]><table><tr><td><![endif]-->
                                 <ul>
                                     <li><a href="<?php echo WWW; ?>/create" class="fly"><span>Create New Account</span></a></li>
@@ -161,11 +169,11 @@ $online =  dbevaluate("SELECT COUNT(id) FROM characters WHERE online = '1';");
                                 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
                             </li>
 
-                            <?php if (LOGGED_IN) { ?>
+<?php if (LOGGED_IN) { ?>
                             <li class="top"><a href="<?php echo WWW; ?>/logout" id="logout" class="tl"><span class="ts">Log Out</span></a></li>
-                            <?php } else { ?>
+    <?php } else { ?>
                             <li class="top"><a href="<?php echo WWW; ?>/login" id="login" class="tl"><span class="ts">Log In</span></a></li>
-                            <?php } ?>
+    <?php } ?>
                         </ul>
                         <br class="clear" />
                     </div>

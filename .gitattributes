@@ -1378,6 +1378,7 @@ WebSource/jweb/login.php -text
 WebSource/jweb/logout.php -text
 WebSource/jweb/nbproject/project.properties -text
 WebSource/jweb/nbproject/project.xml -text
+WebSource/jweb/password.php -text
 WebSource/jweb/play.php -text
 WebSource/jweb/validate.php -text
 WebSource/jweb/viewnews.php -text
