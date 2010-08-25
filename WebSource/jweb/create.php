@@ -93,15 +93,6 @@ function check_year($year) {
         return true;
     }
 }
-
-function check_email($email) {
-    if ($_GET['email'] != "" && !preg_match('/^\S+@[\w\d.-]{2,}\.[\w]{2,6}$/iU', $email)) {
-        return false;
-    } else {
-        return true;
-    }
-}
-
 ?>
 
 <script type="text/javascript">  //function to create ajax object

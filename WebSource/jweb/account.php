@@ -147,10 +147,10 @@ require_once("header.php");
                     <center>
                         <div class="listBox_left">
                             <div class="padded">
-                                <div class="listBoxTitle"><a href="http://www.runescape.com/c=vac8Ay3GozQ/redirect.ws?mod=password_history&dest=password.ws">Change Password</a></div>
-                                <div class="description">Change your password every few months.</div>
+                                <div class="listBoxTitle"><a href="<?php echo WWW; ?>/account/email">Email Settings</a></div>
+                                <div class="description">Setup or change your email.</div>
                                 <div class="listBoxButton_Big">
-                                    <a href="http://www.runescape.com/c=vac8Ay3GozQ/redirect.ws?mod=password_history&dest=password.ws">Change Password</a>
+                                    <a href="<?php echo WWW; ?>/account/email">Email Settings</a>
                                 </div>
                             </div>
                         </div>

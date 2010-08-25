@@ -86,4 +86,16 @@ function dbdate_format($date) {
     return date_format($date, "Y-m-d H:i:s");
 }
 
+/**
+ * Check if the email is a valid entry.
+ * @param string $email Email to check.
+ * @return boolean Whether the entry is valid or not.
+ */
+function check_email($email) {
+    if ($_GET['email'] != "" && !preg_match('/^\S+@[\w\d.-]{2,}\.[\w]{2,6}$/iU', $email)) {
+        return false;
+    } else {
+        return true;
+    }
+}
 ?>

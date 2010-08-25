@@ -7,7 +7,8 @@ RewriteRule ^listnews(|/)$ listnews.php
 RewriteRule ^play(|/)$ play.php
 RewriteRule ^account(|/)$ account.php
 
-RewriteRule ^account/password(|/)$ password.php
+RewriteRule ^account/password(|/)$ manage_password.php
+RewriteRule ^account/email(|/)$ manage_email.php
 
 RewriteRule ^register(|/)$ create.php
 RewriteRule ^register.php(|/)$ create.php
