@@ -104,8 +104,16 @@ namespace RuneScape.Model.Items.Containers
                         Item bankItem = this[i];
                         if (bankItem != null && bankItem.Id == item.Id)
                         {
-                            this[i] = new Item(item.Definition.Noted ? item.Definition.NoteId : item.Id, bankItem.Count + item.Count);
-                            this.Character.Inventory.DeleteItem(item);
+                            if (((uint)(bankItem.Count + item.Count)) < int.MaxValue)
+                            {
+                                this[i] = new Item(item.Definition.Noted ? item.Definition.NoteId : item.Id, bankItem.Count + item.Count);
+                                this.Character.Inventory.DeleteItem(item);
+                            }
+                            else
+                            {
+                                this.Character.Session.SendData(new MessagePacketComposer(
+                                    "The amount you are trying to deposit is too much.").Serialize());
+                            }
                             break;
                         }
                     }

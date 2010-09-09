@@ -100,7 +100,7 @@ namespace RuneScape.Model
             {
                 npc.UpdateFlags.FaceToUpdateRequired = true;
                 npc.UpdateFlags.FaceTo = 0;
-                npc.UpdateFlags.ClearFaceTo = true;
+                npc.UpdateFlags.ClearFaceTo = false;
             }
         }
 
