@@ -26,8 +26,7 @@ using System.Threading.Tasks;
 using JoltEnvironment;
 using JoltEnvironment.Debug;
 using JoltEnvironment.Utilities;
-using System.Diagnostics;
-using System.Security.Permissions;
+using RuneScape.Scripting;
 
 using CSScriptLibrary;
 
@@ -124,13 +123,13 @@ namespace RuneScape
                     }
                 }
 
-                showInfo = configuration["Console.ShowInfo"];
+                Program.showInfo = configuration["Console.ShowInfo"];
 
                 JEnvironment.SetupLogger(new Logger(
                     (LogPriority)configuration["Logger.Priority"],
                     configuration["Logger.Colored"],
                     configuration["Logger.LogEvent"]));
-                logger = JEnvironment.Logger;
+                Program.logger = JEnvironment.Logger;
             }
             catch (Exception ex) // Most probably there is a mistake in the configuration file.
             {
@@ -158,26 +157,6 @@ namespace RuneScape
             Console.WriteLine(" Copyright (C) 2010 Jolt Environment Team");
             Console.WriteLine(" http://www.ajravindiran.com/projects/jolt/");
             Console.WriteLine();
-            
-            /*string code = @"using System;
-              using RuneScape;
-              public class Script
-              {
-                  public void SayHello(string message)
-                  {
-                      Console.WriteLine(typeof(Program).FullName);
-                      Console.WriteLine(message);
-                  }
-              }";
-            dynamic script = CSScript.LoadCode(code).CreateObject("*");
-
-            Benchmark benchmark = new Benchmark(
-                new Action(() =>
-                {
-                    script.SayHello("hi");
-                }));
-            benchmark.Process();
-            Console.WriteLine(benchmark.GetTime());*/
 
             /*
              * Start a new thread that will update every second 
@@ -193,7 +172,6 @@ namespace RuneScape
             }
 
             GameServer.Initialize(); // Initialize the runescape emulator.
-            //GameServer.IsRunning = true;
             ListenForCommand();
             GameServer.Terminate(false); // The server is not running anymore, shutdown server.
         }

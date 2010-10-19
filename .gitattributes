@@ -1016,6 +1016,7 @@ Source/RuneScape/Program.cs -text
 Source/RuneScape/Properties/AssemblyInfo.cs -text
 Source/RuneScape/Resources/app.ico -text
 Source/RuneScape/RuneScape.csproj -text
+Source/RuneScape/Scripting/ScriptManager.cs -text
 Source/RuneScape/Services/EventService.cs -text
 Source/RuneScape/Services/LoginService.cs -text
 Source/RuneScape/Services/MajorUpdatesService.cs -text

@@ -32,16 +32,24 @@ namespace RuneScape.Model.Objects
     /// </summary>
     public class WalkToObjectEvent : CoordinateEvent
     {
+        #region Fields
+        /// <summary>
+        /// The id of the object to walk to.
+        /// </summary>
+        private ushort objectId;
+        #endregion Fields
+
         #region Constructors
         /// <summary>
         /// Constructs a new trade (coordinated) event.
         /// </summary>
         /// <param name="character">The character being coordinated.</param>
-        /// <param name="other">The character to reach.</param>
-        public WalkToObjectEvent(Character character, Location location)
+        /// <param name="location">The location to reach.</param>
+        public WalkToObjectEvent(Character character, Location location, ushort objectId)
             : base(character, location)
         {
             this.Distance = 1;
+            this.objectId = objectId;
         }
         #endregion Constructors
 
@@ -51,8 +59,11 @@ namespace RuneScape.Model.Objects
         /// </summary>
         public override void Execute()
         {
-            Console.WriteLine(Character.Location);
-            Console.WriteLine("reached!");
+            dynamic script = GameServer.Scripting[@"\ObjectOption1Handlers\Object" + this.objectId + ".cs"];
+            if (script != null)
+            {
+                script.Handle(this.Character, this.Location);
+            }
         }
         #endregion Methods
     }

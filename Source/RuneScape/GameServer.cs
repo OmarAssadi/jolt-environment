@@ -21,14 +21,15 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Security.Permissions;
 using System.Threading;
 
 using JoltEnvironment;
 using JoltEnvironment.Debug;
 using JoltEnvironment.Storage.Sql;
 using RuneScape.Network;
+using RuneScape.Scripting;
 using RuneScape.Utilities;
-using System.Security.Permissions;
 
 namespace RuneScape
 {
@@ -49,9 +50,13 @@ namespace RuneScape
         /// </summary>
         private static ConnectionManager connectionManager;
         /// <summary>
-        /// A manager whch manages all remote connections.
+        /// A manager which manages all remote connections.
         /// </summary>
         private static RemoteManager remoteManager;
+        /// <summary>
+        /// A manager which manages all scripts.
+        /// </summary>
+        private static ScriptManager scriptManager;
         #endregion Fields
 
         #region Properties
@@ -61,7 +66,7 @@ namespace RuneScape
         public static bool IsRunning { get; set; }
 
         /// <summary>
-        /// Gets the database manager instance.
+        /// Gets the database manager.
         /// </summary>
         public static SqlDatabaseManager Database
         {
@@ -69,7 +74,7 @@ namespace RuneScape
         }
 
         /// <summary>
-        /// Gets the tcp connection manager instance.
+        /// Gets the tcp connection manager.
         /// </summary>
         public static ConnectionManager TcpConnection
         {
@@ -77,11 +82,19 @@ namespace RuneScape
         }
 
         /// <summary>
-        /// Gets the remote connection manager instance.
+        /// Gets the remote connection manager.
         /// </summary>
         public static RemoteManager RemoteConnection
         {
             get { return remoteManager; }
+        }
+
+        /// <summary>
+        /// Gets the scripting manager.
+        /// </summary>
+        public static ScriptManager Scripting
+        {
+            get { return scriptManager; }
         }
 
         /// <summary>
@@ -146,6 +159,10 @@ namespace RuneScape
                     Configuration["RemoteConnection.LocalIP"], 
                     Configuration["RemoteConnection.Port"]);
                 remoteManager.Listener.Start(false);
+
+                // Initialize the scripting manager.
+                scriptManager = new ScriptManager();
+                scriptManager.Initialize();
 
                 // Check to make sure database verion is valid.
                 if (!(bool)Database.Execute(new DatabaseVersionCheck()))

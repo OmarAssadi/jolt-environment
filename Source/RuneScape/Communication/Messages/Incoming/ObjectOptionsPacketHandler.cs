@@ -32,7 +32,7 @@ namespace RuneScape.Communication.Messages.Incoming
     /// <summary>
     /// Handler for object options packets.
     /// </summary>
-    public class ObjectOptionsPacketHandler : IPacketHandler   
+    public class ObjectOptionsPacketHandler : IPacketHandler
     {
         #region Methods
         /// <summary>
@@ -60,15 +60,10 @@ namespace RuneScape.Communication.Messages.Incoming
         private void HandleOption1(Character character, Packet packet)
         {
             short x = (short)(packet.ReadLEShort() & 0xFFFF);
-            int id = packet.ReadShort() & 0xFFFF;
+            ushort id = (ushort)(packet.ReadShort() & 0xFFFF);
             short y = (short)(packet.ReadLEShortA() & 0xFFFF);
             Location location = Location.Create(x, y, character.Location.Z);
-
-            Console.WriteLine(id);
-            Console.WriteLine(location);
-            Console.WriteLine(character.Location);
-
-            GameEngine.Events.RegisterCoordinateEvent(new WalkToObjectEvent(character, location));
+            GameEngine.Events.RegisterCoordinateEvent(new WalkToObjectEvent(character, location, id));
         }
         #endregion Methods
     }
